@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 01 Notes - Linear Algebra Done Right 4th edition</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 01 Notes";
+        var mkdocs_page_input_path = "ch01notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Linear Algebra Done Right 4th edition
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 01 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1b-definition-of-vector-space">1B Definition of Vector Space</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#124-notation-fs">1.24 notation F^S</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#125-example-fs-is-a-vector-space">1.25 example: 𝐅^𝑆 is a vector space</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#126-unique-additive-identity">1.26 unique additive identity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#127-unique-additive-inverse">1.27 unique additive inverse</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#130-the-number-0-times-a-vector">1.30 the number 0 times a vector</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#131-a-number-times-the-vector-0">1.31 a number times the vector 0</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#132-the-number-1-times-a-vector">1.32 the number −1 times a vector</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Linear Algebra Done Right 4th edition</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 01 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ch01notes.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-1-vector-spaces">Chapter 1 Vector Spaces</h1>
+<h2 id="1b-definition-of-vector-space">1B Definition of Vector Space</h2>
+<h3 id="124-notation-fs">1.24 notation <script type="math/tex">F^S</script>
+</h3>
+<ul>
+<li>If <script type="math/tex">𝑆</script> is a set, then <script type="math/tex">𝐅^𝑆</script> denotes the set of functions from 
+  <script type="math/tex">𝑆</script> to <script type="math/tex">𝐅</script>.</li>
+<li>For <script type="math/tex">𝑓, 𝑔 ∈ 𝐅^𝑆</script>, the sum <script type="math/tex">𝑓 + 𝑔 ∈ 𝐅^𝑆</script> is the function 
+  defined by</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+(f+g)(x) = f(x) + g(x)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑥 ∈ 𝑆</script>.</p>
+<ul>
+<li>For <script type="math/tex">𝜆 ∈ 𝐅</script> and <script type="math/tex">𝑓 ∈ 𝐅^𝑆</script>, the product <script type="math/tex">𝜆 𝑓 ∈ 𝐅^𝑆</script> is 
+  the function defined by</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+(𝜆𝑓)(𝑥) = 𝜆 𝑓 (𝑥)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑥 ∈ 𝑆</script>.</p>
+<h3 id="125-example-fs-is-a-vector-space">1.25 example: <script type="math/tex">𝐅^𝑆</script> is a vector space</h3>
+<ul>
+<li>If <script type="math/tex">𝑆</script> is a nonempty set, then <script type="math/tex">𝐅^𝑆</script> (with the operations of 
+  addition and scalar multiplication as defined above) is a vector space over <script type="math/tex">𝐅</script>.</li>
+</ul>
+<p><strong>commutativity</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f+g)(x) = f(x) + g(x) = g(x) + f(x) = (g+f)(x)
+</script>
+</p>
+<p><strong>associativity</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+((f+g)+h)(x) = (f+g)(x) + h(x) = (f(x) + g(x)) + h(x) \\
+=f(x) + (g(x) + h(x)) = f(x) + (g+h)(x) \\
+= (f + (g+h))(x)
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+((ab)f)(x) = (ab) f(x) = a (bf(x)) = a ((bf)(x)) = (a(bf))(x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>additive identity</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>Define <script type="math/tex">0(x) = 0, \forall x \in S</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f+0)(x) = f(x) + 0(x) = f(x) + 0 = f(x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>additive inverse</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>Define <script type="math/tex">g(x) = -f(x)</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f+g)(x) = f(x) + g(x) = f(x) + (-f(x)) = 0
+</script>
+</p>
+<p><strong>multiplicative identity</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+(1 \cdot f)(x) = 1 \cdot f(x) = f(x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>distributive properties</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(𝜆(𝑓+g))(𝑥) = 𝜆 ((𝑓+g)(x)) = 𝜆 (f(x) + g(x)) \\
+= 𝜆f(x) + 𝜆g(x) = (𝜆f)(x) + (𝜆g)(x) = (𝜆f + 𝜆f)(x)
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+((𝜆 + μ)f)(x) = (𝜆 + μ) f(x) = 𝜆f(x) + μf(x) \\
+= (𝜆f)(x) + (μf)(x) = (𝜆f + μf)(x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<ul>
+<li>The additive identity of <script type="math/tex">𝐅^𝑆</script> is the function <script type="math/tex">0 ∶ 𝑆 → 𝐅</script> 
+  defined by</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+0(x) = 0
+</script>
+</p>
+<p>for all <script type="math/tex">𝑥 ∈ 𝑆</script>.</p>
+<p>Already proved above.</p>
+<ul>
+<li>For <script type="math/tex">𝑓 ∈ 𝐅^𝑆</script>, the additive inverse of <script type="math/tex">𝑓</script> is the function <script type="math/tex">− 𝑓 ∶ 𝑆 → 𝐅</script> defined by</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+(-f)(x) = -f
+</script>
+</p>
+<p>for all <script type="math/tex">𝑥 ∈ 𝑆</script>.</p>
+<p>Already proved above.</p>
+<p>The vector space <script type="math/tex">𝐅^𝑛</script> is a special case
+of the vector space 𝐅𝑆 because each
+<script type="math/tex">(𝑥_1, …, 𝑥_𝑛) ∈ 𝐅^𝑛</script> can be thought of as
+a function <script type="math/tex">𝑥</script> from the set <script type="math/tex">\{1, 2, …, 𝑛\}</script> to <script type="math/tex">𝐅</script>.</p>
+<h3 id="126-unique-additive-identity">1.26 unique additive identity</h3>
+<h3 id="127-unique-additive-inverse">1.27 unique additive inverse</h3>
+<h3 id="130-the-number-0-times-a-vector">1.30 the number 0 times a vector</h3>
+<p>
+<script type="math/tex; mode=display"> 
+0𝑣 = 0, \forall v \in V
+</script>
+</p>
+<h3 id="131-a-number-times-the-vector-0">1.31 a number times the vector 0</h3>
+<p>
+<script type="math/tex; mode=display"> 
+𝑎0 = 0, \forall a \in F
+</script>
+</p>
+<h3 id="132-the-number-1-times-a-vector">1.32 the number −1 times a vector</h3>
+<p>
+<script type="math/tex; mode=display"> 
+(−1)𝑣 = −𝑣, \forall v \in V
+</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch01ex/" class="btn btn-neutral float-right" title="Chapter 01 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch01ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

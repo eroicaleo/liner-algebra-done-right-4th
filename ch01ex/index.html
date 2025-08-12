@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 01 Exercises - Linear Algebra Done Right 4th edition</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 01 Exercises";
+        var mkdocs_page_input_path = "ch01ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Linear Algebra Done Right 4th edition
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01notes/">Chapter 01 Notes</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Chapter 01 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1a-rn-and-cn">1A 𝐑^𝑛 and 𝐂^𝑛</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1a1">1A.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a2">1A.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a3">1A.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a4">1A.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a5">1A.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a6">1A.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a7">1A.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a8">1A.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a9">1A.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a10">1A.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a11">1A.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a12">1A.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a13">1A.13</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a14">1A.14</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1a15">1A.15</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1b-definition-of-vector-space">1B Definition of Vector Space</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1b1">1B.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1b2">1B.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1b3">1B.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1b4">1B.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1b5">1B.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1b6">1B.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1b7">1B.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1b8">1B.8</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Linear Algebra Done Right 4th edition</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">Chapter 01 Exercises</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ch01ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-1-vector-spaces">Chapter 1 Vector Spaces</h1>
+<h2 id="1a-rn-and-cn">1A <script type="math/tex">𝐑^𝑛</script> and <script type="math/tex">𝐂^𝑛</script>
+</h2>
+<h3 id="1a1">1A.1</h3>
+<p>Show that <script type="math/tex">𝛼 + 𝛽 = 𝛽 + 𝛼</script> for all <script type="math/tex">𝛼, 𝛽 ∈ 𝐂</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝛼 = a + bi, 𝛽 = c + di
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝛼 + 𝛽 = (a + bi) + (c + di) =
+(a + c) + (b + d)i \\
+= (c+a) + (d+b)i \\
+= (c + di) + (a + bi) \\
+= 𝛽 + 𝛼
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a2">1A.2</h3>
+<p>Show that <script type="math/tex">(𝛼 + 𝛽) + 𝜆 = 𝛼 + (𝛽 + 𝜆)</script> for all <script type="math/tex">𝛼, 𝛽, 𝜆 ∈ 𝐂</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝛼 = a + bi, 𝛽 = c + di, 𝜆 = e + fi
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+(𝛼 + 𝛽) + 𝜆 = ((a+bi) + (c+di)) + (e + fi)\\
+= ((a+c) + (b+d)i) + (e + fi)\\
+= (a+c+e) + (b+d+f)i
+</script>
+</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝛼 + (𝛽 + 𝜆) = (a+bi) + ((c+di) + (e+fi)) \\
+= (a+bi) + ((c+e)+(d+f)i)\\
+= (a+c+e)+(b+d+f)i
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a3">1A.3</h3>
+<p>Show that <script type="math/tex">(𝛼𝛽)𝜆 = 𝛼(𝛽𝜆)</script> for all <script type="math/tex">𝛼, 𝛽, 𝜆 ∈ 𝐂</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(𝛼𝛽)𝜆 = ((a+bi)(c+di))(e+fi) \\
+= ((ac-bd) + (ad+bc)i)(e+fi) \\
+= ((ac-bd)e -(ad+bc)f) + ((ac-bd)f + (ad+bc)e)i \\
+= (ace - bde - adf - bcf) + (acf - bdf + ade + bce)i
+</script>
+</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝛼(𝛽𝜆) = (a+bi)((c+di)(e+fi)) \\
+= (a+bi)((ce-df)+(cf+de)i)\\
+= (a(ce-df) - b(cf+de)) + (a(cf+de)+b(ce-df))i \\
+= (ace - adf - bcf - bde) + (acf + ade + bce - bdf)i
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a4">1A.4</h3>
+<p>Show that <script type="math/tex">𝜆(𝛼 + 𝛽) = 𝜆𝛼 + 𝜆𝛽</script> for all <script type="math/tex">𝜆, 𝛼, 𝛽 ∈ 𝐂</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜆(𝛼 + 𝛽) = (e+fi)((a+bi)+(c+di)) \\
+= (e+fi)((a+c)+(b+d)i)\\
+= ((a+c)e - (b+d)f) + ((a+c)f + (b+d)e)i \\
+</script>
+</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜆𝛼 + 𝜆𝛽 = (e+fi)(a+bi) + (e+fi)(c+di) \\
+= (ea-bf) + (eb+fa)i + (ec-fd) + (ed+fc)i \\
+= (ea + ec - bf - df) + (af + cf + be + de)i
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a5">1A.5</h3>
+<p>Show that for every <script type="math/tex">𝛼 ∈ 𝐂</script>, there exists a unique <script type="math/tex">𝛽 ∈ 𝐂</script> such that <script type="math/tex">𝛼 + 𝛽 = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">𝛼 = a + bi</script>, then let <script type="math/tex">𝛽 = (-a) + (-b)i</script>, we can see
+<script type="math/tex">𝛼 + 𝛽 = 0</script>.</p>
+<p>On the other hand, if <script type="math/tex">𝛼 + 𝛽 = 0</script>, then
+<script type="math/tex">𝛽 = (-a) + (-b)i</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a6">1A.6</h3>
+<p>Show that for every <script type="math/tex">𝛼 ∈ 𝐂</script> with <script type="math/tex">𝛼 ≠ 0</script>, there exists a unique <script type="math/tex">𝛽 ∈ 𝐂</script> such that <script type="math/tex">𝛼𝛽 = 1</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">𝛼 = a + bi</script>, <script type="math/tex">𝛽 = c + di</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝛼𝛽 = (ac - bd) + (ad + bc)i
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{cases}
+    ac - bd &= 1 \\
+    ad + bc &= 0 \\
+\end{cases} 
+</script>
+</p>
+<p>Assume <script type="math/tex">a \neq 0</script>, then <script type="math/tex">d = -\frac{b}{a}c</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+ac + \frac{b^2}{a}c = 1 \\
+\Rightarrow \\
+c = \frac{a}{a^2 + b^2}, d = - \frac{b}{a^2 + b^2}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a7">1A.7</h3>
+<p>Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{-1 + \sqrt[]{3} i}{2}
+</script>
+</p>
+<p>is a cube root of 1 (meaning that its cube equals 1).</p>
+<p><strong>Proof</strong>:</p>
+<p>let </p>
+<p>
+<script type="math/tex; mode=display"> 
+r = \frac{-1 + \sqrt[]{3} i}{2}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+r^2 = \frac{1}{4}
+((1-3) + 2 \sqrt[]{3}i) \\
+= \frac{-1 - \sqrt[]{3}i}{2}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+r^3 = \frac{1 + 3}{4} = 1
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a8">1A.8</h3>
+<p>Find two distinct square roots of <script type="math/tex">𝑖</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Let <script type="math/tex">(a+bi)^2 = i</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+a^2 - b^2 + 2abi = i
+</script>
+</p>
+<p>So we can have
+<script type="math/tex; mode=display"> 
+r_1 = \frac{\sqrt[]{2} + \sqrt[]{2}i}{2},
+r_2 = \frac{-\sqrt[]{2} + -\sqrt[]{2}i}{2},
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a9">1A.9</h3>
+<p>Find <script type="math/tex">𝑥 ∈ 𝐑^4</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+(4, −3, 1, 7) + 2𝑥 = (5, 9, −6, 8).
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+x = (\frac{1}{2}, 6, -\frac{7}{2}, \frac{1}{2})
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a10">1A.10</h3>
+<p>Explain why there does not exist <script type="math/tex">𝜆 ∈ 𝐂</script> such that
+<script type="math/tex">𝜆(2 − 3𝑖, 5 + 4𝑖, −6 + 7𝑖) = (12 − 5𝑖, 7 + 22𝑖, −32 − 9𝑖)</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>There is no <script type="math/tex">𝜆</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+2𝜆 = 12 \text{ and } -3𝜆 = -5
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a11">1A.11</h3>
+<p>Show that <script type="math/tex">(𝑥 + 𝑦) + 𝑧 = 𝑥 + (𝑦 + 𝑧)</script> for all
+<script type="math/tex">𝑥, 𝑦, 𝑧 ∈ 𝐅^𝑛</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(𝑥 + 𝑦) + 𝑧 =
+(x_1 + y_1, \cdots, x_n + y_n) + z \\
+= ((x_1 + y_1) + z_1, \cdots, (x_n + y_n) + z_n) \\
+= (x_1 + y_1 + z_1, \cdots, x_n + y_n + z_n) \\
+</script>
+</p>
+<p>It's same for <script type="math/tex">𝑥 + (𝑦 + 𝑧)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a12">1A.12</h3>
+<p>Show that <script type="math/tex">(𝑎𝑏)𝑥 = 𝑎(𝑏𝑥)</script> for all <script type="math/tex">𝑥 ∈ 𝐅^𝑛</script> and all
+<script type="math/tex">𝑎, 𝑏 ∈ 𝐅</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(𝑎𝑏)𝑥 = (ab)(x_1, \cdots, x_n) \\
+=((ab)x_1, \cdots, (ab)x_n)
+</script>
+</p>
+<p>
+<script type="math/tex">𝑎(𝑏𝑥)</script> is the same.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a13">1A.13</h3>
+<p>Show that <script type="math/tex">1𝑥 = 𝑥</script> for all <script type="math/tex">𝑥 ∈ 𝐅^𝑛</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+1𝑥 = 1 (x_1, \cdots, x_n) \\
+= (1 \cdot x_1, \cdots, 1 \cdot x_n) \\
+= (x_1, \cdots, x_n) = x
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a14">1A.14</h3>
+<p>Show that <script type="math/tex">𝜆(𝑥 + 𝑦) = 𝜆𝑥 + 𝜆𝑦</script> for all <script type="math/tex">𝜆 ∈ 𝐅</script> and all 
+<script type="math/tex">𝑥, 𝑦 ∈ 𝐅^𝑛</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜆(𝑥 + 𝑦) = 𝜆 ((x_1, \cdots, x_n) + (y_1, \cdots, y_n)) \\
+= 𝜆 (x_1+y_1, \cdots, x_n+y_n) \\
+= (𝜆(x_1+y_1), \cdots, 𝜆(x_n+y_n)) \\
+= (𝜆 x_1 + 𝜆 y_1, \cdots , 𝜆 x_n + 𝜆 y_n) \\
+= 𝜆 (x_1, \cdots, x_n) + 𝜆 (y_1, \cdots, y_n) \\
+= 𝜆 x + 𝜆 y
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1a15">1A.15</h3>
+<p>Show that <script type="math/tex">(𝑎 + 𝑏)𝑥 = 𝑎𝑥 + 𝑏𝑥</script> for all <script type="math/tex">𝑎, 𝑏 ∈ 𝐅</script> and 
+all <script type="math/tex">𝑥 ∈ 𝐅^𝑛</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{split}
+(𝑎 + 𝑏)𝑥 &= (a+b)(x_1, \cdots, x_n) \\
+&= ((a+b)x_1, \cdots, (a+b)x_n) \\ 
+&= (ax_1 + bx_1, \cdots, ax_n + bx_n) \\ 
+&= (ax_1, \cdots, ax_n) + (bx_1, \cdots, bx_n) \\
+&= a (x_1, \cdots, x_n) + b (x_1, \cdots, x_n) \\
+&= ax + bx
+\end{split}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="1b-definition-of-vector-space">1B Definition of Vector Space</h2>
+<h3 id="1b1">1B.1</h3>
+<p>Prove that <script type="math/tex">−(−𝑣) = 𝑣</script> for every <script type="math/tex">𝑣 ∈ 𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>From <script type="math/tex">1.32</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+−(−𝑣) = (-1)(-v) \\
+\Rightarrow \\
+−(−𝑣) + (−𝑣) = (-1)(-v) + (1)(-v) = (-1 + 1)(-v) = 0(-v) = 0
+</script>
+</p>
+<p>On the other hand, <script type="math/tex">v + (−𝑣) = 0</script>.</p>
+<p>So both of them are the additive inverse of the <script type="math/tex">(−𝑣)</script>.</p>
+<p>From <script type="math/tex">1.27</script>, they are the same.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1b2">1B.2</h3>
+<p>Suppose <script type="math/tex">𝑎 ∈ 𝐅, 𝑣 ∈ 𝑉</script> , and <script type="math/tex">𝑎𝑣 = 0</script>. Prove that
+<script type="math/tex">𝑎 = 0</script> or <script type="math/tex">𝑣 = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">a =0</script>, then it's valid. If <script type="math/tex">a \neq 0</script>, then
+<script type="math/tex">a</script> has a multiplicative inverse <script type="math/tex">a^{-1}</script>.</p>
+<p>
+<script type="math/tex">a^{-1}(av) = (a^{-1}a)v = v</script>.</p>
+<p>On the other hand, from 1.31, <script type="math/tex">a^{-1}0 = 0</script>.</p>
+<p>So we have <script type="math/tex">v = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1b3">1B.3</h3>
+<p>Suppose <script type="math/tex">𝑣, 𝑤 ∈ 𝑉</script>.
+Explain why there exists a unique <script type="math/tex">𝑥 ∈ 𝑉</script> such that
+<script type="math/tex">𝑣 + 3𝑥 = 𝑤</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>We add <script type="math/tex">v</script>'s additive inverse on both side and get</p>
+<p>
+<script type="math/tex; mode=display"> 
+(-v) + (𝑣 + 3𝑥) = ((-v) + v) + 3x = 0 + 3x = 3x = w - v
+</script>
+</p>
+<p>Then we multiply the multiplicative inverse of <script type="math/tex">3</script>, we
+got</p>
+<p>
+<script type="math/tex; mode=display"> 
+x = 3^{-1} (w-v)
+</script>
+</p>
+<p>So <script type="math/tex">x</script> is unique and satisfy this equation.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1b4">1B.4</h3>
+<p>The empty set is not a vector space. The empty set fails to 
+satisfy only one of the requirements listed in the definition of a 
+vector space (1.20). Which one?</p>
+<p><strong>Solution</strong>:</p>
+<p>It must be "additive identity":
+There exists an element <script type="math/tex">0 ∈ 𝑉</script> such that <script type="math/tex">𝑣 + 0 = 𝑣</script> for all 
+<script type="math/tex">𝑣 ∈ 𝑉</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1b5">1B.5</h3>
+<p>Show that in the definition of a vector space (1.20), the additive 
+inverse condition can be replaced with the condition that</p>
+<p>
+<script type="math/tex; mode=display"> 
+0𝑣 = 0 \text{ for all } 𝑣 ∈ 𝑉.
+</script>
+</p>
+<p>Here the <script type="math/tex">0</script> on the left side is the number <script type="math/tex">0</script>, and the <script type="math/tex">0</script> on 
+the right side is the additive identity of <script type="math/tex">𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>We just need to use this condition to prove the existence of
+additive inverse.</p>
+<p>Let <script type="math/tex">𝑣 ∈ 𝑉</script>, and let <script type="math/tex">w = (-1)v</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+w + v = (-1)v + 1v = ((-1) + 1)v = 0v = 0
+</script>
+</p>
+<p>So <script type="math/tex">w</script> is the additive inverse of <script type="math/tex">v</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1b6">1B.6</h3>
+<p>With these operations of addition and scalar multiplication, is
+<script type="math/tex">𝐑 ∪ {∞, −∞}</script> a vector space over <script type="math/tex">𝐑</script>? Explain.</p>
+<p><strong>Solution</strong>:</p>
+<p>commutativity: yes.</p>
+<p>associativity: no.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+u = 1, v = ∞, w = -∞ \\
+(u + v) + w = ∞ + (-∞) = 0 \\
+u + (v+w) = 1 + (∞ + (-∞)) = 1 + 0\\
+</script>
+</p>
+<p>So it's not a vector space over <script type="math/tex">\mathbb{R}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1b7">1B.7</h3>
+<p>Suppose <script type="math/tex">𝑆</script> is a nonempty set. Let <script type="math/tex">𝑉^𝑆</script> denote the set of 
+functions from <script type="math/tex">𝑆</script> to <script type="math/tex">𝑉</script>. Define a natural addition and scalar 
+multiplication on <script type="math/tex">𝑉^𝑆</script> , and show that <script type="math/tex">𝑉^𝑆</script>
+is a vector space with these definitions.</p>
+<p><strong>Solution</strong>:</p>
+<p>Similar as 1.24, we define</p>
+<ul>
+<li>For <script type="math/tex">𝑓, 𝑔 ∈ V^𝑆</script>, the sum <script type="math/tex">𝑓 + 𝑔 ∈ V^𝑆</script> is the function 
+  defined by</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+(f+g)(x) = f(x) + g(x)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑥 ∈ 𝑆</script>.</p>
+<ul>
+<li>For <script type="math/tex">𝜆 ∈ 𝐅</script> and <script type="math/tex">𝑓 ∈ V^𝑆</script>, the product <script type="math/tex">𝜆 𝑓 ∈ V^𝑆</script> is 
+  the function defined by</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+(𝜆𝑓)(𝑥) = 𝜆 𝑓 (𝑥)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑥 ∈ 𝑆</script>.</p>
+<p><strong>commutativity</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f+g)(x) = f(x) + g(x) = g(x) + f(x) = (g+f)(x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>associativity</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+((f+g)+h)(x) = (f+g)(x) + h(x) = (f(x) + g(x)) + h(x) \\
+=f(x) + (g(x) + h(x)) = f(x) + (g+h)(x) \\
+= (f + (g+h))(x)
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+((ab)f)(x) = (ab) f(x) = a (bf(x)) = a ((bf)(x)) = (a(bf))(x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>additive identity</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>Define <script type="math/tex">0(x) = 0, \forall x \in V</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f+0)(x) = f(x) + 0(x) = f(x) + 0 = f(x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>additive inverse</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>Define <script type="math/tex">g(x) = -f(x)</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f+g)(x) = f(x) + g(x) = f(x) + (-f(x)) = 0
+</script>
+</p>
+<p><strong>multiplicative identity</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+(1 \cdot f)(x) = 1 \cdot f(x) = f(x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>distributive properties</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(𝜆(𝑓+g))(𝑥) = 𝜆 ((𝑓+g)(x)) = 𝜆 (f(x) + g(x)) \\
+= 𝜆f(x) + 𝜆g(x) = (𝜆f)(x) + (𝜆g)(x) = (𝜆f + 𝜆f)(x)
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+((𝜆 + μ)f)(x) = (𝜆 + μ) f(x) = 𝜆f(x) + μf(x) \\
+= (𝜆f)(x) + (μf)(x) = (𝜆f + μf)(x)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1b8">1B.8</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is a real vector space.</p>
+<ul>
+<li>The complexification of <script type="math/tex">𝑉</script>, denoted by <script type="math/tex">𝑉^𝐂</script>, equals
+  <script type="math/tex">𝑉×𝑉</script>. An element of <script type="math/tex">𝑉^𝐂</script> is an ordered pair <script type="math/tex">(𝑢, 𝑣)</script>, where <script type="math/tex">𝑢, 𝑣 ∈ 𝑉</script>, but we write this as <script type="math/tex">𝑢 + 𝑖𝑣</script>.</li>
+<li>Addition on <script type="math/tex">𝑉^𝐂</script> is defined by</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+(𝑢_1 + 𝑖𝑣_1) + (𝑢_2 + 𝑖𝑣_2) = (𝑢_1 + 𝑢_2) + 𝑖(𝑣_1 + 𝑣_2)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑢_1, 𝑣_1, 𝑢_2, 𝑣_2 ∈ 𝑉</script>.</p>
+<ul>
+<li>Complex scalar multiplication on <script type="math/tex">𝑉^𝐂</script> is defined by</li>
+</ul>
+<p>
+<script type="math/tex; mode=display"> 
+(𝑎 + 𝑏𝑖)(𝑢 + 𝑖𝑣) = (𝑎𝑢 − 𝑏𝑣) + 𝑖(𝑎𝑣 + 𝑏𝑢)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑎, 𝑏 ∈ 𝐑</script> and all <script type="math/tex">𝑢, 𝑣 ∈ 𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p><strong>commutativity</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+(𝑢_1 + 𝑖𝑣_1) + (𝑢_2 + 𝑖𝑣_2)
+&= (𝑢_1 + 𝑢_2) + 𝑖(𝑣_1 + 𝑣_2) \\
+&= (𝑢_2 + 𝑢_1) + 𝑖(𝑣_2 + 𝑣_1) \\
+&= (𝑢_2 + 𝑖𝑣_2) + (𝑢_1 + 𝑖𝑣_1)
+\end{split}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>associativity</strong>:</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+((𝑢_1 + 𝑖𝑣_1) + (𝑢_2 + 𝑖𝑣_2)) + (𝑢_3 + 𝑖𝑣_3) \\
+&= ((𝑢_1 + 𝑢_2) + 𝑖(𝑣_1 + 𝑣_2)) + (𝑢_3 + 𝑖𝑣_3) \\
+&= ((𝑢_1 + 𝑢_2) + 𝑢_3) + 𝑖((𝑣_1 + 𝑣_2) + 𝑣_3) \\
+&= (𝑢_1 + (𝑢_2 + 𝑢_3)) + 𝑖(𝑣_1 + (𝑣_2 + 𝑣_3)) \\
+&= (𝑢_1 + 𝑖𝑣_1) + ((𝑢_2 + 𝑢_3) + 𝑖(𝑣_2 + 𝑣_3)) \\
+&= (𝑢_1 + 𝑖𝑣_1) + ((𝑢_2 + 𝑖𝑣_2) + (𝑢_3 + 𝑖𝑣_3))
+\end{split}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>additive identity</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(𝑢_1 + 𝑖𝑣_1) + (0 + 𝑖0) =
+(𝑢_1 + 0) + 𝑖(𝑣_1 + 0) = 𝑢_1 + 𝑖𝑣_1
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>additive inverse</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+(𝑢_1 + 𝑖 𝑣_1) + ((-𝑢_1) + i(-𝑣_1)) \\
+&= (u_1 + (-u_1)) + i (v_1 + (-v_1)) \\
+&= 0 + i 0 \\
+&= 0
+\end{split}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p><strong>multiplicative identity</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+(𝑢_1 + 𝑖 𝑣_1)(1 + i0) \\
+&= (u_1 \cdot 1 - v_1 \cdot 0) + i (u_1 \cdot 0 + v_1 \cdot 1) \\
+&= u_1 + i v_1
+\end{split}
+</script>
+</p>
+<p><strong>distributive properties</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+𝜆 ((𝑢_1 + 𝑖𝑣_1) + (𝑢_2 + 𝑖𝑣_2)) \\
+&= 𝜆 ((𝑢_1 + 𝑢_2) + i(𝑣_1 + 𝑣_2)) \\
+&= 𝜆(𝑢_1 + 𝑢_2) + i(𝜆(𝑣_1 + 𝑣_2)) \\
+&= (𝜆𝑢_1 + 𝜆𝑢_2) + i((𝜆𝑣_1 + 𝜆𝑣_2)) \\
+&= (𝜆𝑢_1 + 𝑖𝜆𝑣_1) + (𝜆𝑢_2 + 𝑖𝜆𝑣_2) \\
+&= 𝜆 (𝑢_1 + 𝑖𝑣_1) + 𝜆 (𝑢_2 + 𝑖𝑣_2)
+\end{split}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{split}
+(𝜆 + μ)(𝑢_1 + 𝑖𝑣_1) \\
+&= (𝜆 + μ) u_1 + i ((𝜆 + μ)v_1) \\
+&= (𝜆u_1 + μu_1) + i ((𝜆 v_1+ μ v_1)) \\
+&= (𝜆u_1 + i 𝜆 v_1) + (μu_1 + iμ v_1) \\
+&= 𝜆 (𝑢_1 + 𝑖𝑣_1) + μ (𝑢_1 + 𝑖𝑣_1)
+\end{split}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch01notes/" class="btn btn-neutral float-left" title="Chapter 01 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ch01notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
