@@ -317,3 +317,346 @@ $$
 $$
 
 $\square$
+
+## 1B Definition of Vector Space
+
+### 1B.1
+
+Prove that $−(−𝑣) = 𝑣$ for every $𝑣 ∈ 𝑉$.
+
+**Proof**:
+
+From $1.32$
+
+$$ 
+−(−𝑣) = (-1)(-v) \\
+\Rightarrow \\
+−(−𝑣) + (−𝑣) = (-1)(-v) + (1)(-v) = (-1 + 1)(-v) = 0(-v) = 0
+$$
+
+On the other hand, $v + (−𝑣) = 0$.
+
+So both of them are the additive inverse of the $(−𝑣)$.
+
+From $1.27$, they are the same.
+
+$\square$
+
+### 1B.2
+
+Suppose $𝑎 ∈ 𝐅, 𝑣 ∈ 𝑉$ , and $𝑎𝑣 = 0$. Prove that
+$𝑎 = 0$ or $𝑣 = 0$.
+
+**Proof**:
+
+If $a =0$, then it's valid. If $a \neq 0$, then
+$a$ has a multiplicative inverse $a^{-1}$.
+
+$a^{-1}(av) = (a^{-1}a)v = v$.
+
+On the other hand, from 1.31, $a^{-1}0 = 0$.
+
+So we have $v = 0$.
+
+$\square$
+
+### 1B.3
+
+Suppose $𝑣, 𝑤 ∈ 𝑉$.
+Explain why there exists a unique $𝑥 ∈ 𝑉$ such that
+$𝑣 + 3𝑥 = 𝑤$.
+
+**Proof**:
+
+We add $v$'s additive inverse on both side and get
+
+$$ 
+(-v) + (𝑣 + 3𝑥) = ((-v) + v) + 3x = 0 + 3x = 3x = w - v
+$$
+
+Then we multiply the multiplicative inverse of $3$, we
+got
+
+$$ 
+x = 3^{-1} (w-v)
+$$
+
+So $x$ is unique and satisfy this equation.
+
+$\square$
+
+### 1B.4
+
+The empty set is not a vector space. The empty set fails to 
+satisfy only one of the requirements listed in the definition of a 
+vector space (1.20). Which one?
+
+**Solution**:
+
+It must be "additive identity":
+There exists an element $0 ∈ 𝑉$ such that $𝑣 + 0 = 𝑣$ for all 
+$𝑣 ∈ 𝑉$.
+
+$\square$
+
+### 1B.5
+
+Show that in the definition of a vector space (1.20), the additive 
+inverse condition can be replaced with the condition that
+
+$$ 
+0𝑣 = 0 \text{ for all } 𝑣 ∈ 𝑉.
+$$
+
+Here the $0$ on the left side is the number $0$, and the $0$ on 
+the right side is the additive identity of $𝑉$.
+
+**Proof**:
+
+We just need to use this condition to prove the existence of
+additive inverse.
+
+Let $𝑣 ∈ 𝑉$, and let $w = (-1)v$, then
+
+$$ 
+w + v = (-1)v + 1v = ((-1) + 1)v = 0v = 0
+$$
+
+So $w$ is the additive inverse of $v$.
+
+$\square$
+
+### 1B.6
+
+With these operations of addition and scalar multiplication, is
+$𝐑 ∪ {∞, −∞}$ a vector space over $𝐑$? Explain.
+
+**Solution**:
+
+commutativity: yes.
+
+associativity: no.
+
+Let
+
+$$ 
+u = 1, v = ∞, w = -∞ \\
+(u + v) + w = ∞ + (-∞) = 0 \\
+u + (v+w) = 1 + (∞ + (-∞)) = 1 + 0\\
+$$
+
+So it's not a vector space over $\mathbb{R}$.
+
+$\square$
+
+### 1B.7
+
+Suppose $𝑆$ is a nonempty set. Let $𝑉^𝑆$ denote the set of 
+functions from $𝑆$ to $𝑉$. Define a natural addition and scalar 
+multiplication on $𝑉^𝑆$ , and show that $𝑉^𝑆$
+is a vector space with these definitions.
+
+**Solution**:
+
+Similar as 1.24, we define
+
+* For $𝑓, 𝑔 ∈ V^𝑆$, the sum $𝑓 + 𝑔 ∈ V^𝑆$ is the function 
+  defined by
+
+$$ 
+(f+g)(x) = f(x) + g(x)
+$$
+
+for all $𝑥 ∈ 𝑆$.
+
+* For $𝜆 ∈ 𝐅$ and $𝑓 ∈ V^𝑆$, the product $𝜆 𝑓 ∈ V^𝑆$ is 
+  the function defined by
+
+$$
+(𝜆𝑓)(𝑥) = 𝜆 𝑓 (𝑥)
+$$
+
+for all $𝑥 ∈ 𝑆$.
+
+**commutativity**:
+
+**Proof**:
+
+$$ 
+(f+g)(x) = f(x) + g(x) = g(x) + f(x) = (g+f)(x)
+$$
+
+$\square$
+
+**associativity**:
+
+**Proof**:
+
+$$ 
+((f+g)+h)(x) = (f+g)(x) + h(x) = (f(x) + g(x)) + h(x) \\
+=f(x) + (g(x) + h(x)) = f(x) + (g+h)(x) \\
+= (f + (g+h))(x)
+$$
+
+$$ 
+((ab)f)(x) = (ab) f(x) = a (bf(x)) = a ((bf)(x)) = (a(bf))(x)
+$$
+
+$\square$
+
+**additive identity**:
+
+**Proof**:
+
+Define $0(x) = 0, \forall x \in V$.
+
+$$ 
+(f+0)(x) = f(x) + 0(x) = f(x) + 0 = f(x)
+$$
+
+$\square$
+
+**additive inverse**:
+
+**Proof**:
+
+Define $g(x) = -f(x)$, then
+
+$$ 
+(f+g)(x) = f(x) + g(x) = f(x) + (-f(x)) = 0
+$$
+
+**multiplicative identity**:
+
+**Proof**:
+
+$$
+(1 \cdot f)(x) = 1 \cdot f(x) = f(x)
+$$
+
+$\square$
+
+**distributive properties**:
+
+$$ 
+(𝜆(𝑓+g))(𝑥) = 𝜆 ((𝑓+g)(x)) = 𝜆 (f(x) + g(x)) \\
+= 𝜆f(x) + 𝜆g(x) = (𝜆f)(x) + (𝜆g)(x) = (𝜆f + 𝜆f)(x)
+$$
+
+$$ 
+((𝜆 + μ)f)(x) = (𝜆 + μ) f(x) = 𝜆f(x) + μf(x) \\
+= (𝜆f)(x) + (μf)(x) = (𝜆f + μf)(x)
+$$
+
+$\square$
+
+### 1B.8
+
+Suppose $𝑉$ is a real vector space.
+
+* The complexification of $𝑉$, denoted by $𝑉^𝐂$, equals
+  $𝑉×𝑉$. An element of $𝑉^𝐂$ is an ordered pair $(𝑢, 𝑣)$, where $𝑢, 𝑣 ∈ 𝑉$, but we write this as $𝑢 + 𝑖𝑣$.
+* Addition on $𝑉^𝐂$ is defined by
+
+$$ 
+(𝑢_1 + 𝑖𝑣_1) + (𝑢_2 + 𝑖𝑣_2) = (𝑢_1 + 𝑢_2) + 𝑖(𝑣_1 + 𝑣_2)
+$$
+
+for all $𝑢_1, 𝑣_1, 𝑢_2, 𝑣_2 ∈ 𝑉$.
+
+* Complex scalar multiplication on $𝑉^𝐂$ is defined by
+
+$$ 
+(𝑎 + 𝑏𝑖)(𝑢 + 𝑖𝑣) = (𝑎𝑢 − 𝑏𝑣) + 𝑖(𝑎𝑣 + 𝑏𝑢)
+$$
+
+for all $𝑎, 𝑏 ∈ 𝐑$ and all $𝑢, 𝑣 ∈ 𝑉$.
+
+**Proof**:
+
+**commutativity**:
+
+$$ 
+\begin{split}
+(𝑢_1 + 𝑖𝑣_1) + (𝑢_2 + 𝑖𝑣_2)
+&= (𝑢_1 + 𝑢_2) + 𝑖(𝑣_1 + 𝑣_2) \\
+&= (𝑢_2 + 𝑢_1) + 𝑖(𝑣_2 + 𝑣_1) \\
+&= (𝑢_2 + 𝑖𝑣_2) + (𝑢_1 + 𝑖𝑣_1)
+\end{split}
+$$
+
+$\square$
+
+**associativity**:
+
+**Proof**:
+
+$$ 
+\begin{split}
+((𝑢_1 + 𝑖𝑣_1) + (𝑢_2 + 𝑖𝑣_2)) + (𝑢_3 + 𝑖𝑣_3) \\
+&= ((𝑢_1 + 𝑢_2) + 𝑖(𝑣_1 + 𝑣_2)) + (𝑢_3 + 𝑖𝑣_3) \\
+&= ((𝑢_1 + 𝑢_2) + 𝑢_3) + 𝑖((𝑣_1 + 𝑣_2) + 𝑣_3) \\
+&= (𝑢_1 + (𝑢_2 + 𝑢_3)) + 𝑖(𝑣_1 + (𝑣_2 + 𝑣_3)) \\
+&= (𝑢_1 + 𝑖𝑣_1) + ((𝑢_2 + 𝑢_3) + 𝑖(𝑣_2 + 𝑣_3)) \\
+&= (𝑢_1 + 𝑖𝑣_1) + ((𝑢_2 + 𝑖𝑣_2) + (𝑢_3 + 𝑖𝑣_3))
+\end{split}
+$$
+
+$\square$
+
+**additive identity**:
+
+$$ 
+(𝑢_1 + 𝑖𝑣_1) + (0 + 𝑖0) =
+(𝑢_1 + 0) + 𝑖(𝑣_1 + 0) = 𝑢_1 + 𝑖𝑣_1
+$$
+
+$\square$
+
+**additive inverse**:
+
+$$ 
+\begin{split}
+(𝑢_1 + 𝑖 𝑣_1) + ((-𝑢_1) + i(-𝑣_1)) \\
+&= (u_1 + (-u_1)) + i (v_1 + (-v_1)) \\
+&= 0 + i 0 \\
+&= 0
+\end{split}
+$$
+
+$\square$
+
+**multiplicative identity**:
+
+$$ 
+\begin{split}
+(𝑢_1 + 𝑖 𝑣_1)(1 + i0) \\
+&= (u_1 \cdot 1 - v_1 \cdot 0) + i (u_1 \cdot 0 + v_1 \cdot 1) \\
+&= u_1 + i v_1
+\end{split}
+$$
+
+**distributive properties**:
+
+$$ 
+\begin{split}
+𝜆 ((𝑢_1 + 𝑖𝑣_1) + (𝑢_2 + 𝑖𝑣_2)) \\
+&= 𝜆 ((𝑢_1 + 𝑢_2) + i(𝑣_1 + 𝑣_2)) \\
+&= 𝜆(𝑢_1 + 𝑢_2) + i(𝜆(𝑣_1 + 𝑣_2)) \\
+&= (𝜆𝑢_1 + 𝜆𝑢_2) + i((𝜆𝑣_1 + 𝜆𝑣_2)) \\
+&= (𝜆𝑢_1 + 𝑖𝜆𝑣_1) + (𝜆𝑢_2 + 𝑖𝜆𝑣_2) \\
+&= 𝜆 (𝑢_1 + 𝑖𝑣_1) + 𝜆 (𝑢_2 + 𝑖𝑣_2)
+\end{split}
+$$
+
+$$ 
+\begin{split}
+(𝜆 + μ)(𝑢_1 + 𝑖𝑣_1) \\
+&= (𝜆 + μ) u_1 + i ((𝜆 + μ)v_1) \\
+&= (𝜆u_1 + μu_1) + i ((𝜆 v_1+ μ v_1)) \\
+&= (𝜆u_1 + i 𝜆 v_1) + (μu_1 + iμ v_1) \\
+&= 𝜆 (𝑢_1 + 𝑖𝑣_1) + μ (𝑢_1 + 𝑖𝑣_1)
+\end{split}
+$$
+
+$\square$
