@@ -64,6 +64,24 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1c-subspaces">1C Subspaces</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#133-definition-subspace">1.33 definition: subspace</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#134-conditions-for-a-subspace">1.34 conditions for a subspace</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#135-example-subspaces">1.35 example: subspaces</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sums-of-subspaces">Sums of Subspaces</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#136-definition-sum-of-subspaces">1.36 definition: sum of subspaces</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#137-example-a-sum-of-subspaces-of-f3">1.37 example: a sum of subspaces of 𝐅^3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#140-sum-of-subspaces-is-the-smallest-containing-subspace">1.40 sum of subspaces is the smallest containing subspace</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -239,6 +257,235 @@ a function <script type="math/tex">𝑥</script> from the set <script type="math
 <script type="math/tex; mode=display"> 
 (−1)𝑣 = −𝑣, \forall v \in V
 </script>
+</p>
+<h2 id="1c-subspaces">1C Subspaces</h2>
+<h3 id="133-definition-subspace">1.33 definition: subspace</h3>
+<p>A subset <script type="math/tex">𝑈</script> of <script type="math/tex">𝑉</script> is called a subspace of <script type="math/tex">𝑉</script> if <script type="math/tex">𝑈</script> is also 
+a vector space with the same additive identity, addition, and 
+scalar multiplication as on <script type="math/tex">𝑉</script> .</p>
+<h3 id="134-conditions-for-a-subspace">1.34 conditions for a subspace</h3>
+<p>A subset <script type="math/tex">𝑈</script> of <script type="math/tex">𝑉</script> is a subspace of <script type="math/tex">𝑉</script> if and only if <script type="math/tex">𝑈</script> satisfies the following three conditions.</p>
+<p><strong>additive identity</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 ∈ 𝑈.
+</script>
+</p>
+<p><strong>closed under addition</strong>:</p>
+<p>𝑢, 𝑤 ∈ 𝑈 implies 𝑢 + 𝑤 ∈ 𝑈.</p>
+<p><strong>closed under scalar multiplication</strong>:</p>
+<p>𝑎 ∈ 𝐅 and 𝑢 ∈ 𝑈 implies 𝑎𝑢 ∈ 𝑈.</p>
+<h3 id="135-example-subspaces">1.35 example: subspaces</h3>
+<p>(a) If <script type="math/tex">𝑏 ∈ 𝐅</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\{(𝑥_1, 𝑥_2, 𝑥_3, 𝑥_4) ∈ 𝐅^4 ∶ 𝑥_3 = 5𝑥_4 + 𝑏\}
+</script>
+</p>
+<p>is a subspace of <script type="math/tex">𝐅^4</script> if and only if <script type="math/tex">𝑏 = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">U = \{(𝑥_1, 𝑥_2, 𝑥_3, 𝑥_4) ∈ 𝐅^4 ∶ 𝑥_3 = 5𝑥_4 + 𝑏\}</script>.
+If <script type="math/tex">U</script> is a subspace, then <script type="math/tex">0 \in U</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = 5 \cdot 0 + b \Rightarrow b = 0
+</script>
+</p>
+<p>Conversely, assume <script type="math/tex">b = 0</script>. Then <script type="math/tex">0 \in U</script>.</p>
+<p>If <script type="math/tex">x = (𝑥_1, 𝑥_2, 𝑥_3, 𝑥_4), y = (y_1, y_2, y_3, y_4) \in U</script>, 
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑥_3 = 5𝑥_4, y_3 = 5y_4 \\
+\Rightarrow \\
+𝑥_3 + y_3 = 5 (𝑥_4 + y_4)
+</script>
+</p>
+<p>So <script type="math/tex">x+y \in U</script>.</p>
+<p>Also we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑥_3 = 5𝑥_4 \\
+\Rightarrow \\
+a𝑥_3 = a5𝑥_4 = 5 (a𝑥_4) \\
+</script>
+</p>
+<p>So <script type="math/tex">ax \in U</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) The set of continuous real-valued functions on the interval 
+<script type="math/tex">[0, 1]</script> is a subspace of <script type="math/tex">𝐑^{[0, 1]}</script>.</p>
+<p><strong>additive identity</strong>:</p>
+<p>Since <script type="math/tex">0</script> is a continuous function, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 ∈ 𝑈.
+</script>
+</p>
+<p><strong>closed under addition</strong>:</p>
+<p>If <script type="math/tex">f, g</script> are continuous function, then <script type="math/tex">f+g</script> is also
+continuous function on <script type="math/tex">[0,1]</script>.</p>
+<p><strong>closed under scalar multiplication</strong>:</p>
+<p>If <script type="math/tex">f</script> is continuous and <script type="math/tex">a \in \mathbb{R}</script>, then
+<script type="math/tex">af</script> is also continuous.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) The set of differentiable real-valued functions on 𝐑 is a subspace of <script type="math/tex">𝐑^𝐑</script>.</p>
+<p><strong>additive identity</strong>:</p>
+<p>Since <script type="math/tex">0</script> is a differentiable function, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 ∈ 𝑈.
+</script>
+</p>
+<p><strong>closed under addition</strong>:</p>
+<p>If <script type="math/tex">f, g</script> are differentiable function, then <script type="math/tex">f+g</script> is also
+differentiable function on <script type="math/tex">\mathbb{R}</script>.</p>
+<p><strong>closed under scalar multiplication</strong>:</p>
+<p>If <script type="math/tex">f</script> is differentiable and <script type="math/tex">a \in \mathbb{R}</script>, then
+<script type="math/tex">af</script> is also differentiable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) The set of differentiable real-valued functions <script type="math/tex">𝑓</script> on the 
+interval <script type="math/tex">(0, 3)</script> such that <script type="math/tex">𝑓' (2) = 𝑏</script> is a subspace of
+<script type="math/tex">𝐑^(0, 3)</script> if and only if <script type="math/tex">𝑏 = 0</script>.</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Since <script type="math/tex">0 \in U</script>, and <script type="math/tex">0'(2) = 0</script> then <script type="math/tex">b = 0</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>
+<script type="math/tex">0</script> is differentiable and <script type="math/tex">0'(2) = 0 = b</script>.
+So <script type="math/tex">0 \in U</script>.</p>
+<p>If <script type="math/tex">f,g</script> are differentiable and <script type="math/tex">f'(2) = g'(2) = 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f+g)'(2) = f'(2) + g'(2) = 0 + 0 = 0
+</script>
+</p>
+<p>If <script type="math/tex">f</script> is differentiable and <script type="math/tex">f'(2) = 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+(af)'(2) = a (f'(2)) = a 0 = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(e) The set of all sequences of complex numbers with limit 0 is a 
+subspace of <script type="math/tex">𝐂^∞</script> .</p>
+<p><strong>Proof</strong>:</p>
+<p>First, <script type="math/tex">(0, 0, 0, \dots) \rightarrow 0</script>.
+So <script type="math/tex">0 \in U</script>.</p>
+<p>Then if <script type="math/tex">(a_n), (b_n) \rightarrow 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} (a_n+b_n) =
+\lim_{n \to \infty} a_n + \lim_{n \to \infty} b_n =
+0
+</script>
+</p>
+<p>Lastly,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lim_{n \to \infty} a b_n = a \lim_{n \to \infty} b_n = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<ul>
+<li>The subspaces of <script type="math/tex">𝐑^2</script> are precisely <script type="math/tex">\{0\}</script>, all lines in 
+  <script type="math/tex">𝐑^2</script> containing the origin, and <script type="math/tex">𝐑^2</script> .</li>
+<li>The subspaces of <script type="math/tex">𝐑^3</script> are precisely <script type="math/tex">\{0\}</script>, all lines in 
+  <script type="math/tex">𝐑^3</script> containing the origin, all planes in <script type="math/tex">𝐑^3</script> containing 
+  the origin, and <script type="math/tex">𝐑^3</script> .</li>
+</ul>
+<h3 id="sums-of-subspaces">Sums of Subspaces</h3>
+<h3 id="136-definition-sum-of-subspaces">1.36 definition: sum of subspaces</h3>
+<p>Suppose <script type="math/tex">𝑉_1, \cdots, 𝑉_𝑚</script> are subspaces of 𝑉 . The sum of 
+<script type="math/tex">𝑉_1, \cdots, 𝑉_𝑚</script>, denoted by <script type="math/tex">𝑉_1 + ⋯ + 𝑉_𝑚</script>, is the set of all possible sums of elements of <script type="math/tex">𝑉_1, \cdots, 𝑉_𝑚</script>. More
+precisely,</p>
+<p>
+<script type="math/tex; mode=display"> 
+V_1 + \cdots + V_m =
+\{
+v_1 + \cdots + v_m :
+v_1 \in V_1, \cdots, v_m \in V_m
+\}.
+</script>
+</p>
+<h3 id="137-example-a-sum-of-subspaces-of-f3">1.37 example: a sum of subspaces of <script type="math/tex">𝐅^3</script>
+</h3>
+<p>Suppose <script type="math/tex">𝑈</script> is the set of all elements of <script type="math/tex">𝐅^3</script> whose second and 
+third coordinates equal <script type="math/tex">0</script>, and 𝑊 is the set of all elements of 
+<script type="math/tex">𝐅^3</script> whose first and third coordinates equal 0:</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑈 = \{(𝑥, 0, 0) ∈ 𝐅^3 ∶ 𝑥 ∈ 𝐅\}
+\quad \text{and} \quad
+W = \{(0, y, 0) ∈ 𝐅^3 ∶ 𝑥 ∈ 𝐅\}
+</script>
+</p>
+<p>Show that <script type="math/tex">U+W = \{(𝑥, 𝑦, 0) ∈ 𝐅^3 ∶ 𝑥, 𝑦 ∈ 𝐅\}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">V = \{(𝑥, 𝑦, 0) ∈ 𝐅^3 ∶ 𝑥, 𝑦 ∈ 𝐅\}</script>.</p>
+<p>If <script type="math/tex">u = (x,0,0), w = (0,y,0)</script>, then
+<script type="math/tex">u+w = (x,y,0) \in V</script>. So <script type="math/tex">U+W \subseteq V</script>.</p>
+<p>Let <script type="math/tex">v = (x,y,0) \in V</script>, then let
+<script type="math/tex">u = (x,0,0) \in U, w = (0,y,0) \in W</script>,
+so <script type="math/tex">v = u+w \in U+W</script>, i.e. <script type="math/tex">V \subseteq U+W</script>.</p>
+<p>So <script type="math/tex">U+W = V</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="140-sum-of-subspaces-is-the-smallest-containing-subspace">1.40 sum of subspaces is the smallest containing subspace</h3>
+<p>Suppose <script type="math/tex">V_1, \cdots, V_m</script> are subspaces of 𝑉. Then
+<script type="math/tex">V_1 + \cdots + V_n</script> is the smallest
+subspace of 𝑉 containing <script type="math/tex">V_1, \cdots, V_m</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">U = V_1 + \cdots + V_n</script>, we first prove
+<script type="math/tex">U</script> is a subspace.</p>
+<p>First <script type="math/tex">0 \in V_i, i = 1, \cdots, m</script>, so
+<script type="math/tex">0 \in U</script>.</p>
+<p>Secondly, given <script type="math/tex">a, b \in U</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+a = a_1 + \cdots + a_m \\
+b = b_1 + \cdots + b_m \\
+\Rightarrow \\
+a+b = (a_1 + b_1) + \cdots + (a_n + b_n) \in U
+</script>
+</p>
+<p>Finally, if <script type="math/tex">a \in F, u \in U</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+u = v_1 + \cdots + v_m \\
+\Rightarrow \\
+au = a(v_1 + \cdots + v_m)
+= av_1 + \cdots + av_m \in U
+</script>
+</p>
+<p>So <script type="math/tex">U</script> is a subspace of <script type="math/tex">V</script>.</p>
+<p>Then assume <script type="math/tex">V_i \subseteq U', i = 1, \cdots, m</script>.
+Let <script type="math/tex">u \in V_1 + \cdots + V_n</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+u = v_1 + \cdots + v_m \\
+\Rightarrow \\
+v_i \in V_i \subseteq U' \\
+\Rightarrow \\
+u \in U'
+</script>
+</p>
+<p>So <script type="math/tex">V_1 + \cdots + V_n \subseteq U</script>.</p>
+<p>
+<script type="math/tex">\square</script>
 </p>
               
             </div>
