@@ -146,3 +146,269 @@ $$
 $$ 
 (−1)𝑣 = −𝑣, \forall v \in V
 $$
+
+## 1C Subspaces
+
+### 1.33 definition: subspace
+
+A subset $𝑈$ of $𝑉$ is called a subspace of $𝑉$ if $𝑈$ is also 
+a vector space with the same additive identity, addition, and 
+scalar multiplication as on $𝑉$ .
+
+### 1.34 conditions for a subspace
+
+A subset $𝑈$ of $𝑉$ is a subspace of $𝑉$ if and only if $𝑈$ satisfies the following three conditions.
+
+**additive identity**:
+
+$$ 
+0 ∈ 𝑈.
+$$
+
+**closed under addition**:
+
+𝑢, 𝑤 ∈ 𝑈 implies 𝑢 + 𝑤 ∈ 𝑈.
+
+**closed under scalar multiplication**:
+
+𝑎 ∈ 𝐅 and 𝑢 ∈ 𝑈 implies 𝑎𝑢 ∈ 𝑈.
+
+### 1.35 example: subspaces
+
+(a) If $𝑏 ∈ 𝐅$, then
+
+$$ 
+\{(𝑥_1, 𝑥_2, 𝑥_3, 𝑥_4) ∈ 𝐅^4 ∶ 𝑥_3 = 5𝑥_4 + 𝑏\}
+$$
+
+is a subspace of $𝐅^4$ if and only if $𝑏 = 0$.
+
+**Proof**:
+
+Let $U = \{(𝑥_1, 𝑥_2, 𝑥_3, 𝑥_4) ∈ 𝐅^4 ∶ 𝑥_3 = 5𝑥_4 + 𝑏\}$.
+If $U$ is a subspace, then $0 \in U$, then
+
+$$ 
+0 = 5 \cdot 0 + b \Rightarrow b = 0
+$$
+
+Conversely, assume $b = 0$. Then $0 \in U$.
+
+If $x = (𝑥_1, 𝑥_2, 𝑥_3, 𝑥_4), y = (y_1, y_2, y_3, y_4) \in U$, 
+then
+
+$$ 
+𝑥_3 = 5𝑥_4, y_3 = 5y_4 \\
+\Rightarrow \\
+𝑥_3 + y_3 = 5 (𝑥_4 + y_4)
+$$
+
+So $x+y \in U$.
+
+Also we have
+
+$$ 
+𝑥_3 = 5𝑥_4 \\
+\Rightarrow \\
+a𝑥_3 = a5𝑥_4 = 5 (a𝑥_4) \\
+$$
+
+So $ax \in U$.
+
+$\square$
+
+(b) The set of continuous real-valued functions on the interval 
+$[0, 1]$ is a subspace of $𝐑^{[0, 1]}$.
+
+**additive identity**:
+
+Since $0$ is a continuous function, so
+
+$$ 
+0 ∈ 𝑈.
+$$
+
+**closed under addition**:
+
+If $f, g$ are continuous function, then $f+g$ is also
+continuous function on $[0,1]$.
+
+**closed under scalar multiplication**:
+
+If $f$ is continuous and $a \in \mathbb{R}$, then
+$af$ is also continuous.
+
+$\square$
+
+(c) The set of differentiable real-valued functions on 𝐑 is a subspace of $𝐑^𝐑$.
+
+**additive identity**:
+
+Since $0$ is a differentiable function, so
+
+$$ 
+0 ∈ 𝑈.
+$$
+
+**closed under addition**:
+
+If $f, g$ are differentiable function, then $f+g$ is also
+differentiable function on $\mathbb{R}$.
+
+**closed under scalar multiplication**:
+
+If $f$ is differentiable and $a \in \mathbb{R}$, then
+$af$ is also differentiable.
+
+$\square$
+
+(d) The set of differentiable real-valued functions $𝑓$ on the 
+interval $(0, 3)$ such that $𝑓' (2) = 𝑏$ is a subspace of
+$𝐑^(0, 3)$ if and only if $𝑏 = 0$.
+
+$\Rightarrow$
+
+Since $0 \in U$, and $0'(2) = 0$ then $b = 0$.
+
+$\Leftarrow$ 
+
+$0$ is differentiable and $0'(2) = 0 = b$.
+So $0 \in U$.
+
+If $f,g$ are differentiable and $f'(2) = g'(2) = 0$, then
+
+$$ 
+(f+g)'(2) = f'(2) + g'(2) = 0 + 0 = 0
+$$
+
+If $f$ is differentiable and $f'(2) = 0$, then
+
+$$ 
+(af)'(2) = a (f'(2)) = a 0 = 0
+$$
+
+$\square$
+
+(e) The set of all sequences of complex numbers with limit 0 is a 
+subspace of $𝐂^∞$ .
+
+**Proof**:
+
+First, $(0, 0, 0, \dots) \rightarrow 0$.
+So $0 \in U$.
+
+Then if $(a_n), (b_n) \rightarrow 0$, then
+
+$$ 
+\lim_{n \to \infty} (a_n+b_n) =
+\lim_{n \to \infty} a_n + \lim_{n \to \infty} b_n =
+0
+$$
+
+Lastly,
+
+$$ 
+\lim_{n \to \infty} a b_n = a \lim_{n \to \infty} b_n = 0
+$$
+
+$\square$
+
+* The subspaces of $𝐑^2$ are precisely $\{0\}$, all lines in 
+  $𝐑^2$ containing the origin, and $𝐑^2$ .
+* The subspaces of $𝐑^3$ are precisely $\{0\}$, all lines in 
+  $𝐑^3$ containing the origin, all planes in $𝐑^3$ containing 
+  the origin, and $𝐑^3$ .
+
+### Sums of Subspaces
+
+### 1.36 definition: sum of subspaces
+
+Suppose $𝑉_1, \cdots, 𝑉_𝑚$ are subspaces of 𝑉 . The sum of 
+$𝑉_1, \cdots, 𝑉_𝑚$, denoted by $𝑉_1 + ⋯ + 𝑉_𝑚$, is the set of all possible sums of elements of $𝑉_1, \cdots, 𝑉_𝑚$. More
+precisely,
+
+$$ 
+V_1 + \cdots + V_m =
+\{
+v_1 + \cdots + v_m :
+v_1 \in V_1, \cdots, v_m \in V_m
+\}.
+$$
+
+### 1.37 example: a sum of subspaces of $𝐅^3$
+
+Suppose $𝑈$ is the set of all elements of $𝐅^3$ whose second and 
+third coordinates equal $0$, and 𝑊 is the set of all elements of 
+$𝐅^3$ whose first and third coordinates equal 0:
+
+$$ 
+𝑈 = \{(𝑥, 0, 0) ∈ 𝐅^3 ∶ 𝑥 ∈ 𝐅\}
+\quad \text{and} \quad
+W = \{(0, y, 0) ∈ 𝐅^3 ∶ 𝑥 ∈ 𝐅\}
+$$
+
+Show that $U+W = \{(𝑥, 𝑦, 0) ∈ 𝐅^3 ∶ 𝑥, 𝑦 ∈ 𝐅\}$.
+
+**Proof**:
+
+Let $V = \{(𝑥, 𝑦, 0) ∈ 𝐅^3 ∶ 𝑥, 𝑦 ∈ 𝐅\}$.
+
+If $u = (x,0,0), w = (0,y,0)$, then
+$u+w = (x,y,0) \in V$. So $U+W \subseteq V$.
+
+Let $v = (x,y,0) \in V$, then let
+$u = (x,0,0) \in U, w = (0,y,0) \in W$,
+so $v = u+w \in U+W$, i.e. $V \subseteq U+W$.
+
+So $U+W = V$.
+
+$\square$
+
+### 1.40 sum of subspaces is the smallest containing subspace
+
+Suppose $V_1, \cdots, V_m$ are subspaces of 𝑉. Then
+$V_1 + \cdots + V_n$ is the smallest
+subspace of 𝑉 containing $V_1, \cdots, V_m$.
+
+**Proof**:
+
+Let $U = V_1 + \cdots + V_n$, we first prove
+$U$ is a subspace.
+
+First $0 \in V_i, i = 1, \cdots, m$, so
+$0 \in U$.
+
+Secondly, given $a, b \in U$, then
+
+$$ 
+a = a_1 + \cdots + a_m \\
+b = b_1 + \cdots + b_m \\
+\Rightarrow \\
+a+b = (a_1 + b_1) + \cdots + (a_n + b_n) \in U
+$$
+
+Finally, if $a \in F, u \in U$, then
+
+$$ 
+u = v_1 + \cdots + v_m \\
+\Rightarrow \\
+au = a(v_1 + \cdots + v_m)
+= av_1 + \cdots + av_m \in U
+$$
+
+So $U$ is a subspace of $V$.
+
+Then assume $V_i \subseteq U', i = 1, \cdots, m$.
+Let $u \in V_1 + \cdots + V_n$, so
+
+$$ 
+u = v_1 + \cdots + v_m \\
+\Rightarrow \\
+v_i \in V_i \subseteq U' \\
+\Rightarrow \\
+u \in U'
+$$ 
+
+So $V_1 + \cdots + V_n \subseteq U$.
+
+$\square$
