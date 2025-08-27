@@ -660,3 +660,624 @@ $$
 $$
 
 $\square$
+
+## 1C Subspaces
+
+### 1C.1
+
+For each of the following subsets of $𝐅^3$, determine whether it 
+is a subspace of $𝐅^3$.
+
+(a) $\{(𝑥_1, 𝑥_2, 𝑥_3) ∈ 𝐅^3 ∶ 𝑥_1 + 2𝑥_2 + 3𝑥_3 = 0\}$
+
+**Solution**:
+
+Yes. Let it be $U$.
+
+$$ 
+0 + 2 \cdot 0 + 3 \cdot 0 = 0 
+$$
+
+So $(0,0,0) \in U$.
+
+$$ 
+(x_1 + y_1) + 2(x_2 + y_2) + 3(x_3 + y_3) = \\
+(𝑥_1 + 2𝑥_2 + 3𝑥_3) + (y_1 + 2y_2 + 3y_3) = 0 + 0 = 0
+$$
+
+So $U$ is closed under addition.
+
+$$ 
+a x_1 + 2 (a x_2) + 3 (a x_3) = \\
+a (𝑥_1 + 2𝑥_2 + 3𝑥_3) = a 0 = 0
+$$
+
+So $U$ is closed under scalar multiplication.
+
+$\square$
+
+(b) $\{(𝑥_1, 𝑥_2, 𝑥_3) ∈ 𝐅^3 ∶ 𝑥_1 + 2𝑥_2 + 3𝑥_3 = 4\}$
+
+**Solution**:
+
+$(0,0,0) \not\in U$.
+
+(c) $\{(𝑥_1, 𝑥_2, 𝑥_3) ∈ 𝐅^3 ∶ 𝑥_1𝑥_2𝑥_3 = 0\}$
+
+**Solution**:
+
+No. Consider
+
+$$ 
+u = (1, 0, 1), v = (1, 1, 0)
+$$
+
+$u + v = (1, 1, 1)$, then $u + v \not\in U$.
+
+$\square$
+
+(d) $\{(𝑥_1, 𝑥_2, 𝑥_3) ∈ 𝐅^3 ∶ 𝑥_1 = 5 𝑥_3\}$
+
+**Solution**
+
+Yes. $0 \in U$.
+
+$x_1 + y_1 = 5 x_3 + 5 y_3 = 5 (x_3 + y_3)$.
+
+$$ 
+ax_1 = a (5 x_3) = (a5) x_3 = (5a) x_3 = 5 (a x_3)
+$$
+
+$\square$
+
+### 1C.2
+
+Verify all assertions about subspaces in Example 1.35.
+
+**Proof**: See my notes.
+
+### 1C.3
+
+Show that the set of differentiable real-valued functions $𝑓$ on 
+the interval $(−4, 4)$ such that $𝑓'(−1) = 3𝑓(2)$ is a subspace 
+of $𝐑^{(−4, 4)}$.
+
+**Proof**:
+
+First, the $f(x) = 0 \in U$.
+Because $f'(x) = 0$, so $f'(-1) = 3 f(2) = 0$.
+
+Secondly,
+
+$$ 
+(f+g)'(-1) = f'(-1) + g'(-1) = 3 f(2) + 3 g(2) = 3(f+g) (2)
+$$
+
+Thirdly,
+
+$$ 
+(af)'(-1) = a(f'(-1)) = a(3f(2)) = 3 ((af)(2))
+$$
+
+$\square$
+
+### 1C.4
+
+Suppose $𝑏 ∈ 𝐑$. Show that the set of continuous real-valued 
+functions $𝑓$ on the interval $[0, 1]$ such that
+$\int_{0}^{1} 𝑓 = 𝑏$ is a subspace of $𝐑^{[0, 1]}$ if and only 
+if $𝑏 = 0$.
+
+**Proof**:
+
+$\Rightarrow$
+
+Since $U$ is a subspace, then $0 \in U$.
+$\int_{0}^{1} 0 = 0$, so $b = 0$.
+
+$\Leftarrow$
+
+First, $0 \in U$.
+
+Secondly,
+
+$$ 
+\int_{0}^{1} (f+g) = 
+\int_{0}^{1} f + 
+\int_{0}^{1} g = 0 + 0 = 0 
+$$
+
+Thirdly,
+
+$$ 
+\int_{0}^{1} (af) = a \int_{0}^{1} f = a 0 = 0
+$$
+
+$\square$
+
+### 1C.5
+
+Is $𝐑^2$ a subspace of the complex vector space $𝐂^2$?
+
+**Solution**:
+
+No. Consider $a = i, u = (1, 0)$,
+then $au = (i,0) \not\in 𝐑^2$.
+
+So addition is not closed.
+
+$\square$
+
+### 1C.6
+
+(a) Is $\{(𝑎, 𝑏, 𝑐) ∈ 𝐑^3 ∶ 𝑎^3 = 𝑏^3\}$ a subspace of 
+$𝐑^3$?
+
+**Solution**:
+
+If $a, b \in \mathbb{R}^3$, and $a^3 = b^3$, then
+$a = b$.
+
+So if
+
+$$ 
+u = (a_1, b_1, c_1) \in U,
+v = (a_2, b_2, c_2) \in U,
+$$
+
+then $a_1 = b_1, a_2 = b_2$, then $a_1+b_1 = a_2+b_2$.
+So $u+v \in U$.
+
+So it's a subspace of $𝐑^3$.
+
+(b) Is $\{(𝑎, 𝑏, 𝑐) ∈ 𝐂^3 ∶ 𝑎^3 = 𝑏^3\}$ a subspace of $𝐂^3$.
+
+Consider
+
+$$ 
+u = (1, 1, 0),
+v = (\frac{-1 + i\sqrt[]{3}}{2}, 1)
+$$
+
+Note
+
+$$
+\left( \frac{-1 + i\sqrt[]{3}}{2} \right)^2 \\
+= \frac{1 - 2 i \sqrt[]{3} - 3}{4} \\
+= \frac{-1 - i \sqrt[]{3}}{2}
+$$
+
+So
+
+$$ 
+\left( \frac{-1 + i\sqrt[]{3}}{2} \right)^3 = 1
+$$
+
+Now
+
+$$ 
+\left( \frac{1 + i\sqrt[]{3}}{2} \right)^2 \\
+= \frac{1 + 2 i \sqrt[]{3} - 3}{4} \\
+= \frac{-1 + i \sqrt[]{3}}{2}
+$$
+
+Then
+
+$$ 
+\left( \frac{1 + i\sqrt[]{3}}{2} \right)^3 = -1
+$$
+
+So $u+v \not\in U$.
+
+$\square$
+
+### 1C.7
+
+Prove or give a counterexample: If $𝑈$ is a nonempty subset of 
+$𝐑^2$ such that $𝑈$ is closed under addition and under taking 
+additive inverses (meaning $−𝑢 ∈ 𝑈$ whenever $𝑢 ∈ 𝑈$), then
+$𝑈$ is a subspace of $𝐑^2$.
+
+**Solution**:
+
+Counterexample: Consider
+
+$$ 
+U =
+\{
+(n, 0) | n \in \mathbb{Z}
+\}
+$$
+
+$\square$
+
+### 1C.8
+
+Give an example of a nonempty subset $𝑈$ of $𝐑^2$ such that $𝑈$ 
+is closed under scalar multiplication, but $𝑈$ is not a subspace 
+of $𝐑^2$.
+
+**Solution**
+
+Consider
+
+$$ 
+U =
+\{(a, 0) | a \in \mathbb{R}\}
+\cup
+\{(0, b) | b \in \mathbb{R}\}
+$$
+
+$\square$
+
+### 1C.9
+
+A function $𝑓 ∶ 𝐑 → 𝐑$ is called periodic if there exists a 
+positive number $𝑝$ such that $𝑓(𝑥) = 𝑓(𝑥 + 𝑝)$ for all
+$𝑥 ∈ 𝐑$. Is the set of periodic functions
+from $𝐑$ to $𝐑$ a subspace of $𝐑^𝐑$ ? Explain.
+
+**Solution**:
+
+This example is inspired from
+"Lectures on the Fourier Transform and Its Applications"
+exercise 1.2.
+
+Let
+
+$$ 
+f(t) = \begin{cases}
+  1 &\text{if } t \in \mathbb{Z} \\
+  0 &\text{otherwise} \\
+\end{cases} 
+$$
+
+$$ 
+g(t) = \begin{cases}
+  1 &\text{if } t = n \sqrt[]{2}, n \in \mathbb{Z}\\
+  0 &\text{otherwise} \\
+\end{cases} 
+$$
+
+$f+g$ cannot be a periodic function, since
+$(f+g)(t) \neq 2, t \neq 0$.
+
+If $f(t) = g(t) = 1$, then $t = n = m \sqrt[]{2}$.
+That means $n/m = \sqrt[]{2}$.
+
+$\square$
+
+### 1C.10
+
+Suppose $𝑉_1$ and $𝑉_2$ are subspaces of $𝑉$.
+Prove that the intersection $𝑉_1 ∩ 𝑉_2$
+is a subspace of $𝑉$.
+
+**Proof**:
+
+$0 \in V_1, 0 \in V_2$, so $0 \in 𝑉_1 ∩ 𝑉_2$.
+
+$a,b \in V_1, a,b \in V_2$ so $a+b \in 𝑉_1 ∩ 𝑉_2$.
+
+$k \in F, a \in 𝑉_1 ∩ 𝑉_2$, so $k a \in 𝑉_1 ∩ 𝑉_2$.
+
+$\square$
+
+### 1C.11
+
+Prove that the intersection of every collection of subspaces of 𝑉 
+is a subspace of 𝑉 .
+
+**Proof**: Very similar to the previous one.
+
+$\square$
+
+### 1C.12
+
+Prove that the union of two subspaces of $𝑉$ is a subspace of 
+$𝑉$ if and only if one of the subspaces is contained in the other.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $U, W, U \cup W$ are subspaces. If $a \in U, a \not\in W$.
+Now assume $b \in W$, since $a+b \in U \cup W$.
+If $a+b \in W$, then $(a+b) + (-b) = a \in W$, we have contradition.
+
+So $a+b \in U$, then $(a+b) + (-a) = b \in U$, so
+$W \subseteq U$.
+
+$\Leftarrow$ is obvious.
+
+$\square$
+
+### 1C.13
+
+Prove that the union of three subspaces of $𝑉$ is a subspace of $𝑉$ if and only if one of the subspaces contains the other two.
+
+This exercise is surprisingly harder than Exercise 12, possibly because this exercise is not true if we replace $𝐅$ with a field containing only two elements.
+
+**Proof**:
+
+Assume $a, b, c$ are unique elements in $A, B, C$.
+
+Now, consider $a+b$.
+
+If $a+b \in A$, then $b \in A$, we have contradition.
+
+If $a+b \in B$, then $a \in B$, we have contradition.
+
+So $a+b \in C$. For the same reason, $a-b \in C$.
+
+That means $a, b \in C$. We have contradition.
+
+This means, one the following must be true:
+
+$$ 
+A \subseteq B \cup C \text{ or }
+B \subseteq C \cup A \text{ or }
+C \subseteq A \cup B
+$$
+
+In either case, this problem is reduced to 1C.12.
+
+$\square$
+
+### 1C.14
+
+Suppose
+
+$$ 
+𝑈 = \{(𝑥, −𝑥, 2𝑥) ∈ 𝐅^3 ∶ 𝑥 ∈ 𝐅\}
+\quad \text{and} \quad
+𝑊 = \{(𝑥, 𝑥, 2𝑥) ∈ 𝐅^3 ∶ 𝑥 ∈ 𝐅\}.
+$$
+
+Describe $𝑈 + 𝑊$ using symbols, and also give a 
+description of $𝑈 + 𝑊$ that uses no symbols.
+
+**Solution**:
+
+$$ 
+U+W = \{
+(x, y, 2x) \in 𝐅^3 ∶ 𝑥 ∈ 𝐅\}
+$$
+
+$\square$
+
+### 1C.15
+
+Suppose $𝑈$ is a subspace of $𝑉$ . What is $𝑈 + 𝑈$?
+
+**Solution**:
+
+It's still $U$.
+
+$\square$
+
+### 1C.16
+
+Is the operation of addition on the subspaces of
+$𝑉$ commutative? In other words, if $𝑈$ and $𝑊$ are 
+subspaces of $𝑉$ , is $𝑈 + 𝑊 = 𝑊 + 𝑈$?
+
+**Solution**:
+
+Yes, this is because the vector space itself is
+commutative.
+
+$\square$
+
+### 1C.17
+
+Is the operation of addition on the subspaces of $𝑉$ 
+associative? In other words, if
+$𝑉_1, 𝑉_2, 𝑉_3$ are subspaces of $𝑉$ , is
+
+$$ 
+(V_1 + V_2) + V_3 = V_1 + (V_2 + V_3)?
+$$
+
+**Solution**:
+
+Yes, this is because the vector space itself is
+associative.
+
+$\square$
+
+### 1C.18
+
+Does the operation of addition on the subspaces of $𝑉$ 
+have an additive identity? Which subspaces have additive 
+inverses?
+
+**Solution**:
+
+Yes. The subspace contains only $0$. Only itself has
+additive inverse, which is itself.
+
+$\square$
+
+### 1C.19
+
+Prove or give a counterexample: If $𝑉_1, 𝑉_2, 𝑈$ are 
+subspaces of $𝑉$ such that
+
+$$ 
+V_1 + U = V_2 + U
+$$
+
+then $𝑉_1 = 𝑉_2$.
+
+**Solution**:
+
+Counterexample, consider
+
+$$ 
+V_1 = \{(x, 0, 0) \in F^3\} \\
+V_2 = \{(0, y, 0) \in F^3\} \\
+U = \{(x, y, 0) \in F^3\} \\
+$$
+
+Then $V_1 + U = U = V_2 + U$, but $V_1 \neq V_2$.
+
+$\square$
+
+### 1C.20
+
+Suppose
+
+$$ 
+𝑈 = \{(𝑥, 𝑥, 𝑦, 𝑦) ∈ 𝐅^4 ∶ 𝑥, 𝑦 ∈ 𝐅\}.
+$$
+
+Find a subspace $𝑊$ of $𝐅^4$ such that $𝐅^4 = 𝑈 ⊕ 𝑊$.
+
+**Solution**:
+
+Consider
+
+$$ 
+W = \{(𝑥, -𝑥, 𝑦, -𝑦) ∈ 𝐅^4 ∶ 𝑥, 𝑦 ∈ 𝐅\}.
+$$
+
+Then $U \cap W = 0$.
+
+$\square$
+
+### 1C.21
+
+Suppose
+
+$𝑈 = \{(𝑥, 𝑦, 𝑥 + 𝑦, 𝑥 − 𝑦, 2𝑥) ∈ 𝐅^5 ∶ 𝑥, 𝑦 ∈ 𝐅\}.$
+
+Find a subspace $𝑊$ of $𝐅^5$ such that $𝐅^5 = 𝑈 ⊕ 𝑊$.
+
+**Solution**
+
+Consider
+
+$$ 
+W = \{(0, 0, a, b, c) ∈ 𝐅^5 ∶ a, b, c ∈ 𝐅 \}.
+$$
+
+$\square$
+
+### 1C.22
+
+Suppose
+
+$𝑈 = \{(𝑥, 𝑦, 𝑥 + 𝑦, 𝑥 − 𝑦, 2𝑥) ∈ 𝐅^5 ∶ 𝑥, 𝑦 ∈ 𝐅\}.$
+
+Find a subspace $𝑊_1, W_2, W_3$ of $𝐅^5$ such that $𝐅^5 = 𝑈 ⊕ 𝑊_1 ⊕ 𝑊_2 ⊕ 𝑊_3$.
+
+**Solution**:
+
+Consider
+
+$$ 
+W_1 = \{(0, 0, x_1, 0, 0) ∈ 𝐅^5 ∶ w_1, x_1, y_1, z_1 ∈ 𝐅 \} \\
+W_2 = \{(0, 0, 0, y_2, 0) ∈ 𝐅^5 ∶ y_2, z_2 ∈ 𝐅 \} \\
+W_3 = \{(0, 0, 0, 0, z_3) ∈ 𝐅^5 ∶ z_3 ∈ 𝐅 \} \\
+$$
+
+So if $u + w_1 + w_2 + w_3 = 0$, then we must have
+
+$$
+\begin{cases}
+  x + 0 + 0 + 0 = 0 &\text{}\\
+  y + 0 + 0 + 0 = 0 &\text{}\\
+  (x + y) + x_1 + 0 + 0 = 0 &\text{}\\
+  (x - y) + 0 + y_2 + 0 = 0 &\text{}\\
+  2x + 0 + 0 + z_3 = 0 &\text{}\\
+\end{cases}
+$$
+
+then we must have
+
+$$ 
+x = y = x_1 = y_2 = z_3 = 0 \\
+\Rightarrow \\
+u = w_1 = w_2 = w_3 = 0
+$$
+
+So $𝐅^5 = 𝑈 ⊕ 𝑊_1 ⊕ 𝑊_2 ⊕ 𝑊_3$.
+
+$\square$
+
+### 1C.23
+
+Prove or give a counterexample: If $𝑉_1, 𝑉_2, 𝑈$ are subspaces of $𝑉$ such that
+
+$$ 
+𝑉 = 𝑉_1 ⊕ 𝑈
+\quad \text{and} \quad
+𝑉 = 𝑉_2 ⊕ 𝑈,
+$$
+
+then $𝑉_1 = 𝑉_2$.
+
+Hint: When trying to discover whether a conjecture in 
+linear algebra is true or false, it is often useful to 
+start by experimenting in $𝐅^2$.
+
+**Solution**:
+
+Counterexample:
+
+As hinted, let $F = \mathbb{R}$.
+
+$$ 
+U = (x, 0) \\
+V_1 = (0, y) \\
+V_2 = (z, z) \\
+$$
+
+So
+
+$$ 
+𝑉_1 ⊕ 𝑈 = \mathbb{R}^2 = 𝑉_2 ⊕ 𝑈
+$$
+
+But $V_1 \neq V_2$.
+
+$\square$
+
+### 1C.24
+
+A function $𝑓 ∶ 𝐑 → 𝐑$ is called even if
+
+$$ 
+f(-x) = f(x)
+$$
+
+for all $𝑥 ∈ 𝐑$. A function $𝑓 ∶ 𝐑 → 𝐑$ is called odd if
+
+$$ 
+f(-x) = -f(x)
+$$
+
+for all $𝑥 ∈ 𝐑$. Let $𝑉_e$ denote the set of 
+real-valued even functions on $𝐑$
+and let $𝑉_o$ denote the set of real-valued odd 
+functions on $𝐑$. Show that
+$𝐑^𝐑 = 𝑉_e ⊕ 𝑉_o$.
+
+**Solution**:
+
+We have seen this again in the book of 
+"Lectures on the Fourier Transform and Its Applications"
+Appendix B.
+
+Let
+
+$$ 
+f_e(x) = \frac{f(x) + f(-x)}{2} \\
+f_o(x) = \frac{f(x) - f(-x)}{2} \\
+$$
+
+Then $f_e$ is even, and $f_o$ is odd.
+Furthermore, $f = f_e + f_o$.
+
+$\square$
