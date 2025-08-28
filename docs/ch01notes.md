@@ -412,3 +412,137 @@ $$
 So $V_1 + \cdots + V_n \subseteq U$.
 
 $\square$
+
+### Direct Sums
+
+### 1.41 definition: direct sum, $⊕$
+
+Suppose $V_1, \cdots, V_m$ are subspaces of $𝑉$.
+
+* The sum $V_1 + \cdots + V_m$ is called a direct sum if each 
+  element of $V_1 + \cdots + V_m$ can be written in only one 
+  way as a sum $v_1 + \cdots + v_m$, where each
+  $𝑣_𝑘 ∈ 𝑉_𝑘$.
+
+* If $V_1 + \cdots + V_m$ is a direct sum, then
+  $V_1 ⊕ \cdots ⊕ V_m$ denotes $V_1 + \cdots + V_m$,
+  with the $⊕$ notation serving as an indication that this is 
+  a direct sum.
+
+### 1.42 example: a direct sum of two subspaces
+
+$$
+𝑈 = \{(𝑥, 𝑦, 0) ∈ 𝐅^3 ∶ 𝑥, 𝑦 ∈ 𝐅\}
+\quad \text{and} \quad
+𝑊 = \{(0, 0, 𝑧) ∈ 𝐅^3 ∶ 𝑧 ∈ 𝐅\}.
+$$
+
+Then $𝐅^3 = 𝑈 ⊕ 𝑊$.
+
+> The symbol $⊕$, which is a plus sign
+> inside a circle, reminds us that we are
+> dealing with a special type of sum of
+> subspaces—each element in the direct
+> sum can be represented in only one way
+> as a sum of elements from the specified
+> subspaces.
+
+### 1.44 example: a sum that is not a direct sum
+
+Suppose
+
+$$ 
+𝑉_1 = \{(𝑥, 𝑦, 0) ∈ 𝐅^3 ∶ 𝑥, 𝑦 ∈ 𝐅\}, \\
+𝑉_2 = \{(0, 0, 𝑧) ∈ 𝐅^3 ∶ 𝑧 ∈ 𝐅\}, \\
+𝑉_3 = \{(0, 𝑦, 𝑦) ∈ 𝐅^3 ∶ 𝑦 ∈ 𝐅\}. \\
+$$
+
+Note we have
+
+$$ 
+(0, 0, 0) = (0, 1, 0) + (0, 0, 1) + (0, −1, −1) \\
+(0, 0, 0) = (0, 0, 0) + (0, 0, 0) + (0, 0, 0)
+$$
+
+$\square$
+
+### 1.45 condition for a direct sum
+
+Suppose $V_1, \cdots, V_m$ are subspaces of $𝑉$.
+Then $V_1 + \cdots + V_m$ is a direct sum if
+and only if the only way to write $0$ as a sum
+$𝑣_1 +⋯ + 𝑣_𝑚$, where each $𝑣_𝑘 ∈ 𝑉_𝑘$,
+is by taking each $𝑣_𝑘$ equal to $0$.
+
+**Proof**:
+
+$\Rightarrow$
+
+By definition, if $V_1 + \cdots + V_m$ is a direct sum,
+then $0$ can be written in only one way,
+since $0 + \cdots + 0 = 0$, then it is the only way.
+
+$\Leftarrow$
+
+Assume 
+
+$$ 
+v = v_1 + \cdots + v_m \\
+v = v_1' + \cdots + v_m' \\
+$$
+
+Then
+
+$$ 
+0 = v - v = (v_1 - v_1') + \cdots + (v_m - v_m')
+$$
+
+Then
+
+$$ 
+v_1 = v_1', \cdots, v_m = v_m'
+$$
+
+So $V_1 + \cdots + V_m$ is a direct sum.
+
+$\square$
+
+### 1.46 direct sum of two subspaces
+
+Suppose $𝑈$ and $𝑊$ are subspaces of $𝑉$. Then
+
+$$ 
+U+W \text{ is a direct sum} \Longleftrightarrow
+𝑈 ∩ 𝑊 = \{0\}.
+$$
+
+**Proof**:
+
+$\Rightarrow$
+
+If $U+W$ is a direct sum, and assume $u \in 𝑈 ∩ 𝑊$,
+then $-u \in 𝑈 ∩ 𝑊$. So
+
+$$ 
+u + (-u) = 0
+$$
+
+Then $u = 0$. So $𝑈 ∩ 𝑊 = \{0\}$.
+
+$\Leftarrow$
+
+If $u + w = 0, u \in U, w \in W$, then $w = -u \in U$.
+So $w \in 𝑈 ∩ 𝑊 \Rightarrow w = 0$. So $u = 0$.
+Then from 1.45, $U+W$ is a direct sum.
+
+$\square$
+
+> Sums of subspaces are analogous to
+unions of subsets. Similarly, direct
+sums of subspaces are analogous to
+disjoint unions of subsets. No two sub-
+spaces of a vector space can be disjoint,
+because both contain 0. So disjoint-
+ness is replaced, at least in the case
+of two subspaces, with the requirement
+that the intersection equal {0}.

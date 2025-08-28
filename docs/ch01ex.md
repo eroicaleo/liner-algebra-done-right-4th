@@ -1279,5 +1279,11 @@ $$
 
 Then $f_e$ is even, and $f_o$ is odd.
 Furthermore, $f = f_e + f_o$.
+This proves $𝐑^𝐑 = 𝑉_e + 𝑉_o$.
+
+Now if $f \in 𝑉_e \cap 𝑉_o$, then $f(x) = f(-x) = -f(x)$
+so $f(x) = 0$, i.e. $𝑉_e \cap 𝑉_o = 0$.
+
+So $𝐑^𝐑 = 𝑉_e ⊕ 𝑉_o$.
 
 $\square$
