@@ -80,6 +80,18 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#140-sum-of-subspaces-is-the-smallest-containing-subspace">1.40 sum of subspaces is the smallest containing subspace</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#direct-sums">Direct Sums</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#141-definition-direct-sum">1.41 definition: direct sum, ⊕</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#142-example-a-direct-sum-of-two-subspaces">1.42 example: a direct sum of two subspaces</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#144-example-a-sum-that-is-not-a-direct-sum">1.44 example: a sum that is not a direct sum</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#145-condition-for-a-direct-sum">1.45 condition for a direct sum</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#146-direct-sum-of-two-subspaces">1.46 direct sum of two subspaces</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -487,6 +499,140 @@ u \in U'
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h3 id="direct-sums">Direct Sums</h3>
+<h3 id="141-definition-direct-sum">1.41 definition: direct sum, <script type="math/tex">⊕</script>
+</h3>
+<p>Suppose <script type="math/tex">V_1, \cdots, V_m</script> are subspaces of <script type="math/tex">𝑉</script>.</p>
+<ul>
+<li>
+<p>The sum <script type="math/tex">V_1 + \cdots + V_m</script> is called a direct sum if each 
+  element of <script type="math/tex">V_1 + \cdots + V_m</script> can be written in only one 
+  way as a sum <script type="math/tex">v_1 + \cdots + v_m</script>, where each
+  <script type="math/tex">𝑣_𝑘 ∈ 𝑉_𝑘</script>.</p>
+</li>
+<li>
+<p>If <script type="math/tex">V_1 + \cdots + V_m</script> is a direct sum, then
+  <script type="math/tex">V_1 ⊕ \cdots ⊕ V_m</script> denotes <script type="math/tex">V_1 + \cdots + V_m</script>,
+  with the <script type="math/tex">⊕</script> notation serving as an indication that this is 
+  a direct sum.</p>
+</li>
+</ul>
+<h3 id="142-example-a-direct-sum-of-two-subspaces">1.42 example: a direct sum of two subspaces</h3>
+<p>
+<script type="math/tex; mode=display">
+𝑈 = \{(𝑥, 𝑦, 0) ∈ 𝐅^3 ∶ 𝑥, 𝑦 ∈ 𝐅\}
+\quad \text{and} \quad
+𝑊 = \{(0, 0, 𝑧) ∈ 𝐅^3 ∶ 𝑧 ∈ 𝐅\}.
+</script>
+</p>
+<p>Then <script type="math/tex">𝐅^3 = 𝑈 ⊕ 𝑊</script>.</p>
+<blockquote>
+<p>The symbol <script type="math/tex">⊕</script>, which is a plus sign
+inside a circle, reminds us that we are
+dealing with a special type of sum of
+subspaces—each element in the direct
+sum can be represented in only one way
+as a sum of elements from the specified
+subspaces.</p>
+</blockquote>
+<h3 id="144-example-a-sum-that-is-not-a-direct-sum">1.44 example: a sum that is not a direct sum</h3>
+<p>Suppose</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑉_1 = \{(𝑥, 𝑦, 0) ∈ 𝐅^3 ∶ 𝑥, 𝑦 ∈ 𝐅\}, \\
+𝑉_2 = \{(0, 0, 𝑧) ∈ 𝐅^3 ∶ 𝑧 ∈ 𝐅\}, \\
+𝑉_3 = \{(0, 𝑦, 𝑦) ∈ 𝐅^3 ∶ 𝑦 ∈ 𝐅\}. \\
+</script>
+</p>
+<p>Note we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+(0, 0, 0) = (0, 1, 0) + (0, 0, 1) + (0, −1, −1) \\
+(0, 0, 0) = (0, 0, 0) + (0, 0, 0) + (0, 0, 0)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="145-condition-for-a-direct-sum">1.45 condition for a direct sum</h3>
+<p>Suppose <script type="math/tex">V_1, \cdots, V_m</script> are subspaces of <script type="math/tex">𝑉</script>.
+Then <script type="math/tex">V_1 + \cdots + V_m</script> is a direct sum if
+and only if the only way to write <script type="math/tex">0</script> as a sum
+<script type="math/tex">𝑣_1 +⋯ + 𝑣_𝑚</script>, where each <script type="math/tex">𝑣_𝑘 ∈ 𝑉_𝑘</script>,
+is by taking each <script type="math/tex">𝑣_𝑘</script> equal to <script type="math/tex">0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>By definition, if <script type="math/tex">V_1 + \cdots + V_m</script> is a direct sum,
+then <script type="math/tex">0</script> can be written in only one way,
+since <script type="math/tex">0 + \cdots + 0 = 0</script>, then it is the only way.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume </p>
+<p>
+<script type="math/tex; mode=display"> 
+v = v_1 + \cdots + v_m \\
+v = v_1' + \cdots + v_m' \\
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = v - v = (v_1 - v_1') + \cdots + (v_m - v_m')
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_1 = v_1', \cdots, v_m = v_m'
+</script>
+</p>
+<p>So <script type="math/tex">V_1 + \cdots + V_m</script> is a direct sum.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="146-direct-sum-of-two-subspaces">1.46 direct sum of two subspaces</h3>
+<p>Suppose <script type="math/tex">𝑈</script> and <script type="math/tex">𝑊</script> are subspaces of <script type="math/tex">𝑉</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+U+W \text{ is a direct sum} \Longleftrightarrow
+𝑈 ∩ 𝑊 = \{0\}.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>If <script type="math/tex">U+W</script> is a direct sum, and assume <script type="math/tex">u \in 𝑈 ∩ 𝑊</script>,
+then <script type="math/tex">-u \in 𝑈 ∩ 𝑊</script>. So</p>
+<p>
+<script type="math/tex; mode=display"> 
+u + (-u) = 0
+</script>
+</p>
+<p>Then <script type="math/tex">u = 0</script>. So <script type="math/tex">𝑈 ∩ 𝑊 = \{0\}</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>If <script type="math/tex">u + w = 0, u \in U, w \in W</script>, then <script type="math/tex">w = -u \in U</script>.
+So <script type="math/tex">w \in 𝑈 ∩ 𝑊 \Rightarrow w = 0</script>. So <script type="math/tex">u = 0</script>.
+Then from 1.45, <script type="math/tex">U+W</script> is a direct sum.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<blockquote>
+<p>Sums of subspaces are analogous to
+unions of subsets. Similarly, direct
+sums of subspaces are analogous to
+disjoint unions of subsets. No two sub-
+spaces of a vector space can be disjoint,
+because both contain 0. So disjoint-
+ness is replaced, at least in the case
+of two subspaces, with the requirement
+that the intersection equal {0}.</p>
+</blockquote>
               
             </div>
           </div><footer>

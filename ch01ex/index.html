@@ -104,6 +104,58 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1c-subspaces">1C Subspaces</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1c1">1C.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c2">1C.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c3">1C.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c4">1C.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c5">1C.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c6">1C.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c7">1C.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c8">1C.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c9">1C.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c10">1C.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c11">1C.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c12">1C.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c13">1C.13</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c14">1C.14</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c15">1C.15</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c16">1C.16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c17">1C.17</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c18">1C.18</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c19">1C.19</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c20">1C.20</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c21">1C.21</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c22">1C.22</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c23">1C.23</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1c24">1C.24</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -747,6 +799,551 @@ is a vector space with these definitions.</p>
 \end{split}
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="1c-subspaces">1C Subspaces</h2>
+<h3 id="1c1">1C.1</h3>
+<p>For each of the following subsets of <script type="math/tex">𝐅^3</script>, determine whether it 
+is a subspace of <script type="math/tex">𝐅^3</script>.</p>
+<p>(a) <script type="math/tex">\{(𝑥_1, 𝑥_2, 𝑥_3) ∈ 𝐅^3 ∶ 𝑥_1 + 2𝑥_2 + 3𝑥_3 = 0\}</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>Yes. Let it be <script type="math/tex">U</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 + 2 \cdot 0 + 3 \cdot 0 = 0 
+</script>
+</p>
+<p>So <script type="math/tex">(0,0,0) \in U</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(x_1 + y_1) + 2(x_2 + y_2) + 3(x_3 + y_3) = \\
+(𝑥_1 + 2𝑥_2 + 3𝑥_3) + (y_1 + 2y_2 + 3y_3) = 0 + 0 = 0
+</script>
+</p>
+<p>So <script type="math/tex">U</script> is closed under addition.</p>
+<p>
+<script type="math/tex; mode=display"> 
+a x_1 + 2 (a x_2) + 3 (a x_3) = \\
+a (𝑥_1 + 2𝑥_2 + 3𝑥_3) = a 0 = 0
+</script>
+</p>
+<p>So <script type="math/tex">U</script> is closed under scalar multiplication.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) <script type="math/tex">\{(𝑥_1, 𝑥_2, 𝑥_3) ∈ 𝐅^3 ∶ 𝑥_1 + 2𝑥_2 + 3𝑥_3 = 4\}</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex">(0,0,0) \not\in U</script>.</p>
+<p>(c) <script type="math/tex">\{(𝑥_1, 𝑥_2, 𝑥_3) ∈ 𝐅^3 ∶ 𝑥_1𝑥_2𝑥_3 = 0\}</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>No. Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+u = (1, 0, 1), v = (1, 1, 0)
+</script>
+</p>
+<p>
+<script type="math/tex">u + v = (1, 1, 1)</script>, then <script type="math/tex">u + v \not\in U</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) <script type="math/tex">\{(𝑥_1, 𝑥_2, 𝑥_3) ∈ 𝐅^3 ∶ 𝑥_1 = 5 𝑥_3\}</script>
+</p>
+<p><strong>Solution</strong></p>
+<p>Yes. <script type="math/tex">0 \in U</script>.</p>
+<p>
+<script type="math/tex">x_1 + y_1 = 5 x_3 + 5 y_3 = 5 (x_3 + y_3)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+ax_1 = a (5 x_3) = (a5) x_3 = (5a) x_3 = 5 (a x_3)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c2">1C.2</h3>
+<p>Verify all assertions about subspaces in Example 1.35.</p>
+<p><strong>Proof</strong>: See my notes.</p>
+<h3 id="1c3">1C.3</h3>
+<p>Show that the set of differentiable real-valued functions <script type="math/tex">𝑓</script> on 
+the interval <script type="math/tex">(−4, 4)</script> such that <script type="math/tex">𝑓'(−1) = 3𝑓(2)</script> is a subspace 
+of <script type="math/tex">𝐑^{(−4, 4)}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>First, the <script type="math/tex">f(x) = 0 \in U</script>.
+Because <script type="math/tex">f'(x) = 0</script>, so <script type="math/tex">f'(-1) = 3 f(2) = 0</script>.</p>
+<p>Secondly,</p>
+<p>
+<script type="math/tex; mode=display"> 
+(f+g)'(-1) = f'(-1) + g'(-1) = 3 f(2) + 3 g(2) = 3(f+g) (2)
+</script>
+</p>
+<p>Thirdly,</p>
+<p>
+<script type="math/tex; mode=display"> 
+(af)'(-1) = a(f'(-1)) = a(3f(2)) = 3 ((af)(2))
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c4">1C.4</h3>
+<p>Suppose <script type="math/tex">𝑏 ∈ 𝐑</script>. Show that the set of continuous real-valued 
+functions <script type="math/tex">𝑓</script> on the interval <script type="math/tex">[0, 1]</script> such that
+<script type="math/tex">\int_{0}^{1} 𝑓 = 𝑏</script> is a subspace of <script type="math/tex">𝐑^{[0, 1]}</script> if and only 
+if <script type="math/tex">𝑏 = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Since <script type="math/tex">U</script> is a subspace, then <script type="math/tex">0 \in U</script>.
+<script type="math/tex">\int_{0}^{1} 0 = 0</script>, so <script type="math/tex">b = 0</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>First, <script type="math/tex">0 \in U</script>.</p>
+<p>Secondly,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{1} (f+g) = 
+\int_{0}^{1} f + 
+\int_{0}^{1} g = 0 + 0 = 0 
+</script>
+</p>
+<p>Thirdly,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\int_{0}^{1} (af) = a \int_{0}^{1} f = a 0 = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c5">1C.5</h3>
+<p>Is <script type="math/tex">𝐑^2</script> a subspace of the complex vector space <script type="math/tex">𝐂^2</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>No. Consider <script type="math/tex">a = i, u = (1, 0)</script>,
+then <script type="math/tex">au = (i,0) \not\in 𝐑^2</script>.</p>
+<p>So addition is not closed.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c6">1C.6</h3>
+<p>(a) Is <script type="math/tex">\{(𝑎, 𝑏, 𝑐) ∈ 𝐑^3 ∶ 𝑎^3 = 𝑏^3\}</script> a subspace of 
+<script type="math/tex">𝐑^3</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>If <script type="math/tex">a, b \in \mathbb{R}^3</script>, and <script type="math/tex">a^3 = b^3</script>, then
+<script type="math/tex">a = b</script>.</p>
+<p>So if</p>
+<p>
+<script type="math/tex; mode=display"> 
+u = (a_1, b_1, c_1) \in U,
+v = (a_2, b_2, c_2) \in U,
+</script>
+</p>
+<p>then <script type="math/tex">a_1 = b_1, a_2 = b_2</script>, then <script type="math/tex">a_1+b_1 = a_2+b_2</script>.
+So <script type="math/tex">u+v \in U</script>.</p>
+<p>So it's a subspace of <script type="math/tex">𝐑^3</script>.</p>
+<p>(b) Is <script type="math/tex">\{(𝑎, 𝑏, 𝑐) ∈ 𝐂^3 ∶ 𝑎^3 = 𝑏^3\}</script> a subspace of <script type="math/tex">𝐂^3</script>.</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+u = (1, 1, 0),
+v = (\frac{-1 + i\sqrt[]{3}}{2}, 1)
+</script>
+</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display">
+\left( \frac{-1 + i\sqrt[]{3}}{2} \right)^2 \\
+= \frac{1 - 2 i \sqrt[]{3} - 3}{4} \\
+= \frac{-1 - i \sqrt[]{3}}{2}
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left( \frac{-1 + i\sqrt[]{3}}{2} \right)^3 = 1
+</script>
+</p>
+<p>Now</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left( \frac{1 + i\sqrt[]{3}}{2} \right)^2 \\
+= \frac{1 + 2 i \sqrt[]{3} - 3}{4} \\
+= \frac{-1 + i \sqrt[]{3}}{2}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\left( \frac{1 + i\sqrt[]{3}}{2} \right)^3 = -1
+</script>
+</p>
+<p>So <script type="math/tex">u+v \not\in U</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c7">1C.7</h3>
+<p>Prove or give a counterexample: If <script type="math/tex">𝑈</script> is a nonempty subset of 
+<script type="math/tex">𝐑^2</script> such that <script type="math/tex">𝑈</script> is closed under addition and under taking 
+additive inverses (meaning <script type="math/tex">−𝑢 ∈ 𝑈</script> whenever <script type="math/tex">𝑢 ∈ 𝑈</script>), then
+<script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝐑^2</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Counterexample: Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+U =
+\{
+(n, 0) | n \in \mathbb{Z}
+\}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c8">1C.8</h3>
+<p>Give an example of a nonempty subset <script type="math/tex">𝑈</script> of <script type="math/tex">𝐑^2</script> such that <script type="math/tex">𝑈</script> 
+is closed under scalar multiplication, but <script type="math/tex">𝑈</script> is not a subspace 
+of <script type="math/tex">𝐑^2</script>.</p>
+<p><strong>Solution</strong></p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+U =
+\{(a, 0) | a \in \mathbb{R}\}
+\cup
+\{(0, b) | b \in \mathbb{R}\}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c9">1C.9</h3>
+<p>A function <script type="math/tex">𝑓 ∶ 𝐑 → 𝐑</script> is called periodic if there exists a 
+positive number <script type="math/tex">𝑝</script> such that <script type="math/tex">𝑓(𝑥) = 𝑓(𝑥 + 𝑝)</script> for all
+<script type="math/tex">𝑥 ∈ 𝐑</script>. Is the set of periodic functions
+from <script type="math/tex">𝐑</script> to <script type="math/tex">𝐑</script> a subspace of <script type="math/tex">𝐑^𝐑</script> ? Explain.</p>
+<p><strong>Solution</strong>:</p>
+<p>This example is inspired from
+"Lectures on the Fourier Transform and Its Applications"
+exercise 1.2.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(t) = \begin{cases}
+  1 &\text{if } t \in \mathbb{Z} \\
+  0 &\text{otherwise} \\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+g(t) = \begin{cases}
+  1 &\text{if } t = n \sqrt[]{2}, n \in \mathbb{Z}\\
+  0 &\text{otherwise} \\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex">f+g</script> cannot be a periodic function, since
+<script type="math/tex">(f+g)(t) \neq 2, t \neq 0</script>.</p>
+<p>If <script type="math/tex">f(t) = g(t) = 1</script>, then <script type="math/tex">t = n = m \sqrt[]{2}</script>.
+That means <script type="math/tex">n/m = \sqrt[]{2}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c10">1C.10</h3>
+<p>Suppose <script type="math/tex">𝑉_1</script> and <script type="math/tex">𝑉_2</script> are subspaces of <script type="math/tex">𝑉</script>.
+Prove that the intersection <script type="math/tex">𝑉_1 ∩ 𝑉_2</script>
+is a subspace of <script type="math/tex">𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">0 \in V_1, 0 \in V_2</script>, so <script type="math/tex">0 \in 𝑉_1 ∩ 𝑉_2</script>.</p>
+<p>
+<script type="math/tex">a,b \in V_1, a,b \in V_2</script> so <script type="math/tex">a+b \in 𝑉_1 ∩ 𝑉_2</script>.</p>
+<p>
+<script type="math/tex">k \in F, a \in 𝑉_1 ∩ 𝑉_2</script>, so <script type="math/tex">k a \in 𝑉_1 ∩ 𝑉_2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c11">1C.11</h3>
+<p>Prove that the intersection of every collection of subspaces of 𝑉 
+is a subspace of 𝑉 .</p>
+<p><strong>Proof</strong>: Very similar to the previous one.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c12">1C.12</h3>
+<p>Prove that the union of two subspaces of <script type="math/tex">𝑉</script> is a subspace of 
+<script type="math/tex">𝑉</script> if and only if one of the subspaces is contained in the other.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">U, W, U \cup W</script> are subspaces. If <script type="math/tex">a \in U, a \not\in W</script>.
+Now assume <script type="math/tex">b \in W</script>, since <script type="math/tex">a+b \in U \cup W</script>.
+If <script type="math/tex">a+b \in W</script>, then <script type="math/tex">(a+b) + (-b) = a \in W</script>, we have contradition.</p>
+<p>So <script type="math/tex">a+b \in U</script>, then <script type="math/tex">(a+b) + (-a) = b \in U</script>, so
+<script type="math/tex">W \subseteq U</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script> is obvious.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c13">1C.13</h3>
+<p>Prove that the union of three subspaces of <script type="math/tex">𝑉</script> is a subspace of <script type="math/tex">𝑉</script> if and only if one of the subspaces contains the other two.</p>
+<p>This exercise is surprisingly harder than Exercise 12, possibly because this exercise is not true if we replace <script type="math/tex">𝐅</script> with a field containing only two elements.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">a, b, c</script> are unique elements in <script type="math/tex">A, B, C</script>.</p>
+<p>Now, consider <script type="math/tex">a+b</script>.</p>
+<p>If <script type="math/tex">a+b \in A</script>, then <script type="math/tex">b \in A</script>, we have contradition.</p>
+<p>If <script type="math/tex">a+b \in B</script>, then <script type="math/tex">a \in B</script>, we have contradition.</p>
+<p>So <script type="math/tex">a+b \in C</script>. For the same reason, <script type="math/tex">a-b \in C</script>.</p>
+<p>That means <script type="math/tex">a, b \in C</script>. We have contradition.</p>
+<p>This means, one the following must be true:</p>
+<p>
+<script type="math/tex; mode=display"> 
+A \subseteq B \cup C \text{ or }
+B \subseteq C \cup A \text{ or }
+C \subseteq A \cup B
+</script>
+</p>
+<p>In either case, this problem is reduced to 1C.12.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c14">1C.14</h3>
+<p>Suppose</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑈 = \{(𝑥, −𝑥, 2𝑥) ∈ 𝐅^3 ∶ 𝑥 ∈ 𝐅\}
+\quad \text{and} \quad
+𝑊 = \{(𝑥, 𝑥, 2𝑥) ∈ 𝐅^3 ∶ 𝑥 ∈ 𝐅\}.
+</script>
+</p>
+<p>Describe <script type="math/tex">𝑈 + 𝑊</script> using symbols, and also give a 
+description of <script type="math/tex">𝑈 + 𝑊</script> that uses no symbols.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+U+W = \{
+(x, y, 2x) \in 𝐅^3 ∶ 𝑥 ∈ 𝐅\}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c15">1C.15</h3>
+<p>Suppose <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> . What is <script type="math/tex">𝑈 + 𝑈</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>It's still <script type="math/tex">U</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c16">1C.16</h3>
+<p>Is the operation of addition on the subspaces of
+<script type="math/tex">𝑉</script> commutative? In other words, if <script type="math/tex">𝑈</script> and <script type="math/tex">𝑊</script> are 
+subspaces of <script type="math/tex">𝑉</script> , is <script type="math/tex">𝑈 + 𝑊 = 𝑊 + 𝑈</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>Yes, this is because the vector space itself is
+commutative.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c17">1C.17</h3>
+<p>Is the operation of addition on the subspaces of <script type="math/tex">𝑉</script> 
+associative? In other words, if
+<script type="math/tex">𝑉_1, 𝑉_2, 𝑉_3</script> are subspaces of <script type="math/tex">𝑉</script> , is</p>
+<p>
+<script type="math/tex; mode=display"> 
+(V_1 + V_2) + V_3 = V_1 + (V_2 + V_3)?
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>Yes, this is because the vector space itself is
+associative.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c18">1C.18</h3>
+<p>Does the operation of addition on the subspaces of <script type="math/tex">𝑉</script> 
+have an additive identity? Which subspaces have additive 
+inverses?</p>
+<p><strong>Solution</strong>:</p>
+<p>Yes. The subspace contains only <script type="math/tex">0</script>. Only itself has
+additive inverse, which is itself.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c19">1C.19</h3>
+<p>Prove or give a counterexample: If <script type="math/tex">𝑉_1, 𝑉_2, 𝑈</script> are 
+subspaces of <script type="math/tex">𝑉</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+V_1 + U = V_2 + U
+</script>
+</p>
+<p>then <script type="math/tex">𝑉_1 = 𝑉_2</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Counterexample, consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+V_1 = \{(x, 0, 0) \in F^3\} \\
+V_2 = \{(0, y, 0) \in F^3\} \\
+U = \{(x, y, 0) \in F^3\} \\
+</script>
+</p>
+<p>Then <script type="math/tex">V_1 + U = U = V_2 + U</script>, but <script type="math/tex">V_1 \neq V_2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c20">1C.20</h3>
+<p>Suppose</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑈 = \{(𝑥, 𝑥, 𝑦, 𝑦) ∈ 𝐅^4 ∶ 𝑥, 𝑦 ∈ 𝐅\}.
+</script>
+</p>
+<p>Find a subspace <script type="math/tex">𝑊</script> of <script type="math/tex">𝐅^4</script> such that <script type="math/tex">𝐅^4 = 𝑈 ⊕ 𝑊</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+W = \{(𝑥, -𝑥, 𝑦, -𝑦) ∈ 𝐅^4 ∶ 𝑥, 𝑦 ∈ 𝐅\}.
+</script>
+</p>
+<p>Then <script type="math/tex">U \cap W = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c21">1C.21</h3>
+<p>Suppose</p>
+<p>
+<script type="math/tex">𝑈 = \{(𝑥, 𝑦, 𝑥 + 𝑦, 𝑥 − 𝑦, 2𝑥) ∈ 𝐅^5 ∶ 𝑥, 𝑦 ∈ 𝐅\}.</script>
+</p>
+<p>Find a subspace <script type="math/tex">𝑊</script> of <script type="math/tex">𝐅^5</script> such that <script type="math/tex">𝐅^5 = 𝑈 ⊕ 𝑊</script>.</p>
+<p><strong>Solution</strong></p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+W = \{(0, 0, a, b, c) ∈ 𝐅^5 ∶ a, b, c ∈ 𝐅 \}.
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c22">1C.22</h3>
+<p>Suppose</p>
+<p>
+<script type="math/tex">𝑈 = \{(𝑥, 𝑦, 𝑥 + 𝑦, 𝑥 − 𝑦, 2𝑥) ∈ 𝐅^5 ∶ 𝑥, 𝑦 ∈ 𝐅\}.</script>
+</p>
+<p>Find a subspace <script type="math/tex">𝑊_1, W_2, W_3</script> of <script type="math/tex">𝐅^5</script> such that <script type="math/tex">𝐅^5 = 𝑈 ⊕ 𝑊_1 ⊕ 𝑊_2 ⊕ 𝑊_3</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+W_1 = \{(0, 0, x_1, 0, 0) ∈ 𝐅^5 ∶ w_1, x_1, y_1, z_1 ∈ 𝐅 \} \\
+W_2 = \{(0, 0, 0, y_2, 0) ∈ 𝐅^5 ∶ y_2, z_2 ∈ 𝐅 \} \\
+W_3 = \{(0, 0, 0, 0, z_3) ∈ 𝐅^5 ∶ z_3 ∈ 𝐅 \} \\
+</script>
+</p>
+<p>So if <script type="math/tex">u + w_1 + w_2 + w_3 = 0</script>, then we must have</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{cases}
+  x + 0 + 0 + 0 = 0 &\text{}\\
+  y + 0 + 0 + 0 = 0 &\text{}\\
+  (x + y) + x_1 + 0 + 0 = 0 &\text{}\\
+  (x - y) + 0 + y_2 + 0 = 0 &\text{}\\
+  2x + 0 + 0 + z_3 = 0 &\text{}\\
+\end{cases}
+</script>
+</p>
+<p>then we must have</p>
+<p>
+<script type="math/tex; mode=display"> 
+x = y = x_1 = y_2 = z_3 = 0 \\
+\Rightarrow \\
+u = w_1 = w_2 = w_3 = 0
+</script>
+</p>
+<p>So <script type="math/tex">𝐅^5 = 𝑈 ⊕ 𝑊_1 ⊕ 𝑊_2 ⊕ 𝑊_3</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c23">1C.23</h3>
+<p>Prove or give a counterexample: If <script type="math/tex">𝑉_1, 𝑉_2, 𝑈</script> are subspaces of <script type="math/tex">𝑉</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑉 = 𝑉_1 ⊕ 𝑈
+\quad \text{and} \quad
+𝑉 = 𝑉_2 ⊕ 𝑈,
+</script>
+</p>
+<p>then <script type="math/tex">𝑉_1 = 𝑉_2</script>.</p>
+<p>Hint: When trying to discover whether a conjecture in 
+linear algebra is true or false, it is often useful to 
+start by experimenting in <script type="math/tex">𝐅^2</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Counterexample:</p>
+<p>As hinted, let <script type="math/tex">F = \mathbb{R}</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+U = (x, 0) \\
+V_1 = (0, y) \\
+V_2 = (z, z) \\
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑉_1 ⊕ 𝑈 = \mathbb{R}^2 = 𝑉_2 ⊕ 𝑈
+</script>
+</p>
+<p>But <script type="math/tex">V_1 \neq V_2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="1c24">1C.24</h3>
+<p>A function <script type="math/tex">𝑓 ∶ 𝐑 → 𝐑</script> is called even if</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(-x) = f(x)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑥 ∈ 𝐑</script>. A function <script type="math/tex">𝑓 ∶ 𝐑 → 𝐑</script> is called odd if</p>
+<p>
+<script type="math/tex; mode=display"> 
+f(-x) = -f(x)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑥 ∈ 𝐑</script>. Let <script type="math/tex">𝑉_e</script> denote the set of 
+real-valued even functions on <script type="math/tex">𝐑</script>
+and let <script type="math/tex">𝑉_o</script> denote the set of real-valued odd 
+functions on <script type="math/tex">𝐑</script>. Show that
+<script type="math/tex">𝐑^𝐑 = 𝑉_e ⊕ 𝑉_o</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>We have seen this again in the book of 
+"Lectures on the Fourier Transform and Its Applications"
+Appendix B.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+f_e(x) = \frac{f(x) + f(-x)}{2} \\
+f_o(x) = \frac{f(x) - f(-x)}{2} \\
+</script>
+</p>
+<p>Then <script type="math/tex">f_e</script> is even, and <script type="math/tex">f_o</script> is odd.
+Furthermore, <script type="math/tex">f = f_e + f_o</script>.
+This proves <script type="math/tex">𝐑^𝐑 = 𝑉_e + 𝑉_o</script>.</p>
+<p>Now if <script type="math/tex">f \in 𝑉_e \cap 𝑉_o</script>, then <script type="math/tex">f(x) = f(-x) = -f(x)</script>
+so <script type="math/tex">f(x) = 0</script>, i.e. <script type="math/tex">𝑉_e \cap 𝑉_o = 0</script>.</p>
+<p>So <script type="math/tex">𝐑^𝐑 = 𝑉_e ⊕ 𝑉_o</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
