@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 02 Notes - Linear Algebra Done Right 4th edition</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 02 Notes";
+        var mkdocs_page_input_path = "ch02notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Linear Algebra Done Right 4th edition
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01notes/">Chapter 01 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 02 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#2a-span-and-linear-independence">2A Span and Linear Independence</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#22-definition-linear-combination">2.2 definition: linear combination</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#24-definition-span">2.4 definition: span</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#26-span-is-the-smallest-containing-subspace">2.6 span is the smallest containing subspace</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#27-definition-spans">2.7 definition: spans</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#29-definition-finite-dimensional-vector-space">2.9 definition: finite-dimensional vector space</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#210-definition-polynomial-pf">2.10 definition: polynomial, 𝒫(𝐅)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#211-definition-degree-of-a-polynomial-deg-p">2.11 definition: degree of a polynomial, deg 𝑝</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#212-notation-p_mf">2.12 notation: 𝒫_𝑚(𝐅)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#213-definition-infinite-dimensional-vector-space">2.13 definition: infinite-dimensional vector space</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#214-example-pf-is-infinite-dimensional">2.14 example: 𝒫(𝐅) is infinite-dimensional.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linear-independence">Linear Independence</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#215-definition-linearly-independent">2.15 definition: linearly independent</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#217-definition-linearly-dependent">2.17 definition: linearly dependent</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#219-linear-dependence-lemma">2.19 linear dependence lemma</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Linear Algebra Done Right 4th edition</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Chapter 02 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ch02notes.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-2-finite-dimensional-vector-spaces">Chapter 2 Finite-Dimensional Vector Spaces</h1>
+<h2 id="2a-span-and-linear-independence">2A Span and Linear Independence</h2>
+<h3 id="22-definition-linear-combination">2.2 definition: linear combination</h3>
+<p>A linear combination of a list <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> of vectors in <script type="math/tex">𝑉</script> 
+is a vector of the form</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑎_1 𝑣_1 +⋯ + 𝑎_𝑚 𝑣_𝑚,
+</script>
+</p>
+<p>where <script type="math/tex">𝑎_1, …, 𝑎_𝑚 ∈ 𝐅</script>.</p>
+<h3 id="24-definition-span">2.4 definition: span</h3>
+<p>The set of all linear combinations of a list of vectors
+<script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> in <script type="math/tex">𝑉</script> is called
+the span of <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script>, denoted by
+<script type="math/tex">\text{span}(𝑣_1, …, 𝑣_𝑚)</script>. In other words,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{span}(𝑣_1, \cdots, 𝑣_𝑚) =
+\{
+a_1 v_1 + \cdots + a_m v_m : a_1, \cdots, a_m \in F
+\}.
+</script>
+</p>
+<p>The span of the empty list <script type="math/tex">()</script> is defined to be <script type="math/tex">\{0\}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="26-span-is-the-smallest-containing-subspace">2.6 span is the smallest containing subspace</h3>
+<p>The span of a list of vectors in <script type="math/tex">𝑉</script> is the smallest subspace of <script type="math/tex">𝑉</script> containing all vectors in the list.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{span}(𝑣_1, \cdots, 𝑣_𝑚) =
+\{
+a_1 v_1 + \cdots + a_m v_m : a_1, \cdots, a_m \in F
+\}.
+</script>
+</p>
+<p>
+<script type="math/tex">v_i \in S</script>, because we can set <script type="math/tex">i = 1, j \neq i = 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+v + w =
+(a_1 v_1 + \cdots + a_m v_m)
++
+(b_1 v_1 + \cdots + b_m v_m) \\
+= (a_1+b_1) v_1 + \cdots + (a_m+b_m) v_m \in S
+</script>
+</p>
+<p>So addition is closed.</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜆 v = 𝜆 (a_1 v_1 + \cdots + a_m v_m) \\
+= (𝜆a_1) v_1 + \cdots + (𝜆a_m) v_m \in S
+</script>
+</p>
+<p>So scalar multiplication is closed.</p>
+<p>Finally <script type="math/tex">0 \in S</script> by setting <script type="math/tex">a_1 = \cdots = a_m = 0</script>.</p>
+<p>Every sub-space of <script type="math/tex">𝑉</script> that contains each <script type="math/tex">𝑣_𝑘</script> contains span
+<script type="math/tex">(v_1, \cdots, v_m)</script> . Thus <script type="math/tex">\text{span}(𝑣_1, \cdots, 𝑣_𝑚)</script> 
+is the smallest subspace of <script type="math/tex">𝑉</script> containing all the vectors
+<script type="math/tex">𝑣_1, …, 𝑣_𝑚</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="27-definition-spans">2.7 definition: spans</h3>
+<p>If <script type="math/tex">\text{span}(𝑣_1, \cdots, 𝑣_𝑚)</script> equals <script type="math/tex">𝑉</script>, we say 
+that the list <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> spans <script type="math/tex">𝑉</script>.</p>
+<h3 id="29-definition-finite-dimensional-vector-space">2.9 definition: finite-dimensional vector space</h3>
+<p>A vector space is called finite-dimensional if some list of 
+vectors in it spans the space.</p>
+<h3 id="210-definition-polynomial-pf">2.10 definition: polynomial, <script type="math/tex">𝒫(𝐅)</script>
+</h3>
+<p>A function <script type="math/tex">𝑝 ∶ 𝐅 → 𝐅</script> is called a polynomial with 
+coefficients in <script type="math/tex">𝐅</script> if there exist <script type="math/tex">𝑎_0, …, 𝑎_𝑚 ∈ 𝐅</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = a_0 + a_1 z + \cdots + a_{m} z^{m}
+</script>
+</p>
+<p>for all <script type="math/tex">z \in F</script>.</p>
+<p>
+<script type="math/tex">𝒫(𝐅)</script> is the set of all polynomials with coefficients
+in <script type="math/tex">𝐅</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<blockquote>
+<p>If a polynomial that is identically zero as a function on 
+<script type="math/tex">𝐅</script>, then all coefficients are zero (will be proved in
+4.8)</p>
+<p>Conclusion: the coefficients of a
+polynomial are uniquely determined by the polynomial.</p>
+</blockquote>
+<h3 id="211-definition-degree-of-a-polynomial-deg-p">2.11 definition: degree of a polynomial, deg 𝑝</h3>
+<p>A polynomial <script type="math/tex">p \in 𝒫(𝐅)</script> is said to have degree <script type="math/tex">𝑚</script> if 
+there exist scalars <script type="math/tex">a_1, \cdots, a_m \in 𝐅</script> with
+<script type="math/tex">a_m \neq 0</script>, such that for every <script type="math/tex">𝑧 ∈ 𝐅</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = a_0 + a_1 z + \cdots + a_{m} z^{m}.
+</script>
+</p>
+<p>The polynomial that is identically <script type="math/tex">0</script> is said to have degree
+<script type="math/tex">−∞</script>.</p>
+<p>The degree of a polynomial <script type="math/tex">𝑝</script> is denoted by <script type="math/tex">\deg 𝑝</script>.</p>
+<h3 id="212-notation-p_mf">2.12 notation: <script type="math/tex">𝒫_𝑚(𝐅)</script>
+</h3>
+<p>For <script type="math/tex">𝑚</script> a nonnegative integer, <script type="math/tex">𝒫_𝑚(𝐅)</script> denotes the set 
+of all polynomials with coefficients in <script type="math/tex">𝐅</script> and degree
+at most <script type="math/tex">𝑚</script>.</p>
+<h3 id="213-definition-infinite-dimensional-vector-space">2.13 definition: infinite-dimensional vector space</h3>
+<p>A vector space is called infinite-dimensional if it is not 
+finite-dimensional.</p>
+<h3 id="214-example-pf-is-infinite-dimensional">2.14 example: <script type="math/tex">𝒫(𝐅)</script> is infinite-dimensional.</h3>
+<p>Assume otherwise, then some list of polynomials can span
+<script type="math/tex">𝒫(𝐅)</script>, let <script type="math/tex">m</script> be the highest degree of the polynomials, 
+in the list, then <script type="math/tex">z^{m+1}</script> is not in the span.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="linear-independence">Linear Independence</h3>
+<h3 id="215-definition-linearly-independent">2.15 definition: linearly independent</h3>
+<p>A list <script type="math/tex">v_1, \cdots, v_m</script> of vectors in <script type="math/tex">𝑉</script> is called 
+linearly independent if the only choice of
+<script type="math/tex">a_1, \cdots, a_m \in F</script> that makes</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m = 0
+</script>
+</p>
+<p>is <script type="math/tex">a_1 = \cdots = a_m = 0</script>.</p>
+<p>The empty list <script type="math/tex">( )</script> is also declared to be linearly 
+independent.</p>
+<h3 id="217-definition-linearly-dependent">2.17 definition: linearly dependent</h3>
+<ul>
+<li>A list of vectors in <script type="math/tex">𝑉</script> is called linearly dependent if 
+  it is not linearly independent.</li>
+<li>A list <script type="math/tex">v_1, \cdots, v_m</script> of vectors in <script type="math/tex">𝑉</script> is linearly 
+  dependent if there exist <script type="math/tex">a_1 = \cdots = a_m \in F</script>, not
+  all <script type="math/tex">0</script>, such that <script type="math/tex">a_1 v_1 + \cdots + a_m v_m = 0</script>.</li>
+</ul>
+<h3 id="219-linear-dependence-lemma">2.19 linear dependence lemma</h3>
+<p>Suppose <script type="math/tex">v_1, \cdots, v_m</script> is a linearly dependent list in 
+<script type="math/tex">𝑉</script>. Then there exists <script type="math/tex">k \in \{1,2,\cdots,m\}</script>
+such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_k \in \text{span}(𝑣_1, \cdots, 𝑣_{k-1}).
+</script>
+</p>
+<p>Furthermore, if <script type="math/tex">𝑘</script> satisfies the condition above and the 
+𝑘th term is removed from <script type="math/tex">v_1, \cdots, v_m</script>,
+then the span of the remaining list equals
+<script type="math/tex">\text{span}(𝑣_1, \cdots, 𝑣_𝑚)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>We can find <script type="math/tex">a_1, \cdots, a_m \in F</script>, not all <script type="math/tex">0</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m = 0
+</script>
+</p>
+<p>Starting from <script type="math/tex">m</script>, let <script type="math/tex">k</script> be the largest integer such that
+<script type="math/tex">a_k \neq 0</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m = 
+a_1 v_1 + \cdots + a_k v_k = 0
+</script>
+</p>
+<p>That is</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_k = a_k^{-1} (a_1 v_1 + \cdots + a_{k-1} v_{k-1})
+</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch01ex/" class="btn btn-neutral float-left" title="Chapter 01 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch02ex/" class="btn btn-neutral float-right" title="Chapter 02 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ch01ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch02ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
