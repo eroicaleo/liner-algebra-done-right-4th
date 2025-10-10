@@ -395,3 +395,206 @@ a_0 p_0 + \cdots + a_m p_m = 0
 $$
 
 $\square$
+
+## 2C Dimension
+
+### 2C.11
+
+Suppose 𝑈 and 𝑊 are both four-dimensional subspaces of $𝐂^6$ . Prove that
+there exist two vectors in $𝑈 ∩ 𝑊$ such that neither of these vectors is a scalar
+multiple of the other.
+
+**Proof**:
+
+$$ 
+\dim (𝑈 ∩ 𝑊) = \dim (U) + \dim (W) - \dim (U+W) \geq 4 + 4 - 6 = 2
+$$
+
+$\square$
+
+### 2C.12
+
+Suppose that 𝑈 and 𝑊 are subspaces of $𝐑^8$ such that $\dim 𝑈 = 3$, $\dim 𝑊 = 5$,
+and $𝑈 + 𝑊 = 𝐑^8$ . Prove that $𝐑^8 = 𝑈 ⊕ 𝑊$.
+
+**Proof**:
+
+$$ 
+\dim (𝑈 ∩ 𝑊) = \dim (U) + \dim (W) - \dim (U+W) = 3 + 5 - 8 = 0
+$$
+
+So $𝑈 ∩ 𝑊 = \{0\}$. Then $𝐑^8 = 𝑈 ⊕ 𝑊$.
+
+$\square$
+
+### 2C.13
+
+Suppose 𝑈 and 𝑊 are both five-dimensional subspaces of $𝐑^9$ . Prove that
+$𝑈 ∩ 𝑊 ≠ \{0\}$.
+
+**Proof**:
+
+$$ 
+\dim (𝑈 ∩ 𝑊) = \dim (U) + \dim (W) - \dim (U+W) \geq 5 + 5 - 9 = 1
+$$
+
+So $𝑈 ∩ 𝑊 ≠ \{0\}$.
+
+$\square$
+
+### 2C.14
+
+Suppose 𝑉 is a ten-dimensional vector space and $𝑉_1, 𝑉_2, 𝑉_3$ are subspaces
+of $𝑉$ with $\dim 𝑉_1 = \dim 𝑉_2 = \dim 𝑉_3 = 7$. Prove that $𝑉_1 ∩ 𝑉_2 ∩ 𝑉_3 ≠ \{0\}$.
+
+**Proof**:
+
+$$ 
+\dim (𝑉_1 ∩ 𝑉_2 ∩ 𝑉_3) = \dim (𝑉_1 ∩ 𝑉_2) + \dim (V_3) - \dim ((𝑉_1 ∩ 𝑉_2) + V_3) \\
+= \dim (V_1) + \dim (V_2) + \dim (V_3) - \dim (𝑉_1 \cup 𝑉_2) - \dim ((𝑉_1 ∩ 𝑉_2) + V_3) \\
+\geq 21 - 10 - 10 = 1
+$$
+
+$\square$
+
+### 2C.15
+
+Suppose 𝑉 is finite-dimensional and $𝑉_1, 𝑉_2, 𝑉_3$ are subspaces of 𝑉 with
+$\dim 𝑉_1 + \dim 𝑉_2 + \dim 𝑉_3 > 2 dim 𝑉$ . Prove that $𝑉_1 ∩ 𝑉_2 ∩ 𝑉_3 ≠ \{0\}$.
+
+**Solution**:
+
+Exactly them as exercise 2C.14.
+
+$\square$
+
+### 2C.16
+
+Suppose 𝑉 is finite-dimensional and 𝑈 is a subspace of 𝑉 with $𝑈 ≠ 𝑉$. Let
+$𝑛 = \dim 𝑉$ and $𝑚 = \dim 𝑈$. Prove that there exist $𝑛 − 𝑚$ subspaces of 𝑉,
+each of dimension $𝑛 − 1$, whose intersection equals 𝑈.
+
+**Proof**:
+
+Let $u_1, \cdots, u_m$ be a basis of $U$, and we extend it to a basis of $V$ by adding
+$v_1, \cdots, v_{n-m}$.
+
+Consider the following subspaces
+
+$$ 
+V_1 = \text{span}(u_1, \cdots, u_𝑚, v_2, v_3, \cdots, v_{n-m}) \\
+V_2 = \text{span}(u_1, \cdots, u_𝑚, v_1, v_3, \cdots, v_{n-m}) \\
+\cdots \\
+V_{n-m} = \text{span}(u_1, \cdots, u_𝑚, v_1, v_2, \cdots, v_{n-m-1}) \\
+$$
+
+Since $u_i \in V_j$, the intersection W contains $U$.
+
+Assume $w \in W$, then it can be the linear combination of these $n-m$ basis.
+Since the combination is unique, the coefficients for $v_1, \cdots, v_{n-m}$ has to be 0.
+
+Then $w$ is in $U$.
+
+$\square$
+
+### 2C.17
+
+Suppose that $𝑉_1, …, 𝑉_𝑚$ are finite-dimensional subspaces of 𝑉. Prove that
+$𝑉_1 +⋯ + 𝑉_𝑚$ is finite-dimensional and
+
+$$ 
+\dim(𝑉_1 +⋯ + 𝑉_𝑚) ≤ \dim 𝑉_1 +⋯ + \dim 𝑉_𝑚.
+$$
+
+**Proof**:
+
+Just use induction and 2.43.
+
+$$ 
+\dim(𝑉_1 +⋯ + 𝑉_𝑚) = \dim(𝑉_1 +⋯ + 𝑉_{𝑚-1}) + \dim 𝑉_𝑚 - \dim((𝑉_1 +⋯ + 𝑉_{𝑚-1}) \cap 𝑉_𝑚)
+\leq \dim(𝑉_1 +⋯ + 𝑉_{𝑚-1}) + \dim 𝑉_𝑚 \leq \dim 𝑉_1 +⋯ + \dim 𝑉_𝑚
+$$
+
+$\square$
+
+### 2C.18
+
+Suppose 𝑉 is finite-dimensional, with $\dim 𝑉 = 𝑛 ≥ 1$. Prove that there exist
+one-dimensional subspaces $𝑉_1, …, 𝑉_𝑛$ of $𝑉$ such that
+$𝑉 = 𝑉_1 ⊕ ⋯ ⊕ 𝑉_𝑛$.
+
+**Proof**:
+
+Assume $v_1, \cdots, v_n$ is a basis of $V$. Let $V_i = \text{span}(𝑣_i)$.
+
+First $V = V_1 + \cdots + V_n$, because $v_1, \cdots, v_n$ is a basis.
+
+Second, since $v_1, \cdots, v_n$ is a basis, the representation is unique.
+
+So $𝑉 = 𝑉_1 ⊕ ⋯ ⊕ 𝑉_𝑛$.
+
+$\square$
+
+### 2C.19
+
+Explain why you might guess, motivated by analogy with the formula 
+for the number of elements in the union of three finite sets, that 
+if $𝑉_1, 𝑉_2, 𝑉_3$ are subspaces of a finite-dimensional vector 
+space, then 
+
+$$ 
+\begin{align*}
+\dim(𝑉_1 + 𝑉_2 + 𝑉_3) 
+&= \dim 𝑉_1 + \dim 𝑉_2 + \dim 𝑉_3 \\
+& - \dim(𝑉_1 ∩ 𝑉_2) − \dim(𝑉_1 ∩ 𝑉_3) − \dim(𝑉_2 ∩ 𝑉_3) \\
+& + \dim(𝑉_1 ∩ 𝑉_2 ∩ 𝑉_3)\\
+\end{align*} 
+$$
+
+**Solution**:
+
+Consider the following diagram.
+
+$$ 
+\dim 𝑉_1 = A_0 + A_1 + A_2 + A_4 \\
+\dim 𝑉_2 = A_0 + A_1 + A_3 + A_6 \\
+\dim 𝑉_3 = A_0 + A_2 + A_3 + A_5 \\
+\dim 𝑉_1 ∩ 𝑉_2 = A_0 + A_1 \\
+\dim 𝑉_2 ∩ 𝑉_3 = A_0 + A_3 \\
+\dim 𝑉_1 ∩ 𝑉_3 = A_0 + A_2 \\
+\dim 𝑉_1 ∩ 𝑉_2 ∩ 𝑉_3 = A_0 \\
+$$
+
+![](./assets/ex02c19.png)
+
+### 2C.20
+
+Prove that if $𝑉_1$, $𝑉_2$, and $𝑉_3$ are subspaces of a 
+finite-dimensional vector space, then
+
+$$ 
+\begin{align*}
+\dim(𝑉_1 + 𝑉_2 + 𝑉_3) 
+&= \dim 𝑉_1 + \dim 𝑉_2 + \dim 𝑉_3 \\
+& - \frac{\dim(𝑉_1 ∩ 𝑉_2) + \dim(𝑉_1 ∩ 𝑉_3) + \dim(𝑉_2 ∩ 𝑉_3)}{3} \\
+& - \frac{
+\dim((𝑉_1 + 𝑉_2) ∩ 𝑉_3) + \dim((𝑉_1 + 𝑉_3) ∩ 𝑉_2) +
+\dim((𝑉_2 + 𝑉_3) ∩ 𝑉_1)
+}{3} \\
+\end{align*} 
+$$
+
+**Proof**:
+
+Again consider the diagram above
+
+$$ 
+\dim 𝑉_1 ∩ 𝑉_2 = A_0 + A_1 \\
+\dim 𝑉_2 ∩ 𝑉_3 = A_0 + A_3 \\
+\dim 𝑉_1 ∩ 𝑉_3 = A_0 + A_2 \\
+\dim((𝑉_1 + 𝑉_2) ∩ 𝑉_3) = A0 + A2 + A3 \\
+\dim((𝑉_1 + 𝑉_3) ∩ 𝑉_2) = A0 + A1 + A3 \\
+\dim((𝑉_2 + 𝑉_3) ∩ 𝑉_1) = A0 + A1 + A2 \\
+$$
+
+$\square$
