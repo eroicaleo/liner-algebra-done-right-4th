@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 03 Exercises - Linear Algebra Done Right 4th edition</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 03 Exercises";
+        var mkdocs_page_input_path = "ch03ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Linear Algebra Done Right 4th edition
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01notes/">Chapter 01 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02notes/">Chapter 02 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 03 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#section-3a-vector-space-of-linear-maps">Section 3A Vector Space of Linear Maps</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3a1">3A.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a2">3A.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a3">3A.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a4">3A.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a5">3A.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a6">3A.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a7">3A.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a8">3A.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a9">3A.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a10">3A.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a11">3A.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a12">3A.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a13">3A.13</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a14">3A.14</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a15">3A.15</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a16">3A.16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3a17">3A.17</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-3b-null-spaces-and-ranges">Section 3B Null Spaces and Ranges</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3b1">3B.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b2">3B.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b3">3B.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b4">3B.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b5">3B.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b6">3B.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b7">3B.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b8">3B.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b9">3B.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b10">3B.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b11">3B.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b12">3B.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b13">3B.13</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b14">3B.14</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b15">3B.15</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b16">3B.16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b17">3B.17</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b18">3B.18</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b19">3B.19</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b20">3B.20</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b21">3B.21</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b22">3B.22</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b23">3B.23</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b24">3B.24</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b25">3B.25</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b26">3B.26</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b27">3B.27</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b28">3B.28</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b29">3B.29</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b30">3B.30</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b31">3B.31</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b32">3B.32</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3b33">3B.33</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Linear Algebra Done Right 4th edition</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Chapter 03 Exercises</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ch03ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-3-linear-maps">Chapter 3 Linear Maps</h1>
+<h2 id="section-3a-vector-space-of-linear-maps">Section 3A Vector Space of Linear Maps</h2>
+<h3 id="3a1">3A.1</h3>
+<p>Suppose <script type="math/tex">𝑏, 𝑐 ∈ 𝐑</script>. Define <script type="math/tex">𝑇 ∶ 𝐑^3 → 𝐑^2</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑇(𝑥, 𝑦, 𝑧) = (2𝑥 − 4𝑦 + 3𝑧 + 𝑏, 6𝑥 + 𝑐𝑥𝑦𝑧).
+</script>
+</p>
+<p>Show that <script type="math/tex">𝑇</script> is linear if and only if <script type="math/tex">𝑏 = 𝑐 = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>
+<script type="math/tex">T(0) = (b, 0) = (0,0)</script>, so <script type="math/tex">b = 0</script>.</p>
+<p>
+<script type="math/tex">T(2,2,2) = (2, 12 + 8c) = 2T(1,1,1) = 2(1, 6 + c)</script>
+</p>
+<p>So <script type="math/tex">8c = 2c</script>, then <script type="math/tex">c = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a2">3A.2</h3>
+<p>Suppose <script type="math/tex">𝑏, 𝑐 ∈ 𝐑</script>. Define <script type="math/tex">𝑇 ∶ 𝒫(𝐑) → 𝐑^2</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑇𝑝 = (3𝑝(4) + 5𝑝'(6) + 𝑏𝑝(1)𝑝(2), \int_{-1}^{2} 𝑥^3 𝑝(𝑥) 𝑑𝑥 + 𝑐 \sin 𝑝(0)).
+</script>
+</p>
+<p>Show that <script type="math/tex">𝑇</script> is linear if and only if <script type="math/tex">𝑏 = 𝑐 = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider <script type="math/tex">p(x) = 1</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+3𝑝(4) + 5𝑝'(6) + 𝑏𝑝(1)𝑝(2) = 3 + 0 + b \\
+3(2𝑝)(4) + 5(2𝑝)'(6) + 𝑏(2𝑝)(1)(2𝑝)(2) = 6 + 0 + 4b \\
+</script>
+</p>
+<p>So <script type="math/tex">b = 0</script>.</p>
+<p>Consider <script type="math/tex">p(x) = \pi / 4</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(2p)[1] = \int_{-1}^{2} 𝑥^3 2 (\frac{\pi}{4}) dx + c \cdot 1
+</script>
+</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(2p)[1] = 2 T(p) [1] = 2 \int_{-1}^{2} 𝑥^3 (\frac{\pi}{4}) dx
++ c \cdot \frac{\sqrt[]{2}}{2}
+</script>
+</p>
+<p>So <script type="math/tex">c = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a3">3A.3</h3>
+<p>Suppose that <script type="math/tex">𝑇 ∈ ℒ(𝐅^𝑛, 𝐅^𝑚)</script>. Show that there exist scalars <script type="math/tex">𝐴_{𝑗,𝑘} ∈ 𝐅</script> for <script type="math/tex">𝑗 = 1, …, 𝑚</script> and <script type="math/tex">𝑘 = 1, …, 𝑛</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑇(𝑥_1, …, 𝑥_𝑛) =
+(𝐴_{1, 1} 𝑥_1 +⋯ + 𝐴_{1, 𝑛} 𝑥_𝑛, …, 𝐴_{𝑚, 1} 𝑥_1 +⋯ + 𝐴_{𝑚, 𝑛} 𝑥_𝑛)
+</script>
+</p>
+<p>for every <script type="math/tex">(𝑥_1, …, 𝑥_𝑛) ∈ 𝐅_𝑛</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(e_1) = (A_{1,1}, A_{2,1}, \cdots, A_{m,1}) \\
+T(e_2) = (A_{1,2}, A_{2,2}, \cdots, A_{m,2}) \\
+\cdots \\
+T(e_n) = (A_{1,n}, A_{2,n}, \cdots, A_{m,n}) \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a4">3A.4</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script> and <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> is a list of vectors 
+in <script type="math/tex">𝑉</script> such that <script type="math/tex">𝑇𝑣_1, …, 𝑇𝑣_𝑚</script> is a linearly independent 
+list in <script type="math/tex">𝑊</script>. Prove that <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> is linearly independent.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m = 0
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(a_1 v_1 + \cdots + a_m v_m) = a_1 Tv_1 + \cdots + a_m Tv_m = 0
+</script>
+</p>
+<p>So <script type="math/tex">a_1 = \cdots = a_m = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a5">3A.5</h3>
+<h3 id="3a6">3A.6</h3>
+<h3 id="3a7">3A.7</h3>
+<p>Show that every linear map from a one-dimensional vector space to 
+itself is multiplication by some scalar. More precisely, prove that 
+if <script type="math/tex">\dim 𝑉 = 1</script> and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, then there exists <script type="math/tex">𝜆 ∈ 𝐅</script> such 
+that <script type="math/tex">𝑇𝑣 = 𝜆𝑣</script> for all <script type="math/tex">𝑣 ∈ 𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">v_0</script> is a basis of <script type="math/tex">V</script>. Let <script type="math/tex">w_0 = Tv_0 \in V</script>.
+We can assume <script type="math/tex">w_0 = 𝜆 v_0</script> 
+Then assume <script type="math/tex">v = a v_0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+Tv = T a v_0 = a T v_0 = a 𝜆 v_0 = 𝜆 a v_0 = 𝜆 v
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a8">3A.8</h3>
+<p>Give an example of a function <script type="math/tex">𝜑 ∶ 𝐑^2 → 𝐑</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜑(𝑎𝑣) = 𝑎𝜑(𝑣)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑎 ∈ 𝐑</script> and all <script type="math/tex">𝑣 ∈ 𝐑^2</script> but <script type="math/tex">𝜑</script> is not linear.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider the norm function:</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜑(𝑣) = \left\| v \right\| = \sqrt[]{v_1^2 + v_2^2}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a9">3A.9</h3>
+<p>Give an example of a function <script type="math/tex">𝜑 ∶ 𝐂 → 𝐂</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜑(𝑤 + 𝑧) = 𝜑(𝑤) + 𝜑(𝑧)
+</script>
+</p>
+<p>for all <script type="math/tex">𝑤, 𝑧 ∈ 𝐂</script> but <script type="math/tex">𝜑</script> is not linear.
+(Here <script type="math/tex">𝐂</script> is thought of as a complex vector space.)</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">𝜑(𝑤) = \overline{w}</script>.</p>
+<p>Then let <script type="math/tex">w = i, a = i</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜑(a𝑤) = 𝜑(-1) = -1 \\
+a 𝜑(𝑤) = i 𝜑(i) = i (-i) = 1 \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a10">3A.10</h3>
+<p>Prove or give a counterexample: If <script type="math/tex">𝑞 ∈ 𝒫(𝐑)</script> and
+<script type="math/tex">𝑇 ∶ 𝒫(𝐑) → 𝒫(𝐑)</script> is defined by 𝑇𝑝 = 𝑞 ∘ 𝑝, then <script type="math/tex">𝑇</script> is a 
+linear map.</p>
+<p><strong>Solution</strong>: We provide a counterexample.</p>
+<p>Let <script type="math/tex">q = x + 1, p = 1</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(p)(0) = q(p(0)) = q(1) = 2 \\
+T(2p)(0) = q(2p(0)) = q(2) = 3 \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a11">3A.11</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Prove that 𝑇 is a scalar multiple of the identity if and only if 
+<script type="math/tex">𝑆𝑇 = 𝑇𝑆</script> for every <script type="math/tex">𝑆 ∈ ℒ(𝑉)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script> is obvious. </p>
+<p>Given <script type="math/tex">v_1, \cdots, v_m</script> is a basis with <script type="math/tex">m \geq 2</script>.
+<script type="math/tex">T</script> is not a zero map. Without loss of generality, assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(v_1) = w_1 = a_1 v_1 + \cdots + a_m v_m \neq 0.
+</script>
+</p>
+<p>Let <script type="math/tex">S(v_1) = v_1, S(v_i) = 0</script> for <script type="math/tex">i \neq 1</script>.
+Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+TS(v_1) = T(v_1) = a_1 v_1 + \cdots + a_m v_m \\
+ST(v_1) = S(a_1 v_1 + \cdots + a_m v_m)
+= a_1 v_1
+</script>
+</p>
+<p>So <script type="math/tex">T(v_1) = a_1 v_1</script>. For the same reason, <script type="math/tex">T(v_i) = a_i v_i</script>.</p>
+<p>Now consider <script type="math/tex">S(v_1) = v_2, S(v_2) = v_1, S(v_i) = 0</script> for all other
+<script type="math/tex">i</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+TS(v_1) = T(v2) = a_2 v_2 \\
+ST(v_1) = S(a_1 v_1) = a_1 v_2 \\
+</script>
+</p>
+<p>So <script type="math/tex">a_1 = a_2 = \cdots = a_n</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a12">3A.12</h3>
+<p>Suppose <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> with <script type="math/tex">𝑈 ≠ 𝑉</script>.
+Suppose <script type="math/tex">𝑆 ∈ ℒ(𝑈, 𝑊)</script> and <script type="math/tex">𝑆 ≠ 0</script> (which means that
+<script type="math/tex">𝑆𝑢 ≠ 0</script> for some <script type="math/tex">𝑢 ∈ 𝑈</script>). Define <script type="math/tex">𝑇 ∶ 𝑉 → 𝑊</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+T v =
+\begin{cases}
+    S v &\text{if } v \in U \\
+    0 &\text{if }  v \in V \text{ and } v \not\in U. \\
+\end{cases}
+</script>
+</p>
+<p>Prove that 𝑇 is not a linear map on 𝑉 .</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider <script type="math/tex">v \in U, S(v) \neq 0</script>, <script type="math/tex">w \not\in U</script>, then <script type="math/tex">v + w \not\in U</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = S(v + w) = S(v) + S(w) = S(v)
+</script>
+</p>
+<p>So we have a contradition.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a13">3A.13</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional. Prove that every linear map on a 
+subspace of <script type="math/tex">𝑉</script> can be extended to a linear map on <script type="math/tex">𝑉</script> . In other 
+words, show that if <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> and <script type="math/tex">𝑆 ∈ ℒ(𝑈, 𝑊)</script>, 
+then there exists <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script> such that
+<script type="math/tex">𝑇𝑢 = 𝑆𝑢</script> for all <script type="math/tex">𝑢 ∈ 𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider <script type="math/tex">U</script> is a subspace, <script type="math/tex">u_1, \cdots, u_m</script> is a basis of <script type="math/tex">U</script>.
+Let <script type="math/tex">w_i = S(u_i)</script>. We can extend <script type="math/tex">u_1, \cdots, u_m</script> to
+<script type="math/tex">u_1, \cdots, u_m, v_1, \cdots, v_n</script>.</p>
+<p>Let <script type="math/tex">T(u_i) = w_i, T(v_j) = 0</script>, then from 3.4 linear map lemma,
+<script type="math/tex">T</script> satisfy <script type="math/tex">𝑇𝑢 = 𝑆𝑢</script> for all <script type="math/tex">𝑢 ∈ 𝑈</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a14">3A.14</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional with <script type="math/tex">\dim 𝑉 > 0</script>, and suppose 
+<script type="math/tex">𝑊</script> is infinite-dimensional. Prove that <script type="math/tex">ℒ(𝑉, 𝑊)</script> is 
+infinite-dimensional.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\dim ℒ(𝑉, 𝑊) = n</script>,
+and <script type="math/tex">v_1, \cdots, v_m</script> is a basis of of <script type="math/tex">V</script>.</p>
+<p>Also assume <script type="math/tex">w_1, \cdots, w_{n+1}</script> is linear independent in <script type="math/tex">W</script>.</p>
+<p>Let <script type="math/tex">T_1, \cdots, T_{n+1}</script> are linear mappings such that
+<script type="math/tex">T_i(v_1) = w_i</script>.</p>
+<p>Since <script type="math/tex">\dim ℒ(𝑉, 𝑊) = n</script>, then <script type="math/tex">T_1, \cdots, T_{n+1}</script> are linear
+dependent, i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 T_1 + \cdots + a_{n+1} T_{n+1} = 0, a_i \text{ are not all 0}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+(a_1 T_1 + \cdots + a_{n+1} T_{n+1})(v_1) = \\
+a_1 w_1 + \cdots + a_{n+1} w_{n+1} = 0
+</script>
+</p>
+<p>So <script type="math/tex">w_1, \cdots, w_{n+1}</script> is linear dependent. We have a 
+contradition.</p>
+<h3 id="3a15">3A.15</h3>
+<p>Suppose <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> is a linearly dependent list of vectors in 
+<script type="math/tex">𝑉</script> . Suppose also that <script type="math/tex">𝑊 ≠ \{0\}</script>.
+Prove that there exist <script type="math/tex">𝑤_1, …, 𝑤_𝑚 ∈ 𝑊</script> such that no
+<script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script> satisfies <script type="math/tex">𝑇𝑣_𝑘 = 𝑤_𝑘</script> for each
+<script type="math/tex">𝑘 = 1, …, 𝑚</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>We can find</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m = 0, a_i \text{ are not all 0}
+</script>
+</p>
+<p>Without loss of generality, assume <script type="math/tex">a_1 \neq 0</script>.</p>
+<p>Then let <script type="math/tex">w_1 \neq 0, w_2 = \cdots = w_m = 0</script>.</p>
+<p>If <script type="math/tex">𝑇𝑣_𝑘 = 𝑤_𝑘</script> for each <script type="math/tex">𝑘 = 1, …, 𝑚</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = T(0) = T(a_1 v_1 + \cdots + a_m v_m) =
+a_1 T(v_1) + \cdots + a_m T(v_m) = a_1 w_1 \neq 0
+</script>
+</p>
+<p>So <script type="math/tex">T</script> does not exist.</p>
+<h3 id="3a16">3A.16</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional with <script type="math/tex">\dim 𝑉 > 1</script>. Prove that 
+there exist <script type="math/tex">𝑆, 𝑇 ∈ ℒ(𝑉)</script> such that <script type="math/tex">𝑆𝑇 ≠ 𝑇𝑆</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider <script type="math/tex">v_1, v_2, \cdots, v_m</script> is a basis of <script type="math/tex">V</script>.</p>
+<p>Let <script type="math/tex">T(v_1) = v_1, T(v_2) = 2 v_2</script>, <script type="math/tex">S(v_1) = v_2, S(v_2) = v_1</script>.
+And <script type="math/tex">T(v_i) = S(v_i) = 0</script> for all other <script type="math/tex">i \neq 1, 2</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+ST(v_1) = v_2 \\
+TS(v_1) = T(v_2) = 2 v_2 \\
+</script>
+</p>
+<p>Since <script type="math/tex">v_2 \neq 0</script>, then <script type="math/tex">ST(v_1) \neq TS(v_2)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3a17">3A.17</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional. Show that the only two-sided 
+ideals of <script type="math/tex">ℒ(𝑉)</script> are <script type="math/tex">\{0\}</script> and <script type="math/tex">ℒ(𝑉)</script>.</p>
+<p>A subspace <script type="math/tex">ℰ</script> of <script type="math/tex">ℒ(𝑉)</script> is called a two-sided ideal of <script type="math/tex">ℒ(𝑉)</script> if
+<script type="math/tex">𝑇𝐸 ∈ ℰ</script> and <script type="math/tex">𝐸𝑇 ∈ ℰ</script> for all <script type="math/tex">𝐸 ∈ ℰ</script> and all <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.</p>
+<p><strong>Proof</strong>: I cannot figure it out now.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-3b-null-spaces-and-ranges">Section 3B Null Spaces and Ranges</h2>
+<h3 id="3b1">3B.1</h3>
+<p>Give an example of a linear map <script type="math/tex">𝑇</script> with dim null <script type="math/tex">𝑇 = 3</script> and dim range <script type="math/tex">𝑇 = 2</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">T : \mathbb{R}^5 \longrightarrow \mathbb{R}^2</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(r_1, r_2, r_3, r_4, r_5) = (r_1, r_2)
+</script>
+</p>
+<p>It is surjective, so dim range <script type="math/tex">𝑇 = 2</script>.</p>
+<p>Note <script type="math/tex">(0, 0, 1, 0, 0), (0,0,0,1,0), (0,0,0,0,1)</script> is a basis of <script type="math/tex">\text{null } T</script>,
+so dim null <script type="math/tex">𝑇 = 3</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b2">3B.2</h3>
+<p>Suppose <script type="math/tex">𝑆, 𝑇 ∈ ℒ(𝑉)</script> are such that range <script type="math/tex">𝑆 ⊆ \text{null } T</script>. Prove that <script type="math/tex">(𝑆𝑇)^2 = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given any <script type="math/tex">v \in S</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+((𝑆𝑇)^2)(v) = (ST)((ST)(v)) =
+S(T(S(T(v))))
+</script>
+</p>
+<p>Note <script type="math/tex">S(T(v)) \in \text{range } S \subseteq \text{null } T</script>.</p>
+<p>So <script type="math/tex">S(T(S(T(v)))) = S(0) = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b3">3B.3</h3>
+<p>Suppose <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> is a list of vectors in <script type="math/tex">𝑉</script>.
+Define <script type="math/tex">𝑇 ∈ ℒ(𝐅^𝑚 , 𝑉)</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+T (z_1, \cdots, z_m) = z_1 v_1 + \cdots + z_m v_m
+</script>
+</p>
+<p>Anwser:</p>
+<p>(a) What property of <script type="math/tex">𝑇</script> corresponds to <script type="math/tex">v_1, \cdots, v_m</script> spanning <script type="math/tex">𝑉</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>When <script type="math/tex">T</script> is surjective.</p>
+<p>(b) What property of <script type="math/tex">𝑇</script> corresponds to the list <script type="math/tex">v_1, \cdots, v_m</script> being linearly
+independent?</p>
+<p><strong>Solution</strong>:</p>
+<p>When <script type="math/tex">T</script> is injective.</p>
+<h3 id="3b4">3B.4</h3>
+<p>Show that <script type="math/tex">\{𝑇 ∈ ℒ(𝐑^5 , 𝐑^4) ∶ \text{dim null } T > 2\}</script> is not a subspace of
+<script type="math/tex">ℒ(\mathbb{R}^5, \mathbb{R}^4)</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider the following 2 maps:</p>
+<p>
+<script type="math/tex; mode=display"> 
+S(r_1, r_2, r_3, r_4, r_5) = (r_1, r_2, 0, 0) \\
+T(r_1, r_2, r_3, r_4, r_5) = (0, 0, r_3, r_4) \\
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+(S+T)(r_1, r_2, r_3, r_4, r_5) = (r_1, r_2, r_3, r_4)
+</script>
+</p>
+<p>So <script type="math/tex">\text{dim null } (S+T) = 1</script>.</p>
+<p>This set is not closed under addition.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b5">3B.5</h3>
+<p>Give an example of <script type="math/tex">𝑇 ∈ ℒ(𝐑^4)</script> such that <script type="math/tex">\text{range } T = \text{null } T</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(r_1, r_2, r_3, r_4) = (0, 0, r_1, r_2)
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{null } T = \{(0, 0, r_3, r_4)\} = \text{range } T
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b6">3B.6</h3>
+<p>Prove that there does not exist <script type="math/tex">𝑇 ∈ ℒ(𝐑^5)</script> such that <script type="math/tex">\text{range } T = \text{null } T</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>From 3.21 fundamental theorem of linear maps,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{dim null } T + \text{dim range } T = 5
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{dim null } T \neq \text{dim range } T
+</script>
+</p>
+<p>Then <script type="math/tex">\text{null } T \neq \text{range } T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b7">3B.7</h3>
+<p>Suppose <script type="math/tex">𝑉</script> and <script type="math/tex">𝑊</script> are finite-dimensional with <script type="math/tex">2 ≤ \dim 𝑉 ≤ \dim 𝑊</script>.
+Show that <script type="math/tex">\{𝑇 ∈ ℒ(𝑉, 𝑊) ∶ 𝑇 \text{ is not injective}\}</script>
+is not a subspace of <script type="math/tex">ℒ(𝑉, 𝑊)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">v_1, \cdots, v_m</script> is a basis of <script type="math/tex">V</script> and
+<script type="math/tex">w_1, \cdots, w_m</script> is linear independent vector.</p>
+<p>Let <script type="math/tex">T(v_1) = w_1, T(v_i) = 0</script>, <script type="math/tex">S(v_1) = 0, S(v_i) = w_i</script>.</p>
+<p>So <script type="math/tex">(S+T)(v_i) = w_i</script>. <script type="math/tex">S+T</script> is injective.</p>
+<p>This set is not closed under addition.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b8">3B.8</h3>
+<p>Suppose <script type="math/tex">𝑉</script> and <script type="math/tex">𝑊</script> are finite-dimensional with <script type="math/tex">2 ≤ \dim W ≤ \dim V</script>.
+Show that <script type="math/tex">\{𝑇 ∈ ℒ(𝑉, 𝑊) ∶ 𝑇 \text{ is not surjective}\}</script>
+is not a subspace of <script type="math/tex">ℒ(𝑉, 𝑊)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">w_1, \cdots, w_m</script> is a basis of <script type="math/tex">W</script> and
+<script type="math/tex">v_1, \cdots, v_m</script> is linear independent vector.</p>
+<p>Let <script type="math/tex">T(v_1) = w_1, T(v_i) = 0</script>, <script type="math/tex">S(v_1) = 0, S(v_i) = w_i</script>.</p>
+<p>So <script type="math/tex">(S+T)(v_i) = w_i</script>. <script type="math/tex">S+T</script> is surjective.</p>
+<p>This set is not closed under addition.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b9">3B.9</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script> is injective and <script type="math/tex">v_1, \cdots, v_n</script> is linearly independent in <script type="math/tex">𝑉</script>.
+Prove that <script type="math/tex">𝑇𝑣_1, …, 𝑇𝑣_𝑛</script> is linearly independent in 𝑊.</p>
+<p><strong>Proof</strong>:</p>
+<p>If</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 Tv_1 + \cdots + a_m Tv_m = 0
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(a_1 v_1 + \cdots + a_m v_m) = 0
+</script>
+</p>
+<p>Since <script type="math/tex">T</script> is injective, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m = 0
+</script>
+</p>
+<p>Then <script type="math/tex">a_1 = \cdots = a_m = 0</script>. Thus <script type="math/tex">𝑇𝑣_1, …, 𝑇𝑣_𝑛</script> is linearly independent in 𝑊.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b10">3B.10</h3>
+<p>Suppose <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> spans <script type="math/tex">𝑉</script> and <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script>.
+Show that <script type="math/tex">𝑇𝑣_1, …, 𝑇𝑣_𝑛</script>  spans <script type="math/tex">\text{range } T</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">w \in \text{range } T</script>, then <script type="math/tex">T(v) = w</script>.</p>
+<p>Let <script type="math/tex">v = a_1 v_1 + \cdots + a_n v_n</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+T (a_1 v_1 + \cdots + a_n v_n) = a_1 Tv_1 + \cdots + a_n Tv_n = w
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b11">3B.11</h3>
+<p>Suppose that <script type="math/tex">𝑉</script> is finite-dimensional and that 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that there
+exists a subspace 𝑈 of 𝑉 such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+U \cap \text{null } T = \{0\}
+\quad
+\text{and}
+\quad
+\text{range } T = \{Tu : u \in U\}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">v_1, \cdots, v_m</script> be a basis of <script type="math/tex">\text{null } T</script>, we can extend a basis of <script type="math/tex">V</script> 
+it to <script type="math/tex">v_1, \cdots, v_m, w_1, \cdots, w_n</script>.</p>
+<p>Let <script type="math/tex">U = \text{span}(w_1, \cdots, w_n)</script>.</p>
+<p>If <script type="math/tex">u \in \text{range } T</script>, and <script type="math/tex">T(v) = u</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+v = a_1 v_1 + \cdots + a_m v_m + b_1 w_1 + \cdots + b_n w_n
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+u = T(v) = T (a_1 v_1 + \cdots + a_m v_m + b_1 w_1 + \cdots + b_n w_n) \\
+= T(a_1 v_1 + \cdots + a_m v_m) + T(b_1 w_1 + \cdots + b_n w_n) \\
+= T(b_1 w_1 + \cdots + b_n w_n)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b12">3B.12</h3>
+<p>Suppose <script type="math/tex">𝑇</script> is a linear map from <script type="math/tex">𝐅^4</script> to <script type="math/tex">𝐅^2</script> 
+such that </p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{null } T
+=
+\{
+(𝑥_1, 𝑥_2, 𝑥_3, 𝑥_4) ∈ 𝐅^4 ∶ 𝑥_1 = 5𝑥_2
+\text{ and } 𝑥_3 = 7𝑥_4
+\}
+</script>
+</p>
+<p>Prove that <script type="math/tex">𝑇</script> is surjective.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_1 = (5, 1, 0, 0) \\
+v_2 = (0, 0, 7, 1) \\
+</script>
+</p>
+<p>is a basis of <script type="math/tex">\text{null } T</script>,
+so <script type="math/tex">\dim \text{range } T = 2</script>.</p>
+<p>Then <script type="math/tex">𝑇</script> is surjective.</p>
+<h3 id="3b13">3B.13</h3>
+<p>Suppose <script type="math/tex">𝑈</script> is a three-dimensional subspace of
+<script type="math/tex">𝐑^8</script> and that <script type="math/tex">𝑇</script> is a linear map
+from <script type="math/tex">𝐑^8</script> to <script type="math/tex">𝐑^5</script> such that <script type="math/tex">\text{null } T = 𝑈</script>. 
+Prove that <script type="math/tex">𝑇</script> is surjective.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note <script type="math/tex">\text{dim range } T = 5</script>, and <script type="math/tex">\dim R^5 = 5</script>.
+So <script type="math/tex">𝑇</script> is surjective.</p>
+<h3 id="3b14">3B.14</h3>
+<p>Prove that there does not exist a linear map from
+<script type="math/tex">𝐅_5</script> to <script type="math/tex">𝐅_2</script> whose null space equals</p>
+<p>
+<script type="math/tex; mode=display"> 
+\{
+(𝑥_1, 𝑥_2, 𝑥_3, 𝑥_4, 𝑥_5) ∈ 𝐅^5
+∶
+𝑥_1 = 3𝑥_2
+\text{ and }
+𝑥_3 = 𝑥_4 = 𝑥_5
+\}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">T</script> exists. Note</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_1 = (3, 1, 0, 0, 0) \\
+v_2 = (0, 0, 1, 1, 1) \\
+</script>
+</p>
+<p>is a basis of <script type="math/tex">\text{null } T</script>, so
+<script type="math/tex">\text{dim range } T</script> has to be <script type="math/tex">3</script>.</p>
+<p>But <script type="math/tex">\mathbb{R}^2</script> is only 2 dimensional.
+So <script type="math/tex">T</script> does not exist.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b15">3B.15</h3>
+<p>Suppose there exists a linear map on <script type="math/tex">𝑉</script> whose null 
+space and range are both
+finite-dimensional.
+Prove that <script type="math/tex">𝑉</script> is finite-dimensional.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume otherwise, <script type="math/tex">u_1, \cdots, u_m</script> is a basis
+of <script type="math/tex">\text{null } T</script> and <script type="math/tex">v_1, \cdots, v_n</script> such
+that <script type="math/tex">Tv_1, \cdots, Tv_n</script> is a basis of
+<script type="math/tex">\text{range } T</script>.</p>
+<p>We can see <script type="math/tex">V = \text{null } T + \text{span}(𝑣_1, \cdots, 𝑣_n)</script>.</p>
+<p>From 2.43 dimension of a sum, we can see</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim V \leq \text{dim null } T + \dim
+\text{span}(𝑣_1, \cdots, 𝑣_n)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b16">3B.16</h3>
+<p>Suppose 𝑉 and 𝑊 are both finite-dimensional. Prove that there 
+exists an injective linear map from 𝑉 to 𝑊 if and only if
+dim 𝑉 ≤ dim 𝑊.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>It's the contrapositive of 3.22, i.e. linear map to a 
+lower-dimensional space is not injective.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">\dim V = m</script>, and <script type="math/tex">v_1, \cdots, v_m</script> is a basis of
+<script type="math/tex">V</script>, and <script type="math/tex">w_1, \cdots, w_m</script> is linearly independent in <script type="math/tex">W</script>.</p>
+<p>Let <script type="math/tex">T</script> be a linear map such that <script type="math/tex">T(v_i) = w_i</script>.
+Then if</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(a_1 v_1 + \cdots + a_m v_m) = 0 \\
+\Rightarrow \\
+a_1 Tv_1 + \cdots + a_m Tv_m \\
+\Rightarrow \\
+a_1 w_1 + \cdots + a_m w_m = 0 \\
+\Rightarrow \\
+a_1 = \cdots = a_m = 0
+</script>
+</p>
+<p>So <script type="math/tex">\text{null } T = 0</script>, so <script type="math/tex">T</script> is injective.</p>
+<h3 id="3b17">3B.17</h3>
+<p>Suppose 𝑉 and 𝑊 are both finite-dimensional. Prove that there 
+exists a surjective linear map from 𝑉 onto 𝑊 if and only if
+dim 𝑉 ≥ dim 𝑊.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>It is the contrapositive of 3.24: linear map to a 
+higher-dimensional space is not surjective.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">w_1, \cdots, w_m</script> is a basis of <script type="math/tex">W</script>. <script type="math/tex">v_1, \cdots, v_m</script> 
+is linear independent in <script type="math/tex">V</script>. Extend it to a basis of <script type="math/tex">V</script> by
+adding <script type="math/tex">u_1, \cdots, u_n</script>.</p>
+<p>Let <script type="math/tex">T v_i = w_i, T u_j = 0</script>. This map is surjective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b18">3B.18</h3>
+<p>Suppose 𝑉 and 𝑊 are finite-dimensional and that 𝑈 is a
+subspace of 𝑉 .
+Prove that there exists 𝑇 ∈ ℒ(𝑉, 𝑊) such that null 𝑇 = 𝑈 if 
+and only if dim 𝑈 ≥ dim 𝑉 − dim 𝑊.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim V = \text{dim null } T + \text{dim range } T \\
+\Rightarrow \\
+\dim U = \dim V - \text{dim range } T \\
+\Rightarrow \\
+\dim U \geq  \dim V - \dim W \\
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Let <script type="math/tex">u_1, \cdots, u_m</script> be a basis of <script type="math/tex">U</script>, extend it to a basis
+of <script type="math/tex">V</script> by adding <script type="math/tex">v_1, \cdots, v_n</script>.</p>
+<p>Since <script type="math/tex">\dim U \geq  \dim V - \dim W</script>, then <script type="math/tex">\dim W \geq n</script>.
+We can find <script type="math/tex">w_1, \cdots, w_n \in W</script> such that they are independent
+in <script type="math/tex">W</script>.</p>
+<p>Let <script type="math/tex">T u_i = 0, T v_j = w_j</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b19">3B.19</h3>
+<p>Suppose 𝑊 is finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that 𝑇 
+is injective
+if and only if there exists 𝑆 ∈ ℒ(𝑊, 𝑉) such that 𝑆𝑇 is the 
+identity operator on 𝑉 .</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>First, since <script type="math/tex">T</script> is injective, <script type="math/tex">V</script> has to be finite-dimensional
+because of 3.22.</p>
+<p>Assume <script type="math/tex">v_1, \cdots, v_m</script> is a basis of <script type="math/tex">V</script>.</p>
+<p>Also assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 Tv_1 + \cdots + a_m Tv_m = 0 \\
+\Rightarrow \\
+T(a_1 v_1 + \cdots + a_m v_m) = 0 \\
+\Rightarrow \\
+a_1 v_1 + \cdots + a_m v_m \in \text{null } T \\
+\Rightarrow \text{ T is injective } \\
+a_1 v_1 + \cdots + a_m v_m = 0 \\
+\Rightarrow \\
+a_1 = \cdots = a_m = 0 \\
+\Rightarrow \\
+Tv_1, \cdots, Tv_m \text{ is independent }
+</script>
+</p>
+<p>Then extend <script type="math/tex">Tv_1, \cdots, Tv_m</script> to a basis of <script type="math/tex">W</script> by adding
+<script type="math/tex">w_1, \cdots, w_n</script>. Consider <script type="math/tex">S</script> as <script type="math/tex">S(T v_i) = v_i, S(w_j) = 0</script>.</p>
+<p>Then we have <script type="math/tex">ST</script> is the identity operator on 𝑉.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>If <script type="math/tex">T(v) = 0</script>, then <script type="math/tex">v = ST(v) = S(0) = 0</script>.
+So <script type="math/tex">T</script> is injective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b20">3B.20</h3>
+<p>Suppose 𝑊 is finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that 𝑇 
+is surjective
+if and only if there exists 𝑆 ∈ ℒ(𝑊, 𝑉) such that 𝑇𝑆 is the 
+identity operator on 𝑊.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>
+<script type="math/tex">w_1, \cdots, w_m</script> is a basis of <script type="math/tex">W</script>, and <script type="math/tex">T(v_i) = w_i</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m = 0 \\
+\Rightarrow \\
+T(a_1 v_1 + \cdots + a_m v_m) = 0 \\
+\Rightarrow \\
+a_1 Tv_1 + \cdots + a_m Tv_m = 0 \\
+\Rightarrow \\
+a_1 w_1 + \cdots + a_m w_m = 0 \\
+\Rightarrow \\
+a_1 = \cdots = a_m = 0 \\
+\Rightarrow \\
+v_1, \cdots, v_m \text{ is linear independent.}
+</script>
+</p>
+<p>Let <script type="math/tex">S(w_i) = v_i</script>, then if <script type="math/tex">w = a_1 w_1 + \cdots + a_m w_m</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+TS(w) = T(a_1 Sw_1 + \cdots + a_m Sw_m) \\
+= T(a_1 v_1 + \cdots + a_m v_m) \\
+= a_1 Tv_1 + \cdots + a_m Tv_m \\
+= a_1 w_1 + \cdots + a_m w_m \\
+= w
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>If <script type="math/tex">TS</script> is the identity operator. For any given <script type="math/tex">w</script>,
+<script type="math/tex">TS(w) = w</script>, <script type="math/tex">S(w) \in V</script>. So <script type="math/tex">T</script> is surjective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b21">3B.21</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script>, and <script type="math/tex">𝑈</script>
+is a subspace of <script type="math/tex">𝑊</script>.
+Prove that <script type="math/tex">\{𝑣 ∈ 𝑉 ∶ 𝑇𝑣 ∈ 𝑈\}</script> is a subspace of <script type="math/tex">𝑉</script> and</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim 
+\{
+v \in 𝑉 ∶ 𝑇𝑣 ∈ 𝑈
+\}
+=
+\text{dim null } T +
+\dim (𝑈 ∩ \text{range } T)
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>We first show <script type="math/tex">\{𝑣 ∈ 𝑉 ∶ 𝑇𝑣 ∈ 𝑈\}</script> is a subspace of <script type="math/tex">V</script>.</p>
+<p>Let <script type="math/tex">A = \{𝑣 ∈ 𝑉 ∶ 𝑇𝑣 ∈ 𝑈\}</script>, <script type="math/tex">v_1, v_2 \in A</script>, then we can find
+<script type="math/tex">Tv_1 = a_1 \in U, Tv_2 = a_2 \in U</script>, so <script type="math/tex">T(v_1 + v_2) = a_1 + a_2 \in U</script>.</p>
+<p>
+<script type="math/tex">T(k v_1) = k T(v_1) = k a_1 \in U</script>.</p>
+<p>So <script type="math/tex">A</script> is a subspace of <script type="math/tex">V</script>.</p>
+<p>Consider the linear mapping that limits <script type="math/tex">T</script> on <script type="math/tex">A</script> and call it <script type="math/tex">T|_A</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim A = \text{dim null } T|_A + \text{dim range } T|_A
+</script>
+</p>
+<p>Note that <script type="math/tex">\text{null } T \subseteq A</script>, so <script type="math/tex">\text{dim null } T = \text{dim null } T|_A</script>.</p>
+<p>Also <script type="math/tex">\text{range } T|_A = 𝑈 ∩ \text{range } T</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{dim range } T|_A = \dim (𝑈 ∩ \text{range } T)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b22">3B.22</h3>
+<p>Suppose 𝑈 and 𝑉 are finite-dimensional vector spaces and 𝑆 ∈ ℒ(𝑉, 𝑊) and
+𝑇 ∈ ℒ(𝑈, 𝑉). Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{dim null } ST \leq \text{dim null } S + \text{dim null } T
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Use the exercise 3B.21, Let <script type="math/tex">B = \text{null } S</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{null } ST = \{u: Tu \in B\} = C
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim C = \text{dim null } T + \dim (B \cap \text{range } T)
+</script>
+</p>
+<p>And <script type="math/tex">\dim (B \cap \text{range } T) \leq \dim B = \text{dim null } S</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b23">3B.23</h3>
+<p>Suppose 𝑈 and 𝑉 are finite-dimensional vector spaces and 𝑆 ∈ ℒ(𝑉, 𝑊) and
+𝑇 ∈ ℒ(𝑈, 𝑉). Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{dim range } ST \leq \min \{\text{dim range } S, \text{dim range } T\}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">w \in \text{range } ST</script>, then we can find <script type="math/tex">u</script> such that <script type="math/tex">ST(u) = w</script>, i.e. <script type="math/tex">S(T(u)) = w</script>,
+<script type="math/tex">w \in \text{range } S</script>. So <script type="math/tex">\text{range } ST \subseteq \text{range } S</script>.</p>
+<p>Limit <script type="math/tex">S</script> on <script type="math/tex">\text{range } T</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{dim range } T = \text{dim null } S|_{\text{range } T}
++ \text{dim range } S|_{\text{range } T}
+\geq
+\text{dim range } S|_{\text{range } T}
+</script>
+</p>
+<p>Also <script type="math/tex">\text{range } S|_{\text{range } T} = \text{range } ST</script>.</p>
+<p>So <script type="math/tex">\text{dim range } T \geq \text{dim range } ST</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b24">3B.24</h3>
+<p>(a) Suppose dim 𝑉 = 5 and 𝑆, 𝑇 ∈ ℒ(𝑉) are such that 𝑆𝑇 = 0. 
+Prove that dim range 𝑇𝑆 ≤ 2.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\text{dim null } ST = 5</script>. So
+<script type="math/tex">\text{dim null } T + \text{dim null } S \geq 5</script>.</p>
+<p>So <script type="math/tex">\max \{\text{dim null } T , \text{dim null } S\} \geq 3</script>,
+<script type="math/tex">\min \{\text{dim range } T , \text{dim range } S\} \leq 2</script>.</p>
+<p>So <script type="math/tex">\text{dim range } TS \leq 2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Give an example of 𝑆, <script type="math/tex">𝑇 ∈ ℒ(𝐅^5)</script> with 𝑆𝑇 = 0 and
+dim range 𝑇𝑆 = 2.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">T(x_1, x_2, x_3, x_4, x_5) = (0, 0, 0, x_1, x_2)</script>,
+<script type="math/tex">S(x_1, x_2, x_3, x_4, x_5) = (x_1, x_2, 0, 0, 0)</script>
+</p>
+<p>
+<script type="math/tex">TS(x_1, x_2, x_3, x_4, x_5) = T(x_1, x_2, 0, 0, 0) = (0, 0, 0, x_1, x_2)</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b25">3B.25</h3>
+<p>Suppose that 𝑊 is finite-dimensional and 𝑆, 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that
+null 𝑆 ⊆ null 𝑇 if and only if there exists 𝐸 ∈ ℒ(𝑊) such that 𝑇 = 𝐸𝑆.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">Tv_1, \cdots, Tv_m</script> is a basis of <script type="math/tex">\text{range } T</script>.
+Then <script type="math/tex">v_1, \cdots, v_m</script> is independent in <script type="math/tex">V</script>.</p>
+<p>Then <script type="math/tex">Sv_1, \cdots, Sv_m</script> is independent in <script type="math/tex">W</script>. This is because 
+assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 Sv_1 + \cdots + a_m Sv_m = 0
+</script>
+</p>
+<p>Then <script type="math/tex">a_1 v_1 + \cdots + a_m v_m \in \text{null } S \subseteq \text{null } T</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 Tv_1 + \cdots + a_m Tv_m = 0
+</script>
+</p>
+<p>So <script type="math/tex">a_1 = \cdots = a_m = 0</script>.</p>
+<p>Then extend <script type="math/tex">Sv_1, \cdots, Sv_m</script> to a basis of <script type="math/tex">\text{range } S</script>
+by adding <script type="math/tex">Sr_1, \cdots, Sr_n</script>.</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+A = \text{span}(𝑣_1, \cdots, 𝑣_𝑚, r_1, \cdots, r_n)
+</script>
+</p>
+<p>First <script type="math/tex">𝑣_1, \cdots, 𝑣_𝑚, r_1, \cdots, r_n</script> are independent: </p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m +
+b_1 r_1 + \cdots + b_n r_n =
+0 \\
+\Rightarrow \\
+a_1 Sv_1 + \cdots + a_m Sv_m +
+b_1 Sr_1 + \cdots + b_n Sr_n =
+0 \\
+\Rightarrow \\
+a_1 = \cdots = a_m = b_1 = \cdots = b_n = 0
+</script>
+</p>
+<p>Note that we have <script type="math/tex">S|_A</script> is injective. Because</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim A = m + n = \text{dim range } S = \text{dim range } S|_A \\
+\Rightarrow \\
+\text{dim null } S|_A = 0
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+V = A \oplus \text{null } S
+</script>
+</p>
+<p>Now, consider <script type="math/tex">T|_A</script> We also have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim A = 
+\text{dim range } T|_A + \text{dim null } T|_A \\
+= \text{dim range } T + \text{dim null } T \cap A
+</script>
+</p>
+<p>So we can find a basis of <script type="math/tex">\text{null } T \cap A</script>, i.e.,
+<script type="math/tex">q_1, \cdots, q_n</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+A = \text{span}(𝑣_1, \cdots, 𝑣_𝑚, q_1, \cdots, q_n)
+</script>
+</p>
+<p>Note that <script type="math/tex">Sv_1, \cdots, Sv_m, Sq_1, \cdots, Sq_n</script>
+are also independent in <script type="math/tex">W</script> because <script type="math/tex">S|_A</script> is injective. </p>
+<p>Now, we can construct <script type="math/tex">E</script> this way. We extend
+<script type="math/tex">Sv_1, \cdots, Sv_m, Sq_1, \cdots, Sq_n</script> to a basis of <script type="math/tex">W</script> by
+adding <script type="math/tex">w_1, \cdots, w_k</script>. Let
+<script type="math/tex">E(Sv_i) = T v_i, E(Sq_j) = E(w_j) = 0</script>.</p>
+<p>Given <script type="math/tex">v \in V</script>, we can right it as</p>
+<p>
+<script type="math/tex; mode=display"> 
+v =
+(a_1 v_1 + \cdots + a_m v_m) +
+(b_1 q_1 + \cdots + b_n q_n) + c
+</script>
+</p>
+<p>Where <script type="math/tex">c \in \text{null } S</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+ES(v) =
+(a_1 ESv_1 + \cdots + a_m ESv_m) +
+(b_1 ESr_1 + \cdots + b_n ESr_n) + ESc \\
+= a_1 Tv_1 + \cdots + a_m Tv_m
+</script>
+</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(v) =
+(a_1 Tv_1 + \cdots + a_m Tv_m) +
+(b_1 Tq_1 + \cdots + b_n Tq_n) + Tc \\
+= a_1 Tv_1 + \cdots + a_m Tv_m
+</script>
+</p>
+<p>So <script type="math/tex">T = ES</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>If <script type="math/tex">v \in \text{null } S</script>, then <script type="math/tex">T(v) = ES(v) = E(0) = 0</script>.
+So <script type="math/tex">v \in \text{null } T</script>. So
+<script type="math/tex">\text{null } S \subseteq \text{null } T</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b26">3B.26</h3>
+<p>Suppose that 𝑉 is finite-dimensional and 𝑆, 𝑇 ∈ ℒ(𝑉, 𝑊). Prove 
+that range 𝑆 ⊆ range 𝑇 if and only if there exists 𝐸 ∈ ℒ(𝑉) 
+such that 𝑆 = 𝑇𝐸.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Consider <script type="math/tex">w_1, \cdots, w_m</script> is a basis of <script type="math/tex">\text{range } S</script>.
+We can find</p>
+<p>
+<script type="math/tex; mode=display">
+Tv_1 = w_1, \cdots, Tv_m = w_m \\
+Su_1 = w_1, \cdots, Su_m = w_m \\
+</script>
+</p>
+<p>It's easy to prove <script type="math/tex">V = \text{span}(u_1, \cdots, u_𝑚) \oplus \text{null } S</script>.</p>
+<p>Then let <script type="math/tex">p_1, \cdots, p_n</script> be a basis of <script type="math/tex">\text{null } S</script>.
+Together <script type="math/tex">u_1, \cdots, u_m, p_1, \cdots, p_n</script> is a basis
+of <script type="math/tex">V</script>.</p>
+<p>Define <script type="math/tex">E(u_i) = v_i, E(p_j) = 0</script>.</p>
+<p>Given <script type="math/tex">v \in V</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+v =
+a_1 u_1 + \cdots + a_m u_m +
+b_1 p_1 + \cdots + b_n p_n \\
+\Rightarrow \\
+S(v) = 
+a_1 Su_1 + \cdots + a_m Su_m +
+b_1 Sp_1 + \cdots + b_n Sp_n \\
+= a_1 Su_1 + \cdots + a_m Su_m \\
+= a_1 w_1 + \cdots + a_m w_m
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+TE(v) =
+a_1 TEu_1 + \cdots + a_m TEu_m +
+b_1 TEp_1 + \cdots + b_n TEp_n \\
+= a_1 Tv_1 + \cdots + a_m Tv_m \\
+= a_1 w_1 + \cdots + a_m w_m
+</script>
+</p>
+<p>So <script type="math/tex">S = TE</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">w \in \text{range } S</script>, and assume <script type="math/tex">S(v) = w</script>, then
+<script type="math/tex">TE(v) = w</script>, so <script type="math/tex">w \in \text{range } T</script>. Then
+<script type="math/tex">\text{range } S ⊆ \text{range } T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b27">3B.27</h3>
+<p>Suppose 𝑃 ∈ ℒ(𝑉) and <script type="math/tex">𝑃^2 = 𝑃</script>. Prove that
+<script type="math/tex">𝑉 = \text{null } P ⊕ \text{range } P</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider <script type="math/tex">v \in P</script>, then <script type="math/tex">v - P(v) \in \text{null } P</script>.</p>
+<p>So <script type="math/tex">V = \text{null } P + \text{range } P</script>.</p>
+<p>Assume <script type="math/tex">v \in \text{null } P \cap \text{range } P</script>.</p>
+<p>Let <script type="math/tex">P(u) = v</script>. So <script type="math/tex">P^2(u) = P(P(u)) = P(v) = 0</script>.</p>
+<p>On the other hand, <script type="math/tex">P^2(u) = P(u) = v</script>, so <script type="math/tex">v = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b28">3B.28</h3>
+<p>Suppose 𝐷 ∈ ℒ(𝒫(𝐑)) is such that deg 𝐷𝑝 = (deg 𝑝) − 1 for 
+every non-constant polynomial 𝑝 ∈ 𝒫(𝐑). Prove that 𝐷 is 
+surjective.</p>
+<p>The notation 𝐷 is used above to remind you of the differentiation 
+map that sends a polynomial 𝑝 to 𝑝′</p>
+<p><strong>Proof</strong>:</p>
+<p>Given a <script type="math/tex">p</script> such that <script type="math/tex">\deg Dp = 0</script>, so <script type="math/tex">Dp = c \neq 0</script>.
+Then <script type="math/tex">D \frac{1}{c} p = 1</script>.</p>
+<p>Then we can also find <script type="math/tex">p</script> such that <script type="math/tex">Dp = x</script> and so on.</p>
+<p>So <script type="math/tex">D</script> is surjective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b29">3B.29</h3>
+<p>Suppose 𝑝 ∈ 𝒫(𝐑). Prove that there exists a polynomial
+𝑞 ∈ 𝒫(𝐑) such that 5𝑞″ + 3𝑞′ = 𝑝.
+This exercise can be done without linear algebra, but it’s more fun 
+to do it using linear algebra.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note that <script type="math/tex">Dq = 5𝑞″ + 3𝑞'</script> satisfies 3B.28. So <script type="math/tex">D</script> is surjective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b30">3B.30</h3>
+<p>Suppose 𝜑 ∈ ℒ(𝑉, 𝐅) and 𝜑 ≠ 0. Suppose 𝑢 ∈ 𝑉 is not in
+null 𝜑. Prove that 𝑉 = null 𝜑 ⊕ {𝑎𝑢 ∶ 𝑎 ∈ 𝐅}.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\varphi u = c \neq 0</script>.</p>
+<p>Give <script type="math/tex">v \in V</script> and <script type="math/tex">\varphi (v) = b</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜑(v - \frac{b}{c}u) = 𝜑(v) - \frac{b}{c} 𝜑(u) = b - b = 0
+</script>
+</p>
+<p>So <script type="math/tex">v - \frac{b}{c}u \in \text{null } 𝜑</script>.</p>
+<p>Thus <script type="math/tex">𝑉 = \text{null } 𝜑 + \{𝑎𝑢 ∶ 𝑎 ∈ 𝐅\}.</script>
+</p>
+<p>Assume <script type="math/tex">v \in \text{null } 𝜑 \cap \{𝑎𝑢 ∶ 𝑎 ∈ 𝐅\}</script>,</p>
+<p>Then <script type="math/tex">0 = 𝜑(v) = 𝜑(au) = a 𝜑(u) = ac = 0</script>, so <script type="math/tex">a = 0 \cdot c^{-1} = 0</script>.</p>
+<p>Then <script type="math/tex">v = 0</script>.</p>
+<p>So <script type="math/tex">𝑉 = \text{null } 𝜑 ⊕ \{𝑎𝑢 ∶ 𝑎 ∈ 𝐅\}.</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b31">3B.31</h3>
+<p>Suppose 𝑉 is finite-dimensional, 𝑋 is a subspace of 𝑉 , and 𝑌 is 
+a finite-dimensional subspace of 𝑊. Prove that there exists
+𝑇 ∈ ℒ(𝑉, 𝑊) such that
+null 𝑇 = 𝑋 and range 𝑇 = 𝑌 if and only if dim 𝑋 + dim 𝑌 = dim 𝑉 .</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>From 3.21 fundamental theorem of linear maps</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim V = \dim \text{null } T + \text{dim range } T
+</script>
+</p>
+<p>Since <script type="math/tex">\text{null } T = X</script> and <script type="math/tex">\text{range } T = Y</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim 𝑋 + \dim 𝑌 = \dim 𝑉
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Let <script type="math/tex">w_1, \cdots, w_m</script> be a basis of <script type="math/tex">Y</script>.
+<script type="math/tex">v_1, \cdots, v_n</script> is a basis of <script type="math/tex">X</script>, and we can extend
+it to a basis of <script type="math/tex">V</script> by adding <script type="math/tex">m</script> elements <script type="math/tex">u_1, \cdots, u_m</script>.</p>
+<p>Define <script type="math/tex">T(v_i) = 0, T(u_j) = w_j</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b32">3B.32</h3>
+<p>Suppose 𝑉 is finite-dimensional with dim 𝑉 &gt; 1.
+Show that if 𝜑 ∶ ℒ(𝑉) → 𝐅
+is a linear map such that 𝜑(𝑆𝑇) = 𝜑(𝑆)𝜑(𝑇) for all
+𝑆, 𝑇 ∈ ℒ(𝑉), then 𝜑 = 0.</p>
+<p>Hint: The description of the two-sided ideals of ℒ(𝑉) given by 
+Exercise 17 in Section 3A might be useful.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the <script type="math/tex">\text{null } 𝜑</script>, for all <script type="math/tex">T \in ℒ(𝑉)</script> and all
+<script type="math/tex">E \in \text{null } \varphi</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝜑(E𝑇) = 𝜑(E) 𝜑(T) = 0 𝜑(T) = 0 = 𝜑(T) 0 = 𝜑(T) 𝜑(E) = 𝜑(ET)
+</script>
+</p>
+<p>So <script type="math/tex">ET \in \text{null } \varphi</script> and <script type="math/tex">TE \in \text{null } \varphi</script>.</p>
+<p>
+<script type="math/tex">\text{null } \varphi</script> is a two-sided ideal.</p>
+<p>Since 𝑉 is finite-dimensional with <script type="math/tex">\dim 𝑉 > 1</script>,
+then <script type="math/tex">\dim ℒ(V) > 1</script>. Since the following 2 linear maps are
+linearly independent.</p>
+<p>
+<script type="math/tex; mode=display"> 
+T_1(v_1) = v_1, T_1(v_2) = v_2 \\
+T_2(v_1) = v_2, T_2(v_2) = v_1 \\
+</script>
+</p>
+<p>Also note <script type="math/tex">\dim F = 1</script>.
+So from 3.22 linear map to a lower-dimensional space is not injective
+and 3.15 injectivity ⟺ null space equals {0}.</p>
+<p>Then <script type="math/tex">\text{null } \varphi \neq \{0\}</script>, so
+<script type="math/tex">\text{null } \varphi = ℒ(V)</script>, then 𝜑 = 0.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3b33">3B.33</h3>
+<p>Suppose that 𝑉 and 𝑊 are real vector spaces and 𝑇 ∈ ℒ(𝑉, 𝑊). 
+Define <script type="math/tex">𝑇_𝐂 ∶ 𝑉_𝐂 → 𝑊_𝐂</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑇_𝐂 (𝑢 + 𝑖𝑣) = 𝑇𝑢 + 𝑖𝑇𝑣
+</script>
+</p>
+<p>for all 𝑢, 𝑣 ∈ 𝑉.</p>
+<p>(a) Show that <script type="math/tex">𝑇_𝐂</script> is a (complex) linear map from <script type="math/tex">𝑉_𝐂</script> to <script type="math/tex">𝑊_𝐂</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+T_C((a + 𝑖b) + (c + di)) =
+T_C ((a+c)+i(b+d)) \\
+=
+T(a+c) + iT(b+d) \\
+= (T(a) + iT(b)) + (T(c) + iT(d)) \\
+= T_C(a + 𝑖b) + T_C(c+id)
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+T_C((x+iy)(a+ib)) = \\
+T_C((ax-by) + i(xb + ya)) \\
+= T(xa - yb) + i T(ya + xb) \\
+= xTa - yT(b) + i yT(a) + i x T(b) \\
+= (x+iy) (T(a) + iT(b)) \\
+= (x+iy) T(a + ib) \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">𝑇_𝐂</script> is injective if and only if 𝑇 is injective.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>
+<script type="math/tex">𝑇_𝐂</script> is injective</p>
+<p>Assume <script type="math/tex">T(u) = 0</script>, then <script type="math/tex">T_C(u + ui) = 0</script>.</p>
+<p>So <script type="math/tex">u + iu = 0</script>, so <script type="math/tex">u = 0</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>
+<script type="math/tex">T</script> is injective.</p>
+<p>Assume <script type="math/tex">T_C(u + iv) = 0</script>, then
+<script type="math/tex">T(u) + i T(v) = 0</script>, so <script type="math/tex">T(u) = T(v) = 0</script>, then <script type="math/tex">u = v = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show that range <script type="math/tex">𝑇_𝐂 = 𝑊_𝐂</script> if and only if range 𝑇 = 𝑊.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Given <script type="math/tex">w \in W</script>, since <script type="math/tex">T_C</script> is surjective, then
+we can find <script type="math/tex">T_C(a + ib) = w + 0i</script>, i.e.
+<script type="math/tex">T(a) = w</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Given <script type="math/tex">w = a + ib</script>, we can fine <script type="math/tex">T(u) = a, T(v) = b</script>,
+then <script type="math/tex">T(u+iv) = a + ib</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch02ex/" class="btn btn-neutral float-left" title="Chapter 02 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ch02ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
