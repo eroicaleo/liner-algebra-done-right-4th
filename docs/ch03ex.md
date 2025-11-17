@@ -720,7 +720,193 @@ of $\text{null } T$ and $v_1, \cdots, v_n$ such
 that $Tv_1, \cdots, Tv_n$ is a basis of
 $\text{range } T$.
 
-And assume
+We can see $V = \text{null } T + \text{span}(𝑣_1, \cdots, 𝑣_n)$.
+
+From 2.43 dimension of a sum, we can see
+
+$$ 
+\dim V \leq \text{dim null } T + \dim
+\text{span}(𝑣_1, \cdots, 𝑣_n)
+$$
+
+$\square$
+
+### 3B.16
+
+Suppose 𝑉 and 𝑊 are both finite-dimensional. Prove that there 
+exists an injective linear map from 𝑉 to 𝑊 if and only if
+dim 𝑉 ≤ dim 𝑊.
+
+**Proof**:
+
+$\Rightarrow$
+
+It's the contrapositive of 3.22, i.e. linear map to a 
+lower-dimensional space is not injective.
+
+$\Leftarrow$
+
+Assume $\dim V = m$, and $v_1, \cdots, v_m$ is a basis of
+$V$, and $w_1, \cdots, w_m$ is linearly independent in $W$.
+
+Let $T$ be a linear map such that $T(v_i) = w_i$.
+Then if
+
+$$ 
+T(a_1 v_1 + \cdots + a_m v_m) = 0 \\
+\Rightarrow \\
+a_1 Tv_1 + \cdots + a_m Tv_m \\
+\Rightarrow \\
+a_1 w_1 + \cdots + a_m w_m = 0 \\
+\Rightarrow \\
+a_1 = \cdots = a_m = 0
+$$
+
+So $\text{null } T = 0$, so $T$ is injective.
+
+### 3B.17
+
+Suppose 𝑉 and 𝑊 are both finite-dimensional. Prove that there 
+exists a surjective linear map from 𝑉 onto 𝑊 if and only if
+dim 𝑉 ≥ dim 𝑊.
+
+**Proof**:
+
+$\Rightarrow$
+
+It is the contrapositive of 3.24: linear map to a 
+higher-dimensional space is not surjective.
+
+$\Leftarrow$
+
+Assume $w_1, \cdots, w_m$ is a basis of $W$. $v_1, \cdots, v_m$ 
+is linear independent in $V$. Extend it to a basis of $V$ by
+adding $u_1, \cdots, u_n$.
+
+Let $T v_i = w_i, T u_j = 0$. This map is surjective.
+
+$\square$
+
+### 3B.18
+
+Suppose 𝑉 and 𝑊 are finite-dimensional and that 𝑈 is a
+subspace of 𝑉 .
+Prove that there exists 𝑇 ∈ ℒ(𝑉, 𝑊) such that null 𝑇 = 𝑈 if 
+and only if dim 𝑈 ≥ dim 𝑉 − dim 𝑊.
+
+**Proof**:
+
+$\Rightarrow$
+
+$$ 
+\dim V = \text{dim null } T + \text{dim range } T \\
+\Rightarrow \\
+\dim U = \dim V - \text{dim range } T \\
+\Rightarrow \\
+\dim U \geq  \dim V - \dim W \\
+$$
+
+$\Leftarrow$
+
+Let $u_1, \cdots, u_m$ be a basis of $U$, extend it to a basis
+of $V$ by adding $v_1, \cdots, v_n$.
+
+Since $\dim U \geq  \dim V - \dim W$, then $\dim W \geq n$.
+We can find $w_1, \cdots, w_n \in W$ such that they are independent
+in $W$.
+
+Let $T u_i = 0, T v_j = w_j$.
+
+$\square$
+
+### 3B.19
+
+Suppose 𝑊 is finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that 𝑇 
+is injective
+if and only if there exists 𝑆 ∈ ℒ(𝑊, 𝑉) such that 𝑆𝑇 is the 
+identity operator on 𝑉 .
+
+**Proof**:
+
+$\Rightarrow$
+
+First, since $T$ is injective, $V$ has to be finite-dimensional
+because of 3.22.
+
+Assume $v_1, \cdots, v_m$ is a basis of $V$.
+
+Also assume
+
+$$ 
+a_1 Tv_1 + \cdots + a_m Tv_m = 0 \\
+\Rightarrow \\
+T(a_1 v_1 + \cdots + a_m v_m) = 0 \\
+\Rightarrow \\
+a_1 v_1 + \cdots + a_m v_m \in \text{null } T \\
+\Rightarrow \text{ T is injective } \\
+a_1 v_1 + \cdots + a_m v_m = 0 \\
+\Rightarrow \\
+a_1 = \cdots = a_m = 0 \\
+\Rightarrow \\
+Tv_1, \cdots, Tv_m \text{ is independent }
+$$
+
+Then extend $Tv_1, \cdots, Tv_m$ to a basis of $W$ by adding
+$w_1, \cdots, w_n$. Consider $S$ as $S(T v_i) = v_i, S(w_j) = 0$.
+
+Then we have $ST$ is the identity operator on 𝑉.
+
+$\Leftarrow$
+
+If $T(v) = 0$, then $v = ST(v) = S(0) = 0$.
+So $T$ is injective.
+
+$\square$
+
+### 3B.20
+
+Suppose 𝑊 is finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that 𝑇 
+is surjective
+if and only if there exists 𝑆 ∈ ℒ(𝑊, 𝑉) such that 𝑇𝑆 is the 
+identity operator on 𝑊.
+
+**Proof**:
+
+$\Rightarrow$
+
+$w_1, \cdots, w_m$ is a basis of $W$, and $T(v_i) = w_i$.
+
+$$ 
+a_1 v_1 + \cdots + a_m v_m = 0 \\
+\Rightarrow \\
+T(a_1 v_1 + \cdots + a_m v_m) = 0 \\
+\Rightarrow \\
+a_1 Tv_1 + \cdots + a_m Tv_m = 0 \\
+\Rightarrow \\
+a_1 w_1 + \cdots + a_m w_m = 0 \\
+\Rightarrow \\
+a_1 = \cdots = a_m = 0 \\
+\Rightarrow \\
+v_1, \cdots, v_m \text{ is linear independent.}
+$$
+
+Let $S(w_i) = v_i$, then if $w = a_1 w_1 + \cdots + a_m w_m$,
+then
+
+$$ 
+TS(w) = T(a_1 Sw_1 + \cdots + a_m Sw_m) \\
+= T(a_1 v_1 + \cdots + a_m v_m) \\
+= a_1 Tv_1 + \cdots + a_m Tv_m \\
+= a_1 w_1 + \cdots + a_m w_m \\
+= w
+$$
+
+$\Leftarrow$
+
+If $TS$ is the identity operator. For any given $w$,
+$TS(w) = w$, $S(w) \in V$. So $T$ is surjective.
+
+$\square$
 
 ### 3B.21
 
@@ -732,10 +918,10 @@ $$
 \dim 
 \{
 v \in 𝑉 ∶ 𝑇𝑣 ∈ 𝑈
+\}
 =
 \text{dim null } T +
 \dim (𝑈 ∩ \text{range } T)
-\}
 $$
 
 **Proof**:
@@ -748,6 +934,107 @@ $Tv_1 = a_1 \in U, Tv_2 = a_2 \in U$, so $T(v_1 + v_2) = a_1 + a_2 \in U$.
 $T(k v_1) = k T(v_1) = k a_1 \in U$.
 
 So $A$ is a subspace of $V$.
+
+Consider the linear mapping that limits $T$ on $A$ and call it $T|_A$.
+
+$$ 
+\dim A = \text{dim null } T|_A + \text{dim range } T|_A
+$$
+
+Note that $\text{null } T \subseteq A$, so $\text{dim null } T = \text{dim null } T|_A$.
+
+Also $\text{range } T|_A = 𝑈 ∩ \text{range } T$, so
+
+$$ 
+\text{dim range } T|_A = \dim (𝑈 ∩ \text{range } T)
+$$
+
+$\square$
+
+### 3B.22
+
+Suppose 𝑈 and 𝑉 are finite-dimensional vector spaces and 𝑆 ∈ ℒ(𝑉, 𝑊) and
+𝑇 ∈ ℒ(𝑈, 𝑉). Prove that
+
+$$ 
+\text{dim null } ST \leq \text{dim null } S + \text{dim null } T
+$$
+
+**Proof**:
+
+Use the exercise 3B.21, Let $B = \text{null } S$, then
+
+$$ 
+\text{null } ST = \{u: Tu \in B\} = C
+$$
+
+So
+
+$$ 
+\dim C = \text{dim null } T + \dim (B \cap \text{range } T)
+$$
+
+And $\dim (B \cap \text{range } T) \leq \dim B = \text{dim null } S$.
+
+$\square$
+
+### 3B.23
+
+Suppose 𝑈 and 𝑉 are finite-dimensional vector spaces and 𝑆 ∈ ℒ(𝑉, 𝑊) and
+𝑇 ∈ ℒ(𝑈, 𝑉). Prove that
+
+$$ 
+\text{dim range } ST \leq \min \{\text{dim range } S, \text{dim range } T\}
+$$
+
+**Proof**:
+
+If $w \in \text{range } ST$, then we can find $u$ such that $ST(u) = w$, i.e. $S(T(u)) = w$,
+$w \in \text{range } S$. So $\text{range } ST \subseteq \text{range } S$.
+
+Limit $S$ on $\text{range } T$.
+
+$$ 
+\text{dim range } T = \text{dim null } S|_{\text{range } T}
++ \text{dim range } S|_{\text{range } T}
+\geq
+\text{dim range } S|_{\text{range } T}
+$$
+
+Also $\text{range } S|_{\text{range } T} = \text{range } ST$.
+
+So $\text{dim range } T \geq \text{dim range } ST$.
+
+$\square$
+
+### 3B.24
+
+(a) Suppose dim 𝑉 = 5 and 𝑆, 𝑇 ∈ ℒ(𝑉) are such that 𝑆𝑇 = 0. 
+Prove that dim range 𝑇𝑆 ≤ 2.
+
+**Proof**:
+
+$\text{dim null } ST = 5$. So
+$\text{dim null } T + \text{dim null } S \geq 5$.
+
+So $\max \{\text{dim null } T , \text{dim null } S\} \geq 3$,
+$\min \{\text{dim range } T , \text{dim range } S\} \leq 2$.
+
+So $\text{dim range } TS \leq 2$.
+
+$\square$
+
+(b) Give an example of 𝑆, $𝑇 ∈ ℒ(𝐅^5)$ with 𝑆𝑇 = 0 and
+dim range 𝑇𝑆 = 2.
+
+**Solution**:
+
+Consider $T(x_1, x_2, x_3, x_4, x_5) = (0, 0, 0, x_1, x_2)$,
+$S(x_1, x_2, x_3, x_4, x_5) = (x_1, x_2, 0, 0, 0)$
+
+$TS(x_1, x_2, x_3, x_4, x_5) = T(x_1, x_2, 0, 0, 0) = (0, 0, 0, x_1, x_2)$ 
+
+$\square$
 
 ### 3B.25
 
