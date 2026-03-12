@@ -1455,3 +1455,753 @@ Given $w = a + ib$, we can fine $T(u) = a, T(v) = b$,
 then $T(u+iv) = a + ib$.
 
 $\square$
+
+## Section 3C Matrices
+
+### 3C.1
+
+Suppose 𝑇 ∈ ℒ(𝑉, 𝑊). Show that with respect to each choice of 
+bases of 𝑉 and 𝑊, the matrix of 𝑇 has at least dim range 𝑇 nonzero entries.
+
+**Proof**:
+
+Consider the matrix for $T$ is $A$.
+
+Then let $k = \text{dim null } T, n = \text{dim range } T$,
+then $k + n = \dim V$. If only $m < n$ entries are nonzero,
+then it means the matrix has more than $k$ columns are $0$.
+
+That means $\text{dim null } T > k$, we reach a contradition.
+
+$\square$
+
+### 
+
+### 3C.5
+
+Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Prove 
+that there exist a basis of 𝑉 and a basis of 𝑊 such that with 
+respect to these bases, all entries of ℳ(𝑇) are 0 except that the 
+entries in row 𝑘, column 𝑘, equal 1 if 1 ≤ 𝑘 ≤ dim range 𝑇.
+
+**Proof**:
+
+Let $m = \text{dim range } T$, and $w_1, \cdots, w_m$ is a
+basis of $\text{range } T$.
+
+Assume $v_1, \cdots, v_m \in V$ such that
+$Tv_1 = w_1, \cdots, Tv_m = w_m$.
+
+Assume $p = n - m = \text{dim null } T$, then expand
+$v_1, \cdots, v_m$ with $u_1, \cdots, u_p \in \text{null } T$.
+
+With these 2 basis of $V$ and $W$, $ℳ(𝑇)$ is what we want.
+
+$\square$
+
+### 3C.6
+
+Suppose $v_1, \cdots, v_m$ is a basis of 𝑉 and 𝑊 is 
+finite-dimensional. Suppose 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that there exists 
+a basis $w_1, \cdots, w_n$ of 𝑊 such that all
+entries in the first column of ℳ(𝑇) [with respect to the bases
+$v_1, \cdots, v_m$ and $w_1, \cdots, w_n$] are $0$ except for 
+possibly a $1$ in the first row, first column.
+
+In this exercise, unlike Exercise 5, you are given the basis of 𝑉 
+instead of being able to choose a basis of 𝑉 .
+
+**Proof**:
+
+Let $w_1 = T v_1$ and extend $w_1$ to a basis of $W$ by adding
+$w_2, \cdots, w_m$.
+
+Then $M(T)$ is desired matrix.
+
+$\square$
+
+### 3C.7
+
+Suppose $w_1, \cdots, w_m$ is a basis of 𝑊 and 𝑉 is 
+finite-dimensional. Suppose 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that there exists 
+a basis $v_1, \cdots, v_n$ of 𝑉 such that all
+entries in the first row of ℳ(𝑇) [with respect to the bases
+$v_1, \cdots, v_n$ and
+$w_1, \cdots, w_m$] are 0 except for possibly a $1$ in the first 
+row, first column.
+
+In this exercise, unlike Exercise 5, you are given the basis of 𝑊 
+instead of being able to choose a basis of 𝑊.
+
+**Proof**:
+
+Let $v_1, \cdots, v_n \in V$ is a basis of $V$. Assume the
+matrix $\mathcal{M}(T) = [A_{i, j}]$. If $A_{1, .} = 0$, then
+then $v_1, \cdots, v_m$ satisfies the requirement.
+
+If $A_{1, .} \neq 0$, then $A_{1, j} \neq 0$ for some $j$.
+We can swap $v_1$ and $v_j$. Then $A_{1, 1} \neq 0$.
+Let $v_1' = \frac{1}{A_{1, 1}}v_1$, then $A_{1, 1} = 1$.
+
+For any $v_j$ such that $A_{1, j} \neq 0$, let
+
+$$ 
+v_j' = v_j - A_{1, j}v_1'
+$$
+
+With $v'_1, \cdots, v'_n$, the first row of $\mathcal{M}(T)$,
+$A_{1, .} = [1, 0, \cdot, 0]$, as required.
+
+$\square$
+
+### 3C.16
+
+Suppose $𝐴$ is an $𝑚$-by-$𝑛$ matrix with $𝐴 ≠ 0$.
+Prove that the rank of $𝐴$ is 1
+if and only if there exist $(𝑐_1, …, 𝑐_𝑚) ∈ 𝐅^𝑚$ and $(𝑑_1, …, 𝑑_𝑛) ∈ 𝐅^𝑛$ such that
+$A_{j, k} = 𝑐_𝑗 𝑑_𝑘$ for every $𝑗 = 1, …, 𝑚$ and every $𝑘 = 1, …, 𝑛$.
+
+**Proof**:
+
+$\Rightarrow$
+
+From 3.56 column–row factorization, since the
+rank of $A$ is $1$, we can find a $m$-by-$1$ matrix
+$C$ and $1$-by-$n$ matrix $R$ such that $A = CR$.
+
+Then $C$ and $R$ are what we need.
+
+$\Leftarrow$
+
+We have
+
+$$ 
+A =
+\begin{pmatrix}
+c_1 \\
+\vdots \\
+c_m
+\end{pmatrix}
+(𝑑_1, …, 𝑑_𝑛)
+$$
+
+So from 3.50 and 3.51, we have
+
+$$ 
+A_{., j} = C d_j
+$$
+
+That means the columns of $A$ are the scalar of
+$C$. So $A$'s rank is 1.
+
+$\square$
+
+### 3C.17
+
+Suppose $𝑇 ∈ ℒ(𝑉)$, and $u_1, \cdots, u_n$ and
+$v_1, \cdots, v_n$ are bases of $𝑉$. Prove that
+the following are equivalent.
+
+(a) $𝑇$ is injective.
+
+(b) The columns of $ℳ(𝑇)$ are linearly independent in
+$𝐅^{𝑛, 1}$.
+
+(c) The columns of $ℳ(𝑇)$ span $𝐅^{𝑛, 1}$.
+
+(d) The rows of $ℳ(𝑇)$ span $𝐅^{𝑛, 1}$.
+
+(e) The rows of $ℳ(𝑇)$ are linearly independent in
+$𝐅^{𝑛, 1}$.
+
+**Proof**:
+
+Our strategy is to prove
+
+$$ 
+(a) \Leftrightarrow
+(b) \\
+(b) \Rightarrow
+(c) \Rightarrow
+(d) \Rightarrow
+(e)
+\\
+(e) \Rightarrow
+(d) \Rightarrow
+(c) \Rightarrow
+(b)
+$$
+
+$(a) \Leftrightarrow (b)$.
+
+If $T$ is injective, then $\text{dim null } T = 0$.
+
+Assume $A = \mathcal{M}(T)$, and there are $A b = 0$, where
+$b = F^{n,1}$, i.e.
+
+$$ 
+0 = A_{., 1} b_1 + \cdots + A_{., n} b_n
+$$
+
+Then consider
+
+$$ 
+T(b_1 v_1 + \cdots + b_n v_n) = \\
+b_1 Tv_1 + \cdots + b_n Tv_n = \\
+(Tv_1, \cdots, Tv_m)
+\begin{pmatrix}
+b_1 \\
+\vdots \\
+b_n
+\end{pmatrix} \\
+= ((w_1, \cdots, w_n)A)b \\
+= (w_1, \cdots, w_n) (Ab) \\
+= (w_1, \cdots, w_n) \cdot 0 \\
+= 0
+$$
+
+Then $b_1 v_1 + \cdots + b_n v_n \in \text{null } T$,
+so $b_1 v_1 + \cdots + b_n v_n = 0$,
+i.e. $b_1 = \cdots = b_n = 0$.
+
+On the other hand, if
+
+$$ 
+b_1 v_1 + \cdots + b_n v_n \in \text{null } T
+$$
+
+Then
+
+$$ 
+0 = T(b_1 v_1 + \cdots + b_n v_n) = \\
+b_1 Tv_1 + \cdots + b_n Tv_n = \\
+(Tv_1, \cdots, Tv_m)
+\begin{pmatrix}
+b_1 \\
+\vdots \\
+b_n
+\end{pmatrix} \\
+= ((w_1, \cdots, w_n)A)b \\
+= (w_1, \cdots, w_n) (Ab)
+$$
+
+Since $w_1, \cdots, w_n$ is linearly independent,
+we have $Ab = 0$.
+
+Since 
+
+$$ 
+Ab = A_{., 1} b_1 + \cdots + A_{., n} b_n
+$$
+
+And $A_{., 1}, \cdots, A_{., n}$ are linearly independent,
+we must have $b_1 = \cdots = b_n = 0$.
+
+Then we have $\text{null } T = \{0\}$.
+
+This completes the proof of $(a) \Leftrightarrow (b)$.
+
+$(b) \Rightarrow (c)$
+
+Since $A_{., 1}, \cdots, A_{., n}$ are linearly 
+independent, and $\dim F^{n,1} = n$, then
+$A_{., 1}, \cdots, A_{., n}$ is a basis
+of $F^{n,1}$, so it spans $F^{n,1}$.
+
+$(c) \Rightarrow (d)$
+
+Since $A_{., 1}, \cdots, A_{., n}$ spans
+$F^{n,1}$, the column rank of $A$ is $n$.
+Since the column rank of $A$ is $n$, the row rank
+is also $n$. Then
+$A_{1, .}, \cdots, A_{n, .}$ spans $F^{1,n}$.
+
+$(d) \Rightarrow (e)$
+
+$A_{1, .}, \cdots, A_{n, .}$ spans $F^{1,n}$,
+and the dimension of $F^{1,n}$ is $n$,
+then $A_{1, .}, \cdots, A_{n, .}$ is a basis of
+$F^{1,n}$, then
+$A_{1, .}, \cdots, A_{n, .}$
+are linearly independent.
+
+The reverse direction is similar.
+
+$\square$
+
+## Section 3D Invertibility and Isomorphisms
+
+### 3D.3
+
+Suppose 𝑉 is finite-dimensional and 𝑇 ∈ ℒ(𝑉). 
+Prove that the following are equivalent.
+
+(a) 𝑇 is invertible.
+
+(b) $Tv_1, \cdots, Tv_n$ is a basis of 𝑉 for every 
+basis $v_1, \cdots, v_n$  of 𝑉 .
+
+(c) $Tv_1, \cdots, Tv_n$ is a basis of 𝑉 for some 
+basis $v_1, \cdots, v_n$ of 𝑉 .
+
+**Proof**:
+
+Our order is
+
+$$ 
+(a) \Rightarrow (b) \Rightarrow (c)
+\Rightarrow (a)
+$$
+
+$(a) \Rightarrow (b)$
+
+If 𝑇 is invertible. Then $T$ is surjective.
+
+Given any basis $v_1, \cdots, v_n$,
+$Tv_1, \cdots, Tv_n$ spans $V$.
+So $Tv_1, \cdots, Tv_n$ is a basis of $V$.
+
+$(b) \Rightarrow (c)$ is obvious.
+
+$(c) \Rightarrow (a)$
+
+If $Tv_1, \cdots, Tv_n$ is a basis of 𝑉, then
+$T$ is surjective, so $𝑇$ is invertible.
+
+$\square$
+
+### 3D.10
+
+### 3D.17
+
+Suppose 𝑉 is finite-dimensional and 𝑆 ∈ ℒ(𝑉).
+Define 𝒜 ∈ ℒ(ℒ(𝑉)) by
+
+$$ 
+𝒜(𝑇) = 𝑆𝑇
+$$
+
+for 𝑇 ∈ ℒ(𝑉).
+
+(a) Show that
+$\text{dim null } 𝒜 = (\dim 𝑉)(\text{dim null } 𝑆)$.
+
+**Proof:**
+
+### 3D.19
+
+Suppose 𝑉 is finite-dimensional and 𝑇 ∈ ℒ(𝑉). Prove that 𝑇 has 
+the same matrix with respect to every basis of 𝑉 if and only if 𝑇 
+is a scalar multiple of the identity operator.
+
+**Proof**:
+
+$\Rightarrow$
+
+We first consider when $\dim V = 2$ and consider 2 basis:
+$v_1, v_2$ and $v_2, v_1$. Assume this same matrix
+is
+
+$$ 
+A =
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+$$
+
+From 3.84 change-of-basis formula
+
+$$ 
+𝐶 = ℳ(𝐼, (v_1, v_2), (v_2, v_1)) \\
+=
+\begin{bmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{bmatrix}
+$$
+
+Then we have
+
+$$ 
+C A = A C \\
+\begin{bmatrix}
+c & d \\
+a & b \\
+\end{bmatrix} =
+\begin{bmatrix}
+b & a \\
+d & c \\
+\end{bmatrix}
+$$
+
+So we must have $a = d, b = c$.
+Then
+
+$$ 
+A =
+\begin{bmatrix}
+a & b \\
+b & a \\
+\end{bmatrix}
+$$
+
+Then we consider 
+
+$$ 
+𝐶 = ℳ(𝐼, (v_1 + v_2, v_2), (v_1, v_2)) \\
+=
+\begin{bmatrix}
+1 & 0 \\
+1 & 1 \\
+\end{bmatrix}
+$$
+
+Then we have
+
+$$ 
+C A = A C \\
+\begin{bmatrix}
+a & b \\
+a+b & a+b \\
+\end{bmatrix} =
+\begin{bmatrix}
+a+b & b \\
+a+b & a \\
+\end{bmatrix}
+$$
+
+So we must have $b = 0$, then
+
+$$ 
+A =
+\begin{bmatrix}
+a & 0 \\
+0 & a \\
+\end{bmatrix}
+$$
+
+We next consider when $\dim V = 3$ Assume this same matrix is: 
+
+$$ 
+A =
+\begin{bmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i \\
+\end{bmatrix}
+$$
+
+and consider 2 basis:
+$v_1, v_2, v_3$ and $v_2, v_1, v_3$.
+
+$$ 
+C =
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+Then
+
+$$ 
+CA = AC \\
+\begin{bmatrix}
+d & e & f \\
+a & b & c \\
+g & h & i \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+b & a & c \\
+e & d & f \\
+h & g & i \\
+\end{bmatrix}
+$$
+
+So we have $a = e, d = b, c = f, g = h$ 
+
+$$
+A =
+\begin{bmatrix}
+a & b & c \\
+b & a & c \\
+g & g & i \\
+\end{bmatrix}
+$$
+
+Next consider
+$v_1, v_2, v_3$ and $v_3, v_2, v_1$.
+
+$$ 
+C =
+\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{bmatrix}
+$$
+
+$$ 
+CA = AC \\
+\begin{bmatrix}
+g & g & i \\
+b & a & c \\
+a & b & c \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+c & b & a \\
+c & a & b \\
+i & g & g \\
+\end{bmatrix}
+$$
+
+Then we have $a = i, b = c = g$.
+
+$$
+A =
+\begin{bmatrix}
+a & b & b \\
+b & a & b \\
+b & b & a \\
+\end{bmatrix}
+$$
+
+Next consider $v_1+v_2, v_2, v_3$ and $v_1, v_2, v_3$.
+
+$$
+C =
+\begin{bmatrix}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+$$
+CA = AC \\
+\begin{bmatrix}
+a   & b   & b \\
+b+a & a+b & b+b \\
+b & b & a \\
+\end{bmatrix} =
+\begin{bmatrix}
+a+b & b & b \\
+b+a & a & b \\
+b+b & b & a \\
+\end{bmatrix}
+$$
+
+Then $b = 0$.
+
+We have
+
+$$ 
+A = 
+\begin{bmatrix}
+a & 0 & 0 \\
+0 & a & 0 \\
+0 & 0 & a \\
+\end{bmatrix}
+$$
+
+For other dimensions, it's similar.
+So, we finished one direction.
+
+### 3D.20
+
+Suppose 𝑞 ∈ 𝒫(𝐑). Prove that there exists a polynomial
+𝑝 ∈ 𝒫(𝐑) such that
+
+$$ 
+𝑞(𝑥) = (𝑥^2 + 𝑥)𝑝''(𝑥) + 2𝑥𝑝'(𝑥) + 𝑝(3)
+$$
+
+for all 𝑥 ∈ 𝐑.
+
+**Proof**:
+
+First note if $p(x) = ax+b$, then $q(x) = 2ax + 3a + b \neq 0$.
+Then $ax+b \not\in \text{null } T$
+
+Assume $p(x) = a x^n + b x^{n-1} + r(x), r(x) \in
+𝒫_{n-2}(𝐑), p(x) \in \text{null } T
+$, then $n > 1$. 
+
+Then we have
+
+$$
+p'(x) = an x^{n-1} + b(n-1) x^{n-2} + r'(x)\\
+p''(x) = an(n-1) x^{n-2} + b(n-1)(n-2) x^{n-3} + r''(x) \\
+2x p'(x) = 2 an x^n + 2b (n-1) x^{n-1} \\
+(x^2 + x) p''(x) = an(n-1) x^n + b(n-1)(n-2)x^{n-1}
++ an(n-1) x^{n-1} + b(n-1)(n-2)x^{n-2}
+$$
+
+So we have
+
+$$ 
+2an + an(n-1) = 0 \Rightarrow \\
+an(n+1) = 0 \\
+\Rightarrow \\
+a = 0
+2b (n-1) + b(n-1)(n-2) + an(n-1) = 0 \\
+\Rightarrow \\
+bn(n-1) = 0 \\
+\Rightarrow \\
+b = 0
+$$
+
+Then we have a contradition. So $\text{null } T = \{0\}$.
+
+Then $T$ is surjective, we can find $p$ for $q$.
+
+$\square$
+
+### 3D.21
+
+Suppose 𝑛 is a positive integer and $A_{j, k} ∈ 𝐅$ for all
+$𝑗, 𝑘 = 1, …, 𝑛$. Prove that
+the following are equivalent (note that in both parts below, the 
+number of equations equals the number of variables).
+
+(a) The trivial solution
+$𝑥_1 = ⋯ = 𝑥_𝑛 = 0$ is the only solution to the
+homogeneous system of equations
+
+$$ 
+\sum_{k=1}^{n} A_{1, k} x_k = 0 \\
+\vdots \\
+\sum_{k=1}^{n} A_{n, k} x_k = 0. \\
+$$
+
+And
+
+(b) For every $𝑐_1, …, 𝑐_𝑛 ∈ 𝐅$, there exists a solution to the system of equations
+
+$$ 
+\sum_{k=1}^{n} A_{1, k} x_k = c_1 \\
+\vdots \\
+\sum_{k=1}^{n} A_{n, k} x_k = c_n. \\
+$$
+
+**Proof**:
+
+We can have 2 perspectives.
+
+(i) Let $A = [A_{j, k}]$ then view $A$ as a liner map from
+$\mathbb{F}^{n,1}$ to $\mathbb{F}^{n,1}$ by mapping $x$ to $Ax$.
+
+Then (a) says $A$ is injective and (b) says $A$ is surjective.
+So they are equivalent.
+
+(ii) We can treat $A_{., k}$ as a vector in $\mathbb{F}^{n,1}$.
+
+Then (a) says $A_{., k}$ are independent and (b) says
+$A_{., k}$ spans the $\mathbb{F}^{n,1}$. From the fundamental
+theorem of linear mapping, they are equivalent.
+
+$\square$
+
+### 3D.22
+
+Suppose 𝑇 ∈ ℒ(𝑉) and $𝑣_1, …, 𝑣_𝑛$ is a basis of 𝑉.
+Prove that
+
+$$ 
+ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛)) \text{ is invertible}
+\Longleftrightarrow
+T \text{ is invertible}
+$$
+
+**Proof**:
+
+$\Rightarrow$
+
+Let $A = ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛))$ and $B$ be its inverse matrix.
+Let $S$ be the linear map that $B = ℳ(S, (𝑣_1, …, 𝑣_𝑛))$.
+
+Then
+
+$$ 
+ℳ(𝑇S, (𝑣_1, …, 𝑣_𝑛)) = ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛))ℳ(S, (𝑣_1, …, 𝑣_𝑛)) = AB = I 
+$$
+
+Then $TS = I$, from 3.68, we have $ST = I$.
+
+$\Leftarrow$
+
+Assume $TS = ST = I$, then
+
+$$ 
+ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛))ℳ(S, (𝑣_1, …, 𝑣_𝑛)) =\\
+ℳ(𝑇S, (𝑣_1, …, 𝑣_𝑛)) = \\
+ℳ(I, (𝑣_1, …, 𝑣_𝑛)) = I
+$$
+
+$\square$
+
+### 3D.23
+
+Suppose that $u_1, \cdots, u_n$  and $𝑣_1, …, 𝑣_𝑛$ are bases of 
+$𝑉$. Let 𝑇 ∈ ℒ(𝑉) be such that
+$𝑇𝑣_𝑘 = 𝑢_𝑘$ for each $𝑘 = 1, …, 𝑛$. Prove that
+
+$$ 
+ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛)) = ℳ(𝐼, (𝑢_1, …, 𝑢_𝑛), (𝑣_1, …, 𝑣_𝑛))
+$$
+
+**Proof**:
+
+Since $𝑇𝑣_𝑘 = 𝑢_𝑘$, so
+
+$$ 
+ℳ(T, (v_1, …, v_𝑛), (u_1, …, u_𝑛)) = I
+$$
+
+Then from 
+
+$$ 
+ℳ(T, (v_1, …, v_𝑛), (u_1, …, u_𝑛))
+ℳ(I, (u_1, …, u_𝑛), (v_1, …, v_𝑛)) =\\
+ℳ(T, (𝑣_1, …, 𝑣_𝑛))
+$$
+
+So we proved.
+
+$\square$
+
+### 3D.24
+
+Suppose 𝐴 and 𝐵 are square matrices of the same size and
+𝐴𝐵 = 𝐼. Prove that 𝐵𝐴 = 𝐼.
+
+**Proof**:
+
+Let $A, B$ are $n$ by $n$ square matrices.
+Each of them induces a linear map from $\mathbb{F}^{n,1}$ to
+$\mathbb{F}^{n,1}$, say they are $T, S$. And their matrices
+w.r.t the standard basis $(e_1, …, e_n)$ are $A, B$.
+
+Since $AB = I$, then $TS = I$. From 3.68, we have $ST = I$.
+
+From 3.81,
+
+$$ 
+ℳ(𝑆𝑇, (e_1, …, e_n), (e_1, …, e_n)) = \\
+ℳ(𝑆, (e_1, …, e_𝑛), (e_1, …, e_n))ℳ(𝑇, (e_1, …, e_n), (e_1, …, e_𝑛)).
+$$
+
+i.e.
+
+$$ 
+ℳ(I, (e_1, …, e_n)) = \\
+ℳ(𝑆, (e_1, …, e_𝑛))ℳ(𝑇, (e_1, …, e_n)).
+$$
+
+Then we have $I = BA$ as required.
+
+$\square$
