@@ -170,6 +170,46 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-3c-matrices">Section 3C Matrices</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3c1">3C.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_1"></a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3c5">3C.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3c6">3C.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3c7">3C.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3c16">3C.16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3c17">3C.17</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-3d-invertibility-and-isomorphisms">Section 3D Invertibility and Isomorphisms</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3d3">3D.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3d10">3D.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3d17">3D.17</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3d19">3D.19</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3d20">3D.20</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3d21">3D.21</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3d22">3D.22</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3d23">3D.23</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3d24">3D.24</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -1459,6 +1499,682 @@ we can find <script type="math/tex">T_C(a + ib) = w + 0i</script>, i.e.
 </p>
 <p>Given <script type="math/tex">w = a + ib</script>, we can fine <script type="math/tex">T(u) = a, T(v) = b</script>,
 then <script type="math/tex">T(u+iv) = a + ib</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-3c-matrices">Section 3C Matrices</h2>
+<h3 id="3c1">3C.1</h3>
+<p>Suppose 𝑇 ∈ ℒ(𝑉, 𝑊). Show that with respect to each choice of 
+bases of 𝑉 and 𝑊, the matrix of 𝑇 has at least dim range 𝑇 nonzero entries.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the matrix for <script type="math/tex">T</script> is <script type="math/tex">A</script>.</p>
+<p>Then let <script type="math/tex">k = \text{dim null } T, n = \text{dim range } T</script>,
+then <script type="math/tex">k + n = \dim V</script>. If only <script type="math/tex">m < n</script> entries are nonzero,
+then it means the matrix has more than <script type="math/tex">k</script> columns are <script type="math/tex">0</script>.</p>
+<p>That means <script type="math/tex">\text{dim null } T > k</script>, we reach a contradition.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="_1"></h3>
+<h3 id="3c5">3C.5</h3>
+<p>Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Prove 
+that there exist a basis of 𝑉 and a basis of 𝑊 such that with 
+respect to these bases, all entries of ℳ(𝑇) are 0 except that the 
+entries in row 𝑘, column 𝑘, equal 1 if 1 ≤ 𝑘 ≤ dim range 𝑇.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">m = \text{dim range } T</script>, and <script type="math/tex">w_1, \cdots, w_m</script> is a
+basis of <script type="math/tex">\text{range } T</script>.</p>
+<p>Assume <script type="math/tex">v_1, \cdots, v_m \in V</script> such that
+<script type="math/tex">Tv_1 = w_1, \cdots, Tv_m = w_m</script>.</p>
+<p>Assume <script type="math/tex">p = n - m = \text{dim null } T</script>, then expand
+<script type="math/tex">v_1, \cdots, v_m</script> with <script type="math/tex">u_1, \cdots, u_p \in \text{null } T</script>.</p>
+<p>With these 2 basis of <script type="math/tex">V</script> and <script type="math/tex">W</script>, <script type="math/tex">ℳ(𝑇)</script> is what we want.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3c6">3C.6</h3>
+<p>Suppose <script type="math/tex">v_1, \cdots, v_m</script> is a basis of 𝑉 and 𝑊 is 
+finite-dimensional. Suppose 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that there exists 
+a basis <script type="math/tex">w_1, \cdots, w_n</script> of 𝑊 such that all
+entries in the first column of ℳ(𝑇) [with respect to the bases
+<script type="math/tex">v_1, \cdots, v_m</script> and <script type="math/tex">w_1, \cdots, w_n</script>] are <script type="math/tex">0</script> except for 
+possibly a <script type="math/tex">1</script> in the first row, first column.</p>
+<p>In this exercise, unlike Exercise 5, you are given the basis of 𝑉 
+instead of being able to choose a basis of 𝑉 .</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">w_1 = T v_1</script> and extend <script type="math/tex">w_1</script> to a basis of <script type="math/tex">W</script> by adding
+<script type="math/tex">w_2, \cdots, w_m</script>.</p>
+<p>Then <script type="math/tex">M(T)</script> is desired matrix.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3c7">3C.7</h3>
+<p>Suppose <script type="math/tex">w_1, \cdots, w_m</script> is a basis of 𝑊 and 𝑉 is 
+finite-dimensional. Suppose 𝑇 ∈ ℒ(𝑉, 𝑊). Prove that there exists 
+a basis <script type="math/tex">v_1, \cdots, v_n</script> of 𝑉 such that all
+entries in the first row of ℳ(𝑇) [with respect to the bases
+<script type="math/tex">v_1, \cdots, v_n</script> and
+<script type="math/tex">w_1, \cdots, w_m</script>] are 0 except for possibly a <script type="math/tex">1</script> in the first 
+row, first column.</p>
+<p>In this exercise, unlike Exercise 5, you are given the basis of 𝑊 
+instead of being able to choose a basis of 𝑊.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">v_1, \cdots, v_n \in V</script> is a basis of <script type="math/tex">V</script>. Assume the
+matrix <script type="math/tex">\mathcal{M}(T) = [A_{i, j}]</script>. If <script type="math/tex">A_{1, .} = 0</script>, then
+then <script type="math/tex">v_1, \cdots, v_m</script> satisfies the requirement.</p>
+<p>If <script type="math/tex">A_{1, .} \neq 0</script>, then <script type="math/tex">A_{1, j} \neq 0</script> for some <script type="math/tex">j</script>.
+We can swap <script type="math/tex">v_1</script> and <script type="math/tex">v_j</script>. Then <script type="math/tex">A_{1, 1} \neq 0</script>.
+Let <script type="math/tex">v_1' = \frac{1}{A_{1, 1}}v_1</script>, then <script type="math/tex">A_{1, 1} = 1</script>.</p>
+<p>For any <script type="math/tex">v_j</script> such that <script type="math/tex">A_{1, j} \neq 0</script>, let</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_j' = v_j - A_{1, j}v_1'
+</script>
+</p>
+<p>With <script type="math/tex">v'_1, \cdots, v'_n</script>, the first row of <script type="math/tex">\mathcal{M}(T)</script>,
+<script type="math/tex">A_{1, .} = [1, 0, \cdot, 0]</script>, as required.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3c16">3C.16</h3>
+<p>Suppose <script type="math/tex">𝐴</script> is an <script type="math/tex">𝑚</script>-by-<script type="math/tex">𝑛</script> matrix with <script type="math/tex">𝐴 ≠ 0</script>.
+Prove that the rank of <script type="math/tex">𝐴</script> is 1
+if and only if there exist <script type="math/tex">(𝑐_1, …, 𝑐_𝑚) ∈ 𝐅^𝑚</script> and <script type="math/tex">(𝑑_1, …, 𝑑_𝑛) ∈ 𝐅^𝑛</script> such that
+<script type="math/tex">A_{j, k} = 𝑐_𝑗 𝑑_𝑘</script> for every <script type="math/tex">𝑗 = 1, …, 𝑚</script> and every <script type="math/tex">𝑘 = 1, …, 𝑛</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>From 3.56 column–row factorization, since the
+rank of <script type="math/tex">A</script> is <script type="math/tex">1</script>, we can find a <script type="math/tex">m</script>-by-<script type="math/tex">1</script> matrix
+<script type="math/tex">C</script> and <script type="math/tex">1</script>-by-<script type="math/tex">n</script> matrix <script type="math/tex">R</script> such that <script type="math/tex">A = CR</script>.</p>
+<p>Then <script type="math/tex">C</script> and <script type="math/tex">R</script> are what we need.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{pmatrix}
+c_1 \\
+\vdots \\
+c_m
+\end{pmatrix}
+(𝑑_1, …, 𝑑_𝑛)
+</script>
+</p>
+<p>So from 3.50 and 3.51, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+A_{., j} = C d_j
+</script>
+</p>
+<p>That means the columns of <script type="math/tex">A</script> are the scalar of
+<script type="math/tex">C</script>. So <script type="math/tex">A</script>'s rank is 1.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3c17">3C.17</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">u_1, \cdots, u_n</script> and
+<script type="math/tex">v_1, \cdots, v_n</script> are bases of <script type="math/tex">𝑉</script>. Prove that
+the following are equivalent.</p>
+<p>(a) <script type="math/tex">𝑇</script> is injective.</p>
+<p>(b) The columns of <script type="math/tex">ℳ(𝑇)</script> are linearly independent in
+<script type="math/tex">𝐅^{𝑛, 1}</script>.</p>
+<p>(c) The columns of <script type="math/tex">ℳ(𝑇)</script> span <script type="math/tex">𝐅^{𝑛, 1}</script>.</p>
+<p>(d) The rows of <script type="math/tex">ℳ(𝑇)</script> span <script type="math/tex">𝐅^{𝑛, 1}</script>.</p>
+<p>(e) The rows of <script type="math/tex">ℳ(𝑇)</script> are linearly independent in
+<script type="math/tex">𝐅^{𝑛, 1}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Our strategy is to prove</p>
+<p>
+<script type="math/tex; mode=display"> 
+(a) \Leftrightarrow
+(b) \\
+(b) \Rightarrow
+(c) \Rightarrow
+(d) \Rightarrow
+(e)
+\\
+(e) \Rightarrow
+(d) \Rightarrow
+(c) \Rightarrow
+(b)
+</script>
+</p>
+<p>
+<script type="math/tex">(a) \Leftrightarrow (b)</script>.</p>
+<p>If <script type="math/tex">T</script> is injective, then <script type="math/tex">\text{dim null } T = 0</script>.</p>
+<p>Assume <script type="math/tex">A = \mathcal{M}(T)</script>, and there are <script type="math/tex">A b = 0</script>, where
+<script type="math/tex">b = F^{n,1}</script>, i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = A_{., 1} b_1 + \cdots + A_{., n} b_n
+</script>
+</p>
+<p>Then consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(b_1 v_1 + \cdots + b_n v_n) = \\
+b_1 Tv_1 + \cdots + b_n Tv_n = \\
+(Tv_1, \cdots, Tv_m)
+\begin{pmatrix}
+b_1 \\
+\vdots \\
+b_n
+\end{pmatrix} \\
+= ((w_1, \cdots, w_n)A)b \\
+= (w_1, \cdots, w_n) (Ab) \\
+= (w_1, \cdots, w_n) \cdot 0 \\
+= 0
+</script>
+</p>
+<p>Then <script type="math/tex">b_1 v_1 + \cdots + b_n v_n \in \text{null } T</script>,
+so <script type="math/tex">b_1 v_1 + \cdots + b_n v_n = 0</script>,
+i.e. <script type="math/tex">b_1 = \cdots = b_n = 0</script>.</p>
+<p>On the other hand, if</p>
+<p>
+<script type="math/tex; mode=display"> 
+b_1 v_1 + \cdots + b_n v_n \in \text{null } T
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = T(b_1 v_1 + \cdots + b_n v_n) = \\
+b_1 Tv_1 + \cdots + b_n Tv_n = \\
+(Tv_1, \cdots, Tv_m)
+\begin{pmatrix}
+b_1 \\
+\vdots \\
+b_n
+\end{pmatrix} \\
+= ((w_1, \cdots, w_n)A)b \\
+= (w_1, \cdots, w_n) (Ab)
+</script>
+</p>
+<p>Since <script type="math/tex">w_1, \cdots, w_n</script> is linearly independent,
+we have <script type="math/tex">Ab = 0</script>.</p>
+<p>Since </p>
+<p>
+<script type="math/tex; mode=display"> 
+Ab = A_{., 1} b_1 + \cdots + A_{., n} b_n
+</script>
+</p>
+<p>And <script type="math/tex">A_{., 1}, \cdots, A_{., n}</script> are linearly independent,
+we must have <script type="math/tex">b_1 = \cdots = b_n = 0</script>.</p>
+<p>Then we have <script type="math/tex">\text{null } T = \{0\}</script>.</p>
+<p>This completes the proof of <script type="math/tex">(a) \Leftrightarrow (b)</script>.</p>
+<p>
+<script type="math/tex">(b) \Rightarrow (c)</script>
+</p>
+<p>Since <script type="math/tex">A_{., 1}, \cdots, A_{., n}</script> are linearly 
+independent, and <script type="math/tex">\dim F^{n,1} = n</script>, then
+<script type="math/tex">A_{., 1}, \cdots, A_{., n}</script> is a basis
+of <script type="math/tex">F^{n,1}</script>, so it spans <script type="math/tex">F^{n,1}</script>.</p>
+<p>
+<script type="math/tex">(c) \Rightarrow (d)</script>
+</p>
+<p>Since <script type="math/tex">A_{., 1}, \cdots, A_{., n}</script> spans
+<script type="math/tex">F^{n,1}</script>, the column rank of <script type="math/tex">A</script> is <script type="math/tex">n</script>.
+Since the column rank of <script type="math/tex">A</script> is <script type="math/tex">n</script>, the row rank
+is also <script type="math/tex">n</script>. Then
+<script type="math/tex">A_{1, .}, \cdots, A_{n, .}</script> spans <script type="math/tex">F^{1,n}</script>.</p>
+<p>
+<script type="math/tex">(d) \Rightarrow (e)</script>
+</p>
+<p>
+<script type="math/tex">A_{1, .}, \cdots, A_{n, .}</script> spans <script type="math/tex">F^{1,n}</script>,
+and the dimension of <script type="math/tex">F^{1,n}</script> is <script type="math/tex">n</script>,
+then <script type="math/tex">A_{1, .}, \cdots, A_{n, .}</script> is a basis of
+<script type="math/tex">F^{1,n}</script>, then
+<script type="math/tex">A_{1, .}, \cdots, A_{n, .}</script>
+are linearly independent.</p>
+<p>The reverse direction is similar.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-3d-invertibility-and-isomorphisms">Section 3D Invertibility and Isomorphisms</h2>
+<h3 id="3d3">3D.3</h3>
+<p>Suppose 𝑉 is finite-dimensional and 𝑇 ∈ ℒ(𝑉). 
+Prove that the following are equivalent.</p>
+<p>(a) 𝑇 is invertible.</p>
+<p>(b) <script type="math/tex">Tv_1, \cdots, Tv_n</script> is a basis of 𝑉 for every 
+basis <script type="math/tex">v_1, \cdots, v_n</script>  of 𝑉 .</p>
+<p>(c) <script type="math/tex">Tv_1, \cdots, Tv_n</script> is a basis of 𝑉 for some 
+basis <script type="math/tex">v_1, \cdots, v_n</script> of 𝑉 .</p>
+<p><strong>Proof</strong>:</p>
+<p>Our order is</p>
+<p>
+<script type="math/tex; mode=display"> 
+(a) \Rightarrow (b) \Rightarrow (c)
+\Rightarrow (a)
+</script>
+</p>
+<p>
+<script type="math/tex">(a) \Rightarrow (b)</script>
+</p>
+<p>If 𝑇 is invertible. Then <script type="math/tex">T</script> is surjective.</p>
+<p>Given any basis <script type="math/tex">v_1, \cdots, v_n</script>,
+<script type="math/tex">Tv_1, \cdots, Tv_n</script> spans <script type="math/tex">V</script>.
+So <script type="math/tex">Tv_1, \cdots, Tv_n</script> is a basis of <script type="math/tex">V</script>.</p>
+<p>
+<script type="math/tex">(b) \Rightarrow (c)</script> is obvious.</p>
+<p>
+<script type="math/tex">(c) \Rightarrow (a)</script>
+</p>
+<p>If <script type="math/tex">Tv_1, \cdots, Tv_n</script> is a basis of 𝑉, then
+<script type="math/tex">T</script> is surjective, so <script type="math/tex">𝑇</script> is invertible.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3d10">3D.10</h3>
+<h3 id="3d17">3D.17</h3>
+<p>Suppose 𝑉 is finite-dimensional and 𝑆 ∈ ℒ(𝑉).
+Define 𝒜 ∈ ℒ(ℒ(𝑉)) by</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝒜(𝑇) = 𝑆𝑇
+</script>
+</p>
+<p>for 𝑇 ∈ ℒ(𝑉).</p>
+<p>(a) Show that
+<script type="math/tex">\text{dim null } 𝒜 = (\dim 𝑉)(\text{dim null } 𝑆)</script>.</p>
+<p><strong>Proof:</strong></p>
+<h3 id="3d19">3D.19</h3>
+<p>Suppose 𝑉 is finite-dimensional and 𝑇 ∈ ℒ(𝑉). Prove that 𝑇 has 
+the same matrix with respect to every basis of 𝑉 if and only if 𝑇 
+is a scalar multiple of the identity operator.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>We first consider when <script type="math/tex">\dim V = 2</script> and consider 2 basis:
+<script type="math/tex">v_1, v_2</script> and <script type="math/tex">v_2, v_1</script>. Assume this same matrix
+is</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+</script>
+</p>
+<p>From 3.84 change-of-basis formula</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝐶 = ℳ(𝐼, (v_1, v_2), (v_2, v_1)) \\
+=
+\begin{bmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+C A = A C \\
+\begin{bmatrix}
+c & d \\
+a & b \\
+\end{bmatrix} =
+\begin{bmatrix}
+b & a \\
+d & c \\
+\end{bmatrix}
+</script>
+</p>
+<p>So we must have <script type="math/tex">a = d, b = c</script>.
+Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+a & b \\
+b & a \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then we consider </p>
+<p>
+<script type="math/tex; mode=display"> 
+𝐶 = ℳ(𝐼, (v_1 + v_2, v_2), (v_1, v_2)) \\
+=
+\begin{bmatrix}
+1 & 0 \\
+1 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+C A = A C \\
+\begin{bmatrix}
+a & b \\
+a+b & a+b \\
+\end{bmatrix} =
+\begin{bmatrix}
+a+b & b \\
+a+b & a \\
+\end{bmatrix}
+</script>
+</p>
+<p>So we must have <script type="math/tex">b = 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+a & 0 \\
+0 & a \\
+\end{bmatrix}
+</script>
+</p>
+<p>We next consider when <script type="math/tex">\dim V = 3</script> Assume this same matrix is: </p>
+<p>
+<script type="math/tex; mode=display"> 
+A =
+\begin{bmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i \\
+\end{bmatrix}
+</script>
+</p>
+<p>and consider 2 basis:
+<script type="math/tex">v_1, v_2, v_3</script> and <script type="math/tex">v_2, v_1, v_3</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+C =
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+CA = AC \\
+\begin{bmatrix}
+d & e & f \\
+a & b & c \\
+g & h & i \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+b & a & c \\
+e & d & f \\
+h & g & i \\
+\end{bmatrix}
+</script>
+</p>
+<p>So we have <script type="math/tex">a = e, d = b, c = f, g = h</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+A =
+\begin{bmatrix}
+a & b & c \\
+b & a & c \\
+g & g & i \\
+\end{bmatrix}
+</script>
+</p>
+<p>Next consider
+<script type="math/tex">v_1, v_2, v_3</script> and <script type="math/tex">v_3, v_2, v_1</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+C =
+\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+CA = AC \\
+\begin{bmatrix}
+g & g & i \\
+b & a & c \\
+a & b & c \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+c & b & a \\
+c & a & b \\
+i & g & g \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then we have <script type="math/tex">a = i, b = c = g</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+A =
+\begin{bmatrix}
+a & b & b \\
+b & a & b \\
+b & b & a \\
+\end{bmatrix}
+</script>
+</p>
+<p>Next consider <script type="math/tex">v_1+v_2, v_2, v_3</script> and <script type="math/tex">v_1, v_2, v_3</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+C =
+\begin{bmatrix}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+CA = AC \\
+\begin{bmatrix}
+a   & b   & b \\
+b+a & a+b & b+b \\
+b & b & a \\
+\end{bmatrix} =
+\begin{bmatrix}
+a+b & b & b \\
+b+a & a & b \\
+b+b & b & a \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then <script type="math/tex">b = 0</script>.</p>
+<p>We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+A = 
+\begin{bmatrix}
+a & 0 & 0 \\
+0 & a & 0 \\
+0 & 0 & a \\
+\end{bmatrix}
+</script>
+</p>
+<p>For other dimensions, it's similar.
+So, we finished one direction.</p>
+<h3 id="3d20">3D.20</h3>
+<p>Suppose 𝑞 ∈ 𝒫(𝐑). Prove that there exists a polynomial
+𝑝 ∈ 𝒫(𝐑) such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑞(𝑥) = (𝑥^2 + 𝑥)𝑝''(𝑥) + 2𝑥𝑝'(𝑥) + 𝑝(3)
+</script>
+</p>
+<p>for all 𝑥 ∈ 𝐑.</p>
+<p><strong>Proof</strong>:</p>
+<p>First note if <script type="math/tex">p(x) = ax+b</script>, then <script type="math/tex">q(x) = 2ax + 3a + b \neq 0</script>.
+Then <script type="math/tex">ax+b \not\in \text{null } T</script>
+</p>
+<p>Assume <script type="math/tex">p(x) = a x^n + b x^{n-1} + r(x), r(x) \in
+𝒫_{n-2}(𝐑), p(x) \in \text{null } T
+</script>, then <script type="math/tex">n > 1</script>. </p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display">
+p'(x) = an x^{n-1} + b(n-1) x^{n-2} + r'(x)\\
+p''(x) = an(n-1) x^{n-2} + b(n-1)(n-2) x^{n-3} + r''(x) \\
+2x p'(x) = 2 an x^n + 2b (n-1) x^{n-1} \\
+(x^2 + x) p''(x) = an(n-1) x^n + b(n-1)(n-2)x^{n-1}
++ an(n-1) x^{n-1} + b(n-1)(n-2)x^{n-2}
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+2an + an(n-1) = 0 \Rightarrow \\
+an(n+1) = 0 \\
+\Rightarrow \\
+a = 0
+2b (n-1) + b(n-1)(n-2) + an(n-1) = 0 \\
+\Rightarrow \\
+bn(n-1) = 0 \\
+\Rightarrow \\
+b = 0
+</script>
+</p>
+<p>Then we have a contradition. So <script type="math/tex">\text{null } T = \{0\}</script>.</p>
+<p>Then <script type="math/tex">T</script> is surjective, we can find <script type="math/tex">p</script> for <script type="math/tex">q</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3d21">3D.21</h3>
+<p>Suppose 𝑛 is a positive integer and <script type="math/tex">A_{j, k} ∈ 𝐅</script> for all
+<script type="math/tex">𝑗, 𝑘 = 1, …, 𝑛</script>. Prove that
+the following are equivalent (note that in both parts below, the 
+number of equations equals the number of variables).</p>
+<p>(a) The trivial solution
+<script type="math/tex">𝑥_1 = ⋯ = 𝑥_𝑛 = 0</script> is the only solution to the
+homogeneous system of equations</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{k=1}^{n} A_{1, k} x_k = 0 \\
+\vdots \\
+\sum_{k=1}^{n} A_{n, k} x_k = 0. \\
+</script>
+</p>
+<p>And</p>
+<p>(b) For every <script type="math/tex">𝑐_1, …, 𝑐_𝑛 ∈ 𝐅</script>, there exists a solution to the system of equations</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{k=1}^{n} A_{1, k} x_k = c_1 \\
+\vdots \\
+\sum_{k=1}^{n} A_{n, k} x_k = c_n. \\
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>We can have 2 perspectives.</p>
+<p>(i) Let <script type="math/tex">A = [A_{j, k}]</script> then view <script type="math/tex">A</script> as a liner map from
+<script type="math/tex">\mathbb{F}^{n,1}</script> to <script type="math/tex">\mathbb{F}^{n,1}</script> by mapping <script type="math/tex">x</script> to <script type="math/tex">Ax</script>.</p>
+<p>Then (a) says <script type="math/tex">A</script> is injective and (b) says <script type="math/tex">A</script> is surjective.
+So they are equivalent.</p>
+<p>(ii) We can treat <script type="math/tex">A_{., k}</script> as a vector in <script type="math/tex">\mathbb{F}^{n,1}</script>.</p>
+<p>Then (a) says <script type="math/tex">A_{., k}</script> are independent and (b) says
+<script type="math/tex">A_{., k}</script> spans the <script type="math/tex">\mathbb{F}^{n,1}</script>. From the fundamental
+theorem of linear mapping, they are equivalent.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3d22">3D.22</h3>
+<p>Suppose 𝑇 ∈ ℒ(𝑉) and <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is a basis of 𝑉.
+Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛)) \text{ is invertible}
+\Longleftrightarrow
+T \text{ is invertible}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Let <script type="math/tex">A = ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛))</script> and <script type="math/tex">B</script> be its inverse matrix.
+Let <script type="math/tex">S</script> be the linear map that <script type="math/tex">B = ℳ(S, (𝑣_1, …, 𝑣_𝑛))</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+ℳ(𝑇S, (𝑣_1, …, 𝑣_𝑛)) = ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛))ℳ(S, (𝑣_1, …, 𝑣_𝑛)) = AB = I 
+</script>
+</p>
+<p>Then <script type="math/tex">TS = I</script>, from 3.68, we have <script type="math/tex">ST = I</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">TS = ST = I</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛))ℳ(S, (𝑣_1, …, 𝑣_𝑛)) =\\
+ℳ(𝑇S, (𝑣_1, …, 𝑣_𝑛)) = \\
+ℳ(I, (𝑣_1, …, 𝑣_𝑛)) = I
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3d23">3D.23</h3>
+<p>Suppose that <script type="math/tex">u_1, \cdots, u_n</script>  and <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> are bases of 
+<script type="math/tex">𝑉</script>. Let 𝑇 ∈ ℒ(𝑉) be such that
+<script type="math/tex">𝑇𝑣_𝑘 = 𝑢_𝑘</script> for each <script type="math/tex">𝑘 = 1, …, 𝑛</script>. Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+ℳ(𝑇, (𝑣_1, …, 𝑣_𝑛)) = ℳ(𝐼, (𝑢_1, …, 𝑢_𝑛), (𝑣_1, …, 𝑣_𝑛))
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">𝑇𝑣_𝑘 = 𝑢_𝑘</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+ℳ(T, (v_1, …, v_𝑛), (u_1, …, u_𝑛)) = I
+</script>
+</p>
+<p>Then from </p>
+<p>
+<script type="math/tex; mode=display"> 
+ℳ(T, (v_1, …, v_𝑛), (u_1, …, u_𝑛))
+ℳ(I, (u_1, …, u_𝑛), (v_1, …, v_𝑛)) =\\
+ℳ(T, (𝑣_1, …, 𝑣_𝑛))
+</script>
+</p>
+<p>So we proved.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3d24">3D.24</h3>
+<p>Suppose 𝐴 and 𝐵 are square matrices of the same size and
+𝐴𝐵 = 𝐼. Prove that 𝐵𝐴 = 𝐼.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">A, B</script> are <script type="math/tex">n</script> by <script type="math/tex">n</script> square matrices.
+Each of them induces a linear map from <script type="math/tex">\mathbb{F}^{n,1}</script> to
+<script type="math/tex">\mathbb{F}^{n,1}</script>, say they are <script type="math/tex">T, S</script>. And their matrices
+w.r.t the standard basis <script type="math/tex">(e_1, …, e_n)</script> are <script type="math/tex">A, B</script>.</p>
+<p>Since <script type="math/tex">AB = I</script>, then <script type="math/tex">TS = I</script>. From 3.68, we have <script type="math/tex">ST = I</script>.</p>
+<p>From 3.81,</p>
+<p>
+<script type="math/tex; mode=display"> 
+ℳ(𝑆𝑇, (e_1, …, e_n), (e_1, …, e_n)) = \\
+ℳ(𝑆, (e_1, …, e_𝑛), (e_1, …, e_n))ℳ(𝑇, (e_1, …, e_n), (e_1, …, e_𝑛)).
+</script>
+</p>
+<p>i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+ℳ(I, (e_1, …, e_n)) = \\
+ℳ(𝑆, (e_1, …, e_𝑛))ℳ(𝑇, (e_1, …, e_n)).
+</script>
+</p>
+<p>Then we have <script type="math/tex">I = BA</script> as required.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>

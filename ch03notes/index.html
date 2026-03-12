@@ -90,6 +90,123 @@
                 <h1 id="chapter-3-linear-maps">Chapter 3 Linear Maps</h1>
 <h2 id="section-3a-vector-space-of-linear-maps">Section 3A Vector Space of Linear Maps</h2>
 <h2 id="section-3b-null-spaces-and-ranges">Section 3B Null Spaces and Ranges</h2>
+<h2 id="section-3c-matrices">Section 3C Matrices</h2>
+<h3 id="331-definition-matrix-of-a-linear-map-mt">3.31 definition: matrix of a linear map, <script type="math/tex">ℳ(𝑇)</script>
+</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script> and <script type="math/tex">v_1, \cdots, v_n</script> is a basis of <script type="math/tex">𝑉</script> and <script type="math/tex">w_1, \cdots, w_m</script> is a basis of <script type="math/tex">𝑊</script>.</p>
+<p>The matrix of <script type="math/tex">𝑇</script> with respect to these bases is the <script type="math/tex">𝑚</script>-by-<script type="math/tex">𝑛</script> 
+matrix <script type="math/tex">ℳ(𝑇)</script> whose entries <script type="math/tex">A_{i, j}</script> are defined by
+<script type="math/tex; mode=display">
+𝑇𝑣_𝑘 = A_{1, k} w_1 + \cdots + A_{m, k} w_m \\
+</script>
+</p>
+<h3 id="335-matrix-of-the-sum-of-linear-maps">3.35 matrix of the sum of linear maps</h3>
+<p>Suppose <script type="math/tex">S, T \in \mathcal{L}(V, W).</script> Then
+<script type="math/tex">\mathcal{M}(S+T) = \mathcal{M}(S) + \mathcal{M}(T)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\mathcal{M}(S) = [A_{i, j}], \mathcal{M}(T) = [B_{i, j}]</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+Tv_k = A_{1, k} w_1 + \cdots + A_{m, k} w_m \\
+Sv_k = B_{1, k} w_1 + \cdots + B_{m, k} w_m \\
+(T+S)v_k = Tv_k + Sv_k \\
+=(A_{1, k} w_1 + \cdots + A_{m, k} w_m) + \\
+(B_{1, k} w_1 + \cdots + B_{m, k} w_m) \\
+= (A_{1, k}+B_{1, k}) w_1 + \cdots + (A_{m, k}+B_{m, k}) w_m
+</script>
+</p>
+<p>So <script type="math/tex">\mathcal{M}(S+T) = [A_{i, j} + B_{i, j}] = [A_{i, j}] + [B_{i, j}] = \mathcal{M}(S) + \mathcal{M}(T)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="338-the-matrix-of-a-scalar-times-a-linear-map">3.38 the matrix of a scalar times a linear map</h3>
+<p>Suppose <script type="math/tex">𝜆 ∈ 𝐅</script> and <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script>. Then <script type="math/tex">ℳ(𝜆𝑇) = 𝜆ℳ(𝑇)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\mathcal{M}(T) = [A_{i, j}]</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+(𝜆T)(v_k) = 𝜆(Tv_k) \\
+= 𝜆 (A_{1, k} w_1 + \cdots + A_{m, k} w_m) \\
+= (𝜆A_{1, k}) w_1 + (𝜆A_{m, k}) w_m \\
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{M}(𝜆T) = [𝜆 A_{i, j}] = 𝜆 [A_{i, j}] = 𝜆 \mathcal{M}(T)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="344-notation-a_j-a_k">3.44 notation: <script type="math/tex">𝐴_{𝑗,⋅}</script> , <script type="math/tex">𝐴_{⋅,𝑘}</script>
+</h3>
+<p>Suppose <script type="math/tex">𝐴</script> is an <script type="math/tex">𝑚</script>-by-<script type="math/tex">𝑛</script> matrix.</p>
+<ul>
+<li>
+<p>If <script type="math/tex">1 ≤ 𝑗 ≤ 𝑚</script>, then <script type="math/tex">A_{j, .}</script> 
+denotes the <script type="math/tex">1</script>-by-<script type="math/tex">𝑛</script> matrix consisting of row <script type="math/tex">𝑗</script> of <script type="math/tex">𝐴</script>.</p>
+</li>
+<li>
+<p>If <script type="math/tex">1 ≤ 𝑘 ≤ 𝑛</script>, then <script type="math/tex">A_{., k}</script> denotes the <script type="math/tex">𝑚</script>-by-<script type="math/tex">1</script> matrix consisting of column <script type="math/tex">𝑘</script> of <script type="math/tex">𝐴</script>.</p>
+</li>
+</ul>
+<h3 id="350-linear-combination-of-columns">3.50 linear combination of columns</h3>
+<p>Suppose <script type="math/tex">𝐴</script> is an <script type="math/tex">𝑚</script>-by-<script type="math/tex">𝑛</script> matrix and
+<script type="math/tex">b = \begin{pmatrix}
+b_1 \\
+\vdots  \\
+b_n \\
+\end{pmatrix}
+</script> is an 𝑛-by-1 matrix. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+Ab = b_1 A_{., 1}  + \cdots + b_n A_{., n} 
+</script>
+</p>
+<p>In other words, 𝐴𝑏 is a linear combination of the columns of 𝐴, 
+with the scalars that multiply the columns coming from 𝑏.</p>
+<p><strong>Proof</strong>:</p>
+<p>The <script type="math/tex">k</script>th row on the left is</p>
+<p>
+<script type="math/tex; mode=display"> 
+Ab_{k, 1} = A_{1, k} b_1 + \cdots + A_{n, k} b_n
+</script>
+</p>
+<p>Which is the same as the <script type="math/tex">k</script>th row on the right.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="356-columnrow-factorization">3.56 column–row factorization</h3>
+<p>Suppose <script type="math/tex">𝐴</script> is an <script type="math/tex">𝑚</script>-by-<script type="math/tex">𝑛</script> matrix with entries in <script type="math/tex">𝐅</script> and 
+column rank <script type="math/tex">𝑐 ≥ 1</script>. Then
+there exist an <script type="math/tex">𝑚</script>-by-<script type="math/tex">𝑐</script> matrix <script type="math/tex">𝐶</script> and a <script type="math/tex">𝑐</script>-by-<script type="math/tex">𝑛</script> matrix <script type="math/tex">𝑅</script>, both with entries in <script type="math/tex">𝐅</script>, such that <script type="math/tex">𝐴 = 𝐶𝑅</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>The column <script type="math/tex">A_{., 1}, \cdots, A_{., n}</script> can be reduced <script type="math/tex">c</script> columns
+which is a basis of the span of the columns of <script type="math/tex">A</script>.
+Put these <script type="math/tex">c</script> columns together to make <script type="math/tex">C</script>.</p>
+<p>Each columns of <script type="math/tex">A</script> is the linear combination of the columns of <script type="math/tex">C</script>.
+Then make the coefficients into column of <script type="math/tex">R</script>.</p>
+<p>Then <script type="math/tex">A = CR</script>.</p>
+<h3 id="357-column-rank-equals-row-rank">3.57 column rank equals row rank</h3>
+<p>Suppose <script type="math/tex">𝐴 ∈ 𝐅^{𝑚, 𝑛}</script> . Then the column rank of 𝐴 equals the row rank of 𝐴.</p>
+<p><strong>Proof</strong>: Assume column rank is <script type="math/tex">c</script>, then <script type="math/tex">A = CR</script>.
+<script type="math/tex">C</script> is <script type="math/tex">m \times c</script> and <script type="math/tex">R</script> is <script type="math/tex">c \times n</script>.</p>
+<p>Each row of <script type="math/tex">A</script> is the linear combination of the row of <script type="math/tex">R</script>,
+so row rank of <script type="math/tex">A \leq c</script>.</p>
+<p>To prove the other direction, consider <script type="math/tex">A^T</script>, </p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{ column rank of } 𝐴 = \\
+\text{ row rank of } 𝐴t ≤ \\
+\text{ column rank of } 𝐴t = \\
+\text{ row rank of } 𝐴.
+</script>
+</p>
+<p>So column rank and row rank are equal.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
