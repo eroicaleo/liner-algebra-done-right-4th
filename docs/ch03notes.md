@@ -137,3 +137,4 @@ $$
 So column rank and row rank are equal.
 
 $\square$
+

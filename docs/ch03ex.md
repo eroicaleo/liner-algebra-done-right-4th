@@ -1770,7 +1770,366 @@ $T$ is surjective, so $𝑇$ is invertible.
 
 $\square$
 
+### 3D.6
+
+Suppose that 𝑊 is finite-dimensional and 𝑆, 𝑇 ∈ ℒ(𝑉, 𝑊).
+Prove that null 𝑆 = null 𝑇 if and only if there exists an 
+invertible 𝐸 ∈ ℒ(𝑊) such that 𝑆 = 𝐸𝑇.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume null 𝑆 = null 𝑇, let $u_1, \cdots, u_m$ be a basis
+of $\text{null } T$.
+
+Extend $u_1, \cdots, u_m$ with $v_1, \cdots, v_n$ so they
+become a basis of $V$.
+
+So $Tv_1, \cdots, Tv_n$ is basis of $\text{range } T$ since
+$\text{dim range } T = (n+m)-m = n$.
+
+For the same reason,
+$Sv_1, \cdots, Sv_n$ is basis of $\text{range } S$
+
+Let $ETv_i = Sv_i$.
+
+$\square$
+
+$\Leftarrow$
+
+Assume $v \in \text{null } T$, then $S(v) = ET(v) = E(0) = 0$.
+So $\text{null } T \subseteq \text{null } S$.
+
+Assume $w in \text{null } S$, then $ET(w) = 0$, since
+$E$ is injective, then $T(w) = 0$.
+So $\text{null } S \subseteq \text{null } T$.
+
+$\square$
+
+### 3D.7
+
+Suppose that 𝑉 is finite-dimensional and 𝑆, 𝑇 ∈ ℒ(𝑉, 𝑊).
+Prove that range 𝑆 = range 𝑇 if and only if there exists an 
+invertible 𝐸 ∈ ℒ(𝑉) such that 𝑆 = 𝑇𝐸.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $w_1, \cdots, w_m$ is a basis of $\text{range } S$.
+
+$Sv_1 = w_1, \cdots, Sv_m = w_m$ and
+$Tu_1 = w_1, \cdots, Tu_m = w_m$.
+
+Let $x_1, \cdots, x_n$ be a basis of $\text{null } S$.
+Let $y_1, \cdots, y_n$ be a basis of $\text{null } T$.
+
+$$ 
+a_1 v_1 + \cdots + a_m v_m
++
+b_1 x_1 + \cdots + b_n x_n = 0 \\
+\Rightarrow \\
+S(
+a_1 v_1 + \cdots + a_m v_m
++
+b_1 x_1 + \cdots + b_n x_n) = 0 \\
+\Rightarrow \\
+a_1 Sv_1 + \cdots + a_m Sv_m
++
+b_1 Sx_1 + \cdots + b_n Sx_n = 0 \\
+\Rightarrow \\
+a_1 = \cdots = a_m = b_1 = \cdots = b_n = 0
+$$
+
+So $v_1, \cdots, v_m, x_1, \cdots, x_n$ is a basis of $V$.
+Also
+$u_1, \cdots, u_m, y_1, \cdots, y_n$ is a basis of $U$.
+
+Let $Eu_i = v_i, Ey_j = x_j$.
+
+$E$ is an isomorphism and $S = TE$.
+
+$\Leftarrow$
+
+$S = TE$, assume $w \in \text{range } T$ then $T(v) = w$.
+Since $E$ is surjective, we can find $u$ such that
+$E(u) = v$, then $S(u) = TE(u) = Tv = w$.
+
+On the other hand,
+assume $w in \text{range } S$, then $w = S(u) = TE(u) = T(E(u))$,
+so $w \in \text{range } T$.
+
+$\square$
+
+### 3D.8
+
+Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑆, 𝑇 ∈ ℒ(𝑉, 𝑊). 
+Prove that there exist invertible $𝐸_1 ∈ ℒ(𝑉)$ and $𝐸_2 ∈ ℒ(𝑊)$
+such that $𝑆 = 𝐸_2𝑇𝐸_1$ if and only if
+$\text{dim null } T = \text{dim null } S$.
+
+**Proof**:
+
+$\Leftarrow$
+
+If $\text{dim null } T = \text{dim null } S$, then
+$\text{null } T$ and $\text{null } S$ are isomorphic.
+
+Assume $E_1: \text{null } S \longrightarrow \text{null } T$
+is an isomorphism and we can extend it to
+$E_1: S \longrightarrow T$.
+
+If $u \in \text{null } S
+\Rightarrow
+E_1(u) \in \text{null } T
+\Rightarrow
+T E_1(u) = 0$.
+
+If $u \in \text{null } T E_1
+\Rightarrow
+E_1 u \in \text{null } T
+\Rightarrow
+u \in \text{null } S
+$ 
+
+Therefore $\text{null } TE_1 = \text{null } S$
+
+Apply exercise 3D.6, we can have $E_2 \in \mathcal{L}(W)$,
+such that $S = E_2 T E_1$.
+
+$\Rightarrow$
+
+Consider the subspace $E_1(\text{null } S)$.
+
+Assume $u \in \text{null } S$, then
+$E_2 T E_1 (u) = 0$, since $E_2$ is injective, $E_1u \in \text{null } T$.
+
+So $E_1(\text{null } S) \subseteq \text{null } T$.
+
+Assume $v \in \text{null } T$, $E_1$ is injective,
+then we can find $u$, $E_1(u) = v$, then
+$S(u) = E_2 T E_1 (u) = E_2 T v = 0$, i.e.
+$\text{null } T \subseteq E_1(\text{null } S)$.
+
+So $\text{null } T = \subseteq E_1(\text{null } S)$.
+We have $\text{dim null } T = \text{dim null } S$ as required.
+
+$\square$
+
+### 3D.9
+
+Suppose 𝑉 is finite-dimensional and 𝑇 ∶ 𝑉 → 𝑊 is a surjective 
+linear map of 𝑉 onto 𝑊. Prove that there is a subspace 𝑈 of 𝑉 
+such that $𝑇|_𝑈$ is an isomorphism of 𝑈 onto 𝑊.
+
+**Proof**:
+
+Let $w_1, \cdots, w_m$ be a basis of $W$.
+And $v_1, \cdots, v_m$ such that
+$Tv_1 = w_1, \cdots, Tv_m = w_m$.
+
+$v_1, \cdots, v_m$ is independent.
+
+Let $U = \text{span}(𝑣_1, \cdots, 𝑣_𝑚)$, $𝑇|_𝑈$ is
+an isomorphism.
+
+$\square$
+
 ### 3D.10
+
+Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑈 is a subspace of 
+𝑉. Let
+
+$$ 
+ℰ = \{ 𝑇 ∈ ℒ(𝑉, 𝑊) ∶ 𝑈 ⊆ null 𝑇 \}.
+$$
+
+Prove the following
+
+(a) Show that ℰ is a subspace of ℒ(𝑉, 𝑊).
+
+**Proof**:
+
+If $T_1, T_2 \in ℰ$ and $u \in U$, then
+
+$$ 
+(T_1 + T_2)(u) = T_1(u) + T_2(u) = 0 + 0 = 0
+$$
+
+So $T_1 + T_2 \in ℰ$.
+
+Same for $kT_1$.
+
+$\square$
+
+(b) Find a formula for dim ℰ in terms of dim 𝑉 , dim 𝑊, and dim 𝑈.
+
+Hint: Define $Φ ∶ ℒ(𝑉, 𝑊) → ℒ(𝑈, 𝑊)$ by $Φ(𝑇) = 𝑇|_𝑈$.
+What is null $Φ$? What is range $Φ$?
+
+**Proof**:
+
+If $T \in \text{null } Φ$, then $Φ(T) = T|_U = 0$, i.e.
+for $u \in U, T(u) = 0$, then $U \subseteq \text{null } T$.
+So $\text{null } Φ \subseteq ℰ$.
+
+On the other hand, if $T \in ℰ$, then $Φ(T) = T|_U = 0$,
+so $ℰ \subseteq \text{null } Φ$.
+
+So $ℰ = \text{null } Φ$
+
+$Φ$ is surjective because for any $S \in \mathcal{L}(U, W)$,
+we can find $T$ such that $Φ(T) = T|_U = S$.
+
+Then
+
+$$ 
+\dim \mathcal{L}(V, W) = \dim V \times \dim W \\
+\text{dim range } Φ = \dim \mathcal{L}(U, W)
+= \dim U \times \dim W \\
+\dim ℰ = \text{dim null } Φ = (\dim V - \dim U) \times \dim W
+$$
+
+### 3D.11
+
+Suppose 𝑉 is finite-dimensional and 𝑆, 𝑇 ∈ ℒ(𝑉). Prove that
+
+$$ 
+ST \text{ is invertible }
+\Longleftrightarrow
+\text{𝑆 and 𝑇 are invertible.}
+$$
+
+**Proof**:
+
+$\Rightarrow$
+
+$ST$ is invertible, then $ST$ is injective.
+So if $v_1 \neq v_2$ then $STv_1 \neq STv_2$.
+That means $Tv_1 \neq Tv_2$, so $T$ is injective, so
+$T$ is invertible.
+
+$ST$ is invertible, then $ST$ is surjective.
+Given any $v$ we can find $u$, such that $STu - v$,
+so $S(Tu) = v$. So $S$ is surjective, then it's invertible.
+
+$\Leftarrow$
+
+𝑆 and 𝑇 are invertible, then
+
+$$ 
+T^{-1}S^{-1} ST = 1 \\
+ST T^{-1}S^{-1} = 1
+$$
+
+So $T^{-1}S^{-1}$ is the inverse of $ST$.
+
+$\square$
+
+### 3D.12
+
+Suppose 𝑉 is finite-dimensional and 𝑆, 𝑇, 𝑈 ∈ ℒ(𝑉) and
+𝑆𝑇𝑈 = 𝐼. Show that 𝑇 is invertible and that $𝑇^{−1} = 𝑈𝑆$.
+
+**Proof**:
+
+From 3.68, $STU = I$ then $TUS = I$. Then use 3.68 again
+$(US)T = I$.
+
+$\square$
+
+### 3D.13
+
+Show that the result in Exercise 12 can fail without the hypothesis 
+that 𝑉 is finite-dimensional.
+
+**Solution**:
+
+Consider $V = \mathbf{F}^{\infty }$, $S$ is the identity mapping.
+And
+
+$$ 
+T: (x_1, x_2, x_3, \cdots) \longrightarrow (x_2, x_3, \cdots) \\
+U: (x_1, x_2, x_3, \cdots) \longrightarrow (0, x_1, x_2, x_3, \cdots) \\
+$$
+
+We know from the second example of 3.64 that $T$ is not
+invertible, but $TUS = I$.
+
+$\square$
+
+### 3D.14
+
+Prove or give a counterexample: If 𝑉 is a finite-dimensional 
+vector space and 𝑅, 𝑆, 𝑇 ∈ ℒ(𝑉) are such that 𝑅𝑆𝑇 is 
+surjective, then 𝑆 is injective.
+
+**Proof**:
+
+$RST$ is surjective, then it's invertible.
+From exercise 3D.11, $ST$ is invertible.
+Again use 3D.11, $S$ is invertible, then $S$ is injective.
+
+$\square$
+
+### 3D.15
+
+Suppose 𝑇 ∈ ℒ(𝑉) and $v_1, \cdots, v_m$ is a list in 𝑉 such that 
+$𝑇𝑣_1, …, 𝑇𝑣_𝑚$ spans 𝑉 .
+Prove that $𝑣_1, …, 𝑣_𝑚$ spans 𝑉 .
+
+**Proof**:
+
+Since $𝑇𝑣_1, …, 𝑇𝑣_𝑚$ spans $V$, then $V$ is finite dimension.
+So $T$ is surjective means $T$ is invertible.
+Let $v \in V, S = T^{-1}$, and assume
+
+$$ 
+Tv = a_1 Tv_1 + \cdots + a_m Tv_m \\\
+\Rightarrow \\
+STv = S(a_1 Tv_1 + \cdots + a_m Tv_m) \\
+\Rightarrow \\
+v = a_1 STv_1 + \cdots + a_m STv_m \\
+\Rightarrow  (\text{$ST$ is identity operator and $S$ is linear})  \\
+v = a_1 v_1 + \cdots + a_m v_m
+$$
+
+$\square$
+
+### 3D.16
+
+Prove that every linear map from $\mathbf{F}^{n, 1}$ to
+$\mathbf{F}^{m, 1}$ is given by a matrix
+multiplication. In other words, prove that if
+$𝑇 ∈ ℒ(\mathbf{F}^{n, 1}, \mathbf{F}^{m, 1})$,
+then there exists an
+𝑚-by-𝑛 matrix 𝐴 such that $𝑇𝑥 = 𝐴𝑥$ for every
+$𝑥 ∈ \mathbf{F}^{n, 1}$.
+
+**Proof**:
+
+Given $𝑇 ∈ ℒ(\mathbf{F}^{n, 1}, \mathbf{F}^{m, 1})$,
+consider
+
+$$ 
+A = \mathcal{M}(T, (e_1, \cdots, e_n), (e_1, \cdots, e_m))
+$$
+
+Then
+
+$$ 
+T(x) = T(x_1 e_1 + \cdots + x_n e_n) \\
+= x_1 Te_1 + \cdots + x_n Te_n \\
+= x_1 A_{.,1} + \cdots + x_n A_{.,n} \\
+= Ax
+$$
+
+The 2nd $=$ is because $T$ is linear.
+The 3rd $=$ is from the definitions of $ℳ(𝑇)$.
+The last equality is from 3.50.
+
+$\square$
 
 ### 3D.17
 
@@ -1786,7 +2145,69 @@ for 𝑇 ∈ ℒ(𝑉).
 (a) Show that
 $\text{dim null } 𝒜 = (\dim 𝑉)(\text{dim null } 𝑆)$.
 
-**Proof:**
+**Proof**:
+
+Consider this subspace of $ℒ(ℒ(𝑉))$:
+
+$$ 
+T : V \rightarrow \text{null } S
+$$
+
+It's the $\text{null } 𝒜$. And its dimension is
+$(\dim 𝑉)(\text{dim null } 𝑆)$.
+
+(b) Show that
+$\text{dim range } 𝒜 = (\dim 𝑉)(\text{dim range } 𝑆)$.
+
+**Proof**:
+
+Note $𝒜$ is a linear map from $ℒ(𝑉) \rightarrow ℒ(𝑉)$, so
+
+$$ 
+\text{dim range } 𝒜 + \text{dim null } 𝒜 = \dim ℒ(𝑉) =
+\dim 𝑉 \times \dim 𝑉
+$$
+
+Then
+
+$$ 
+\text{dim range } 𝒜 = \dim 𝑉 \times \dim 𝑉 -
+(\dim 𝑉)(\text{dim null } 𝑆) = (\dim 𝑉)(\text{dim range } 𝑆)
+$$
+
+as required.
+
+$\square$
+
+### 3D.18
+
+Show that 𝑉 and ℒ(𝐅, 𝑉) are isomorphic vector spaces.
+
+**Proof**:
+
+Given $v \in V$, define this map from
+$T: 𝑉 \longrightarrow ℒ(𝐅, 𝑉), T(v) = S_v, S_v(1) = v$.
+
+We first show $T$ is injective.
+
+If $T(v) = 0$, then $v = S_v(1) = 0(1) = 0$. So $T$ is surjective.
+
+Next we show $T$ is surjective.
+
+Assume $S \in ℒ(𝐅, 𝑉)$ and $S(1) = v$, then given any
+$a \in 𝐅$,
+
+$$ 
+S(a) = S (a \cdot 1) = a S(1) = a v = a S_v(1) = S_v(a) \\
+\Rightarrow \\
+S = S_v = T(v)
+$$
+
+So $T$ is surjective.
+
+In summary, $T$ is an isomorphism.
+
+$\square$
 
 ### 3D.19
 
@@ -2010,6 +2431,15 @@ $$
 
 For other dimensions, it's similar.
 So, we finished one direction.
+
+$\Leftarrow$
+
+Now assume if 𝑇 
+is a scalar multiple of the identity operator.
+Then $T(v) = av$, so $\mathcal{M}(T) = a I$.
+as required.
+
+$\square$
 
 ### 3D.20
 
