@@ -3393,24 +3393,26 @@ the corresponding dual basis of <script type="math/tex">𝑉'</script> . Suppose
 <p>(a) Prove that <script type="math/tex">(𝑆 + 𝑇)' = 𝑆' + 𝑇'</script>
 </p>
 <p><strong>Proof</strong>:</p>
-<p>Assume <script type="math/tex">\varphi \in W'</script> and <script type="math/tex">v \in V</script>.
-$$
-<script type="math/tex; mode=display">\begin{align*}
+<p>Assume <script type="math/tex">\varphi \in W'</script> and <script type="math/tex">v \in V</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
 (𝑆 + 𝑇)'(\varphi)(v)
 &= (\varphi \circ (S+T))(v) & \text{ (definition of dual mapping) } \\
-&= \varphi((S+T)(v)) & \text{ (definition of composition) }\\
+&= \varphi((S+T)(v)) & \text{ (definition of composition) } \\
 &= \varphi (S(v) + T(v))
-& \text{ (the definition of addition of linear maps in <script type="math/tex">\mathcal{L}(V, W)</script> ) } \
-&amp;= \varphi (S(v)) + \varphi (T(v)) 
-&amp; \text{ (<script type="math/tex">\varphi</script> is linear map of <script type="math/tex">W'</script> ) }\
-&amp;= (S'(\varphi)) (v) + (T'(\varphi)) (v) 
-&amp; \text{ (definition of dual mapping) } \
-&amp;= (S'(\varphi) + T'(\varphi)) (v)
-&amp; \text{ (the definition of addition of linear maps in <script type="math/tex">V'</script> ) }\
-&amp;= ((S' + T')(\varphi)) (v)
-&amp; \text{ (the definition of addition of linear maps in <script type="math/tex">\mathcal{L}(W', V')</script> ) }
-\end{align*}</script>
-$$</p>
+& \text{ (the definition of addition of linear maps in } L(V, W)) \\
+&= \varphi (S(v)) + \varphi (T(v)) 
+& \varphi \text{ is linear map of  } W'\\
+&= (S'(\varphi)) (v) + (T'(\varphi)) (v) 
+& \text{ (definition of dual mapping) } \\
+&= (S'(\varphi) + T'(\varphi)) (v)
+& \text{ the definition of addition of linear maps in } V'\\
+&= ((S' + T')(\varphi)) (v)
+& \text{ the definition of addition of linear maps in } ℒ(W', V') \\
+\end{align*}
+</script>
+</p>
 <p>So <script type="math/tex">(𝑆 + 𝑇)' = 𝑆' + 𝑇'</script>.</p>
 <p>
 <script type="math/tex">\square</script>
@@ -3418,25 +3420,33 @@ $$</p>
 <p>(b) Prove that <script type="math/tex">(\lambda 𝑇)' = \lambda 𝑇'</script> for all <script type="math/tex">𝜆 ∈ 𝐅</script>.</p>
 <p><strong>Proof</strong>:</p>
 <p>Assume <script type="math/tex">\varphi \in W'</script> and <script type="math/tex">v \in V</script>.</p>
-<p>$$ 
-<script type="math/tex; mode=display">\begin{align*}
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
 ((\lambda 𝑇)'(\varphi))(v)
 &= (\varphi \circ (\lambda 𝑇))(v)
 & \text{ (definition of dual mapping) } \\
 &= \varphi ((\lambda 𝑇)(v))
 & \text{ (definition of composition)} \\
 &= \varphi (\lambda 𝑇(v))
-& \text{ (definition of scalar multiplication in <script type="math/tex">\mathcal{L}(V, W)</script>)} \
-&amp;= \lambda (\varphi(T(v)))
-&amp; \text{ (<script type="math/tex">\varphi</script> is a linear map from <script type="math/tex">W</script> to <script type="math/tex">F</script>) } \
-&amp;= \lambda ((T'(\varphi))(v))
-&amp; \text{ (definition of dual mapping) } \
-&amp;= (\lambda T'(\varphi))(v)
-&amp; \text{ (definition of scalar multiplication in <script type="math/tex">V'</script> )} \
-&amp;= ((\lambda T')(\varphi))(v)
-&amp; \text{ (definition of scalar multiplication in <script type="math/tex">\mathcal{L}(W', V')</script> )} \\
-\end{align*}</script> 
-$$</p>
+& \text{ definition of scalar multiplication in } L(V, W)\\
+&= \lambda (\varphi(T(v)))
+& \varphi \text{ is a linear map in } W' \\
+&= \lambda ((T'(\varphi))(v))
+& \text{ (definition of dual mapping) } \\
+&= (\lambda T'(\varphi))(v)
+& \text{ definition of scalar multiplication in V'} \\
+&= ((\lambda T')(\varphi))(v)
+& \text{ definition of scalar multiplication in } ℒ(W', V') \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\end{align*} 
+</script>
+</p>
 <p>So <script type="math/tex">(\lambda 𝑇)' = \lambda 𝑇'</script>
 </p>
 <p>
