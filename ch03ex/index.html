@@ -244,6 +244,54 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-3e-products-and-quotients-of-vector-spaces">Section 3E Products and Quotients of Vector Spaces</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3e2">3E.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e3">3E.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e4">3E.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e5">3E.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e9">3E.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e10">3E.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e11">3E.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e12">3E.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e13">3E.13</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e14">3E.14</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e15">3E.15</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e16">3E.16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e17">3E.17</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e18">3E.18</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e19">3E.19</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-3e-duality">Section 3E Duality</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3e8">3E.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e9_1">3E.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e10_1">3E.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e11_1">3E.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3e12_1">3E.12</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -2681,6 +2729,716 @@ w.r.t the standard basis <script type="math/tex">(e_1, …, e_n)</script> are <s
 </script>
 </p>
 <p>Then we have <script type="math/tex">I = BA</script> as required.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-3e-products-and-quotients-of-vector-spaces">Section 3E Products and Quotients of Vector Spaces</h2>
+<h3 id="3e2">3E.2</h3>
+<p>Suppose that <script type="math/tex">V_1, \cdots, V_m</script> are vector spaces such that
+<script type="math/tex">𝑉_1 × ⋯ × 𝑉_𝑚</script> is finite-dimensional.
+Prove that <script type="math/tex">𝑉_𝑘</script> is finite-dimensional for each
+<script type="math/tex">𝑘 = 1, …, 𝑚</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">𝑉_1 × ⋯ × 𝑉_𝑚</script> is finite-dimensional, then assume it
+can be spanned by <script type="math/tex">n</script> vectors.</p>
+<p>Take the 1st component from these <script type="math/tex">n</script> vectors and they can span
+<script type="math/tex">V_1</script>. So <script type="math/tex">V_1</script> is finite-dimensional.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e3">3E.3</h3>
+<p>Suppose <script type="math/tex">𝑉_1, …, 𝑉_𝑚</script> are vector spaces.
+Prove that <script type="math/tex">ℒ(𝑉_1 × ⋯ × 𝑉_𝑚, 𝑊)</script> and
+<script type="math/tex">ℒ(𝑉_1, 𝑊) × ⋯ × ℒ(𝑉_𝑚, 𝑊)</script> are isomorphic vector spaces.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+T \in ℒ(𝑉_1 × ⋯ × 𝑉_𝑚, 𝑊)
+</script>
+</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tau_1 : T \longrightarrow T_1
+</script>
+</p>
+<p>Let <script type="math/tex">T_1</script> be a mapping, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+T_1(v) = T((v, 0, \cdots, 0))
+</script>
+</p>
+<p>It's easy to see, <script type="math/tex">T_1 \in ℒ(𝑉_1, 𝑊)</script>.</p>
+<p>Then we can have this mapping</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tau: T \longrightarrow (\tau_1(T), \cdots, \tau_n(T)) = (T_1, \cdots, T_m)
+</script>
+</p>
+<p>To see it's injective, assume</p>
+<p>
+<script type="math/tex">T_1 = \cdots = T_m = 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+T((v_1, \cdots, v_m)) = T((v_1, \cdots, 0)) + \cdots
++ T((0, \cdots, v_m)) = T_1 v_1 + \cdots + T_m v_m = 0 \\
+\Rightarrow \\
+T = 0
+</script>
+</p>
+<p>To see it's surjective, given
+<script type="math/tex">(T_1, \cdots, T_m)</script>, and let</p>
+<p>
+<script type="math/tex; mode=display"> 
+T((v_1, \cdots, v_m)) = T_1 v_1 + \cdots + T_m v_m
+</script>
+</p>
+<p>It's easy to see <script type="math/tex">T</script> is a linear map.</p>
+<p>We also have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tau_1(T)(v_1) = T(v_1, \cdots, 0) = T_1 v_1 \\
+\Rightarrow \\
+\tau_1(T) = T_1
+</script>
+</p>
+<p>so <script type="math/tex">\tau</script> is surjective.</p>
+<p>Then <script type="math/tex">T</script> is an isomorphism.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e4">3E.4</h3>
+<p>Suppose <script type="math/tex">𝑊_1, …, 𝑊_𝑚</script> are vector spaces.
+Prove that <script type="math/tex">ℒ(𝑉, 𝑊_1 × ⋯ × 𝑊_𝑚)</script> and
+<script type="math/tex">ℒ(𝑉, 𝑊_1) × ⋯ × ℒ(𝑉, 𝑊_𝑚)</script> are isomorphic vector spaces.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">T \in ℒ(𝑉, 𝑊_1 × ⋯ × 𝑊_𝑚)</script>, let
+<script type="math/tex">\tau_1 : T \longrightarrow T_1 \in ℒ(𝑉, 𝑊_1)</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+T(v) = (\tau_1(T)(v), \cdots, \tau_m(T)(v))
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tau(T) = (\tau_1(T)(v), \cdots, \tau_m(T)(v))
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e5">3E.5</h3>
+<p>Suppose that <script type="math/tex">𝑣, 𝑥</script> are vectors in <script type="math/tex">𝑉</script> and that <script type="math/tex">𝑈, 𝑊</script> are subspaces of 
+<script type="math/tex">𝑉</script> such that <script type="math/tex">𝑣 + 𝑈 = 𝑥 + 𝑊</script>. Prove that <script type="math/tex">𝑈 = 𝑊</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">U, W</script> are subspaces, then <script type="math/tex">0 \in U, W</script>.
+So <script type="math/tex">v \in x + W, x \in v + U</script>. Then we can assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+v = x + w_0 \\
+x = v + u_0
+</script>
+</p>
+<p>Then given <script type="math/tex">u \in U</script>, we have <script type="math/tex">v + u = x + w_1</script>, i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(x + w_0) + u = x + w_1 \\
+\Rightarrow \\
+u = w_1 - w_0 \in W \\
+\Rightarrow \\
+U \subseteq W
+</script>
+</p>
+<p>For the same reason, <script type="math/tex">W \subseteq U</script>, i.e. <script type="math/tex">U = W</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e9">3E.9</h3>
+<p>Prove that a nonempty subset 𝐴 of 𝑉 is a translate of some subspace of 𝑉 if
+and only if 𝜆𝑣 + (1 − 𝜆)𝑤 ∈ 𝐴 for all 𝑣, 𝑤 ∈ 𝐴 and all 𝜆 ∈ 𝐅.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">A = u + U</script> where <script type="math/tex">U</script> is a subspace of <script type="math/tex">V</script>. And if <script type="math/tex">𝑣, 𝑤 ∈ 𝐴</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+v = u + u_0 \\
+w = u + u_1 \\
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lambda 𝑣 + (1 − \lambda )𝑤 = \lambda  (u + u_0) + (1 - \lambda ) (u + u_1)
+= u + (\lambda u_0 + (1 - \lambda) u_1) \in A
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>We will prove <script type="math/tex">-v + A</script> is a subspace.</p>
+<p>If <script type="math/tex">a, b \in -v + A</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+a = -v + 𝑣_a \\
+b = -v + 𝑣_b \\
+a + b = -v + (v_a + v_b - v)
+= -v + 2(\frac{1}{2}v_a + \frac{1}{2}v_b) - v
+</script>
+</p>
+<p>Note <script type="math/tex">w = \frac{1}{2}v_a + \frac{1}{2}v_b \in A</script>, then <script type="math/tex">2w - v \in A</script>.
+So <script type="math/tex">a + b \in -v + A</script>.</p>
+<p>Similarly,</p>
+<p>
+<script type="math/tex; mode=display"> 
+ka = k (-v + v_a) = -v + k v_a - (k-1)v \in -v + A
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e10">3E.10</h3>
+<p>Suppose <script type="math/tex">𝐴_1 = 𝑣 + 𝑈_1</script> and <script type="math/tex">𝐴_2 = 𝑤 + 𝑈_2</script> for some <script type="math/tex">𝑣, 𝑤 ∈ 𝑉</script> and some
+subspaces <script type="math/tex">𝑈_1, 𝑈_2</script> of <script type="math/tex">𝑉</script>. Prove that the intersection <script type="math/tex">𝐴_1 ∩ 𝐴_2</script> is either a
+translate of some subspace of 𝑉 or is the empty set.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">𝐴_1 ∩ 𝐴_2 \neq \emptyset, a \in 𝐴_1 ∩ 𝐴_2</script>.</p>
+<p>Let <script type="math/tex">A = 𝐴_1 ∩ 𝐴_2, U = -a + A</script>.</p>
+<p>Assume <script type="math/tex">v_1, v_2 \in U</script>, then
+<script type="math/tex">v_1 = -a + a_1, v_2 = -a + a_2, a_1 \in A, a_2 \in A</script>.</p>
+<p>We will show <script type="math/tex">v_1 + v_2 \in U</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_1 = -a + v + u_1 = -(v + u_0) + v + u_1 \\
+v_2 = -a + v + u_2 = -(v + u_0) + v + u_2 \\
+\Rightarrow \\
+v_1 + v_2 = u_1 + u_2 - 2 u_0 = - (v + u_0) + (v + u_0) + (u_1 + u_2 - 2 u_0) \\
+= -a + v + (u_1 + u_2 - u_0) \\
+\Rightarrow \\
+v_1 + v_2 + a = v + (u_1 + u_2 - u_0) \in A_1
+</script>
+</p>
+<p>For the same reason, <script type="math/tex">v_1 + v_2 + a \in A_2</script>.
+Then <script type="math/tex">v_1 + v_2 + a \in 𝐴_1 ∩ 𝐴_2</script>, i.e. <script type="math/tex">v_1 + v_2 \in -a + A</script>.</p>
+<p>Now consider <script type="math/tex">k v_1 = -k a + k a_1 = k (-(v + u_0) + v + u_1) = k (u_1 - u0)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+a + k (u_1 - u0) = v + u_0 + k(u_1 - u0) \in A_1
+</script>
+</p>
+<p>So <script type="math/tex">k v_1 \in U</script>.</p>
+<p>Then <script type="math/tex">U</script> is a subspace.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e11">3E.11</h3>
+<p>Suppose <script type="math/tex">𝑈 = \{(𝑥_1, 𝑥_2, … ) ∈ 𝐅^∞ ∶ 𝑥_𝑘 ≠ 0
+\text{ for only finitely many } 𝑘\}</script>.</p>
+<p>(a) Show that <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝐅^∞</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">a, b \in U</script>, then assume for all <script type="math/tex">n > N_a, a_n = 0</script>
+and <script type="math/tex">n > N_b, b_n = 0</script>.</p>
+<p>Then <script type="math/tex">a+b</script> has only finite non-zero items. So <script type="math/tex">a+b \in U</script>.</p>
+<p>Similarly, <script type="math/tex">ka \in U</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that <script type="math/tex">𝐅^∞ /𝑈</script> is infinite-dimensional.</p>
+<p><strong>Proof</strong>:</p>
+<p>We prove by contradition. Assume it's finite-dimensional, and the
+dimension is <script type="math/tex">N</script>, all we need to do is to find <script type="math/tex">N+1</script> independent vectors
+in <script type="math/tex">𝐅^∞ /𝑈</script>.</p>
+<p>Consider the following group of vectors</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_{1,i} =\begin{cases}
+    1 &\text{ if } i = k(N+1)+1, k = 0, 1, 2, \cdots \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+v_{2,i} =\begin{cases}
+    1 &\text{ if } i = k(N+1)+2, k = 0, 1, 2, \cdots \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+v_{N+1,i} =\begin{cases}
+    1 &\text{ if } i = k(N+1)+(N+1), k = 0, 1, 2, \cdots \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+</script>
+</p>
+<p>Any linear combination of them cannot have finite non-zero items.</p>
+<p>Anything example is</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_{1,i} =\begin{cases}
+    1 &\text{ if } p | 2 \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+v_{2,i} =\begin{cases}
+    1 &\text{ if } p | 3 \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+\cdots 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e12">3E.12</h3>
+<p>Suppose <script type="math/tex">𝑣_1, …, 𝑣_𝑚 ∈ 𝑉</script> . Let</p>
+<p>
+<script type="math/tex; mode=display">
+A = \{
+\lambda_1 v_1 + \cdots + \lambda_m v_m
+:
+\lambda_1, \cdots, \lambda_m \in F
+\text{ and }
+\lambda_1 + \cdots + \lambda_m = 1
+\}
+</script>
+</p>
+<p>(a) Prove that <script type="math/tex">𝐴</script> is a translate of some subspace of <script type="math/tex">𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>We will prove <script type="math/tex">-v_1 + A</script> is a subspace.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(-v_1 + a) + (-v_1 + a') = \\
+(-v_1 + \lambda_1 v_1 + \cdots + \lambda_m v_m) +
+(-v_1 + \lambda'_1 v_1 + \cdots + \lambda'_m v_m) \\
+= -v_1 + (\lambda_1 + \lambda'_1 - 1) v_1 + \cdots + (\lambda_m + \lambda'_m) v_m
+</script>
+</p>
+<p>Note that</p>
+<p>
+<script type="math/tex; mode=display"> 
+(\lambda_1 + \lambda'_1 - 1) + \cdots + (\lambda_m + \lambda'_m) = 1
+</script>
+</p>
+<p>So <script type="math/tex">(-v_1 + a) + (-v_1 + a') \in -v_1 + A</script>.</p>
+<p>Next</p>
+<p>
+<script type="math/tex; mode=display"> 
+k(-v_1 + a) = k (-v_1 + \lambda_1 v_1 + \cdots + \lambda_m v_m) \\
+= -v_1 + ((1-k)v_1 + k\lambda_1 v_1 + \cdots + k\lambda_m v_m)
+</script>
+</p>
+<p>Note that</p>
+<p>
+<script type="math/tex; mode=display"> 
+(1-k) + k\lambda_1 + \cdots + k\lambda_m = (1-k) + k = 1
+</script>
+</p>
+<p>So <script type="math/tex">k(-v_1 + a) \in -v_1 + A</script>, then <script type="math/tex">-v_1 + A</script> is a subspace.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that if <script type="math/tex">𝐵</script> is a translate of some subspace of <script type="math/tex">𝑉</script> and
+<script type="math/tex">\{𝑣_1, …, 𝑣_𝑚\} ⊆ 𝐵</script>, then <script type="math/tex">𝐴 ⊆ 𝐵</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">B = u + U</script> and <script type="math/tex">U</script> is a subspace. Then <script type="math/tex">v_i - u \in U</script> and</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lambda_1 (v_1-u) + \cdots + \lambda_m (v_m-u) \\
+=
+(\lambda_1 v_1 + \cdots + \lambda_m v_m)
+- (\lambda_1 + \cdots + \lambda_m) u \\
+= 
+(\lambda_1 v_1 + \cdots + \lambda_m v_m) - u \in U
+</script>
+</p>
+<p>Then <script type="math/tex">\lambda_1 v_1 + \cdots + \lambda_m v_m \in B</script>. So <script type="math/tex">𝐴 ⊆ 𝐵</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Prove that <script type="math/tex">𝐴</script> is a translate of some subspace of <script type="math/tex">𝑉</script> of dimension less
+than <script type="math/tex">𝑚</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Now consider the space spanned by <script type="math/tex">v_2-v_1, \cdots , v_m - v_1</script> and call it
+<script type="math/tex">U</script>.</p>
+<p>For any <script type="math/tex">u \in U, u = \lambda_2 (v_2-v_1) + \cdots + \lambda_m (v_m-v_1)</script>,</p>
+<p>Consider <script type="math/tex">v_1 + u = v_1 + \lambda_2 (v_2-v_1) + \cdots + \lambda_m (v_m-v_1)</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_1 + u = (1 - \lambda_2 - \cdots - \lambda_m) v_1 +
+\lambda_2 v_2 + \cdots + \lambda_m v_m \in A
+</script>
+</p>
+<p>So <script type="math/tex">v_1 + U \subseteq A</script>.</p>
+<p>On the other hand, for any <script type="math/tex">\lambda_1 v_1 + \cdots + \lambda_m v_m \in A</script>,
+we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lambda_1 v_1 + \cdots + \lambda_m v_m \\
+= v_1 + \lambda_2 (v_2-v_1) + \cdots + \lambda_m (v_m-v_1)
+</script>
+</p>
+<p>So <script type="math/tex">A \subseteq v_1+ U</script>, i.e. <script type="math/tex">A = v_1 + U</script>.</p>
+<p>Since <script type="math/tex">U = \text{span}(𝑣_2-v_1, \cdots, 𝑣_𝑚-v_1)</script>, <script type="math/tex">\dim U < m</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e13">3E.13</h3>
+<p>Suppose <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> such that <script type="math/tex">𝑉/𝑈</script> is finite-dimensional. 
+Prove that <script type="math/tex">𝑉</script> is isomorphic to <script type="math/tex">𝑈 × (𝑉/𝑈)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">v \in V</script>, and <script type="math/tex">w_1+U, \cdots, w_m+U</script> is a basis of <script type="math/tex">V/U</script>.
+Assume <script type="math/tex">v+U = a_1 (w_1+U) + \cdots + a_m (w_m+U)</script>, and let
+<script type="math/tex">u = v - (a_1 w_1 + \cdots + a_m w_m) \in U</script>. We have a map:</p>
+<p>
+<script type="math/tex; mode=display"> 
+T: v \rightarrow (u, v + U)
+</script>
+</p>
+<p>It's easy to verify it's linear.</p>
+<p>injective: if <script type="math/tex">T(v) = 0 = (0, 0 + U)</script>, then <script type="math/tex">u = 0 + 0 = 0</script>.</p>
+<p>surjective: Given <script type="math/tex">(u, v+U)</script>, Then <script type="math/tex">T(v+u) = (u, v+U)</script>.</p>
+<p>So <script type="math/tex">T</script> is an isomorphism.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e14">3E.14</h3>
+<p>Suppose <script type="math/tex">𝑈</script> and <script type="math/tex">𝑊</script> are subspaces of <script type="math/tex">𝑉</script> and <script type="math/tex">𝑉 = 𝑈 ⊕ 𝑊</script>.
+Suppose <script type="math/tex">𝑤_1, …, 𝑤_𝑚</script>
+is a basis of <script type="math/tex">𝑊</script>. Prove that <script type="math/tex">𝑤_1 + 𝑈, …, 𝑤_𝑚 + 𝑈</script> is
+a basis of <script type="math/tex">𝑉/𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">v \in V</script>, and <script type="math/tex">v = u + w, u \in U, w \in W</script>.
+Then <script type="math/tex">v + U = w+U</script>, because <script type="math/tex">v-w \in U</script>.
+Then <script type="math/tex">v+U = a_1 (w_1+U) + \cdots + a_m (w_m+U)</script>. So <script type="math/tex">𝑤_1 + 𝑈, …, 𝑤_𝑚 + 𝑈</script>
+spans <script type="math/tex">V/U</script>.</p>
+<p>Now if <script type="math/tex">a_1 (w_1+U) + \cdots + a_m (w_m+U) = 0 + U</script>, then
+<script type="math/tex; mode=display">
+a_1 w_1 + \cdots + a_m w_m \in U \\
+a_1 w_1 + \cdots + a_m w_m \in W \\
+</script>
+</p>
+<p>Since <script type="math/tex">U \cap W = 0</script>, then <script type="math/tex">a_1 w_1 + \cdots + a_m w_m = 0</script>,
+then <script type="math/tex">a_1 = \cdots = a_m = 0</script>.</p>
+<p>So <script type="math/tex">𝑤_1 + 𝑈, …, 𝑤_𝑚 + 𝑈</script> is a basis of <script type="math/tex">𝑉/𝑈</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e15">3E.15</h3>
+<p>Suppose <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> and <script type="math/tex">𝑣_1 + 𝑈, …, 𝑣_𝑚 + 𝑈</script> is a basis of
+<script type="math/tex">𝑉/𝑈</script> and <script type="math/tex">𝑢_1, …, 𝑢_𝑛</script> is a basis of <script type="math/tex">𝑈</script>. Prove that
+<script type="math/tex">𝑣_1, …, 𝑣_𝑚, 𝑢_1, …, 𝑢_𝑛</script> is a basis of <script type="math/tex">𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Given <script type="math/tex">w \in V</script>, then <script type="math/tex">w+U \in V/U</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+w+U = a_1 (v_1+U) + \cdots + a_m (v_m+U)
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+w - (a_1 v_1 + \cdots + a_m v_m) \in U \\
+\Rightarrow \\
+w - (a_1 v_1 + \cdots + a_m v_m) = b_1 u_1 + \cdots + b_n u_n
+</script>
+</p>
+<p>Then <script type="math/tex">𝑣_1, …, 𝑣_𝑚, 𝑢_1, …, 𝑢_𝑛</script> spans <script type="math/tex">V</script>.</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m +
+b_1 u_1 + \cdots + b_n u_n = 0
+</script>
+</p>
+<p>Then <script type="math/tex">a_1 v_1 + \cdots + a_m v_m \in U</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+(a_1 v_1 + \cdots + a_m v_m) + U = \\
+a_1 (v_1+U) + \cdots + a_m (v_m+U) = 0 + U \\
+\Rightarrow \\
+a_1 = \cdots = a_m = 0
+</script>
+</p>
+<p>Then we have <script type="math/tex">b_1 = \cdots = b_n = 0</script>.</p>
+<p>Then <script type="math/tex">𝑣_1, …, 𝑣_𝑚, 𝑢_1, …, 𝑢_𝑛</script> are independent.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e16">3E.16</h3>
+<p>Suppose <script type="math/tex">𝜑 ∈ ℒ(𝑉, 𝐅)</script> and <script type="math/tex">𝜑 ≠ 0</script>. Prove that</p>
+<p>
+<script type="math/tex; mode=display">
+\dim V / \text{null } \varphi = 1
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">u, v \not\in \text{null } \varphi</script>.</p>
+<p>Then <script type="math/tex">\varphi (u) \neq 0, \varphi (v) \neq 0</script>.</p>
+<p>Then we can find <script type="math/tex">k \neq 0</script> such that
+<script type="math/tex">\varphi (u) = k \varphi (v)</script>, so
+<script type="math/tex">\varphi (u - kv) = 0</script>.</p>
+<p>Then <script type="math/tex">u - kv \in \text{null } \varphi</script>.</p>
+<p>Then we have <script type="math/tex">u + \text{null } \varphi = kv + \text{null } \varphi = k (v + \text{null } \varphi)</script>.</p>
+<p>Since <script type="math/tex">u</script> is arbitary, then any <script type="math/tex">u + \text{null } \varphi</script>
+can be represented
+by a scalar of <script type="math/tex">v + \text{null } \varphi</script>.</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim V / \text{null } \varphi = 1
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e17">3E.17</h3>
+<p>Suppose <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> such that <script type="math/tex">\dim 𝑉/𝑈 = 1</script>.
+Prove that there exists
+<script type="math/tex">𝜑 ∈ ℒ(𝑉, 𝐅)</script> such that <script type="math/tex">\text{null } \varphi = 𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since <script type="math/tex">\dim V/U = 1</script>, let <script type="math/tex">v + U</script> be a basis of <script type="math/tex">V/U</script>.</p>
+<p>For any <script type="math/tex">w \in V</script>, we have <script type="math/tex">w + U = k(v+U)</script>. Then <script type="math/tex">\mathcal{M}(w) = k</script>.</p>
+<p>Then we can consider <script type="math/tex">\varphi = \mathcal{M} \circ \pi</script>.</p>
+<p>If <script type="math/tex">w \in \text{null } \varphi</script>, then <script type="math/tex">\mathcal{M}(\pi(w)) = 0</script>,
+so <script type="math/tex">\pi(w) = 0 + U</script>, i.e. <script type="math/tex">w \in U</script>. So <script type="math/tex">\text{null } \varphi = U</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e18">3E.18</h3>
+<p>Suppose that <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> such that <script type="math/tex">𝑉/𝑈</script> is 
+finite-dimensional.</p>
+<p>(a) Show that if <script type="math/tex">𝑊</script> is a finite-dimensional subspace of <script type="math/tex">𝑉</script> and
+<script type="math/tex">𝑉 = 𝑈 + 𝑊</script>, then <script type="math/tex">\dim 𝑊 ≥ \dim 𝑉/𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>All we need to prove is that the basis <script type="math/tex">w_1+U, \cdots, w_m+U</script> of <script type="math/tex">W</script> spans
+<script type="math/tex">V/U</script>.</p>
+<p>Assume <script type="math/tex">v \in V</script>, we can write <script type="math/tex">v = u + w = u + (a_1 w_1 + \cdots + a_m w_m)</script>.
+Then <script type="math/tex">v - w \in U</script>, so <script type="math/tex">v + U = w + U</script>.</p>
+<p>So <script type="math/tex">w_1+U, \cdots, w_m+U</script> of <script type="math/tex">W</script> spans <script type="math/tex">V/U</script>. Then <script type="math/tex">\dim 𝑊 ≥ \dim 𝑉/𝑈</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that there exists a finite-dimensional subspace <script type="math/tex">𝑊</script> of <script type="math/tex">𝑉</script> such 
+that <script type="math/tex">\dim 𝑊 = \dim 𝑉/𝑈</script> and <script type="math/tex">𝑉 = 𝑈 ⊕ 𝑊</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">w_1+U, \cdots, w_m+U</script> be a basis of <script type="math/tex">V/U</script>, then
+consider the <script type="math/tex">W = \text{span}(w_1, \cdots, w_𝑚)</script>.</p>
+<p>If <script type="math/tex">u \in U</script> and <script type="math/tex">u = a_1 w_1 + \cdots + a_m w_m</script>, then
+<script type="math/tex">a_1 w_1 + \cdots + a_m w_m \in U</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 (w_1+U) + \cdots + a_m (w_m+U) = 0 + U
+</script>
+</p>
+<p>So <script type="math/tex">a_1 = \cdots = a_m = 0</script>, then <script type="math/tex">u = 0</script>.</p>
+<p>So <script type="math/tex">U + W = 𝑈 ⊕ 𝑊</script>.</p>
+<p>If <script type="math/tex">v \in V</script>, then <script type="math/tex">v + U = a_1 (w_1+U) + \cdots + a_m (w_m+U)</script>.
+Then <script type="math/tex">v - (a_1 w_1 + \cdots + a_m w_m) \in U</script>.</p>
+<p>So <script type="math/tex">V = U + W</script>.</p>
+<p>Combine these 2 parts, we have <script type="math/tex">V = 𝑈 ⊕ 𝑊</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e19">3E.19</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script> and <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script>.
+Let <script type="math/tex">𝜋</script> denote the quotient
+map from <script type="math/tex">𝑉</script> onto <script type="math/tex">𝑉/𝑈</script>. Prove that there exists <script type="math/tex">𝑆 ∈ ℒ(𝑉/𝑈, 𝑊)</script>
+such that
+<script type="math/tex">𝑇 = 𝑆 ∘ 𝜋</script> if and only if <script type="math/tex">𝑈 ⊆ \text{null } 𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">u \in U</script>, then <script type="math/tex">\pi (u) = 0 + U</script>, so <script type="math/tex">S(\pi (u)) = 0</script>.</p>
+<p>So <script type="math/tex">𝑈 ⊆ \text{null } 𝑇</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>If <script type="math/tex">v \in V</script>, then let <script type="math/tex">S(v + U) = T(v)</script>.</p>
+<p>It's well defined, because if <script type="math/tex">v_1 + U = v_2 + U</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+S((v_1+U)-(v_2+U)) = S((v_1-v_2)+U) = T(v_1-v_2) = 0 \\
+\Rightarrow (\because v_1-v_2 \in U \And U \subseteq \text{null } T) \\
+S(v_1 + U) = S(v_2 + U)
+</script>
+</p>
+<p>Next, we show it's linear.</p>
+<p>
+<script type="math/tex; mode=display"> 
+S((v_1+U)+(v_2+U)) = S((v_1+v_2) + U) = T(v_1+v_2) = T(v_1) + T(v_2) \\
+= S(v_1+U) + S(v_2+U) \\
+S(k(v_1+U)) = S(k v_1 + U) = T(k v_1) = k T(v_1) = k S(v_1 + U)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-3e-duality">Section 3E Duality</h2>
+<h3 id="3e8">3E.8</h3>
+<p>Suppose <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is a basis of 𝑉 and <script type="math/tex">\varphi_1, …, \varphi_𝑛</script> is 
+the dual basis of <script type="math/tex">𝑉'</script>. Define <script type="math/tex">\Gamma ∶ 𝑉 → 𝐅^𝑛</script> and
+<script type="math/tex">Λ ∶ 𝐅^𝑛 → 𝑉</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+\Gamma(𝑣) = (\varphi_1(𝑣), …, \varphi_𝑛(𝑣)),
+\Delta(a_1, \cdots, a_n) = a_1 v_1 + \cdots + a_n v_n.
+</script>
+</p>
+<p>Explain why <script type="math/tex">\Gamma</script> and <script type="math/tex">\Delta</script> are inverses of each other.</p>
+<p><strong>Proof</strong>:</p>
+<p>First, we need to prove <script type="math/tex">\Gamma (\Delta (a_1, \cdots, a_n)) = (a_1, \cdots, a_n)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\Gamma (\Delta (a_1, \cdots, a_n)) =\\
+\Gamma (a_1 v_1 + \cdots + a_n v_n) = \\
+(\varphi_1(a_1 v_1 + \cdots + a_n v_n), \cdots, 
+\varphi (a_1 v_1 + \cdots + a_n v_n)) = \\
+(a_1, \cdots, a_n)
+</script>
+</p>
+<p>Secondly, we need to prove <script type="math/tex">\Delta(\Gamma(v)) = v</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\Delta(\Gamma(v)) = \Delta(\varphi_1(𝑣), …, \varphi_𝑛(𝑣)) \\
+= \varphi_1(v) v_1 + \cdots + \varphi_n(v) v_n \\
+= v
+</script>
+</p>
+<p>The last equation is from 3.114.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e9_1">3E.9</h3>
+<p>Suppose <script type="math/tex">𝑚</script> is a positive integer. Show that the dual basis of the basis
+<script type="math/tex">1, 𝑥, …, 𝑥_𝑚</script> of <script type="math/tex">𝒫_𝑚(𝐑)</script> is <script type="math/tex">\varphi_0, \varphi_1, …, \varphi_𝑚</script>, 
+where</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi_k(p) = \frac{p^{(k)}(0)}{k!}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi_k(x^{j}) =
+\begin{cases}
+    0 &\text{ if } k > j \\
+    1 &\text{ if } k = j \\
+    x^{j-k} = 0 &\text{ if } k < j \\
+\end{cases} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e10_1">3E.10</h3>
+<p>Suppose <script type="math/tex">𝑚</script> is a positive integer.</p>
+<p>(a) Show that <script type="math/tex">1, 𝑥 − 5, …, (𝑥 − 5)^𝑚</script> is a basis of <script type="math/tex">𝒫_{m}(\mathbf{R})</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_0 \cdot 1 + a_1 \cdot (x-5) + \cdots + a_m \cdot (x-5)^m = 0 \\
+\Rightarrow \\
+a_m = 0 \\
+\Rightarrow \\
+a_{m-1} = 0 \\
+\Rightarrow \\
+\cdots \\
+\Rightarrow \\
+a_0 = 0
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) What is the dual basis of the basis in (a)?</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi_k(p) = \frac{p^{(k)}(5)}{k!}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e11_1">3E.11</h3>
+<p>Suppose <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is a basis of <script type="math/tex">𝑉</script> and <script type="math/tex">\varphi_1, …, \varphi_𝑛</script> is 
+the corresponding dual basis of <script type="math/tex">𝑉'</script> . Suppose <script type="math/tex">\psi ∈ 𝑉'</script>. Prove that</p>
+<p>
+<script type="math/tex; mode=display">
+\psi = \psi(𝑣_1)\varphi_1 +⋯ + \psi(𝑣_𝑛)\varphi_𝑛.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>For all <script type="math/tex">j</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+(\psi(𝑣_1)\varphi_1 +⋯ + \psi(𝑣_𝑛)\varphi_𝑛)(v_j) \\
+\psi(𝑣_1)\varphi_1(v_j) +⋯ + \psi(𝑣_𝑛)\varphi_𝑛(v_j) \\
+= \psi(v_j) \varphi (v_j) = \psi (v_j)
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\psi = \psi(𝑣_1)\varphi_1 +⋯ + \psi(𝑣_𝑛)\varphi_𝑛.
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3e12_1">3E.12</h3>
+<p>Suppose <script type="math/tex">𝑆, 𝑇 ∈ ℒ(𝑉, 𝑊)</script>. </p>
+<p>(a) Prove that <script type="math/tex">(𝑆 + 𝑇)' = 𝑆' + 𝑇'</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\varphi \in W'</script> and <script type="math/tex">v \in V</script>.
+$$
+<script type="math/tex; mode=display">\begin{align*}
+(𝑆 + 𝑇)'(\varphi)(v)
+&= (\varphi \circ (S+T))(v) & \text{ (definition of dual mapping) } \\
+&= \varphi((S+T)(v)) & \text{ (definition of composition) }\\
+&= \varphi (S(v) + T(v))
+& \text{ (the definition of addition of linear maps in <script type="math/tex">\mathcal{L}(V, W)</script> ) } \
+&amp;= \varphi (S(v)) + \varphi (T(v)) 
+&amp; \text{ (<script type="math/tex">\varphi</script> is linear map of <script type="math/tex">W'</script> ) }\
+&amp;= (S'(\varphi)) (v) + (T'(\varphi)) (v) 
+&amp; \text{ (definition of dual mapping) } \
+&amp;= (S'(\varphi) + T'(\varphi)) (v)
+&amp; \text{ (the definition of addition of linear maps in <script type="math/tex">V'</script> ) }\
+&amp;= ((S' + T')(\varphi)) (v)
+&amp; \text{ (the definition of addition of linear maps in <script type="math/tex">\mathcal{L}(W', V')</script> ) }
+\end{align*}</script>
+$$</p>
+<p>So <script type="math/tex">(𝑆 + 𝑇)' = 𝑆' + 𝑇'</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that <script type="math/tex">(\lambda 𝑇)' = \lambda 𝑇'</script> for all <script type="math/tex">𝜆 ∈ 𝐅</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\varphi \in W'</script> and <script type="math/tex">v \in V</script>.</p>
+<p>$$ 
+<script type="math/tex; mode=display">\begin{align*}
+((\lambda 𝑇)'(\varphi))(v)
+&= (\varphi \circ (\lambda 𝑇))(v)
+& \text{ (definition of dual mapping) } \\
+&= \varphi ((\lambda 𝑇)(v))
+& \text{ (definition of composition)} \\
+&= \varphi (\lambda 𝑇(v))
+& \text{ (definition of scalar multiplication in <script type="math/tex">\mathcal{L}(V, W)</script>)} \
+&amp;= \lambda (\varphi(T(v)))
+&amp; \text{ (<script type="math/tex">\varphi</script> is a linear map from <script type="math/tex">W</script> to <script type="math/tex">F</script>) } \
+&amp;= \lambda ((T'(\varphi))(v))
+&amp; \text{ (definition of dual mapping) } \
+&amp;= (\lambda T'(\varphi))(v)
+&amp; \text{ (definition of scalar multiplication in <script type="math/tex">V'</script> )} \
+&amp;= ((\lambda T')(\varphi))(v)
+&amp; \text{ (definition of scalar multiplication in <script type="math/tex">\mathcal{L}(W', V')</script> )} \\
+\end{align*}</script> 
+$$</p>
+<p>So <script type="math/tex">(\lambda 𝑇)' = \lambda 𝑇'</script>
+</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
