@@ -3504,21 +3504,22 @@ Suppose $𝑆, 𝑇 ∈ ℒ(𝑉, 𝑊)$.
 **Proof**:
 
 Assume $\varphi \in W'$ and $v \in V$.
-$$
+
+$$ 
 \begin{align*}
 (𝑆 + 𝑇)'(\varphi)(v)
 &= (\varphi \circ (S+T))(v) & \text{ (definition of dual mapping) } \\
-&= \varphi((S+T)(v)) & \text{ (definition of composition) }\\
+&= \varphi((S+T)(v)) & \text{ (definition of composition) } \\
 &= \varphi (S(v) + T(v))
-& \text{ (the definition of addition of linear maps in $\mathcal{L}(V, W)$ ) } \\
+& \text{ (the definition of addition of linear maps in } L(V, W)) \\
 &= \varphi (S(v)) + \varphi (T(v)) 
-& \text{ ($\varphi$ is linear map of $W'$ ) }\\
+& \varphi \text{ is linear map of  } W'\\
 &= (S'(\varphi)) (v) + (T'(\varphi)) (v) 
 & \text{ (definition of dual mapping) } \\
 &= (S'(\varphi) + T'(\varphi)) (v)
-& \text{ (the definition of addition of linear maps in $V'$ ) }\\
+& \text{ the definition of addition of linear maps in } V'\\
 &= ((S' + T')(\varphi)) (v)
-& \text{ (the definition of addition of linear maps in $\mathcal{L}(W', V')$ ) }
+& \text{ the definition of addition of linear maps in } ℒ(W', V') \\
 \end{align*}
 $$
 
@@ -3540,15 +3541,20 @@ $$
 &= \varphi ((\lambda 𝑇)(v))
 & \text{ (definition of composition)} \\
 &= \varphi (\lambda 𝑇(v))
-& \text{ (definition of scalar multiplication in $\mathcal{L}(V, W)$)} \\
+& \text{ definition of scalar multiplication in } L(V, W)\\
 &= \lambda (\varphi(T(v)))
-& \text{ ($\varphi$ is a linear map from $W$ to $F$) } \\
+& \varphi \text{ is a linear map in } W' \\
 &= \lambda ((T'(\varphi))(v))
 & \text{ (definition of dual mapping) } \\
 &= (\lambda T'(\varphi))(v)
-& \text{ (definition of scalar multiplication in $V'$ )} \\
+& \text{ definition of scalar multiplication in V'} \\
 &= ((\lambda T')(\varphi))(v)
-& \text{ (definition of scalar multiplication in $\mathcal{L}(W', V')$ )} \\
+& \text{ definition of scalar multiplication in } ℒ(W', V') \\
+\end{align*} 
+$$
+
+$$
+\begin{align*}
 \end{align*} 
 $$
 
