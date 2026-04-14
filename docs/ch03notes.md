@@ -138,3 +138,49 @@ So column rank and row rank are equal.
 
 $\square$
 
+## Section 3E Duality
+
+### 3.108 definition: linear functional
+
+A linear functional on $𝑉$ is a linear map from $𝑉$ to $𝐅$.
+In other words, a linear functional is an element of
+$ℒ(𝑉, 𝐅)$.
+
+### 3.109 example: linear functionals
+
+* Define 𝜑 ∶ 𝒫(𝐑) → 𝐑 by
+
+$$ 
+\varphi(𝑝) = 3𝑝″ (5) + 7𝑝(4).
+$$
+
+Then 𝜑 is a linear functional on 𝒫(𝐑).
+
+* Define 𝜑 ∶ 𝒫(𝐑) → 𝐑 by
+
+$$ 
+\varphi(p) = \int_{0}^{1} p
+$$
+
+for each 𝑝 ∈ 𝒫(𝐑). Then 𝜑 is a linear functional on 𝒫(𝐑).
+
+### 3.110 definition: dual space, 𝑉′
+
+The dual space of 𝑉, denoted by 𝑉′, is the vector space of all linear 
+functionals on 𝑉. In other words, 𝑉′ = ℒ(𝑉, 𝐅).
+
+### 3.111 dim 𝑉′ = dim 𝑉
+
+Suppose $𝑉$ is finite-dimensional. Then $𝑉′$ is also finite-dimensional and
+
+$$ 
+\dim V' = \dim V
+$$
+
+**Proof**:
+
+$$ 
+\dim V' = \dim V \times \dim F = \dim V
+$$
+
+$\square$

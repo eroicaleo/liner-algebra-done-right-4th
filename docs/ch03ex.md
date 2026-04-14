@@ -2742,3 +2742,816 @@ $$
 Then we have $I = BA$ as required.
 
 $\square$
+
+## Section 3E Products and Quotients of Vector Spaces
+
+### 3E.2
+
+Suppose that $V_1, \cdots, V_m$ are vector spaces such that
+$𝑉_1 × ⋯ × 𝑉_𝑚$ is finite-dimensional.
+Prove that $𝑉_𝑘$ is finite-dimensional for each
+$𝑘 = 1, …, 𝑚$.
+
+**Proof**:
+
+Since $𝑉_1 × ⋯ × 𝑉_𝑚$ is finite-dimensional, then assume it
+can be spanned by $n$ vectors.
+
+Take the 1st component from these $n$ vectors and they can span
+$V_1$. So $V_1$ is finite-dimensional.
+
+$\square$
+
+### 3E.3
+
+Suppose $𝑉_1, …, 𝑉_𝑚$ are vector spaces.
+Prove that $ℒ(𝑉_1 × ⋯ × 𝑉_𝑚, 𝑊)$ and
+$ℒ(𝑉_1, 𝑊) × ⋯ × ℒ(𝑉_𝑚, 𝑊)$ are isomorphic vector spaces.
+
+**Proof**:
+
+Assume
+
+$$ 
+T \in ℒ(𝑉_1 × ⋯ × 𝑉_𝑚, 𝑊)
+$$
+
+Let
+
+$$ 
+\tau_1 : T \longrightarrow T_1
+$$
+
+Let $T_1$ be a mapping, such that
+
+$$ 
+T_1(v) = T((v, 0, \cdots, 0))
+$$
+
+It's easy to see, $T_1 \in ℒ(𝑉_1, 𝑊)$.
+
+Then we can have this mapping
+
+$$ 
+\tau: T \longrightarrow (\tau_1(T), \cdots, \tau_n(T)) = (T_1, \cdots, T_m)
+$$
+
+To see it's injective, assume
+
+$T_1 = \cdots = T_m = 0$, then
+
+$$ 
+T((v_1, \cdots, v_m)) = T((v_1, \cdots, 0)) + \cdots
++ T((0, \cdots, v_m)) = T_1 v_1 + \cdots + T_m v_m = 0 \\
+\Rightarrow \\
+T = 0
+$$
+
+To see it's surjective, given
+$(T_1, \cdots, T_m)$, and let
+
+$$ 
+T((v_1, \cdots, v_m)) = T_1 v_1 + \cdots + T_m v_m
+$$
+
+It's easy to see $T$ is a linear map.
+
+We also have
+
+$$ 
+\tau_1(T)(v_1) = T(v_1, \cdots, 0) = T_1 v_1 \\
+\Rightarrow \\
+\tau_1(T) = T_1
+$$
+
+so $\tau$ is surjective.
+
+Then $T$ is an isomorphism.
+
+$\square$
+
+### 3E.4
+
+Suppose $𝑊_1, …, 𝑊_𝑚$ are vector spaces.
+Prove that $ℒ(𝑉, 𝑊_1 × ⋯ × 𝑊_𝑚)$ and
+$ℒ(𝑉, 𝑊_1) × ⋯ × ℒ(𝑉, 𝑊_𝑚)$ are isomorphic vector spaces.
+
+**Proof**:
+
+Given $T \in ℒ(𝑉, 𝑊_1 × ⋯ × 𝑊_𝑚)$, let
+$\tau_1 : T \longrightarrow T_1 \in ℒ(𝑉, 𝑊_1)$.
+
+$$
+T(v) = (\tau_1(T)(v), \cdots, \tau_m(T)(v))
+$$
+
+$$ 
+\tau(T) = (\tau_1(T)(v), \cdots, \tau_m(T)(v))
+$$
+
+$\square$
+
+### 3E.5
+
+Suppose that $𝑣, 𝑥$ are vectors in $𝑉$ and that $𝑈, 𝑊$ are subspaces of 
+$𝑉$ such that $𝑣 + 𝑈 = 𝑥 + 𝑊$. Prove that $𝑈 = 𝑊$.
+
+**Proof**:
+
+Since $U, W$ are subspaces, then $0 \in U, W$.
+So $v \in x + W, x \in v + U$. Then we can assume
+
+$$ 
+v = x + w_0 \\
+x = v + u_0
+$$
+
+Then given $u \in U$, we have $v + u = x + w_1$, i.e.
+
+$$ 
+(x + w_0) + u = x + w_1 \\
+\Rightarrow \\
+u = w_1 - w_0 \in W \\
+\Rightarrow \\
+U \subseteq W
+$$
+
+For the same reason, $W \subseteq U$, i.e. $U = W$.
+
+$\square$
+
+### 3E.9
+
+Prove that a nonempty subset 𝐴 of 𝑉 is a translate of some subspace of 𝑉 if
+and only if 𝜆𝑣 + (1 − 𝜆)𝑤 ∈ 𝐴 for all 𝑣, 𝑤 ∈ 𝐴 and all 𝜆 ∈ 𝐅.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $A = u + U$ where $U$ is a subspace of $V$. And if $𝑣, 𝑤 ∈ 𝐴$,
+then
+
+$$ 
+v = u + u_0 \\
+w = u + u_1 \\
+$$
+
+Then we have
+
+$$ 
+\lambda 𝑣 + (1 − \lambda )𝑤 = \lambda  (u + u_0) + (1 - \lambda ) (u + u_1)
+= u + (\lambda u_0 + (1 - \lambda) u_1) \in A
+$$
+
+$\Leftarrow$
+
+We will prove $-v + A$ is a subspace.
+
+If $a, b \in -v + A$.
+
+$$ 
+a = -v + 𝑣_a \\
+b = -v + 𝑣_b \\
+a + b = -v + (v_a + v_b - v)
+= -v + 2(\frac{1}{2}v_a + \frac{1}{2}v_b) - v
+$$
+
+Note $w = \frac{1}{2}v_a + \frac{1}{2}v_b \in A$, then $2w - v \in A$.
+So $a + b \in -v + A$.
+
+Similarly,
+
+$$ 
+ka = k (-v + v_a) = -v + k v_a - (k-1)v \in -v + A
+$$
+
+$\square$
+
+### 3E.10
+
+Suppose $𝐴_1 = 𝑣 + 𝑈_1$ and $𝐴_2 = 𝑤 + 𝑈_2$ for some $𝑣, 𝑤 ∈ 𝑉$ and some
+subspaces $𝑈_1, 𝑈_2$ of $𝑉$. Prove that the intersection $𝐴_1 ∩ 𝐴_2$ is either a
+translate of some subspace of 𝑉 or is the empty set.
+
+**Proof**:
+
+Assume $𝐴_1 ∩ 𝐴_2 \neq \emptyset, a \in 𝐴_1 ∩ 𝐴_2$.
+
+Let $A = 𝐴_1 ∩ 𝐴_2, U = -a + A$.
+
+Assume $v_1, v_2 \in U$, then
+$v_1 = -a + a_1, v_2 = -a + a_2, a_1 \in A, a_2 \in A$.
+
+We will show $v_1 + v_2 \in U$.
+
+$$ 
+v_1 = -a + v + u_1 = -(v + u_0) + v + u_1 \\
+v_2 = -a + v + u_2 = -(v + u_0) + v + u_2 \\
+\Rightarrow \\
+v_1 + v_2 = u_1 + u_2 - 2 u_0 = - (v + u_0) + (v + u_0) + (u_1 + u_2 - 2 u_0) \\
+= -a + v + (u_1 + u_2 - u_0) \\
+\Rightarrow \\
+v_1 + v_2 + a = v + (u_1 + u_2 - u_0) \in A_1
+$$
+
+For the same reason, $v_1 + v_2 + a \in A_2$.
+Then $v_1 + v_2 + a \in 𝐴_1 ∩ 𝐴_2$, i.e. $v_1 + v_2 \in -a + A$.
+
+Now consider $k v_1 = -k a + k a_1 = k (-(v + u_0) + v + u_1) = k (u_1 - u0)$.
+
+$$ 
+a + k (u_1 - u0) = v + u_0 + k(u_1 - u0) \in A_1
+$$
+
+So $k v_1 \in U$.
+
+Then $U$ is a subspace.
+
+$\square$
+
+### 3E.11
+
+Suppose $𝑈 = \{(𝑥_1, 𝑥_2, … ) ∈ 𝐅^∞ ∶ 𝑥_𝑘 ≠ 0
+\text{ for only finitely many } 𝑘\}$.
+
+(a) Show that $𝑈$ is a subspace of $𝐅^∞$
+
+**Proof**:
+
+Assume $a, b \in U$, then assume for all $n > N_a, a_n = 0$
+and $n > N_b, b_n = 0$.
+
+Then $a+b$ has only finite non-zero items. So $a+b \in U$.
+
+Similarly, $ka \in U$.
+
+$\square$
+
+(b) Prove that $𝐅^∞ /𝑈$ is infinite-dimensional.
+
+**Proof**:
+
+We prove by contradition. Assume it's finite-dimensional, and the
+dimension is $N$, all we need to do is to find $N+1$ independent vectors
+in $𝐅^∞ /𝑈$.
+
+Consider the following group of vectors
+
+$$ 
+v_{1,i} =\begin{cases}
+    1 &\text{ if } i = k(N+1)+1, k = 0, 1, 2, \cdots \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+v_{2,i} =\begin{cases}
+    1 &\text{ if } i = k(N+1)+2, k = 0, 1, 2, \cdots \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+v_{N+1,i} =\begin{cases}
+    1 &\text{ if } i = k(N+1)+(N+1), k = 0, 1, 2, \cdots \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+$$
+
+Any linear combination of them cannot have finite non-zero items.
+
+Anything example is
+
+$$ 
+v_{1,i} =\begin{cases}
+    1 &\text{ if } p | 2 \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+v_{2,i} =\begin{cases}
+    1 &\text{ if } p | 3 \\
+    0 &\text{ otherwise}\\
+\end{cases} \\
+\cdots 
+$$
+
+$\square$
+
+### 3E.12
+
+Suppose $𝑣_1, …, 𝑣_𝑚 ∈ 𝑉$ . Let
+
+$$
+A = \{
+\lambda_1 v_1 + \cdots + \lambda_m v_m
+:
+\lambda_1, \cdots, \lambda_m \in F
+\text{ and }
+\lambda_1 + \cdots + \lambda_m = 1
+\}
+$$
+
+(a) Prove that $𝐴$ is a translate of some subspace of $𝑉$.
+
+**Proof**:
+
+We will prove $-v_1 + A$ is a subspace.
+
+$$ 
+(-v_1 + a) + (-v_1 + a') = \\
+(-v_1 + \lambda_1 v_1 + \cdots + \lambda_m v_m) +
+(-v_1 + \lambda'_1 v_1 + \cdots + \lambda'_m v_m) \\
+= -v_1 + (\lambda_1 + \lambda'_1 - 1) v_1 + \cdots + (\lambda_m + \lambda'_m) v_m
+$$
+
+Note that
+
+$$ 
+(\lambda_1 + \lambda'_1 - 1) + \cdots + (\lambda_m + \lambda'_m) = 1
+$$
+
+So $(-v_1 + a) + (-v_1 + a') \in -v_1 + A$.
+
+Next
+
+$$ 
+k(-v_1 + a) = k (-v_1 + \lambda_1 v_1 + \cdots + \lambda_m v_m) \\
+= -v_1 + ((1-k)v_1 + k\lambda_1 v_1 + \cdots + k\lambda_m v_m)
+$$
+
+Note that
+
+$$ 
+(1-k) + k\lambda_1 + \cdots + k\lambda_m = (1-k) + k = 1
+$$
+
+So $k(-v_1 + a) \in -v_1 + A$, then $-v_1 + A$ is a subspace.
+
+$\square$
+
+(b) Prove that if $𝐵$ is a translate of some subspace of $𝑉$ and
+$\{𝑣_1, …, 𝑣_𝑚\} ⊆ 𝐵$, then $𝐴 ⊆ 𝐵$.
+
+**Proof**:
+
+Assume $B = u + U$ and $U$ is a subspace. Then $v_i - u \in U$ and
+
+$$ 
+\lambda_1 (v_1-u) + \cdots + \lambda_m (v_m-u) \\
+=
+(\lambda_1 v_1 + \cdots + \lambda_m v_m)
+- (\lambda_1 + \cdots + \lambda_m) u \\
+= 
+(\lambda_1 v_1 + \cdots + \lambda_m v_m) - u \in U
+$$
+
+Then $\lambda_1 v_1 + \cdots + \lambda_m v_m \in B$. So $𝐴 ⊆ 𝐵$.
+
+$\square$
+
+(c) Prove that $𝐴$ is a translate of some subspace of $𝑉$ of dimension less
+than $𝑚$.
+
+**Proof**:
+
+Now consider the space spanned by $v_2-v_1, \cdots , v_m - v_1$ and call it
+$U$.
+
+For any $u \in U, u = \lambda_2 (v_2-v_1) + \cdots + \lambda_m (v_m-v_1)$,
+
+Consider $v_1 + u = v_1 + \lambda_2 (v_2-v_1) + \cdots + \lambda_m (v_m-v_1)$,
+then
+
+$$ 
+v_1 + u = (1 - \lambda_2 - \cdots - \lambda_m) v_1 +
+\lambda_2 v_2 + \cdots + \lambda_m v_m \in A
+$$
+
+So $v_1 + U \subseteq A$.
+
+On the other hand, for any $\lambda_1 v_1 + \cdots + \lambda_m v_m \in A$,
+we have
+
+$$ 
+\lambda_1 v_1 + \cdots + \lambda_m v_m \\
+= v_1 + \lambda_2 (v_2-v_1) + \cdots + \lambda_m (v_m-v_1)
+$$
+
+So $A \subseteq v_1+ U$, i.e. $A = v_1 + U$.
+
+Since $U = \text{span}(𝑣_2-v_1, \cdots, 𝑣_𝑚-v_1)$, $\dim U < m$.
+
+$\square$
+
+### 3E.13
+
+Suppose $𝑈$ is a subspace of $𝑉$ such that $𝑉/𝑈$ is finite-dimensional. 
+Prove that $𝑉$ is isomorphic to $𝑈 × (𝑉/𝑈)$.
+
+**Proof**:
+
+Given $v \in V$, and $w_1+U, \cdots, w_m+U$ is a basis of $V/U$.
+Assume $v+U = a_1 (w_1+U) + \cdots + a_m (w_m+U)$, and let
+$u = v - (a_1 w_1 + \cdots + a_m w_m) \in U$. We have a map:
+
+$$ 
+T: v \rightarrow (u, v + U)
+$$
+
+It's easy to verify it's linear.
+
+injective: if $T(v) = 0 = (0, 0 + U)$, then $u = 0 + 0 = 0$.
+
+surjective: Given $(u, v+U)$, Then $T(v+u) = (u, v+U)$.
+
+So $T$ is an isomorphism.
+
+$\square$
+
+### 3E.14
+
+Suppose $𝑈$ and $𝑊$ are subspaces of $𝑉$ and $𝑉 = 𝑈 ⊕ 𝑊$.
+Suppose $𝑤_1, …, 𝑤_𝑚$
+is a basis of $𝑊$. Prove that $𝑤_1 + 𝑈, …, 𝑤_𝑚 + 𝑈$ is
+a basis of $𝑉/𝑈$.
+
+**Proof**:
+
+Assume $v \in V$, and $v = u + w, u \in U, w \in W$.
+Then $v + U = w+U$, because $v-w \in U$.
+Then $v+U = a_1 (w_1+U) + \cdots + a_m (w_m+U)$. So $𝑤_1 + 𝑈, …, 𝑤_𝑚 + 𝑈$
+spans $V/U$.
+
+Now if $a_1 (w_1+U) + \cdots + a_m (w_m+U) = 0 + U$, then
+$$
+a_1 w_1 + \cdots + a_m w_m \in U \\
+a_1 w_1 + \cdots + a_m w_m \in W \\
+$$
+
+Since $U \cap W = 0$, then $a_1 w_1 + \cdots + a_m w_m = 0$,
+then $a_1 = \cdots = a_m = 0$.
+
+So $𝑤_1 + 𝑈, …, 𝑤_𝑚 + 𝑈$ is a basis of $𝑉/𝑈$.
+
+$\square$
+
+### 3E.15
+
+Suppose $𝑈$ is a subspace of $𝑉$ and $𝑣_1 + 𝑈, …, 𝑣_𝑚 + 𝑈$ is a basis of
+$𝑉/𝑈$ and $𝑢_1, …, 𝑢_𝑛$ is a basis of $𝑈$. Prove that
+$𝑣_1, …, 𝑣_𝑚, 𝑢_1, …, 𝑢_𝑛$ is a basis of $𝑉$.
+
+**Proof**:
+
+Given $w \in V$, then $w+U \in V/U$, then
+
+$$ 
+w+U = a_1 (v_1+U) + \cdots + a_m (v_m+U)
+$$
+
+So
+
+$$ 
+w - (a_1 v_1 + \cdots + a_m v_m) \in U \\
+\Rightarrow \\
+w - (a_1 v_1 + \cdots + a_m v_m) = b_1 u_1 + \cdots + b_n u_n
+$$
+
+Then $𝑣_1, …, 𝑣_𝑚, 𝑢_1, …, 𝑢_𝑛$ spans $V$.
+
+Assume
+
+$$ 
+a_1 v_1 + \cdots + a_m v_m +
+b_1 u_1 + \cdots + b_n u_n = 0
+$$
+
+Then $a_1 v_1 + \cdots + a_m v_m \in U$, then
+
+$$ 
+(a_1 v_1 + \cdots + a_m v_m) + U = \\
+a_1 (v_1+U) + \cdots + a_m (v_m+U) = 0 + U \\
+\Rightarrow \\
+a_1 = \cdots = a_m = 0
+$$
+
+Then we have $b_1 = \cdots = b_n = 0$.
+
+Then $𝑣_1, …, 𝑣_𝑚, 𝑢_1, …, 𝑢_𝑛$ are independent.
+
+$\square$
+
+### 3E.16
+
+Suppose $𝜑 ∈ ℒ(𝑉, 𝐅)$ and $𝜑 ≠ 0$. Prove that
+
+$$
+\dim V / \text{null } \varphi = 1
+$$ 
+
+**Proof**:
+
+Assume $u, v \not\in \text{null } \varphi$.
+
+Then $\varphi (u) \neq 0, \varphi (v) \neq 0$.
+
+Then we can find $k \neq 0$ such that
+$\varphi (u) = k \varphi (v)$, so
+$\varphi (u - kv) = 0$.
+
+Then $u - kv \in \text{null } \varphi$.
+
+Then we have $u + \text{null } \varphi = kv + \text{null } \varphi = k (v + \text{null } \varphi)$.
+
+Since $u$ is arbitary, then any $u + \text{null } \varphi$
+can be represented
+by a scalar of $v + \text{null } \varphi$.
+
+So
+
+$$ 
+\dim V / \text{null } \varphi = 1
+$$
+
+$\square$
+
+### 3E.17
+
+Suppose $𝑈$ is a subspace of $𝑉$ such that $\dim 𝑉/𝑈 = 1$.
+Prove that there exists
+$𝜑 ∈ ℒ(𝑉, 𝐅)$ such that $\text{null } \varphi = 𝑈$.
+
+**Proof**:
+
+Since $\dim V/U = 1$, let $v + U$ be a basis of $V/U$.
+
+For any $w \in V$, we have $w + U = k(v+U)$. Then $\mathcal{M}(w) = k$.
+
+Then we can consider $\varphi = \mathcal{M} \circ \pi$.
+
+If $w \in \text{null } \varphi$, then $\mathcal{M}(\pi(w)) = 0$,
+so $\pi(w) = 0 + U$, i.e. $w \in U$. So $\text{null } \varphi = U$.
+
+$\square$
+
+### 3E.18
+
+Suppose that $𝑈$ is a subspace of $𝑉$ such that $𝑉/𝑈$ is 
+finite-dimensional.
+
+(a) Show that if $𝑊$ is a finite-dimensional subspace of $𝑉$ and
+$𝑉 = 𝑈 + 𝑊$, then $\dim 𝑊 ≥ \dim 𝑉/𝑈$.
+
+**Proof**:
+
+All we need to prove is that the basis $w_1+U, \cdots, w_m+U$ of $W$ spans
+$V/U$.
+
+Assume $v \in V$, we can write $v = u + w = u + (a_1 w_1 + \cdots + a_m w_m)$.
+Then $v - w \in U$, so $v + U = w + U$.
+
+So $w_1+U, \cdots, w_m+U$ of $W$ spans $V/U$. Then $\dim 𝑊 ≥ \dim 𝑉/𝑈$.
+
+$\square$
+
+(b) Prove that there exists a finite-dimensional subspace $𝑊$ of $𝑉$ such 
+that $\dim 𝑊 = \dim 𝑉/𝑈$ and $𝑉 = 𝑈 ⊕ 𝑊$.
+
+**Proof**:
+
+Let $w_1+U, \cdots, w_m+U$ be a basis of $V/U$, then
+consider the $W = \text{span}(w_1, \cdots, w_𝑚)$.
+
+If $u \in U$ and $u = a_1 w_1 + \cdots + a_m w_m$, then
+$a_1 w_1 + \cdots + a_m w_m \in U$, then
+
+$$ 
+a_1 (w_1+U) + \cdots + a_m (w_m+U) = 0 + U
+$$
+
+So $a_1 = \cdots = a_m = 0$, then $u = 0$.
+
+So $U + W = 𝑈 ⊕ 𝑊$.
+
+If $v \in V$, then $v + U = a_1 (w_1+U) + \cdots + a_m (w_m+U)$.
+Then $v - (a_1 w_1 + \cdots + a_m w_m) \in U$.
+
+So $V = U + W$.
+
+Combine these 2 parts, we have $V = 𝑈 ⊕ 𝑊$.
+
+$\square$
+
+### 3E.19
+
+Suppose $𝑇 ∈ ℒ(𝑉, 𝑊)$ and $𝑈$ is a subspace of $𝑉$.
+Let $𝜋$ denote the quotient
+map from $𝑉$ onto $𝑉/𝑈$. Prove that there exists $𝑆 ∈ ℒ(𝑉/𝑈, 𝑊)$
+such that
+$𝑇 = 𝑆 ∘ 𝜋$ if and only if $𝑈 ⊆ \text{null } 𝑇$.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $u \in U$, then $\pi (u) = 0 + U$, so $S(\pi (u)) = 0$.
+
+So $𝑈 ⊆ \text{null } 𝑇$.
+
+$\Leftarrow$
+
+If $v \in V$, then let $S(v + U) = T(v)$.
+
+It's well defined, because if $v_1 + U = v_2 + U$, then
+
+$$ 
+S((v_1+U)-(v_2+U)) = S((v_1-v_2)+U) = T(v_1-v_2) = 0 \\
+\Rightarrow (\because v_1-v_2 \in U \And U \subseteq \text{null } T) \\
+S(v_1 + U) = S(v_2 + U)
+$$
+
+Next, we show it's linear.
+
+$$ 
+S((v_1+U)+(v_2+U)) = S((v_1+v_2) + U) = T(v_1+v_2) = T(v_1) + T(v_2) \\
+= S(v_1+U) + S(v_2+U) \\
+S(k(v_1+U)) = S(k v_1 + U) = T(k v_1) = k T(v_1) = k S(v_1 + U)
+$$
+
+$\square$
+
+## Section 3E Duality
+
+### 3E.8
+
+Suppose $𝑣_1, …, 𝑣_𝑛$ is a basis of 𝑉 and $\varphi_1, …, \varphi_𝑛$ is 
+the dual basis of $𝑉'$. Define $\Gamma ∶ 𝑉 → 𝐅^𝑛$ and
+$Λ ∶ 𝐅^𝑛 → 𝑉$ by
+
+$$ 
+\Gamma(𝑣) = (\varphi_1(𝑣), …, \varphi_𝑛(𝑣)),
+\Delta(a_1, \cdots, a_n) = a_1 v_1 + \cdots + a_n v_n.
+$$
+
+Explain why $\Gamma$ and $\Delta$ are inverses of each other.
+
+**Proof**:
+
+First, we need to prove $\Gamma (\Delta (a_1, \cdots, a_n)) = (a_1, \cdots, a_n)$.
+
+$$ 
+\Gamma (\Delta (a_1, \cdots, a_n)) =\\
+\Gamma (a_1 v_1 + \cdots + a_n v_n) = \\
+(\varphi_1(a_1 v_1 + \cdots + a_n v_n), \cdots, 
+\varphi (a_1 v_1 + \cdots + a_n v_n)) = \\
+(a_1, \cdots, a_n)
+$$
+
+Secondly, we need to prove $\Delta(\Gamma(v)) = v$
+
+$$ 
+\Delta(\Gamma(v)) = \Delta(\varphi_1(𝑣), …, \varphi_𝑛(𝑣)) \\
+= \varphi_1(v) v_1 + \cdots + \varphi_n(v) v_n \\
+= v
+$$
+
+The last equation is from 3.114.
+
+$\square$
+
+### 3E.9
+
+Suppose $𝑚$ is a positive integer. Show that the dual basis of the basis
+$1, 𝑥, …, 𝑥_𝑚$ of $𝒫_𝑚(𝐑)$ is $\varphi_0, \varphi_1, …, \varphi_𝑚$, 
+where
+
+$$ 
+\varphi_k(p) = \frac{p^{(k)}(0)}{k!}
+$$
+
+**Proof**:
+
+$$ 
+\varphi_k(x^{j}) =
+\begin{cases}
+    0 &\text{ if } k > j \\
+    1 &\text{ if } k = j \\
+    x^{j-k} = 0 &\text{ if } k < j \\
+\end{cases} 
+$$
+
+$\square$
+
+### 3E.10
+
+Suppose $𝑚$ is a positive integer.
+
+(a) Show that $1, 𝑥 − 5, …, (𝑥 − 5)^𝑚$ is a basis of $𝒫_{m}(\mathbf{R})$.
+
+**Proof**:
+
+$$ 
+a_0 \cdot 1 + a_1 \cdot (x-5) + \cdots + a_m \cdot (x-5)^m = 0 \\
+\Rightarrow \\
+a_m = 0 \\
+\Rightarrow \\
+a_{m-1} = 0 \\
+\Rightarrow \\
+\cdots \\
+\Rightarrow \\
+a_0 = 0
+$$
+
+$\square$
+
+(b) What is the dual basis of the basis in (a)?
+
+**Solution**:
+
+$$ 
+\varphi_k(p) = \frac{p^{(k)}(5)}{k!}
+$$
+
+$\square$
+
+### 3E.11
+
+Suppose $𝑣_1, …, 𝑣_𝑛$ is a basis of $𝑉$ and $\varphi_1, …, \varphi_𝑛$ is 
+the corresponding dual basis of $𝑉'$ . Suppose $\psi ∈ 𝑉'$. Prove that
+
+$$
+\psi = \psi(𝑣_1)\varphi_1 +⋯ + \psi(𝑣_𝑛)\varphi_𝑛.
+$$
+
+**Proof**:
+
+For all $j$,
+
+$$ 
+(\psi(𝑣_1)\varphi_1 +⋯ + \psi(𝑣_𝑛)\varphi_𝑛)(v_j) \\
+\psi(𝑣_1)\varphi_1(v_j) +⋯ + \psi(𝑣_𝑛)\varphi_𝑛(v_j) \\
+= \psi(v_j) \varphi (v_j) = \psi (v_j)
+$$
+
+So
+
+$$ 
+\psi = \psi(𝑣_1)\varphi_1 +⋯ + \psi(𝑣_𝑛)\varphi_𝑛.
+$$
+
+$\square$
+
+### 3E.12
+
+Suppose $𝑆, 𝑇 ∈ ℒ(𝑉, 𝑊)$. 
+
+(a) Prove that $(𝑆 + 𝑇)' = 𝑆' + 𝑇'$
+
+**Proof**:
+
+Assume $\varphi \in W'$ and $v \in V$.
+$$
+\begin{align*}
+(𝑆 + 𝑇)'(\varphi)(v)
+&= (\varphi \circ (S+T))(v) & \text{ (definition of dual mapping) } \\
+&= \varphi((S+T)(v)) & \text{ (definition of composition) }\\
+&= \varphi (S(v) + T(v))
+& \text{ (the definition of addition of linear maps in $\mathcal{L}(V, W)$ ) } \\
+&= \varphi (S(v)) + \varphi (T(v)) 
+& \text{ ($\varphi$ is linear map of $W'$ ) }\\
+&= (S'(\varphi)) (v) + (T'(\varphi)) (v) 
+& \text{ (definition of dual mapping) } \\
+&= (S'(\varphi) + T'(\varphi)) (v)
+& \text{ (the definition of addition of linear maps in $V'$ ) }\\
+&= ((S' + T')(\varphi)) (v)
+& \text{ (the definition of addition of linear maps in $\mathcal{L}(W', V')$ ) }
+\end{align*}
+$$
+
+So $(𝑆 + 𝑇)' = 𝑆' + 𝑇'$.
+
+$\square$
+
+(b) Prove that $(\lambda 𝑇)' = \lambda 𝑇'$ for all $𝜆 ∈ 𝐅$.
+
+**Proof**:
+
+Assume $\varphi \in W'$ and $v \in V$.
+
+$$ 
+\begin{align*}
+((\lambda 𝑇)'(\varphi))(v)
+&= (\varphi \circ (\lambda 𝑇))(v)
+& \text{ (definition of dual mapping) } \\
+&= \varphi ((\lambda 𝑇)(v))
+& \text{ (definition of composition)} \\
+&= \varphi (\lambda 𝑇(v))
+& \text{ (definition of scalar multiplication in $\mathcal{L}(V, W)$)} \\
+&= \lambda (\varphi(T(v)))
+& \text{ ($\varphi$ is a linear map from $W$ to $F$) } \\
+&= \lambda ((T'(\varphi))(v))
+& \text{ (definition of dual mapping) } \\
+&= (\lambda T'(\varphi))(v)
+& \text{ (definition of scalar multiplication in $V'$ )} \\
+&= ((\lambda T')(\varphi))(v)
+& \text{ (definition of scalar multiplication in $\mathcal{L}(W', V')$ )} \\
+\end{align*} 
+$$
+
+So $(\lambda 𝑇)' = \lambda 𝑇'$
+
+$\square$
