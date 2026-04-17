@@ -11,8 +11,10 @@ nav:
   - Chapter 03 Exercises: ch03ex.md
   - unsolved: unsolved.md
 
-extra_javascript: 
-    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+# Order matters: config must run before the MathJax bundle.
+extra_javascript:
+  - javascripts/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
 
 markdown_extensions:
     - mdx_math:
