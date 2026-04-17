@@ -84,7 +84,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#section-3e-duality">Section 3E Duality</a>
+    <li class="toctree-l2"><a class="reference internal" href="#section-3f-duality">Section 3F Duality</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#3108-definition-linear-functional">3.108 definition: linear functional</a>
     </li>
@@ -93,6 +93,16 @@
     <li class="toctree-l3"><a class="reference internal" href="#3110-definition-dual-space-v">3.110 definition: dual space, 𝑉′</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3111-dim-v-dim-v">3.111 dim 𝑉′ = dim 𝑉</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3127-condition-for-the-annihilator-to-equal-0-or-the-whole-space">3.127 condition for the annihilator to equal {0} or the whole space</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3128-the-null-space-of-t">3.128 the null space of 𝑇′</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3129-t-surjective-is-equivalent-to-t-injective">3.129 𝑇 surjective is equivalent to 𝑇' injective</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3130-the-range-of-t">3.130 the range of 𝑇'</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3131-t-injective-is-equivalent-to-t-surjective">3.131 𝑇 injective is equivalent to 𝑇' surjective</a>
     </li>
         </ul>
     </li>
@@ -251,7 +261,7 @@ so row rank of <script type="math/tex">A \leq c</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
-<h2 id="section-3e-duality">Section 3E Duality</h2>
+<h2 id="section-3f-duality">Section 3F Duality</h2>
 <h3 id="3108-definition-linear-functional">3.108 definition: linear functional</h3>
 <p>A linear functional on <script type="math/tex">𝑉</script> is a linear map from <script type="math/tex">𝑉</script> to <script type="math/tex">𝐅</script>.
 In other words, a linear functional is an element of
@@ -289,6 +299,184 @@ functionals on 𝑉. In other words, 𝑉′ = ℒ(𝑉, 𝐅).</p>
 <p>
 <script type="math/tex; mode=display"> 
 \dim V' = \dim V \times \dim F = \dim V
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3127-condition-for-the-annihilator-to-equal-0-or-the-whole-space">3.127 condition for the annihilator to equal {0} or the whole space</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script>. Then</p>
+<p>(a) <script type="math/tex">U^0 = \{0\} \Longleftrightarrow U = V</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+U^0 = \{0\}
+&\Longleftrightarrow \dim U^0 = 0 \\
+&\Longleftrightarrow \dim V - \dim U = 0
+&\text{ (3.125 dimension of the annihilator) }\\
+&\Longleftrightarrow V = U &\text{ (2.39) }\\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) <script type="math/tex">U^0 = V' \Longleftrightarrow U = 0</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+U^0 = V'
+&\Longleftrightarrow \dim U^0 = \dim V'
+&\text{ (2.39) } \\
+&\Longleftrightarrow \dim U^0 = \dim V
+&\text{ (3.111) }\\
+&\Longleftrightarrow U = 0
+&\text{ (3.125) }\\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3128-the-null-space-of-t">3.128 the null space of 𝑇′</h3>
+<p>Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Then</p>
+<p>(a) <script type="math/tex">\text{null } T' = (\text{range } T)^0</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">\psi \in \text{null } T'</script>, then <script type="math/tex">T'(\psi ) = 0</script>.
+Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+(T'(\psi))(v) = (\psi \circ T)(v) = \psi (T(v)) = 0
+</script>
+</p>
+<p>So <script type="math/tex">\psi \in (\text{range } T)^0</script>.</p>
+<p>If <script type="math/tex">\psi \in (\text{range } T)^0</script>, then <script type="math/tex">\psi (T(v)) = 0</script>, then
+<script type="math/tex">(T'(\psi))(v) = 0, \forall v.</script> So <script type="math/tex">T'(\psi) = 0</script>.</p>
+<p>So <script type="math/tex">\psi \in \text{null } T'</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) <script type="math/tex">\dim \text{null } 𝑇' = \dim \text{null } 𝑇 + \dim 𝑊 − \dim 𝑉 .</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\dim \text{null } 𝑇'
+&= \dim (\text{range } T)^0 &\text{ (part (a)) }\\
+&= \dim W - \dim \text{range } T &\text{ (3.125) }\\
+&= \dim W - (\dim V - \text{dim null } T) &\text{ (3.21) }\\
+&= \dim \text{null } 𝑇 + \dim 𝑊 − \dim 𝑉
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3129-t-surjective-is-equivalent-to-t-injective">3.129 𝑇 surjective is equivalent to 𝑇' injective</h3>
+<p>Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑇 \text{ is surjective} ⟺ 𝑇' \text{ is injective}.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+𝑇 \text{ is surjective}
+&\Longleftrightarrow \text{range } T = W \\
+&\Longleftrightarrow (\text{range } T)^0 = \{0\}
+&\text{ (3.127 (a))} \\
+&\Longleftrightarrow \text{null } T' = \{0\}
+&\text{ (3.128 (a))} \\
+&\Longleftrightarrow
+𝑇' \text{ is injective}
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3130-the-range-of-t">3.130 the range of <script type="math/tex">𝑇'</script>
+</h3>
+<p>Suppose <script type="math/tex">𝑉</script> and <script type="math/tex">𝑊</script> are finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script>. Then</p>
+<p>(a) <script type="math/tex">\text{dim range } T = \text{dim range } T'</script>;</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{dim range } T' = \dim W - \text{dim null } T' \\
+= \dim W - (\text{dim null } T + \dim W − \dim V) \\
+= \dim V - \text{dim null }  T \\
+= \text{dim range } T
+</script>
+</p>
+<p>Another way</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\text{dim range } T' &= \dim W' - \text{dim null } T' &\text{ (fundamental theorem of linear maps) } \\
+&= \dim W' - \dim (\text{range } T)^0 &\text{ (3.128 (a)) }\\
+&= \dim W - \dim (\text{range } T)^0 &\text{ (3.11) }\\
+&= \dim W - (\dim W - \dim (\text{range } T) ) &\text{ (3.125 dimension of the annihilator) }\\
+&= \dim (\text{range } T)
+\end{align*} 
+</script>
+</p>
+<p>(b) <script type="math/tex">\text{range } T' = (\text{null } T)^0</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>We first prove <script type="math/tex">\text{range } T' \subseteq (\text{null } T)^0</script>.</p>
+<p>Assume <script type="math/tex">\varphi \in \text{range } T'</script>, then we can find <script type="math/tex">\psi \in W'</script>,
+such that <script type="math/tex">T'(\psi) = \varphi</script>.</p>
+<p>Then if <script type="math/tex">u \in \text{null } T</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi (u) = (T'(\psi))(u) = (\psi \circ T)(u)
+= \psi (T(u)) = 0
+</script>
+</p>
+<p>So <script type="math/tex">\varphi(u) = 0, \varphi \in (\text{null } T)^0</script>.</p>
+<p>Next, we compute this</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\text{dim range } T'
+&= \text{dim range } T & \text{(part a)} \\
+&= \dim T - \text{dim null } T &\text{ (3.21 fundamental theorem of linear maps) } \\
+&= \dim (\text{null } T)^0 &\text{(3.125 dimension of the annihilator)} \\
+\end{align*} 
+</script>
+</p>
+<h3 id="3131-t-injective-is-equivalent-to-t-surjective">3.131 <script type="math/tex">𝑇</script> injective is equivalent to <script type="math/tex">𝑇'</script> surjective</h3>
+<p>Suppose <script type="math/tex">𝑉</script> and <script type="math/tex">𝑊</script> are finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉, 𝑊)</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+T \text{ is injective }
+\Longleftrightarrow
+T' \text{ is surjective }
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T \text{ is injective }
+&\Longleftrightarrow
+\text{null } T = \{0\}\\
+&\Longleftrightarrow
+(\text{null } T)^0 = V' &\text{ (3.127 (b)) }\\
+&\Longleftrightarrow
+\text{range } T' = V'  &\text{ (3.130 (b)) }\\
+&\Longleftrightarrow
+T' \text{ is surjective } \\
+\end{align*} 
 </script>
 </p>
 <p>
@@ -337,7 +525,8 @@ functionals on 𝑉. In other words, 𝑉′ = ℒ(𝑉, 𝐅).</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../javascripts/mathjax-config.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {
