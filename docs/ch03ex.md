@@ -3374,9 +3374,9 @@ $$
 
 $\square$
 
-## Section 3E Duality
+## Section 3F Duality
 
-### 3E.8
+### 3F.8
 
 Suppose $𝑣_1, …, 𝑣_𝑛$ is a basis of 𝑉 and $\varphi_1, …, \varphi_𝑛$ is 
 the dual basis of $𝑉'$. Define $\Gamma ∶ 𝑉 → 𝐅^𝑛$ and
@@ -3413,7 +3413,7 @@ The last equation is from 3.114.
 
 $\square$
 
-### 3E.9
+### 3F.9
 
 Suppose $𝑚$ is a positive integer. Show that the dual basis of the basis
 $1, 𝑥, …, 𝑥_𝑚$ of $𝒫_𝑚(𝐑)$ is $\varphi_0, \varphi_1, …, \varphi_𝑚$, 
@@ -3436,7 +3436,7 @@ $$
 
 $\square$
 
-### 3E.10
+### 3F.10
 
 Suppose $𝑚$ is a positive integer.
 
@@ -3468,7 +3468,7 @@ $$
 
 $\square$
 
-### 3E.11
+### 3F.11
 
 Suppose $𝑣_1, …, 𝑣_𝑛$ is a basis of $𝑉$ and $\varphi_1, …, \varphi_𝑛$ is 
 the corresponding dual basis of $𝑉'$ . Suppose $\psi ∈ 𝑉'$. Prove that
@@ -3495,7 +3495,7 @@ $$
 
 $\square$
 
-### 3E.12
+### 3F.12
 
 Suppose $𝑆, 𝑇 ∈ ℒ(𝑉, 𝑊)$. 
 
@@ -3559,5 +3559,190 @@ $$
 $$
 
 So $(\lambda 𝑇)' = \lambda 𝑇'$
+
+$\square$
+
+### 3F.13
+
+Show that the dual map of the identity operator on $𝑉$ is the identity operator
+on $𝑉'$.
+
+**Proof**:
+
+Let $i$ be the identity operator, and $\varphi$ be a linear map in $V'$.
+
+$i'(\varphi) = \varphi \circ i = \varphi$.
+
+So $i'$ is the identity operator on $𝑉'$.
+
+$\square$
+
+### 3F.14
+
+Define $𝑇 ∶ 𝐑^3 → 𝐑^2$ by
+
+$$ 
+𝑇(𝑥, 𝑦, 𝑧) = (4𝑥 + 5𝑦 + 6𝑧, 7𝑥 + 8𝑦 + 9𝑧).
+$$
+
+Suppose $\varphi_1, \varphi_2$ denotes the dual basis of the standard basis of 
+$𝐑^2$ and $\psi_1, \psi_2, \psi_3$ denotes the dual basis of the standard basis of $𝐑^3$
+
+(a) Describe the linear functionals $𝑇'(\varphi_1)$ and $𝑇'(\varphi_2)$.
+
+**Solution**:
+
+$$ 
+T'(\varphi_1) = \varphi_1 \circ T = 4x+5y+6z \\
+T'(\varphi_2) = \varphi_2 \circ T = 7x+8y+9z \\
+$$
+
+$\square$
+
+(b) Write $𝑇'(\varphi_1)$ and $𝑇'(\varphi_2)$ as linear combinations
+$\psi_1, \psi_2, \psi_3$.
+
+**Solution**:
+
+$$ 
+T'(\varphi_1) = \varphi_1 \circ T = 4x+5y+6z = 4\psi_1+5\psi_2+6\psi_3 \\
+T'(\varphi_2) = \varphi_2 \circ T = 7x+8y+9z = 7\psi_1+8\psi_2+9\psi_3 \\
+$$
+
+$\square$
+
+### 3F.15
+
+Define $𝑇 ∶ 𝒫(𝐑) → 𝒫(𝐑)$ by
+
+$$ 
+(𝑇𝑝)(𝑥) = 𝑥^2𝑝(𝑥) + 𝑝''(𝑥)
+$$
+
+for each $𝑥 ∈ 𝐑$.
+
+(a) Suppose $\varphi ∈ 𝒫(𝐑)'$ is defined by $\varphi(𝑝) = 𝑝'(4)$.
+Describe the linear functional $𝑇' (\varphi)$ on $𝒫(𝐑)$.
+
+**Solution**:
+
+$$ 
+(𝑇' (\varphi))(p(x)) = (\varphi \circ T)(p(x)) \\
+= \varphi (T(p(x))) \\
+= \varphi (𝑥^2p(𝑥) + p''(𝑥)) \\
+= x^2 p'(x) + 2x p(x) + p'''(x) |_4 \\
+= 16 p'(4) + 8 p(4) + p'''(4)
+$$
+
+$\square$
+
+(b) Suppose $\varphi ∈ 𝒫(𝐑)'$ is defined by
+$\varphi(𝑝) = \int_{0}^{1} 𝑝$. Evaluate $(𝑇'(\varphi))(𝑥^3)$.
+
+**Solution**:
+
+$$
+(𝑇' (\varphi))(x^3) = (\varphi \circ T)(x^3) \\
+= \varphi (T(x^3)) \\
+= \varphi (x^5 + 6x) \\
+= \frac{1}{6} x^6 + 3x^2 \bigg|_0^1 \\
+= 3 \frac{1}{6}
+$$
+
+$\square$
+
+### 3F.16
+
+Suppose $𝑊$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉, 𝑊)$. Prove that
+
+$$ 
+T'=0 \Longleftrightarrow T = 0
+$$
+
+**Proof**:
+
+Assume $w_1, \cdots, w_m$ is a basis of $W$,
+$\varphi_1, \cdots, \varphi_m$ is the dual basis in $W'$, then
+
+$\Rightarrow$
+
+$$ 
+\begin{align*}
+T(v)
+&= \varphi_1(T(v)) w_1 + \cdots + \varphi_m(T(v)) w_m 
+&\text{ (3.114) } \\
+&= T'(\varphi_1)(v) w_1 + \cdots + T'(\varphi_m)(v) w_m
+&\text{ (3.118 definition: dual map) } \\
+&= 0
+&(T' = 0) \\
+\end{align*} 
+$$
+
+$\Leftarrow$
+
+$$ 
+\begin{align*}
+T'(\varphi ) (v)
+&= \varphi (T(0))
+&\text{ (3.118 definition: dual map) } \\
+&=0
+&(T=0) \\
+&\Rightarrow T'(\varphi ) = 0 \text{ for any } \varphi \\
+&\Rightarrow T' = 0
+\end{align*} 
+$$
+
+$\square$
+
+### 3F.17
+
+Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊).
+Prove that 𝑇 is invertible if and only if 𝑇′ ∈ ℒ(𝑊′, 𝑉′) is invertible.
+
+**Proof**:
+
+$\Rightarrow$
+
+Since $T$ is invertible, we can find $S \in \mathcal{L}(W, V)$ such that $ST = I, TS = I$.
+
+$$
+\begin{align*}
+I
+&= I' &\text{ (ex. 3F.13) } \\
+&= (ST)' \\
+&= T' S'
+&\text{ (3.120 algebraic properties of dual maps) }
+\end{align*} 
+$$
+
+For the same reason $S'T' = I$. So $T'$ is invertible.
+
+$\Leftarrow$
+
+We can use a different way: $T'$ is invertible then, $W', V'$ are the same dimension, so are the $W, V$.
+
+$$
+\begin{align*}
+T' \text{ is invertible }
+&\Rightarrow T' \text{ is injective }
+&\text{ (3.63) } \\
+&\Rightarrow T \text{ is surjective }
+&\text{ (3.129) } \\
+&\Rightarrow T \text{ is invertible }
+&(\text{ 3.65 and } \dim W = \dim V) \\
+\end{align*} 
+$$
+
+$\square$
+
+### 3F.18
+
+Suppose 𝑉 and 𝑊 are finite-dimensional. Prove that the map that takes
+𝑇 ∈ ℒ(𝑉, 𝑊) to 𝑇′ ∈ ℒ(𝑊′ , 𝑉′) is an isomorphism of ℒ(𝑉, 𝑊) onto ℒ(𝑊′ , 𝑉′).
+
+**Proof**:
+
+Since $𝑉$ and $𝑊$ are finite-dimensional, we just need to prove this map is injective is enough.
+From exercise 3F.16, it's indeed the case.
 
 $\square$

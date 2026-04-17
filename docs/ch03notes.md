@@ -138,7 +138,7 @@ So column rank and row rank are equal.
 
 $\square$
 
-## Section 3E Duality
+## Section 3F Duality
 
 ### 3.108 definition: linear functional
 
@@ -181,6 +181,193 @@ $$
 
 $$ 
 \dim V' = \dim V \times \dim F = \dim V
+$$
+
+$\square$
+
+### 3.127 condition for the annihilator to equal {0} or the whole space
+
+Suppose $𝑉$ is finite-dimensional and $𝑈$ is a subspace of $𝑉$. Then
+
+(a) $U^0 = \{0\} \Longleftrightarrow U = V$
+
+**Proof**:
+
+$$ 
+\begin{align*}
+U^0 = \{0\}
+&\Longleftrightarrow \dim U^0 = 0 \\
+&\Longleftrightarrow \dim V - \dim U = 0
+&\text{ (3.125 dimension of the annihilator) }\\
+&\Longleftrightarrow V = U &\text{ (2.39) }\\
+\end{align*} 
+$$
+
+$\square$
+
+(b) $U^0 = V' \Longleftrightarrow U = 0$ 
+
+**Proof**:
+
+$$ 
+\begin{align*}
+U^0 = V'
+&\Longleftrightarrow \dim U^0 = \dim V'
+&\text{ (2.39) } \\
+&\Longleftrightarrow \dim U^0 = \dim V
+&\text{ (3.111) }\\
+&\Longleftrightarrow U = 0
+&\text{ (3.125) }\\
+\end{align*} 
+$$
+
+$\square$
+
+### 3.128 the null space of 𝑇′
+
+Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Then
+
+(a) $\text{null } T' = (\text{range } T)^0$
+
+**Proof**:
+
+If $\psi \in \text{null } T'$, then $T'(\psi ) = 0$.
+Also
+
+$$ 
+(T'(\psi))(v) = (\psi \circ T)(v) = \psi (T(v)) = 0
+$$
+
+So $\psi \in (\text{range } T)^0$.
+
+If $\psi \in (\text{range } T)^0$, then $\psi (T(v)) = 0$, then
+$(T'(\psi))(v) = 0, \forall v.$ So $T'(\psi) = 0$.
+
+So $\psi \in \text{null } T'$.
+
+$\square$
+
+(b) $\dim \text{null } 𝑇' = \dim \text{null } 𝑇 + \dim 𝑊 − \dim 𝑉 .$
+
+**Proof**:
+
+$$ 
+\begin{align*}
+\dim \text{null } 𝑇'
+&= \dim (\text{range } T)^0 &\text{ (part (a)) }\\
+&= \dim W - \dim \text{range } T &\text{ (3.125) }\\
+&= \dim W - (\dim V - \text{dim null } T) &\text{ (3.21) }\\
+&= \dim \text{null } 𝑇 + \dim 𝑊 − \dim 𝑉
+\end{align*} 
+$$
+
+$\square$
+
+### 3.129 𝑇 surjective is equivalent to 𝑇' injective
+
+Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊). Then
+
+$$ 
+𝑇 \text{ is surjective} ⟺ 𝑇' \text{ is injective}.
+$$
+
+**Proof**:
+
+$$
+\begin{align*}
+𝑇 \text{ is surjective}
+&\Longleftrightarrow \text{range } T = W \\
+&\Longleftrightarrow (\text{range } T)^0 = \{0\}
+&\text{ (3.127 (a))} \\
+&\Longleftrightarrow \text{null } T' = \{0\}
+&\text{ (3.128 (a))} \\
+&\Longleftrightarrow
+𝑇' \text{ is injective}
+\end{align*} 
+$$
+
+$\square$
+
+### 3.130 the range of $𝑇'$
+
+Suppose $𝑉$ and $𝑊$ are finite-dimensional and $𝑇 ∈ ℒ(𝑉, 𝑊)$. Then
+
+(a) $\text{dim range } T = \text{dim range } T'$;
+
+**Proof**:
+
+$$ 
+\text{dim range } T' = \dim W - \text{dim null } T' \\
+= \dim W - (\text{dim null } T + \dim W − \dim V) \\
+= \dim V - \text{dim null }  T \\
+= \text{dim range } T
+$$
+
+Another way
+
+$$
+\begin{align*}
+\text{dim range } T' &= \dim W' - \text{dim null } T' &\text{ (fundamental theorem of linear maps) } \\
+&= \dim W' - \dim (\text{range } T)^0 &\text{ (3.128 (a)) }\\
+&= \dim W - \dim (\text{range } T)^0 &\text{ (3.11) }\\
+&= \dim W - (\dim W - \dim (\text{range } T) ) &\text{ (3.125 dimension of the annihilator) }\\
+&= \dim (\text{range } T)
+\end{align*} 
+$$
+
+(b) $\text{range } T' = (\text{null } T)^0$
+
+**Proof**:
+
+We first prove $\text{range } T' \subseteq (\text{null } T)^0$.
+
+Assume $\varphi \in \text{range } T'$, then we can find $\psi \in W'$,
+such that $T'(\psi) = \varphi$.
+
+Then if $u \in \text{null } T$ 
+
+$$ 
+\varphi (u) = (T'(\psi))(u) = (\psi \circ T)(u)
+= \psi (T(u)) = 0
+$$
+
+So $\varphi(u) = 0, \varphi \in (\text{null } T)^0$.
+
+Next, we compute this
+
+$$ 
+\begin{align*}
+\text{dim range } T'
+&= \text{dim range } T & \text{(part a)} \\
+&= \dim T - \text{dim null } T &\text{ (3.21 fundamental theorem of linear maps) } \\
+&= \dim (\text{null } T)^0 &\text{(3.125 dimension of the annihilator)} \\
+\end{align*} 
+$$
+
+### 3.131 $𝑇$ injective is equivalent to $𝑇'$ surjective
+
+Suppose $𝑉$ and $𝑊$ are finite-dimensional and $𝑇 ∈ ℒ(𝑉, 𝑊)$. Then
+
+$$ 
+T \text{ is injective }
+\Longleftrightarrow
+T' \text{ is surjective }
+$$
+
+**Proof**:
+
+$$
+\begin{align*}
+T \text{ is injective }
+&\Longleftrightarrow
+\text{null } T = \{0\}\\
+&\Longleftrightarrow
+(\text{null } T)^0 = V' &\text{ (3.127 (b)) }\\
+&\Longleftrightarrow
+\text{range } T' = V'  &\text{ (3.130 (b)) }\\
+&\Longleftrightarrow
+T' \text{ is surjective } \\
+\end{align*} 
 $$
 
 $\square$
