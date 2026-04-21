@@ -280,6 +280,20 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#section-3f-duality">Section 3F Duality</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#3f1">3F.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f2">3F.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f3">3F.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f4">3F.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f5">3F.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f6">3F.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f7">3F.7</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f8">3F.8</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f9">3F.9</a>
@@ -301,6 +315,16 @@
     <li class="toctree-l3"><a class="reference internal" href="#3f17">3F.17</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f18">3F.18</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f23">3F.23</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f24">3F.24</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f25">3F.25</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f26">3F.26</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f30">3F.30</a>
     </li>
         </ul>
     </li>
@@ -3286,6 +3310,115 @@ S(k(v_1+U)) = S(k v_1 + U) = T(k v_1) = k T(v_1) = k S(v_1 + U)
 <script type="math/tex">\square</script>
 </p>
 <h2 id="section-3f-duality">Section 3F Duality</h2>
+<h3 id="3f1">3F.1</h3>
+<p>Explain why each linear functional is surjective or is the zero map.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\varphi \in V'</script>, if <script type="math/tex">\varphi(v) = c \neq 0</script>.</p>
+<p>Then for any <script type="math/tex">d \in F</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi ((d/c) v) = (d/c) \varphi(v) = d/c \cdot c = d
+</script>
+</p>
+<p>So <script type="math/tex">\varphi</script> is surjective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f2">3F.2</h3>
+<p>Give three distinct examples of linear functionals on <script type="math/tex">𝐑^{[0, 1]}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">f(0), f(1), f(1/2)</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f3">3F.3</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑣 ∈ 𝑉</script> with <script type="math/tex">𝑣 ≠ 0</script>.
+Prove that there exists <script type="math/tex">\varphi ∈ 𝑉'</script> such that <script type="math/tex">\varphi(𝑣) = 1</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Extend <script type="math/tex">v</script> to a basis of <script type="math/tex">V</script>, then its dual basis satisfies <script type="math/tex">\varphi(𝑣) = 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f4">3F.4</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> such that
+<script type="math/tex">𝑈 ≠ 𝑉</script>.
+Prove that there exists <script type="math/tex">\varphi ∈ 𝑉'</script> such that <script type="math/tex">\varphi(𝑢) = 0</script> for
+every <script type="math/tex">𝑢 ∈ 𝑈</script> but <script type="math/tex">\varphi ≠ 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim U^0 = \dim V - \dim U > 0
+</script>
+</p>
+<p>So <script type="math/tex">U^0 \neq 0</script>, then pick any <script type="math/tex">\varphi \in U^0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f5">3F.5</h3>
+<p>Suppose 𝑇 ∈ ℒ(𝑉, 𝑊) and <script type="math/tex">𝑤_1, …, 𝑤_𝑚</script> is a basis of range <script type="math/tex">𝑇</script>. Hence 
+for each <script type="math/tex">𝑣 ∈ 𝑉</script> , there exist unique numbers
+<script type="math/tex">\varphi_1(𝑣), …, \varphi_𝑚(𝑣)</script> such that </p>
+<p>
+<script type="math/tex; mode=display"> 
+Tv = \varphi_1(v) w_1 + \cdots + \varphi_m(v) w_m
+</script>
+</p>
+<p>thus defining functions <script type="math/tex">\varphi_1, …, \varphi_𝑚</script> from 𝑉 to 𝐅. Show that 
+each of the functions <script type="math/tex">\varphi_1, …, \varphi_𝑚</script> is a linear functional on 
+<script type="math/tex">𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">\psi_1, \cdots, \psi_m</script> be the dual basis of <script type="math/tex">𝑤_1, …, 𝑤_𝑚</script>.
+Then </p>
+<p>
+<script type="math/tex; mode=display"> 
+T'(\psi_i)(v) = \psi_i(T(v)) = \varphi_i(v) \psi_i(w_i) = \varphi_i(v)
+</script>
+</p>
+<p>So <script type="math/tex">T'(\psi_i) = \varphi_i</script>, which is a linear functional on <script type="math/tex">V</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f6">3F.6</h3>
+<p>Suppose 𝜑, 𝛽 ∈ 𝑉′ . Prove that null 𝜑 ⊆ null 𝛽 if and only if there exists
+𝑐 ∈ 𝐅 such that 𝛽 = 𝑐𝜑.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">v \in \text{null } \varphi</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\beta (v) = c \varphi (v) = c 0 = 0
+</script>
+</p>
+<p>So <script type="math/tex">\text{null } \varphi \subseteq \text{null } \beta</script>
+</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>If <script type="math/tex">\beta = 0</script>, then <script type="math/tex">c = 0</script> can satisfy <script type="math/tex">\beta = c \varphi</script>.</p>
+<p>If <script type="math/tex">\beta \neq 0</script>, then
+<script type="math/tex">\text{null } \varphi \subseteq \text{null } \beta \subset V</script>,</p>
+<p>we can find <script type="math/tex">u \in V</script> such that <script type="math/tex">\varphi (u) \neq 0</script>.</p>
+<p>Then <script type="math/tex">V = \text{null } \varphi \oplus \text{span}(u)</script>.</p>
+<p>If <script type="math/tex">\beta (u) = 0</script>, then <script type="math/tex">\text{null } \beta = V</script>, we have a contradition.</p>
+<p>So <script type="math/tex">\beta (u) \neq 0</script>. Then let <script type="math/tex">c = \beta (u) / \varphi (u)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f7">3F.7</h3>
+<p>Suppose that <script type="math/tex">V_1, \cdots, V_m</script> are vector spaces. Prove that
+<script type="math/tex">(𝑉_1 × ⋯ × 𝑉_𝑚)'</script> and
+<script type="math/tex">𝑉_1' × ⋯ × 𝑉_𝑚'</script> are isomorphic vector spaces.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note <script type="math/tex">V_i' = \mathcal{L}(V_i, R)</script>, then we just need to apply
+exercise 3E.3 by replacing <script type="math/tex">W</script> with <script type="math/tex">R</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="3f8">3F.8</h3>
 <p>Suppose <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is a basis of 𝑉 and <script type="math/tex">\varphi_1, …, \varphi_𝑛</script> is 
 the dual basis of <script type="math/tex">𝑉'</script>. Define <script type="math/tex">\Gamma ∶ 𝑉 → 𝐅^𝑛</script> and
@@ -3637,6 +3770,313 @@ T' \text{ is invertible }
 <p><strong>Proof</strong>:</p>
 <p>Since <script type="math/tex">𝑉</script> and <script type="math/tex">𝑊</script> are finite-dimensional, we just need to prove this map is injective is enough.
 From exercise 3F.16, it's indeed the case.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f23">3F.23</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">\varphi_1, …, \varphi_𝑚 ∈ 𝑉'</script> . 
+Prove that the following three sets are equal to each other.</p>
+<p>(a) <script type="math/tex">\text{span}(\varphi_1, \cdots, \varphi_𝑚)</script>
+</p>
+<p>(b) </p>
+<p>(c) <script type="math/tex">\{\varphi \in V' : (\text{null } \varphi_1) \cap \cdots \cap
+(\text{null } \varphi_m) \subseteq \text{null } \varphi\}</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Need to use.</p>
+<h3 id="3f24">3F.24</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑣_1, …, 𝑣_𝑚 ∈ 𝑉</script>.
+Define a linear map</p>
+<p>
+<script type="math/tex; mode=display"> 
+\Gamma ∶ 𝑉' → 𝐅^𝑚 \text{ by } \Gamma(\varphi) =
+(\varphi(𝑣_1), …, \varphi(𝑣_𝑚)).
+</script>
+</p>
+<p>(a) Prove that <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> spans <script type="math/tex">𝑉</script> if and only if <script type="math/tex">\Gamma</script> is 
+injective.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>If <script type="math/tex">\Gamma (\varphi) = 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi(𝑣_1) = … = \varphi(𝑣_𝑚) = 0
+</script>
+</p>
+<p>Then <script type="math/tex">\varphi (v) = 0</script>, so <script type="math/tex">\varphi = 0</script>.</p>
+<p>Then <script type="math/tex">\Gamma</script> is injective.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>If <script type="math/tex">\Gamma</script> is injective, and let <script type="math/tex">U = \text{span}(𝑣_1, \cdots, 𝑣_𝑚)</script>.
+If <script type="math/tex">\varphi \in U^0</script>, then
+<script type="math/tex">\Gamma(\varphi)=(\varphi(𝑣_1), …, \varphi(𝑣_𝑚)) = 0</script>.</p>
+<p>Then <script type="math/tex">\varphi = 0</script>, that means <script type="math/tex">U^0 = \{0\}</script>, i.e. <script type="math/tex">U = V</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> is linearly independent if and only if 
+<script type="math/tex">\Gamma</script> is surjective.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Let <script type="math/tex">\varphi_1, \cdots, \varphi_m</script> be the dual basis, then
+<script type="math/tex">\Gamma (\varphi_i) = e_i</script> which is a standard basis of <script type="math/tex">𝐅^𝑚</script>.
+So <script type="math/tex">\Gamma</script> is surjective.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Since <script type="math/tex">\Gamma</script> is surjective, let <script type="math/tex">\varphi_i</script> be the mapping such that
+<script type="math/tex">\Gamma (\varphi_i) = e_i</script>, so <script type="math/tex">\varphi_i(v_i) = 1, \varphi_i(v_j) = 0</script>.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+0 = a_1 v_1 + \cdots + a_m v_m
+& \Rightarrow
+\varphi_i (a_1 v_1 + \cdots + a_m v_m) = 0 \\
+& \Rightarrow
+a_i \varphi_i (v_i) = 0 \\
+& \Rightarrow
+a_i = 0
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> is linearly independent. </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Now we try a different approach. First, we consider the following isomorphism
+from <script type="math/tex">F^n \rightarrow (F^n)'</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+i : (x_1, \cdots, x_m) \rightarrow x_1 \psi_1 + \cdots + x_m \psi_m
+</script>
+</p>
+<p>Where <script type="math/tex">\psi_i</script> is the dual basis of the standard basis <script type="math/tex">e_i</script>.</p>
+<p>Let <script type="math/tex">\Gamma' = i \circ \Gamma</script>, so <script type="math/tex">\Gamma' \in (F^n)'</script>
+</p>
+<p>Also consider <script type="math/tex">\gamma</script> from <script type="math/tex">F^n \mapsto V</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\gamma : (x_1, \cdots, x_m) \rightarrow x_1 v_1 + \cdots + x_m v_m
+</script>
+</p>
+<p>Let <script type="math/tex">\varphi \in V'</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(\varphi \circ \gamma) (x_1, \cdots, x_m)
+&= x_1 \varphi(v_1) + \cdots + x_m \varphi(v_m)
+\end{align*} 
+</script>
+</p>
+<p>On the other hand,</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\Gamma'(\varphi)(x_1, \cdots, x_m)
+&= (\varphi(v_1) \psi_1 + \cdots +  \varphi(v_m) \psi_m)
+(x_1, \cdots, x_m) \\
+&= x_1 \varphi(v_1) + \cdots + x_m \varphi(v_m)
+\end{align*} 
+</script>
+</p>
+<p>This shows <script type="math/tex">\Gamma'</script> is dual map of <script type="math/tex">\gamma</script>.</p>
+<p>Now coming back the problem.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\text{span}(𝑣_1, \cdots, 𝑣_𝑚) = V
+&\Longleftrightarrow
+\gamma \text{ is surjective} \\
+&\Longleftrightarrow
+\Gamma' \text{ is injective}
+&\text{ (3.131) } \\
+&\Longleftrightarrow
+\Gamma \text{ is injective}
+\end{align*} 
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+𝑣_1, …, 𝑣_𝑚 \text{ is linearly independent }
+&\Longleftrightarrow
+\gamma \text{ is injective} \\
+&\Longleftrightarrow
+\Gamma' \text{ is surjective}
+&\text{ (3.129) } \\
+&\Longleftrightarrow
+\Gamma \text{ is surjective}
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f25">3F.25</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">\varphi_1, …, \varphi_𝑚 ∈ 𝑉'</script>. 
+Define a linear map</p>
+<p>
+<script type="math/tex">\Gamma ∶ 𝑉 → 𝐅^𝑚</script> by <script type="math/tex">\Gamma(𝑣) = (\varphi_1(𝑣), …, \varphi_𝑚(𝑣))</script>.</p>
+<p>(a) Prove that <script type="math/tex">\varphi_1, …, \varphi_𝑚</script>
+spans <script type="math/tex">𝑉'</script> if and only if <script type="math/tex">Γ</script> is injective.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Consider <script type="math/tex">\text{null } \Gamma</script>, note <script type="math/tex">\varphi_i \in (\text{null } \Gamma )^0</script>,
+so <script type="math/tex">(\text{null } \Gamma )^0 = V'</script>, then from <script type="math/tex">\text{null } \Gamma = \{0\}</script>.
+<script type="math/tex">\Gamma</script> is injective.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>If <script type="math/tex">\Gamma</script> is injective, then we consider
+<script type="math/tex">\text{span}(\varphi_1, \cdots, \varphi_𝑚)</script>. From 23.b we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{span}(\varphi_1, \cdots, \varphi_𝑚) =
+((\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_n))^0
+</script>
+</p>
+<p>Since <script type="math/tex">\Gamma</script> is injective, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+(\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_n) = \{0\}
+</script>
+</p>
+<p>Then <script type="math/tex">\{0\}^0 = V'</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that <script type="math/tex">\varphi_1, …, \varphi_𝑚</script> is linearly independent if and only
+if <script type="math/tex">Γ</script> is surjective.</p>
+<p><strong>Proof</strong></p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Since <script type="math/tex">Γ</script> is surjective, we can find <script type="math/tex">\Gamma(v_i) = e_i</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+a_1 v_1 + \cdots + a_m v_m = 0
+&\Rightarrow 
+a_1 \Gamma(v_1) + \cdots + a_m \Gamma(v_m) = 0 \\
+&\Rightarrow 
+a_1 e_1 + \cdots + a_m e_m = 0 \\
+&\Rightarrow 
+a_1 = \cdots = a_m = 0
+\end{align*}
+</script>
+</p>
+<p>Then <script type="math/tex">\varphi_i</script> is the dual basis <script type="math/tex">v_i</script>.
+Then <script type="math/tex">\varphi_1, …, \varphi_𝑚</script> is linearly independent.</p>
+<p>I cannot prove the other side easily.</p>
+<p>So we consider the dual map of
+<script type="math/tex">\Gamma ' : (F^m)' \rightarrow V'</script>, and <script type="math/tex">\psi_1, \cdots, \psi_m</script> is
+the dual basis of the standard basis of <script type="math/tex">e_i</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\Gamma'(\psi_i)(v) = \psi_i (\Gamma(v)) = \psi_i (\varphi_1(𝑣), …, \varphi_𝑚(𝑣)) = \varphi_i(v)
+</script>
+</p>
+<p>So <script type="math/tex">\Gamma'(\psi_i) = \varphi_i</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\text{span}(\varphi_1, \cdots, \varphi_𝑚) = V'
+&\Longleftrightarrow
+\Gamma' \text{ is surjective } \\
+&\Longleftrightarrow
+\Gamma \text{ is injective } \\
+\end{align*} 
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\varphi_1, \cdots, \varphi_𝑚 \text{ is independent }
+&\Longleftrightarrow
+\Gamma' \text{ is injective } \\
+&\Longleftrightarrow
+\Gamma \text{ is surjective } \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f26">3F.26</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">Ω</script> is a subspace of <script type="math/tex">𝑉'</script> . Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\Omega = \{
+v \in V : \varphi (v) = 0 \text{ for every } \varphi \in \Omega 
+\}^0
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+U = \{
+v \in V : \varphi (v) = 0 \text{ for every } \varphi \in \Omega 
+\}
+</script>
+</p>
+<p>And <script type="math/tex">\varphi_1, \cdots, \varphi_m</script> be a basis of <script type="math/tex">\Omega</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+U = \{
+\text{null } \varphi_1 \cap \cdots \cap \text{null } \varphi_m
+\}
+</script>
+</p>
+<p>Then from ex 2.22</p>
+<p>
+<script type="math/tex; mode=display"> 
+U^0 = \text{span}(\varphi_1, \cdots, \varphi_𝑚) = \Omega
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f30">3F.30</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">\varphi_1, \cdots, \varphi_m</script>
+is a basis of <script type="math/tex">𝑉'</script> . Show that
+there exists a basis of <script type="math/tex">𝑉</script> whose dual basis is
+<script type="math/tex">\varphi_1, \cdots, \varphi_m</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>We will use ex 3F.26.</p>
+<p>Let <script type="math/tex">\Omega_1 = \text{span}(\varphi_2, \cdots, \varphi_𝑚)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+U_1 = \{
+v \in V : \varphi (v) = 0 \text{ for every } \varphi \in \Omega_1 
+\}
+</script>
+</p>
+<p>
+<script type="math/tex">U_1^0 = \Omega_1</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\dim U_1^0 =
+\dim \Omega_1 = n-1
+</script>
+</p>
+<p>So <script type="math/tex">\dim U_1 = 1</script>, assume <script type="math/tex">v \in U_1</script>. If <script type="math/tex">\varphi_1 (v_1) = 0</script>, then
+<script type="math/tex">\varphi_1 \in U_1^0 = \Omega_1</script>, we have a contradition.</p>
+<p>So let <script type="math/tex">\varphi_1(v_1) \neq 0</script>. Assume <script type="math/tex">\varphi_1(v_1) = 1</script>.</p>
+<p>The repeat this process, we can find the rest of <script type="math/tex">v_i</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
