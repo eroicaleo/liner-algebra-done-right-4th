@@ -3376,6 +3376,136 @@ $\square$
 
 ## Section 3F Duality
 
+### 3F.1
+
+Explain why each linear functional is surjective or is the zero map.
+
+**Proof**:
+
+Assume $\varphi \in V'$, if $\varphi(v) = c \neq 0$.
+
+Then for any $d \in F$
+
+$$ 
+\varphi ((d/c) v) = (d/c) \varphi(v) = d/c \cdot c = d
+$$
+
+So $\varphi$ is surjective.
+
+$\square$
+
+### 3F.2
+
+Give three distinct examples of linear functionals on $𝐑^{[0, 1]}$.
+
+**Proof**:
+
+$f(0), f(1), f(1/2)$
+
+$\square$
+
+### 3F.3
+
+Suppose $𝑉$ is finite-dimensional and $𝑣 ∈ 𝑉$ with $𝑣 ≠ 0$.
+Prove that there exists $\varphi ∈ 𝑉'$ such that $\varphi(𝑣) = 1$.
+
+**Proof**:
+
+Extend $v$ to a basis of $V$, then its dual basis satisfies $\varphi(𝑣) = 1$.
+
+$\square$
+
+### 3F.4
+
+Suppose $𝑉$ is finite-dimensional and $𝑈$ is a subspace of $𝑉$ such that
+$𝑈 ≠ 𝑉$.
+Prove that there exists $\varphi ∈ 𝑉'$ such that $\varphi(𝑢) = 0$ for
+every $𝑢 ∈ 𝑈$ but $\varphi ≠ 0$.
+
+**Proof**:
+
+$$ 
+\dim U^0 = \dim V - \dim U > 0
+$$
+
+So $U^0 \neq 0$, then pick any $\varphi \in U^0$.
+
+$\square$
+
+### 3F.5
+
+Suppose 𝑇 ∈ ℒ(𝑉, 𝑊) and $𝑤_1, …, 𝑤_𝑚$ is a basis of range $𝑇$. Hence 
+for each $𝑣 ∈ 𝑉$ , there exist unique numbers
+$\varphi_1(𝑣), …, \varphi_𝑚(𝑣)$ such that 
+
+$$ 
+Tv = \varphi_1(v) w_1 + \cdots + \varphi_m(v) w_m
+$$
+
+thus defining functions $\varphi_1, …, \varphi_𝑚$ from 𝑉 to 𝐅. Show that 
+each of the functions $\varphi_1, …, \varphi_𝑚$ is a linear functional on 
+$𝑉$.
+
+**Proof**:
+
+Let $\psi_1, \cdots, \psi_m$ be the dual basis of $𝑤_1, …, 𝑤_𝑚$.
+Then 
+
+$$ 
+T'(\psi_i)(v) = \psi_i(T(v)) = \varphi_i(v) \psi_i(w_i) = \varphi_i(v)
+$$
+
+So $T'(\psi_i) = \varphi_i$, which is a linear functional on $V$.
+
+$\square$
+
+### 3F.6
+
+Suppose 𝜑, 𝛽 ∈ 𝑉′ . Prove that null 𝜑 ⊆ null 𝛽 if and only if there exists
+𝑐 ∈ 𝐅 such that 𝛽 = 𝑐𝜑.
+
+**Proof**:
+
+$\Leftarrow$
+
+Assume $v \in \text{null } \varphi$, then
+
+$$ 
+\beta (v) = c \varphi (v) = c 0 = 0
+$$
+
+So $\text{null } \varphi \subseteq \text{null } \beta$
+
+$\Rightarrow$
+
+If $\beta = 0$, then $c = 0$ can satisfy $\beta = c \varphi$.
+
+If $\beta \neq 0$, then
+$\text{null } \varphi \subseteq \text{null } \beta \subset V$,
+
+we can find $u \in V$ such that $\varphi (u) \neq 0$.
+
+Then $V = \text{null } \varphi \oplus \text{span}(u)$.
+
+If $\beta (u) = 0$, then $\text{null } \beta = V$, we have a contradition.
+
+So $\beta (u) \neq 0$. Then let $c = \beta (u) / \varphi (u)$.
+
+$\square$
+
+### 3F.7
+
+Suppose that $V_1, \cdots, V_m$ are vector spaces. Prove that
+$(𝑉_1 × ⋯ × 𝑉_𝑚)'$ and
+$𝑉_1' × ⋯ × 𝑉_𝑚'$ are isomorphic vector spaces.
+
+**Proof**:
+
+Note $V_i' = \mathcal{L}(V_i, R)$, then we just need to apply
+exercise 3E.3 by replacing $W$ with $R$.
+
+$\square$
+
 ### 3F.8
 
 Suppose $𝑣_1, …, 𝑣_𝑛$ is a basis of 𝑉 and $\varphi_1, …, \varphi_𝑛$ is 
@@ -3744,5 +3874,335 @@ Suppose 𝑉 and 𝑊 are finite-dimensional. Prove that the map that takes
 
 Since $𝑉$ and $𝑊$ are finite-dimensional, we just need to prove this map is injective is enough.
 From exercise 3F.16, it's indeed the case.
+
+$\square$
+
+
+### 3F.23
+
+Suppose $𝑉$ is finite-dimensional and $\varphi_1, …, \varphi_𝑚 ∈ 𝑉'$ . 
+Prove that the following three sets are equal to each other.
+
+(a) $\text{span}(\varphi_1, \cdots, \varphi_𝑚)$ 
+
+(b) 
+
+(c) $\{\varphi \in V' : (\text{null } \varphi_1) \cap \cdots \cap
+(\text{null } \varphi_m) \subseteq \text{null } \varphi\}$ 
+
+**Proof**:
+
+Need to use.
+
+### 3F.24
+
+Suppose $𝑉$ is finite-dimensional and $𝑣_1, …, 𝑣_𝑚 ∈ 𝑉$.
+Define a linear map
+
+$$ 
+\Gamma ∶ 𝑉' → 𝐅^𝑚 \text{ by } \Gamma(\varphi) =
+(\varphi(𝑣_1), …, \varphi(𝑣_𝑚)).
+$$
+
+(a) Prove that $𝑣_1, …, 𝑣_𝑚$ spans $𝑉$ if and only if $\Gamma$ is 
+injective.
+
+**Proof**:
+
+$\Rightarrow$
+
+If $\Gamma (\varphi) = 0$, then
+
+$$ 
+\varphi(𝑣_1) = … = \varphi(𝑣_𝑚) = 0
+$$
+
+Then $\varphi (v) = 0$, so $\varphi = 0$.
+
+Then $\Gamma$ is injective.
+
+$\Leftarrow$
+
+If $\Gamma$ is injective, and let $U = \text{span}(𝑣_1, \cdots, 𝑣_𝑚)$.
+If $\varphi \in U^0$, then
+$\Gamma(\varphi)=(\varphi(𝑣_1), …, \varphi(𝑣_𝑚)) = 0$.
+
+Then $\varphi = 0$, that means $U^0 = \{0\}$, i.e. $U = V$.
+
+$\square$
+
+(b) Prove that $𝑣_1, …, 𝑣_𝑚$ is linearly independent if and only if 
+$\Gamma$ is surjective.
+
+**Proof**:
+
+$\Rightarrow$
+
+Let $\varphi_1, \cdots, \varphi_m$ be the dual basis, then
+$\Gamma (\varphi_i) = e_i$ which is a standard basis of $𝐅^𝑚$.
+So $\Gamma$ is surjective.
+
+$\Leftarrow$
+
+Since $\Gamma$ is surjective, let $\varphi_i$ be the mapping such that
+$\Gamma (\varphi_i) = e_i$, so $\varphi_i(v_i) = 1, \varphi_i(v_j) = 0$.
+
+Let
+
+$$
+\begin{align*}
+0 = a_1 v_1 + \cdots + a_m v_m
+& \Rightarrow
+\varphi_i (a_1 v_1 + \cdots + a_m v_m) = 0 \\
+& \Rightarrow
+a_i \varphi_i (v_i) = 0 \\
+& \Rightarrow
+a_i = 0
+\end{align*} 
+$$
+
+So $𝑣_1, …, 𝑣_𝑚$ is linearly independent. 
+
+$\square$
+
+Now we try a different approach. First, we consider the following isomorphism
+from $F^n \rightarrow (F^n)'$ 
+
+$$ 
+i : (x_1, \cdots, x_m) \rightarrow x_1 \psi_1 + \cdots + x_m \psi_m
+$$
+
+Where $\psi_i$ is the dual basis of the standard basis $e_i$.
+
+Let $\Gamma' = i \circ \Gamma$, so $\Gamma' \in (F^n)'$ 
+
+Also consider $\gamma$ from $F^n \mapsto V$
+
+$$ 
+\gamma : (x_1, \cdots, x_m) \rightarrow x_1 v_1 + \cdots + x_m v_m
+$$
+
+Let $\varphi \in V'$, then
+
+$$
+\begin{align*}
+(\varphi \circ \gamma) (x_1, \cdots, x_m)
+&= x_1 \varphi(v_1) + \cdots + x_m \varphi(v_m)
+\end{align*} 
+$$
+
+On the other hand,
+
+$$
+\begin{align*}
+\Gamma'(\varphi)(x_1, \cdots, x_m)
+&= (\varphi(v_1) \psi_1 + \cdots +  \varphi(v_m) \psi_m)
+(x_1, \cdots, x_m) \\
+&= x_1 \varphi(v_1) + \cdots + x_m \varphi(v_m)
+\end{align*} 
+$$
+
+This shows $\Gamma'$ is dual map of $\gamma$.
+
+Now coming back the problem.
+
+$$
+\begin{align*}
+\text{span}(𝑣_1, \cdots, 𝑣_𝑚) = V
+&\Longleftrightarrow
+\gamma \text{ is surjective} \\
+&\Longleftrightarrow
+\Gamma' \text{ is injective}
+&\text{ (3.131) } \\
+&\Longleftrightarrow
+\Gamma \text{ is injective}
+\end{align*} 
+$$
+
+Also
+
+$$
+\begin{align*}
+𝑣_1, …, 𝑣_𝑚 \text{ is linearly independent }
+&\Longleftrightarrow
+\gamma \text{ is injective} \\
+&\Longleftrightarrow
+\Gamma' \text{ is surjective}
+&\text{ (3.129) } \\
+&\Longleftrightarrow
+\Gamma \text{ is surjective}
+\end{align*} 
+$$
+
+$\square$
+
+### 3F.25
+
+Suppose $𝑉$ is finite-dimensional and $\varphi_1, …, \varphi_𝑚 ∈ 𝑉'$. 
+Define a linear map
+
+$\Gamma ∶ 𝑉 → 𝐅^𝑚$ by $\Gamma(𝑣) = (\varphi_1(𝑣), …, \varphi_𝑚(𝑣))$.
+
+(a) Prove that $\varphi_1, …, \varphi_𝑚$
+spans $𝑉'$ if and only if $Γ$ is injective.
+
+**Proof**:
+
+$\Rightarrow$
+
+Consider $\text{null } \Gamma$, note $\varphi_i \in (\text{null } \Gamma )^0$,
+so $(\text{null } \Gamma )^0 = V'$, then from $\text{null } \Gamma = \{0\}$.
+$\Gamma$ is injective.
+
+$\Leftarrow$
+
+If $\Gamma$ is injective, then we consider
+$\text{span}(\varphi_1, \cdots, \varphi_𝑚)$. From 23.b we know
+
+$$ 
+\text{span}(\varphi_1, \cdots, \varphi_𝑚) =
+((\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_n))^0
+$$
+
+Since $\Gamma$ is injective, then
+
+$$ 
+(\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_n) = \{0\}
+$$
+
+Then $\{0\}^0 = V'$.
+
+$\square$
+
+(b) Prove that $\varphi_1, …, \varphi_𝑚$ is linearly independent if and only
+if $Γ$ is surjective.
+
+**Proof**
+
+$\Leftarrow$
+
+Since $Γ$ is surjective, we can find $\Gamma(v_i) = e_i$.
+
+$$ 
+\begin{align*}
+a_1 v_1 + \cdots + a_m v_m = 0
+&\Rightarrow 
+a_1 \Gamma(v_1) + \cdots + a_m \Gamma(v_m) = 0 \\
+&\Rightarrow 
+a_1 e_1 + \cdots + a_m e_m = 0 \\
+&\Rightarrow 
+a_1 = \cdots = a_m = 0
+\end{align*}
+$$
+
+Then $\varphi_i$ is the dual basis $v_i$.
+Then $\varphi_1, …, \varphi_𝑚$ is linearly independent.
+
+I cannot prove the other side easily.
+
+So we consider the dual map of
+$\Gamma ' : (F^m)' \rightarrow V'$, and $\psi_1, \cdots, \psi_m$ is
+the dual basis of the standard basis of $e_i$.
+
+$$ 
+\Gamma'(\psi_i)(v) = \psi_i (\Gamma(v)) = \psi_i (\varphi_1(𝑣), …, \varphi_𝑚(𝑣)) = \varphi_i(v)
+$$
+
+So $\Gamma'(\psi_i) = \varphi_i$.
+
+$$ 
+\begin{align*}
+\text{span}(\varphi_1, \cdots, \varphi_𝑚) = V'
+&\Longleftrightarrow
+\Gamma' \text{ is surjective } \\
+&\Longleftrightarrow
+\Gamma \text{ is injective } \\
+\end{align*} 
+$$
+
+Also
+
+$$ 
+\begin{align*}
+\varphi_1, \cdots, \varphi_𝑚 \text{ is independent }
+&\Longleftrightarrow
+\Gamma' \text{ is injective } \\
+&\Longleftrightarrow
+\Gamma \text{ is surjective } \\
+\end{align*} 
+$$
+
+$\square$
+
+### 3F.26
+
+Suppose $𝑉$ is finite-dimensional and $Ω$ is a subspace of $𝑉'$ . Prove that
+
+$$ 
+\Omega = \{
+v \in V : \varphi (v) = 0 \text{ for every } \varphi \in \Omega 
+\}^0
+$$
+
+**Proof**:
+
+Let
+
+$$ 
+U = \{
+v \in V : \varphi (v) = 0 \text{ for every } \varphi \in \Omega 
+\}
+$$
+
+And $\varphi_1, \cdots, \varphi_m$ be a basis of $\Omega$.
+
+Then
+
+$$ 
+U = \{
+\text{null } \varphi_1 \cap \cdots \cap \text{null } \varphi_m
+\}
+$$
+
+Then from ex 2.22
+
+$$ 
+U^0 = \text{span}(\varphi_1, \cdots, \varphi_𝑚) = \Omega
+$$
+
+$\square$
+
+### 3F.30
+
+Suppose $𝑉$ is finite-dimensional and $\varphi_1, \cdots, \varphi_m$
+is a basis of $𝑉'$ . Show that
+there exists a basis of $𝑉$ whose dual basis is
+$\varphi_1, \cdots, \varphi_m$.
+
+**Proof**:
+
+We will use ex 3F.26.
+
+Let $\Omega_1 = \text{span}(\varphi_2, \cdots, \varphi_𝑚)$.
+
+$$ 
+U_1 = \{
+v \in V : \varphi (v) = 0 \text{ for every } \varphi \in \Omega_1 
+\}
+$$
+
+$U_1^0 = \Omega_1$.
+
+$$
+\dim U_1^0 =
+\dim \Omega_1 = n-1
+$$
+
+So $\dim U_1 = 1$, assume $v \in U_1$. If $\varphi_1 (v_1) = 0$, then
+$\varphi_1 \in U_1^0 = \Omega_1$, we have a contradition.
+
+So let $\varphi_1(v_1) \neq 0$. Assume $\varphi_1(v_1) = 1$.
+
+The repeat this process, we can find the rest of $v_i$.
 
 $\square$
