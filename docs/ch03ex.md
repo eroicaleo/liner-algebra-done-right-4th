@@ -3822,6 +3822,29 @@ T'(\varphi ) (v)
 \end{align*} 
 $$
 
+Another way to prove
+
+$$ 
+\begin{align*}
+T' = 0
+& \Longleftrightarrow
+\text{null } T' = W' \\
+& \Longleftrightarrow
+\text{dim range } T' = 0
+&\text{ (3.21 fundamental theorem of linear maps) } \\
+& \Longleftrightarrow
+\text{dim range } T = 0
+&\text{ (3.130 (a)) } \\
+& \Longleftrightarrow
+\text{dim null } T = \dim V
+&\text{ (3.21 fundamental theorem of linear maps) } \\
+& \Longleftrightarrow
+\text{null } T = V \\
+& \Longleftrightarrow
+T = 0 \\
+\end{align*} 
+$$
+
 $\square$
 
 ### 3F.17
@@ -3877,6 +3900,117 @@ From exercise 3F.16, it's indeed the case.
 
 $\square$
 
+### 3F.19
+
+Suppose $𝑈 ⊆ 𝑉$. Explain why
+
+$$ 
+U^0 =  \{\varphi ∈ 𝑉' ∶ 𝑈 ⊆ \text{null } \varphi \}.
+$$
+
+**Proof**:
+
+Let $W = \{\varphi ∈ 𝑉' ∶ 𝑈 ⊆ \text{null } \varphi \}$.
+
+If $\varphi \in W$, then for $u \in U$, $\varphi (u) = 0$, so
+$\varphi \in U^0$. So $W \subseteq U^0$.
+
+If $\varphi \in U^0$, then for $u \in U$, $\varphi (u) = 0$, so
+$U \subseteq \text{null } \varphi$. So $\varphi \in W$. So
+$U^0 \subseteq W$.
+
+In summary $U^0 = W$.
+
+$\square$
+
+### 3F.20
+
+Suppose $𝑉$ is finite-dimensional and $𝑈$ is a subspace of $𝑉$. Show that
+
+$$ 
+𝑈 = \{𝑣 ∈ 𝑉 ∶ \varphi(𝑣) = 0 \text{ for every } \varphi ∈ 𝑈^0\}.
+$$
+
+**Proof**
+
+Let $W = \{𝑣 ∈ 𝑉 ∶ \varphi(𝑣) = 0 \text{ for every } \varphi ∈ 𝑈^0\}$.
+
+$\Rightarrow$
+
+If $u \in U$, then for every $\varphi \in U^0$, $\varphi(u) = 0$.
+So $u \in W$, i.e. $U \subseteq W$.
+
+$\Leftarrow$
+
+Let $\dim U = m, \dim V = n$. $u_1, \cdots, u_m$ be a basis of $U$.
+
+For $w \in W$, we consider $U' = \text{span}(u_1, \cdots, u_𝑚, w)$.
+
+Given $\varphi \in U^0$, and any $u' \in U'$, $\varphi (u') = 0$, so
+$U^0 \subseteq U'^0$.
+
+Then $\dim U' = \dim V - \dim U'^0 \leq \dim V - \dim U^0 = \dim U$.
+
+So $U = U'$, then $w \in U$, so $W \subseteq U$.
+
+In summary, $U = W$.
+
+$\square$
+
+### 3F.21
+
+Suppose $𝑉$ is finite-dimensional and $𝑈$ and $𝑊$ are subspaces of $𝑉$.
+
+(a) Prove that $𝑊^0 ⊆ 𝑈^0$ if and only if $𝑈 ⊆ 𝑊$.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $u \in U$, and give any $\varphi \in W^0$, since $\varphi \in U^0$,
+then $\varphi (u) = 0$. Then from ex 3F.20, we have $u \in W$.
+
+$\Leftarrow$
+
+Given $\varphi \in W^0$, and any $u \in U$, since $u \in W$,
+$\varphi (u) = 0$, so $\varphi \in U^0$.
+So $𝑊^0 ⊆ 𝑈^0$.
+
+$\square$
+
+### 3F.22
+
+Suppose $𝑉$ is finite-dimensional and $𝑈$ and $𝑊$ are subspaces of $𝑉$.
+
+(a) Show that $(𝑈 + 𝑊)^0 = 𝑈^0 ∩ 𝑊^0$.
+
+**Proof**:
+
+$\subseteq$
+
+if $\psi \in (U+W)^0$, then given $u \in U$ then $u \in U+W$, so
+$\psi (u) = 0$. Then $\psi \in U^0$. Similarly, $\psi \in W^0$.
+So $\psi \in 𝑈^0 ∩ 𝑊^0$. Then $(𝑈 + 𝑊)^0 \subseteq 𝑈^0 ∩ 𝑊^0$.
+
+$\supseteq$
+
+If $\psi \in 𝑈^0 ∩ 𝑊^0$, then $\psi \in U^0$ and $\psi \in W^0$.
+Given $u+w \in U+W$
+
+$$ 
+\begin{align*}
+\psi (u+w)
+&= \psi (u) + \psi (w) \\
+&= 0+0 \\
+&= 0 \\
+&\Rightarrow
+\psi \in (U+W)^0 \\
+&\Rightarrow
+(𝑈 + 𝑊)^0 \supseteq 𝑈^0 ∩ 𝑊^0
+\end{align*} 
+$$
+
+$\square$
 
 ### 3F.23
 
@@ -3885,14 +4019,45 @@ Prove that the following three sets are equal to each other.
 
 (a) $\text{span}(\varphi_1, \cdots, \varphi_𝑚)$ 
 
-(b) 
+(b) $((\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_m))^0$ 
 
 (c) $\{\varphi \in V' : (\text{null } \varphi_1) \cap \cdots \cap
 (\text{null } \varphi_m) \subseteq \text{null } \varphi\}$ 
 
 **Proof**:
 
-Need to use.
+The equivalence of $(b)$ and $(c)$ is the result from ex 3F.19.
+
+From ex 3F.22 (b)
+
+$$ 
+\begin{align*}
+((\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_m))^0
+&= (\text{null } \varphi_1)^0 + \cdots + (\text{null } \varphi_m)^0
+\end{align*} 
+$$
+
+$\varphi_i \in (\text{null } \varphi_i)^0$
+
+$$
+\begin{align*}
+\text{dim} (\text{null } \varphi_i )^0
+&= \dim V - \text{dim null } \varphi_i \\
+&= \dim V - (\dim V - \text{dim range } \varphi_i) \\
+&= \dim V - (\dim V - 1) \\
+&= 1 \\
+&\Rightarrow
+\text{span}(\varphi_i) = (\text{null } \varphi_i)^0 \\
+&\Rightarrow
+(\text{null } \varphi_1)^0 + \cdots + (\text{null } \varphi_m)^0
+=
+\text{span}(\varphi_1, \cdots, \varphi_𝑚)
+\end{align*} 
+$$
+
+So we proved (a) and (b) are equivalent.
+
+$\square$
 
 ### 3F.24
 
@@ -4169,6 +4334,94 @@ Then from ex 2.22
 $$ 
 U^0 = \text{span}(\varphi_1, \cdots, \varphi_𝑚) = \Omega
 $$
+
+$\square$
+
+### 3F.28
+
+Suppose $𝑉$ is finite-dimensional and $\varphi_1, …, \varphi_𝑚$ is a 
+linearly independent list in $𝑉'$. Prove that
+
+$$ 
+\dim ( (\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_m) )
+=
+(\dim V) - m
+$$
+
+**Proof**:
+
+Let
+
+$$ 
+U = (\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_m)
+$$
+
+From ex 3F.23, $U^0 = \text{span}(\varphi_1, \cdots, \varphi_𝑚)$.
+Since $\varphi_1, …, \varphi_𝑚$ is a linearly independent list,
+$\dim U^0 = m$.
+
+Then $\dim U = \dim V - m$.
+
+$\square$
+
+### 3F.29
+
+Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊).
+
+(a) Prove that if $\varphi ∈ 𝑊'$ and
+$\text{null } 𝑇' = \text{span}(\varphi)$, then
+$\text{range } 𝑇 = \text{null } \varphi$.
+
+**Proof**:
+
+$$
+\begin{align*}
+(\text{range } T)^0
+&= \text{null } T' \\
+&= \text{span}(\varphi) \\
+\end{align*}
+$$
+
+If $w \in \text{range } T$, since $\varphi \in (\text{range } T)^0$ 
+then $\varphi (w) = 0$, $w \in \text{null } \varphi$.
+
+On the other hand,
+
+$$
+\begin{align*}
+\dim (\text{range } T)^0
+&= \dim \text{span}(\varphi) \\
+&\Rightarrow \text{dim range } T = \dim W - 1 \\
+&\Rightarrow \text{dim range } T = \text{dim null } \varphi \\
+&\Rightarrow \text{range } T = \text{null } \varphi \\
+\end{align*}
+$$
+
+$\square$
+
+(b) Prove that if $\psi ∈ 𝑉'$ and range $𝑇' = \text{span }(\psi)$, then
+$\text{null } 𝑇 = \text{null } \psi$.
+
+**Proof**:
+
+$$ 
+(\text{null } T)^0 = \text{range } 𝑇' = \text{span }(\psi)
+$$
+
+If $v \in \text{null } T$, since $\psi \in (\text{null } T)^0$,
+$\psi(v) = 0$. Then $v \in \text{null } \psi$.
+
+$$
+\begin{align*}
+\text{dim null } T 
+&= \dim V - \dim (\text{null } T)^0 \\
+&= \dim V - 1 \\
+\text{dim null } \psi
+&= \dim V - 1
+\end{align*}
+$$
+
+So $\text{null } 𝑇 = \text{null } \psi$.
 
 $\square$
 
