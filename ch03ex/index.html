@@ -316,6 +316,14 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f18">3F.18</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f19">3F.19</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f20">3F.20</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f21">3F.21</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f22">3F.22</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f23">3F.23</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f24">3F.24</a>
@@ -323,6 +331,10 @@
     <li class="toctree-l3"><a class="reference internal" href="#3f25">3F.25</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f26">3F.26</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f28">3F.28</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f29">3F.29</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f30">3F.30</a>
     </li>
@@ -3721,6 +3733,29 @@ T'(\varphi ) (v)
 \end{align*} 
 </script>
 </p>
+<p>Another way to prove</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T' = 0
+& \Longleftrightarrow
+\text{null } T' = W' \\
+& \Longleftrightarrow
+\text{dim range } T' = 0
+&\text{ (3.21 fundamental theorem of linear maps) } \\
+& \Longleftrightarrow
+\text{dim range } T = 0
+&\text{ (3.130 (a)) } \\
+& \Longleftrightarrow
+\text{dim null } T = \dim V
+&\text{ (3.21 fundamental theorem of linear maps) } \\
+& \Longleftrightarrow
+\text{null } T = V \\
+& \Longleftrightarrow
+T = 0 \\
+\end{align*} 
+</script>
+</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
@@ -3773,17 +3808,147 @@ From exercise 3F.16, it's indeed the case.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h3 id="3f19">3F.19</h3>
+<p>Suppose <script type="math/tex">𝑈 ⊆ 𝑉</script>. Explain why</p>
+<p>
+<script type="math/tex; mode=display"> 
+U^0 =  \{\varphi ∈ 𝑉' ∶ 𝑈 ⊆ \text{null } \varphi \}.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">W = \{\varphi ∈ 𝑉' ∶ 𝑈 ⊆ \text{null } \varphi \}</script>.</p>
+<p>If <script type="math/tex">\varphi \in W</script>, then for <script type="math/tex">u \in U</script>, <script type="math/tex">\varphi (u) = 0</script>, so
+<script type="math/tex">\varphi \in U^0</script>. So <script type="math/tex">W \subseteq U^0</script>.</p>
+<p>If <script type="math/tex">\varphi \in U^0</script>, then for <script type="math/tex">u \in U</script>, <script type="math/tex">\varphi (u) = 0</script>, so
+<script type="math/tex">U \subseteq \text{null } \varphi</script>. So <script type="math/tex">\varphi \in W</script>. So
+<script type="math/tex">U^0 \subseteq W</script>.</p>
+<p>In summary <script type="math/tex">U^0 = W</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f20">3F.20</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script>. Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑈 = \{𝑣 ∈ 𝑉 ∶ \varphi(𝑣) = 0 \text{ for every } \varphi ∈ 𝑈^0\}.
+</script>
+</p>
+<p><strong>Proof</strong></p>
+<p>Let <script type="math/tex">W = \{𝑣 ∈ 𝑉 ∶ \varphi(𝑣) = 0 \text{ for every } \varphi ∈ 𝑈^0\}</script>.</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>If <script type="math/tex">u \in U</script>, then for every <script type="math/tex">\varphi \in U^0</script>, <script type="math/tex">\varphi(u) = 0</script>.
+So <script type="math/tex">u \in W</script>, i.e. <script type="math/tex">U \subseteq W</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Let <script type="math/tex">\dim U = m, \dim V = n</script>. <script type="math/tex">u_1, \cdots, u_m</script> be a basis of <script type="math/tex">U</script>.</p>
+<p>For <script type="math/tex">w \in W</script>, we consider <script type="math/tex">U' = \text{span}(u_1, \cdots, u_𝑚, w)</script>.</p>
+<p>Given <script type="math/tex">\varphi \in U^0</script>, and any <script type="math/tex">u' \in U'</script>, <script type="math/tex">\varphi (u') = 0</script>, so
+<script type="math/tex">U^0 \subseteq U'^0</script>.</p>
+<p>Then <script type="math/tex">\dim U' = \dim V - \dim U'^0 \leq \dim V - \dim U^0 = \dim U</script>.</p>
+<p>So <script type="math/tex">U = U'</script>, then <script type="math/tex">w \in U</script>, so <script type="math/tex">W \subseteq U</script>.</p>
+<p>In summary, <script type="math/tex">U = W</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f21">3F.21</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑈</script> and <script type="math/tex">𝑊</script> are subspaces of <script type="math/tex">𝑉</script>.</p>
+<p>(a) Prove that <script type="math/tex">𝑊^0 ⊆ 𝑈^0</script> if and only if <script type="math/tex">𝑈 ⊆ 𝑊</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">u \in U</script>, and give any <script type="math/tex">\varphi \in W^0</script>, since <script type="math/tex">\varphi \in U^0</script>,
+then <script type="math/tex">\varphi (u) = 0</script>. Then from ex 3F.20, we have <script type="math/tex">u \in W</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Given <script type="math/tex">\varphi \in W^0</script>, and any <script type="math/tex">u \in U</script>, since <script type="math/tex">u \in W</script>,
+<script type="math/tex">\varphi (u) = 0</script>, so <script type="math/tex">\varphi \in U^0</script>.
+So <script type="math/tex">𝑊^0 ⊆ 𝑈^0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f22">3F.22</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑈</script> and <script type="math/tex">𝑊</script> are subspaces of <script type="math/tex">𝑉</script>.</p>
+<p>(a) Show that <script type="math/tex">(𝑈 + 𝑊)^0 = 𝑈^0 ∩ 𝑊^0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\subseteq</script>
+</p>
+<p>if <script type="math/tex">\psi \in (U+W)^0</script>, then given <script type="math/tex">u \in U</script> then <script type="math/tex">u \in U+W</script>, so
+<script type="math/tex">\psi (u) = 0</script>. Then <script type="math/tex">\psi \in U^0</script>. Similarly, <script type="math/tex">\psi \in W^0</script>.
+So <script type="math/tex">\psi \in 𝑈^0 ∩ 𝑊^0</script>. Then <script type="math/tex">(𝑈 + 𝑊)^0 \subseteq 𝑈^0 ∩ 𝑊^0</script>.</p>
+<p>
+<script type="math/tex">\supseteq</script>
+</p>
+<p>If <script type="math/tex">\psi \in 𝑈^0 ∩ 𝑊^0</script>, then <script type="math/tex">\psi \in U^0</script> and <script type="math/tex">\psi \in W^0</script>.
+Given <script type="math/tex">u+w \in U+W</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\psi (u+w)
+&= \psi (u) + \psi (w) \\
+&= 0+0 \\
+&= 0 \\
+&\Rightarrow
+\psi \in (U+W)^0 \\
+&\Rightarrow
+(𝑈 + 𝑊)^0 \supseteq 𝑈^0 ∩ 𝑊^0
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="3f23">3F.23</h3>
 <p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">\varphi_1, …, \varphi_𝑚 ∈ 𝑉'</script> . 
 Prove that the following three sets are equal to each other.</p>
 <p>(a) <script type="math/tex">\text{span}(\varphi_1, \cdots, \varphi_𝑚)</script>
 </p>
-<p>(b) </p>
+<p>(b) <script type="math/tex">((\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_m))^0</script>
+</p>
 <p>(c) <script type="math/tex">\{\varphi \in V' : (\text{null } \varphi_1) \cap \cdots \cap
 (\text{null } \varphi_m) \subseteq \text{null } \varphi\}</script>
 </p>
 <p><strong>Proof</strong>:</p>
-<p>Need to use.</p>
+<p>The equivalence of <script type="math/tex">(b)</script> and <script type="math/tex">(c)</script> is the result from ex 3F.19.</p>
+<p>From ex 3F.22 (b)</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+((\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_m))^0
+&= (\text{null } \varphi_1)^0 + \cdots + (\text{null } \varphi_m)^0
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\varphi_i \in (\text{null } \varphi_i)^0</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\text{dim} (\text{null } \varphi_i )^0
+&= \dim V - \text{dim null } \varphi_i \\
+&= \dim V - (\dim V - \text{dim range } \varphi_i) \\
+&= \dim V - (\dim V - 1) \\
+&= 1 \\
+&\Rightarrow
+\text{span}(\varphi_i) = (\text{null } \varphi_i)^0 \\
+&\Rightarrow
+(\text{null } \varphi_1)^0 + \cdots + (\text{null } \varphi_m)^0
+=
+\text{span}(\varphi_1, \cdots, \varphi_𝑚)
+\end{align*} 
+</script>
+</p>
+<p>So we proved (a) and (b) are equivalent.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="3f24">3F.24</h3>
 <p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑣_1, …, 𝑣_𝑚 ∈ 𝑉</script>.
 Define a linear map</p>
@@ -4047,6 +4212,87 @@ U = \{
 U^0 = \text{span}(\varphi_1, \cdots, \varphi_𝑚) = \Omega
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f28">3F.28</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">\varphi_1, …, \varphi_𝑚</script> is a 
+linearly independent list in <script type="math/tex">𝑉'</script>. Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim ( (\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_m) )
+=
+(\dim V) - m
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+U = (\text{null } \varphi_1) \cap \cdots \cap (\text{null } \varphi_m)
+</script>
+</p>
+<p>From ex 3F.23, <script type="math/tex">U^0 = \text{span}(\varphi_1, \cdots, \varphi_𝑚)</script>.
+Since <script type="math/tex">\varphi_1, …, \varphi_𝑚</script> is a linearly independent list,
+<script type="math/tex">\dim U^0 = m</script>.</p>
+<p>Then <script type="math/tex">\dim U = \dim V - m</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f29">3F.29</h3>
+<p>Suppose 𝑉 and 𝑊 are finite-dimensional and 𝑇 ∈ ℒ(𝑉, 𝑊).</p>
+<p>(a) Prove that if <script type="math/tex">\varphi ∈ 𝑊'</script> and
+<script type="math/tex">\text{null } 𝑇' = \text{span}(\varphi)</script>, then
+<script type="math/tex">\text{range } 𝑇 = \text{null } \varphi</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(\text{range } T)^0
+&= \text{null } T' \\
+&= \text{span}(\varphi) \\
+\end{align*}
+</script>
+</p>
+<p>If <script type="math/tex">w \in \text{range } T</script>, since <script type="math/tex">\varphi \in (\text{range } T)^0</script> 
+then <script type="math/tex">\varphi (w) = 0</script>, <script type="math/tex">w \in \text{null } \varphi</script>.</p>
+<p>On the other hand,</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dim (\text{range } T)^0
+&= \dim \text{span}(\varphi) \\
+&\Rightarrow \text{dim range } T = \dim W - 1 \\
+&\Rightarrow \text{dim range } T = \text{dim null } \varphi \\
+&\Rightarrow \text{range } T = \text{null } \varphi \\
+\end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that if <script type="math/tex">\psi ∈ 𝑉'</script> and range <script type="math/tex">𝑇' = \text{span }(\psi)</script>, then
+<script type="math/tex">\text{null } 𝑇 = \text{null } \psi</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(\text{null } T)^0 = \text{range } 𝑇' = \text{span }(\psi)
+</script>
+</p>
+<p>If <script type="math/tex">v \in \text{null } T</script>, since <script type="math/tex">\psi \in (\text{null } T)^0</script>,
+<script type="math/tex">\psi(v) = 0</script>. Then <script type="math/tex">v \in \text{null } \psi</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\text{dim null } T 
+&= \dim V - \dim (\text{null } T)^0 \\
+&= \dim V - 1 \\
+\text{dim null } \psi
+&= \dim V - 1
+\end{align*}
+</script>
+</p>
+<p>So <script type="math/tex">\text{null } 𝑇 = \text{null } \psi</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
