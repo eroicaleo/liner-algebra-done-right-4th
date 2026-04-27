@@ -332,11 +332,19 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f26">3F.26</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f27">3F.27</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f28">3F.28</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f29">3F.29</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3f30">3F.30</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f31">3F.31</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f32">3F.32</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3f33">3F.33</a>
     </li>
         </ul>
     </li>
@@ -2930,11 +2938,14 @@ w = u + u_1 \\
 <p>We will prove <script type="math/tex">-v + A</script> is a subspace.</p>
 <p>If <script type="math/tex">a, b \in -v + A</script>.</p>
 <p>
-<script type="math/tex; mode=display"> 
-a = -v + 𝑣_a \\
-b = -v + 𝑣_b \\
-a + b = -v + (v_a + v_b - v)
-= -v + 2(\frac{1}{2}v_a + \frac{1}{2}v_b) - v
+<script type="math/tex; mode=display">
+\begin{align*}
+a &= -v + 𝑣_a \\
+b &= -v + 𝑣_b \\
+a + b
+&= -v + (v_a + v_b - v) \\
+&= -v + 2(\frac{1}{2}v_a + \frac{1}{2}v_b) - v
+\end{align*} 
 </script>
 </p>
 <p>Note <script type="math/tex">w = \frac{1}{2}v_a + \frac{1}{2}v_b \in A</script>, then <script type="math/tex">2w - v \in A</script>.
@@ -3904,6 +3915,32 @@ Given <script type="math/tex">u+w \in U+W</script>
 <p>
 <script type="math/tex">\square</script>
 </p>
+<p>(b) Show that <script type="math/tex">(𝑈 ∩ 𝑊)^0 = 𝑈^0 + 𝑊^0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">\varphi \in U^0</script> and <script type="math/tex">\psi \in W^0</script>, and <script type="math/tex">v \in 𝑈 ∩ 𝑊</script>.</p>
+<p>Then <script type="math/tex">(\varphi + \psi)(v) = \varphi(v) + \psi (v) = 0 + 0 = 0</script>
+</p>
+<p>So <script type="math/tex">𝑈^0 + 𝑊^0 \subseteq (𝑈 ∩ 𝑊)^0</script>.</p>
+<p>On other other hand,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\dim (𝑈 ∩ 𝑊)^0
+&= \dim V - (\dim (𝑈 ∩ 𝑊)) \\
+&= \dim (U+W) + \dim V - (\dim U + \dim W) \\
+\dim 𝑈^0 + 𝑊^0
+&= \dim 𝑈^0 + \dim W^0 - \dim (𝑈^0 ∩ 𝑊^0) \\
+&= \dim V - \dim U + \dim V - \dim W - \dim (𝑈 + 𝑊)^0 \\
+&= \dim (U+W) + \dim V - (\dim U + \dim W)
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">\dim (𝑈 ∩ 𝑊)^0 = \dim 𝑈^0 + 𝑊^0</script>
+</p>
+<p>Then <script type="math/tex">(𝑈 ∩ 𝑊)^0 = 𝑈^0 + 𝑊^0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="3f23">3F.23</h3>
 <p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">\varphi_1, …, \varphi_𝑚 ∈ 𝑉'</script> . 
 Prove that the following three sets are equal to each other.</p>
@@ -4215,6 +4252,43 @@ U^0 = \text{span}(\varphi_1, \cdots, \varphi_𝑚) = \Omega
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h3 id="3f27">3F.27</h3>
+<p>Suppose 𝑇 ∈ ℒ(𝒫 5(𝐑)) and null 𝑇′ = span(𝜑), where 𝜑 is the linear
+functional on 𝒫 5(𝐑) defined by 𝜑(𝑝) = 𝑝(8). Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{range } T
+=
+\{p \in 𝒫_{5}(𝐑) : p(8) = 0\}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">U = \{p \in 𝒫_{5}(𝐑) : p(8) = 0\}</script>.</p>
+<p>Assume <script type="math/tex">p \in \text{range } T</script>, since <script type="math/tex">\text{null } T' = (\text{range } T)^0</script>
+We have <script type="math/tex">(\text{range } T)^0 = \text{span}(\varphi)</script>.</p>
+<p>Then <script type="math/tex">\varphi (p) = 0</script>, i.e. <script type="math/tex">p(8) = 0</script>, so
+<script type="math/tex">\text{range } T \subseteq U</script>.</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+U = \text{null } \varphi
+& \Rightarrow
+\dim U = \dim V - \text{dim range } \varphi \\
+& \Rightarrow
+\dim U = \dim V - 1 \\
+\text{dim range } T
+&= \dim V - \dim (\text{range } T)^0 \\
+&= \dim V - \dim \text{span}(\varphi) \\
+&= \dim V - 1
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">U</script> and <script type="math/tex">\text{range } T</script> has the same dimension.</p>
+<p>Then we conclude <script type="math/tex">U = \text{range } T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="3f28">3F.28</h3>
 <p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">\varphi_1, …, \varphi_𝑚</script> is a 
 linearly independent list in <script type="math/tex">𝑉'</script>. Prove that</p>
@@ -4323,6 +4397,163 @@ v \in V : \varphi (v) = 0 \text{ for every } \varphi \in \Omega_1
 <script type="math/tex">\varphi_1 \in U_1^0 = \Omega_1</script>, we have a contradition.</p>
 <p>So let <script type="math/tex">\varphi_1(v_1) \neq 0</script>. Assume <script type="math/tex">\varphi_1(v_1) = 1</script>.</p>
 <p>The repeat this process, we can find the rest of <script type="math/tex">v_i</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f31">3F.31</h3>
+<p>Suppose 𝑈 is a subspace of 𝑉 . Let 𝑖 ∶ 𝑈 → 𝑉 be the inclusion map defined
+by 𝑖(𝑢) = 𝑢. Thus 𝑖′ ∈ ℒ(𝑉′, 𝑈′).</p>
+<p>(a) Show that null <script type="math/tex">𝑖' = 𝑈^0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">\varphi \in \text{null } i'</script>, then <script type="math/tex">(i'(\varphi ))(u) = 0</script>, i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\varphi (i(u)) = 0
+& \Rightarrow 
+\varphi (u) = 0 \\
+& \Rightarrow 
+\varphi \in U^0
+\end{align*}
+</script>
+</p>
+<p>On the other hand,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\varphi \in U^0
+& \Rightarrow
+\varphi (u) = 0 \\
+& \Rightarrow
+\varphi (i(u)) = 0 \\
+& \Rightarrow
+(i'(\varphi )) (u) = 0 \\
+& \Rightarrow
+i'(\varphi ) = 0 \\
+& \Rightarrow
+\varphi \in \text{null } i'
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that if 𝑉 is finite-dimensional, then range 𝑖′ = 𝑈′.</p>
+<p><strong>Proof</strong>:</p>
+<p>For any <script type="math/tex">\psi \in U'</script>, it's a linear mapping from <script type="math/tex">U</script> to <script type="math/tex">F</script>. Since
+<script type="math/tex">U</script> is a subspace of <script type="math/tex">V</script>, it's possible to extend <script type="math/tex">\psi</script> from <script type="math/tex">U</script> to <script type="math/tex">V</script>,
+such that for <script type="math/tex">u \in U</script>, <script type="math/tex">\psi (u) = \varphi (u)</script>. Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\varphi (u) = \psi (u)
+& \Rightarrow 
+\varphi (i(u)) = \psi (u) \\
+& \Rightarrow 
+(i'(\varphi)) (u) = \psi (u) \\
+& \Rightarrow 
+i'(\varphi ) = \psi
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">\text{range } i' = U'</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Prove that if <script type="math/tex">𝑉</script> is finite-dimensional, then <script type="math/tex">\tilde{i'}</script>  is an isomorphism from <script type="math/tex">𝑉' /𝑈^0</script> onto <script type="math/tex">𝑈'</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>This is an immediate result from 3.107 (d) null space and range of <script type="math/tex">\tilde{T}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f32">3F.32</h3>
+<p>The double dual space of <script type="math/tex">𝑉</script> , denoted by <script type="math/tex">𝑉″</script> , is defined to be the dual 
+space of <script type="math/tex">𝑉'</script> . In other words, <script type="math/tex">𝑉″ = (𝑉')'</script> . Define <script type="math/tex">Λ ∶ 𝑉 → 𝑉″</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+(Λ𝑣)(\varphi) = \varphi(𝑣)
+</script>
+</p>
+<p>for each <script type="math/tex">𝑣 ∈ 𝑉</script> and each <script type="math/tex">\varphi ∈ 𝑉'</script>.</p>
+<p>(a) Show that <script type="math/tex">Λ</script> is a linear map from <script type="math/tex">𝑉</script> to <script type="math/tex">𝑉″</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(Λ(𝑣_1 + 𝑣_2))(\varphi)
+&= \varphi(𝑣_1 + 𝑣_2) \\
+&= \varphi(𝑣_1) + \varphi(𝑣_2) \\
+&= (Λ𝑣_1)(\varphi) + (Λ𝑣_2)(\varphi) \\
+&= (Λ(𝑣_1) + Λ(𝑣_2))(\varphi)
+\end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(Λ(k𝑣))(\varphi)
+&= \varphi(k𝑣) \\
+&= k\varphi(𝑣) \\
+&= k(Λ𝑣)(\varphi) \\
+&= (kΛ𝑣)(\varphi) \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that if 𝑇 ∈ ℒ(𝑉), then 𝑇″ ∘ Λ = Λ ∘ 𝑇, where 𝑇″ = (𝑇′)′.</p>
+<p><strong>Proof</strong>:</p>
+<p>First note <script type="math/tex">T' : V' \rightarrow V'</script> by <script type="math/tex">T'(\varphi) = \varphi \circ T</script>.
+<script type="math/tex">V' = \mathcal{L}(V, F)</script>
+</p>
+<p>And <script type="math/tex">T'' : V'' \rightarrow V''</script> by <script type="math/tex">T''(\varphi) = \varphi \circ T'</script>.
+<script type="math/tex">V'' = \mathcal{L}(V, W)' = \mathcal{L}(\mathcal{L}(V, F), F)</script>
+</p>
+<p>Assume <script type="math/tex">v \in V</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(𝑇″ ∘ Λ(v))(\varphi)
+&= (𝑇″ (Λ(v))(\varphi)) \\
+&= (Λ(v))(𝑇'(\varphi)) \\
+&= T'(\varphi)(v) \\
+&= \varphi(T(v))
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+((Λ ∘ 𝑇)(v))(\varphi)
+&= (Λ(T(v)))(\varphi) \\
+&= \varphi(T(v))
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="3f33">3F.33</h3>
+<p>Suppose 𝑈 is a subspace of 𝑉 . Let 𝜋 ∶ 𝑉 → 𝑉/𝑈 be the usual quotient map.
+Thus 𝜋′ ∈ ℒ((𝑉/𝑈)′, 𝑉′).</p>
+<p>(a) Show that 𝜋′ is injective.</p>
+<p><strong>Proof</strong>:</p>
+<p>This is because <script type="math/tex">𝜋</script> is surjective, then from 3.129, <script type="math/tex">𝜋′</script> is injective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">\text{range } \pi ' = 𝑈^0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>3.130 (b) states <script type="math/tex">\text{range } \pi ' = (\text{null } \pi)^0</script>.</p>
+<p>Also <script type="math/tex">\text{null } \pi = U</script>, so <script type="math/tex">\text{range } \pi ' = 𝑈^0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Conclude that <script type="math/tex">𝜋′</script> is an isomorphism from (𝑉/𝑈)′ onto <script type="math/tex">U^0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>From (a) and (b) <script type="math/tex">\pi '</script> is both injective and surjective from
+<script type="math/tex">(V/U)'</script> to <script type="math/tex">U^0</script>. So <script type="math/tex">𝜋′</script> is an isomorphism.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
