@@ -2910,11 +2910,14 @@ We will prove $-v + A$ is a subspace.
 
 If $a, b \in -v + A$.
 
-$$ 
-a = -v + 𝑣_a \\
-b = -v + 𝑣_b \\
-a + b = -v + (v_a + v_b - v)
-= -v + 2(\frac{1}{2}v_a + \frac{1}{2}v_b) - v
+$$
+\begin{align*}
+a &= -v + 𝑣_a \\
+b &= -v + 𝑣_b \\
+a + b
+&= -v + (v_a + v_b - v) \\
+&= -v + 2(\frac{1}{2}v_a + \frac{1}{2}v_b) - v
+\end{align*} 
 $$
 
 Note $w = \frac{1}{2}v_a + \frac{1}{2}v_b \in A$, then $2w - v \in A$.
@@ -4012,6 +4015,36 @@ $$
 
 $\square$
 
+(b) Show that $(𝑈 ∩ 𝑊)^0 = 𝑈^0 + 𝑊^0$.
+
+**Proof**:
+
+If $\varphi \in U^0$ and $\psi \in W^0$, and $v \in 𝑈 ∩ 𝑊$.
+
+Then $(\varphi + \psi)(v) = \varphi(v) + \psi (v) = 0 + 0 = 0$
+
+So $𝑈^0 + 𝑊^0 \subseteq (𝑈 ∩ 𝑊)^0$.
+
+On other other hand,
+
+$$ 
+\begin{align*}
+\dim (𝑈 ∩ 𝑊)^0
+&= \dim V - (\dim (𝑈 ∩ 𝑊)) \\
+&= \dim (U+W) + \dim V - (\dim U + \dim W) \\
+\dim 𝑈^0 + 𝑊^0
+&= \dim 𝑈^0 + \dim W^0 - \dim (𝑈^0 ∩ 𝑊^0) \\
+&= \dim V - \dim U + \dim V - \dim W - \dim (𝑈 + 𝑊)^0 \\
+&= \dim (U+W) + \dim V - (\dim U + \dim W)
+\end{align*} 
+$$
+
+So $\dim (𝑈 ∩ 𝑊)^0 = \dim 𝑈^0 + 𝑊^0$
+
+Then $(𝑈 ∩ 𝑊)^0 = 𝑈^0 + 𝑊^0$.
+
+$\square$
+
 ### 3F.23
 
 Suppose $𝑉$ is finite-dimensional and $\varphi_1, …, \varphi_𝑚 ∈ 𝑉'$ . 
@@ -4337,6 +4370,49 @@ $$
 
 $\square$
 
+### 3F.27
+
+Suppose 𝑇 ∈ ℒ(𝒫 5(𝐑)) and null 𝑇′ = span(𝜑), where 𝜑 is the linear
+functional on 𝒫 5(𝐑) defined by 𝜑(𝑝) = 𝑝(8). Prove that
+
+$$ 
+\text{range } T
+=
+\{p \in 𝒫_{5}(𝐑) : p(8) = 0\}
+$$
+
+**Proof**:
+
+Let $U = \{p \in 𝒫_{5}(𝐑) : p(8) = 0\}$.
+
+Assume $p \in \text{range } T$, since $\text{null } T' = (\text{range } T)^0$
+We have $(\text{range } T)^0 = \text{span}(\varphi)$.
+
+Then $\varphi (p) = 0$, i.e. $p(8) = 0$, so
+$\text{range } T \subseteq U$.
+
+On the other hand
+
+$$
+\begin{align*}
+U = \text{null } \varphi
+& \Rightarrow
+\dim U = \dim V - \text{dim range } \varphi \\
+& \Rightarrow
+\dim U = \dim V - 1 \\
+\text{dim range } T
+&= \dim V - \dim (\text{range } T)^0 \\
+&= \dim V - \dim \text{span}(\varphi) \\
+&= \dim V - 1
+\end{align*} 
+$$
+
+So $U$ and $\text{range } T$ has the same dimension.
+
+Then we conclude $U = \text{range } T$.
+
+$\square$
+
 ### 3F.28
 
 Suppose $𝑉$ is finite-dimensional and $\varphi_1, …, \varphi_𝑚$ is a 
@@ -4457,5 +4533,180 @@ $\varphi_1 \in U_1^0 = \Omega_1$, we have a contradition.
 So let $\varphi_1(v_1) \neq 0$. Assume $\varphi_1(v_1) = 1$.
 
 The repeat this process, we can find the rest of $v_i$.
+
+$\square$
+
+### 3F.31
+
+Suppose 𝑈 is a subspace of 𝑉 . Let 𝑖 ∶ 𝑈 → 𝑉 be the inclusion map defined
+by 𝑖(𝑢) = 𝑢. Thus 𝑖′ ∈ ℒ(𝑉′, 𝑈′).
+
+(a) Show that null $𝑖' = 𝑈^0$.
+
+**Proof**:
+
+If $\varphi \in \text{null } i'$, then $(i'(\varphi ))(u) = 0$, i.e.
+
+$$ 
+\begin{align*}
+\varphi (i(u)) = 0
+& \Rightarrow 
+\varphi (u) = 0 \\
+& \Rightarrow 
+\varphi \in U^0
+\end{align*}
+$$
+
+On the other hand,
+
+$$ 
+\begin{align*}
+\varphi \in U^0
+& \Rightarrow
+\varphi (u) = 0 \\
+& \Rightarrow
+\varphi (i(u)) = 0 \\
+& \Rightarrow
+(i'(\varphi )) (u) = 0 \\
+& \Rightarrow
+i'(\varphi ) = 0 \\
+& \Rightarrow
+\varphi \in \text{null } i'
+\end{align*} 
+$$
+
+$\square$
+
+(b) Prove that if 𝑉 is finite-dimensional, then range 𝑖′ = 𝑈′.
+
+**Proof**:
+
+For any $\psi \in U'$, it's a linear mapping from $U$ to $F$. Since
+$U$ is a subspace of $V$, it's possible to extend $\psi$ from $U$ to $V$,
+such that for $u \in U$, $\psi (u) = \varphi (u)$. Then we have
+
+$$ 
+\begin{align*}
+\varphi (u) = \psi (u)
+& \Rightarrow 
+\varphi (i(u)) = \psi (u) \\
+& \Rightarrow 
+(i'(\varphi)) (u) = \psi (u) \\
+& \Rightarrow 
+i'(\varphi ) = \psi
+\end{align*} 
+$$
+
+So $\text{range } i' = U'$.
+
+$\square$
+
+(c) Prove that if $𝑉$ is finite-dimensional, then $\tilde{i'}$  is an isomorphism from $𝑉' /𝑈^0$ onto $𝑈'$.
+
+**Proof**:
+
+This is an immediate result from 3.107 (d) null space and range of $\tilde{T}$.
+
+$\square$
+
+### 3F.32
+
+The double dual space of $𝑉$ , denoted by $𝑉″$ , is defined to be the dual 
+space of $𝑉'$ . In other words, $𝑉″ = (𝑉')'$ . Define $Λ ∶ 𝑉 → 𝑉″$ by
+
+$$ 
+(Λ𝑣)(\varphi) = \varphi(𝑣)
+$$
+
+for each $𝑣 ∈ 𝑉$ and each $\varphi ∈ 𝑉'$.
+
+(a) Show that $Λ$ is a linear map from $𝑉$ to $𝑉″$.
+
+**Proof**:
+
+$$
+\begin{align*}
+(Λ(𝑣_1 + 𝑣_2))(\varphi)
+&= \varphi(𝑣_1 + 𝑣_2) \\
+&= \varphi(𝑣_1) + \varphi(𝑣_2) \\
+&= (Λ𝑣_1)(\varphi) + (Λ𝑣_2)(\varphi) \\
+&= (Λ(𝑣_1) + Λ(𝑣_2))(\varphi)
+\end{align*}
+$$
+
+$$ 
+\begin{align*}
+(Λ(k𝑣))(\varphi)
+&= \varphi(k𝑣) \\
+&= k\varphi(𝑣) \\
+&= k(Λ𝑣)(\varphi) \\
+&= (kΛ𝑣)(\varphi) \\
+\end{align*} 
+$$
+
+$\square$
+
+(b) Show that if 𝑇 ∈ ℒ(𝑉), then 𝑇″ ∘ Λ = Λ ∘ 𝑇, where 𝑇″ = (𝑇′)′.
+
+**Proof**:
+
+First note $T' : V' \rightarrow V'$ by $T'(\varphi) = \varphi \circ T$.
+$V' = \mathcal{L}(V, F)$ 
+
+And $T'' : V'' \rightarrow V''$ by $T''(\varphi) = \varphi \circ T'$.
+$V'' = \mathcal{L}(V, W)' = \mathcal{L}(\mathcal{L}(V, F), F)$
+
+Assume $v \in V$,
+
+
+$$
+\begin{align*}
+(𝑇″ ∘ Λ(v))(\varphi)
+&= (𝑇″ (Λ(v))(\varphi)) \\
+&= (Λ(v))(𝑇'(\varphi)) \\
+&= T'(\varphi)(v) \\
+&= \varphi(T(v))
+\end{align*} 
+$$
+
+$$ 
+\begin{align*}
+((Λ ∘ 𝑇)(v))(\varphi)
+&= (Λ(T(v)))(\varphi) \\
+&= \varphi(T(v))
+\end{align*} 
+$$
+
+$\square$
+
+### 3F.33
+
+Suppose 𝑈 is a subspace of 𝑉 . Let 𝜋 ∶ 𝑉 → 𝑉/𝑈 be the usual quotient map.
+Thus 𝜋′ ∈ ℒ((𝑉/𝑈)′, 𝑉′).
+
+(a) Show that 𝜋′ is injective.
+
+**Proof**:
+
+This is because $𝜋$ is surjective, then from 3.129, $𝜋′$ is injective.
+
+$\square$
+
+(b) Show that $\text{range } \pi ' = 𝑈^0$.
+
+**Proof**:
+
+3.130 (b) states $\text{range } \pi ' = (\text{null } \pi)^0$.
+
+Also $\text{null } \pi = U$, so $\text{range } \pi ' = 𝑈^0$.
+
+$\square$
+
+(c) Conclude that $𝜋′$ is an isomorphism from (𝑉/𝑈)′ onto $U^0$.
+
+**Proof**:
+
+From (a) and (b) $\pi '$ is both injective and surjective from
+$(V/U)'$ to $U^0$. So $𝜋′$ is an isomorphism.
 
 $\square$
