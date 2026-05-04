@@ -28,6 +28,74 @@ $$
 
 $\square$
 
+### 4A.3
+
+Suppose 𝑉 is a complex vector space and 𝜑 ∈ 𝑉′ . Define 𝜎 ∶ 𝑉 → 𝐑 by
+𝜎(𝑣) = Re 𝜑(𝑣) for each 𝑣 ∈ 𝑉 . Show that
+
+$$ 
+\varphi (v) = \sigma (v) - i \sigma (iv)
+$$
+
+for all $v \in V$.
+
+**Proof**:
+
+Note
+
+$$
+\begin{align*}
+\sigma (iv) &= \Re \varphi (iv) \\
+&= \Re i \varphi (v) \\
+&= - \Im \varphi (v)
+\end{align*} 
+$$
+
+So
+
+$$
+\begin{align*}
+\sigma (v) - i \sigma(iv)
+&= \Re \varphi (v) - i(- \Im \varphi (v)) \\
+&= \Re \varphi (v) + i \Im \varphi (v) \\
+&= \varphi (v)
+\end{align*} 
+$$
+
+$\square$
+
+### 4A.4
+
+Suppose $𝑚$ is a positive integer. Is the set
+
+$$ 
+\{0\} \cup \{p \in 𝒫(𝐅) : \deg p = m\}
+$$
+
+a subspace of $𝒫(𝐅)$?
+
+**Solution**:
+
+No. Consider $m = 2$, $p_1 = x^2 + x, p_2 = -x^2$, but $p_1+p_2 = x$.
+
+$\square$
+
+### 4A.5
+
+Is the set
+
+$$ 
+U = \{0\} \cup \{p \in 𝒫(𝐅) : \deg p \text{ is even}\}
+$$
+
+a subspace of $𝒫(𝐅)$?
+
+**Proof**:
+
+No. Consider the same example in the previous exercise.
+
+$\square$
+
 ### 4A.6
 
 Suppose that 𝑚 and 𝑛 are positive integers with 𝑚 ≤ 𝑛, and suppose
