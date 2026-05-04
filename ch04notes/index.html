@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 04 Notes - Linear Algebra Done Right 4th edition</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 04 Notes";
+        var mkdocs_page_input_path = "ch04notes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Linear Algebra Done Right 4th edition
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01notes/">Chapter 01 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02notes/">Chapter 02 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 04 Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#section-4a-polynomials">Section 4.A Polynomials</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#412-fundamental-theorem-of-algebra-first-version">4.12 fundamental theorem of algebra, first version</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#413-fundamental-theorem-of-algebra-second-version">4.13 fundamental theorem of algebra, second version</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#416-factorization-of-a-polynomial-over-r">4.16 factorization of a polynomial over 𝐑</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">unsolved</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../proof-techniques/">proof-techniques</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Linear Algebra Done Right 4th edition</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Chapter 04 Notes</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ch04notes.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-4-polynomials">Chapter 4 Polynomials</h1>
+<h2 id="section-4a-polynomials">Section 4.A Polynomials</h2>
+<h3 id="412-fundamental-theorem-of-algebra-first-version">4.12 fundamental theorem of algebra, first version</h3>
+<p>Every nonconstant polynomial with complex coefficients has a zero in 𝐂.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note, this is just a summary of proof, and I added some steps that are
+not very clear to me.</p>
+<p>We will need the De Moivre’s theorem</p>
+<p>
+<script type="math/tex; mode=display"> 
+(\cos \theta + 𝑖 \sin \theta)^𝑘 = \cos 𝑘\theta + 𝑖 \sin 𝑘\theta.
+</script>
+</p>
+<p>We will need another fact: a continuous real-valued function on a
+closed disk in <script type="math/tex">𝐑^2</script> attains a minimum value.</p>
+<p>Assume we have </p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = c_0 + c_1 z + \cdots + c_m z^m
+</script>
+</p>
+<p>Consider the function <script type="math/tex">|p(z)|</script> when <script type="math/tex">|z| \rightarrow +\infty</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+|c_m z^m + c_{m-1} z^{m-1} + \cdots + c_1 z^1 + c_0|
+&=
+|z^m| | c_m + c_{m-1} z^{-1} + \cdots + c_1 z^{-(m-1)} + c_0 z^{-m}| \\
+\end{align*}
+</script>
+</p>
+<p>Note that from we have triangle inequality</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&|c_{m-1} z^{-1} + \cdots + c_1 z^{-(m-1)} + z^{-m}| \\
+& \leq
+\frac{|c_{m-1}|}{|z|} + \cdots \frac{|c_1|}{|z^{m-1}|} +
+\cdots \frac{|c_0|}{|z^{m}|} \\
+& \leq |c_m/2| \text{ when |z| is big enough }
+\end{align*} 
+</script>
+</p>
+<p>So when <script type="math/tex">|z|</script> is big enough</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+& | c_m + c_{m-1} z^{-1} + \cdots + c_1 z^{-(m-1)} + c_0 z^{-m}| \\
+& \geq |c_m| - | c_{m-1} z^{-1} + \cdots + c_1 z^{-(m-1)} + z^{-m} | \\
+& \geq |c_m| - |c_m / 2| \\
+& = |c_m/2|
+\end{align*} 
+</script>
+</p>
+<p>So when <script type="math/tex">|z| > r</script>, <script type="math/tex">|p(z)| \geq |c_m/2||z^m| > |c_m/2| r^m</script>.
+Then <script type="math/tex">|p(z)|</script> achieves its minimum in <script type="math/tex">B(0, r)</script>.</p>
+<p>Normalize <script type="math/tex">p(z)</script> to <script type="math/tex">q(z) = 1 + a_k z^k + \cdots + a_m z^m</script>, where
+<script type="math/tex">|q(z)|</script> achieves its minimum <script type="math/tex">1</script> at <script type="math/tex">z = 0</script>.</p>
+<p>Let <script type="math/tex">\beta^k = -1/a_k</script>, let <script type="math/tex">t \in (0,1)</script> such that <script type="math/tex">|\beta t| < 1</script>, then
+check the value when <script type="math/tex">z = \beta t</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+& |q(z)| = 1 + a_k z^k + \cdots + a_m z^m \\
+& \leq | 1 + a_k z^k| + |a_{k+1} z^{k+1}| + \cdots + |a_m z^m| \\
+& \leq | 1 - t^k| + |a_{k+1} z^{k+1}| + \cdots + |a_m z^m| \\
+& \leq (1 - t^k) + |a_{k+1} \beta^{k+1}| t^{k+1} + \cdots + |a_m \beta^m|t^m \\
+& \leq (1 - t^k) + c t^{k+1} \\
+& = 1 - t^k(1 - ct) \\
+\end{align*} 
+</script>
+</p>
+<p>So if <script type="math/tex">t < \min \{1/c, 1/|\beta |\}</script>, where
+<script type="math/tex">c = |a_{k+1} \beta^{k+1}| + \cdots + |a_m \beta^m|</script>,
+<script type="math/tex">|q(z)| < 1</script>.</p>
+<p>Then we achive a contradiction, so <script type="math/tex">\min |p(z)| = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="413-fundamental-theorem-of-algebra-second-version">4.13 fundamental theorem of algebra, second version</h3>
+<p>If <script type="math/tex">𝑝 ∈ 𝒫(𝐂)</script> is a nonconstant polynomial, then <script type="math/tex">𝑝</script> has a unique 
+factorization (except for the order of the factors) of the form</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = c (z-\lambda_1) \cdots (z-\lambda_m),
+</script>
+</p>
+<p>where <script type="math/tex">c, \lambda_1, \cdots, \lambda_m \in C</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>The existence part can be derived from induction, 4.6 and 4.12.</p>
+<p>The uniqueness is as follows:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+(z-\lambda_1) \cdots (z-\lambda_m) = (z-\tau_1) \cdots (z-\tau_m)
+</script>
+</p>
+<p>Since <script type="math/tex">\lambda_1</script> is a zero, then we can find <script type="math/tex">\tau_i = \lambda_1</script>.
+Let <script type="math/tex">\tau_1 = \lambda_1</script>.</p>
+<p>For all <script type="math/tex">z \neq \lambda_1</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+(z-\lambda_2) \cdots (z-\lambda_m) = (z-\tau_2) \cdots (z-\tau_m)
+</script>
+</p>
+<p>If when <script type="math/tex">z = \lambda_1</script>, the left and the right side is not equal, then
+assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+p_1(z) &= (z-\lambda_2) \cdots (z-\lambda_m) \\
+p_2(z) &= (z-\tau_2) \cdots (z-\tau_m) \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">p_1(z) - p_2(z)</script> has infinite zeros. This contradicts with 4.8.
+So <script type="math/tex">p_1(z) = p_2(z)</script> for all <script type="math/tex">z \in C</script>.</p>
+<p>Then we can continue with induction.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="416-factorization-of-a-polynomial-over-r">4.16 factorization of a polynomial over 𝐑</h3>
+<p>Suppose <script type="math/tex">𝑝 ∈ 𝒫(𝐑)</script> is a nonconstant polynomial. Then <script type="math/tex">𝑝</script> has a unique 
+factorization (except for the order of the factors) of the form</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑝(𝑥) = 𝑐(𝑥 − \lambda_1)⋯(𝑥 − \lambda_𝑚)
+(𝑥^2 + 𝑏_1𝑥 + 𝑐_1)⋯(𝑥^2 + 𝑏_𝑀𝑥 + 𝑐_𝑀),
+</script>
+</p>
+<p><strong>Proof summary</strong>:</p>
+<p>If <script type="math/tex">\lambda</script> is a zero then <script type="math/tex">\bar{\lambda}</script> is also a root,
+assume <script type="math/tex">(x - \lambda)(x - \bar{\lambda}) = x^2 + bx + c</script>, then <script type="math/tex">b, c \in \mathbb{R}</script>.</p>
+<p>Let <script type="math/tex">p(x) = (x^2 + bx + c) q(x)</script>, so <script type="math/tex">q(x) = \frac{p(x)}{(x^2 + bx + c)}</script>.</p>
+<p>For any <script type="math/tex">x \in \mathbb{R}</script>, <script type="math/tex">q(x) \in \mathbb{R}</script>.</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+q(x) = a_0 + a_1 x + \cdots + a_{m} x^{m}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+0 = \Im q(x) = \Im a_0 + \Im a_1 x + \cdots + \Im a_{m} x^{m}
+</script>
+</p>
+<p>have infinite zeros. So <script type="math/tex">\Im a_0 = \Im a_1 = \cdots = \Im a_{m} = 0</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch03ex/" class="btn btn-neutral float-left" title="Chapter 03 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ch04ex/" class="btn btn-neutral float-right" title="Chapter 04 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ch03ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ch04ex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax-config.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

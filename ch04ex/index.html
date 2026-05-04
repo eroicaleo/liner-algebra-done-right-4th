@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 04 Exercises - Linear Algebra Done Right 4th edition</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 04 Exercises";
+        var mkdocs_page_input_path = "ch04ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Linear Algebra Done Right 4th edition
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01notes/">Chapter 01 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02notes/">Chapter 02 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 04 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#section-4a-polynomials">Section 4.A Polynomials</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#4a2">4A.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a6">4A.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a7">4A.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a8">4A.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a9">4A.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a10">4A.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a11">4A.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a12">4A.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a13">4A.13</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">unsolved</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../proof-techniques/">proof-techniques</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Linear Algebra Done Right 4th edition</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Chapter 04 Exercises</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ch04ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-4-polynomials">Chapter 4 Polynomials</h1>
+<h2 id="section-4a-polynomials">Section 4.A Polynomials</h2>
+<h3 id="4a2">4A.2</h3>
+<p>Prove that if 𝑤, 𝑧 ∈ 𝐂, then ∣ |𝑤| − |𝑧| ∣ ≤ |𝑤 − 𝑧|.</p>
+<p><strong>Proof</strong>:</p>
+<p>We can prove</p>
+<p>
+<script type="math/tex; mode=display"> 
+-|w-z| \leq |w| - |z| \leq |w-z|
+</script>
+</p>
+<p>Left side</p>
+<p>
+<script type="math/tex; mode=display"> 
+|w| = |w-z+z| \leq |w-z| + |z|
+</script>
+</p>
+<p>Right side</p>
+<p>
+<script type="math/tex; mode=display"> 
+|z| = |z-w + w| \leq |z-w| + |w| = |w-z| + |w|
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a6">4A.6</h3>
+<p>Suppose that 𝑚 and 𝑛 are positive integers with 𝑚 ≤ 𝑛, and suppose
+<script type="math/tex">\lambda_1, …, \lambda_𝑚 ∈ 𝐅</script>.
+Prove that there exists a polynomial <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script> with
+<script type="math/tex">\deg 𝑝 = 𝑛</script> such that <script type="math/tex">0 = 𝑝(\lambda_1) = ⋯ = 𝑝(\lambda_𝑚)</script> and such that 
+<script type="math/tex">𝑝</script> has no other zeros.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(x) = (x-\lambda_1)^{n-m+1} \cdots (x-\lambda_𝑚)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a7">4A.7</h3>
+<p>Suppose that <script type="math/tex">𝑚</script> is a nonnegative integer,
+<script type="math/tex">𝑧_1, …, 𝑧_{𝑚 + 1}</script> are distinct elements
+of 𝐅, and <script type="math/tex">𝑤_1, …, 𝑤_{𝑚 + 1} ∈ 𝐅</script>. Prove that there exists a unique 
+polynomial <script type="math/tex">𝑝 ∈ 𝒫_𝑚(𝐅)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z_k) = w_k
+</script>
+</p>
+<p>for each <script type="math/tex">𝑘 = 1, …, 𝑚 + 1</script>.</p>
+<blockquote>
+<p><em>This result can be proved without using linear algebra. However, try to find</em>
+<em>the clearer, shorter proof that uses some linear algebra.</em></p>
+</blockquote>
+<p><strong>Proof</strong>:</p>
+<p>Note <script type="math/tex">\mathbf{F}</script> is <script type="math/tex">\mathbf{C}</script> or <script type="math/tex">\mathbf{R}</script>.</p>
+<p>Consider the following <script type="math/tex">m+1</script> vectors in <script type="math/tex">\mathbf{F}^{m+1}</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_i =
+\begin{pmatrix}
+z_1^i \\
+z_2^i \\
+\vdots \\
+z_{m+1}^i \\
+\end{pmatrix},
+i = 0, \cdots, m
+</script>
+</p>
+<p>If </p>
+<p>
+<script type="math/tex; mode=display">
+a_0 v_0 + a_1 v_1 + \cdots + a_m v_m = 0
+</script>
+</p>
+<p>and <script type="math/tex">a_i \neq 0</script> for some <script type="math/tex">i</script>, that means the polynomial</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = a_0 + a_1 z + \cdots + a_{m} z^{m}
+</script>
+</p>
+<p>has <script type="math/tex">m+1</script> zeros: <script type="math/tex">z_1, \cdots, z_{m+1}</script>.</p>
+<p>This is impossible, so <script type="math/tex">a_0 = \cdots = a_m = 0</script>.
+That means <script type="math/tex">v_0, \cdots, v_m</script> are linear independent.
+So they are a basis of <script type="math/tex">\mathbf{F}^{m+1}</script>.</p>
+<p>Then we can find </p>
+<p>
+<script type="math/tex; mode=display"> 
+w = a_0 v_0 + \cdots + a_m v_m
+</script>
+</p>
+<p>where</p>
+<p>
+<script type="math/tex; mode=display"> 
+w =
+\begin{pmatrix}
+w_1 \\
+w_2 \\
+\vdots \\
+w_{m+1} \\
+\end{pmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a8">4A.8</h3>
+<p>Suppose <script type="math/tex">𝑝 ∈ 𝒫(𝐂)</script> has degree <script type="math/tex">𝑚</script>.
+Prove that <script type="math/tex">𝑝</script> has <script type="math/tex">𝑚</script> distinct zeros if and
+only if <script type="math/tex">𝑝</script> and its derivative <script type="math/tex">𝑝'</script> have no zeros in common.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(x) = (x-\lambda_1) \cdots (x-\lambda_m)
+</script>
+</p>
+<p>And <script type="math/tex">\lambda_i</script> are all different. We will prove <script type="math/tex">\lambda_1</script> is not a zero
+of <script type="math/tex">p'(x)</script>.</p>
+<p>Let <script type="math/tex">g(x) = (x-\lambda_2) \cdots (x-\lambda_m)</script>, then <script type="math/tex">g(\lambda_1) \neq 0</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+p'(x) &= g(x) + (x-\lambda_1)g'(x) \\
+p'(\lambda_1) &= g(\lambda_1) + (\lambda_1-\lambda_1)g'(\lambda_1) \\
+&= g(\lambda_1) \\
+& \neq 0
+\end{align*} 
+</script>
+</p>
+<p>So none of <script type="math/tex">\lambda_i</script> is a zero of <script type="math/tex">p'(x)</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>We use contradiction. Assume</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+p(x) &= (x-\lambda)^2(x-\lambda_3)\cdots(x-\lambda_m) \\
+&= (x-\lambda)^2 g(x) \\
+& \Rightarrow \\
+p'(x) &= 2(x-\lambda)g(x) + (x-\lambda)^2 g'(x) \\
+& \Rightarrow \\
+\lambda & \text{ is a zero of } p'(x)
+\end{align*}
+</script>
+</p>
+<p>Then <script type="math/tex">p, p'</script> have a common zero <script type="math/tex">\lambda</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a9">4A.9</h3>
+<p>Prove that every polynomial of odd degree with real coefficients has a real
+zero.</p>
+<p><strong>Proof</strong>:</p>
+<p>This is a immediate result from 4.16.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a10">4A.10</h3>
+<p>For <script type="math/tex">𝑝 ∈ 𝒫(𝐑)</script>, define <script type="math/tex">𝑇𝑝 ∶ 𝐑 → 𝐑</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+(Tp)(x) =
+\begin{cases}
+    \frac{p(x)-p(3)}{x-3} &\text{if } x \neq 3\\
+    p'(3) &\text{if } x = 3\\
+\end{cases} 
+</script>
+</p>
+<p>for each <script type="math/tex">𝑥 ∈ 𝐑</script>. Show that <script type="math/tex">𝑇𝑝 ∈ 𝒫(𝐑)</script> for every
+polynomial <script type="math/tex">𝑝 ∈ 𝒫(𝐑)</script> and
+also show that <script type="math/tex">𝑇 ∶ 𝒫(𝐑) → 𝒫(𝐑)</script> is a linear map.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume </p>
+<p>
+<script type="math/tex; mode=display"> 
+p(x)-p(3) = (x-3)g(x)
+</script>
+</p>
+<p>We would like to show <script type="math/tex">(Tp)(x) = g(x)</script>.</p>
+<p>For <script type="math/tex">x \neq 3</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+(Tp)(x) = \frac{p(x)-p(3)}{x-3} = g(x)
+</script>
+</p>
+<p>For <script type="math/tex">x = 3</script>, note <script type="math/tex">p'(x) = g(x) + (x-3)g(x)</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+(Tp)(x) = p'(3) = g(3) + (3-3)g(3) = g(3)
+</script>
+</p>
+<p>So <script type="math/tex">(Tp)(x) = g(x)</script>. From 4.16, <script type="math/tex">g(x) \in 𝒫(𝐑)</script>.</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+p(x) - p(3) &= (x-3)g(x) \\
+q(x) - q(3) &= (x-3)h(x) \\
+& \Rightarrow \\
+(p+q)(x) - (p+q)(3) &= (x-3)(g+h)(x) \\
+& \Rightarrow \\
+T(p+q) &= g+h = Tp + Tq \\
+\end{align*} 
+</script>
+</p>
+<p>Similarly</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+kp(x) - kp(3) &= (x-3)kg(x) \\
+T(kp) &= kg = kTp\\
+\end{align*}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a11">4A.11</h3>
+<p>Suppose <script type="math/tex">𝑝 ∈ 𝒫(𝐂)</script>. Define <script type="math/tex">𝑞 ∶ 𝐂 → 𝐂</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+q(z) = p(z) \overline{p (\overline{z})}
+</script>
+</p>
+<p>Prove that <script type="math/tex">𝑞</script> is a polynomial with real coefficients.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+p(z) &= (z - \lambda_1) \cdots (z - \lambda_m) \\
+& \Rightarrow \\
+\overline{p(\overline{z})} &= 
+\overline{(\overline{z} - \lambda_1) \cdots (\overline{z} - \lambda_m)} \\
+& \Rightarrow \\
+\overline{p(\overline{z})} &=
+(\overline{z} - \lambda_1) \cdots (\overline{z} - \lambda_m) \\
+& \Rightarrow \\
+q(z) &= (z - \lambda_1)(\overline{z} - \lambda_1)
+\cdots
+(z - \lambda_m)(\overline{z} - \lambda_m) \\
+\end{align*} \\
+</script>
+</p>
+<p>So <script type="math/tex">q(z) \in 𝒫(R)</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a12">4A.12</h3>
+<p>Suppose <script type="math/tex">𝑚</script> is a nonnegative integer and <script type="math/tex">𝑝 ∈ 𝒫_𝑚(𝐂)</script> is such that
+there are distinct real numbers <script type="math/tex">𝑥_0, 𝑥_1, …, 𝑥_𝑚</script> with <script type="math/tex">𝑝(𝑥_𝑘) ∈ 𝐑</script> 
+for each <script type="math/tex">𝑘 = 0, 1, …, 𝑚</script>.
+Prove that all coefficients of <script type="math/tex">𝑝</script> are real.</p>
+<p><strong>Proof</strong>:</p>
+<p>We can use the same approach as 4A.7.</p>
+<p>Consider the following <script type="math/tex">m+1</script> vectors in <script type="math/tex">\mathbf{R}^{m+1}</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_i =
+\begin{pmatrix}
+x_0^i \\
+x_1^i \\
+\vdots \\
+x_{m}^i \\
+\end{pmatrix},
+i = 0, \cdots, m
+</script>
+</p>
+<p>If </p>
+<p>
+<script type="math/tex; mode=display">
+a_0 v_0 + a_1 v_1 + \cdots + a_m v_m = 0
+</script>
+</p>
+<p>and <script type="math/tex">a_i \neq 0</script> for some <script type="math/tex">i</script>, that means the polynomial</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = a_0 + a_1 z + \cdots + a_{m} z^{m}
+</script>
+</p>
+<p>has <script type="math/tex">m+1</script> zeros: <script type="math/tex">x_0, \cdots, x_{m}</script>.</p>
+<p>This is impossible, so <script type="math/tex">a_0 = \cdots = a_m = 0</script>.
+That means <script type="math/tex">v_0, \cdots, v_m</script> are linear independent.
+So they are a basis of <script type="math/tex">\mathbf{R}^{m+1}</script>.</p>
+<p>Then we can find </p>
+<p>
+<script type="math/tex; mode=display"> 
+w = a_0 v_0 + \cdots + a_m v_m
+</script>
+</p>
+<p>where</p>
+<p>
+<script type="math/tex; mode=display"> 
+r =
+\begin{pmatrix}
+r_0 \\
+r_1 \\
+\vdots \\
+r_{m} \\
+\end{pmatrix}
+</script>
+</p>
+<p>Now note that <script type="math/tex">v_0, \cdots, v_m</script> are not only linear independent in
+<script type="math/tex">\mathbf{R}^{m+1}</script>, they are also linear independent in <script type="math/tex">\mathbf{C}^{m+1}</script>
+for the exact same reason.</p>
+<p>So all coefficients of <script type="math/tex">𝑝</script> are real.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a13">4A.13</h3>
+<p>Suppose <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script> with <script type="math/tex">𝑝 ≠ 0</script>. Let <script type="math/tex">𝑈 = \{𝑝𝑞 ∶ 𝑞 ∈ 𝒫(𝐅)\}</script>.</p>
+<p>(a) Show that <script type="math/tex">\dim 𝒫(𝐅)/𝑈 = \deg 𝑝</script>.</p>
+<p>(b) Find a basis of <script type="math/tex">𝒫(𝐅)/𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\deg p = m</script>, and we want to show</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝒫(𝐅)/𝑈 = 𝒫_{m-1}(𝐅)
+</script>
+</p>
+<p>Assume <script type="math/tex">p' + U \in 𝒫(𝐅)/𝑈</script>, from 4.9 division algorithm for polynomials.
+we can find</p>
+<p>
+<script type="math/tex; mode=display"> 
+p' = pq+r 
+</script>
+</p>
+<p>where <script type="math/tex">\deg r < \deg p</script>, so <script type="math/tex">r \in 𝒫_{m-1}(𝐅)</script>.
+Then <script type="math/tex">p'-r = pq \in U</script>. So <script type="math/tex">p'+U = r+U</script>.</p>
+<p>So we established a map <script type="math/tex">T : 𝒫(𝐅)/𝑈 \rightarrow 𝒫_{m-1}(𝐅)</script>.</p>
+<p>We will show this map is well defined. If <script type="math/tex">p_0 + U = p_1 + U</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+p_0 &= pq_0 + r_0 \\
+p_1 &= pq_1 + r_1 \\
+& \Rightarrow \\
+(p_0 - p_1) &= p(q_0 - q_1) + (r_0 - r_1) 
+\end{align*} 
+</script>
+</p>
+<p>Since <script type="math/tex">p_0 - p_1 \in U</script>, then <script type="math/tex">r_0 - r_1 = 0</script>.</p>
+<p>It's easy to prove <script type="math/tex">T</script> is an linear map.</p>
+<p>
+<script type="math/tex">T</script> is surjective, since if <script type="math/tex">r \in 𝒫_{m-1}(𝐅)</script>, <script type="math/tex">T(r+U) = r</script>.</p>
+<p>If <script type="math/tex">T(p_0+U) = 0</script>, then <script type="math/tex">p_0 = pq + 0</script> for some <script type="math/tex">q</script>, so <script type="math/tex">p_0 \in U</script>, i.e.
+<script type="math/tex">p_0 + U = 0 + U</script>.</p>
+<p>So <script type="math/tex">T</script> is an isomorphism.</p>
+<p>For (b), since they are isomorphic, then one basis could be</p>
+<p>
+<script type="math/tex; mode=display"> 
+1 + U, x + U, \cdots, x^{m-1} + U
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch04notes/" class="btn btn-neutral float-left" title="Chapter 04 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../unsolved/" class="btn btn-neutral float-right" title="unsolved">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ch04notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../unsolved/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax-config.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
