@@ -78,6 +78,12 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#4a2">4A.2</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a3">4A.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a4">4A.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a5">4A.5</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#4a6">4A.6</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#4a7">4A.7</a>
@@ -154,6 +160,66 @@
 |z| = |z-w + w| \leq |z-w| + |w| = |w-z| + |w|
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a3">4A.3</h3>
+<p>Suppose 𝑉 is a complex vector space and 𝜑 ∈ 𝑉′ . Define 𝜎 ∶ 𝑉 → 𝐑 by
+𝜎(𝑣) = Re 𝜑(𝑣) for each 𝑣 ∈ 𝑉 . Show that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\varphi (v) = \sigma (v) - i \sigma (iv)
+</script>
+</p>
+<p>for all <script type="math/tex">v \in V</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\sigma (iv) &= \Re \varphi (iv) \\
+&= \Re i \varphi (v) \\
+&= - \Im \varphi (v)
+\end{align*} 
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\sigma (v) - i \sigma(iv)
+&= \Re \varphi (v) - i(- \Im \varphi (v)) \\
+&= \Re \varphi (v) + i \Im \varphi (v) \\
+&= \varphi (v)
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a4">4A.4</h3>
+<p>Suppose <script type="math/tex">𝑚</script> is a positive integer. Is the set</p>
+<p>
+<script type="math/tex; mode=display"> 
+\{0\} \cup \{p \in 𝒫(𝐅) : \deg p = m\}
+</script>
+</p>
+<p>a subspace of <script type="math/tex">𝒫(𝐅)</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>No. Consider <script type="math/tex">m = 2</script>, <script type="math/tex">p_1 = x^2 + x, p_2 = -x^2</script>, but <script type="math/tex">p_1+p_2 = x</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="4a5">4A.5</h3>
+<p>Is the set</p>
+<p>
+<script type="math/tex; mode=display"> 
+U = \{0\} \cup \{p \in 𝒫(𝐅) : \deg p \text{ is even}\}
+</script>
+</p>
+<p>a subspace of <script type="math/tex">𝒫(𝐅)</script>?</p>
+<p><strong>Proof</strong>:</p>
+<p>No. Consider the same example in the previous exercise.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
