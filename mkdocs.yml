@@ -9,7 +9,10 @@ nav:
   - Chapter 02 Exercises: ch02ex.md
   - Chapter 03 Notes: ch03notes.md
   - Chapter 03 Exercises: ch03ex.md
+  - Chapter 04 Notes: ch04notes.md
+  - Chapter 04 Exercises: ch04ex.md
   - unsolved: unsolved.md
+  - proof-techniques: proof-techniques.md
 
 # Order matters: config must run before the MathJax bundle.
 extra_javascript:
