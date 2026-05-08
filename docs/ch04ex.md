@@ -470,3 +470,64 @@ $$
 $$
 
 $\square$
+
+### 4A.14
+
+Suppose $𝑝, 𝑞 ∈ 𝒫(𝐂)$ are nonconstant polynomials with no zeros in common.
+Let $𝑚 = \deg 𝑝$ and $𝑛 = \deg 𝑞$.
+
+Use linear algebra as outlined below in (a)–(c)
+to prove that there exist $𝑟 ∈ 𝒫_{𝑛 − 1}(𝐂)$ and $𝑠 ∈ 𝒫_{𝑚 − 1}(𝐂)$ 
+such that
+
+$$ 
+rp + sq = 1
+$$
+
+
+(a) Define 𝑇 ∶ $𝒫_{𝑛 − 1}(𝐂) × 𝒫_{𝑚 − 1}(𝐂) → 𝒫_{𝑚 + 𝑛 − 1}(𝐂)$ by
+
+$$ 
+T(r, s) = rp + sq
+$$
+
+Show that the linear map $𝑇$ is injective.
+
+**Proof**:
+
+Assume $rp + sq = 0$.
+
+Then $rp = -sq$. Assume $rp = sq$.
+
+Since $p$ and $q$ have no common zeros, if $(x-\lambda_i)^{k_i}$ appears
+in the factorization of $q$, it has to appear in the factorization of $r$.
+
+That means $\deg r \geq \deg q$ but $\deg r = n-1 < n = \deg q$.
+So we have a contradiction.
+
+That means, $r = s = 0$. So $𝑇$ is injective.
+
+$\square$
+
+(b) Show that the linear map 𝑇 in (a) is surjective.
+
+**Proof**:
+
+Since 
+
+$$ 
+\dim 𝒫_{𝑛 − 1}(𝐂) × 𝒫_{𝑚 − 1}(𝐂) = \dim 𝒫_{𝑚 + 𝑛 − 1} = m + n
+$$
+
+Then from 3.65 injectivity is equivalent to surjectivity, $T$ is surjective.
+
+$\square$
+
+(c) Use (b) to conclude that there exist $𝑟 ∈ 𝒫_{𝑛 − 1}(𝐂)$ and
+$𝑠 ∈ 𝒫_{𝑚 − 1}(𝐂)$ such that $𝑟𝑝 + 𝑠𝑞 = 1$.
+
+**Proof**:
+
+This is an immediate result following $T$ is surjective.
+
+$\square$
