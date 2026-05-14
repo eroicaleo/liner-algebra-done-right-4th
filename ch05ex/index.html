@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 05 Exercises - Linear Algebra Done Right 4th edition</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 05 Exercises";
+        var mkdocs_page_input_path = "ch05ex.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Linear Algebra Done Right 4th edition
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01notes/">Chapter 01 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch01ex/">Chapter 01 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02notes/">Chapter 02 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02ex/">Chapter 02 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03notes/">Chapter 03 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03ex/">Chapter 03 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04notes/">Chapter 04 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch04ex/">Chapter 04 Exercises</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../ch05notes.md">Chapter 05 Notes</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 05 Exercises</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#section-5a-invariant-subspaces">Section 5A Invariant Subspaces</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#5a1">5A.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a2">5A.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a3">5A.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a4">5A.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a5">5A.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a6">5A.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a7">5A.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a8">5A.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a9">5A.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a10">5A.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a11">5A.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a12">5A.12</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../unsolved/">unsolved</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../proof-techniques/">proof-techniques</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Linear Algebra Done Right 4th edition</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Chapter 05 Exercises</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ch05ex.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-5-eigenvalues-and-eigenvectors">Chapter 5 Eigenvalues and Eigenvectors</h1>
+<h2 id="section-5a-invariant-subspaces">Section 5A Invariant Subspaces</h2>
+<h3 id="5a1">5A.1</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script>.</p>
+<p>(a) Prove that if <script type="math/tex">𝑈 ⊆ \text{null } T</script>, then <script type="math/tex">𝑈</script> is invariant under <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">u \in U ⊆ \text{null } T</script>， <script type="math/tex">T(u) = 0 \in U</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that if <script type="math/tex">\text{range } T ⊆ 𝑈</script>, then <script type="math/tex">𝑈</script> is invariant under <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">u \in U</script>, then <script type="math/tex">T(u) \in \text{range } T ⊆ U</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a2">5A.2</h3>
+<p>Suppose that <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">V_1, \cdots, V_m</script> are subspaces of <script type="math/tex">𝑉</script> 
+invariant under <script type="math/tex">𝑇</script>.
+Prove that <script type="math/tex">𝑉_1 +⋯ + 𝑉_𝑚</script> is invariant under <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">v \in 𝑉_1 +⋯ + 𝑉_𝑚</script>, then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+v = v_1 + \cdots + v_m, v_i \in V_i
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(v) = T(v_1) + \cdots + T(v_m)
+</script>
+</p>
+<p>Since <script type="math/tex">T(v_i) \in V_i</script>, then <script type="math/tex">T(v) \in 𝑉_1 +⋯ + 𝑉_𝑚</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a3">5A.3</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Prove that the intersection of every collection of
+subspaces of <script type="math/tex">𝑉</script> invariant under <script type="math/tex">𝑇</script> is invariant under <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+U = \cap_i U_i
+</script>
+</p>
+<p>where <script type="math/tex">U_i</script> is invariant under <script type="math/tex">𝑇</script>.</p>
+<p>If <script type="math/tex">v \in U</script>, then <script type="math/tex">v \in U_i</script>, then <script type="math/tex">T(v) \in U_i</script>, so <script type="math/tex">T(v) \in U</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a4">5A.4</h3>
+<p>Prove or give a counterexample: If <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑈</script> is a 
+subspace of <script type="math/tex">𝑉</script> that is invariant under every operator on <script type="math/tex">𝑉</script> , then
+<script type="math/tex">𝑈 = \{0\}</script> or <script type="math/tex">𝑈 = 𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>The statement is correct. We prove by contradition.</p>
+<p>Assume <script type="math/tex">U</script> is a subspace and <script type="math/tex">U \neq \{0\}</script> and <script type="math/tex">U \neq V</script>.</p>
+<p>Let <script type="math/tex">u_1, \cdots, u_m</script> be a basis of <script type="math/tex">U</script> and we can extends it to a basis
+of <script type="math/tex">V</script> by adding <script type="math/tex">v_1, \cdots, v_n</script>.</p>
+<p>Define <script type="math/tex">T</script> such that <script type="math/tex">T(u_i) = v_1, T(v_j) = v_1</script>.
+So <script type="math/tex">T</script> is an operator.</p>
+<p>Then <script type="math/tex">U</script> is not an invariant under <script type="math/tex">T</script>. We reach a contradition.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a5">5A.5</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝐑^2)</script> is defined by <script type="math/tex">𝑇(𝑥, 𝑦) = (−3𝑦, 𝑥)</script>. Find the 
+eigenvalues of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(−3𝑦, 𝑥) &= k(x, y) \\
+& \Rightarrow \\
+x = ky&, -3y = kx \\
+& \Rightarrow \\
+k^2 &= -3
+\end{align*}
+</script>
+</p>
+<p>So <script type="math/tex">T</script> does not have any eigenvalues.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a6">5A.6</h3>
+<p>Define <script type="math/tex">𝑇 ∈ ℒ(𝐅^2)</script> by <script type="math/tex">𝑇(𝑤, 𝑧) = (𝑧, 𝑤)</script>. Find all eigenvalues and 
+eigenvectors of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Note <script type="math/tex">F</script> can either be <script type="math/tex">\mathbb{R}</script> or <script type="math/tex">\mathbb{C}</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+k(w,z) &= (z,w) \\
+& \Rightarrow \\
+z = kw &, kz=w \\
+& \Rightarrow \\
+k^2 &= 1 \\
+& \Rightarrow \\
+k = &\pm1 
+\end{align*} 
+</script>
+</p>
+<p>If <script type="math/tex">k = 1</script>, then the eigenvectors are <script type="math/tex">(a,a)</script>. 
+If <script type="math/tex">k = -1</script>, then the eigenvectors are <script type="math/tex">(a,-a)</script>. </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a7">5A.7</h3>
+<p>Define <script type="math/tex">𝑇 ∈ ℒ(𝐅^3)</script> by <script type="math/tex">𝑇(𝑧_1, 𝑧_2, 𝑧_3) = (2𝑧_2, 0, 5𝑧_3)</script>. Find all 
+eigenvalues and eigenvectors of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note <script type="math/tex">F</script> can either be <script type="math/tex">\mathbb{R}</script> or <script type="math/tex">\mathbb{C}</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+k(𝑧_1, 𝑧_2, 𝑧_3) &= (2𝑧_2, 0, 5𝑧_3) \\
+& \Rightarrow \\
+k z_1 = 2 z_2, k z_2 &= 0, k z_3 = 5 z_3
+\end{align*} 
+</script>
+</p>
+<p>If <script type="math/tex">k = 0</script>, then <script type="math/tex">z_3 = 0</script>. Also we have <script type="math/tex">0 = k z_1 = 2 z_2</script>, so <script type="math/tex">z_2 = 0</script>,
+so the eigenvectors for <script type="math/tex">k = 0</script> will
+be <script type="math/tex">(a, 0, 0)</script> for <script type="math/tex">a \neq 0</script>.</p>
+<p>If <script type="math/tex">k \neq 0</script>, then <script type="math/tex">z_2 = 0</script>, then <script type="math/tex">z_1 = 0</script>. Since the eigenvectors cannot
+be <script type="math/tex">0</script>, so <script type="math/tex">z_3 \neq 0</script>, so <script type="math/tex">k = 5</script>.
+And the eigenvectors will be <script type="math/tex">(0,0, a)</script> for <script type="math/tex">a \neq 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a8">5A.8</h3>
+<p>Suppose <script type="math/tex">𝑃 ∈ ℒ(𝑉)</script> is such that <script type="math/tex">𝑃^2 = 𝑃</script>. Prove that if <script type="math/tex">\lambda</script> is an 
+eigenvalue of <script type="math/tex">𝑃</script>, then <script type="math/tex">\lambda = 0</script> or <script type="math/tex">\lambda = 1</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>First we have the assumption that <script type="math/tex">V</script> is a vector space over
+<script type="math/tex">\mathbb{R}</script> or <script type="math/tex">\mathbb{C}</script>.</p>
+<p>If <script type="math/tex">\lambda</script> is a eigenvalue and <script type="math/tex">u</script> is a an eigenvector, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+P^2(u) &= P(u) \\
+& \Rightarrow \\
+P(\lambda u) &= \lambda u \\ 
+& \Rightarrow \\
+\lambda^2 u &= \lambda u \\ 
+\end{align*} 
+</script>
+</p>
+<p>Since <script type="math/tex">u \neq 0</script>, then <script type="math/tex">\lambda^2 = \lambda</script>.
+Since <script type="math/tex">\lambda</script> is a real or complex number,
+then <script type="math/tex">\lambda = 0</script> or <script type="math/tex">\lambda = 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a9">5A.9</h3>
+<p>Define <script type="math/tex">𝑇 ∶ 𝒫(𝐑) → 𝒫(𝐑)</script> by <script type="math/tex">𝑇𝑝 = 𝑝'</script>. Find all eigenvalues and 
+eigenvectors of <script type="math/tex">T</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(x) = a_0 + a_1 x + \cdots + a_{m} x^{m}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(p) = p'(x) = a_1 + 2 a_2 x + \cdots + m a_{m} x^{m-1}
+</script>
+</p>
+<p>If <script type="math/tex">\lambda</script> is an eigenvalue and <script type="math/tex">p</script> is an eigenvector,</p>
+<p>then </p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \lambda a_0 + \lambda a_1 x + \cdots + \lambda a_{m} x^{m} \\
+&=
+a_1 + 2 a_2 x + \cdots + m a_{m} x^{m-1}
+\end{align*} 
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\lambda a_m &= 0 \\
+\lambda a_{m-1} &= m a_m \\
+&\cdots \\
+\lambda a_1 &= 2 a_2 \\
+\lambda a_0 &= a_1 \\
+\end{align*} 
+</script>
+</p>
+<p>If <script type="math/tex">\lambda = 0</script>, then <script type="math/tex">a_m = \cdots = a_1 = 0</script>, so the eigenvectors are
+<script type="math/tex">p(x) = a \neq 0</script>.</p>
+<p>If <script type="math/tex">\lambda \neq  0</script>, then <script type="math/tex">a_m = \cdots = a_0 = 0</script>, so there is no 
+eigenvectors.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a10">5A.10</h3>
+<p>Define <script type="math/tex">𝑇 ∈ ℒ(𝒫_4(𝐑))</script> by <script type="math/tex">(𝑇𝑝)(𝑥) = 𝑥𝑝'(𝑥)</script> for all <script type="math/tex">𝑥 ∈ 𝐑</script>.
+Find all eigenvalues and eigenvectors of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(x) = a_0 + a_1 x + \cdots + a_{m} x^{m}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(p) = xp'(x) = a_1x + 2 a_2 x^2 + \cdots + m a_{m} x^{m}
+</script>
+</p>
+<p>If <script type="math/tex">\lambda</script> is an eigenvalue and <script type="math/tex">p</script> is an eigenvector,</p>
+<p>then </p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \lambda a_0 + \lambda a_1 x + \cdots + \lambda a_{m} x^{m} \\
+&=
+a_1x + 2 a_2 x^2 + \cdots + m a_{m} x^{m}
+\end{align*} 
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\lambda a_m &= m a_m \\
+\lambda a_{m-1} &= (m-1) a_{m-1} \\
+&\cdots \\
+\lambda a_1 &=  a_1 \\
+\lambda a_0 &= 0 \\
+\end{align*} 
+</script>
+</p>
+<p>If <script type="math/tex">\lambda = 0</script>, then <script type="math/tex">a_m = \cdots = a_1 = 0</script>, so the eigenvectors are
+<script type="math/tex">p(x) = a \neq 0</script>.</p>
+<p>If <script type="math/tex">\lambda \neq  0</script>, then we can have <script type="math/tex">\lambda</script> to be any positive integer <script type="math/tex">n</script>,
+and then eigenvectors will be <script type="math/tex">ax^n</script> for <script type="math/tex">a \neq 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a11">5A.11</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>,
+and <script type="math/tex">𝛼 ∈ 𝐅</script>.
+Prove that there exists <script type="math/tex">𝛿 > 0</script> such that
+<script type="math/tex">𝑇− \lambda 𝐼</script> is invertible
+for all <script type="math/tex">\lambda ∈ 𝐅</script> such that
+<script type="math/tex">0 < |\alpha − \lambda| < \delta</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Note <script type="math/tex">𝐅</script> is either <script type="math/tex">\mathbf{R}</script> or <script type="math/tex">\mathbf{C}</script>.</p>
+<p>Since <script type="math/tex">V</script> is finite-dimensional, then from
+"5.12 operator cannot have more eigenvalues
+than dimension of vector space", <script type="math/tex">T</script> has at most
+<script type="math/tex">\dim V</script> eigenvalues.</p>
+<p>Then we can find <script type="math/tex">\delta</script> such that
+<script type="math/tex">|\alpha - \lambda_i| \geq \delta</script> where <script type="math/tex">\lambda_i</script> is
+an eigenvalue.</p>
+<p>So if <script type="math/tex">0 < |\alpha − \lambda| < \delta</script>, then
+<script type="math/tex">\lambda</script> is not an eigenvalue.</p>
+<p>Then from "5.7 equivalent conditions to be an eigenvalue"
+we know <script type="math/tex">𝑇− \lambda 𝐼</script> is invertible.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a12">5A.12</h3>
+<p>Suppose <script type="math/tex">𝑉 = 𝑈 ⊕ 𝑊</script>, where <script type="math/tex">𝑈</script> and <script type="math/tex">𝑊</script> are nonzero subspaces of <script type="math/tex">𝑉</script>. 
+Define <script type="math/tex">𝑃 ∈ ℒ(𝑉)</script> by <script type="math/tex">𝑃(𝑢 + 𝑤) = 𝑢</script> for each <script type="math/tex">𝑢 ∈ 𝑈</script> and
+each <script type="math/tex">𝑤 ∈ 𝑊</script>. Find all eigenvalues and eigenvectors of <script type="math/tex">𝑃</script> .</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\lambda</script> is an eigenvalue, then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+P(u+w) &= \lambda (u+w) = u \\
+& \Rightarrow \\
+(\lambda - 1) u + \lambda w &= 0 \\
+& \Rightarrow \\
+(\lambda - 1) u &= \lambda w = 0 & \text{because } 𝑉 = 𝑈 ⊕ 𝑊 \\
+\end{align*} 
+</script>
+</p>
+<p>If <script type="math/tex">\lambda \neq 1</script> and <script type="math/tex">\lambda \neq 0</script>, then we must have <script type="math/tex">u = w = 0</script>,
+then <script type="math/tex">u+w</script> is not an eigenvector, as a result, <script type="math/tex">\lambda</script> is not
+an eigenvalue.</p>
+<p>If <script type="math/tex">\lambda = 1</script>, then every nonzero vector in <script type="math/tex">U</script> is an eigenvector.
+Indeed, given <script type="math/tex">u \in U, u \neq 0</script>, then <script type="math/tex">P(u) = u = 1 \cdot u</script>.</p>
+<p>If <script type="math/tex">\lambda = 0</script>, then every nonzero vector in <script type="math/tex">W</script> is an eigenvector.
+Indeed, given <script type="math/tex">w \in W, w \neq 0</script>, then <script type="math/tex">P(w) = 0 = 0 \cdot w</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch04ex/" class="btn btn-neutral float-left" title="Chapter 04 Exercises"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../unsolved/" class="btn btn-neutral float-right" title="unsolved">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ch04ex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../unsolved/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax-config.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

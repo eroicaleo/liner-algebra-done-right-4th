@@ -100,9 +100,19 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#4a13">4A.13</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4a14">4A.14</a>
+    </li>
         </ul>
     </li>
     </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../ch05notes.md">Chapter 05 Notes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch05ex/">Chapter 05 Exercises</a>
                 </li>
               </ul>
               <ul>
@@ -564,12 +574,60 @@ p_1 &= pq_1 + r_1 \\
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h3 id="4a14">4A.14</h3>
+<p>Suppose <script type="math/tex">𝑝, 𝑞 ∈ 𝒫(𝐂)</script> are nonconstant polynomials with no zeros in common.
+Let <script type="math/tex">𝑚 = \deg 𝑝</script> and <script type="math/tex">𝑛 = \deg 𝑞</script>.</p>
+<p>Use linear algebra as outlined below in (a)–(c)
+to prove that there exist <script type="math/tex">𝑟 ∈ 𝒫_{𝑛 − 1}(𝐂)</script> and <script type="math/tex">𝑠 ∈ 𝒫_{𝑚 − 1}(𝐂)</script> 
+such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+rp + sq = 1
+</script>
+</p>
+<p>(a) Define 𝑇 ∶ <script type="math/tex">𝒫_{𝑛 − 1}(𝐂) × 𝒫_{𝑚 − 1}(𝐂) → 𝒫_{𝑚 + 𝑛 − 1}(𝐂)</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(r, s) = rp + sq
+</script>
+</p>
+<p>Show that the linear map <script type="math/tex">𝑇</script> is injective.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">rp + sq = 0</script>.</p>
+<p>Then <script type="math/tex">rp = -sq</script>. Assume <script type="math/tex">rp = sq</script>.</p>
+<p>Since <script type="math/tex">p</script> and <script type="math/tex">q</script> have no common zeros, if <script type="math/tex">(x-\lambda_i)^{k_i}</script> appears
+in the factorization of <script type="math/tex">q</script>, it has to appear in the factorization of <script type="math/tex">r</script>.</p>
+<p>That means <script type="math/tex">\deg r \geq \deg q</script> but <script type="math/tex">\deg r = n-1 < n = \deg q</script>.
+So we have a contradiction.</p>
+<p>That means, <script type="math/tex">r = s = 0</script>. So <script type="math/tex">𝑇</script> is injective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that the linear map 𝑇 in (a) is surjective.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since </p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim 𝒫_{𝑛 − 1}(𝐂) × 𝒫_{𝑚 − 1}(𝐂) = \dim 𝒫_{𝑚 + 𝑛 − 1} = m + n
+</script>
+</p>
+<p>Then from 3.65 injectivity is equivalent to surjectivity, <script type="math/tex">T</script> is surjective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Use (b) to conclude that there exist <script type="math/tex">𝑟 ∈ 𝒫_{𝑛 − 1}(𝐂)</script> and
+<script type="math/tex">𝑠 ∈ 𝒫_{𝑚 − 1}(𝐂)</script> such that <script type="math/tex">𝑟𝑝 + 𝑠𝑞 = 1</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>This is an immediate result following <script type="math/tex">T</script> is surjective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../ch04notes/" class="btn btn-neutral float-left" title="Chapter 04 Notes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../unsolved/" class="btn btn-neutral float-right" title="unsolved">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ch05ex/" class="btn btn-neutral float-right" title="Chapter 05 Exercises">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -599,7 +657,7 @@ p_1 &= pq_1 + r_1 \\
       <span><a href="../ch04notes/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../unsolved/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../ch05ex/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
