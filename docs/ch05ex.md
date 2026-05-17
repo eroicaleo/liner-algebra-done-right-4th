@@ -352,3 +352,433 @@ If $\lambda = 0$, then every nonzero vector in $W$ is an eigenvector.
 Indeed, given $w \in W, w \neq 0$, then $P(w) = 0 = 0 \cdot w$.
 
 $\square$
+
+### 5A.13
+
+Suppose $𝑇 ∈ ℒ(𝑉)$. Suppose $𝑆 ∈ ℒ(𝑉)$ is invertible.
+
+(a) Prove that $𝑇$ and $𝑆^{−1}𝑇𝑆$ have the same eigenvalues.
+
+**Proof**:
+
+If $\lambda$ is an eigenvalue of $T$, then we can find $v \neq 0$ such
+that $T(v) = \lambda v$. Since $S$ is invertible, we can find
+$u$ such that $u = S^{-1}(v)$. Since $S^{-1}$ is invertible and $v \neq 0$, then $u \neq 0$.
+
+$$ 
+\begin{align*}
+𝑆^{−1}𝑇𝑆(u) &= 𝑆^{−1}𝑇𝑆(S^{-1}(v)) \\
+&= 𝑆^{−1}𝑇(v) \\
+&= 𝑆^{−1}(\lambda v) \\
+&= \lambda 𝑆^{−1}(v) \\
+&= \lambda u \\
+\end{align*} 
+$$
+
+On the other hand, if $\lambda$ is an eigenvalue of $𝑆^{−1}𝑇𝑆$,
+and assume $v \neq 0$ such
+that $𝑆^{−1}𝑇𝑆(v) = \lambda v$
+
+Then we have
+
+$$ 
+\begin{align*}
+S(𝑆^{−1}𝑇𝑆(v)) &= S(\lambda v) \\
+TS(v) &= \lambda S(v) \\
+\end{align*} 
+$$
+
+Since $v \neq 0$ and $S$ is invertible, then $S(v) \neq 0$.
+So $S(v)$ is an eigenvector of $T$.
+
+$\square$
+
+(b) What is the relationship between the eigenvectors of $𝑇$ and
+the eigenvectors of $𝑆^{−1}𝑇𝑆$?
+
+**Proof**:
+
+From (a), if $v$ is an eigenvector of $T$, then $S^{-1}(v)$ is an eigenvector
+of $𝑆^{−1}𝑇𝑆$.
+
+Conversely, if $v$ is an eigenvector of $𝑆^{−1}𝑇𝑆$, then
+$S(v)$ is an eigenvector of $T$.
+
+$\square$
+
+### 5A.14
+
+Give an example of an operator on $𝐑^4$ that has no (real) eigenvalues.
+
+**Solution**:
+
+Consider this operator (borrowed from 5.9(b))
+
+$$ 
+T : (a, b, c, d) \rightarrow (-b, a, -d, c)
+$$
+
+Assume $k$ is an real eigenvalue, then
+
+$$ 
+T((a, b, c, d)) = k (a, b, c, d) = (-b, a, -d, c)
+$$
+
+Then
+
+$$ 
+\begin{align*}
+ka &= -b \\
+kb &= a  \\
+kc &= -d \\
+kd &= c  \\
+& \Rightarrow \\
+k^2 b = -b &,
+k^2 d = -d 
+\end{align*} 
+$$
+
+If $k \neq 0$, then $(k^2+1) > 0$ so $(k^2+1)b = 0$ means $b = 0$. Similarly
+$d = 0$, then $a = c = 0$, so $k$ is not an
+eigenvalue.
+
+If $k = 0$, then $a = c = 0$, then $b = d = 0$, so $k$ is still not an
+eigenvalue.
+
+$\square$
+
+### 5A.15
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and $\lambda ∈ 𝐅$. Show that $\lambda$ 
+is an eigenvalue of $𝑇$ if and only if $\lambda$ is an eigenvalue of the dual operator
+$𝑇' ∈ ℒ(𝑉')$.
+
+**Proof**
+
+Given $v_1, \cdots, v_m$ be a basis of $V$ and $\varphi_1, \cdots, \varphi_m$
+be its dual basis.
+
+Let $A$ be the matrix of $T$ under basis $v_1, \cdots, v_m$ and
+$A'$ be the matrix of $T'$ under basis $\varphi_1, \cdots, \varphi_m$.
+
+From "3.132 matrix of $𝑇'$ is transpose of matrix of $𝑇$", we know
+$A' = A^t$.
+
+Let $E$ be the identity matrix, then the matrix for operator $T - \lambda I$
+is $A - \lambda E$. Similarly, the matrix for operator $T' - \lambda I'$,
+is $A' - \lambda E$.
+
+Note that $(A - \lambda E)^t = A^t - \lambda E^t = A' - \lambda E$.
+
+Then from "5.7 equivalent conditions to be an eigenvalue" we have the
+following equivalent relation.
+
+$$ 
+\begin{align*}
+& \lambda \text{ is an eigenvalue of } 𝑇 \\
+& \Leftrightarrow \\
+& T - \lambda I \text{ is not invertible} \\
+& \Leftrightarrow \\
+& \text{dim range } T - \lambda I < \dim V \\
+& \Leftrightarrow \\
+& \text{column rank of } A - \lambda E < \dim V \\
+& \Leftrightarrow \\
+& \text{row rank of } A - \lambda E < \dim V \\
+& \Leftrightarrow \\
+& \text{column rank of } A' - \lambda E < \dim V
+& \text{because } (A - \lambda E)^t = A' - \lambda E\\
+& \Leftrightarrow \\
+& \text{dim range } T' - \lambda I' < \dim V \\
+& \Leftrightarrow \\
+& T' - \lambda I' \text{ is not invertible} \\
+& \Leftrightarrow \\
+& \lambda \text{ is an eigenvalue of the dual operator } T'
+\end{align*} 
+$$
+
+$\square$
+
+The following is my original thought, but it seems not working.
+
+$\Rightarrow$
+
+Assume $\lambda$ is an eigenvalue of $𝑇$, and let $v_1$ be an eigenvector so
+$T(v_1) = \lambda v_1 = w_1$.
+
+Note $w_1 \in \text{range } T$, we can extend it to a basis of $\text{range } T$
+by adding $w_2, \cdots, w_m$
+
+Then we can find a group of linear independent vectors $v_1, \cdots, v_m$ 
+such that $T(v_i) = w_i$.
+
+Then we can find a basis of $\text{null } T$: $u_1, \cdots, u_n$.
+
+Together
+$v_1, \cdots, v_m, u_1, \cdots, u_n$ forms a basis of $V$.
+
+Furthermore, we can extend $w_1, \cdots, w_m$ to a basis of $V$ by adding
+vectors $x_1, \cdots, x_n$ 
+
+Then consider the dual basis $\varphi_1, \cdots, \varphi_{m+n}$ of
+$w_1, \cdots, w_m, x_1, \cdots, x_n$.
+
+Let
+
+$$
+\begin{align*}
+v &= a_1 v_1 + \cdots + a_m v_m + b_1 u_1 + \cdots + b_n u_n \\
+&= a_1 v_1 + \cdots + a_m v_m + b_1 u_1 + \cdots + b_n u_n
+\end{align*} 
+
+$$
+
+Then
+
+$$ 
+\begin{align*}
+T'(\varphi_1)(v) &= \varphi_1(T(v)) \\
+&= \varphi_1(a_1 Tv_1 + \cdots + a_m Tv_m) \\
+&= \varphi_1(a_1 w_1 + \cdots + a_m w_m) \\
+&= a_1 w_1
+\end{align*} 
+$$
+
+$\square$
+
+### 5A.16
+
+Suppose $𝑣_1, …, 𝑣_𝑛$ is a basis of $𝑉$ and $𝑇 ∈ ℒ(𝑉)$.
+Prove that if $\lambda$ is an
+eigenvalue of $𝑇$, then
+
+$$
+|\lambda| ≤ 𝑛 \max \{∣ℳ(𝑇)_{𝑗, 𝑘}∣ : 1 ≤ 𝑗, 𝑘 ≤ 𝑛 \}
+$$
+
+, where $ℳ(𝑇)_{𝑗, 𝑘}$ denotes the entry in row $𝑗$, column $𝑘$ of
+the matrix of $𝑇$ with respect to the basis $𝑣_1, …, 𝑣_𝑛$.
+
+**Proof**:
+
+Let $A = ℳ(𝑇)$, and $M = \max \{∣ℳ(𝑇)_{𝑗, 𝑘}∣ : 1 ≤ 𝑗, 𝑘 ≤ 𝑛 \}$ . 
+
+Assume $v$ is an eigenvector and
+$T(v) = \lambda v$.
+
+Also assume
+
+$$ 
+v = a_1 v_1 + \cdots + a_n v_n
+$$
+
+So we have
+
+$$ 
+\begin{align*}
+\lambda v &= T(v) \\
+&= a_1 T(v_1) + \cdots + a_n T(v_n)
+\end{align*} 
+$$
+
+On the other hand
+
+$$ 
+\lambda v = \lambda a_1 v_1 + \cdots + \lambda a_n v_n
+$$
+
+So we have
+
+$$ 
+a_1 T(v_1) + \cdots + a_n T(v_n) = \lambda a_1 v_1 + \cdots + \lambda a_n v_n
+$$
+Compare the coefficients of $v_1, \cdots, v_n$ on both sides, we have
+
+$$
+\begin{align*}
+\lambda a_1 &= a_1 A_{1,1} + a_2 A_{1,2} + \cdots + a_n A_{1, n} \\
+\lambda a_2 &= a_1 A_{2,1} + a_2 A_{2,2} + \cdots + a_n A_{2, n} \\
+\cdots \\
+\lambda a_n &= a_1 A_{n,1} + a_2 A_{n,2} + \cdots + a_n A_{n, n} \\
+\end{align*} 
+$$
+
+Assume $|a_1| \geq |a_i|$, then we must have $|a_1| > 0$.
+This is because $v$ as an eigenvector cannot be $0$.
+
+$$ 
+\begin{align*}
+|\lambda a_1| &\leq |a_1 A_{1,1}| + |a_2 A_{1,2}| + \cdots + |a_n A_{1, n}| \\
+&\Rightarrow \\
+|\lambda | &\leq
+|a_1 A_{1,1}|/|a_1| + |a_2 A_{1,2}|/|a_1| + \cdots + |a_n A_{1, n}|/|a_1| \\
+&\leq |A_{1,1}| + |A_{1,2}| + \cdots + |A_{1, n}|\\
+& \leq M + M + \cdots + M \\
+& \leq nM \\
+\end{align*} 
+$$
+
+$\square$
+
+### 5A.17
+
+Suppose $𝐅 = 𝐑, 𝑇 ∈ ℒ(𝑉)$, and $\lambda ∈ 𝐑$. Prove that $\lambda$ is an 
+eigenvalue of 𝑇
+if and only if $\lambda$ is an eigenvalue of the complexification $𝑇_𝐂$.
+
+The complexification is defined in Exercise 1B.8
+See Exercise 33 in Section 3B for the definition of $𝑇_𝐂$.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $\lambda$ is an eigenvalue of $T$ and $v$ is an eigenvector,
+then $T(v) = \lambda v$.
+
+Now consider
+
+$$
+\begin{align*}
+T_c (v + iv) &= T(v) + i T(v) \\
+&= \lambda v + i (\lambda v) \\
+&= \lambda (v + iv) \\
+\end{align*}
+$$ 
+
+Since $v \neq 0$, then $v + iv \neq 0$.
+Then $v + iv$ is an eigenvector and $\lambda$ is an eigenvalue.
+
+$\Leftarrow$
+
+Assume $\lambda$ is an eigenvalue of $T_C$ and $u + iv \neq 0$ is an 
+eigenvector. Then $u \neq 0$ or $v \neq 0$.
+
+$$ 
+\begin{align*}
+T_C(u+iv) &= \lambda (u+iv) \\
+&\Rightarrow \\
+T(u) + i T(v) &= \lambda u + i \lambda v \\
+&\Rightarrow \\
+T(u) = \lambda u &, T(v) = \lambda v \\
+\end{align*} 
+$$
+
+So one of $u$ or $v$ is an eigenvector for sure. And $\lambda$ is
+an eigenvalue.
+
+$\square$
+
+### 5A.18
+
+Suppose $𝐅 = 𝐑, 𝑇 ∈ ℒ(𝑉)$, and $\lambda ∈ 𝐂$. Prove that $\lambda$ is an 
+eigenvalue of the complexification $𝑇_𝐂$ if and only if $\overline{\lambda}$ 
+is an eigenvalue of $𝑇_𝐂$.
+
+**Proof**:
+
+$\Rightarrow$
+
+$\lambda = a + bi$ is an eigenvalue of the complexification $𝑇_𝐂$,
+then there is a $u+iv \neq 0$ such that
+
+So we have
+
+$$
+\begin{align*}
+T_C(u+iv) &= T(u) + iT(v) \\
+&= \lambda (u+iv) \\
+&=
+(a+bi) (u+iv) \\
+&= (au - bv) + i(bu+av) \\
+&\Rightarrow \\
+T(u) = (au - bv) &, T(v) = bu+av \\
+\end{align*} 
+$$
+
+Now consider
+
+$$
+\begin{align*}
+T_C(u-iv) &= T(u) - iT(v) \\
+&= (au - bv) - i(bu+av) \\
+&= (a-ib)(u-iv) \\
+\end{align*} 
+$$ 
+
+So $\overline{\lambda} = a-bi$ is also an eigenvalue of $T_C$.
+
+The other direction is similar.
+
+$\square$
+
+### 5A.19
+
+Show that the forward shift operator $𝑇 ∈ ℒ(𝐅^∞)$ defined by
+
+$$ 
+𝑇(𝑧_1, 𝑧_2, … ) = (0, 𝑧_1, 𝑧_2, … )
+$$
+
+has no eigenvalues.
+
+**Proof**:
+
+We use contradition.
+
+Assume $\lambda$ is an eigenvalue and $(𝑧_1, 𝑧_2, … )$ is an eigenvector
+So we can find $z_m \neq 0$.
+
+Also
+
+$$
+\begin{align*}
+\lambda z_1 &= 0 \\
+\lambda z_2 &= z_1 \\
+&\cdots \\
+\lambda z_{m} &= z_{m-1} \\
+\lambda z_{m+1} &= z_{m} \\
+\end{align*} 
+$$
+
+If $\lambda = 0$, then $\lambda z_{m+1} = 0 \neq z_m$, so we have contradition.
+
+If $\lambda \neq 0$, then since $\lambda z_1 = 0$, we have $z_1 = 0$,
+similarly, $z_2 = \cdots = z_m = 0$, we reach a contradition.
+
+So $T$ has no eigenvalues.
+
+$\square$
+
+### 5A.20
+
+Define the backward shift operator $𝑆 ∈ ℒ(𝐅^∞)$ by
+
+$$ 
+𝑆(𝑧_1, 𝑧_2, 𝑧_3, … ) = (𝑧_2, 𝑧_3, … ).
+$$
+
+(a) Show that every element of $𝐅$ is an eigenvalue of $𝑆$.
+
+**Proof**:
+
+Let $\lambda \in F$.
+
+If $\lambda = 0$, then $(1, 0, 0, \cdots )$ is an eigenvector.
+
+If $\lambda \neq 0$, then $(1, \lambda, \lambda ^2, \cdots )$ is an
+eigenvector.
+
+$\square$
+
+(b) Find all eigenvectors of $𝑆$.
+
+**Solution**:
+
+From part (a), the eigenvectors are $(a, 0, 0, \cdots )$ with $a \neq 0$
+and $(1, \lambda, \lambda ^2, \cdots )$.
+
+$\square$
+
+### 5A.21
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ is invertible.
