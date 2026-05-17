@@ -108,6 +108,24 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5a12">5A.12</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a13">5A.13</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a14">5A.14</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a15">5A.15</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a16">5A.16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a17">5A.17</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a18">5A.18</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a19">5A.19</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a20">5A.20</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a21">5A.21</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -444,6 +462,385 @@ Indeed, given <script type="math/tex">w \in W, w \neq 0</script>, then <script t
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h3 id="5a13">5A.13</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Suppose <script type="math/tex">𝑆 ∈ ℒ(𝑉)</script> is invertible.</p>
+<p>(a) Prove that <script type="math/tex">𝑇</script> and <script type="math/tex">𝑆^{−1}𝑇𝑆</script> have the same eigenvalues.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">T</script>, then we can find <script type="math/tex">v \neq 0</script> such
+that <script type="math/tex">T(v) = \lambda v</script>. Since <script type="math/tex">S</script> is invertible, we can find
+<script type="math/tex">u</script> such that <script type="math/tex">u = S^{-1}(v)</script>. Since <script type="math/tex">S^{-1}</script> is invertible and <script type="math/tex">v \neq 0</script>, then <script type="math/tex">u \neq 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+𝑆^{−1}𝑇𝑆(u) &= 𝑆^{−1}𝑇𝑆(S^{-1}(v)) \\
+&= 𝑆^{−1}𝑇(v) \\
+&= 𝑆^{−1}(\lambda v) \\
+&= \lambda 𝑆^{−1}(v) \\
+&= \lambda u \\
+\end{align*} 
+</script>
+</p>
+<p>On the other hand, if <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">𝑆^{−1}𝑇𝑆</script>,
+and assume <script type="math/tex">v \neq 0</script> such
+that <script type="math/tex">𝑆^{−1}𝑇𝑆(v) = \lambda v</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+S(𝑆^{−1}𝑇𝑆(v)) &= S(\lambda v) \\
+TS(v) &= \lambda S(v) \\
+\end{align*} 
+</script>
+</p>
+<p>Since <script type="math/tex">v \neq 0</script> and <script type="math/tex">S</script> is invertible, then <script type="math/tex">S(v) \neq 0</script>.
+So <script type="math/tex">S(v)</script> is an eigenvector of <script type="math/tex">T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) What is the relationship between the eigenvectors of <script type="math/tex">𝑇</script> and
+the eigenvectors of <script type="math/tex">𝑆^{−1}𝑇𝑆</script>?</p>
+<p><strong>Proof</strong>:</p>
+<p>From (a), if <script type="math/tex">v</script> is an eigenvector of <script type="math/tex">T</script>, then <script type="math/tex">S^{-1}(v)</script> is an eigenvector
+of <script type="math/tex">𝑆^{−1}𝑇𝑆</script>.</p>
+<p>Conversely, if <script type="math/tex">v</script> is an eigenvector of <script type="math/tex">𝑆^{−1}𝑇𝑆</script>, then
+<script type="math/tex">S(v)</script> is an eigenvector of <script type="math/tex">T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a14">5A.14</h3>
+<p>Give an example of an operator on <script type="math/tex">𝐑^4</script> that has no (real) eigenvalues.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider this operator (borrowed from 5.9(b))</p>
+<p>
+<script type="math/tex; mode=display"> 
+T : (a, b, c, d) \rightarrow (-b, a, -d, c)
+</script>
+</p>
+<p>Assume <script type="math/tex">k</script> is an real eigenvalue, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+T((a, b, c, d)) = k (a, b, c, d) = (-b, a, -d, c)
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+ka &= -b \\
+kb &= a  \\
+kc &= -d \\
+kd &= c  \\
+& \Rightarrow \\
+k^2 b = -b &,
+k^2 d = -d 
+\end{align*} 
+</script>
+</p>
+<p>If <script type="math/tex">k \neq 0</script>, then <script type="math/tex">(k^2+1) > 0</script> so <script type="math/tex">(k^2+1)b = 0</script> means <script type="math/tex">b = 0</script>. Similarly
+<script type="math/tex">d = 0</script>, then <script type="math/tex">a = c = 0</script>, so <script type="math/tex">k</script> is not an
+eigenvalue.</p>
+<p>If <script type="math/tex">k = 0</script>, then <script type="math/tex">a = c = 0</script>, then <script type="math/tex">b = d = 0</script>, so <script type="math/tex">k</script> is still not an
+eigenvalue.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a15">5A.15</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">\lambda ∈ 𝐅</script>. Show that <script type="math/tex">\lambda</script> 
+is an eigenvalue of <script type="math/tex">𝑇</script> if and only if <script type="math/tex">\lambda</script> is an eigenvalue of the dual operator
+<script type="math/tex">𝑇' ∈ ℒ(𝑉')</script>.</p>
+<p><strong>Proof</strong></p>
+<p>Given <script type="math/tex">v_1, \cdots, v_m</script> be a basis of <script type="math/tex">V</script> and <script type="math/tex">\varphi_1, \cdots, \varphi_m</script>
+be its dual basis.</p>
+<p>Let <script type="math/tex">A</script> be the matrix of <script type="math/tex">T</script> under basis <script type="math/tex">v_1, \cdots, v_m</script> and
+<script type="math/tex">A'</script> be the matrix of <script type="math/tex">T'</script> under basis <script type="math/tex">\varphi_1, \cdots, \varphi_m</script>.</p>
+<p>From "3.132 matrix of <script type="math/tex">𝑇'</script> is transpose of matrix of <script type="math/tex">𝑇</script>", we know
+<script type="math/tex">A' = A^t</script>.</p>
+<p>Let <script type="math/tex">E</script> be the identity matrix, then the matrix for operator <script type="math/tex">T - \lambda I</script>
+is <script type="math/tex">A - \lambda E</script>. Similarly, the matrix for operator <script type="math/tex">T' - \lambda I'</script>,
+is <script type="math/tex">A' - \lambda E</script>.</p>
+<p>Note that <script type="math/tex">(A - \lambda E)^t = A^t - \lambda E^t = A' - \lambda E</script>.</p>
+<p>Then from "5.7 equivalent conditions to be an eigenvalue" we have the
+following equivalent relation.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+& \lambda \text{ is an eigenvalue of } 𝑇 \\
+& \Leftrightarrow \\
+& T - \lambda I \text{ is not invertible} \\
+& \Leftrightarrow \\
+& \text{dim range } T - \lambda I < \dim V \\
+& \Leftrightarrow \\
+& \text{column rank of } A - \lambda E < \dim V \\
+& \Leftrightarrow \\
+& \text{row rank of } A - \lambda E < \dim V \\
+& \Leftrightarrow \\
+& \text{column rank of } A' - \lambda E < \dim V
+& \text{because } (A - \lambda E)^t = A' - \lambda E\\
+& \Leftrightarrow \\
+& \text{dim range } T' - \lambda I' < \dim V \\
+& \Leftrightarrow \\
+& T' - \lambda I' \text{ is not invertible} \\
+& \Leftrightarrow \\
+& \lambda \text{ is an eigenvalue of the dual operator } T'
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>The following is my original thought, but it seems not working.</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">𝑇</script>, and let <script type="math/tex">v_1</script> be an eigenvector so
+<script type="math/tex">T(v_1) = \lambda v_1 = w_1</script>.</p>
+<p>Note <script type="math/tex">w_1 \in \text{range } T</script>, we can extend it to a basis of <script type="math/tex">\text{range } T</script>
+by adding <script type="math/tex">w_2, \cdots, w_m</script>
+</p>
+<p>Then we can find a group of linear independent vectors <script type="math/tex">v_1, \cdots, v_m</script> 
+such that <script type="math/tex">T(v_i) = w_i</script>.</p>
+<p>Then we can find a basis of <script type="math/tex">\text{null } T</script>: <script type="math/tex">u_1, \cdots, u_n</script>.</p>
+<p>Together
+<script type="math/tex">v_1, \cdots, v_m, u_1, \cdots, u_n</script> forms a basis of <script type="math/tex">V</script>.</p>
+<p>Furthermore, we can extend <script type="math/tex">w_1, \cdots, w_m</script> to a basis of <script type="math/tex">V</script> by adding
+vectors <script type="math/tex">x_1, \cdots, x_n</script>
+</p>
+<p>Then consider the dual basis <script type="math/tex">\varphi_1, \cdots, \varphi_{m+n}</script> of
+<script type="math/tex">w_1, \cdots, w_m, x_1, \cdots, x_n</script>.</p>
+<p>Let</p>
+<p>$$
+<script type="math/tex; mode=display">\begin{align*}
+v &= a_1 v_1 + \cdots + a_m v_m + b_1 u_1 + \cdots + b_n u_n \\
+&= a_1 v_1 + \cdots + a_m v_m + b_1 u_1 + \cdots + b_n u_n
+\end{align*}</script>
+</p>
+<p>$$</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T'(\varphi_1)(v) &= \varphi_1(T(v)) \\
+&= \varphi_1(a_1 Tv_1 + \cdots + a_m Tv_m) \\
+&= \varphi_1(a_1 w_1 + \cdots + a_m w_m) \\
+&= a_1 w_1
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a16">5A.16</h3>
+<p>Suppose <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is a basis of <script type="math/tex">𝑉</script> and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Prove that if <script type="math/tex">\lambda</script> is an
+eigenvalue of <script type="math/tex">𝑇</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+|\lambda| ≤ 𝑛 \max \{∣ℳ(𝑇)_{𝑗, 𝑘}∣ : 1 ≤ 𝑗, 𝑘 ≤ 𝑛 \}
+</script>
+</p>
+<p>, where <script type="math/tex">ℳ(𝑇)_{𝑗, 𝑘}</script> denotes the entry in row <script type="math/tex">𝑗</script>, column <script type="math/tex">𝑘</script> of
+the matrix of <script type="math/tex">𝑇</script> with respect to the basis <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">A = ℳ(𝑇)</script>, and <script type="math/tex">M = \max \{∣ℳ(𝑇)_{𝑗, 𝑘}∣ : 1 ≤ 𝑗, 𝑘 ≤ 𝑛 \}</script> . </p>
+<p>Assume <script type="math/tex">v</script> is an eigenvector and
+<script type="math/tex">T(v) = \lambda v</script>.</p>
+<p>Also assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+v = a_1 v_1 + \cdots + a_n v_n
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\lambda v &= T(v) \\
+&= a_1 T(v_1) + \cdots + a_n T(v_n)
+\end{align*} 
+</script>
+</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+\lambda v = \lambda a_1 v_1 + \cdots + \lambda a_n v_n
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 T(v_1) + \cdots + a_n T(v_n) = \lambda a_1 v_1 + \cdots + \lambda a_n v_n
+</script>
+Compare the coefficients of <script type="math/tex">v_1, \cdots, v_n</script> on both sides, we have</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\lambda a_1 &= a_1 A_{1,1} + a_2 A_{1,2} + \cdots + a_n A_{1, n} \\
+\lambda a_2 &= a_1 A_{2,1} + a_2 A_{2,2} + \cdots + a_n A_{2, n} \\
+\cdots \\
+\lambda a_n &= a_1 A_{n,1} + a_2 A_{n,2} + \cdots + a_n A_{n, n} \\
+\end{align*} 
+</script>
+</p>
+<p>Assume <script type="math/tex">|a_1| \geq |a_i|</script>, then we must have <script type="math/tex">|a_1| > 0</script>.
+This is because <script type="math/tex">v</script> as an eigenvector cannot be <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+|\lambda a_1| &\leq |a_1 A_{1,1}| + |a_2 A_{1,2}| + \cdots + |a_n A_{1, n}| \\
+&\Rightarrow \\
+|\lambda | &\leq
+|a_1 A_{1,1}|/|a_1| + |a_2 A_{1,2}|/|a_1| + \cdots + |a_n A_{1, n}|/|a_1| \\
+&\leq |A_{1,1}| + |A_{1,2}| + \cdots + |A_{1, n}|\\
+& \leq M + M + \cdots + M \\
+& \leq nM \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a17">5A.17</h3>
+<p>Suppose <script type="math/tex">𝐅 = 𝐑, 𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">\lambda ∈ 𝐑</script>. Prove that <script type="math/tex">\lambda</script> is an 
+eigenvalue of 𝑇
+if and only if <script type="math/tex">\lambda</script> is an eigenvalue of the complexification <script type="math/tex">𝑇_𝐂</script>.</p>
+<p>The complexification is defined in Exercise 1B.8
+See Exercise 33 in Section 3B for the definition of <script type="math/tex">𝑇_𝐂</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">T</script> and <script type="math/tex">v</script> is an eigenvector,
+then <script type="math/tex">T(v) = \lambda v</script>.</p>
+<p>Now consider</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T_c (v + iv) &= T(v) + i T(v) \\
+&= \lambda v + i (\lambda v) \\
+&= \lambda (v + iv) \\
+\end{align*}
+</script>
+</p>
+<p>Since <script type="math/tex">v \neq 0</script>, then <script type="math/tex">v + iv \neq 0</script>.
+Then <script type="math/tex">v + iv</script> is an eigenvector and <script type="math/tex">\lambda</script> is an eigenvalue.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">T_C</script> and <script type="math/tex">u + iv \neq 0</script> is an 
+eigenvector. Then <script type="math/tex">u \neq 0</script> or <script type="math/tex">v \neq 0</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T_C(u+iv) &= \lambda (u+iv) \\
+&\Rightarrow \\
+T(u) + i T(v) &= \lambda u + i \lambda v \\
+&\Rightarrow \\
+T(u) = \lambda u &, T(v) = \lambda v \\
+\end{align*} 
+</script>
+</p>
+<p>So one of <script type="math/tex">u</script> or <script type="math/tex">v</script> is an eigenvector for sure. And <script type="math/tex">\lambda</script> is
+an eigenvalue.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a18">5A.18</h3>
+<p>Suppose <script type="math/tex">𝐅 = 𝐑, 𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">\lambda ∈ 𝐂</script>. Prove that <script type="math/tex">\lambda</script> is an 
+eigenvalue of the complexification <script type="math/tex">𝑇_𝐂</script> if and only if <script type="math/tex">\overline{\lambda}</script> 
+is an eigenvalue of <script type="math/tex">𝑇_𝐂</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>
+<script type="math/tex">\lambda = a + bi</script> is an eigenvalue of the complexification <script type="math/tex">𝑇_𝐂</script>,
+then there is a <script type="math/tex">u+iv \neq 0</script> such that</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T_C(u+iv) &= T(u) + iT(v) \\
+&= \lambda (u+iv) \\
+&=
+(a+bi) (u+iv) \\
+&= (au - bv) + i(bu+av) \\
+&\Rightarrow \\
+T(u) = (au - bv) &, T(v) = bu+av \\
+\end{align*} 
+</script>
+</p>
+<p>Now consider</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T_C(u-iv) &= T(u) - iT(v) \\
+&= (au - bv) - i(bu+av) \\
+&= (a-ib)(u-iv) \\
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">\overline{\lambda} = a-bi</script> is also an eigenvalue of <script type="math/tex">T_C</script>.</p>
+<p>The other direction is similar.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a19">5A.19</h3>
+<p>Show that the forward shift operator <script type="math/tex">𝑇 ∈ ℒ(𝐅^∞)</script> defined by</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑇(𝑧_1, 𝑧_2, … ) = (0, 𝑧_1, 𝑧_2, … )
+</script>
+</p>
+<p>has no eigenvalues.</p>
+<p><strong>Proof</strong>:</p>
+<p>We use contradition.</p>
+<p>Assume <script type="math/tex">\lambda</script> is an eigenvalue and <script type="math/tex">(𝑧_1, 𝑧_2, … )</script> is an eigenvector
+So we can find <script type="math/tex">z_m \neq 0</script>.</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\lambda z_1 &= 0 \\
+\lambda z_2 &= z_1 \\
+&\cdots \\
+\lambda z_{m} &= z_{m-1} \\
+\lambda z_{m+1} &= z_{m} \\
+\end{align*} 
+</script>
+</p>
+<p>If <script type="math/tex">\lambda = 0</script>, then <script type="math/tex">\lambda z_{m+1} = 0 \neq z_m</script>, so we have contradition.</p>
+<p>If <script type="math/tex">\lambda \neq 0</script>, then since <script type="math/tex">\lambda z_1 = 0</script>, we have <script type="math/tex">z_1 = 0</script>,
+similarly, <script type="math/tex">z_2 = \cdots = z_m = 0</script>, we reach a contradition.</p>
+<p>So <script type="math/tex">T</script> has no eigenvalues.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a20">5A.20</h3>
+<p>Define the backward shift operator <script type="math/tex">𝑆 ∈ ℒ(𝐅^∞)</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑆(𝑧_1, 𝑧_2, 𝑧_3, … ) = (𝑧_2, 𝑧_3, … ).
+</script>
+</p>
+<p>(a) Show that every element of <script type="math/tex">𝐅</script> is an eigenvalue of <script type="math/tex">𝑆</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">\lambda \in F</script>.</p>
+<p>If <script type="math/tex">\lambda = 0</script>, then <script type="math/tex">(1, 0, 0, \cdots )</script> is an eigenvector.</p>
+<p>If <script type="math/tex">\lambda \neq 0</script>, then <script type="math/tex">(1, \lambda, \lambda ^2, \cdots )</script> is an
+eigenvector.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Find all eigenvectors of <script type="math/tex">𝑆</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>From part (a), the eigenvectors are <script type="math/tex">(a, 0, 0, \cdots )</script> with <script type="math/tex">a \neq 0</script>
+and <script type="math/tex">(1, \lambda, \lambda ^2, \cdots )</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a21">5A.21</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> is invertible.</p>
               
             </div>
           </div><footer>
