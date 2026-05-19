@@ -126,6 +126,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5a21">5A.21</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a22">5A.22</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a23">5A.23</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a24">5A.24</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -841,6 +847,122 @@ and <script type="math/tex">(1, \lambda, \lambda ^2, \cdots )</script>.</p>
 </p>
 <h3 id="5a21">5A.21</h3>
 <p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> is invertible.</p>
+<p>(a) Suppose <script type="math/tex">\lambda ∈ 𝐅</script> with <script type="math/tex">\lambda ≠ 0</script>. Prove that <script type="math/tex">\lambda</script> is an 
+eigenvalue of <script type="math/tex">𝑇</script> if and only if <script type="math/tex">1/\lambda</script> is an eigenvalue of <script type="math/tex">𝑇^{−1}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+&\lambda \text{ is an eigenvalue } \\
+&\Rightarrow \\
+\text{We can find } u &\neq 0, \text{ such that } T(u) = \lambda u \\
+&\Rightarrow \\
+u = T^{-1}(T(u)) &= T^{-1}(\lambda u) = \lambda T^{-1}(u)\\
+&\Rightarrow \\
+T^{-1}(u) &= 1/\lambda u & \text{because } \lambda \neq 0
+\end{align*} 
+</script>
+</p>
+<p>Since <script type="math/tex">u \neq 0</script>, then <script type="math/tex">1/\lambda</script> an eigenvalue of <script type="math/tex">𝑇^{−1}</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>The reverse side is similar.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that <script type="math/tex">𝑇</script> and <script type="math/tex">𝑇^{−1}</script> have the same eigenvectors.</p>
+<p><strong>Proof</strong>:</p>
+<p>The proof in (a) already showed if <script type="math/tex">u</script> is an eigenvector of <script type="math/tex">T</script>, it's
+also a eigenvector of <script type="math/tex">𝑇^{−1}</script> and vice versa.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a22">5A.22</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and there exist nonzero vectors <script type="math/tex">𝑢</script> and <script type="math/tex">𝑤</script> in <script type="math/tex">𝑉</script> such 
+that </p>
+<p>
+<script type="math/tex; mode=display"> 
+Tu = 3w \text{ and } Tw = 3u
+</script>
+</p>
+<p>Prove that 3 or −3 is an eigenvalue of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">u = -w</script>, then <script type="math/tex">Tu = 3w = -3u</script>, since <script type="math/tex">u \neq 0</script>, then <script type="math/tex">-3</script> is an 
+eigenvalue. </p>
+<p>If <script type="math/tex">u \neq -w</script>, then consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(u+w) = Tu + Tw = 3w + 3u = 3 (u + w)
+</script>
+</p>
+<p>Since <script type="math/tex">u \neq -w</script>, then <script type="math/tex">u+w \neq 0</script>. So <script type="math/tex">3</script> is an eigenvalue.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a23">5A.23</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑆, 𝑇 ∈ ℒ(𝑉)</script>.
+Prove that <script type="math/tex">𝑆𝑇</script> and <script type="math/tex">𝑇𝑆</script> have the same eigenvalues.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">ST</script> and <script type="math/tex">u \neq 0</script> is an eigenvector
+such that <script type="math/tex">ST(u) = \lambda u</script>.</p>
+<p>Then we have <script type="math/tex">TS(T(u)) = T(ST(u)) = T(\lambda u) = \lambda T(u)</script>.</p>
+<p>If <script type="math/tex">T(u) \neq 0</script>, then <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">TS</script>.</p>
+<p>If <script type="math/tex">T(u) = 0</script>, then <script type="math/tex">\lambda = 0</script>,
+then we need to show <script type="math/tex">\text{null } TS \neq \{0\}</script>.</p>
+<p>If <script type="math/tex">S</script> is invertible, then we can find <script type="math/tex">v</script> such that <script type="math/tex">S(v) = u</script>. Note
+<script type="math/tex">v</script> can not be <script type="math/tex">0</script> since <script type="math/tex">S(0) = 0 \neq u</script>. Then <script type="math/tex">TS(v) = T(u) = 0</script>.
+So <script type="math/tex">v \in \text{null } TS</script>.</p>
+<p>If <script type="math/tex">S</script> is not invertible, then we can find <script type="math/tex">v \neq 0</script>, such that <script type="math/tex">S(v) = 0</script>.
+Then <script type="math/tex">TS(v) = T(S(v)) = T(0) = 0</script>, so <script type="math/tex">v \in \text{null } TS</script>.</p>
+<p>In any case, <script type="math/tex">\text{null } TS \neq \{0\}</script>. And <script type="math/tex">0</script> is also an eigenvalue
+of <script type="math/tex">TS</script>.</p>
+<p>The reverse side is similar.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a24">5A.24</h3>
+<p>Suppose <script type="math/tex">𝐴</script> is an <script type="math/tex">𝑛</script>-by-<script type="math/tex">𝑛</script> matrix with entries in <script type="math/tex">𝐅</script>.
+Define <script type="math/tex">𝑇 ∈ ℒ(𝐅^𝑛)</script> by <script type="math/tex">𝑇𝑥 = 𝐴𝑥</script>, where elements of <script type="math/tex">𝐅^𝑛</script> are
+thought of as <script type="math/tex">𝑛</script>-by-<script type="math/tex">1</script> column vectors.</p>
+<p>(a) Suppose the sum of the entries in each row of <script type="math/tex">𝐴</script> equals <script type="math/tex">1</script>.
+Prove that <script type="math/tex">1</script> is an eigenvalue of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the vector</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+v &= e_1 + \cdots + e_n \neq 0\\
+&\Rightarrow \\
+T(v) &= T(e_1) + \cdots + T(e_n) \\
+&= Ae_1 + \cdots + Ae_n \\
+&= (\sum_{i = 1}^{n} a_{1i}) e_1 + \cdots + (\sum_{i = 1}^{n} a_{ni}) e_n \\
+&= e_1 + \cdots + e_n \\
+&= v
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">T(v) = v</script> and <script type="math/tex">1</script> is an eigenvalue of <script type="math/tex">𝑇</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Suppose the sum of the entries in each column of <script type="math/tex">𝐴</script> equals <script type="math/tex">1</script>.
+Prove that <script type="math/tex">1</script> is an eigenvalue of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider <script type="math/tex">T'</script> is the dual map of <script type="math/tex">T</script> in <script type="math/tex">(F^n)'</script>. Then its matrix under
+dual basis is <script type="math/tex">A^T</script>. Then the sum of the entries in each row of <script type="math/tex">A^T</script>
+equals <script type="math/tex">1</script>. Then we can apply part (a) and know <script type="math/tex">1</script> is an
+eigenvalue of <script type="math/tex">T'</script>.</p>
+<p>No we use the Exercise 5A.15 in this section which states
+<script type="math/tex">𝜆</script> is an eigenvalue of <script type="math/tex">𝑇</script> if and only if <script type="math/tex">𝜆</script> is an eigenvalue of the dual 
+operator <script type="math/tex">𝑇' ∈ ℒ(𝑉')</script>. And then we know <script type="math/tex">1</script> is an
+eigenvalue of <script type="math/tex">T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
