@@ -782,3 +782,142 @@ $\square$
 ### 5A.21
 
 Suppose $𝑇 ∈ ℒ(𝑉)$ is invertible.
+
+(a) Suppose $\lambda ∈ 𝐅$ with $\lambda ≠ 0$. Prove that $\lambda$ is an 
+eigenvalue of $𝑇$ if and only if $1/\lambda$ is an eigenvalue of $𝑇^{−1}$.
+
+**Proof**:
+
+$\Rightarrow$
+
+$$ 
+\begin{align*}
+&\lambda \text{ is an eigenvalue } \\
+&\Rightarrow \\
+\text{We can find } u &\neq 0, \text{ such that } T(u) = \lambda u \\
+&\Rightarrow \\
+u = T^{-1}(T(u)) &= T^{-1}(\lambda u) = \lambda T^{-1}(u)\\
+&\Rightarrow \\
+T^{-1}(u) &= 1/\lambda u & \text{because } \lambda \neq 0
+\end{align*} 
+$$
+
+Since $u \neq 0$, then $1/\lambda$ an eigenvalue of $𝑇^{−1}$.
+
+$\Leftarrow$
+
+The reverse side is similar.
+
+$\square$
+
+(b) Prove that $𝑇$ and $𝑇^{−1}$ have the same eigenvectors.
+
+**Proof**:
+
+The proof in (a) already showed if $u$ is an eigenvector of $T$, it's
+also a eigenvector of $𝑇^{−1}$ and vice versa.
+
+$\square$
+
+### 5A.22
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and there exist nonzero vectors $𝑢$ and $𝑤$ in $𝑉$ such 
+that 
+
+$$ 
+Tu = 3w \text{ and } Tw = 3u
+$$
+
+Prove that 3 or −3 is an eigenvalue of $𝑇$.
+
+**Proof**:
+
+If $u = -w$, then $Tu = 3w = -3u$, since $u \neq 0$, then $-3$ is an 
+eigenvalue. 
+
+If $u \neq -w$, then consider
+
+$$ 
+T(u+w) = Tu + Tw = 3w + 3u = 3 (u + w)
+$$
+
+Since $u \neq -w$, then $u+w \neq 0$. So $3$ is an eigenvalue.
+
+$\square$
+
+### 5A.23
+
+Suppose $𝑉$ is finite-dimensional and $𝑆, 𝑇 ∈ ℒ(𝑉)$.
+Prove that $𝑆𝑇$ and $𝑇𝑆$ have the same eigenvalues.
+
+**Proof**:
+
+If $\lambda$ is an eigenvalue of $ST$ and $u \neq 0$ is an eigenvector
+such that $ST(u) = \lambda u$.
+
+Then we have $TS(T(u)) = T(ST(u)) = T(\lambda u) = \lambda T(u)$.
+
+If $T(u) \neq 0$, then $\lambda$ is an eigenvalue of $TS$.
+
+If $T(u) = 0$, then $\lambda = 0$,
+then we need to show $\text{null } TS \neq \{0\}$.
+
+If $S$ is invertible, then we can find $v$ such that $S(v) = u$. Note
+$v$ can not be $0$ since $S(0) = 0 \neq u$. Then $TS(v) = T(u) = 0$.
+So $v \in \text{null } TS$.
+
+If $S$ is not invertible, then we can find $v \neq 0$, such that $S(v) = 0$.
+Then $TS(v) = T(S(v)) = T(0) = 0$, so $v \in \text{null } TS$.
+
+In any case, $\text{null } TS \neq \{0\}$. And $0$ is also an eigenvalue
+of $TS$.
+
+The reverse side is similar.
+
+$\square$
+
+### 5A.24
+
+Suppose $𝐴$ is an $𝑛$-by-$𝑛$ matrix with entries in $𝐅$.
+Define $𝑇 ∈ ℒ(𝐅^𝑛)$ by $𝑇𝑥 = 𝐴𝑥$, where elements of $𝐅^𝑛$ are
+thought of as $𝑛$-by-$1$ column vectors.
+
+(a) Suppose the sum of the entries in each row of $𝐴$ equals $1$.
+Prove that $1$ is an eigenvalue of $𝑇$.
+
+**Proof**:
+
+Consider the vector
+
+$$
+\begin{align*}
+v &= e_1 + \cdots + e_n \neq 0\\
+&\Rightarrow \\
+T(v) &= T(e_1) + \cdots + T(e_n) \\
+&= Ae_1 + \cdots + Ae_n \\
+&= (\sum_{i = 1}^{n} a_{1i}) e_1 + \cdots + (\sum_{i = 1}^{n} a_{ni}) e_n \\
+&= e_1 + \cdots + e_n \\
+&= v
+\end{align*} 
+$$
+
+So $T(v) = v$ and $1$ is an eigenvalue of $𝑇$.
+
+$\square$
+
+(b) Suppose the sum of the entries in each column of $𝐴$ equals $1$.
+Prove that $1$ is an eigenvalue of $𝑇$.
+
+**Proof**:
+
+Consider $T'$ is the dual map of $T$ in $(F^n)'$. Then its matrix under
+dual basis is $A^T$. Then the sum of the entries in each row of $A^T$
+equals $1$. Then we can apply part (a) and know $1$ is an
+eigenvalue of $T'$.
+
+No we use the Exercise 5A.15 in this section which states
+$𝜆$ is an eigenvalue of $𝑇$ if and only if $𝜆$ is an eigenvalue of the dual 
+operator $𝑇' ∈ ℒ(𝑉')$. And then we know $1$ is an
+eigenvalue of $T$.
+
+$\square$
