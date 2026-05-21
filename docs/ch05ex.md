@@ -921,3 +921,130 @@ operator $𝑇' ∈ ℒ(𝑉')$. And then we know $1$ is an
 eigenvalue of $T$.
 
 $\square$
+
+### 5A.25
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝑢, 𝑤$ are eigenvectors of $𝑇$ such that $𝑢 + 𝑤$ 
+is also an eigenvector of $𝑇$. Prove that $𝑢$ and $𝑤$ are eigenvectors of 
+$𝑇$ corresponding to the same eigenvalue.
+
+**Proof**:
+
+Assume
+
+$$ 
+\begin{align*}
+T(u) &= \lambda_1 u \\
+T(w) &= \lambda_2 w \\
+T(u+w) &= \lambda_3 (u + w) \\
+\end{align*} 
+$$
+
+Then
+
+$$ 
+\begin{align*}
+\lambda_3 (u + w) & = T(u+w) \\
+&= T(u) + T(w) \\
+&= \lambda_1 u + \lambda_2 w \\
+& \Rightarrow \\
+(\lambda_3 - \lambda_1) u + (\lambda_3 - \lambda_2) w &= 0
+\end{align*} 
+$$
+
+If $\lambda_1 \neq \lambda_2$, then $u$ and $w$ is independent, so
+$\lambda_3 - \lambda_1 = \lambda_3 - \lambda_2 = 0$.
+
+Then $\lambda_1 = \lambda_2 = \lambda_3$, we have an contradition.
+
+So $\lambda_1 = \lambda_2$.
+
+$\square$
+
+### 5A.26
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ is such that every nonzero vector in $𝑉$ is an 
+eigenvector of $𝑇$. Prove that $𝑇$ is a scalar multiple of the identity 
+operator.
+
+**Proof**:
+
+Consider $v_1 \neq 0, v_2 \neq 0$, and their eigenvalues are
+$\lambda_1, \lambda_2$.
+
+If $v_1 = -v_2$, then $T(v_1+v_2) = 0$, then $\lambda_1 v_1+ \lambda_2 v_2 = 0$. Then $(\lambda_1 - \lambda_2) v_1 = 0$.
+
+Since $v_1 \neq 0$ then $\lambda_1 - \lambda_2 = 0$, i.e.
+$\lambda_1 = \lambda_2$.
+
+If $v_1 \neq -v_2$, then $v_1 + v_2 \neq 0$ is also an eigenvector of $T$.
+From the last Exercise, we know $\lambda_1 = \lambda_2$.
+
+So for any $v$, $T(v) = \lambda_1 v$. Then
+$𝑇$ is a scalar multiple of the identity operator.
+
+$\square$
+
+### 5A.27
+
+Suppose that $𝑉$ is finite-dimensional and $𝑘 ∈ {1, …, \dim 𝑉 − 1}$. Suppose
+$𝑇 ∈ ℒ(𝑉)$ is such that every subspace of $𝑉$ of dimension $𝑘$ is invariant
+under $𝑇$. Prove that $𝑇$ is a scalar multiple of the identity operator.
+
+**Proof**:
+
+Let $\dim V = n$. Consider $v_1 \in V, v_1 \neq 0$, we can extend $v_1$ to a 
+basis of $V$ by adding $v_2, \cdots, v_n$.
+
+Assume
+
+$$ 
+T(v_1) = a_1 v_1 + \cdots + a_n v_n
+$$
+
+If $a_n \neq 0$, then let $U = \text{span}(𝑣_1, \cdots, 𝑣_k)$. $U$ is an
+invariant of $T$.
+
+So $T(v_1) = a_1 v_1 + \cdots + a_k v_k$. Since $T(v_1)$ can be
+represented by $v_1, \cdots, v_n$ uniquely, we have $a_n = 0$.
+
+Similarly we can show $a_2 = \cdots = a_n = 0$.
+So $v_1$ is an eigenvector.
+
+That means every vector $v$ is an eigenvector of $T$.
+
+From last Exercise, we know $𝑇$ is a scalar multiple of the identity operator.
+
+$\square$
+
+### 5A.28
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
+Prove that $𝑇$ has at most $1 + \text{dim range } T$
+distinct eigenvalues.
+
+**Proof**:
+
+We prove by contradition.
+Assume there are more than $1 + \text{dim range } T$, then
+there are a least $1 + \text{dim range } T$ nonzero eigenvalues.
+
+Let $m = \text{dim range } T$, we can find $m+1$ eigenvectors with
+different eigenvalues, i.e.
+
+$$ 
+\begin{align*}
+T(v_1) = \lambda_1 v_1, &\cdots, T(v_{m+1}) = \lambda_{m+1} v_{m+1} \\
+& \Rightarrow \\
+\lambda_1 v_1, &\cdots , \lambda_{m+1} v_{m+1} \in \text{range } T \\
+& \Rightarrow \\
+v_1, &\cdots , v_{m+1} \in \text{range } T 
+& \text{Because } \lambda_i \neq 0 \\
+& \Rightarrow \\
+\text{dim range } T &\geq m+1 & \text{Because } v_i \text{ are independent} \\
+\end{align*} 
+$$
+
+So we reached an contradition.
+
+$\square$
