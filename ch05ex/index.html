@@ -132,6 +132,14 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5a24">5A.24</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a25">5A.25</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a26">5A.26</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a27">5A.27</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a28">5A.28</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -960,6 +968,109 @@ eigenvalue of <script type="math/tex">T'</script>.</p>
 <script type="math/tex">𝜆</script> is an eigenvalue of <script type="math/tex">𝑇</script> if and only if <script type="math/tex">𝜆</script> is an eigenvalue of the dual 
 operator <script type="math/tex">𝑇' ∈ ℒ(𝑉')</script>. And then we know <script type="math/tex">1</script> is an
 eigenvalue of <script type="math/tex">T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a25">5A.25</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑢, 𝑤</script> are eigenvectors of <script type="math/tex">𝑇</script> such that <script type="math/tex">𝑢 + 𝑤</script> 
+is also an eigenvector of <script type="math/tex">𝑇</script>. Prove that <script type="math/tex">𝑢</script> and <script type="math/tex">𝑤</script> are eigenvectors of 
+<script type="math/tex">𝑇</script> corresponding to the same eigenvalue.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T(u) &= \lambda_1 u \\
+T(w) &= \lambda_2 w \\
+T(u+w) &= \lambda_3 (u + w) \\
+\end{align*} 
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\lambda_3 (u + w) & = T(u+w) \\
+&= T(u) + T(w) \\
+&= \lambda_1 u + \lambda_2 w \\
+& \Rightarrow \\
+(\lambda_3 - \lambda_1) u + (\lambda_3 - \lambda_2) w &= 0
+\end{align*} 
+</script>
+</p>
+<p>If <script type="math/tex">\lambda_1 \neq \lambda_2</script>, then <script type="math/tex">u</script> and <script type="math/tex">w</script> is independent, so
+<script type="math/tex">\lambda_3 - \lambda_1 = \lambda_3 - \lambda_2 = 0</script>.</p>
+<p>Then <script type="math/tex">\lambda_1 = \lambda_2 = \lambda_3</script>, we have an contradition.</p>
+<p>So <script type="math/tex">\lambda_1 = \lambda_2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a26">5A.26</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> is such that every nonzero vector in <script type="math/tex">𝑉</script> is an 
+eigenvector of <script type="math/tex">𝑇</script>. Prove that <script type="math/tex">𝑇</script> is a scalar multiple of the identity 
+operator.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider <script type="math/tex">v_1 \neq 0, v_2 \neq 0</script>, and their eigenvalues are
+<script type="math/tex">\lambda_1, \lambda_2</script>.</p>
+<p>If <script type="math/tex">v_1 = -v_2</script>, then <script type="math/tex">T(v_1+v_2) = 0</script>, then <script type="math/tex">\lambda_1 v_1+ \lambda_2 v_2 = 0</script>. Then <script type="math/tex">(\lambda_1 - \lambda_2) v_1 = 0</script>.</p>
+<p>Since <script type="math/tex">v_1 \neq 0</script> then <script type="math/tex">\lambda_1 - \lambda_2 = 0</script>, i.e.
+<script type="math/tex">\lambda_1 = \lambda_2</script>.</p>
+<p>If <script type="math/tex">v_1 \neq -v_2</script>, then <script type="math/tex">v_1 + v_2 \neq 0</script> is also an eigenvector of <script type="math/tex">T</script>.
+From the last Exercise, we know <script type="math/tex">\lambda_1 = \lambda_2</script>.</p>
+<p>So for any <script type="math/tex">v</script>, <script type="math/tex">T(v) = \lambda_1 v</script>. Then
+<script type="math/tex">𝑇</script> is a scalar multiple of the identity operator.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a27">5A.27</h3>
+<p>Suppose that <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑘 ∈ {1, …, \dim 𝑉 − 1}</script>. Suppose
+<script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> is such that every subspace of <script type="math/tex">𝑉</script> of dimension <script type="math/tex">𝑘</script> is invariant
+under <script type="math/tex">𝑇</script>. Prove that <script type="math/tex">𝑇</script> is a scalar multiple of the identity operator.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">\dim V = n</script>. Consider <script type="math/tex">v_1 \in V, v_1 \neq 0</script>, we can extend <script type="math/tex">v_1</script> to a 
+basis of <script type="math/tex">V</script> by adding <script type="math/tex">v_2, \cdots, v_n</script>.</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(v_1) = a_1 v_1 + \cdots + a_n v_n
+</script>
+</p>
+<p>If <script type="math/tex">a_n \neq 0</script>, then let <script type="math/tex">U = \text{span}(𝑣_1, \cdots, 𝑣_k)</script>. <script type="math/tex">U</script> is an
+invariant of <script type="math/tex">T</script>.</p>
+<p>So <script type="math/tex">T(v_1) = a_1 v_1 + \cdots + a_k v_k</script>. Since <script type="math/tex">T(v_1)</script> can be
+represented by <script type="math/tex">v_1, \cdots, v_n</script> uniquely, we have <script type="math/tex">a_n = 0</script>.</p>
+<p>Similarly we can show <script type="math/tex">a_2 = \cdots = a_n = 0</script>.
+So <script type="math/tex">v_1</script> is an eigenvector.</p>
+<p>That means every vector <script type="math/tex">v</script> is an eigenvector of <script type="math/tex">T</script>.</p>
+<p>From last Exercise, we know <script type="math/tex">𝑇</script> is a scalar multiple of the identity operator.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a28">5A.28</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Prove that <script type="math/tex">𝑇</script> has at most <script type="math/tex">1 + \text{dim range } T</script>
+distinct eigenvalues.</p>
+<p><strong>Proof</strong>:</p>
+<p>We prove by contradition.
+Assume there are more than <script type="math/tex">1 + \text{dim range } T</script>, then
+there are a least <script type="math/tex">1 + \text{dim range } T</script> nonzero eigenvalues.</p>
+<p>Let <script type="math/tex">m = \text{dim range } T</script>, we can find <script type="math/tex">m+1</script> eigenvectors with
+different eigenvalues, i.e.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T(v_1) = \lambda_1 v_1, &\cdots, T(v_{m+1}) = \lambda_{m+1} v_{m+1} \\
+& \Rightarrow \\
+\lambda_1 v_1, &\cdots , \lambda_{m+1} v_{m+1} \in \text{range } T \\
+& \Rightarrow \\
+v_1, &\cdots , v_{m+1} \in \text{range } T 
+& \text{Because } \lambda_i \neq 0 \\
+& \Rightarrow \\
+\text{dim range } T &\geq m+1 & \text{Because } v_i \text{ are independent} \\
+\end{align*} 
+</script>
+</p>
+<p>So we reached an contradition.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
