@@ -1048,3 +1048,270 @@ $$
 So we reached an contradition.
 
 $\square$
+
+### 5A.29
+
+Suppose $𝑇 ∈ ℒ(𝐑^3)$ and $−4$, $5$, and $\sqrt{7}$ are eigenvalues of $𝑇$. 
+Prove that
+there exists $𝑥 ∈ 𝐑^3$ such that $𝑇𝑥 − 9𝑥 = (−4, 5, \sqrt{7})$.
+
+**Proof**:
+
+$−4$, $5$, and $\sqrt{7}$ are eigenvalues of $𝑇$, and from
+5.12, we know operator cannot have more eigenvalues than dimension of
+vector space. Since $\dim \mathbb{R}^3 = 3$, then $T$ cannot have other
+eigenvalues, so $9$ is not an eigenvalue of $T$.
+
+Since $9$ is not an eigenvalue of $T$, then $T - 9I$ is invertible.
+Then we can find $x$ such that $(T - 9I) x = (−4, 5, \sqrt{7})$.
+
+$\square$
+
+### 5A.30
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $(𝑇 − 2𝐼)(𝑇 − 3𝐼)(𝑇 − 4𝐼) = 0$. Suppose 𝜆 is an
+eigenvalue of $𝑇$. Prove that 𝜆 = 2 or 𝜆 = 3 or 𝜆 = 4.
+
+**Proof**:
+
+We prove by contradition.
+Assume $k$ is an eigenvalue of $𝑇$, where $k \neq 2, 3, 4$.
+If $v \neq 0$ is an eigenvector and $T(v) = k v$, then
+
+$$ 
+\begin{align*}
+(𝑇 − 2𝐼)(𝑇 − 3𝐼)(𝑇 − 4𝐼)(v) &=
+(k-4)(𝑇 − 2𝐼)(𝑇 − 3𝐼)(v) \\
+&= (k-4) (k-3) (𝑇 − 2𝐼) (v) \\
+&= (k-4) (k-3) (k-2) (v) \\
+\end{align*}
+$$
+
+Since $k \neq 2, 3, 4, v \neq 0$, then $(k-4) (k-3) (k-2) (v) \neq 0$.
+
+But this contradicts to the fact $(𝑇 − 2𝐼)(𝑇 − 3𝐼)(𝑇 − 4𝐼) = 0$.
+
+So $k = 2$ or $k = 3$ or $k = 4$.
+
+$\square$
+
+### 5A.31
+
+Give an example of $𝑇 ∈ ℒ(𝐑^2)$ such that $𝑇^4 = −𝐼$.
+
+**Proof**:
+
+Consider the matrix of $T$ is
+
+$$ 
+\mathcal{M}(T) =
+\begin{bmatrix}
+\sqrt[]{2}/2 & -\sqrt[]{2}/2 \\    
+\sqrt[]{2}/2 &  \sqrt[]{2}/2 \\    
+\end{bmatrix}
+$$
+
+Then since $\mathcal{M}(T)^4 = -I$ then $T^4 = -I$.
+
+$\square$
+
+### 5A.32
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ has no eigenvalues and $𝑇^4 = 𝐼$. Prove that
+$𝑇^2 = −𝐼$.
+
+**Proof**:
+
+$$
+\begin{align*}
+0&=T^4 - I \\
+&= (T^2 + I)(T + I)(T - I)
+\end{align*}
+$$
+
+Since $T$ has no eigenvalues then $T-I, T+I$ are invertible.
+So is $(T + I)(T - I)$.
+
+So for any $u \in V$, we can find $v \in V$, such that
+
+$$ 
+u = (T + I)(T - I)(v)
+$$
+
+So $(T^2 + I)(u) = (T^2 + I)(T + I)(T - I)(v)=0$.
+
+So $T^2 + I = 0$, then $𝑇^2 = −𝐼$.
+
+$\square$
+
+### 5A.33
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝑚$ is a positive integer.
+
+(a) Prove that $𝑇$ is injective if and only if $𝑇^𝑚$ is injective.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $T$ is injective and if $T^m(u) = 0$, then
+$0 = T^m(u) = T(T^{m-1}(u))$, we have $T^{m-1}(u) = 0$.
+Similarly $T^{m-2}(u) = \cdots = T^2(u) = T(u) = 0$, so $u = 0$,
+That means $T^{m}$ is injective.
+
+$\Leftarrow$
+
+Assume $T(u) = 0$ then $T^{m}(u) = T^{m-1}(T(u))=0$, so $u = 0$,
+then $T$ is injective.
+
+$\square$
+
+(b) Prove that $𝑇$ is surjective if and only if $𝑇^𝑚$ is surjective.
+
+**Proof**:
+
+$\Rightarrow$
+
+We prove by induction. First, $T$ is surjective.
+Assume $T^k$ is surjective, and given $w \in V$.
+
+Since $T^k$ is surjective, we can find $v \in V$ such that
+$T^k(v) = w$. Since $T$ is also surjective, we can find
+$u \in V$ such that $T(u) = v$, then $T^{k+1}(u) = T^k(T(u)) = T^k(v) = w$.
+
+So $T^{k+1}$ is also surjective. Then we finish the induction.
+
+$\Leftarrow$
+
+$T^m$ is surjective, and given $w \in V$. We can find
+$v \in V$ such that $T^{m}(v) = w$, then we have
+$T(T^{m-1}(v)) = w$.
+
+$\square$
+
+### 5A.34
+
+Suppose $𝑉$ is finite-dimensional and $𝑣_1, …, 𝑣_𝑚 ∈ 𝑉$.
+Prove that the list
+$𝑣_1, …, 𝑣_𝑚$ is linearly independent if and only if there exists
+$𝑇 ∈ ℒ(𝑉)$ 
+such that $𝑣_1, …, 𝑣_𝑚$ are eigenvectors of $𝑇$ corresponding to distinct 
+eigenvalues.
+
+**Proof**:
+
+$\Leftarrow$
+
+It is an immediate results from "5.11 linearly independent eigenvectors".
+
+$\Rightarrow$
+
+Since $V$ is finite-dimensional, and $𝑣_1, …, 𝑣_𝑚$ is linearly independent，
+we can extend it to a basis of $V$ by adding $w_1, \cdots, w_n$.
+
+Let $T(v_i) = i v_i$ and $T(w_i) = 0$, then $T$ is a linear map and
+$𝑣_1, …, 𝑣_𝑚$ are eigenvectors of $𝑇$ corresponding to distinct 
+eigenvalues
+
+$\square$
+
+### 5A.35
+
+Suppose that $\lambda_{1}, …, \lambda_{𝑛}$ is a list of distinct real 
+numbers. Prove that the
+list $𝑒^{\lambda_{1}𝑥} , …, 𝑒^{\lambda_{𝑛}𝑥}$ is linearly independent in 
+the vector space of real-valued functions on 𝐑.
+
+Hint: Let
+$𝑉 = \text{span}(𝑒^{\lambda_{1}𝑥} , …, 𝑒^{\lambda_{𝑛}𝑥})$,
+and define an operator $𝐷 ∈ ℒ(𝑉)$ by
+$𝐷 𝑓 = 𝑓'$. Find eigenvalues and eigenvectors of $𝐷$.
+
+**Proof**:
+
+Based on the hint, $Df = f'$ is a linear operator of $ℒ(𝑉)$. Also note
+from calculus, we know
+
+$$ 
+D 𝑒^{\lambda_{1}𝑥} = \lambda_1 𝑒^{\lambda_{1}𝑥}
+$$
+
+Then $𝑒^{\lambda_{1}𝑥} , …, 𝑒^{\lambda_{𝑛}𝑥}$ are eigenvectors with
+different eigenvalues.
+
+From "5.11 linearly independent eigenvectors", we know
+$𝑒^{\lambda_{1}𝑥} , …, 𝑒^{\lambda_{𝑛}𝑥}$ is linearly independent.
+
+$\square$
+
+### 5A.36
+
+Suppose that $\lambda_1, …, \lambda_𝑛$ is a list of distinct positive 
+numbers. Prove that
+the list $\cos(\lambda_1𝑥), …, \cos(\lambda_𝑛𝑥)$ is linearly independent in 
+the vector space of real-valued functions on 𝐑.
+
+**Proof**:
+
+We know that $Df = f''$ is a linear operator of $ℒ(𝑉)$.
+
+Also note from calculus, we know
+
+$$ 
+D \cos(\lambda_i 𝑥) = -\lambda_i^2 \cos \lambda_i 𝑥
+$$
+
+Since $\lambda_i$ are distinct positive numbers, so $-\lambda_i^2$ are
+also distinct.
+
+From "5.11 linearly independent eigenvectors", we know
+$\cos(\lambda_1𝑥), …, \cos(\lambda_𝑛𝑥)$ is linearly independent.
+
+$\square$
+
+### 5A.37
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$. Define $𝒜 ∈ ℒ(ℒ(𝑉))$ by
+$𝒜(𝑆) = 𝑇𝑆$ for each $𝑆 ∈ ℒ(𝑉)$. Prove that the set of eigenvalues of 
+$𝑇$ equals the set of eigenvalues of $𝒜$.
+
+**Proof**:
+
+Assume $\lambda$ is an eigenvalue of $T$. Then we can find $u \neq 0$, such
+that $T(u) = \lambda u$.
+We need to fine $S$ such that $𝒜(S) = \lambda S$.
+
+Let $v_1, \cdots, v_m$ be a basis of $V$, let $S(v_i) = u$, then $S \in ℒ(𝑉)$.
+
+$$ 
+\begin{align*}
+TS(a_1 v_1 + \cdots + a_m v_m) &=
+T(a_1 Sv_1 + \cdots + a_m Sv_m) \\
+&= T(a_1 u + \cdots + a_m u) \\
+&= a_1 Tu + \cdots + a_m Tu \\
+&= a_1 \lambda u + \cdots + a_m \lambda u \\
+&= \lambda (a_1 u + \cdots + a_m u) \\
+&= \lambda (a_1 Sv_1 + \cdots + a_m Sv_m) \\
+&= \lambda S(a_1 v_1 + \cdots + a_m v_m)
+\end{align*} 
+$$
+
+So $𝒜(S) = \lambda S$.
+
+Now assume $\lambda$ is an eigenvalue of $𝒜$, then we can find $S \neq 0$,
+such that $TS = \lambda S$.
+
+Since $S \neq 0$, we can find $v \in \text{range } S$ such that $v \neq 0$.
+Let $S(u) = v$, then
+
+$$ 
+\begin{align*}
+T(v) &= TS(u) \\
+&= \lambda S(u) \\
+&= \lambda v
+\end{align*} 
+$$
+
+So $\lambda$ is an eigenvalue of $T$.
+
+$\square$
