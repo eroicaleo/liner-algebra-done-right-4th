@@ -140,6 +140,32 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5a28">5A.28</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a29">5A.29</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a30">5A.30</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a31">5A.31</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a32">5A.32</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a33">5A.33</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a34">5A.34</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a35">5A.35</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a36">5A.36</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a37">5A.37</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a38">5A.38</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#5b29">5B.29</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -1071,6 +1097,324 @@ v_1, &\cdots , v_{m+1} \in \text{range } T
 </script>
 </p>
 <p>So we reached an contradition.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a29">5A.29</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝐑^3)</script> and <script type="math/tex">−4</script>, <script type="math/tex">5</script>, and <script type="math/tex">\sqrt{7}</script> are eigenvalues of <script type="math/tex">𝑇</script>. 
+Prove that
+there exists <script type="math/tex">𝑥 ∈ 𝐑^3</script> such that <script type="math/tex">𝑇𝑥 − 9𝑥 = (−4, 5, \sqrt{7})</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">−4</script>, <script type="math/tex">5</script>, and <script type="math/tex">\sqrt{7}</script> are eigenvalues of <script type="math/tex">𝑇</script>, and from
+5.12, we know operator cannot have more eigenvalues than dimension of
+vector space. Since <script type="math/tex">\dim \mathbb{R}^3 = 3</script>, then <script type="math/tex">T</script> cannot have other
+eigenvalues, so <script type="math/tex">9</script> is not an eigenvalue of <script type="math/tex">T</script>.</p>
+<p>Since <script type="math/tex">9</script> is not an eigenvalue of <script type="math/tex">T</script>, then <script type="math/tex">T - 9I</script> is invertible.
+Then we can find <script type="math/tex">x</script> such that <script type="math/tex">(T - 9I) x = (−4, 5, \sqrt{7})</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a30">5A.30</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">(𝑇 − 2𝐼)(𝑇 − 3𝐼)(𝑇 − 4𝐼) = 0</script>. Suppose 𝜆 is an
+eigenvalue of <script type="math/tex">𝑇</script>. Prove that 𝜆 = 2 or 𝜆 = 3 or 𝜆 = 4.</p>
+<p><strong>Proof</strong>:</p>
+<p>We prove by contradition.
+Assume <script type="math/tex">k</script> is an eigenvalue of <script type="math/tex">𝑇</script>, where <script type="math/tex">k \neq 2, 3, 4</script>.
+If <script type="math/tex">v \neq 0</script> is an eigenvector and <script type="math/tex">T(v) = k v</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(𝑇 − 2𝐼)(𝑇 − 3𝐼)(𝑇 − 4𝐼)(v) &=
+(k-4)(𝑇 − 2𝐼)(𝑇 − 3𝐼)(v) \\
+&= (k-4) (k-3) (𝑇 − 2𝐼) (v) \\
+&= (k-4) (k-3) (k-2) (v) \\
+\end{align*}
+</script>
+</p>
+<p>Since <script type="math/tex">k \neq 2, 3, 4, v \neq 0</script>, then <script type="math/tex">(k-4) (k-3) (k-2) (v) \neq 0</script>.</p>
+<p>But this contradicts to the fact <script type="math/tex">(𝑇 − 2𝐼)(𝑇 − 3𝐼)(𝑇 − 4𝐼) = 0</script>.</p>
+<p>So <script type="math/tex">k = 2</script> or <script type="math/tex">k = 3</script> or <script type="math/tex">k = 4</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a31">5A.31</h3>
+<p>Give an example of <script type="math/tex">𝑇 ∈ ℒ(𝐑^2)</script> such that <script type="math/tex">𝑇^4 = −𝐼</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the matrix of <script type="math/tex">T</script> is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{M}(T) =
+\begin{bmatrix}
+\sqrt[]{2}/2 & -\sqrt[]{2}/2 \\    
+\sqrt[]{2}/2 &  \sqrt[]{2}/2 \\    
+\end{bmatrix}
+</script>
+</p>
+<p>Then since <script type="math/tex">\mathcal{M}(T)^4 = -I</script> then <script type="math/tex">T^4 = -I</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a32">5A.32</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> has no eigenvalues and <script type="math/tex">𝑇^4 = 𝐼</script>. Prove that
+<script type="math/tex">𝑇^2 = −𝐼</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+0&=T^4 - I \\
+&= (T^2 + I)(T + I)(T - I)
+\end{align*}
+</script>
+</p>
+<p>Since <script type="math/tex">T</script> has no eigenvalues then <script type="math/tex">T-I, T+I</script> are invertible.
+So is <script type="math/tex">(T + I)(T - I)</script>.</p>
+<p>So for any <script type="math/tex">u \in V</script>, we can find <script type="math/tex">v \in V</script>, such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+u = (T + I)(T - I)(v)
+</script>
+</p>
+<p>So <script type="math/tex">(T^2 + I)(u) = (T^2 + I)(T + I)(T - I)(v)=0</script>.</p>
+<p>So <script type="math/tex">T^2 + I = 0</script>, then <script type="math/tex">𝑇^2 = −𝐼</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a33">5A.33</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑚</script> is a positive integer.</p>
+<p>(a) Prove that <script type="math/tex">𝑇</script> is injective if and only if <script type="math/tex">𝑇^𝑚</script> is injective.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">T</script> is injective and if <script type="math/tex">T^m(u) = 0</script>, then
+<script type="math/tex">0 = T^m(u) = T(T^{m-1}(u))</script>, we have <script type="math/tex">T^{m-1}(u) = 0</script>.
+Similarly <script type="math/tex">T^{m-2}(u) = \cdots = T^2(u) = T(u) = 0</script>, so <script type="math/tex">u = 0</script>,
+That means <script type="math/tex">T^{m}</script> is injective.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">T(u) = 0</script> then <script type="math/tex">T^{m}(u) = T^{m-1}(T(u))=0</script>, so <script type="math/tex">u = 0</script>,
+then <script type="math/tex">T</script> is injective.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that <script type="math/tex">𝑇</script> is surjective if and only if <script type="math/tex">𝑇^𝑚</script> is surjective.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>We prove by induction. First, <script type="math/tex">T</script> is surjective.
+Assume <script type="math/tex">T^k</script> is surjective, and given <script type="math/tex">w \in V</script>.</p>
+<p>Since <script type="math/tex">T^k</script> is surjective, we can find <script type="math/tex">v \in V</script> such that
+<script type="math/tex">T^k(v) = w</script>. Since <script type="math/tex">T</script> is also surjective, we can find
+<script type="math/tex">u \in V</script> such that <script type="math/tex">T(u) = v</script>, then <script type="math/tex">T^{k+1}(u) = T^k(T(u)) = T^k(v) = w</script>.</p>
+<p>So <script type="math/tex">T^{k+1}</script> is also surjective. Then we finish the induction.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>
+<script type="math/tex">T^m</script> is surjective, and given <script type="math/tex">w \in V</script>. We can find
+<script type="math/tex">v \in V</script> such that <script type="math/tex">T^{m}(v) = w</script>, then we have
+<script type="math/tex">T(T^{m-1}(v)) = w</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a34">5A.34</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑣_1, …, 𝑣_𝑚 ∈ 𝑉</script>.
+Prove that the list
+<script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> is linearly independent if and only if there exists
+<script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> 
+such that <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> are eigenvectors of <script type="math/tex">𝑇</script> corresponding to distinct 
+eigenvalues.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>It is an immediate results from "5.11 linearly independent eigenvectors".</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Since <script type="math/tex">V</script> is finite-dimensional, and <script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> is linearly independent，
+we can extend it to a basis of <script type="math/tex">V</script> by adding <script type="math/tex">w_1, \cdots, w_n</script>.</p>
+<p>Let <script type="math/tex">T(v_i) = i v_i</script> and <script type="math/tex">T(w_i) = 0</script>, then <script type="math/tex">T</script> is a linear map and
+<script type="math/tex">𝑣_1, …, 𝑣_𝑚</script> are eigenvectors of <script type="math/tex">𝑇</script> corresponding to distinct 
+eigenvalues</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a35">5A.35</h3>
+<p>Suppose that <script type="math/tex">\lambda_{1}, …, \lambda_{𝑛}</script> is a list of distinct real 
+numbers. Prove that the
+list <script type="math/tex">𝑒^{\lambda_{1}𝑥} , …, 𝑒^{\lambda_{𝑛}𝑥}</script> is linearly independent in 
+the vector space of real-valued functions on 𝐑.</p>
+<p>Hint: Let
+<script type="math/tex">𝑉 = \text{span}(𝑒^{\lambda_{1}𝑥} , …, 𝑒^{\lambda_{𝑛}𝑥})</script>,
+and define an operator <script type="math/tex">𝐷 ∈ ℒ(𝑉)</script> by
+<script type="math/tex">𝐷 𝑓 = 𝑓'</script>. Find eigenvalues and eigenvectors of <script type="math/tex">𝐷</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Based on the hint, <script type="math/tex">Df = f'</script> is a linear operator of <script type="math/tex">ℒ(𝑉)</script>. Also note
+from calculus, we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+D 𝑒^{\lambda_{1}𝑥} = \lambda_1 𝑒^{\lambda_{1}𝑥}
+</script>
+</p>
+<p>Then <script type="math/tex">𝑒^{\lambda_{1}𝑥} , …, 𝑒^{\lambda_{𝑛}𝑥}</script> are eigenvectors with
+different eigenvalues.</p>
+<p>From "5.11 linearly independent eigenvectors", we know
+<script type="math/tex">𝑒^{\lambda_{1}𝑥} , …, 𝑒^{\lambda_{𝑛}𝑥}</script> is linearly independent.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a36">5A.36</h3>
+<p>Suppose that <script type="math/tex">\lambda_1, …, \lambda_𝑛</script> is a list of distinct positive 
+numbers. Prove that
+the list <script type="math/tex">\cos(\lambda_1𝑥), …, \cos(\lambda_𝑛𝑥)</script> is linearly independent in 
+the vector space of real-valued functions on 𝐑.</p>
+<p><strong>Proof</strong>:</p>
+<p>We know that <script type="math/tex">Df = f''</script> is a linear operator of <script type="math/tex">ℒ(𝑉)</script>.</p>
+<p>Also note from calculus, we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+D \cos(\lambda_i 𝑥) = -\lambda_i^2 \cos \lambda_i 𝑥
+</script>
+</p>
+<p>Since <script type="math/tex">\lambda_i</script> are distinct positive numbers, so <script type="math/tex">-\lambda_i^2</script> are
+also distinct.</p>
+<p>From "5.11 linearly independent eigenvectors", we know
+<script type="math/tex">\cos(\lambda_1𝑥), …, \cos(\lambda_𝑛𝑥)</script> is linearly independent.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a37">5A.37</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Define <script type="math/tex">𝒜 ∈ ℒ(ℒ(𝑉))</script> by
+<script type="math/tex">𝒜(𝑆) = 𝑇𝑆</script> for each <script type="math/tex">𝑆 ∈ ℒ(𝑉)</script>. Prove that the set of eigenvalues of 
+<script type="math/tex">𝑇</script> equals the set of eigenvalues of <script type="math/tex">𝒜</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">T</script>. Then we can find <script type="math/tex">u \neq 0</script>, such
+that <script type="math/tex">T(u) = \lambda u</script>.
+We need to fine <script type="math/tex">S</script> such that <script type="math/tex">𝒜(S) = \lambda S</script>.</p>
+<p>Let <script type="math/tex">v_1, \cdots, v_m</script> be a basis of <script type="math/tex">V</script>, let <script type="math/tex">S(v_i) = u</script>, then <script type="math/tex">S \in ℒ(𝑉)</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+TS(a_1 v_1 + \cdots + a_m v_m) &=
+T(a_1 Sv_1 + \cdots + a_m Sv_m) \\
+&= T(a_1 u + \cdots + a_m u) \\
+&= a_1 Tu + \cdots + a_m Tu \\
+&= a_1 \lambda u + \cdots + a_m \lambda u \\
+&= \lambda (a_1 u + \cdots + a_m u) \\
+&= \lambda (a_1 Sv_1 + \cdots + a_m Sv_m) \\
+&= \lambda S(a_1 v_1 + \cdots + a_m v_m)
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">𝒜(S) = \lambda S</script>.</p>
+<p>Now assume <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">𝒜</script>, then we can find <script type="math/tex">S \neq 0</script>,
+such that <script type="math/tex">TS = \lambda S</script>.</p>
+<p>Since <script type="math/tex">S \neq 0</script>, we can find <script type="math/tex">v \in \text{range } S</script> such that <script type="math/tex">v \neq 0</script>.
+Let <script type="math/tex">S(u) = v</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T(v) &= TS(u) \\
+&= \lambda S(u) \\
+&= \lambda v
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a38">5A.38</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">𝑈</script> is a subspace of 
+<script type="math/tex">𝑉</script> invariant under <script type="math/tex">𝑇</script>. The quotient operator <script type="math/tex">𝑇/𝑈 ∈ ℒ(𝑉/𝑈)</script> is defined 
+by</p>
+<p>
+<script type="math/tex; mode=display"> 
+(T/U)(v + U) = Tv + U
+</script>
+</p>
+<p>for each <script type="math/tex">v \in V</script>.</p>
+<p>(a) Show that the definition of <script type="math/tex">𝑇/𝑈</script> makes sense (which requires using the
+condition that <script type="math/tex">𝑈</script> is invariant under 𝑇) and show that <script type="math/tex">𝑇/𝑈</script> is an operator
+on <script type="math/tex">𝑉/𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">u+U = v+U</script>, then from
+"3.101 two translates of a subspace are equal or disjoint",
+we know <script type="math/tex">u-v \in U</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(T/U)(v + U) &= Tv + U \\
+(T/U)(u + U) &= Tu + U \\
+(Tv+U) - (Tu+U) &= (Tv - Tu) + U \\ 
+&= T(v-u) + U \\ 
+&= U & \text{ since } u-v \in U \text{ which is invariant under } T\\ 
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">T/U</script> is well defined.</p>
+<p>Next, we will prove <script type="math/tex">T/U</script> is linear map.</p>
+<p>First</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(T/U)((u+U)+(v+U))
+&=(T/U)((u+v)+U) \\
+&= T(u+v) + U \\
+&= (T(u) + T(v)) + U \\
+&= (T(u) + U) + (T(v) + U) \\
+&= (T/U)(u+U) + (T/U)(v+U) \\
+\end{align*} 
+</script>
+</p>
+<p>Second</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(T/U)(a(u+U)) 
+&= (T/U)(au + U) \\
+&= T(au) + U \\
+&= aT(u) + U \\
+&= a(T(u) + U) \\
+&= a((T/U)(u+U)) \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that each eigenvalue of <script type="math/tex">𝑇/𝑈</script> is an eigenvalue of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">k</script> is an eigenvalue of <script type="math/tex">T/U</script>. Then <script type="math/tex">T/U - kI</script> is not injective,
+so we can find <script type="math/tex">u \not\in U</script> such that <script type="math/tex">(T/U-kI)(u+U) = (T-kI)(u) + U = 0+U</script>,
+that means we can find <script type="math/tex">v \in U</script> such that <script type="math/tex">(T-kI)(u) = v \in U</script>.</p>
+<p>Since <script type="math/tex">U</script> is invariant under <script type="math/tex">T</script>,
+so we can consider <script type="math/tex">T</script> limited on <script type="math/tex">U</script>, i.e. <script type="math/tex">T|_U</script>. </p>
+<p>If <script type="math/tex">(T|_U-kI)</script> is not invertible, we can find <script type="math/tex">w \in U</script> and <script type="math/tex">w \neq 0</script>,
+such that <script type="math/tex">(T|_U-kI)(w) = 0</script>, since <script type="math/tex">T|_U(w) = T(w)</script>.
+Then <script type="math/tex">(T-kI)(w) = 0</script>. So <script type="math/tex">k</script> is eigenvalue of <script type="math/tex">T</script>.</p>
+<p>If <script type="math/tex">(T|_U-kI)</script> is invertible, we can find <script type="math/tex">w \in U</script> such that
+<script type="math/tex">(T|_U-kI)(w) = v</script>, then we also have <script type="math/tex">(T-kI)(w) = v</script>.</p>
+<p>Since <script type="math/tex">u \not\in U, w \in U</script>, we have <script type="math/tex">u-w \neq 0</script>.
+And <script type="math/tex">(T-kI)(u-w) = (T-kI)(u) - (T-kI)(w) = v - v = 0</script>.</p>
+<p>Therefore, <script type="math/tex">k</script> is an eigenvalue of <script type="math/tex">T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</h2>
+<h3 id="5b29">5B.29</h3>
+<p>Show that every operator on a finite-dimensional vector space of dimension
+at least two has an invariant subspace of dimension two.</p>
+<p><strong>Proof</strong>: (This is just a summary)</p>
+<p>If <script type="math/tex">p(z) = z-\lambda</script>, then every vector is a eigenvector of <script type="math/tex">\lambda</script>.</p>
+<p>If <script type="math/tex">p(z) = (z-\lambda)^m</script>, then consider <script type="math/tex">v</script> such that <script type="math/tex">u = (T-\lambda )^k(v) \neq 0</script>,
+but <script type="math/tex">(T-\lambda )^{k+1}(v) = 0</script>.</p>
+<p>3rd case <script type="math/tex">p(z) = (z^2+bz+c)</script>, then consider its kernel. Then kernel cannot
+always be <script type="math/tex">\{0\}</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
