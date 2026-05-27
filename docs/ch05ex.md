@@ -1315,3 +1315,111 @@ $$
 So $\lambda$ is an eigenvalue of $T$.
 
 $\square$
+
+### 5A.38
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and $𝑈$ is a subspace of 
+$𝑉$ invariant under $𝑇$. The quotient operator $𝑇/𝑈 ∈ ℒ(𝑉/𝑈)$ is defined 
+by
+
+$$ 
+(T/U)(v + U) = Tv + U
+$$
+
+for each $v \in V$.
+
+(a) Show that the definition of $𝑇/𝑈$ makes sense (which requires using the
+condition that $𝑈$ is invariant under 𝑇) and show that $𝑇/𝑈$ is an operator
+on $𝑉/𝑈$.
+
+**Proof**:
+
+Assume $u+U = v+U$, then from
+"3.101 two translates of a subspace are equal or disjoint",
+we know $u-v \in U$.
+
+$$
+\begin{align*}
+(T/U)(v + U) &= Tv + U \\
+(T/U)(u + U) &= Tu + U \\
+(Tv+U) - (Tu+U) &= (Tv - Tu) + U \\ 
+&= T(v-u) + U \\ 
+&= U & \text{ since } u-v \in U \text{ which is invariant under } T\\ 
+\end{align*} 
+$$
+
+So $T/U$ is well defined.
+
+Next, we will prove $T/U$ is linear map.
+
+First
+
+$$ 
+\begin{align*}
+(T/U)((u+U)+(v+U))
+&=(T/U)((u+v)+U) \\
+&= T(u+v) + U \\
+&= (T(u) + T(v)) + U \\
+&= (T(u) + U) + (T(v) + U) \\
+&= (T/U)(u+U) + (T/U)(v+U) \\
+\end{align*} 
+$$
+
+Second
+
+$$ 
+\begin{align*}
+(T/U)(a(u+U)) 
+&= (T/U)(au + U) \\
+&= T(au) + U \\
+&= aT(u) + U \\
+&= a(T(u) + U) \\
+&= a((T/U)(u+U)) \\
+\end{align*} 
+$$
+
+$\square$
+
+(b) Show that each eigenvalue of $𝑇/𝑈$ is an eigenvalue of $𝑇$.
+
+**Proof**:
+
+Assume $k$ is an eigenvalue of $T/U$. Then $T/U - kI$ is not injective,
+so we can find $u \not\in U$ such that $(T/U-kI)(u+U) = (T-kI)(u) + U = 0+U$,
+that means we can find $v \in U$ such that $(T-kI)(u) = v \in U$.
+
+Since $U$ is invariant under $T$,
+so we can consider $T$ limited on $U$, i.e. $T|_U$. 
+
+If $(T|_U-kI)$ is not invertible, we can find $w \in U$ and $w \neq 0$,
+such that $(T|_U-kI)(w) = 0$, since $T|_U(w) = T(w)$.
+Then $(T-kI)(w) = 0$. So $k$ is eigenvalue of $T$.
+
+If $(T|_U-kI)$ is invertible, we can find $w \in U$ such that
+$(T|_U-kI)(w) = v$, then we also have $(T-kI)(w) = v$.
+
+Since $u \not\in U, w \in U$, we have $u-w \neq 0$.
+And $(T-kI)(u-w) = (T-kI)(u) - (T-kI)(w) = v - v = 0$.
+
+Therefore, $k$ is an eigenvalue of $T$.
+
+$\square$
+
+## Section 5B The Minimal Polynomial
+
+### 5B.29
+
+Show that every operator on a finite-dimensional vector space of dimension
+at least two has an invariant subspace of dimension two.
+
+**Proof**: (This is just a summary)
+
+If $p(z) = z-\lambda$, then every vector is a eigenvector of $\lambda$.
+
+If $p(z) = (z-\lambda)^m$, then consider $v$ such that $u = (T-\lambda )^k(v) \neq 0$,
+but $(T-\lambda )^{k+1}(v) = 0$.
+
+3rd case $p(z) = (z^2+bz+c)$, then consider its kernel. Then kernel cannot
+always be $\{0\}$.
+
+$\square$
