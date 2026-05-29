@@ -92,6 +92,14 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#58-definition-eigenvector">5.8 definition: eigenvector</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#511-linearly-independent-eigenvectors">5.11 linearly independent eigenvectors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#512-operator-cannot-have-more-eigenvalues-than-dimension-of-vector-space">5.12 operator cannot have more eigenvalues than dimension of vector space</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#517-multiplicative-properties">5.17 multiplicative properties</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#518-null-space-and-range-of-pt-are-invariant-under-t">5.18 null space and range of 𝑝(𝑇) are invariant under 𝑇</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -180,6 +188,43 @@ an eigenvector of <script type="math/tex">𝑇</script> corresponding to <script
 <p>a vector <script type="math/tex">𝑣 ∈ 𝑉</script> with <script type="math/tex">𝑣 ≠ 0</script> is an eigenvector of <script type="math/tex">𝑇</script> corresponding
 to <script type="math/tex">𝜆</script> if and only if <script type="math/tex">𝑣 ∈ \text{null } (𝑇 − \lambda 𝐼)</script>.</p>
 </blockquote>
+<h3 id="511-linearly-independent-eigenvectors">5.11 linearly independent eigenvectors</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Then every list of eigenvectors of <script type="math/tex">𝑇</script> corresponding to
+distinct eigenvalues of <script type="math/tex">𝑇</script> is linearly independent.</p>
+<p><strong>Summary of Proof</strong></p>
+<p>Assume they are linearly dependent. Then find the minimal number of <script type="math/tex">v_i</script>
+such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_1 v_1 + \cdots + a_m v_m = 0
+</script>
+</p>
+<p>And <script type="math/tex">a_i \neq 0</script>. Then apply <script type="math/tex">T- \lambda_m I</script> to it we can reach a contradition.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="512-operator-cannot-have-more-eigenvalues-than-dimension-of-vector-space">5.12 operator cannot have more eigenvalues than dimension of vector space</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional. Then each operator on <script type="math/tex">𝑉</script> has at most
+<script type="math/tex">\dim 𝑉</script> distinct eigenvalues.</p>
+<h3 id="517-multiplicative-properties">5.17 multiplicative properties</h3>
+<p>
+<script type="math/tex; mode=display"> 
+(𝑝𝑞)(𝑇) = 𝑝(𝑇)𝑞(𝑇); \\
+𝑝(𝑇)𝑞(𝑇) = 𝑞(𝑇)𝑝(𝑇). \\
+</script>
+</p>
+<h3 id="518-null-space-and-range-of-pt-are-invariant-under-t">5.18 null space and range of <script type="math/tex">𝑝(𝑇)</script> are invariant under <script type="math/tex">𝑇</script>
+</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script>. Then <script type="math/tex">\text{null } 𝑝(𝑇)</script> and
+<script type="math/tex">\text{range } 𝑝(𝑇)</script> are invariant under <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">u \in \text{range } p(T)</script>, then we can find <script type="math/tex">v</script> such that
+<script type="math/tex">p(T)(v) = u</script>, then <script type="math/tex">T(u) = T(p(T)(v)) = P(T)(T(v)) \in \text{range } P(T)</script>.</p>
+<p>If <script type="math/tex">u \in \text{null } P(T)</script>, then
+<script type="math/tex">P(T)(T(u)) = T(P(T)(u))= T(0)</script>. So <script type="math/tex">T(u) \in \text{null } P(T)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
