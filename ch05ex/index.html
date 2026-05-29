@@ -160,6 +160,16 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5a38">5A.38</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a39">5A.39</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a40">5A.40</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a41">5A.41</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a42">5A.42</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5a43">5A.43</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</a>
@@ -1405,16 +1415,322 @@ And <script type="math/tex">(T-kI)(u-w) = (T-kI)(u) - (T-kI)(w) = v - v = 0</scr
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h3 id="5a39">5A.39</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Prove that <script type="math/tex">𝑇</script> has an 
+eigenvalue if and only if there exists a subspace of <script type="math/tex">𝑉</script> of dimension
+<script type="math/tex">\dim 𝑉 − 1</script> that is invariant under <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Let <script type="math/tex">U</script> be a invariant space under <script type="math/tex">T</script> and <script type="math/tex">\dim U = \dim V - 1</script>.</p>
+<p>Then consider the quotient space <script type="math/tex">V/U</script> and the operator <script type="math/tex">T/U</script> on it defined
+in the last exercise.</p>
+<p>Since <script type="math/tex">\dim V/U = \dim V - \dim U = 1</script>, then <script type="math/tex">T/U</script> has an eigenvalue.
+From the previous exercise part (b), each eigenvalue of <script type="math/tex">𝑇/𝑈</script> is an 
+eigenvalue of <script type="math/tex">𝑇</script>. So <script type="math/tex">T</script> has an eigenvalue. </p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>We will use induction. Let <script type="math/tex">m = \dim V</script>.
+First if <script type="math/tex">m = 1</script>, then <script type="math/tex">\{0\}</script> is invariant and it's dimension is <script type="math/tex">0 = m - 1</script>.
+The statement is true.</p>
+<p>Now assume the statement holds for all <script type="math/tex">m \leq n</script>, and we will prove
+when <script type="math/tex">m = n + 1</script>.</p>
+<p>Assume <script type="math/tex">k</script> is an eigenvalue, consider the linear mapping <script type="math/tex">T-kI</script>.</p>
+<p>Consider <script type="math/tex">\text{range } T- kI</script>. From
+"5.18 null space and range of <script type="math/tex">𝑝(𝑇)</script> are invariant under <script type="math/tex">𝑇</script>", we know
+<script type="math/tex">\text{range } T- kI</script> is invariant under <script type="math/tex">T</script>.</p>
+<p>Since <script type="math/tex">T-kI</script> is not surjective, then <script type="math/tex">\text{dim range } T-kI < n+1</script>
+</p>
+<p>If <script type="math/tex">\text{dim range } T-kI = n</script>, then we are done.</p>
+<p>If <script type="math/tex">\text{dim range } T-kI < n</script>, then from
+fundamental theorem of linear maps (3.21), we know
+<script type="math/tex">\text{dim null } T-kI \geq 2</script>.</p>
+<p>Then we can find <script type="math/tex">v_1, v_2 \in \text{null } T-kI</script> which are linear independent.</p>
+<p>Let <script type="math/tex">U = \text{span}(𝑣_1)</script>
+</p>
+<p>Now we can use exercise 5A.38 and consider the quotient space <script type="math/tex">V/U</script> and
+its operator <script type="math/tex">T/U</script>.</p>
+<p>Note that <script type="math/tex">k</script> is an eigenvalue of <script type="math/tex">T/U</script> and <script type="math/tex">v_2+U</script> is an eigenvector since</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(T/U)(v_2+U) &= T(v_2) + U \\
+&= k v_2 + U \\
+&= k (v_2 + U) 
+\end{align*} 
+</script>
+</p>
+<p>Since <script type="math/tex">\dim U = 1</script>, then <script type="math/tex">\dim V/U = \dim V - \dim U = (n+1)-1 = n</script>.
+And <script type="math/tex">T/U</script>  has an eigenvalue <script type="math/tex">k</script>, so we can apply the induction and get
+an invariant subspace <script type="math/tex">W'</script> and <script type="math/tex">\dim W' = n-1</script>.</p>
+<p>Now assume <script type="math/tex">w_1+U, \cdots, w_{n-1}+U</script> is a basis of <script type="math/tex">W'</script>.</p>
+<p>Then we can cosider the space <script type="math/tex">W = \text{span}(w_1, \cdots, w_{n-1}, v_1)</script>.</p>
+<p>Since <script type="math/tex">W'</script> is invariant under <script type="math/tex">T/U</script>, then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T(w_i) + U &= (T/U)(w_i+U) \\
+&= a_1 (w_1+U) + \cdots + a_{n-1} (w_{n-1}+U) \\
+&= (a_1 w_1 + \cdots + a_{n-1} w_{n-1}) + U
+\end{align*} 
+</script>
+</p>
+<p>And since <script type="math/tex">U = \text{span}(𝑣_1)</script>, it means</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(w_i) = a_1 w_1 + \cdots + a_{n-1} w_{n-1} + a_n v_1 \in W
+</script>
+</p>
+<p>Also <script type="math/tex">T(v_1) = k v_1 \in W</script>. So <script type="math/tex">W</script> is invariant under <script type="math/tex">T</script>.</p>
+<p>Now if</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+a_1 w_1 + \cdots + a_{n-1} w_{n-1} + a_n v_1 &= 0 \\
+&\Rightarrow \\
+a_1 w_1 + \cdots + a_{n-1} w_{n-1} &= -a_n v_1 \\
+&\Rightarrow \\
+(a_1 w_1 + \cdots + a_{n-1} w_{n-1}) + U &= -a_n v_1 + U \\
+&\Rightarrow \\
+a_1 (w_1+U) + \cdots + a_{n-1} (w_{n-1}+U) &= 0 + U \\
+&\Rightarrow \\
+a_1 = \cdots = a_{n-1} &= 0 \\ 
+&\Rightarrow \\
+a_n &= 0 \text{ as well}
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">w_1, \cdots, w_{n-1}, v_1</script> are linear independent.</p>
+<p>The <script type="math/tex">\dim W = n</script>, this completes the induction.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Here is the anwser from AI:</p>
+<p>Let <script type="math/tex">k</script> be an eigenvalue of <script type="math/tex">T</script> and let
+<script type="math/tex">W = range(T − kI)</script>. By 5.18, <script type="math/tex">W</script> is invariant 
+under <script type="math/tex">T</script>. Since <script type="math/tex">T − kI</script> is not surjective 
+(<script type="math/tex">k</script> is an eigenvalue, so <script type="math/tex">T − kI</script> is not 
+injective, and <script type="math/tex">V</script> is finite-dimensional),
+<script type="math/tex">\dim W < \dim V</script>.</p>
+<p>Case 1: <script type="math/tex">\dim W = \dim V − 1</script>. Then <script type="math/tex">W</script> is the desired invariant subspace.</p>
+<p>Case 2: <script type="math/tex">\dim W < \dim V − 1</script>.</p>
+<p>Since <script type="math/tex">W</script> is invariant under <script type="math/tex">T</script>, the quotient operator <script type="math/tex">T/W ∈ L(V/W)</script> is well-defined. For any <script type="math/tex">v ∈ V</script>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(T/W)(v+W) &= Tv + W \\
+&= kv + (T-kI)v + W \\
+&= k(v + W)
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">(T/W) = kI</script>.</p>
+<p>Let <script type="math/tex">Z = π⁻¹(Z')</script> be the preimage of <script type="math/tex">Z'</script> under the quotient map <script type="math/tex">π : V → V/W</script>.</p>
+<p>Then <script type="math/tex">Z</script> is invariant under <script type="math/tex">T</script>, for <script type="math/tex">z \in Z</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+π(T(z)) &= T(z) + W \\
+&= (T/W)(z+W) \\
+&= k(z+W) \\
+&= k π(z) \\
+&\in Z' \\
+&\Rightarrow \\
+T(z) &\in Z
+\end{align*} 
+</script>
+</p>
+<p>Then note <script type="math/tex">\text{null } \pi = W</script> and
+<script type="math/tex">\text{range } \pi = Z'</script>
+</p>
+<p>So <script type="math/tex">\dim Z = \dim W + \dim Z' = n-1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a40">5A.40</h3>
+<p>Suppose <script type="math/tex">𝑆, 𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑆</script> is invertible. Suppose <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script> is a 
+polynomial.
+Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑝(𝑆𝑇𝑆^{−1}) = 𝑆𝑝(𝑇)𝑆^{−1}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Note since <script type="math/tex">𝑆</script> is invertible, then <script type="math/tex">SS^{-1} = I</script>.</p>
+<p>So <script type="math/tex">(STS^{-1})^n = (STS^{-1}) \cdots (STS^{-1}) = ST^nS^{-1}</script>.</p>
+<p>If <script type="math/tex">p(z) = a_0 + a_1 z + \cdots + a_{m} z^{m}</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+𝑝(𝑆𝑇𝑆^{−1}) &= a_0 + a_1 (𝑆𝑇𝑆^{−1}) + \cdots + a_{m} (𝑆𝑇𝑆^{−1})^{m} \\
+&= a_0 SS^{-1} + a_1 (𝑆𝑇𝑆^{−1}) + \cdots + a_{m} (𝑆𝑇^{m}𝑆^{−1}) \\
+&= S(a_0 + a_1 T + \cdots + a_{m} T^{m})S^{-1} \\
+&= 𝑆𝑝(𝑇)𝑆^{−1}
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a41">5A.41</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> invariant under <script type="math/tex">𝑇</script>. 
+Prove that <script type="math/tex">𝑈</script> is invariant under <script type="math/tex">𝑝(𝑇)</script> for every polynomial <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>We use the induction to show <script type="math/tex">U</script> is invariant under <script type="math/tex">T^n</script>.
+Since <script type="math/tex">U</script> is invariant under <script type="math/tex">T</script>, assume <script type="math/tex">U</script> is invariant under <script type="math/tex">T^n</script>.</p>
+<p>For any <script type="math/tex">u \in U</script>, since <script type="math/tex">T^n(u) \in U</script>, then <script type="math/tex">T^{n+1}(u) = T(T^n(u)) \in U</script>,
+so <script type="math/tex">U</script> is invariant under <script type="math/tex">T^{n+1}</script>.</p>
+<p>Then given any <script type="math/tex">u \in U</script>, <script type="math/tex">a_nT^{n}(u) \in U</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+p(T)(u) &= (a_0 + a_1 T + \cdots + a_{m} T^{m})(u) \\
+&= a_0(u) + a_1 T(u) + \cdots + a_{m} T^{m}(u) \\
+& \in U
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">𝑈</script> is invariant under <script type="math/tex">𝑝(𝑇)</script> for every polynomial <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a42">5A.42</h3>
+<p>Define <script type="math/tex">𝑇 ∈ ℒ(𝐅^𝑛)</script> by
+<script type="math/tex">𝑇(𝑥_1, 𝑥_2, 𝑥_3, …, 𝑥_𝑛) = (𝑥_1, 2𝑥_2, 3𝑥_3, …, 𝑛𝑥_𝑛)</script>.</p>
+<p>(a) Find all eigenvalues and eigenvectors of 𝑇.</p>
+<p><strong>Proof</strong>:</p>
+<p>For any <script type="math/tex">i</script> such that <script type="math/tex">1 \leq i \leq n</script>, <script type="math/tex">i</script> is an eigenvalue, because
+let <script type="math/tex">e_i</script> be the ith item of standard basis of <script type="math/tex">𝐅^𝑛</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(e_i) = i \cdot e_i
+</script>
+</p>
+<p>Since <script type="math/tex">\dim 𝐅^𝑛 = n</script>, then <script type="math/tex">T</script> can only have <script type="math/tex">n</script> distinct eigenvalues.
+Then we found all eigenvalue.</p>
+<p>If <script type="math/tex">v = a_1 e_1 + \cdots + a_n e_n</script> is an eigenvector with eigenvalue of <script type="math/tex">i</script>,
+then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+i v &= T(v) \\
+&= a_1 Te_1 + \cdots + a_n Te_n \\
+&= 1 a_1 e_1 + \cdots + n a_n e_n \\
+& \Rightarrow \\
+(1-i)a_1 e_1 + \cdots + (n-i) a_n e_n &= 0 \\
+& \Rightarrow \\
+(k-i) a_k &= 0 \\
+& \Rightarrow \\
+a_k &= \begin{cases}
+    0 &\text{if } k \neq i \\
+    \text{anything } &\text{if } k = i\\
+\end{cases} 
+\end{align*} 
+</script>
+</p>
+<p>so <script type="math/tex">v = a_i e_i</script> with <script type="math/tex">a_i \neq 0</script>. That's all eigenvectors of <script type="math/tex">T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Find all subspaces of <script type="math/tex">𝐅^𝑛</script> that are invariant under <script type="math/tex">𝑇</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Assume <script type="math/tex">U</script> is invariant under <script type="math/tex">T</script> and
+<script type="math/tex">v \in U</script> and <script type="math/tex">v \neq 0</script>, let</p>
+<p>
+<script type="math/tex; mode=display"> 
+v = a_1 e_1 + \cdots + a_n e_n
+</script>
+</p>
+<p>If <script type="math/tex">a_i \neq 0</script>, we want to show <script type="math/tex">e_i \in U</script>.
+If <script type="math/tex">a_j = 0</script> when <script type="math/tex">j \neq i</script>, then <script type="math/tex">a_i^{-1}v = e_i \in U</script>, we are done.</p>
+<p>Other we have some <script type="math/tex">a_j \neq 0</script> with <script type="math/tex">j \neq i</script>.</p>
+<p>Since <script type="math/tex">U</script> is invariant subspace, then <script type="math/tex">T(\frac{1}{j} v) \in U</script>,
+so we have <script type="math/tex">v - T(\frac{1}{j}v) \in U</script>.
+We also have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+v - T(\frac{1}{j}v) &=
+(a_1 e_1 + \cdots + a_n e_n) - \frac{1}{j}(a_1 Te_1 + \cdots + a_n Te_n) \\
+&= \sum \limits_{k=1}^{n} (1-k/j)a_k e_k \\
+&= \sum \limits_{k=1}^{n} b_k e_k
+\end{align*} 
+</script>
+</p>
+<p>So, for <script type="math/tex">v - T(\frac{1}{j}v)</script>, <script type="math/tex">b_i \neq 0</script> but <script type="math/tex">b_j = 0</script>.
+For other <script type="math/tex">k \neq i, j</script>, if <script type="math/tex">a_k \neq 0</script> then <script type="math/tex">b_k = (1-k/j)a_k \neq 0</script>.
+If <script type="math/tex">a_k = 0</script>, then <script type="math/tex">b_k = (1-k/j)a_k = 0</script>.</p>
+<p>So the number of non zero coefficients is reduced by <script type="math/tex">1</script>.
+By continuing this process, we can show <script type="math/tex">e_i \in U</script>.</p>
+<p>That means <script type="math/tex">\text{span}(e_i, \cdots, e_j) \subseteq U</script>, on the other hand
+<script type="math/tex">u = a_1 e_1 + \cdots + a_n e_n</script>. So <script type="math/tex">U \subseteq \text{span}(e_i, \cdots, e_j)</script>.</p>
+<p>That means all subspaces of <script type="math/tex">𝐅^𝑛</script> that are invariant under <script type="math/tex">𝑇</script> are
+the form of <script type="math/tex">\text{span}(e_i, \cdots, e_j)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5a43">5A.43</h3>
+<p>Suppose that <script type="math/tex">𝑉</script> is finite-dimensional,
+<script type="math/tex">\dim 𝑉 > 1</script>, and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Prove that
+<script type="math/tex">\{𝑝(𝑇) ∶ 𝑝 ∈ 𝒫(𝐅)\} ≠ ℒ(𝑉)</script>.</p>
+<p><strong>Proof</strong>: </p>
+<p>Assume <script type="math/tex">\dim V = n</script>.</p>
+<p>One strategy is that: since <script type="math/tex">\dim L(V) = n^2</script>, we should prove
+<script type="math/tex">\dim \{𝑝(𝑇) ∶ 𝑝 ∈ 𝒫(𝐅)\} < n^2</script>.</p>
+<p>We will use the results from section about next section, i.e. section 5.3.</p>
+<p>Assume <script type="math/tex">p(z)</script> is the minimal polynomial of <script type="math/tex">T</script>. Then from 5.22 we know
+<script type="math/tex">\deg p \leq n</script>.</p>
+<p>Given any <script type="math/tex">q(z)</script>, from 4.9 division algorithm for polynomials, we know we
+can find <script type="math/tex">s(z), r(z)</script> such that <script type="math/tex">q(z) = s(z)p(z) + r(z)</script>, where
+<script type="math/tex">\deg r < n</script>.</p>
+<p>That means <script type="math/tex">q(T) = s(T)p(T) + r(T)</script>, since <script type="math/tex">p(T) = 0</script>, then <script type="math/tex">q(T) = r(T)</script>.</p>
+<p>Since <script type="math/tex">\deg r < n</script>, then we have</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\{𝑝(𝑇) ∶ 𝑝 ∈ 𝒫(𝐅)\} &= \text{span}(I, T, \cdots, T^{n-1}) \\
+&\Rightarrow \\
+\dim \{𝑝(𝑇) ∶ 𝑝 ∈ 𝒫(𝐅)\} &\leq n
+\end{align*}
+</script>
+</p>
+<p>Since <script type="math/tex">n > 1</script>, then <script type="math/tex">n < n^2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Another strategy (not working so far) is
+we should find some <script type="math/tex">p</script> such that <script type="math/tex">\text{range } p(T)</script> or <script type="math/tex">\text{null } p(T)</script>
+is not trivial invariant subspace.</p>
+<p>We consider the <script type="math/tex">U = \text{null } T</script>. Since we know from
+exercise 5A.41, <script type="math/tex">U</script> is invariant under <script type="math/tex">p(T)</script>,
+we want to find a operator
+<script type="math/tex">S</script> such that <script type="math/tex">U</script> is not invariant under <script type="math/tex">S</script>.</p>
+<p>Case 1: <script type="math/tex">U = V</script>, then <script type="math/tex">T = 0</script>, then <script type="math/tex">p(T) = kI</script>. Let <script type="math/tex">v_1, v_2 \in V</script> be
+linear independent, then let <script type="math/tex">S(v_1) = v_2, S(v_2) = v_1</script>, then <script type="math/tex">S \neq kI = P(T)</script>.</p>
+<p>Case 2: <script type="math/tex">U \subset V</script>, we can find a basis of <script type="math/tex">U</script>: <script type="math/tex">u_1, \cdots, u_m</script>.
+We can also extend it to a basis of <script type="math/tex">V</script> by adding <script type="math/tex">v_1, \cdots, v_n</script>.
+Let <script type="math/tex">S(u_i) = v_1</script>, then <script type="math/tex">U</script> is not invariant under <script type="math/tex">S</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h2 id="section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</h2>
 <h3 id="5b29">5B.29</h3>
 <p>Show that every operator on a finite-dimensional vector space of dimension
 at least two has an invariant subspace of dimension two.</p>
 <p><strong>Proof</strong>: (This is just a summary)</p>
+<p>Consider the <script type="math/tex">T</script> is the operator.</p>
 <p>If <script type="math/tex">p(z) = z-\lambda</script>, then every vector is a eigenvector of <script type="math/tex">\lambda</script>.</p>
 <p>If <script type="math/tex">p(z) = (z-\lambda)^m</script>, then consider <script type="math/tex">v</script> such that <script type="math/tex">u = (T-\lambda )^k(v) \neq 0</script>,
 but <script type="math/tex">(T-\lambda )^{k+1}(v) = 0</script>.</p>
 <p>3rd case <script type="math/tex">p(z) = (z^2+bz+c)</script>, then consider its kernel. Then kernel cannot
-always be <script type="math/tex">\{0\}</script>.</p>
+always be <script type="math/tex">\{0\}</script>. Then consider <script type="math/tex">v \in \text{null } p(T)</script>, then <script type="math/tex">v</script> is not
+an eigenvector, so <script type="math/tex">v, Tv</script> are linear independent.
+Then <script type="math/tex">\text{span}(𝑣, Tv)</script> is good.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
