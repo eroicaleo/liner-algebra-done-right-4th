@@ -61,3 +61,48 @@ an eigenvector of $𝑇$ corresponding to $𝜆$ if $𝑣 ≠ 0$ and $𝑇𝑣 =
 > a vector $𝑣 ∈ 𝑉$ with $𝑣 ≠ 0$ is an eigenvector of $𝑇$ corresponding
 to $𝜆$ if and only if $𝑣 ∈ \text{null } (𝑇 − \lambda 𝐼)$.
 
+### 5.11 linearly independent eigenvectors
+
+Suppose $𝑇 ∈ ℒ(𝑉)$. Then every list of eigenvectors of $𝑇$ corresponding to
+distinct eigenvalues of $𝑇$ is linearly independent.
+
+**Summary of Proof**
+
+Assume they are linearly dependent. Then find the minimal number of $v_i$
+such that
+
+$$ 
+a_1 v_1 + \cdots + a_m v_m = 0
+$$
+
+And $a_i \neq 0$. Then apply $T- \lambda_m I$ to it we can reach a contradition.
+
+$\square$
+
+### 5.12 operator cannot have more eigenvalues than dimension of vector space
+
+Suppose $𝑉$ is finite-dimensional. Then each operator on $𝑉$ has at most
+$\dim 𝑉$ distinct eigenvalues.
+
+### 5.17 multiplicative properties
+
+$$ 
+(𝑝𝑞)(𝑇) = 𝑝(𝑇)𝑞(𝑇); \\
+𝑝(𝑇)𝑞(𝑇) = 𝑞(𝑇)𝑝(𝑇). \\
+$$
+
+### 5.18 null space and range of $𝑝(𝑇)$ are invariant under $𝑇$
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝑝 ∈ 𝒫(𝐅)$. Then $\text{null } 𝑝(𝑇)$ and
+$\text{range } 𝑝(𝑇)$ are invariant under $𝑇$.
+
+**Proof**:
+
+If $u \in \text{range } p(T)$, then we can find $v$ such that
+$p(T)(v) = u$, then $T(u) = T(p(T)(v)) = P(T)(T(v)) \in \text{range } P(T)$.
+
+If $u \in \text{null } P(T)$, then
+$P(T)(T(u)) = T(P(T)(u))= T(0)$. So $T(u) \in \text{null } P(T)$.
+
+$\square$
+
