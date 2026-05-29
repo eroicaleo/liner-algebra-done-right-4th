@@ -1405,6 +1405,364 @@ Therefore, $k$ is an eigenvalue of $T$.
 
 $\square$
 
+### 5A.39
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$. Prove that $𝑇$ has an 
+eigenvalue if and only if there exists a subspace of $𝑉$ of dimension
+$\dim 𝑉 − 1$ that is invariant under $𝑇$.
+
+**Proof**:
+
+$\Leftarrow$
+
+Let $U$ be a invariant space under $T$ and $\dim U = \dim V - 1$.
+
+Then consider the quotient space $V/U$ and the operator $T/U$ on it defined
+in the last exercise.
+
+Since $\dim V/U = \dim V - \dim U = 1$, then $T/U$ has an eigenvalue.
+From the previous exercise part (b), each eigenvalue of $𝑇/𝑈$ is an 
+eigenvalue of $𝑇$. So $T$ has an eigenvalue. 
+
+$\Rightarrow$
+
+We will use induction. Let $m = \dim V$.
+First if $m = 1$, then $\{0\}$ is invariant and it's dimension is $0 = m - 1$.
+The statement is true.
+
+Now assume the statement holds for all $m \leq n$, and we will prove
+when $m = n + 1$.
+
+Assume $k$ is an eigenvalue, consider the linear mapping $T-kI$.
+
+Consider $\text{range } T- kI$. From
+"5.18 null space and range of $𝑝(𝑇)$ are invariant under $𝑇$", we know
+$\text{range } T- kI$ is invariant under $T$.
+
+Since $T-kI$ is not surjective, then $\text{dim range } T-kI < n+1$
+
+If $\text{dim range } T-kI = n$, then we are done.
+
+If $\text{dim range } T-kI < n$, then from
+fundamental theorem of linear maps (3.21), we know
+$\text{dim null } T-kI \geq 2$.
+
+Then we can find $v_1, v_2 \in \text{null } T-kI$ which are linear independent.
+
+Let $U = \text{span}(𝑣_1)$
+
+Now we can use exercise 5A.38 and consider the quotient space $V/U$ and
+its operator $T/U$.
+
+Note that $k$ is an eigenvalue of $T/U$ and $v_2+U$ is an eigenvector since
+
+$$
+\begin{align*}
+(T/U)(v_2+U) &= T(v_2) + U \\
+&= k v_2 + U \\
+&= k (v_2 + U) 
+\end{align*} 
+$$
+
+Since $\dim U = 1$, then $\dim V/U = \dim V - \dim U = (n+1)-1 = n$.
+And $T/U$  has an eigenvalue $k$, so we can apply the induction and get
+an invariant subspace $W'$ and $\dim W' = n-1$.
+
+Now assume $w_1+U, \cdots, w_{n-1}+U$ is a basis of $W'$.
+
+Then we can cosider the space $W = \text{span}(w_1, \cdots, w_{n-1}, v_1)$.
+
+Since $W'$ is invariant under $T/U$, then we have
+
+$$ 
+\begin{align*}
+T(w_i) + U &= (T/U)(w_i+U) \\
+&= a_1 (w_1+U) + \cdots + a_{n-1} (w_{n-1}+U) \\
+&= (a_1 w_1 + \cdots + a_{n-1} w_{n-1}) + U
+\end{align*} 
+$$
+
+And since $U = \text{span}(𝑣_1)$, it means
+
+$$ 
+T(w_i) = a_1 w_1 + \cdots + a_{n-1} w_{n-1} + a_n v_1 \in W
+$$
+
+Also $T(v_1) = k v_1 \in W$. So $W$ is invariant under $T$.
+
+Now if
+
+$$
+\begin{align*}
+a_1 w_1 + \cdots + a_{n-1} w_{n-1} + a_n v_1 &= 0 \\
+&\Rightarrow \\
+a_1 w_1 + \cdots + a_{n-1} w_{n-1} &= -a_n v_1 \\
+&\Rightarrow \\
+(a_1 w_1 + \cdots + a_{n-1} w_{n-1}) + U &= -a_n v_1 + U \\
+&\Rightarrow \\
+a_1 (w_1+U) + \cdots + a_{n-1} (w_{n-1}+U) &= 0 + U \\
+&\Rightarrow \\
+a_1 = \cdots = a_{n-1} &= 0 \\ 
+&\Rightarrow \\
+a_n &= 0 \text{ as well}
+\end{align*} 
+$$
+
+So $w_1, \cdots, w_{n-1}, v_1$ are linear independent.
+
+The $\dim W = n$, this completes the induction.
+
+$\square$
+
+Here is the anwser from AI:
+
+Let $k$ be an eigenvalue of $T$ and let
+$W = range(T − kI)$. By 5.18, $W$ is invariant 
+under $T$. Since $T − kI$ is not surjective 
+($k$ is an eigenvalue, so $T − kI$ is not 
+injective, and $V$ is finite-dimensional),
+$\dim W < \dim V$.
+
+Case 1: $\dim W = \dim V − 1$. Then $W$ is the desired invariant subspace.
+
+Case 2: $\dim W < \dim V − 1$.
+
+Since $W$ is invariant under $T$, the quotient operator $T/W ∈ L(V/W)$ is well-defined. For any $v ∈ V$:
+
+$$
+\begin{align*}
+(T/W)(v+W) &= Tv + W \\
+&= kv + (T-kI)v + W \\
+&= k(v + W)
+\end{align*} 
+$$
+
+So $(T/W) = kI$.
+
+Let $Z = π⁻¹(Z')$ be the preimage of $Z'$ under the quotient map $π : V → V/W$.
+
+Then $Z$ is invariant under $T$, for $z \in Z$,
+
+$$ 
+\begin{align*}
+π(T(z)) &= T(z) + W \\
+&= (T/W)(z+W) \\
+&= k(z+W) \\
+&= k π(z) \\
+&\in Z' \\
+&\Rightarrow \\
+T(z) &\in Z
+\end{align*} 
+$$
+
+Then note $\text{null } \pi = W$ and
+$\text{range } \pi = Z'$
+
+So $\dim Z = \dim W + \dim Z' = n-1$.
+
+$\square$
+
+### 5A.40
+
+Suppose $𝑆, 𝑇 ∈ ℒ(𝑉)$ and $𝑆$ is invertible. Suppose $𝑝 ∈ 𝒫(𝐅)$ is a 
+polynomial.
+Prove that
+
+$$ 
+𝑝(𝑆𝑇𝑆^{−1}) = 𝑆𝑝(𝑇)𝑆^{−1}
+$$
+
+**Proof**:
+
+Note since $𝑆$ is invertible, then $SS^{-1} = I$.
+
+So $(STS^{-1})^n = (STS^{-1}) \cdots (STS^{-1}) = ST^nS^{-1}$.
+
+If $p(z) = a_0 + a_1 z + \cdots + a_{m} z^{m}$
+
+Then
+
+$$ 
+\begin{align*}
+𝑝(𝑆𝑇𝑆^{−1}) &= a_0 + a_1 (𝑆𝑇𝑆^{−1}) + \cdots + a_{m} (𝑆𝑇𝑆^{−1})^{m} \\
+&= a_0 SS^{-1} + a_1 (𝑆𝑇𝑆^{−1}) + \cdots + a_{m} (𝑆𝑇^{m}𝑆^{−1}) \\
+&= S(a_0 + a_1 T + \cdots + a_{m} T^{m})S^{-1} \\
+&= 𝑆𝑝(𝑇)𝑆^{−1}
+\end{align*} 
+$$
+
+$\square$
+
+### 5A.41
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝑈$ is a subspace of $𝑉$ invariant under $𝑇$. 
+Prove that $𝑈$ is invariant under $𝑝(𝑇)$ for every polynomial $𝑝 ∈ 𝒫(𝐅)$.
+
+**Proof**:
+
+We use the induction to show $U$ is invariant under $T^n$.
+Since $U$ is invariant under $T$, assume $U$ is invariant under $T^n$.
+
+For any $u \in U$, since $T^n(u) \in U$, then $T^{n+1}(u) = T(T^n(u)) \in U$,
+so $U$ is invariant under $T^{n+1}$.
+
+Then given any $u \in U$, $a_nT^{n}(u) \in U$.
+
+$$ 
+\begin{align*}
+p(T)(u) &= (a_0 + a_1 T + \cdots + a_{m} T^{m})(u) \\
+&= a_0(u) + a_1 T(u) + \cdots + a_{m} T^{m}(u) \\
+& \in U
+\end{align*} 
+$$
+
+So $𝑈$ is invariant under $𝑝(𝑇)$ for every polynomial $𝑝 ∈ 𝒫(𝐅)$.
+
+$\square$
+
+### 5A.42
+
+Define $𝑇 ∈ ℒ(𝐅^𝑛)$ by
+$𝑇(𝑥_1, 𝑥_2, 𝑥_3, …, 𝑥_𝑛) = (𝑥_1, 2𝑥_2, 3𝑥_3, …, 𝑛𝑥_𝑛)$.
+
+(a) Find all eigenvalues and eigenvectors of 𝑇.
+
+**Proof**:
+
+For any $i$ such that $1 \leq i \leq n$, $i$ is an eigenvalue, because
+let $e_i$ be the ith item of standard basis of $𝐅^𝑛$.
+
+$$ 
+T(e_i) = i \cdot e_i
+$$
+
+Since $\dim 𝐅^𝑛 = n$, then $T$ can only have $n$ distinct eigenvalues.
+Then we found all eigenvalue.
+
+If $v = a_1 e_1 + \cdots + a_n e_n$ is an eigenvector with eigenvalue of $i$,
+then
+
+$$
+\begin{align*}
+i v &= T(v) \\
+&= a_1 Te_1 + \cdots + a_n Te_n \\
+&= 1 a_1 e_1 + \cdots + n a_n e_n \\
+& \Rightarrow \\
+(1-i)a_1 e_1 + \cdots + (n-i) a_n e_n &= 0 \\
+& \Rightarrow \\
+(k-i) a_k &= 0 \\
+& \Rightarrow \\
+a_k &= \begin{cases}
+    0 &\text{if } k \neq i \\
+    \text{anything } &\text{if } k = i\\
+\end{cases} 
+\end{align*} 
+$$
+
+so $v = a_i e_i$ with $a_i \neq 0$. That's all eigenvectors of $T$.
+
+$\square$
+
+(b) Find all subspaces of $𝐅^𝑛$ that are invariant under $𝑇$.
+
+**Solution**:
+
+Assume $U$ is invariant under $T$ and
+$v \in U$ and $v \neq 0$, let
+
+$$ 
+v = a_1 e_1 + \cdots + a_n e_n
+$$
+
+If $a_i \neq 0$, we want to show $e_i \in U$.
+If $a_j = 0$ when $j \neq i$, then $a_i^{-1}v = e_i \in U$, we are done.
+
+Other we have some $a_j \neq 0$ with $j \neq i$.
+
+Since $U$ is invariant subspace, then $T(\frac{1}{j} v) \in U$,
+so we have $v - T(\frac{1}{j}v) \in U$.
+We also have
+
+$$ 
+\begin{align*}
+v - T(\frac{1}{j}v) &=
+(a_1 e_1 + \cdots + a_n e_n) - \frac{1}{j}(a_1 Te_1 + \cdots + a_n Te_n) \\
+&= \sum \limits_{k=1}^{n} (1-k/j)a_k e_k \\
+&= \sum \limits_{k=1}^{n} b_k e_k
+\end{align*} 
+$$
+
+So, for $v - T(\frac{1}{j}v)$, $b_i \neq 0$ but $b_j = 0$.
+For other $k \neq i, j$, if $a_k \neq 0$ then $b_k = (1-k/j)a_k \neq 0$.
+If $a_k = 0$, then $b_k = (1-k/j)a_k = 0$.
+
+So the number of non zero coefficients is reduced by $1$.
+By continuing this process, we can show $e_i \in U$.
+
+That means $\text{span}(e_i, \cdots, e_j) \subseteq U$, on the other hand
+$u = a_1 e_1 + \cdots + a_n e_n$. So $U \subseteq \text{span}(e_i, \cdots, e_j)$.
+
+That means all subspaces of $𝐅^𝑛$ that are invariant under $𝑇$ are
+the form of $\text{span}(e_i, \cdots, e_j)$.
+
+$\square$
+
+### 5A.43
+
+Suppose that $𝑉$ is finite-dimensional,
+$\dim 𝑉 > 1$, and $𝑇 ∈ ℒ(𝑉)$. Prove that
+$\{𝑝(𝑇) ∶ 𝑝 ∈ 𝒫(𝐅)\} ≠ ℒ(𝑉)$.
+
+**Proof**: 
+
+Assume $\dim V = n$.
+
+One strategy is that: since $\dim L(V) = n^2$, we should prove
+$\dim \{𝑝(𝑇) ∶ 𝑝 ∈ 𝒫(𝐅)\} < n^2$.
+
+We will use the results from section about next section, i.e. section 5.3.
+
+Assume $p(z)$ is the minimal polynomial of $T$. Then from 5.22 we know
+$\deg p \leq n$.
+
+Given any $q(z)$, from 4.9 division algorithm for polynomials, we know we
+can find $s(z), r(z)$ such that $q(z) = s(z)p(z) + r(z)$, where
+$\deg r < n$.
+
+That means $q(T) = s(T)p(T) + r(T)$, since $p(T) = 0$, then $q(T) = r(T)$.
+
+Since $\deg r < n$, then we have
+
+$$
+\begin{align*}
+\{𝑝(𝑇) ∶ 𝑝 ∈ 𝒫(𝐅)\} &= \text{span}(I, T, \cdots, T^{n-1}) \\
+&\Rightarrow \\
+\dim \{𝑝(𝑇) ∶ 𝑝 ∈ 𝒫(𝐅)\} &\leq n
+\end{align*}
+$$
+
+Since $n > 1$, then $n < n^2$.
+
+$\square$
+
+Another strategy (not working so far) is
+we should find some $p$ such that $\text{range } p(T)$ or $\text{null } p(T)$
+is not trivial invariant subspace.
+
+We consider the $U = \text{null } T$. Since we know from
+exercise 5A.41, $U$ is invariant under $p(T)$,
+we want to find a operator
+$S$ such that $U$ is not invariant under $S$.
+
+Case 1: $U = V$, then $T = 0$, then $p(T) = kI$. Let $v_1, v_2 \in V$ be
+linear independent, then let $S(v_1) = v_2, S(v_2) = v_1$, then $S \neq kI = P(T)$.
+
+Case 2: $U \subset V$, we can find a basis of $U$: $u_1, \cdots, u_m$.
+We can also extend it to a basis of $V$ by adding $v_1, \cdots, v_n$.
+Let $S(u_i) = v_1$, then $U$ is not invariant under $S$.
+
+$\square$
+
 ## Section 5B The Minimal Polynomial
 
 ### 5B.29
@@ -1414,12 +1772,16 @@ at least two has an invariant subspace of dimension two.
 
 **Proof**: (This is just a summary)
 
+Consider the $T$ is the operator.
+
 If $p(z) = z-\lambda$, then every vector is a eigenvector of $\lambda$.
 
 If $p(z) = (z-\lambda)^m$, then consider $v$ such that $u = (T-\lambda )^k(v) \neq 0$,
 but $(T-\lambda )^{k+1}(v) = 0$.
 
 3rd case $p(z) = (z^2+bz+c)$, then consider its kernel. Then kernel cannot
-always be $\{0\}$.
+always be $\{0\}$. Then consider $v \in \text{null } p(T)$, then $v$ is not
+an eigenvector, so $v, Tv$ are linear independent.
+Then $\text{span}(𝑣, Tv)$ is good.
 
 $\square$

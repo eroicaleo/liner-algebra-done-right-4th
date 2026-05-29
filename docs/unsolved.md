@@ -17,3 +17,15 @@ null 𝑆 ⊆ null 𝑇 if and only if there exists 𝐸 ∈ ℒ(𝑊) such that
 if $Γ$ is surjective.
 
 $\Rightarrow$
+
+### 5A.39
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$. Prove that $𝑇$ has an 
+eigenvalue if and only if there exists a subspace of $𝑉$ of dimension
+$\dim 𝑉 − 1$ that is invariant under $𝑇$.
+
+$\Rightarrow$.
+
+### 5A.43
+
+The second strategy is not working yet.
