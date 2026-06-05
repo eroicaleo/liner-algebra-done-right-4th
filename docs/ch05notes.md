@@ -106,3 +106,254 @@ $P(T)(T(u)) = T(P(T)(u))= T(0)$. So $T(u) \in \text{null } P(T)$.
 
 $\square$
 
+## Section 5B The Minimal Polynomial
+
+### 5.19 existence of eigenvalues
+
+Every operator on a finite-dimensional nonzero complex vector space has an
+eigenvalue.
+
+**Proof**:
+
+Let $n = \dim V$.
+
+Consider $v \neq 0$ and $v, Tv, \cdots, T^nv$ is a group of $n+1$ vectors.
+Since $\dim V = n$, then $v, Tv, \cdots, T^nv$ are linear dependent.
+
+Then we can find a $k \leq n$, such that
+$v, Tv, \cdots, T^{k-1}v$ are linear independent, but
+$v, Tv, \cdots, T^kv$ is linear dependent.
+
+So we can find 
+
+$$ 
+a_0v + a_1 T^1v + \cdots + a_k T^kv = 0
+$$
+
+In particular, $a_k \neq 0$.
+
+Then consider $p(z) = a_0 + a_1 z^1 + \cdots + a_k z^k$. From
+the fundamental theorem of algebra, it has a zero $\lambda$.
+
+Then $p(z) = (z-\lambda ) q(z)$ where
+$q(z) = b_0 + b_1 z^1 + \cdots + b_{k-1} z^{k-1}$.
+In particular, $b_{k-1} = a_k \neq 0$.
+
+Then
+
+$$
+\begin{align*}
+q(T)(v)
+&= (b_0 + b_1 T^1 + \cdots + b_{k-1} T^{k-1})(v) \\
+&= b_0v + b_1 T^1v + \cdots + b_{k-1} T^{k-1}v \\
+&\neq 0 &  \\
+(&\because v, Tv, \cdots, T^{k-1}v \text{ are linear independent and }
+b_{k-1} \neq 0)
+\end{align*} 
+$$ 
+
+Thus $0 = p(T)(v) = (T-\lambda I)(q(T)(v))$, so $T$ has an eigenvalue
+$\lambda$ and $q(T)(v)$ is an eigenvector.
+
+$\square$
+
+### 5.20 example
+
+an operator on a complex vector space with no eigenvalues
+
+$$ 
+T(p(z)) = zp(z)
+$$
+
+### 5.21 definition: monic polynomial
+
+A monic polynomial is a polynomial whose highest-degree coefficient equals 1.
+
+### 5.22 existence, uniqueness, and degree of minimal polynomial
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
+Then there is a unique monic
+polynomial $𝑝 ∈ 𝒫(𝐅)$ of smallest degree such that $𝑝(𝑇) = 0$.
+Furthermore, $\deg 𝑝 ≤ \dim 𝑉$.
+
+**Proof**:
+
+We use induction on the $\dim V$. When $\dim V = 0$, then
+$p(z) = 1$, so $p(T) = I$ which is a zero operator on $V$.
+
+Assume when $\dim V \leq n-1$, it is true. Now assume $\dim V = n$.
+
+Given $v \neq 0$, then $v, Tv, \cdots, T^nv$ are linear dependent.
+Then we can find a $1 \leq k \leq n$, such that
+$v, Tv, \cdots, T^{k-1}v$ are linear independent, but
+$v, Tv, \cdots, T^kv$ is linear dependent.
+
+So we can find $a_0, \cdots, a_k$ which are not all zero such that
+
+$$ 
+a_0v + a_1 T^1v + \cdots + a_k T^kv = 0
+$$
+
+In particular, $a_k \neq 0$, otherwise
+$a_0v + a_1 T^1v + \cdots + a_{k-1} T^{k-1}v = 0$ then
+$a_0 = \cdots = a_k = 0$.
+
+multiply by $a^{-1}_k$, we get
+
+$$ 
+b_0v + b_1 T^1v + \cdots + T^kv = 0
+$$
+
+Let $p(z) = z^k + \cdots + b_1z + b_0$.
+
+Consider the $\text{null } p(T)$, note
+
+$$ 
+p(T)(T^i(v)) = T^i(p(T)(v)) = T^i(0) = 0
+$$
+
+So $v, Tv, \cdots, T^{k-1}v$ are a group of linear independent vectors
+in $\text{null } p(T)$. Thus $\text{dim null } P(T) \geq k$.
+
+From the fundamental theorem of linear mapping
+
+$$ 
+\text{dim range } p(T) = \dim V - \text{dim null } p(T) \leq n-k
+$$
+
+From 5.18 null space and range of $𝑝(𝑇)$ are invariant under $𝑇$,
+we know $\text{range } p(T)$ is invariant under $T$.
+Then we limit $T$ on $\text{range } p(T)$ and use induction to find a
+monic polynomial $q(z)$, such that $q(T|_{\text{range } p(T)}) = 0$.
+
+Then consider the monic polynomial $q(z)p(z)$. Given any $v$
+
+$$ 
+\begin{align*}
+q(T) p(T) (v) &= q(T) (p(T)(v)) \\
+&= q(T|_{\text{range } p(T)}) (p(T)(v)) \\
+&\because p(T)(v) \in \text{range } p(T) \\
+&= 0
+\end{align*} 
+$$
+
+Furthermore $\deg q(z) \leq n-k, \deg p(z) = k$, so
+$\deg q(z)p(z) \leq n$.
+
+So we finished the induction.
+
+$\square$
+
+### 5.24 definition: minimal polynomial
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
+Then the minimal polynomial
+of $𝑇$ is the unique monic polynomial $𝑝 ∈ 𝒫(𝐅)$ of smallest degree such 
+that $𝑝(𝑇) = 0$.
+
+### 5.27 eigenvalues are the zeros of the minimal polynomial
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
+
+(a) The zeros of the minimal polynomial of $𝑇$ are the eigenvalues of $𝑇$.
+
+**Proof**:
+
+Assume $\lambda$ is a zero of $p(z)$ which is the minimal polynomial of $𝑇$.
+Then from the fundamental theorem of algebra, we have
+$p(z) = (z-\lambda)q(z)$, since $\deg q < \deg p$ then
+$q(z)$ is not the minimal polynomial of $𝑇$, then we can find
+$v$ such that $q(T)(v) \neq 0$. Then
+
+$$ 
+\begin{align*}
+0 = p(T)(v) = (T-\lambda I)(q(T)(v))
+\end{align*} 
+$$
+
+So $\lambda$ is an eigenvalue and $q(T)(v)$ is an eigenvector.
+
+On the other hand, if $\lambda$ is an eigenvalue and $v$ is an eigenvector,
+then
+
+$$ 
+\begin{align*}
+0 = p(T)(v)
+&=(a_0 + a_1 T + \cdots + a_{n} T^{n})(v) \\
+&= a_0v + a_1 Tv + \cdots + a_{n} T^{n}v \\
+&= a_0v + a_1 \lambda v + \cdots + a_{n} \lambda ^{n}v \\
+&= (a_0 + a_1 \lambda + \cdots + a_{n} \lambda ^{n})v \\
+\end{align*} 
+$$
+
+Since $v \neq 0$, then $a_0 + a_1 \lambda + \cdots + a_{n} \lambda ^{n} = 0$.
+So $p(\lambda) = 0$, then $\lambda$ is a zero of the minimal polynomial $T$.
+
+$\square$
+
+(b) If $𝑉$ is a complex vector space, then the minimal polynomial of $𝑇$
+has the form
+
+$$ 
+(𝑧 − \lambda_1)⋯(𝑧 − \lambda_𝑚),
+$$
+
+where $\lambda_1, …, \lambda_𝑚$ is a list of all eigenvalues of $𝑇$,
+possibly with repetitions.
+
+**Proof**:
+
+Using the fundamental theorem of algebra, we can represent the minimal
+polynomial of $T$ as
+
+$$ 
+p(z) = (𝑧 − \lambda_1)⋯(𝑧 − \lambda_𝑚).
+$$
+
+Then use (a), we know $\lambda_1, \cdots, \lambda_m$ are eigenvalues.
+
+$\square$
+
+### 5.29 $𝑞(𝑇) = 0 ⟺ 𝑞$ is a polynomial multiple of the minimal polynomial
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and $𝑞 ∈ 𝒫(𝐅)$.
+Then $𝑞(𝑇) = 0$
+if and only if $𝑞$ is a polynomial multiple of the minimal polynomial of $𝑇$.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $p(z)$ is the minimal polynomial of $T$, then $\deg p \leq \deg q$.
+Then we can use the division algorithm of polynomial to get
+$q(z) = s(z)p(z) + r(z)$ where $\deg r < \deg p$.
+
+Then
+
+$$ 
+\begin{align*}
+r(T)(v) &= (q(T) - s(T)p(T))(v) \\
+&= q(T)(v) - s(T)p(T)(v) \\
+&= 0 - 0 \\
+&= 0 \\
+\end{align*} 
+$$
+
+So $r(T) = 0$, then $𝑞$ is a polynomial multiple of $p$.
+
+$\square$
+
+$\Leftarrow$
+
+Assume $q(z) = s(z)p(z)$, then
+
+$$ 
+\begin{align*}
+q(T)(v) &= (s(T)p(T))(v) \\
+&= s(T)(p(T)(v)) \\
+&= s(T)(0) \\
+&= 0 \\
+\end{align*} 
+$$
+
+$\square$
