@@ -102,6 +102,24 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#519-existence-of-eigenvalues">5.19 existence of eigenvalues</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#520-example">5.20 example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#521-definition-monic-polynomial">5.21 definition: monic polynomial</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#522-existence-uniqueness-and-degree-of-minimal-polynomial">5.22 existence, uniqueness, and degree of minimal polynomial</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#524-definition-minimal-polynomial">5.24 definition: minimal polynomial</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#527-eigenvalues-are-the-zeros-of-the-minimal-polynomial">5.27 eigenvalues are the zeros of the minimal polynomial</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#529-qt-0-q-is-a-polynomial-multiple-of-the-minimal-polynomial">5.29 𝑞(𝑇) = 0 ⟺ 𝑞 is a polynomial multiple of the minimal polynomial</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -222,6 +240,225 @@ a_1 v_1 + \cdots + a_m v_m = 0
 <script type="math/tex">p(T)(v) = u</script>, then <script type="math/tex">T(u) = T(p(T)(v)) = P(T)(T(v)) \in \text{range } P(T)</script>.</p>
 <p>If <script type="math/tex">u \in \text{null } P(T)</script>, then
 <script type="math/tex">P(T)(T(u)) = T(P(T)(u))= T(0)</script>. So <script type="math/tex">T(u) \in \text{null } P(T)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</h2>
+<h3 id="519-existence-of-eigenvalues">5.19 existence of eigenvalues</h3>
+<p>Every operator on a finite-dimensional nonzero complex vector space has an
+eigenvalue.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">n = \dim V</script>.</p>
+<p>Consider <script type="math/tex">v \neq 0</script> and <script type="math/tex">v, Tv, \cdots, T^nv</script> is a group of <script type="math/tex">n+1</script> vectors.
+Since <script type="math/tex">\dim V = n</script>, then <script type="math/tex">v, Tv, \cdots, T^nv</script> are linear dependent.</p>
+<p>Then we can find a <script type="math/tex">k \leq n</script>, such that
+<script type="math/tex">v, Tv, \cdots, T^{k-1}v</script> are linear independent, but
+<script type="math/tex">v, Tv, \cdots, T^kv</script> is linear dependent.</p>
+<p>So we can find </p>
+<p>
+<script type="math/tex; mode=display"> 
+a_0v + a_1 T^1v + \cdots + a_k T^kv = 0
+</script>
+</p>
+<p>In particular, <script type="math/tex">a_k \neq 0</script>.</p>
+<p>Then consider <script type="math/tex">p(z) = a_0 + a_1 z^1 + \cdots + a_k z^k</script>. From
+the fundamental theorem of algebra, it has a zero <script type="math/tex">\lambda</script>.</p>
+<p>Then <script type="math/tex">p(z) = (z-\lambda ) q(z)</script> where
+<script type="math/tex">q(z) = b_0 + b_1 z^1 + \cdots + b_{k-1} z^{k-1}</script>.
+In particular, <script type="math/tex">b_{k-1} = a_k \neq 0</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+q(T)(v)
+&= (b_0 + b_1 T^1 + \cdots + b_{k-1} T^{k-1})(v) \\
+&= b_0v + b_1 T^1v + \cdots + b_{k-1} T^{k-1}v \\
+&\neq 0 &  \\
+(&\because v, Tv, \cdots, T^{k-1}v \text{ are linear independent and }
+b_{k-1} \neq 0)
+\end{align*} 
+</script>
+</p>
+<p>Thus <script type="math/tex">0 = p(T)(v) = (T-\lambda I)(q(T)(v))</script>, so <script type="math/tex">T</script> has an eigenvalue
+<script type="math/tex">\lambda</script> and <script type="math/tex">q(T)(v)</script> is an eigenvector.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="520-example">5.20 example</h3>
+<p>an operator on a complex vector space with no eigenvalues</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(p(z)) = zp(z)
+</script>
+</p>
+<h3 id="521-definition-monic-polynomial">5.21 definition: monic polynomial</h3>
+<p>A monic polynomial is a polynomial whose highest-degree coefficient equals 1.</p>
+<h3 id="522-existence-uniqueness-and-degree-of-minimal-polynomial">5.22 existence, uniqueness, and degree of minimal polynomial</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Then there is a unique monic
+polynomial <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script> of smallest degree such that <script type="math/tex">𝑝(𝑇) = 0</script>.
+Furthermore, <script type="math/tex">\deg 𝑝 ≤ \dim 𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>We use induction on the <script type="math/tex">\dim V</script>. When <script type="math/tex">\dim V = 0</script>, then
+<script type="math/tex">p(z) = 1</script>, so <script type="math/tex">p(T) = I</script> which is a zero operator on <script type="math/tex">V</script>.</p>
+<p>Assume when <script type="math/tex">\dim V \leq n-1</script>, it is true. Now assume <script type="math/tex">\dim V = n</script>.</p>
+<p>Given <script type="math/tex">v \neq 0</script>, then <script type="math/tex">v, Tv, \cdots, T^nv</script> are linear dependent.
+Then we can find a <script type="math/tex">1 \leq k \leq n</script>, such that
+<script type="math/tex">v, Tv, \cdots, T^{k-1}v</script> are linear independent, but
+<script type="math/tex">v, Tv, \cdots, T^kv</script> is linear dependent.</p>
+<p>So we can find <script type="math/tex">a_0, \cdots, a_k</script> which are not all zero such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_0v + a_1 T^1v + \cdots + a_k T^kv = 0
+</script>
+</p>
+<p>In particular, <script type="math/tex">a_k \neq 0</script>, otherwise
+<script type="math/tex">a_0v + a_1 T^1v + \cdots + a_{k-1} T^{k-1}v = 0</script> then
+<script type="math/tex">a_0 = \cdots = a_k = 0</script>.</p>
+<p>multiply by <script type="math/tex">a^{-1}_k</script>, we get</p>
+<p>
+<script type="math/tex; mode=display"> 
+b_0v + b_1 T^1v + \cdots + T^kv = 0
+</script>
+</p>
+<p>Let <script type="math/tex">p(z) = z^k + \cdots + b_1z + b_0</script>.</p>
+<p>Consider the <script type="math/tex">\text{null } p(T)</script>, note</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(T)(T^i(v)) = T^i(p(T)(v)) = T^i(0) = 0
+</script>
+</p>
+<p>So <script type="math/tex">v, Tv, \cdots, T^{k-1}v</script> are a group of linear independent vectors
+in <script type="math/tex">\text{null } p(T)</script>. Thus <script type="math/tex">\text{dim null } P(T) \geq k</script>.</p>
+<p>From the fundamental theorem of linear mapping</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{dim range } p(T) = \dim V - \text{dim null } p(T) \leq n-k
+</script>
+</p>
+<p>From 5.18 null space and range of <script type="math/tex">𝑝(𝑇)</script> are invariant under <script type="math/tex">𝑇</script>,
+we know <script type="math/tex">\text{range } p(T)</script> is invariant under <script type="math/tex">T</script>.
+Then we limit <script type="math/tex">T</script> on <script type="math/tex">\text{range } p(T)</script> and use induction to find a
+monic polynomial <script type="math/tex">q(z)</script>, such that <script type="math/tex">q(T|_{\text{range } p(T)}) = 0</script>.</p>
+<p>Then consider the monic polynomial <script type="math/tex">q(z)p(z)</script>. Given any <script type="math/tex">v</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+q(T) p(T) (v) &= q(T) (p(T)(v)) \\
+&= q(T|_{\text{range } p(T)}) (p(T)(v)) \\
+&\because p(T)(v) \in \text{range } p(T) \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>Furthermore <script type="math/tex">\deg q(z) \leq n-k, \deg p(z) = k</script>, so
+<script type="math/tex">\deg q(z)p(z) \leq n</script>.</p>
+<p>So we finished the induction.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="524-definition-minimal-polynomial">5.24 definition: minimal polynomial</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Then the minimal polynomial
+of <script type="math/tex">𝑇</script> is the unique monic polynomial <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script> of smallest degree such 
+that <script type="math/tex">𝑝(𝑇) = 0</script>.</p>
+<h3 id="527-eigenvalues-are-the-zeros-of-the-minimal-polynomial">5.27 eigenvalues are the zeros of the minimal polynomial</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.</p>
+<p>(a) The zeros of the minimal polynomial of <script type="math/tex">𝑇</script> are the eigenvalues of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">\lambda</script> is a zero of <script type="math/tex">p(z)</script> which is the minimal polynomial of <script type="math/tex">𝑇</script>.
+Then from the fundamental theorem of algebra, we have
+<script type="math/tex">p(z) = (z-\lambda)q(z)</script>, since <script type="math/tex">\deg q < \deg p</script> then
+<script type="math/tex">q(z)</script> is not the minimal polynomial of <script type="math/tex">𝑇</script>, then we can find
+<script type="math/tex">v</script> such that <script type="math/tex">q(T)(v) \neq 0</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+0 = p(T)(v) = (T-\lambda I)(q(T)(v))
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">\lambda</script> is an eigenvalue and <script type="math/tex">q(T)(v)</script> is an eigenvector.</p>
+<p>On the other hand, if <script type="math/tex">\lambda</script> is an eigenvalue and <script type="math/tex">v</script> is an eigenvector,
+then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+0 = p(T)(v)
+&=(a_0 + a_1 T + \cdots + a_{n} T^{n})(v) \\
+&= a_0v + a_1 Tv + \cdots + a_{n} T^{n}v \\
+&= a_0v + a_1 \lambda v + \cdots + a_{n} \lambda ^{n}v \\
+&= (a_0 + a_1 \lambda + \cdots + a_{n} \lambda ^{n})v \\
+\end{align*} 
+</script>
+</p>
+<p>Since <script type="math/tex">v \neq 0</script>, then <script type="math/tex">a_0 + a_1 \lambda + \cdots + a_{n} \lambda ^{n} = 0</script>.
+So <script type="math/tex">p(\lambda) = 0</script>, then <script type="math/tex">\lambda</script> is a zero of the minimal polynomial <script type="math/tex">T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) If <script type="math/tex">𝑉</script> is a complex vector space, then the minimal polynomial of <script type="math/tex">𝑇</script>
+has the form</p>
+<p>
+<script type="math/tex; mode=display"> 
+(𝑧 − \lambda_1)⋯(𝑧 − \lambda_𝑚),
+</script>
+</p>
+<p>where <script type="math/tex">\lambda_1, …, \lambda_𝑚</script> is a list of all eigenvalues of <script type="math/tex">𝑇</script>,
+possibly with repetitions.</p>
+<p><strong>Proof</strong>:</p>
+<p>Using the fundamental theorem of algebra, we can represent the minimal
+polynomial of <script type="math/tex">T</script> as</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = (𝑧 − \lambda_1)⋯(𝑧 − \lambda_𝑚).
+</script>
+</p>
+<p>Then use (a), we know <script type="math/tex">\lambda_1, \cdots, \lambda_m</script> are eigenvalues.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="529-qt-0-q-is-a-polynomial-multiple-of-the-minimal-polynomial">5.29 <script type="math/tex">𝑞(𝑇) = 0 ⟺ 𝑞</script> is a polynomial multiple of the minimal polynomial</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">𝑞 ∈ 𝒫(𝐅)</script>.
+Then <script type="math/tex">𝑞(𝑇) = 0</script>
+if and only if <script type="math/tex">𝑞</script> is a polynomial multiple of the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">p(z)</script> is the minimal polynomial of <script type="math/tex">T</script>, then <script type="math/tex">\deg p \leq \deg q</script>.
+Then we can use the division algorithm of polynomial to get
+<script type="math/tex">q(z) = s(z)p(z) + r(z)</script> where <script type="math/tex">\deg r < \deg p</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+r(T)(v) &= (q(T) - s(T)p(T))(v) \\
+&= q(T)(v) - s(T)p(T)(v) \\
+&= 0 - 0 \\
+&= 0 \\
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">r(T) = 0</script>, then <script type="math/tex">𝑞</script> is a polynomial multiple of <script type="math/tex">p</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Assume <script type="math/tex">q(z) = s(z)p(z)</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+q(T)(v) &= (s(T)p(T))(v) \\
+&= s(T)(p(T)(v)) \\
+&= s(T)(0) \\
+&= 0 \\
+\end{align*} 
+</script>
+</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
