@@ -1765,23 +1765,316 @@ $\square$
 
 ## Section 5B The Minimal Polynomial
 
+### 5B.24
+
+Suppose $𝑉$ is a finite-dimensional complex vector space. Suppose $𝑇 ∈ ℒ(𝑉)$
+is such that $5$ and $6$ are eigenvalues of $𝑇$ and that $𝑇$ has no other eigenvalues.
+Prove that $(𝑇 − 5𝐼)^{\dim 𝑉 − 1}(𝑇 − 6𝐼)^{\dim 𝑉 − 1} = 0$.
+
+**Proof**:
+
+Let $p(z)$ be the minimal polynomial of $T$. From
+5.27 eigenvalues are the zeros of the minimal polynomial (b)
+
+$$ 
+p(z) = (z-\lambda_1) \cdots (z-\lambda_m)
+$$
+
+where $\lambda_1, …, \lambda_𝑚$ is a list of all eigenvalues of $𝑇$, 
+possibly with repetitions.
+
+So $\lambda_i = 5, 6$. So $p(z) = (z-5)^s(z-6)^t, s,t \geq 1$.
+
+If $s > \dim V - 1$, then $\deg p > \dim V$ which is not possible,
+so $s \leq \dim V - 1$.
+Similarly $t \leq \dim V - 1$.
+
+Then $(𝑇 − 5𝐼)^{\dim 𝑉 − 1}(𝑇 − 6𝐼)^{\dim 𝑉 − 1}$ is a multiple of $p$.
+So $(𝑇 − 5𝐼)^{\dim 𝑉 − 1}(𝑇 − 6𝐼)^{\dim 𝑉 − 1} = 0$.
+
+$\square$
+
+### 5B.25
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and $𝑈$ is a subspace of 
+$𝑉$ that is invariant under $𝑇$.
+
+(a) Prove that the minimal polynomial of $𝑇$ is a polynomial multiple of the
+minimal polynomial of the quotient operator $𝑇/𝑈$.
+
+**Proof**:
+
+Assume the minimal polynomial of $𝑇$ is $p(z)$, given any $v \in V$, we
+need to prove $p(T/U)(v+U) = 0$.
+
+Since $T/U(v+U) = T(v) + U$, then
+
+$$
+\begin{align*}
+p(T/U)(v+U) &= p(T)(v) + U \\
+&= 0 + U
+\end{align*} 
+$$
+
+Then $p(T/U)$ is a zero operator on $V/U$.
+
+Then from 5.29 $𝑞(𝑇) = 0 ⟺ 𝑞$ is a polynomial multiple of the minimal 
+polynomial, we can conclude $p$ is a polynomial multiple of the
+minimal polynomial of the quotient operator $𝑇/𝑈$.
+
+$\square$
+
+(b) Prove that
+
+(minimal polynomial of $𝑇|_𝑈$) × (minimal polynomial of $𝑇/𝑈$)
+
+is a polynomial multiple of the minimal polynomial of 𝑇.
+
+**Proof**:
+
+Assume minimal polynomial of $𝑇|_𝑈$ is $p(z)$ and
+minimal polynomial of $𝑇/𝑈$ is $q(z)$.
+
+We need to prove, given any $v \in V$, $p(T)q(T)(v) = 0$.
+
+First since the minimal polynomial of $𝑇/𝑈$ is $q(z)$. Then
+$q(T/U)(v+U) = 0 + U$. On the other hand, $q(T/U)(v+U) = q(T)(v) + U$.
+Thus it means $q(T)(v) \in U$.
+
+Since the minimal polynomial of $𝑇|_𝑈$ is $p(z)$, then
+$p(𝑇|_𝑈)(q(T)(v)) = 0$.
+
+Since $U$ is invariant under $T$, then from exercise 5A.41 we know $U$
+is also invariant under $p(T)$. Thus for any $u \in U$, $p(T|_U)(u) = p(T)(u)$.
+So $p(T)(q(T)(v)) = p(𝑇|_𝑈)(q(T)(v)) = 0$.
+
+Then again from 5.29 $𝑞(𝑇) = 0 ⟺ 𝑞$ is a polynomial multiple of the minimal 
+polynomial, we can conclude the statement.
+
+$\square$
+
+### 5B.26
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and $𝑈$ is a subspace of
+$𝑉$ that is invariant under $𝑇$.
+Prove that the set of eigenvalues of $𝑇$ equals the union
+of the set of eigenvalues of $𝑇|𝑈$ and the set of eigenvalues of $𝑇/𝑈$.
+
+**Proof**:
+
+Let the minimal polynomial of $T$ be $s(z)$,
+minimal polynomial of $𝑇|_𝑈$ is $p(z)$ and
+minimal polynomial of $𝑇/𝑈$ is $q(z)$.
+
+$\Rightarrow$
+
+Assume $\lambda$ is a eigenvalue of $T$.
+Then $\lambda$ is a zero of $s(z)$.
+From the part (b) of exercise 5B.25, $p(z)q(z)$ is a multiple of $s(z)$,
+then $p(\lambda)q(\lambda) = 0$, so $p(\lambda) = 0$ or $q(\lambda) = 0$.
+
+Then from 5.27, $\lambda$ is either
+an eigenvalue of $𝑇|𝑈$ or an eigenvalue of $𝑇/𝑈$.
+
+$\Leftarrow$
+
+From exercise 5A.38, we know an eigenvalue of $T/U$ is an eigenvalue of
+$T$.
+
+Assume $\lambda$ is an eigenvalue of $T|_U$, then we can find a $u \neq 0$
+and $u \in U$ such that $T|_U(u) = \lambda u$.
+Since $u \in U$, then $T(u) = T|_U(u) = \lambda u$.
+
+So $\lambda$ is an eigenvalue of $T$.
+
+$\square$
+
+### 5B.27
+
+Suppose $𝐅 = 𝐑$, $𝑉$ is finite-dimensional, and $𝑇 ∈ ℒ(𝑉)$.
+Prove that the
+minimal polynomial of $𝑇_𝐂$ equals the minimal polynomial of $𝑇$.
+The complexification $𝑇_𝐂$ was defined in Exercise 33 of Section 3B.
+
+**Proof**:
+
+Let $p$ be the minimal polynomial of $T$ and $p'$ be
+the minimal polynomial of $T_C$.
+
+Note that $T_C(u+iv) = T(u) + iT(v)$, so
+
+$$ 
+\begin{align*}
+T_C^n(u+iv) &=
+T_C^{n-1}(T_C(u+iv)) \\
+&= T_C^{n-1}(T(u) + iT(v)) \\
+&= T_C^{n-2}(T_C(T(u) + iT(v))) \\
+&= T_C^{n-2}(T^2(u) + iT^2(v)) \\
+&\cdots \\
+&= T^n(u) + iT^n(v) \\
+\end{align*} 
+$$
+
+Then from the linearity of $T_C$, we can see
+
+$$
+\begin{align*}
+q(T_C)(u+iv) &=
+q(T)(u) + iq(T)(v)
+\end{align*} 
+$$
+
+So given any $u+iv$ 
+
+$$
+\begin{align*}
+0 &= p'(T_C)(u+iv) \\
+&= p'(T)(u) + ip'(T)(v) \\
+& \Rightarrow \\
+p'(T)(u) = 0,&\qquad p'(T)(v) = 0
+\end{align*} 
+$$
+
+So $p'$ is a multiple of $p$.
+
+On the other hand
+
+$$ 
+\begin{align*}
+0 &= p(T)(u) + ip(T)(v) \\
+&=p(T_C)(u+iv) \\
+\end{align*} 
+$$
+
+So $p$ is a multiple of $p'$.
+
+Then $p = p'$
+
+$\square$
+
+### 5B.28
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$. Prove that the minimal
+polynomial of $𝑇' ∈ ℒ(𝑉')$ equals the minimal polynomial of $𝑇$.
+
+**Proof**:
+
+One way to think this problem is consider the matrix of $T$ and $T'$.
+They are transpose to each other.
+
+But we will do another way. Note that given any linear functional
+$\varphi_i \in V'$, we have
+
+$$
+\begin{align*}
+(T')^n(\varphi_i)
+&= (T')^{n-1} (T'(\varphi_i)) \\
+&= (T')^{n-1} (\varphi_i \circ T) \\
+&= (T')^{n-2} (T'(\varphi_i \circ T)) \\
+&= (T')^{n-2} ((\varphi_i \circ T) \circ T) \\
+&= (T')^{n-2} (\varphi_i \circ (T^2)) \\
+&= \cdots \\
+&= \varphi_i \circ T^n
+\end{align*}  
+$$ 
+
+And then use the distribution law of the composition of the linear mapping,
+we have $p(T')(\varphi_i) = \varphi_i \circ p(T)$ 
+
+First assume $p(z)$ is the minimal polynomial of $𝑇$.
+And assume $p'(z)$ is the minimal polynomial of $𝑇'$.
+
+Then given any linear functional $\varphi$ and $v \in V$,
+
+$$
+\begin{align*}
+(p(T')(\varphi))(v)
+&= (\varphi \circ p(T))(v) \\
+&= \varphi (p(T)(v)) \\
+&= \varphi (0) \\
+&= 0
+\end{align*} 
+$$ 
+
+So $p$ is a multiple of $p'$.
+
+Now assume $v_1, \cdots, v_m$ is a basis of $v$ and
+$\varphi_1, \cdots, \varphi_m$ is the dual basis.
+And assume
+$$ 
+p'(T)(v) = a_1 v_1 + \cdots + a_m v_m
+$$
+
+On one hand
+
+$\varphi_i(a_1 v_1 + \cdots + a_m v_m) = a_1 \varphi_i(v_1) + \cdots + a_m \varphi_i(v_m) = a_i$
+
+On the other hand
+
+$$ 
+\begin{align*}
+\varphi_i((p'(T)) (v))
+&= (\varphi_i \circ p'(T)) (v)\\
+&= (p'(T')(\varphi_i))(v) \\
+&= 0(v) \\
+&= 0
+\end{align*} 
+$$
+
+So $a_i = 0$, i.e. $p'(T)(v) = 0$.
+
+So $p'$ is a multiple of $p$.
+
+Based on this, $p = p'$.
+
+$\square$
+
 ### 5B.29
 
 Show that every operator on a finite-dimensional vector space of dimension
 at least two has an invariant subspace of dimension two.
 
-**Proof**: (This is just a summary)
+**Proof**:
 
-Consider the $T$ is the operator.
+Consider $T$ is the operator, and $p(z)$ is its minimal polynomial.
 
-If $p(z) = z-\lambda$, then every vector is a eigenvector of $\lambda$.
+We distinguish the following cases:
 
-If $p(z) = (z-\lambda)^m$, then consider $v$ such that $u = (T-\lambda )^k(v) \neq 0$,
-but $(T-\lambda )^{k+1}(v) = 0$.
+case $1$: If $p(z) = z-\lambda$, then every vector is a eigenvector of 
+$\lambda$. Since $\dim V \geq 2$, then we can pick two linear independent
+vectors $u_1, u_2$. 
+Then
+$\text{span}(u_1, u_2)$ is invariant with dimension $2$.
 
-3rd case $p(z) = (z^2+bz+c)$, then consider its kernel. Then kernel cannot
-always be $\{0\}$. Then consider $v \in \text{null } p(T)$, then $v$ is not
-an eigenvector, so $v, Tv$ are linear independent.
-Then $\text{span}(𝑣, Tv)$ is good.
+case $2$: $\deg p(z) \geq 2$, 
+we can assume $p(z) = (z^2+bz+c)q(z)$.
+This is because if $\mathbb{F} = \mathbb{R}$, we can use
+"4.16 factorization of a polynomial over $\mathbb{R}$".
+If $\mathbb{F} = \mathbb{C}$, we can use
+"4.13 fundamental theorem of algebra, second version".
+
+Consider
+$\text{range } q(T)$. It cannot be $\{0\}$ because otherwise $q(z)$ will
+be the minimal polynomial.
+
+Then assume we can find $u \in \text{range } q(T)$,
+such that $u$ is not an eigenvector of
+$T$, then $u, T(u)$ are linearly independent.
+Furthermore, since $(T^2+bT+c)(u) = 0$, we have $T^2u = -bTu - cu$.
+So $\text{span}(u, Tu)$ is invariant with dimension $2$.
+
+Now assume all $u \in \text{range } q(T)$ are eigenvectors.
+If for
+all $u \in \text{range } q(T)$, $T(u) = \lambda u$, then
+$(z- \lambda)q(z)$ will be the minimal polynomial, which is
+contradictary to our assumption that $p(z)$ is the minimal polynomial.
+
+So we can find $\lambda_1, \lambda_2$ which are 2 different eigenvalues
+and we can find
+2 eigenvectors $u_1, u_2$, such that
+$T(u_1) = \lambda_1 u_1, T(u_2) = \lambda_2 u_2$.
+
+From 5.11 linearly independent eigenvectors, we know $u_1, u_2$ are linear independent, then
+$\text{span}(u_1, u_2)$ is invariant with dimension $2$.
 
 $\square$
