@@ -174,6 +174,16 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#5b24">5B.24</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b25">5B.25</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b26">5B.26</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b27">5B.27</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b28">5B.28</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b29">5B.29</a>
     </li>
         </ul>
@@ -1719,18 +1729,267 @@ Let <script type="math/tex">S(u_i) = v_1</script>, then <script type="math/tex">
 <script type="math/tex">\square</script>
 </p>
 <h2 id="section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</h2>
+<h3 id="5b24">5B.24</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is a finite-dimensional complex vector space. Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>
+is such that <script type="math/tex">5</script> and <script type="math/tex">6</script> are eigenvalues of <script type="math/tex">𝑇</script> and that <script type="math/tex">𝑇</script> has no other eigenvalues.
+Prove that <script type="math/tex">(𝑇 − 5𝐼)^{\dim 𝑉 − 1}(𝑇 − 6𝐼)^{\dim 𝑉 − 1} = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p(z)</script> be the minimal polynomial of <script type="math/tex">T</script>. From
+5.27 eigenvalues are the zeros of the minimal polynomial (b)</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = (z-\lambda_1) \cdots (z-\lambda_m)
+</script>
+</p>
+<p>where <script type="math/tex">\lambda_1, …, \lambda_𝑚</script> is a list of all eigenvalues of <script type="math/tex">𝑇</script>, 
+possibly with repetitions.</p>
+<p>So <script type="math/tex">\lambda_i = 5, 6</script>. So <script type="math/tex">p(z) = (z-5)^s(z-6)^t, s,t \geq 1</script>.</p>
+<p>If <script type="math/tex">s > \dim V - 1</script>, then <script type="math/tex">\deg p > \dim V</script> which is not possible,
+so <script type="math/tex">s \leq \dim V - 1</script>.
+Similarly <script type="math/tex">t \leq \dim V - 1</script>.</p>
+<p>Then <script type="math/tex">(𝑇 − 5𝐼)^{\dim 𝑉 − 1}(𝑇 − 6𝐼)^{\dim 𝑉 − 1}</script> is a multiple of <script type="math/tex">p</script>.
+So <script type="math/tex">(𝑇 − 5𝐼)^{\dim 𝑉 − 1}(𝑇 − 6𝐼)^{\dim 𝑉 − 1} = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b25">5B.25</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">𝑈</script> is a subspace of 
+<script type="math/tex">𝑉</script> that is invariant under <script type="math/tex">𝑇</script>.</p>
+<p>(a) Prove that the minimal polynomial of <script type="math/tex">𝑇</script> is a polynomial multiple of the
+minimal polynomial of the quotient operator <script type="math/tex">𝑇/𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume the minimal polynomial of <script type="math/tex">𝑇</script> is <script type="math/tex">p(z)</script>, given any <script type="math/tex">v \in V</script>, we
+need to prove <script type="math/tex">p(T/U)(v+U) = 0</script>.</p>
+<p>Since <script type="math/tex">T/U(v+U) = T(v) + U</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+p(T/U)(v+U) &= p(T)(v) + U \\
+&= 0 + U
+\end{align*} 
+</script>
+</p>
+<p>Then <script type="math/tex">p(T/U)</script> is a zero operator on <script type="math/tex">V/U</script>.</p>
+<p>Then from 5.29 <script type="math/tex">𝑞(𝑇) = 0 ⟺ 𝑞</script> is a polynomial multiple of the minimal 
+polynomial, we can conclude <script type="math/tex">p</script> is a polynomial multiple of the
+minimal polynomial of the quotient operator <script type="math/tex">𝑇/𝑈</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that</p>
+<p>(minimal polynomial of <script type="math/tex">𝑇|_𝑈</script>) × (minimal polynomial of <script type="math/tex">𝑇/𝑈</script>)</p>
+<p>is a polynomial multiple of the minimal polynomial of 𝑇.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume minimal polynomial of <script type="math/tex">𝑇|_𝑈</script> is <script type="math/tex">p(z)</script> and
+minimal polynomial of <script type="math/tex">𝑇/𝑈</script> is <script type="math/tex">q(z)</script>.</p>
+<p>We need to prove, given any <script type="math/tex">v \in V</script>, <script type="math/tex">p(T)q(T)(v) = 0</script>.</p>
+<p>First since the minimal polynomial of <script type="math/tex">𝑇/𝑈</script> is <script type="math/tex">q(z)</script>. Then
+<script type="math/tex">q(T/U)(v+U) = 0 + U</script>. On the other hand, <script type="math/tex">q(T/U)(v+U) = q(T)(v) + U</script>.
+Thus it means <script type="math/tex">q(T)(v) \in U</script>.</p>
+<p>Since the minimal polynomial of <script type="math/tex">𝑇|_𝑈</script> is <script type="math/tex">p(z)</script>, then
+<script type="math/tex">p(𝑇|_𝑈)(q(T)(v)) = 0</script>.</p>
+<p>Since <script type="math/tex">U</script> is invariant under <script type="math/tex">T</script>, then from exercise 5A.41 we know <script type="math/tex">U</script>
+is also invariant under <script type="math/tex">p(T)</script>. Thus for any <script type="math/tex">u \in U</script>, <script type="math/tex">p(T|_U)(u) = p(T)(u)</script>.
+So <script type="math/tex">p(T)(q(T)(v)) = p(𝑇|_𝑈)(q(T)(v)) = 0</script>.</p>
+<p>Then again from 5.29 <script type="math/tex">𝑞(𝑇) = 0 ⟺ 𝑞</script> is a polynomial multiple of the minimal 
+polynomial, we can conclude the statement.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b26">5B.26</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">𝑈</script> is a subspace of
+<script type="math/tex">𝑉</script> that is invariant under <script type="math/tex">𝑇</script>.
+Prove that the set of eigenvalues of <script type="math/tex">𝑇</script> equals the union
+of the set of eigenvalues of <script type="math/tex">𝑇|𝑈</script> and the set of eigenvalues of <script type="math/tex">𝑇/𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let the minimal polynomial of <script type="math/tex">T</script> be <script type="math/tex">s(z)</script>,
+minimal polynomial of <script type="math/tex">𝑇|_𝑈</script> is <script type="math/tex">p(z)</script> and
+minimal polynomial of <script type="math/tex">𝑇/𝑈</script> is <script type="math/tex">q(z)</script>.</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">\lambda</script> is a eigenvalue of <script type="math/tex">T</script>.
+Then <script type="math/tex">\lambda</script> is a zero of <script type="math/tex">s(z)</script>.
+From the part (b) of exercise 5B.25, <script type="math/tex">p(z)q(z)</script> is a multiple of <script type="math/tex">s(z)</script>,
+then <script type="math/tex">p(\lambda)q(\lambda) = 0</script>, so <script type="math/tex">p(\lambda) = 0</script> or <script type="math/tex">q(\lambda) = 0</script>.</p>
+<p>Then from 5.27, <script type="math/tex">\lambda</script> is either
+an eigenvalue of <script type="math/tex">𝑇|𝑈</script> or an eigenvalue of <script type="math/tex">𝑇/𝑈</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>From exercise 5A.38, we know an eigenvalue of <script type="math/tex">T/U</script> is an eigenvalue of
+<script type="math/tex">T</script>.</p>
+<p>Assume <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">T|_U</script>, then we can find a <script type="math/tex">u \neq 0</script>
+and <script type="math/tex">u \in U</script> such that <script type="math/tex">T|_U(u) = \lambda u</script>.
+Since <script type="math/tex">u \in U</script>, then <script type="math/tex">T(u) = T|_U(u) = \lambda u</script>.</p>
+<p>So <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">T</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b27">5B.27</h3>
+<p>Suppose <script type="math/tex">𝐅 = 𝐑</script>, <script type="math/tex">𝑉</script> is finite-dimensional, and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Prove that the
+minimal polynomial of <script type="math/tex">𝑇_𝐂</script> equals the minimal polynomial of <script type="math/tex">𝑇</script>.
+The complexification <script type="math/tex">𝑇_𝐂</script> was defined in Exercise 33 of Section 3B.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p</script> be the minimal polynomial of <script type="math/tex">T</script> and <script type="math/tex">p'</script> be
+the minimal polynomial of <script type="math/tex">T_C</script>.</p>
+<p>Note that <script type="math/tex">T_C(u+iv) = T(u) + iT(v)</script>, so</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T_C^n(u+iv) &=
+T_C^{n-1}(T_C(u+iv)) \\
+&= T_C^{n-1}(T(u) + iT(v)) \\
+&= T_C^{n-2}(T_C(T(u) + iT(v))) \\
+&= T_C^{n-2}(T^2(u) + iT^2(v)) \\
+&\cdots \\
+&= T^n(u) + iT^n(v) \\
+\end{align*} 
+</script>
+</p>
+<p>Then from the linearity of <script type="math/tex">T_C</script>, we can see</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+q(T_C)(u+iv) &=
+q(T)(u) + iq(T)(v)
+\end{align*} 
+</script>
+</p>
+<p>So given any <script type="math/tex">u+iv</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+0 &= p'(T_C)(u+iv) \\
+&= p'(T)(u) + ip'(T)(v) \\
+& \Rightarrow \\
+p'(T)(u) = 0,&\qquad p'(T)(v) = 0
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">p'</script> is a multiple of <script type="math/tex">p</script>.</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+0 &= p(T)(u) + ip(T)(v) \\
+&=p(T_C)(u+iv) \\
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">p</script> is a multiple of <script type="math/tex">p'</script>.</p>
+<p>Then <script type="math/tex">p = p'</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b28">5B.28</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Prove that the minimal
+polynomial of <script type="math/tex">𝑇' ∈ ℒ(𝑉')</script> equals the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>One way to think this problem is consider the matrix of <script type="math/tex">T</script> and <script type="math/tex">T'</script>.
+They are transpose to each other.</p>
+<p>But we will do another way. Note that given any linear functional
+<script type="math/tex">\varphi_i \in V'</script>, we have</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(T')^n(\varphi_i)
+&= (T')^{n-1} (T'(\varphi_i)) \\
+&= (T')^{n-1} (\varphi_i \circ T) \\
+&= (T')^{n-2} (T'(\varphi_i \circ T)) \\
+&= (T')^{n-2} ((\varphi_i \circ T) \circ T) \\
+&= (T')^{n-2} (\varphi_i \circ (T^2)) \\
+&= \cdots \\
+&= \varphi_i \circ T^n
+\end{align*}  
+</script>
+</p>
+<p>And then use the distribution law of the composition of the linear mapping,
+we have <script type="math/tex">p(T')(\varphi_i) = \varphi_i \circ p(T)</script>
+</p>
+<p>First assume <script type="math/tex">p(z)</script> is the minimal polynomial of <script type="math/tex">𝑇</script>.
+And assume <script type="math/tex">p'(z)</script> is the minimal polynomial of <script type="math/tex">𝑇'</script>.</p>
+<p>Then given any linear functional <script type="math/tex">\varphi</script> and <script type="math/tex">v \in V</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(p(T')(\varphi))(v)
+&= (\varphi \circ p(T))(v) \\
+&= \varphi (p(T)(v)) \\
+&= \varphi (0) \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">p</script> is a multiple of <script type="math/tex">p'</script>.</p>
+<p>Now assume <script type="math/tex">v_1, \cdots, v_m</script> is a basis of <script type="math/tex">v</script> and
+<script type="math/tex">\varphi_1, \cdots, \varphi_m</script> is the dual basis.
+And assume
+<script type="math/tex; mode=display"> 
+p'(T)(v) = a_1 v_1 + \cdots + a_m v_m
+</script>
+</p>
+<p>On one hand</p>
+<p>
+<script type="math/tex">\varphi_i(a_1 v_1 + \cdots + a_m v_m) = a_1 \varphi_i(v_1) + \cdots + a_m \varphi_i(v_m) = a_i</script>
+</p>
+<p>On the other hand</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\varphi_i((p'(T)) (v))
+&= (\varphi_i \circ p'(T)) (v)\\
+&= (p'(T')(\varphi_i))(v) \\
+&= 0(v) \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">a_i = 0</script>, i.e. <script type="math/tex">p'(T)(v) = 0</script>.</p>
+<p>So <script type="math/tex">p'</script> is a multiple of <script type="math/tex">p</script>.</p>
+<p>Based on this, <script type="math/tex">p = p'</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="5b29">5B.29</h3>
 <p>Show that every operator on a finite-dimensional vector space of dimension
 at least two has an invariant subspace of dimension two.</p>
-<p><strong>Proof</strong>: (This is just a summary)</p>
-<p>Consider the <script type="math/tex">T</script> is the operator.</p>
-<p>If <script type="math/tex">p(z) = z-\lambda</script>, then every vector is a eigenvector of <script type="math/tex">\lambda</script>.</p>
-<p>If <script type="math/tex">p(z) = (z-\lambda)^m</script>, then consider <script type="math/tex">v</script> such that <script type="math/tex">u = (T-\lambda )^k(v) \neq 0</script>,
-but <script type="math/tex">(T-\lambda )^{k+1}(v) = 0</script>.</p>
-<p>3rd case <script type="math/tex">p(z) = (z^2+bz+c)</script>, then consider its kernel. Then kernel cannot
-always be <script type="math/tex">\{0\}</script>. Then consider <script type="math/tex">v \in \text{null } p(T)</script>, then <script type="math/tex">v</script> is not
-an eigenvector, so <script type="math/tex">v, Tv</script> are linear independent.
-Then <script type="math/tex">\text{span}(𝑣, Tv)</script> is good.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider <script type="math/tex">T</script> is the operator, and <script type="math/tex">p(z)</script> is its minimal polynomial.</p>
+<p>We distinguish the following cases:</p>
+<p>case <script type="math/tex">1</script>: If <script type="math/tex">p(z) = z-\lambda</script>, then every vector is a eigenvector of 
+<script type="math/tex">\lambda</script>. Since <script type="math/tex">\dim V \geq 2</script>, then we can pick two linear independent
+vectors <script type="math/tex">u_1, u_2</script>. 
+Then
+<script type="math/tex">\text{span}(u_1, u_2)</script> is invariant with dimension <script type="math/tex">2</script>.</p>
+<p>case <script type="math/tex">2</script>: <script type="math/tex">\deg p(z) \geq 2</script>, 
+we can assume <script type="math/tex">p(z) = (z^2+bz+c)q(z)</script>.
+This is because if <script type="math/tex">\mathbb{F} = \mathbb{R}</script>, we can use
+"4.16 factorization of a polynomial over <script type="math/tex">\mathbb{R}</script>".
+If <script type="math/tex">\mathbb{F} = \mathbb{C}</script>, we can use
+"4.13 fundamental theorem of algebra, second version".</p>
+<p>Consider
+<script type="math/tex">\text{range } q(T)</script>. It cannot be <script type="math/tex">\{0\}</script> because otherwise <script type="math/tex">q(z)</script> will
+be the minimal polynomial.</p>
+<p>Then assume we can find <script type="math/tex">u \in \text{range } q(T)</script>,
+such that <script type="math/tex">u</script> is not an eigenvector of
+<script type="math/tex">T</script>, then <script type="math/tex">u, T(u)</script> are linearly independent.
+Furthermore, since <script type="math/tex">(T^2+bT+c)(u) = 0</script>, we have <script type="math/tex">T^2u = -bTu - cu</script>.
+So <script type="math/tex">\text{span}(u, Tu)</script> is invariant with dimension <script type="math/tex">2</script>.</p>
+<p>Now assume all <script type="math/tex">u \in \text{range } q(T)</script> are eigenvectors.
+If for
+all <script type="math/tex">u \in \text{range } q(T)</script>, <script type="math/tex">T(u) = \lambda u</script>, then
+<script type="math/tex">(z- \lambda)q(z)</script> will be the minimal polynomial, which is
+contradictary to our assumption that <script type="math/tex">p(z)</script> is the minimal polynomial.</p>
+<p>So we can find <script type="math/tex">\lambda_1, \lambda_2</script> which are 2 different eigenvalues
+and we can find
+2 eigenvectors <script type="math/tex">u_1, u_2</script>, such that
+<script type="math/tex">T(u_1) = \lambda_1 u_1, T(u_2) = \lambda_2 u_2</script>.</p>
+<p>From 5.11 linearly independent eigenvectors, we know <script type="math/tex">u_1, u_2</script> are linear independent, then
+<script type="math/tex">\text{span}(u_1, u_2)</script> is invariant with dimension <script type="math/tex">2</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
