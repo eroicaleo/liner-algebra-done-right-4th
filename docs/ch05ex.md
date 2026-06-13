@@ -1765,6 +1765,152 @@ $\square$
 
 ## Section 5B The Minimal Polynomial
 
+### 5B.20
+
+Suppose $𝑇 ∈ ℒ(𝐅^4)$ is such that the eigenvalues of 𝑇 are 3, 5, 8. Prove 
+that
+$(𝑇 − 3𝐼)^2(𝑇 − 5𝐼)^2(𝑇 − 8𝐼)^2 = 0$.
+
+**Proof**:
+
+Let $p(z)$ be the minimal polynomial of $T$. From
+"5.22 existence, uniqueness, and degree of minimal polynomial",
+$\deg p \leq \dim F^4 = 4$.
+
+From "5.27 eigenvalues are the zeros of the minimal polynomial"
+we know $p(3) = p(5) = p(8) = 0$.
+
+From "4.6 each zero of a polynomial corresponds to a degree-one factor"
+we know $p(z) = (z-3)(z-5)(z-8)q(z)$.
+
+Since $\deg p \leq 4$, $\deg q = 1$ or $\deg q = 0$.
+
+Case 1: $\deg q = 0$, then $p(z) = (z-3)(z-5)(z-8)$. Then
+$(z-3)^2(z-5)^2(z-8)^2$ is a multiple of $p(z)$.
+
+Case 2: $\deg q = 1$, then $q(z) = z- \lambda$ and
+$p(z) = (z-\lambda)(z-3)(z-5)(z-8)$.
+
+Use 5.27 again, we know $\lambda$ is an eigenvalue of $T$, so
+$\lambda = 3, 5, 8$. In any case,
+$(z-3)^2(z-5)^2(z-8)^2$ is a multiple of $p(z)$.
+
+Then we can use 5.29 to conclude $(𝑇 − 3𝐼)^2(𝑇 − 5𝐼)^2(𝑇 − 8𝐼)^2 = 0$.
+
+$\square$
+
+### 5B.21
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$. Prove that the minimal
+polynomial of $𝑇$ has degree at most $1 + \text{dim range } 𝑇$.
+
+If $\text{dim range } T < \dim 𝑉 − 1$, then this exercise gives a better upper bound
+than 5.22 for the degree of the minimal polynomial of $𝑇$.
+
+**Proof**:
+
+Let $m = \text{dim range } T$.
+Let $U = \text{range } T$, then consider $T|_U$.
+Since $U$ is invariant under $T$, so $T|_U$ is well defined.
+
+Let $p(z)$ be the minimal polynomial of $T|_U$, then from 5.22, $\deg p \leq m$.
+Consider $q(z) = p(z)z$. We would like to show $q(T) = p(T)T = 0$.
+
+Given $v \in V$,
+
+case 1: $v \in \text{null } T$, then $p(T)T(v) = p(T)(T(v)) = p(T)(0) = 0$.
+
+case 2: $v \not\in \text{null } T$, then $T(v) = u \in \text{range } T$,
+so $p(T|_U)(u) = 0$. Also, since $u \in \text{range } T$, then
+$p(T)(u) = p(T|_U)(u)$, so $0 = p(T|_U)(u) = p(T)(u) = p(T)(T(u)) = (p(T)T)(u)$.
+
+So in summary, $p(T)T = 0$.
+
+Then from 5.29, $p(T)T$ is a multiple of minimal polynomial.
+Then the minimal
+polynomial of $𝑇$ has degree at most $1 + \text{dim range } 𝑇$.
+
+$\square$
+
+### 5B.22
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
+Prove that $𝑇$ is invertible if and only if
+$𝐼 ∈ \text{span}(𝑇, 𝑇^2 , …, 𝑇^{\dim 𝑉})$.
+
+**Proof**:
+
+Let $m = \dim V$
+
+$\Leftarrow$
+
+$$
+\begin{align*}
+I &= a_1 T + \cdots + a_m T^m \\
+&= T(a_1 I + \cdots + a_m T^{m-1}) \\
+&= (a_1 I + \cdots + a_m T^{m-1})T \\
+\end{align*}  
+$$
+
+So $T$ has an inverse mapping: $a_1 I + \cdots + a_m T^{m-1}$.
+
+$\Rightarrow$
+
+From
+5.32 $𝑇$ not invertible ⟺ constant term of minimal polynomial of $𝑇$ is 0
+we know if $p(z)$ is the minimal polynomial, then
+
+$$ 
+p(z) = a_0 + a_1 z + \cdots + a_{k} z^{k}
+$$
+
+where $a_0 \neq 0, k \leq m$, so
+
+$$ 
+I = -\frac{a_1}{a_0} T - \cdots -\frac{a_k}{a_0} T^{k}
+\in \text{span}(𝑇, 𝑇^2 , …, 𝑇^{\dim 𝑉})
+$$
+
+$\square$
+
+### 5B.23
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$. Let $𝑛 = \dim 𝑉$.
+Prove that if $𝑣 ∈ 𝑉$, then
+$\text{span}(𝑣, 𝑇𝑣, …, 𝑇^{𝑛 − 1}𝑣)$ is invariant under $𝑇$.
+
+**Proof**:
+
+Let $U = \text{span}(𝑣, 𝑇𝑣, …, 𝑇^{𝑛 − 1}𝑣)$.
+
+We only need to prove $T^nv \in U$.
+
+Since $𝑣, 𝑇𝑣, …, 𝑇^{𝑛 − 1}𝑣, T^n v$ are linear dependent, we can find
+
+$$ 
+a_0 v + a_1 Tv + \cdots + a_{n-1} T^{n-1}v + a_n T^n v = 0
+$$
+
+and $a_0, \cdots a_n$ are not all $0$.
+
+Let $m$ be the biggest integer such that $a_m \neq 0$. So we have
+
+$$ 
+a_0 v + a_1 Tv + \cdots + a_{m-1} T^{m-1} v + a_m T^m v = 0 \\
+\Rightarrow \\
+T^m v = -\frac{a_0}{a_m} v -\frac{a_1}{a_m} Tv \cdots -\frac{a_{m-1}}{a_m} T^{m-1} v
+$$
+
+Apply $T^{n-m}$ on both sides we have
+
+$$ 
+T^{n-m}(T^m v) = T^{n-m}(-\frac{a_0}{a_m} v -\frac{a_1}{a_m} Tv - \cdots -\frac{a_{m-1}}{a_m} T^{m-1} v) \\
+\Rightarrow \\
+T^n v = -\frac{a_0}{a_m} T^{n-m}v -\frac{a_1}{a_m} T^{n-m+1}v - \cdots -\frac{a_{m-1}}{a_m} T^{n-1} v
+$$
+
+$\square$
+
 ### 5B.24
 
 Suppose $𝑉$ is a finite-dimensional complex vector space. Suppose $𝑇 ∈ ℒ(𝑉)$
