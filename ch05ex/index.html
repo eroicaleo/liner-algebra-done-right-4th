@@ -174,6 +174,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#5b19">5B.19</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b20">5B.20</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b21">5B.21</a>
@@ -1737,6 +1739,66 @@ Let <script type="math/tex">S(u_i) = v_1</script>, then <script type="math/tex">
 <script type="math/tex">\square</script>
 </p>
 <h2 id="section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</h2>
+<h3 id="5b19">5B.19</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Let <script type="math/tex">ℰ</script> be the subspace of <script type="math/tex">ℒ(𝑉)</script> defined by</p>
+<p>
+<script type="math/tex; mode=display"> 
+ℰ = \{q(T): q \in 𝒫(𝐅)\}
+</script>
+</p>
+<p>Prove that <script type="math/tex">\dim ℰ</script> equals the degree of the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p(z)</script> be the minimal polynomial of <script type="math/tex">𝑇</script>.
+And <script type="math/tex">\deg p = m</script>.
+Given any <script type="math/tex">q(z)</script>, using
+the "4.9 division algorithm for polynomials", we know we can find
+<script type="math/tex">s, r</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+q(z) = s(z) p(z) + r(z)
+</script>
+</p>
+<p>with <script type="math/tex">\deg r < \deg p</script>.</p>
+<p>The use "5.17 multiplicative properties", we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+q(T) = s(T) p(T) + r(T)
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+q(T)(v) &= (s(T) p(T) + r(T))(v) \\
+&= s(T) p(T)(v) + r(T)(v) \\
+&= r(T) (v)
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">q(T) = r(T)</script>.</p>
+<p>Since <script type="math/tex">\deg r < \deg p</script>, then <script type="math/tex">r(z)</script> can be represented by
+<script type="math/tex">1, z, z^2, \cdots, z^{m-1}</script>.</p>
+<p>So <script type="math/tex">q(T) = r(T) \in \text{span}(I, T, T^2, \cdots, T^{m-1})</script>.
+so <script type="math/tex">ℰ \subseteq \text{span}(I, T, T^2, \cdots, T^{m-1})</script>.
+So <script type="math/tex">\dim ℰ \leq m</script>
+</p>
+<p>On the other hand, <script type="math/tex">I, T, T^2, \cdots, T^{m-1}</script> are linear independent.
+Otherwise, we can find <script type="math/tex">a_i</script> such that they are not all 0 and</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_0 I + a_1 T + \cdots + a_{m-1} T^{m-1} = 0
+</script>
+</p>
+<p>That means we find another polynomial with degree less than <script type="math/tex">m</script> such that
+it's 0, which contradicts the assumption that <script type="math/tex">p(z)</script> is the minimal
+polynomial.</p>
+<p>Since <script type="math/tex">I, T, T^2, \cdots, T^{m-1}</script> are linear independent,
+then <script type="math/tex">\dim ℰ \geq m</script>.</p>
+<p>In summary, <script type="math/tex">\dim ℰ = m</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="5b20">5B.20</h3>
 <p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝐅^4)</script> is such that the eigenvalues of 𝑇 are 3, 5, 8. Prove 
 that

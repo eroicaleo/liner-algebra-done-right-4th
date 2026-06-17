@@ -118,6 +118,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#529-qt-0-q-is-a-polynomial-multiple-of-the-minimal-polynomial">5.29 𝑞(𝑇) = 0 ⟺ 𝑞 is a polynomial multiple of the minimal polynomial</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#531-minimal-polynomial-of-a-restriction-operator">5.31 minimal polynomial of a restriction operator</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#532">5.32</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#533-even-dimensional-null-space">5.33 even-dimensional null space</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -459,6 +465,106 @@ q(T)(v) &= (s(T)p(T))(v) \\
 \end{align*} 
 </script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="531-minimal-polynomial-of-a-restriction-operator">5.31 minimal polynomial of a restriction operator</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and
+<script type="math/tex">𝑈</script> is a subspace of <script type="math/tex">𝑉</script> that is
+invariant under <script type="math/tex">𝑇</script>.
+Then the minimal polynomial of <script type="math/tex">𝑇</script> is a polynomial multiple
+of the minimal polynomial of <script type="math/tex">𝑇|𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">p(z)</script> is the minimal polynomial of <script type="math/tex">𝑇</script>.
+Then given <script type="math/tex">v \in V</script>, we have <script type="math/tex">p(T)(v) = 0</script>.</p>
+<p>In particular, for any <script type="math/tex">u \in U</script>, <script type="math/tex">p(T)(u) = 0</script>.</p>
+<p>Since for any <script type="math/tex">u \in U</script>, <script type="math/tex">T|_U(u) = T(u)</script>.
+<script type="math/tex">U</script> is invariant under <script type="math/tex">T</script>, so we have
+<script type="math/tex">p(T|_U)(u) = p(T)(u) = 0</script>.</p>
+<p>Then apply 5.29, we have <script type="math/tex">p(z)</script>
+is a polynomial multiple
+of the minimal polynomial of <script type="math/tex">𝑇|𝑈</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="532">5.32</h3>
+<p>
+<script type="math/tex">𝑇</script> not invertible <script type="math/tex">⟺</script> constant term of minimal polynomial of <script type="math/tex">𝑇</script> is <script type="math/tex">0</script>.</p>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Then <script type="math/tex">𝑇</script> is not invertible if
+and only if the constant term of the minimal polynomial of <script type="math/tex">𝑇</script> is <script type="math/tex">0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T &\text{ not invertible } \\
+& ⟺ \\
+\text{null } T &\neq \{0\} \\
+& ⟺ \\
+0 &\text{ is an eigenvalue of } T \\
+& ⟺ \\
+0 &\text{ is a zero of the minimal polynomial of } T \\
+& ⟺ \\
+&\text{the constant term of the minimal polynomial of } 𝑇 \text{ is } 0
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="533-even-dimensional-null-space">5.33 even-dimensional null space</h3>
+<p>Suppose <script type="math/tex">𝐅 = 𝐑</script> and <script type="math/tex">𝑉</script> is finite-dimensional.
+Suppose also that <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>
+and <script type="math/tex">𝑏, 𝑐 ∈ 𝐑</script> with <script type="math/tex">𝑏^2 < 4𝑐</script>.
+Then <script type="math/tex">\text{dim null } 𝑇^2 + 𝑏𝑇 + 𝑐𝐼</script> is an even number.</p>
+<p><strong>Proof</strong>:</p>
+<p>From
+"5.18 null space and range of <script type="math/tex">𝑝(𝑇)</script> are invariant under <script type="math/tex">𝑇</script>",
+we know <script type="math/tex">\text{null } 𝑇^2 + 𝑏𝑇 + 𝑐𝐼</script> is invariant under <script type="math/tex">T</script>.</p>
+<p>So we can restrict <script type="math/tex">T</script> to <script type="math/tex">\text{null } 𝑇^2 + 𝑏𝑇 + 𝑐𝐼</script>.</p>
+<p>We reuse the symbol <script type="math/tex">V</script> and let it denote
+<script type="math/tex">\text{null } 𝑇^2 + 𝑏𝑇 + 𝑐𝐼</script>.</p>
+<p>We just need to prove <script type="math/tex">\dim V</script> is an even number.</p>
+<p>First, we will show <script type="math/tex">T</script> does not have an eigenvalue.
+We prove by contradition. Assume <script type="math/tex">k</script> is an eigenvalue and
+<script type="math/tex">v</script> is an eigenvector. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+0 &= (𝑇^2 + 𝑏𝑇 + 𝑐𝐼)(v) \\
+&=
+𝑇^2v + 𝑏𝑇v + 𝑐𝐼v \\
+&= (k^2 + bk + c)v \\
+\end{align*} 
+</script>
+</p>
+<p>Since <script type="math/tex">𝑏^2 < 4𝑐</script> and <script type="math/tex">k \in \mathbb{R}</script>, so
+<script type="math/tex">k^2 + bk + c \neq 0</script>, so <script type="math/tex">v = 0</script>, then
+<script type="math/tex">T</script> does not have an eigenvalue.</p>
+<p>Now let <script type="math/tex">U</script> be the subspace that is invariant under <script type="math/tex">T</script>
+with the largest even degree.</p>
+<p>If <script type="math/tex">U \neq V</script>, we can find <script type="math/tex">w \not\in U</script>.</p>
+<p>Consider <script type="math/tex">W = \text{span}(w, Tw)</script>, <script type="math/tex">W</script> is invariant under <script type="math/tex">T</script>.
+This is because <script type="math/tex">T^2w = -bTw - cw \in W</script>.</p>
+<p>Now</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim (U+W) = \dim U + \dim W - \dim (U \cap W)
+</script>
+</p>
+<p>Since both <script type="math/tex">U, W</script> are invariant under <script type="math/tex">T</script>, so is <script type="math/tex">U \cap W</script>.</p>
+<p>If <script type="math/tex">\dim (U \cap W) = 1</script>, then <script type="math/tex">U \cap W</script> is an one dimensional
+invariant subspace, then we can find an eigenvalue which is
+contradictory to the face that <script type="math/tex">T</script> does not have an eigenvalue.</p>
+<p>So <script type="math/tex">\dim (U \cap W) = 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim (U+W) = \dim U + 2
+</script>
+</p>
+<p>So we produce an subspace that is invariant under <script type="math/tex">T</script>
+with bigger even degree, and we reach a contradition.</p>
+<p>So <script type="math/tex">U = V</script> and we finished the proof.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
