@@ -1765,6 +1765,74 @@ $\square$
 
 ## Section 5B The Minimal Polynomial
 
+### 5B.19
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
+Let $ℰ$ be the subspace of $ℒ(𝑉)$ defined by
+
+$$ 
+ℰ = \{q(T): q \in 𝒫(𝐅)\}
+$$
+
+Prove that $\dim ℰ$ equals the degree of the minimal polynomial of $𝑇$.
+
+**Proof**:
+
+Let $p(z)$ be the minimal polynomial of $𝑇$.
+And $\deg p = m$.
+Given any $q(z)$, using
+the "4.9 division algorithm for polynomials", we know we can find
+$s, r$ such that
+
+$$ 
+q(z) = s(z) p(z) + r(z)
+$$
+
+with $\deg r < \deg p$.
+
+The use "5.17 multiplicative properties", we know
+
+$$ 
+q(T) = s(T) p(T) + r(T)
+$$
+
+So
+
+$$
+\begin{align*}
+q(T)(v) &= (s(T) p(T) + r(T))(v) \\
+&= s(T) p(T)(v) + r(T)(v) \\
+&= r(T) (v)
+\end{align*} 
+$$
+
+So $q(T) = r(T)$.
+
+Since $\deg r < \deg p$, then $r(z)$ can be represented by
+$1, z, z^2, \cdots, z^{m-1}$.
+
+So $q(T) = r(T) \in \text{span}(I, T, T^2, \cdots, T^{m-1})$.
+so $ℰ \subseteq \text{span}(I, T, T^2, \cdots, T^{m-1})$.
+So $\dim ℰ \leq m$ 
+
+On the other hand, $I, T, T^2, \cdots, T^{m-1}$ are linear independent.
+Otherwise, we can find $a_i$ such that they are not all 0 and
+
+$$ 
+a_0 I + a_1 T + \cdots + a_{m-1} T^{m-1} = 0
+$$
+
+That means we find another polynomial with degree less than $m$ such that
+it's 0, which contradicts the assumption that $p(z)$ is the minimal
+polynomial.
+
+Since $I, T, T^2, \cdots, T^{m-1}$ are linear independent,
+then $\dim ℰ \geq m$.
+
+In summary, $\dim ℰ = m$.
+
+$\square$
+
 ### 5B.20
 
 Suppose $𝑇 ∈ ℒ(𝐅^4)$ is such that the eigenvalues of 𝑇 are 3, 5, 8. Prove 

@@ -357,3 +357,124 @@ q(T)(v) &= (s(T)p(T))(v) \\
 $$
 
 $\square$
+
+### 5.31 minimal polynomial of a restriction operator
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and
+$𝑈$ is a subspace of $𝑉$ that is
+invariant under $𝑇$.
+Then the minimal polynomial of $𝑇$ is a polynomial multiple
+of the minimal polynomial of $𝑇|𝑈$.
+
+**Proof**:
+
+Assume $p(z)$ is the minimal polynomial of $𝑇$.
+Then given $v \in V$, we have $p(T)(v) = 0$.
+
+In particular, for any $u \in U$, $p(T)(u) = 0$.
+
+Since for any $u \in U$, $T|_U(u) = T(u)$.
+$U$ is invariant under $T$, so we have
+$p(T|_U)(u) = p(T)(u) = 0$.
+
+Then apply 5.29, we have $p(z)$
+is a polynomial multiple
+of the minimal polynomial of $𝑇|𝑈$.
+
+$\square$
+
+### 5.32
+
+$𝑇$ not invertible $⟺$ constant term of minimal polynomial of $𝑇$ is $0$.
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
+Then $𝑇$ is not invertible if
+and only if the constant term of the minimal polynomial of $𝑇$ is $0$.
+
+**Proof**:
+
+$$
+\begin{align*}
+T &\text{ not invertible } \\
+& ⟺ \\
+\text{null } T &\neq \{0\} \\
+& ⟺ \\
+0 &\text{ is an eigenvalue of } T \\
+& ⟺ \\
+0 &\text{ is a zero of the minimal polynomial of } T \\
+& ⟺ \\
+&\text{the constant term of the minimal polynomial of } 𝑇 \text{ is } 0
+\end{align*} 
+$$
+
+$\square$
+
+### 5.33 even-dimensional null space
+
+Suppose $𝐅 = 𝐑$ and $𝑉$ is finite-dimensional.
+Suppose also that $𝑇 ∈ ℒ(𝑉)$
+and $𝑏, 𝑐 ∈ 𝐑$ with $𝑏^2 < 4𝑐$.
+Then $\text{dim null } 𝑇^2 + 𝑏𝑇 + 𝑐𝐼$ is an even number.
+
+**Proof**:
+
+From
+"5.18 null space and range of $𝑝(𝑇)$ are invariant under $𝑇$",
+we know $\text{null } 𝑇^2 + 𝑏𝑇 + 𝑐𝐼$ is invariant under $T$.
+
+So we can restrict $T$ to $\text{null } 𝑇^2 + 𝑏𝑇 + 𝑐𝐼$.
+
+We reuse the symbol $V$ and let it denote
+$\text{null } 𝑇^2 + 𝑏𝑇 + 𝑐𝐼$.
+
+We just need to prove $\dim V$ is an even number.
+
+First, we will show $T$ does not have an eigenvalue.
+We prove by contradition. Assume $k$ is an eigenvalue and
+$v$ is an eigenvector. Then
+
+$$ 
+\begin{align*}
+0 &= (𝑇^2 + 𝑏𝑇 + 𝑐𝐼)(v) \\
+&=
+𝑇^2v + 𝑏𝑇v + 𝑐𝐼v \\
+&= (k^2 + bk + c)v \\
+\end{align*} 
+$$
+
+Since $𝑏^2 < 4𝑐$ and $k \in \mathbb{R}$, so
+$k^2 + bk + c \neq 0$, so $v = 0$, then
+$T$ does not have an eigenvalue.
+
+Now let $U$ be the subspace that is invariant under $T$
+with the largest even degree.
+
+If $U \neq V$, we can find $w \not\in U$.
+
+Consider $W = \text{span}(w, Tw)$, $W$ is invariant under $T$.
+This is because $T^2w = -bTw - cw \in W$.
+
+Now
+
+$$ 
+\dim (U+W) = \dim U + \dim W - \dim (U \cap W)
+$$
+
+Since both $U, W$ are invariant under $T$, so is $U \cap W$.
+
+If $\dim (U \cap W) = 1$, then $U \cap W$ is an one dimensional
+invariant subspace, then we can find an eigenvalue which is
+contradictory to the face that $T$ does not have an eigenvalue.
+
+So $\dim (U \cap W) = 0$, then
+
+$$ 
+\dim (U+W) = \dim U + 2
+$$
+
+So we produce an subspace that is invariant under $T$
+with bigger even degree, and we reach a contradition.
+
+So $U = V$ and we finished the proof.
+
+$\square$
