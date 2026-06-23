@@ -174,6 +174,14 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#5b1">5B.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b2">5B.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b3">5B.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b4">5B.4</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b19">5B.19</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b20">5B.20</a>
@@ -1739,6 +1747,134 @@ Let <script type="math/tex">S(u_i) = v_1</script>, then <script type="math/tex">
 <script type="math/tex">\square</script>
 </p>
 <h2 id="section-5b-the-minimal-polynomial">Section 5B The Minimal Polynomial</h2>
+<h3 id="5b1">5B.1</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Prove that <script type="math/tex">9</script> is an eigenvalue of <script type="math/tex">𝑇^2</script> if and only if <script type="math/tex">3</script> or
+<script type="math/tex">−3</script> is an eigenvalue of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">u \neq 0</script> is an eigenvector and <script type="math/tex">(T^2 - 9I)(u) = 0</script>.
+Then we have <script type="math/tex">(T-3I)(T+3I)(u) = 0</script>.</p>
+<p>If <script type="math/tex">(T+3I)(u) = 0</script>, then <script type="math/tex">-3</script> is an eigenvalue and <script type="math/tex">u</script> is an eigenvector.</p>
+<p>If <script type="math/tex">(T+3I)(u) \neq 0</script>, let <script type="math/tex">w = (T+3I)(u)</script>. We have <script type="math/tex">(T-3I)(w) = 0</script>.
+Then <script type="math/tex">+3</script> is an eigenvalue and <script type="math/tex">w</script> is an eigenvector.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>If <script type="math/tex">3</script> is an eigenvalue and <script type="math/tex">u \neq 0</script> is an eigenvector such that
+<script type="math/tex">(T-3I)(u) = 0</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(T^2 - 9I)(u) &=
+(T+3I)(T-3I)(u) \\
+&= (T+3I)(0) \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">9</script> is an eigenvalue of <script type="math/tex">𝑇^2</script> and <script type="math/tex">u</script> is an eigenvector.
+Similarly for the case when <script type="math/tex">−3</script> is an eigenvalue of <script type="math/tex">𝑇</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b2">5B.2</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is a complex vector space and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> has no eigenvalues.
+Prove that every subspace of <script type="math/tex">𝑉</script> invariant under <script type="math/tex">𝑇</script> is either <script type="math/tex">\{0\}</script> or infinite-
+dimensional.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">U \subseteq V</script> is subspace that is invariant under <script type="math/tex">T</script>.
+Then we can restrict <script type="math/tex">T</script> under <script type="math/tex">U</script> to get <script type="math/tex">T|_U</script>.
+Then <script type="math/tex">T|_U</script> is an operator on <script type="math/tex">U</script>.</p>
+<p>Assume <script type="math/tex">U \neq \{0\}</script> is a finite-dimensional space.</p>
+<p>Then from "5.19 existence of eigenvalues", it must have an eigenvalue <script type="math/tex">\lambda</script> and an
+eigenvector of <script type="math/tex">u \neq 0</script> such that <script type="math/tex">T|_U(u) = \lambda u</script>.</p>
+<p>But since <script type="math/tex">u \in U</script>, then we also have <script type="math/tex">T(u) = T|_U(u) = \lambda u</script>.
+This means <script type="math/tex">T</script> has an eigenvalue <script type="math/tex">\lambda</script> and an eigenvector of <script type="math/tex">u \neq 0</script>.</p>
+<p>Then we reached an contradition. So if <script type="math/tex">U \neq \{0\}</script>, then <script type="math/tex">U</script> is infinite-dimensional.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b3">5B.3</h3>
+<p>Suppose <script type="math/tex">𝑛</script> is a positive integer and <script type="math/tex">𝑇 ∈ ℒ(𝐅^𝑛)</script> is defined by</p>
+<p>
+<script type="math/tex; mode=display"> 
+T (x_1, \cdots, x_n) =
+(𝑥_1 +⋯ + 𝑥_𝑛, …, 𝑥_1 +⋯ + 𝑥_𝑛)
+</script>
+</p>
+<p>anwser the following:</p>
+<p>(a) Find all eigenvalues and eigenvectors of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Assume <script type="math/tex">k</script> is an eigenvalue and <script type="math/tex">(x_1, \cdots, x_n) \neq 0</script> is an eigenvector,</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T (x_1, \cdots, x_n) &=
+(𝑥_1 +⋯ + 𝑥_𝑛, …, 𝑥_1 +⋯ + 𝑥_𝑛) \\
+&= k (x_1, \cdots, x_n)
+\end{align*} 
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+k x_1 = k x_2 = \cdots = k x_n = 𝑥_1 +⋯ + 𝑥_𝑛
+</script>
+</p>
+<p>If <script type="math/tex">k = 0</script>, then any <script type="math/tex">(x_1, \cdots, x_n) \neq 0</script> satisfy <script type="math/tex">𝑥_1 +⋯ + 𝑥_𝑛 = 0</script>, is an eigenvector.
+So if <script type="math/tex">n = 1</script>, then <script type="math/tex">x_1 = 0</script>, then <script type="math/tex">0</script> is not an eigenvalue.</p>
+<p>If <script type="math/tex">k \neq 0</script>, then <script type="math/tex">x_1 = x_2 = \cdots = x_n = a \neq 0</script> and <script type="math/tex">k = n</script>.</p>
+<p>So in summary, there are 2 possible eigenvalues when <script type="math/tex">n > 1</script>:</p>
+<ol>
+<li>
+<script type="math/tex">k = 0</script>, and <script type="math/tex">(x_1, \cdots, x_n) \neq 0</script> satisfy <script type="math/tex">𝑥_1 +⋯ + 𝑥_𝑛 = 0</script>
+</li>
+<li>
+<script type="math/tex">k = n</script>, and <script type="math/tex">(x_1, \cdots, x_n) = (a, \cdots, a)</script> with <script type="math/tex">a \neq 0</script>.</li>
+</ol>
+<p>if <script type="math/tex">n = 1</script>, then only case 2 is valid. </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Find the minimal polynomial of 𝑇.</p>
+<p><strong>Solution</strong>:</p>
+<p>We first assume <script type="math/tex">n > 1</script>.</p>
+<p>Let <script type="math/tex">p(z)</script> be the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p>From "5.27 eigenvalues are the zeros of the minimal polynomial", we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = z(z-n)q(z)
+</script>
+</p>
+<p>This means <script type="math/tex">p(z)</script> is a multiple of <script type="math/tex">z(z-n)</script>.</p>
+<p>Now we consider <script type="math/tex">(T-nI)T</script> applied on <script type="math/tex">e_i</script> where <script type="math/tex">e_i</script> is one of the standard basis.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(T-nI)T(e_i) &=
+(T-nI) (1, \cdots , 1) \\
+&= (n, \cdots , n) - (n, \cdots , n) \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>Then <script type="math/tex">(T-nI)T(v) = 0</script> for any <script type="math/tex">v \in F^n</script>. That means <script type="math/tex">(T-nI)T = 0</script>.</p>
+<p>Then from "5.29 <script type="math/tex">𝑞(𝑇) = 0 ⟺ 𝑞</script> is a polynomial multiple of the minimal polynomial", we know
+<script type="math/tex">z(z-n)</script> is a multiple <script type="math/tex">p(z)</script>.</p>
+<p>Since <script type="math/tex">z(z-n)</script> is a monic polynomial, <script type="math/tex">p(z) \mid z(z-n)</script> and <script type="math/tex">z(z-n) \mid p(z)</script> we must have <script type="math/tex">p(z) = z(z-n)</script>.</p>
+<p>Now we assume <script type="math/tex">n = 1</script>. In this case <script type="math/tex">T-I = 0</script> because <script type="math/tex">(T-I)(v) = T(v) - v = v - v = 0</script>.
+so <script type="math/tex">p(z) \mid z - 1</script>. On the other hand <script type="math/tex">1</script> is a zero of <script type="math/tex">p(z)</script> so <script type="math/tex">z - 1 \mid p(z)</script>.
+So <script type="math/tex">p(z) = z - 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b4">5B.4</h3>
+<p>Suppose <script type="math/tex">𝐅 = 𝐂, 𝑇 ∈ ℒ(𝑉), 𝑝 ∈ 𝒫(𝐂)</script>, and 𝛼 ∈ 𝐂. Prove that 𝛼 is an
+eigenvalue of 𝑝(𝑇) if and only if 𝛼 = 𝑝(𝜆) for some eigenvalue 𝜆 of 𝑇.</p>
+<p><strong>Proof</strong>:</p>
 <h3 id="5b19">5B.19</h3>
 <p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
 Let <script type="math/tex">ℰ</script> be the subspace of <script type="math/tex">ℒ(𝑉)</script> defined by</p>
