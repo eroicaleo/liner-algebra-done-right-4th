@@ -1765,6 +1765,161 @@ $\square$
 
 ## Section 5B The Minimal Polynomial
 
+### 5B.1
+
+Suppose $𝑇 ∈ ℒ(𝑉)$. Prove that $9$ is an eigenvalue of $𝑇^2$ if and only if $3$ or
+$−3$ is an eigenvalue of $𝑇$.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $u \neq 0$ is an eigenvector and $(T^2 - 9I)(u) = 0$.
+Then we have $(T-3I)(T+3I)(u) = 0$.
+
+If $(T+3I)(u) = 0$, then $-3$ is an eigenvalue and $u$ is an eigenvector.
+
+If $(T+3I)(u) \neq 0$, let $w = (T+3I)(u)$. We have $(T-3I)(w) = 0$.
+Then $+3$ is an eigenvalue and $w$ is an eigenvector.
+
+$\Leftarrow$
+
+If $3$ is an eigenvalue and $u \neq 0$ is an eigenvector such that
+$(T-3I)(u) = 0$, then
+
+$$
+\begin{align*}
+(T^2 - 9I)(u) &=
+(T+3I)(T-3I)(u) \\
+&= (T+3I)(0) \\
+&= 0
+\end{align*} 
+$$
+
+So $9$ is an eigenvalue of $𝑇^2$ and $u$ is an eigenvector.
+Similarly for the case when $−3$ is an eigenvalue of $𝑇$.
+
+$\square$
+
+### 5B.2
+
+Suppose $𝑉$ is a complex vector space and $𝑇 ∈ ℒ(𝑉)$ has no eigenvalues.
+Prove that every subspace of $𝑉$ invariant under $𝑇$ is either $\{0\}$ or infinite-
+dimensional.
+
+**Proof**:
+
+Assume $U \subseteq V$ is subspace that is invariant under $T$.
+Then we can restrict $T$ under $U$ to get $T|_U$.
+Then $T|_U$ is an operator on $U$.
+
+Assume $U \neq \{0\}$ is a finite-dimensional space.
+
+Then from "5.19 existence of eigenvalues", it must have an eigenvalue $\lambda$ and an
+eigenvector of $u \neq 0$ such that $T|_U(u) = \lambda u$.
+
+But since $u \in U$, then we also have $T(u) = T|_U(u) = \lambda u$.
+This means $T$ has an eigenvalue $\lambda$ and an eigenvector of $u \neq 0$.
+
+Then we reached an contradition. So if $U \neq \{0\}$, then $U$ is infinite-dimensional.
+
+$\square$
+
+### 5B.3
+
+Suppose $𝑛$ is a positive integer and $𝑇 ∈ ℒ(𝐅^𝑛)$ is defined by
+
+$$ 
+T (x_1, \cdots, x_n) =
+(𝑥_1 +⋯ + 𝑥_𝑛, …, 𝑥_1 +⋯ + 𝑥_𝑛)
+$$
+
+anwser the following:
+
+(a) Find all eigenvalues and eigenvectors of $𝑇$.
+
+**Solution**:
+
+Assume $k$ is an eigenvalue and $(x_1, \cdots, x_n) \neq 0$ is an eigenvector,
+
+Then
+
+$$
+\begin{align*}
+T (x_1, \cdots, x_n) &=
+(𝑥_1 +⋯ + 𝑥_𝑛, …, 𝑥_1 +⋯ + 𝑥_𝑛) \\
+&= k (x_1, \cdots, x_n)
+\end{align*} 
+$$
+
+Then we have
+
+$$ 
+k x_1 = k x_2 = \cdots = k x_n = 𝑥_1 +⋯ + 𝑥_𝑛
+$$
+
+If $k = 0$, then any $(x_1, \cdots, x_n) \neq 0$ satisfy $𝑥_1 +⋯ + 𝑥_𝑛 = 0$, is an eigenvector.
+So if $n = 1$, then $x_1 = 0$, then $0$ is not an eigenvalue.
+
+If $k \neq 0$, then $x_1 = x_2 = \cdots = x_n = a \neq 0$ and $k = n$.
+
+So in summary, there are 2 possible eigenvalues when $n > 1$:
+
+1. $k = 0$, and $(x_1, \cdots, x_n) \neq 0$ satisfy $𝑥_1 +⋯ + 𝑥_𝑛 = 0$
+2. $k = n$, and $(x_1, \cdots, x_n) = (a, \cdots, a)$ with $a \neq 0$.
+
+if $n = 1$, then only case 2 is valid. 
+
+$\square$
+
+(b) Find the minimal polynomial of 𝑇.
+
+**Solution**:
+
+We first assume $n > 1$.
+
+Let $p(z)$ be the minimal polynomial of $𝑇$.
+
+From "5.27 eigenvalues are the zeros of the minimal polynomial", we know
+
+$$ 
+p(z) = z(z-n)q(z)
+$$
+
+This means $p(z)$ is a multiple of $z(z-n)$.
+
+Now we consider $(T-nI)T$ applied on $e_i$ where $e_i$ is one of the standard basis.
+
+$$
+\begin{align*}
+(T-nI)T(e_i) &=
+(T-nI) (1, \cdots , 1) \\
+&= (n, \cdots , n) - (n, \cdots , n) \\
+&= 0
+\end{align*} 
+$$
+
+Then $(T-nI)T(v) = 0$ for any $v \in F^n$. That means $(T-nI)T = 0$.
+
+Then from "5.29 $𝑞(𝑇) = 0 ⟺ 𝑞$ is a polynomial multiple of the minimal polynomial", we know
+$z(z-n)$ is a multiple $p(z)$.
+
+Since $z(z-n)$ is a monic polynomial, $p(z) \mid z(z-n)$ and $z(z-n) \mid p(z)$ we must have $p(z) = z(z-n)$.
+
+Now we assume $n = 1$. In this case $T-I = 0$ because $(T-I)(v) = T(v) - v = v - v = 0$.
+so $p(z) \mid z - 1$. On the other hand $1$ is a zero of $p(z)$ so $z - 1 \mid p(z)$.
+So $p(z) = z - 1$.
+
+$\square$
+
+### 5B.4
+
+Suppose $𝐅 = 𝐂, 𝑇 ∈ ℒ(𝑉), 𝑝 ∈ 𝒫(𝐂)$, and 𝛼 ∈ 𝐂. Prove that 𝛼 is an
+eigenvalue of 𝑝(𝑇) if and only if 𝛼 = 𝑝(𝜆) for some eigenvalue 𝜆 of 𝑇.
+
+**Proof**:
+
+
 ### 5B.19
 
 Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
