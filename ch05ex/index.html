@@ -182,6 +182,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b4">5B.4</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b5">5B.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b6">5B.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b7">5B.7</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b19">5B.19</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b20">5B.20</a>
@@ -1872,9 +1878,118 @@ So <script type="math/tex">p(z) = z - 1</script>.</p>
 <script type="math/tex">\square</script>
 </p>
 <h3 id="5b4">5B.4</h3>
-<p>Suppose <script type="math/tex">𝐅 = 𝐂, 𝑇 ∈ ℒ(𝑉), 𝑝 ∈ 𝒫(𝐂)</script>, and 𝛼 ∈ 𝐂. Prove that 𝛼 is an
-eigenvalue of 𝑝(𝑇) if and only if 𝛼 = 𝑝(𝜆) for some eigenvalue 𝜆 of 𝑇.</p>
+<p>Suppose <script type="math/tex">𝐅 = 𝐂, 𝑇 ∈ ℒ(𝑉), 𝑝 ∈ 𝒫(𝐂)</script>, and 𝛼 ∈ 𝐂. Prove that 
+𝛼 is an
+eigenvalue of 𝑝(𝑇) if and only if 𝛼 = 𝑝(𝜆) for some eigenvalue 
+𝜆 of 𝑇.</p>
 <p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Consider the polynomial <script type="math/tex">p(z) - \alpha \in 𝒫(𝐂)</script>.
+And consider <script type="math/tex">U = \text{null } p(T) - \alpha I</script>.
+Since <script type="math/tex">𝛼</script> is an eigenvalue of <script type="math/tex">𝑝(𝑇)</script>,
+<script type="math/tex">U \neq \{0\}</script>.</p>
+<p>From "5.18 null space and range of <script type="math/tex">𝑝(𝑇)</script> are invariant under <script type="math/tex">𝑇</script>", we know <script type="math/tex">U</script> is invariant under <script type="math/tex">T</script>.
+And then we can restrict <script type="math/tex">T</script> on <script type="math/tex">U</script> to get <script type="math/tex">T|_U</script>.</p>
+<p>Let <script type="math/tex">q(z)</script> be the minimal polynomial of <script type="math/tex">T|_U</script>.
+Since <script type="math/tex">p(T|_U) - \alpha</script> is <script type="math/tex">0</script> on <script type="math/tex">U</script>,
+from
+"5.29 <script type="math/tex">𝑞(𝑇) = 0 ⟺ 𝑞</script> is a polynomial multiple of the minimal 
+polynomial",
+we have <script type="math/tex">q \mid p(z) - \alpha</script>
+</p>
+<p>Since <script type="math/tex">q(z) \in 𝒫(𝐂)</script>, from fundamental theorem of algebra,
+we can find one of its zero, say <script type="math/tex">\lambda</script>.</p>
+<p>So <script type="math/tex">q(z) = (z-\lambda)s(z)</script>. Since <script type="math/tex">\deg s < \deg q</script>,
+then <script type="math/tex">s(z)</script> is not a multiple of <script type="math/tex">q</script>, then <script type="math/tex">s(T|_U)</script>
+is not <script type="math/tex">0</script> on <script type="math/tex">U</script> again from 5.29. We can find <script type="math/tex">v \in U</script>, such that
+<script type="math/tex">s(T|_U)(v) \neq 0</script>. Let <script type="math/tex">w = s(T|_U)(v)</script>, then we have
+<script type="math/tex">(T|_U - \lambda I)(w) = 0</script>.</p>
+<p>Since <script type="math/tex">w \in U</script>, then we have <script type="math/tex">T(w) = T|_U(w)</script>, so
+<script type="math/tex">(T-\lambda I)(w) = (T|_U - \lambda I ) (w) = 0</script>,
+i.e. <script type="math/tex">T(w) = \lambda w</script>.
+So <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">T</script>.</p>
+<p>Since <script type="math/tex">q \mid p(z) - \alpha</script> and <script type="math/tex">\lambda</script> is a zeor of <script type="math/tex">q</script>,
+we have <script type="math/tex">p(\lambda) - \alpha = 0</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>If <script type="math/tex">𝛼 = 𝑝(𝜆)</script>, and <script type="math/tex">T(u) = \lambda u</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+p(T)(u) &= (a_0 I + a_1 T + \cdots + a_{m} T^{m})(u) \\
+&= a_0 I(u) + a_1 T(u) + \cdots + a_{m} T^{m}(u) \\
+&= a_0 u + a_1 \lambda(u) + \cdots + a_{m} \lambda^{m}(u) \\
+&= (a_0 + a_1 \lambda + \cdots + a_{m} \lambda^{m})(u) \\
+&= \alpha u
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">𝛼</script> is an eigenvalue of <script type="math/tex">𝑝(𝑇)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b5">5B.5</h3>
+<p>Give an example of an operator on <script type="math/tex">𝐑^2</script> that shows the result in Exercise 4 does not hold if 𝐂 is replaced with 𝐑.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">T</script> is an operator, it rotates a vector <script type="math/tex">(x, y)</script> by
+90 degree counterclock-wise.</p>
+<p>So <script type="math/tex">T(1,0) = (0,1), T(0,1) = (-1,0)</script>.</p>
+<p>So <script type="math/tex">T^2(1,0) = T(0,1) = (-1,0)</script>, then
+if we reuse the symbol in exercise 4,
+we have <script type="math/tex">p(z) = z^2, \alpha = -1</script>, then it's not possible to
+find a real number <script type="math/tex">\lambda</script> such that
+<script type="math/tex">p(\lambda) = \lambda^2 = -1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b6">5B.6</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝐅^2)</script> is defined by <script type="math/tex">𝑇(𝑤, 𝑧) = (−𝑧, 𝑤)</script>.
+Find the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T(1,0) &= (0, 1) \\
+T^2(1,0) &= T(0, 1) \\
+&= (-1, 0)
+\end{align*}  
+</script>
+</p>
+<p>And</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T(0,1) &= (-1, 0) \\
+T^2(0,1) &= T(-1, 0) \\
+&= (0, -1)
+\end{align*}  
+</script>
+</p>
+<p>That means <script type="math/tex">T^2(e_1) + e_1 = 0</script> and <script type="math/tex">T^2(e_2) + e_2 = 0</script>.</p>
+<p>So <script type="math/tex">T^2 + 1 = 0</script>. so <script type="math/tex">T^2 + 1</script> is a multiple of minimal polynomial.</p>
+<p>On the other hand, if <script type="math/tex">T+\lambda I</script> is <script type="math/tex">0</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(T+\lambda I)(e_1) &= 0 \\
+& \Rightarrow \\
+(0, 1) &= (-\lambda, 0)
+\end{align*} 
+</script>
+</p>
+<p>This is no possible, so <script type="math/tex">T+\lambda I \neq 0</script>.</p>
+<p>So <script type="math/tex">T^2 + 1</script> is the minimal polynomial.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b7">5B.7</h3>
+<p>(a) Give an example of <script type="math/tex">𝑆, 𝑇 ∈ ℒ(𝐅^2)</script> such that the minimal 
+polynomial of <script type="math/tex">𝑆𝑇</script> does not equal the minimal polynomial of 
+<script type="math/tex">𝑇𝑆</script>.</p>
 <h3 id="5b19">5B.19</h3>
 <p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
 Let <script type="math/tex">ℰ</script> be the subspace of <script type="math/tex">ℒ(𝑉)</script> defined by</p>
