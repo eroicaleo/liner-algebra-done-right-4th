@@ -1914,10 +1914,137 @@ $\square$
 
 ### 5B.4
 
-Suppose $𝐅 = 𝐂, 𝑇 ∈ ℒ(𝑉), 𝑝 ∈ 𝒫(𝐂)$, and 𝛼 ∈ 𝐂. Prove that 𝛼 is an
-eigenvalue of 𝑝(𝑇) if and only if 𝛼 = 𝑝(𝜆) for some eigenvalue 𝜆 of 𝑇.
+Suppose $𝐅 = 𝐂, 𝑇 ∈ ℒ(𝑉), 𝑝 ∈ 𝒫(𝐂)$, and 𝛼 ∈ 𝐂. Prove that 
+𝛼 is an
+eigenvalue of 𝑝(𝑇) if and only if 𝛼 = 𝑝(𝜆) for some eigenvalue 
+𝜆 of 𝑇.
 
 **Proof**:
+
+$\Rightarrow$
+
+Consider the polynomial $p(z) - \alpha \in 𝒫(𝐂)$.
+And consider $U = \text{null } p(T) - \alpha I$.
+Since $𝛼$ is an eigenvalue of $𝑝(𝑇)$,
+$U \neq \{0\}$.
+
+From "5.18 null space and range of $𝑝(𝑇)$ are invariant under $𝑇$", we know $U$ is invariant under $T$.
+And then we can restrict $T$ on $U$ to get $T|_U$.
+
+Let $q(z)$ be the minimal polynomial of $T|_U$.
+Since $p(T|_U) - \alpha$ is $0$ on $U$,
+from
+"5.29 $𝑞(𝑇) = 0 ⟺ 𝑞$ is a polynomial multiple of the minimal 
+polynomial",
+we have $q \mid p(z) - \alpha$ 
+
+Since $q(z) \in 𝒫(𝐂)$, from fundamental theorem of algebra,
+we can find one of its zero, say $\lambda$.
+
+So $q(z) = (z-\lambda)s(z)$. Since $\deg s < \deg q$,
+then $s(z)$ is not a multiple of $q$, then $s(T|_U)$
+is not $0$ on $U$ again from 5.29. We can find $v \in U$, such that
+$s(T|_U)(v) \neq 0$. Let $w = s(T|_U)(v)$, then we have
+$(T|_U - \lambda I)(w) = 0$.
+
+Since $w \in U$, then we have $T(w) = T|_U(w)$, so
+$(T-\lambda I)(w) = (T|_U - \lambda I ) (w) = 0$,
+i.e. $T(w) = \lambda w$.
+So $\lambda$ is an eigenvalue of $T$.
+
+Since $q \mid p(z) - \alpha$ and $\lambda$ is a zeor of $q$,
+we have $p(\lambda) - \alpha = 0$.
+
+$\Leftarrow$
+
+If $𝛼 = 𝑝(𝜆)$, and $T(u) = \lambda u$, then
+
+$$
+\begin{align*}
+p(T)(u) &= (a_0 I + a_1 T + \cdots + a_{m} T^{m})(u) \\
+&= a_0 I(u) + a_1 T(u) + \cdots + a_{m} T^{m}(u) \\
+&= a_0 u + a_1 \lambda(u) + \cdots + a_{m} \lambda^{m}(u) \\
+&= (a_0 + a_1 \lambda + \cdots + a_{m} \lambda^{m})(u) \\
+&= \alpha u
+\end{align*} 
+$$
+
+So $𝛼$ is an eigenvalue of $𝑝(𝑇)$.
+
+$\square$
+
+### 5B.5
+
+Give an example of an operator on $𝐑^2$ that shows the result in Exercise 4 does not hold if 𝐂 is replaced with 𝐑.
+
+**Solution**:
+
+Consider $T$ is an operator, it rotates a vector $(x, y)$ by
+90 degree counterclock-wise.
+
+So $T(1,0) = (0,1), T(0,1) = (-1,0)$.
+
+So $T^2(1,0) = T(0,1) = (-1,0)$, then
+if we reuse the symbol in exercise 4,
+we have $p(z) = z^2, \alpha = -1$, then it's not possible to
+find a real number $\lambda$ such that
+$p(\lambda) = \lambda^2 = -1$.
+
+$\square$
+
+### 5B.6
+
+Suppose $𝑇 ∈ ℒ(𝐅^2)$ is defined by $𝑇(𝑤, 𝑧) = (−𝑧, 𝑤)$.
+Find the minimal polynomial of $𝑇$.
+
+**Solution**:
+
+Consider
+
+$$
+\begin{align*}
+T(1,0) &= (0, 1) \\
+T^2(1,0) &= T(0, 1) \\
+&= (-1, 0)
+\end{align*}  
+$$
+
+And
+
+$$
+\begin{align*}
+T(0,1) &= (-1, 0) \\
+T^2(0,1) &= T(-1, 0) \\
+&= (0, -1)
+\end{align*}  
+$$
+
+That means $T^2(e_1) + e_1 = 0$ and $T^2(e_2) + e_2 = 0$.
+
+So $T^2 + 1 = 0$. so $T^2 + 1$ is a multiple of minimal polynomial.
+
+On the other hand, if $T+\lambda I$ is $0$, then
+
+$$
+\begin{align*}
+(T+\lambda I)(e_1) &= 0 \\
+& \Rightarrow \\
+(0, 1) &= (-\lambda, 0)
+\end{align*} 
+$$
+
+This is no possible, so $T+\lambda I \neq 0$.
+
+So $T^2 + 1$ is the minimal polynomial.
+
+$\square$
+
+### 5B.7
+
+(a) Give an example of $𝑆, 𝑇 ∈ ℒ(𝐅^2)$ such that the minimal 
+polynomial of $𝑆𝑇$ does not equal the minimal polynomial of 
+$𝑇𝑆$.
+
 
 
 ### 5B.19
@@ -2447,3 +2574,4 @@ From 5.11 linearly independent eigenvectors, we know $u_1, u_2$ are linear indep
 $\text{span}(u_1, u_2)$ is invariant with dimension $2$.
 
 $\square$
+
