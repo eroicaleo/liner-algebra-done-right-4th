@@ -2045,7 +2045,608 @@ $\square$
 polynomial of $𝑆𝑇$ does not equal the minimal polynomial of 
 $𝑇𝑆$.
 
+(b) Suppose $𝑉$ is finite-dimensional and $𝑆, 𝑇 ∈ ℒ(𝑉)$.
+Prove that if at least
+one of $𝑆, 𝑇$ is invertible, then the minimal polynomial of
+$𝑆𝑇$ equals the minimal polynomial of $𝑇𝑆$.
 
+Hint: Show that if 𝑆 is invertible and 𝑝 ∈ 𝒫(𝐅), then
+$𝑝(𝑇𝑆) = 𝑆^{−1}𝑝(𝑆𝑇)𝑆$.
+
+**Proof**:
+
+Assume $S$ is invertible.
+$p$ is the minimal polynomial of $𝑆𝑇$.
+$q$ is the minimal polynomial of $TS$.
+
+We will show $p(TS) = 0$ and $q(ST) = 0$.
+
+Just use exercise 5A.40,
+
+$$ 
+\begin{align*}
+p(TS) &= p(S^{-1}STS) \\
+&= 𝑆^{−1}𝑝(𝑆𝑇)𝑆 \\
+&= 𝑆^{−1} 0 S \\
+&= 0
+\end{align*} 
+$$
+
+Then use
+"5.29 $𝑞(𝑇) = 0 ⟺ 𝑞$ is a polynomial multiple of the minimal 
+polynomial", we know $p$ is an multiple of $q$.
+
+On the other hand,
+
+$$ 
+\begin{align*}
+q(ST) &= q(STSS^{-1}) \\
+&= S q(TS) S^{-1} \\
+& = S 0 S^{-1} \\
+& = 0
+\end{align*} 
+$$
+
+So $q$ is a multiple of $p$.
+
+In summary, $p = q$.
+
+$\square$
+
+### 5B.8
+
+Suppose $𝑇 ∈ ℒ(𝐑^2)$ is the operator of counterclockwise rotation
+by $1^∘$. Find the minimal polynomial of $𝑇$.
+
+Because $\dim 𝐑^2 = 2$, the degree of the minimal polynomial of
+$𝑇$ is at most $2$.
+Thus the minimal polynomial of $𝑇$ is not the tempting polynomial 
+$𝑥^{180} + 1$, even though $𝑇^{180} = −𝐼$.
+
+**Solution**:
+
+We write the standard basis in polar form
+
+$$ 
+e_1 = (1, 0) = (\cos 0^\circ, \sin 0^\circ) \\
+e_2 = (0, 1) = (\cos 90^\circ , \sin 90^\circ) \\
+$$
+
+Then note
+
+$$
+\begin{align*}
+T^2(e_1) &= (\cos 2^\circ , \sin 2^\circ) \\
+T^2(e_1) + e_1 &= (\cos 2^\circ , \sin 2^\circ) +
+(\cos 0^\circ, \sin 0^\circ)\\
+&= (2 \cos 1 ^ \circ \cos 1 ^ \circ,
+2 \sin 1 ^\circ \cos 1 ^ \circ ) \\
+&= 2 \cos 1^ \circ (\cos 1^\circ , \sin 1^\circ) \\
+&= 2 \cos 1^ \circ T(e_1)
+\end{align*} 
+$$
+
+Similarly,
+
+$$
+\begin{align*}
+T^2(e_2) + e_2 &= (\cos 90^\circ , \sin 90^\circ) +
+(\cos 92^\circ, \sin 92^\circ) \\
+&= (2 \cos 91 ^ \circ \cos 1 ^ \circ,
+2 \sin 91 ^\circ \cos 1 ^ \circ ) \\
+&= 2 \cos 1^ \circ (\cos 91^\circ , \sin 91^\circ) \\
+&= 2 \cos 1^ \circ T(e_2) \\
+\end{align*} 
+$$
+
+So $T^2 - 2 \cos 1^ \circ T + I = 0$.
+
+On the other hand, since $T$ is a rotation,
+$T$ does not have eigenvalue, so the minimal polynomial
+cannot be degree 1.
+
+Therefore, the minimal polynomial is
+$p(z) = z^2 - 2 \cos 1^ \circ z + 1$.
+
+$\square$
+
+### 5B.9
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ is such that with respect to some basis of 
+$𝑉$, all entries
+of the matrix of $𝑇$ are rational numbers. Explain why all 
+coefficients of the
+minimal polynomial of $𝑇$ are rational numbers.
+
+**Proof**: unsolved.
+
+### 5B.10
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and
+$𝑣 ∈ 𝑉$. Prove that
+
+$$ 
+\text{span}(𝑣, Tv, \cdots, T^𝑚v) =
+\text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v)
+$$
+
+for all integers $𝑚 ≥ \dim 𝑉 − 1$.
+
+**Proof**:
+
+Let $p$ be the minimal polynomial of $T$, from the
+polynomial division algorithm, we know given $z^m$,
+we can find $s(z), r(z)$ such that
+
+$$ 
+z^m = p(z)s(z) + r(z)
+$$
+
+with $\deg r < \deg p \leq \dim V$.
+So $\deg r \leq \dim V - 1$.
+Let $\deg r = n$.
+
+So we have
+
+$$ 
+\begin{align*}
+T^m &= p(T)s(T) + r(T) \\
+& = 0 + r(T) \\
+& = r(T) \\
+& = a_0 I + a_1 T + \cdots + a_{n} T^{n}
+\end{align*}
+$$
+
+So $T^m(v) = (a_0 I + a_1 T + \cdots + a_{n} T^{n})(v)
+\in \text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v).$
+That means
+
+$$ 
+\text{span}(𝑣, Tv, \cdots, T^𝑚v) \subseteq
+\text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v)
+$$
+
+On the other hand, since $𝑚 ≥ \dim 𝑉 − 1$, we have
+
+$$ 
+\text{span}(𝑣, Tv, \cdots, T^𝑚v) \supseteq 
+\text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v)
+$$
+
+So we have
+
+$$ 
+\text{span}(𝑣, Tv, \cdots, T^𝑚v) =
+\text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v)
+$$
+
+$\square$
+
+### 5B.11
+
+Suppose $𝑉$ is a two-dimensional vector space, $𝑇 ∈ ℒ(𝑉)$,
+and the matrix of $𝑇$ with respect to some basis of $𝑉$ is
+$$ 
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}
+$$
+
+Prove that
+
+(a) Show that $𝑇^2 − (𝑎 + 𝑑)𝑇 + (𝑎𝑑 − 𝑏𝑐)𝐼 = 0$.
+
+**Proof**:
+
+$$ 
+\begin{align*}
+T^2 &=
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}^2 \\
+&=
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+a^2 + bc & ab + bd \\
+ac + cd  & bc + d^2 \\
+\end{pmatrix} \\
+\end{align*} 
+$$
+
+$$ 
+\begin{align*}
+(a+d)T &=
+(a+d)
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+a^2 + ad & ab + bd \\
+ac + cd  & ad + d^2 \\
+\end{pmatrix}
+\end{align*} 
+$$
+
+$$ 
+\begin{align*}
+(𝑎𝑑 − 𝑏𝑐)𝐼 &=
+\begin{pmatrix}
+ad-bc & 0 \\
+0  & ad-bc \\
+\end{pmatrix}
+\end{align*} 
+$$
+
+So $𝑇^2 − (𝑎 + 𝑑)𝑇 + (𝑎𝑑 − 𝑏𝑐)𝐼 = 0$.
+
+(b) Show that the minimal polynomial of $𝑇$ equals
+
+$$ 
+\begin{cases}
+    z-a &\text{if } b=c=0 \text{ and } a=d\\
+    z^2 - (a+d)z + (ad - bc) &\text{otherwise}\\
+\end{cases}
+$$
+
+**Proof**:
+
+Assume the minimal polynomial of $T$ is $p$.
+
+If $\deg T = 1$ then assume
+$T + \lambda I = 0$.
+
+$$
+\begin{align*}
+0 &= 
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix} + \lambda I \\
+&=
+\begin{pmatrix}
+a + \lambda  & b \\
+c & d + \lambda \\
+\end{pmatrix}
+\end{align*} 
+$$
+
+So $a = d = -\lambda$, $b = c = 0$.
+
+If $\deg T = 2$, then from part (2) we know
+$𝑇^2 − (𝑎 + 𝑑)𝑇 + (𝑎𝑑 − 𝑏𝑐)𝐼 = 0$, since
+minimal polynomial is unique, then
+$z^2 - (a+d)z + (ad - bc)$ is the minimal polynomial.
+
+$\square$
+
+### 5B.12
+
+Define $𝑇 ∈ ℒ(𝐅^𝑛)$ by
+$𝑇(𝑥_1, 𝑥_2, 𝑥_3, …, 𝑥_𝑛) = (𝑥_1, 2𝑥_2, 3𝑥_3, …, 𝑛𝑥_𝑛)$.
+Find the minimal polynomial of $𝑇$.
+
+**Proof**:
+
+Let $p$ be the minimal polynomial of $T$.
+
+Let $e_1, \cdots, e_n$ be the standard basis of $F^n$.
+Then note $T(e_i) = i e_i$, then $i$ is an eigenvalue of $T$.
+
+So from "5.27 eigenvalues are the zeros of the minimal polynomial",
+part (b)
+$p$ has the form of $(z-1)^{i_1}\cdots(z-n)^{i_n}$.
+with $i_1, \cdots, i_n \geq 1$.
+
+On the other hand, $\deg p \leq n$, so
+$p = (z-1)\cdots(z-n)$.
+
+$\square$
+
+### 5B.13
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝑝 ∈ 𝒫(𝐅)$.
+Prove that there exists a unique $𝑟 ∈ 𝒫(𝐅)$
+such that $𝑝(𝑇) = 𝑟(𝑇)$ and $\deg 𝑟$ is less than the degree of 
+the minimal polynomial of $𝑇$.
+
+**Proof**:
+
+Let $q$ be the minimal polynomial of $T$, from the division
+algorithm of polynomials, we know we can find unique
+$s(z), r(z)$ such that
+
+$$ 
+p(z) = s(z)q(z) + r(z)
+$$
+
+and $\deg r < \deg q$, then
+
+$$
+\begin{align*}
+p(T) &= s(T)q(T) + r(T) \\
+&= s(T) 0 + r(T) \\
+&= r(T)
+\end{align*} 
+$$
+
+For the uniqueness, if $r'(T) = P(T) = r(T)$, and
+$\deg r' < \deg q$, then $(r-r')(T) = 0$.
+Furthermore, $\deg (r-r') < \deg q$, since $q$ is the minimal
+polynomial of $T$, then $r-r'$ has to be $0$.
+
+$\square$
+
+### 5B.14
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$ has minimal polynomial
+$4 + 5𝑧 − 6𝑧^2 − 7𝑧^3 + 2𝑧^4 + 𝑧^5$ . Find the minimal polynomial of $𝑇^{−1}$.
+
+**Solution**:
+
+First note that
+
+$$ 
+\begin{align*}
+4I + 5T − 6T^2 − 7T^3 + 2T^4 + T^5 &= 0 \\
+& \Rightarrow \\
+-(5 − 6T − 7T^2 + 2T^3 + T^4)T &= 4I \\
+& \Rightarrow \\
+T &\text{ is invertible}
+\end{align*} 
+$$
+
+Then we have
+
+$$ 
+\begin{align*}
+4I + 5T − 6T^2 − 7T^3 + 2T^4 + T^5 &= 0 \\
+& \Rightarrow \\
+T^{5} (4T^{-5} + 5 T^{-4} - 6T^{-3} - 7 T^{-2} + 2T^{-1} + I)
+&= 0\\
+\end{align*}
+$$
+
+Since $T$ is invertible, so is $T^{5}$.
+Then we have
+
+$4T^{-5} + 5 T^{-4} - 6T^{-3} - 7 T^{-2} + 2T^{-1} + I = 0$.
+
+If we can find a polynomial with degree less than $5$ that can
+nullify $T^{-1}$, then we can use similar approach to find
+a polynomial with degree less than $5$ to nullify $T$ which
+contradicts the fact that minimal polynomial of $T$ has
+degree $5$.
+
+$\square$
+
+### 5B.15
+
+Suppose $𝑉$ is a finite-dimensional complex vector space with
+$\dim 𝑉 > 0$ and $𝑇 ∈ ℒ(𝑉)$. Define $𝑓 ∶ 𝐂 → 𝐑$ by
+
+$$ 
+𝑓 (\lambda) = \text{dim range } (𝑇 − \lambda𝐼).
+$$
+
+Prove that $𝑓$ is not a continuous function.
+
+**Proof**:
+
+Let $\dim V = n$. Since
+$𝑉$ is a finite-dimensional complex vector space, then from
+"5.19 existence of eigenvalues", we know
+$T$ has an eigenvalue, say $\lambda$.
+
+From "5.12 operator cannot have more eigenvalues than dimension of vector space", we know
+$T$ can have at most $n$ distinct eigenvalues, so
+we can find a neighborhood of $\lambda$, $V_{\delta }(\lambda)$,
+such that if $c \in V_{\delta }(\lambda)$ and
+$c \neq \lambda$, then $c$ is not an eigenvalue.
+
+For these $c$, $T - cI$ is invertible, so
+$\text{dim range } T-cI = n$.
+On the other hand, $\text{dim range } T-\lambda I < n$ since
+$\text{dim range } T-\lambda I = n - \text{dim null } T-\lambda I$,
+and $\text{dim null } T-\lambda I > 0$.
+
+So $𝑓 (\lambda)$ is not continuous at $\lambda$.
+
+$\square$
+
+### 5B.16
+
+Suppose $𝑎_0, …, 𝑎_{𝑛 − 1} ∈ 𝐅$. Let
+$𝑇$ be the operator on $𝐅^𝑛$ whose matrix (with
+respect to the standard basis) is
+
+$$ 
+\begin{pmatrix}
+0 &   &        &  & &  & -a_0 \\ 
+1 & 0 &        &  & &  & -a_1 \\ 
+  & 1 & \ddots &  & &  & -a_2 \\ 
+  &   & \ddots &  & &  & \vdots \\
+  &   &        &  & & 0 & -a_{n-2} \\
+  &   &        &  & & 1 & -a_{n-1} \\
+\end{pmatrix}
+$$
+
+Here all entries of the matrix are $0$ except for all $1’s$
+on the line under the
+diagonal and the entries in the last column (some of which might 
+also be $0$).
+Show that the minimal polynomial of $𝑇$ is the polynomial.
+
+$$ 
+𝑎_0 + 𝑎_1𝑧 +⋯ + 𝑎_{𝑛 − 1}𝑧^{𝑛 − 1} + 𝑧^𝑛
+$$
+
+**Proof**:
+
+Let $p(z) = 𝑎_0 + 𝑎_1𝑧 +⋯ + 𝑎_{𝑛 − 1}𝑧^{𝑛 − 1} + 𝑧^𝑛$ 
+
+Consider $e_1 = (1, 0, \cdots, 0)$. And note
+
+$$
+\begin{align*}
+T(e_1) &= e_2 \\ 
+T^2(e_1) &= T(e_2) = e_3 \\
+& \cdots \\
+T^{n-1}(e_1) &= e_n \\
+T^n(e_1) &= T(e_n) = -(a_0, a_1, a_2, \cdots, a_{n-1})
+\end{align*} 
+$$
+
+So
+
+$$ 
+𝑎_0(e_1) + 𝑎_1T(e_1) +⋯ + 𝑎_{𝑛 − 1}T^{𝑛 − 1}(e_1) + T^𝑛(e_1) = 0
+$$
+
+i.e. $p(T)(e_1) = 0$.
+
+Furthermore, notice for $1 \leq i \leq n-1$ 
+
+$$ 
+\begin{align*}
+0 &= T^i(0) \\
+&=T^i (𝑎_0(e_1) + 𝑎_1T(e_1) +⋯ + 𝑎_{𝑛 − 1}T^{𝑛 − 1}(e_1) + T^𝑛(e_1)) \\
+&= 𝑎_0(T^i(e_1)) + 𝑎_1T(T^i(e_1)) +⋯ + 𝑎_{𝑛 − 1}T^{𝑛 − 1}(T^i(e_1)) + T^𝑛(T^i(e_1)) \\
+&= 𝑎_0(e_{i+1}) + 𝑎_1T(e_{i+1}) +⋯ + 𝑎_{𝑛 − 1}T^{𝑛 − 1}(e_{i+1}) + T^𝑛(e_{i+1})
+\end{align*} 
+$$
+
+i.e. $p(T)(e_{i+1}) = 0$. This means $p(T) = 0$.
+
+Also, since $T^{i}(e_1) = e_{i+1}$, so
+$e_1, T(e_1), \cdots, T^{n-1}(e_1)$ are independent, then
+it's not possible to find a polynomial $q$ with $\deg q < n$,
+such that $q(T) = 0$. Otherwise $q(T)(e_1) = 0$, which is not
+possible.
+
+So the minimal polynomial of $T$ is $p$.
+
+$\square$
+
+### 5B.17
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and $𝑝$ is the 
+minimal polynomial of $𝑇$. Suppose $𝜆 ∈ 𝐅$. Show that the minimal 
+polynomial of $𝑇 − 𝜆𝐼$ is the
+polynomial $𝑞$ defined by $𝑞(𝑧) = 𝑝(𝑧 + 𝜆)$.
+
+**Proof**:
+
+First
+
+$$ 
+\begin{align*}
+q(T - \lambda I) &=
+p(T - \lambda I + \lambda I) \\
+&= p(T) \\
+&= 0
+\end{align*} 
+$$
+
+Now assume there is another monic polynomial $q'$ with
+$\deg q' < \deg q = \deg p$ and
+$q'(T-\lambda I) = 0$
+
+Then let $p'(z) = q'(z-\lambda)$, then $p'$ is also
+a monic polynomial such that
+$\deg p' = \deg q' < \deg q = \deg p$.
+
+Also $p'(T) = q'(T - \lambda I) = 0$.
+
+This is contradictary to the fact that $p$ is the minimal
+polynomial.
+
+So $q$ is the minimal polynomial of $T-\lambda I$.
+
+$\square$
+
+### 5B.18
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and $𝑝$ is the 
+minimal polynomial
+of $𝑇$. Suppose $\lambda ∈ 𝐅 \backslash \{0\}$.
+Show that the minimal polynomial of $𝜆𝑇$ is the
+polynomial $𝑞$ defined by
+$𝑞(𝑧) = \lambda ^{\deg 𝑝} 𝑝( 𝑧 / \lambda  )$.
+
+**Proof**:
+
+let $m = \deg 𝑝$, and
+
+$$ 
+p(z) = a_0 + a_1 z + \cdots + z^{m}
+$$
+
+Then
+
+$$
+\begin{align*}
+q(\lambda T) &=
+\lambda ^{m} p(\frac{\lambda T}{\lambda}) \\
+&= \lambda ^{m} p(T) \\
+&= 0 \\
+\end{align*} 
+$$
+
+Also
+
+$$
+\begin{align*}
+q(z) &= \lambda ^m p( z / \lambda  ) \\
+&= \lambda ^m a_0 + \lambda ^{m-1} a_1 z + \cdots +
+z^m
+\end{align*} 
+$$
+
+So $q$ is monic.
+
+Now assume $q'(z) = b_0 + b_1 z + \cdots + z^{k}$ satisfy
+$k < m$ and $q'(\lambda T) = 0$.
+
+Then
+
+$$ 
+\begin{align*}
+0 &= q'(\lambda T) \\
+&= b_0 + b_1 (\lambda T) + \cdots + (\lambda T)^{k} \\
+&= (\lambda)^k (b_0 \lambda^{-k} + b_1 \lambda^{1-k}T
++ \cdots  + T^k)
+\end{align*} 
+$$
+
+Since $\lambda \neq 0$, so $\lambda^k \neq 0$, then
+$b_0 \lambda^{-k} + b_1 \lambda^{1-k}T + \cdots  + T^k = 0$,
+
+Let $p'(z) = b_0 \lambda^{-k} + b_1 \lambda^{1-k}z + \cdots + z^k$.
+
+So we found a monic polynomial
+$p'$ with $p'(T) = 0$ and $\deg p' < \deg p$.
+
+This is contradictary to the fact that $p$ is the minimal
+polynomial.
+
+So
+the minimal polynomial of $𝜆𝑇$ is the
+polynomial $𝑞$ defined by
+$𝑞(𝑧) = \lambda ^{\deg 𝑝} 𝑝( 𝑧 / \lambda  )$.
+
+$\square$
 
 ### 5B.19
 

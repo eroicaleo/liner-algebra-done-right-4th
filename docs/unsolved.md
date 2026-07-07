@@ -29,3 +29,17 @@ $\Rightarrow$.
 ### 5A.43
 
 The second strategy is not working yet.
+
+### 5B.7
+
+(a) Give an example of $𝑆, 𝑇 ∈ ℒ(𝐅^2)$ such that the minimal 
+polynomial of $𝑆𝑇$ does not equal the minimal polynomial of 
+$𝑇𝑆$.
+
+### 5B.9
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ is such that with respect to some basis of 
+$𝑉$, all entries
+of the matrix of $𝑇$ are rational numbers. Explain why all 
+coefficients of the
+minimal polynomial of $𝑇$ are rational numbers.
