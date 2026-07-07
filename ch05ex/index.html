@@ -188,6 +188,28 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b7">5B.7</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b8">5B.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b9">5B.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b10">5B.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b11">5B.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b12">5B.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b13">5B.13</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b14">5B.14</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b15">5B.15</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b16">5B.16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b17">5B.17</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5b18">5B.18</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b19">5B.19</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5b20">5B.20</a>
@@ -1990,6 +2012,547 @@ T^2(0,1) &= T(-1, 0) \\
 <p>(a) Give an example of <script type="math/tex">𝑆, 𝑇 ∈ ℒ(𝐅^2)</script> such that the minimal 
 polynomial of <script type="math/tex">𝑆𝑇</script> does not equal the minimal polynomial of 
 <script type="math/tex">𝑇𝑆</script>.</p>
+<p>(b) Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑆, 𝑇 ∈ ℒ(𝑉)</script>.
+Prove that if at least
+one of <script type="math/tex">𝑆, 𝑇</script> is invertible, then the minimal polynomial of
+<script type="math/tex">𝑆𝑇</script> equals the minimal polynomial of <script type="math/tex">𝑇𝑆</script>.</p>
+<p>Hint: Show that if 𝑆 is invertible and 𝑝 ∈ 𝒫(𝐅), then
+<script type="math/tex">𝑝(𝑇𝑆) = 𝑆^{−1}𝑝(𝑆𝑇)𝑆</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">S</script> is invertible.
+<script type="math/tex">p</script> is the minimal polynomial of <script type="math/tex">𝑆𝑇</script>.
+<script type="math/tex">q</script> is the minimal polynomial of <script type="math/tex">TS</script>.</p>
+<p>We will show <script type="math/tex">p(TS) = 0</script> and <script type="math/tex">q(ST) = 0</script>.</p>
+<p>Just use exercise 5A.40,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+p(TS) &= p(S^{-1}STS) \\
+&= 𝑆^{−1}𝑝(𝑆𝑇)𝑆 \\
+&= 𝑆^{−1} 0 S \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>Then use
+"5.29 <script type="math/tex">𝑞(𝑇) = 0 ⟺ 𝑞</script> is a polynomial multiple of the minimal 
+polynomial", we know <script type="math/tex">p</script> is an multiple of <script type="math/tex">q</script>.</p>
+<p>On the other hand,</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+q(ST) &= q(STSS^{-1}) \\
+&= S q(TS) S^{-1} \\
+& = S 0 S^{-1} \\
+& = 0
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">q</script> is a multiple of <script type="math/tex">p</script>.</p>
+<p>In summary, <script type="math/tex">p = q</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b8">5B.8</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝐑^2)</script> is the operator of counterclockwise rotation
+by <script type="math/tex">1^∘</script>. Find the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p>Because <script type="math/tex">\dim 𝐑^2 = 2</script>, the degree of the minimal polynomial of
+<script type="math/tex">𝑇</script> is at most <script type="math/tex">2</script>.
+Thus the minimal polynomial of <script type="math/tex">𝑇</script> is not the tempting polynomial 
+<script type="math/tex">𝑥^{180} + 1</script>, even though <script type="math/tex">𝑇^{180} = −𝐼</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>We write the standard basis in polar form</p>
+<p>
+<script type="math/tex; mode=display"> 
+e_1 = (1, 0) = (\cos 0^\circ, \sin 0^\circ) \\
+e_2 = (0, 1) = (\cos 90^\circ , \sin 90^\circ) \\
+</script>
+</p>
+<p>Then note</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T^2(e_1) &= (\cos 2^\circ , \sin 2^\circ) \\
+T^2(e_1) + e_1 &= (\cos 2^\circ , \sin 2^\circ) +
+(\cos 0^\circ, \sin 0^\circ)\\
+&= (2 \cos 1 ^ \circ \cos 1 ^ \circ,
+2 \sin 1 ^\circ \cos 1 ^ \circ ) \\
+&= 2 \cos 1^ \circ (\cos 1^\circ , \sin 1^\circ) \\
+&= 2 \cos 1^ \circ T(e_1)
+\end{align*} 
+</script>
+</p>
+<p>Similarly,</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T^2(e_2) + e_2 &= (\cos 90^\circ , \sin 90^\circ) +
+(\cos 92^\circ, \sin 92^\circ) \\
+&= (2 \cos 91 ^ \circ \cos 1 ^ \circ,
+2 \sin 91 ^\circ \cos 1 ^ \circ ) \\
+&= 2 \cos 1^ \circ (\cos 91^\circ , \sin 91^\circ) \\
+&= 2 \cos 1^ \circ T(e_2) \\
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">T^2 - 2 \cos 1^ \circ T + I = 0</script>.</p>
+<p>On the other hand, since <script type="math/tex">T</script> is a rotation,
+<script type="math/tex">T</script> does not have eigenvalue, so the minimal polynomial
+cannot be degree 1.</p>
+<p>Therefore, the minimal polynomial is
+<script type="math/tex">p(z) = z^2 - 2 \cos 1^ \circ z + 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b9">5B.9</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> is such that with respect to some basis of 
+<script type="math/tex">𝑉</script>, all entries
+of the matrix of <script type="math/tex">𝑇</script> are rational numbers. Explain why all 
+coefficients of the
+minimal polynomial of <script type="math/tex">𝑇</script> are rational numbers.</p>
+<p><strong>Proof</strong>: unsolved.</p>
+<h3 id="5b10">5B.10</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and
+<script type="math/tex">𝑣 ∈ 𝑉</script>. Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{span}(𝑣, Tv, \cdots, T^𝑚v) =
+\text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v)
+</script>
+</p>
+<p>for all integers <script type="math/tex">𝑚 ≥ \dim 𝑉 − 1</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p</script> be the minimal polynomial of <script type="math/tex">T</script>, from the
+polynomial division algorithm, we know given <script type="math/tex">z^m</script>,
+we can find <script type="math/tex">s(z), r(z)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+z^m = p(z)s(z) + r(z)
+</script>
+</p>
+<p>with <script type="math/tex">\deg r < \deg p \leq \dim V</script>.
+So <script type="math/tex">\deg r \leq \dim V - 1</script>.
+Let <script type="math/tex">\deg r = n</script>.</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T^m &= p(T)s(T) + r(T) \\
+& = 0 + r(T) \\
+& = r(T) \\
+& = a_0 I + a_1 T + \cdots + a_{n} T^{n}
+\end{align*}
+</script>
+</p>
+<p>So <script type="math/tex">T^m(v) = (a_0 I + a_1 T + \cdots + a_{n} T^{n})(v)
+\in \text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v).</script>
+That means</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{span}(𝑣, Tv, \cdots, T^𝑚v) \subseteq
+\text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v)
+</script>
+</p>
+<p>On the other hand, since <script type="math/tex">𝑚 ≥ \dim 𝑉 − 1</script>, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{span}(𝑣, Tv, \cdots, T^𝑚v) \supseteq 
+\text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v)
+</script>
+</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\text{span}(𝑣, Tv, \cdots, T^𝑚v) =
+\text{span}(𝑣, Tv, \cdots, T^{\dim V - 1} v)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b11">5B.11</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is a two-dimensional vector space, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>,
+and the matrix of <script type="math/tex">𝑇</script> with respect to some basis of <script type="math/tex">𝑉</script> is
+<script type="math/tex; mode=display"> 
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}
+</script>
+</p>
+<p>Prove that</p>
+<p>(a) Show that <script type="math/tex">𝑇^2 − (𝑎 + 𝑑)𝑇 + (𝑎𝑑 − 𝑏𝑐)𝐼 = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+T^2 &=
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}^2 \\
+&=
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+a^2 + bc & ab + bd \\
+ac + cd  & bc + d^2 \\
+\end{pmatrix} \\
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(a+d)T &=
+(a+d)
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+a^2 + ad & ab + bd \\
+ac + cd  & ad + d^2 \\
+\end{pmatrix}
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+(𝑎𝑑 − 𝑏𝑐)𝐼 &=
+\begin{pmatrix}
+ad-bc & 0 \\
+0  & ad-bc \\
+\end{pmatrix}
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">𝑇^2 − (𝑎 + 𝑑)𝑇 + (𝑎𝑑 − 𝑏𝑐)𝐼 = 0</script>.</p>
+<p>(b) Show that the minimal polynomial of <script type="math/tex">𝑇</script> equals</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{cases}
+    z-a &\text{if } b=c=0 \text{ and } a=d\\
+    z^2 - (a+d)z + (ad - bc) &\text{otherwise}\\
+\end{cases}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume the minimal polynomial of <script type="math/tex">T</script> is <script type="math/tex">p</script>.</p>
+<p>If <script type="math/tex">\deg T = 1</script> then assume
+<script type="math/tex">T + \lambda I = 0</script>.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+0 &= 
+\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix} + \lambda I \\
+&=
+\begin{pmatrix}
+a + \lambda  & b \\
+c & d + \lambda \\
+\end{pmatrix}
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">a = d = -\lambda</script>, <script type="math/tex">b = c = 0</script>.</p>
+<p>If <script type="math/tex">\deg T = 2</script>, then from part (2) we know
+<script type="math/tex">𝑇^2 − (𝑎 + 𝑑)𝑇 + (𝑎𝑑 − 𝑏𝑐)𝐼 = 0</script>, since
+minimal polynomial is unique, then
+<script type="math/tex">z^2 - (a+d)z + (ad - bc)</script> is the minimal polynomial.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b12">5B.12</h3>
+<p>Define <script type="math/tex">𝑇 ∈ ℒ(𝐅^𝑛)</script> by
+<script type="math/tex">𝑇(𝑥_1, 𝑥_2, 𝑥_3, …, 𝑥_𝑛) = (𝑥_1, 2𝑥_2, 3𝑥_3, …, 𝑛𝑥_𝑛)</script>.
+Find the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p</script> be the minimal polynomial of <script type="math/tex">T</script>.</p>
+<p>Let <script type="math/tex">e_1, \cdots, e_n</script> be the standard basis of <script type="math/tex">F^n</script>.
+Then note <script type="math/tex">T(e_i) = i e_i</script>, then <script type="math/tex">i</script> is an eigenvalue of <script type="math/tex">T</script>.</p>
+<p>So from "5.27 eigenvalues are the zeros of the minimal polynomial",
+part (b)
+<script type="math/tex">p</script> has the form of <script type="math/tex">(z-1)^{i_1}\cdots(z-n)^{i_n}</script>.
+with <script type="math/tex">i_1, \cdots, i_n \geq 1</script>.</p>
+<p>On the other hand, <script type="math/tex">\deg p \leq n</script>, so
+<script type="math/tex">p = (z-1)\cdots(z-n)</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b13">5B.13</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script>.
+Prove that there exists a unique <script type="math/tex">𝑟 ∈ 𝒫(𝐅)</script>
+such that <script type="math/tex">𝑝(𝑇) = 𝑟(𝑇)</script> and <script type="math/tex">\deg 𝑟</script> is less than the degree of 
+the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">q</script> be the minimal polynomial of <script type="math/tex">T</script>, from the division
+algorithm of polynomials, we know we can find unique
+<script type="math/tex">s(z), r(z)</script> such that</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = s(z)q(z) + r(z)
+</script>
+</p>
+<p>and <script type="math/tex">\deg r < \deg q</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+p(T) &= s(T)q(T) + r(T) \\
+&= s(T) 0 + r(T) \\
+&= r(T)
+\end{align*} 
+</script>
+</p>
+<p>For the uniqueness, if <script type="math/tex">r'(T) = P(T) = r(T)</script>, and
+<script type="math/tex">\deg r' < \deg q</script>, then <script type="math/tex">(r-r')(T) = 0</script>.
+Furthermore, <script type="math/tex">\deg (r-r') < \deg q</script>, since <script type="math/tex">q</script> is the minimal
+polynomial of <script type="math/tex">T</script>, then <script type="math/tex">r-r'</script> has to be <script type="math/tex">0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b14">5B.14</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> has minimal polynomial
+<script type="math/tex">4 + 5𝑧 − 6𝑧^2 − 7𝑧^3 + 2𝑧^4 + 𝑧^5</script> . Find the minimal polynomial of <script type="math/tex">𝑇^{−1}</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>First note that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+4I + 5T − 6T^2 − 7T^3 + 2T^4 + T^5 &= 0 \\
+& \Rightarrow \\
+-(5 − 6T − 7T^2 + 2T^3 + T^4)T &= 4I \\
+& \Rightarrow \\
+T &\text{ is invertible}
+\end{align*} 
+</script>
+</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+4I + 5T − 6T^2 − 7T^3 + 2T^4 + T^5 &= 0 \\
+& \Rightarrow \\
+T^{5} (4T^{-5} + 5 T^{-4} - 6T^{-3} - 7 T^{-2} + 2T^{-1} + I)
+&= 0\\
+\end{align*}
+</script>
+</p>
+<p>Since <script type="math/tex">T</script> is invertible, so is <script type="math/tex">T^{5}</script>.
+Then we have</p>
+<p>
+<script type="math/tex">4T^{-5} + 5 T^{-4} - 6T^{-3} - 7 T^{-2} + 2T^{-1} + I = 0</script>.</p>
+<p>If we can find a polynomial with degree less than <script type="math/tex">5</script> that can
+nullify <script type="math/tex">T^{-1}</script>, then we can use similar approach to find
+a polynomial with degree less than <script type="math/tex">5</script> to nullify <script type="math/tex">T</script> which
+contradicts the fact that minimal polynomial of <script type="math/tex">T</script> has
+degree <script type="math/tex">5</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b15">5B.15</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is a finite-dimensional complex vector space with
+<script type="math/tex">\dim 𝑉 > 0</script> and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Define <script type="math/tex">𝑓 ∶ 𝐂 → 𝐑</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑓 (\lambda) = \text{dim range } (𝑇 − \lambda𝐼).
+</script>
+</p>
+<p>Prove that <script type="math/tex">𝑓</script> is not a continuous function.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">\dim V = n</script>. Since
+<script type="math/tex">𝑉</script> is a finite-dimensional complex vector space, then from
+"5.19 existence of eigenvalues", we know
+<script type="math/tex">T</script> has an eigenvalue, say <script type="math/tex">\lambda</script>.</p>
+<p>From "5.12 operator cannot have more eigenvalues than dimension of vector space", we know
+<script type="math/tex">T</script> can have at most <script type="math/tex">n</script> distinct eigenvalues, so
+we can find a neighborhood of <script type="math/tex">\lambda</script>, <script type="math/tex">V_{\delta }(\lambda)</script>,
+such that if <script type="math/tex">c \in V_{\delta }(\lambda)</script> and
+<script type="math/tex">c \neq \lambda</script>, then <script type="math/tex">c</script> is not an eigenvalue.</p>
+<p>For these <script type="math/tex">c</script>, <script type="math/tex">T - cI</script> is invertible, so
+<script type="math/tex">\text{dim range } T-cI = n</script>.
+On the other hand, <script type="math/tex">\text{dim range } T-\lambda I < n</script> since
+<script type="math/tex">\text{dim range } T-\lambda I = n - \text{dim null } T-\lambda I</script>,
+and <script type="math/tex">\text{dim null } T-\lambda I > 0</script>.</p>
+<p>So <script type="math/tex">𝑓 (\lambda)</script> is not continuous at <script type="math/tex">\lambda</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b16">5B.16</h3>
+<p>Suppose <script type="math/tex">𝑎_0, …, 𝑎_{𝑛 − 1} ∈ 𝐅</script>. Let
+<script type="math/tex">𝑇</script> be the operator on <script type="math/tex">𝐅^𝑛</script> whose matrix (with
+respect to the standard basis) is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{pmatrix}
+0 &   &        &  & &  & -a_0 \\ 
+1 & 0 &        &  & &  & -a_1 \\ 
+  & 1 & \ddots &  & &  & -a_2 \\ 
+  &   & \ddots &  & &  & \vdots \\
+  &   &        &  & & 0 & -a_{n-2} \\
+  &   &        &  & & 1 & -a_{n-1} \\
+\end{pmatrix}
+</script>
+</p>
+<p>Here all entries of the matrix are <script type="math/tex">0</script> except for all <script type="math/tex">1’s</script>
+on the line under the
+diagonal and the entries in the last column (some of which might 
+also be <script type="math/tex">0</script>).
+Show that the minimal polynomial of <script type="math/tex">𝑇</script> is the polynomial.</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑎_0 + 𝑎_1𝑧 +⋯ + 𝑎_{𝑛 − 1}𝑧^{𝑛 − 1} + 𝑧^𝑛
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p(z) = 𝑎_0 + 𝑎_1𝑧 +⋯ + 𝑎_{𝑛 − 1}𝑧^{𝑛 − 1} + 𝑧^𝑛</script>
+</p>
+<p>Consider <script type="math/tex">e_1 = (1, 0, \cdots, 0)</script>. And note</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T(e_1) &= e_2 \\ 
+T^2(e_1) &= T(e_2) = e_3 \\
+& \cdots \\
+T^{n-1}(e_1) &= e_n \\
+T^n(e_1) &= T(e_n) = -(a_0, a_1, a_2, \cdots, a_{n-1})
+\end{align*} 
+</script>
+</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑎_0(e_1) + 𝑎_1T(e_1) +⋯ + 𝑎_{𝑛 − 1}T^{𝑛 − 1}(e_1) + T^𝑛(e_1) = 0
+</script>
+</p>
+<p>i.e. <script type="math/tex">p(T)(e_1) = 0</script>.</p>
+<p>Furthermore, notice for <script type="math/tex">1 \leq i \leq n-1</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+0 &= T^i(0) \\
+&=T^i (𝑎_0(e_1) + 𝑎_1T(e_1) +⋯ + 𝑎_{𝑛 − 1}T^{𝑛 − 1}(e_1) + T^𝑛(e_1)) \\
+&= 𝑎_0(T^i(e_1)) + 𝑎_1T(T^i(e_1)) +⋯ + 𝑎_{𝑛 − 1}T^{𝑛 − 1}(T^i(e_1)) + T^𝑛(T^i(e_1)) \\
+&= 𝑎_0(e_{i+1}) + 𝑎_1T(e_{i+1}) +⋯ + 𝑎_{𝑛 − 1}T^{𝑛 − 1}(e_{i+1}) + T^𝑛(e_{i+1})
+\end{align*} 
+</script>
+</p>
+<p>i.e. <script type="math/tex">p(T)(e_{i+1}) = 0</script>. This means <script type="math/tex">p(T) = 0</script>.</p>
+<p>Also, since <script type="math/tex">T^{i}(e_1) = e_{i+1}</script>, so
+<script type="math/tex">e_1, T(e_1), \cdots, T^{n-1}(e_1)</script> are independent, then
+it's not possible to find a polynomial <script type="math/tex">q</script> with <script type="math/tex">\deg q < n</script>,
+such that <script type="math/tex">q(T) = 0</script>. Otherwise <script type="math/tex">q(T)(e_1) = 0</script>, which is not
+possible.</p>
+<p>So the minimal polynomial of <script type="math/tex">T</script> is <script type="math/tex">p</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b17">5B.17</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">𝑝</script> is the 
+minimal polynomial of <script type="math/tex">𝑇</script>. Suppose <script type="math/tex">𝜆 ∈ 𝐅</script>. Show that the minimal 
+polynomial of <script type="math/tex">𝑇 − 𝜆𝐼</script> is the
+polynomial <script type="math/tex">𝑞</script> defined by <script type="math/tex">𝑞(𝑧) = 𝑝(𝑧 + 𝜆)</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>First</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+q(T - \lambda I) &=
+p(T - \lambda I + \lambda I) \\
+&= p(T) \\
+&= 0
+\end{align*} 
+</script>
+</p>
+<p>Now assume there is another monic polynomial <script type="math/tex">q'</script> with
+<script type="math/tex">\deg q' < \deg q = \deg p</script> and
+<script type="math/tex">q'(T-\lambda I) = 0</script>
+</p>
+<p>Then let <script type="math/tex">p'(z) = q'(z-\lambda)</script>, then <script type="math/tex">p'</script> is also
+a monic polynomial such that
+<script type="math/tex">\deg p' = \deg q' < \deg q = \deg p</script>.</p>
+<p>Also <script type="math/tex">p'(T) = q'(T - \lambda I) = 0</script>.</p>
+<p>This is contradictary to the fact that <script type="math/tex">p</script> is the minimal
+polynomial.</p>
+<p>So <script type="math/tex">q</script> is the minimal polynomial of <script type="math/tex">T-\lambda I</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5b18">5B.18</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">𝑝</script> is the 
+minimal polynomial
+of <script type="math/tex">𝑇</script>. Suppose <script type="math/tex">\lambda ∈ 𝐅 \backslash \{0\}</script>.
+Show that the minimal polynomial of <script type="math/tex">𝜆𝑇</script> is the
+polynomial <script type="math/tex">𝑞</script> defined by
+<script type="math/tex">𝑞(𝑧) = \lambda ^{\deg 𝑝} 𝑝( 𝑧 / \lambda  )</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>let <script type="math/tex">m = \deg 𝑝</script>, and</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = a_0 + a_1 z + \cdots + z^{m}
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+q(\lambda T) &=
+\lambda ^{m} p(\frac{\lambda T}{\lambda}) \\
+&= \lambda ^{m} p(T) \\
+&= 0 \\
+\end{align*} 
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+q(z) &= \lambda ^m p( z / \lambda  ) \\
+&= \lambda ^m a_0 + \lambda ^{m-1} a_1 z + \cdots +
+z^m
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">q</script> is monic.</p>
+<p>Now assume <script type="math/tex">q'(z) = b_0 + b_1 z + \cdots + z^{k}</script> satisfy
+<script type="math/tex">k < m</script> and <script type="math/tex">q'(\lambda T) = 0</script>.</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+0 &= q'(\lambda T) \\
+&= b_0 + b_1 (\lambda T) + \cdots + (\lambda T)^{k} \\
+&= (\lambda)^k (b_0 \lambda^{-k} + b_1 \lambda^{1-k}T
++ \cdots  + T^k)
+\end{align*} 
+</script>
+</p>
+<p>Since <script type="math/tex">\lambda \neq 0</script>, so <script type="math/tex">\lambda^k \neq 0</script>, then
+<script type="math/tex">b_0 \lambda^{-k} + b_1 \lambda^{1-k}T + \cdots  + T^k = 0</script>,</p>
+<p>Let <script type="math/tex">p'(z) = b_0 \lambda^{-k} + b_1 \lambda^{1-k}z + \cdots + z^k</script>.</p>
+<p>So we found a monic polynomial
+<script type="math/tex">p'</script> with <script type="math/tex">p'(T) = 0</script> and <script type="math/tex">\deg p' < \deg p</script>.</p>
+<p>This is contradictary to the fact that <script type="math/tex">p</script> is the minimal
+polynomial.</p>
+<p>So
+the minimal polynomial of <script type="math/tex">𝜆𝑇</script> is the
+polynomial <script type="math/tex">𝑞</script> defined by
+<script type="math/tex">𝑞(𝑧) = \lambda ^{\deg 𝑝} 𝑝( 𝑧 / \lambda  )</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h3 id="5b19">5B.19</h3>
 <p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
 Let <script type="math/tex">ℰ</script> be the subspace of <script type="math/tex">ℒ(𝑉)</script> defined by</p>
