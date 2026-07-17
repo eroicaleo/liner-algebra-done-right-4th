@@ -30,12 +30,6 @@ $\Rightarrow$.
 
 The second strategy is not working yet.
 
-### 5B.7
-
-(a) Give an example of $𝑆, 𝑇 ∈ ℒ(𝐅^2)$ such that the minimal 
-polynomial of $𝑆𝑇$ does not equal the minimal polynomial of 
-$𝑇𝑆$.
-
 ### 5B.9
 
 Suppose $𝑇 ∈ ℒ(𝑉)$ is such that with respect to some basis of 
@@ -43,3 +37,12 @@ $𝑉$, all entries
 of the matrix of $𝑇$ are rational numbers. Explain why all 
 coefficients of the
 minimal polynomial of $𝑇$ are rational numbers.
+
+I can think the $T$ as a linear operator on some vector space
+over $\mathbb{Q}$, then the minimal polynomial of $T$ has
+rational coefficients.
+
+Also $p(T) = 0$, if we consider it apply on the standard basis.
+So $p$ is a multiple of the minimal polynomial.
+
+$\square$

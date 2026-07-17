@@ -2045,6 +2045,22 @@ $\square$
 polynomial of $𝑆𝑇$ does not equal the minimal polynomial of 
 $𝑇𝑆$.
 
+**Solution**:
+
+Consider $S(x,y) = (x, x)$ and $T(x,y)=(0,x)$.
+
+Then $ST(x,y)=S(0,x)=(0,0)$ so $ST = 0$, then
+the minimal polynomial of $ST$ is $z$.
+
+On the other hand,
+
+$TS(x,y) = T(x,x) = (0,x)$, so
+$(TS)^2(1,0) = (TS)(0,1) = (0,0)$, and
+$(TS)^2(0,1) = (TS)(0,0) = (0,0)$, so
+the minimal polynomial of $TS$ is $z^2$.
+
+$\square$
+
 (b) Suppose $𝑉$ is finite-dimensional and $𝑆, 𝑇 ∈ ℒ(𝑉)$.
 Prove that if at least
 one of $𝑆, 𝑇$ is invertible, then the minimal polynomial of
