@@ -3192,3 +3192,337 @@ $\text{span}(u_1, u_2)$ is invariant with dimension $2$.
 
 $\square$
 
+## Section 5C Upper-Triangular Matrices
+
+### 5C.1
+
+Prove or give a counterexample: If $𝑇 ∈ ℒ(𝑉)$ and $𝑇^2$ has an 
+upper-triangular matrix with respect to some basis of $𝑉$,
+then $𝑇$ has an upper-triangular matrix
+with respect to some basis of $𝑉$.
+
+**Solution**:
+
+Consider $V = \mathbb{R}^2$. And $T$ be the linear operator that rotates
+$V$ by $90$ degree counterclockwise.
+
+Since $T$ does not have an eigenvalue, then $T$ does not have a 
+1-dimensional subspace
+that is invariant under $T$ w.r.t any basis of $V$.
+Therefore, it's not possible that
+$𝑇$ has an upper-triangular matrix w.r.t any basis of $V$.
+
+On the other hand, the matrix of $T^2$ w.r.t the standard basis
+is 
+
+$$ 
+\begin{bmatrix}
+-1 & 0 \\
+0 & -1 \\
+\end{bmatrix}
+$$
+
+which is an upper-triangular matrix.
+
+$\square$
+
+### 5C.2
+
+Suppose $𝐴$ and $𝐵$ are upper-triangular matrices of the same size, with
+$𝛼_1, …, 𝛼_𝑛$ on the diagonal of $𝐴$ and $𝛽_1, …, 𝛽_𝑛$ on the 
+diagonal of $𝐵$.
+
+(a) Show that $𝐴 + 𝐵$ is an upper-triangular matrix with 
+$𝛼_1 + 𝛽_1, …, 𝛼_𝑛 + 𝛽_𝑛$
+on the diagonal.
+
+**Proof**:
+
+Let $C = A + B$, then the diagonal of $C$ on the $i$th row and $i$th
+column is
+
+$$
+\begin{align*}
+C_{i,i} &= A_{i,i} + B_{i,i} \\
+&= 𝛼_i + 𝛽_i \
+\end{align*}  
+$$
+
+$\square$
+
+(b) Show that $𝐴𝐵$ is an upper-triangular matrix with
+$𝛼_1 𝛽_1, …, 𝛼_𝑛 𝛽_𝑛$ on the diagonal.
+
+**Proof**
+
+Let $C = AB$, then the diagonal of $C$ on the $i$th row and $i$th
+column is
+
+$$ 
+\begin{align*}
+C_{i,i} &= \sum_{k = 1}^{n} a_{i, k} b_{k, i} \\
+\end{align*} 
+$$
+
+Note that if $i > k, a_{i, k} = 0$, and if $i < k, b_{k, i} = 0$,
+so $C_{i,i} = a_{i,i} b_{i,i} = 𝛼_i 𝛽_i$.
+
+$\square$
+
+### 5C.3
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ is invertible and $𝑣_1, …, 𝑣_𝑛$ is a basis of $𝑉$ 
+with respect
+to which the matrix of $𝑇$ is upper triangular, with $𝜆_1, …, 𝜆_𝑛$ on 
+the diagonal.
+Show that the matrix of $𝑇^{−1}$ is also upper triangular with respect to 
+the basis $𝑣_1, …, 𝑣_𝑛$, with
+
+$$ 
+\frac{1}{𝜆_1} , …, \frac{1}{𝜆_𝑛} 
+$$
+
+on the diagonal.
+
+**Proof**:
+
+First, from "5.41 determination of eigenvalues from upper-triangular matrix",
+$𝜆_1, …, 𝜆_𝑛$ are the eigenvalues of $T$. Since $T$ is invertible,
+then $0$ is not an eigenvalue of $T$. So $𝜆_1, …, 𝜆_𝑛 \neq 0$.
+
+Then $\frac{1}{𝜆_1} , …, \frac{1}{𝜆_𝑛}$ is well defined.
+
+Next, we show if $U$ is invariant under $T$ and $T$ is invertible, then
+$U$ is invariant under $T^{-1}$.
+
+Let $u \in U$, and consider $T|_U$. Since $T$ is invertible,
+then $T$ is injective, then $T|_U$ is also injective.
+So $T|_U$ is invertible. Then we can find $w \in U$ such that
+$T|_U(w) = u$. then we have $T(w) = u$.
+
+So $T^{-1}(u) = T^{-1}(T(w)) = w \in U$.
+Then $U$ is invariant under $T^{-1}$.
+
+Now let $U_i = \text{span}(𝑣_1, \cdots, 𝑣_i)$.
+From "5.39 conditions for upper-triangular matrix", $U_i$ is invariant under $T$,
+then $U_i$ is also invariant under $T^{-1}$, then again use 5.39,
+The matrix of $𝑇^{-1}$ with respect to $𝑣_1, …, 𝑣_𝑛$ is upper triangular.
+
+Let $\eta_i$ on the diagonal. Note
+$v_1 = T^{-1} (T v_1) = T^{-1} (\lambda_1 v_1) = \eta_1 \lambda_1 v_1$,
+so $\eta_1 \lambda_1 = 1$, thne $\eta_1 = \frac{1}{\lambda_1}$.
+
+For $i \geq 2$,
+
+$$ 
+T(v_i) = \lambda_i v_i + u_{i-1}
+$$
+
+Where $u_{i-1} \in U_{i-1}$, then
+
+$$
+\begin{align*}
+v_i &= T^{-1} (T v_i) \\
+&= T^{-1} (\lambda_i v_i) + T^{-1} (u_{i-1}) \\
+&= \eta_i \lambda_i v_i + T^{-1} (u_{i-1}) \\
+& \Rightarrow \\
+0 = (1 - \eta_i \lambda_i) v_i + T^{-1} (u_{i-1}) \\
+\end{align*} 
+$$
+
+Since $U_i$ is invariant under $T^{-1}$, then
+$T^{-1} (u_{i-1}) \in U_{i-1} = \text{span}(𝑣_1, \cdots, 𝑣_{i-1})$.
+Then we must have $1 - \eta_i \lambda_i = 0$, i.e.
+$\eta_i = \frac{1}{\lambda_i}$.
+
+$\square$
+
+### 5C.4
+
+Give an example of an operator whose matrix with respect to some basis
+contains only $0$'s on the diagonal, but the operator is invertible.
+This exercise and the exercise below show that 5.41 fails without the
+hypothesis that an upper-triangular matrix is under consideration.
+
+**Proof**:
+
+Consider the vector space is $\mathbb{R}^2$, and the operator $T$ is
+rotation counterclockwise by 90 degree.
+And the basis is the standard basis, $e_1, e_2$.
+
+$T(e_1) = e_2, T(e_2) = -e_1$. So
+
+$$ 
+\mathcal{M}(T) =
+\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}
+$$
+
+It's invertible because its inverse is rotation clockwise by 90 degree.
+
+$\square$
+
+### 5C.5
+
+Give an example of an operator whose matrix with respect to some basis
+contains only nonzero numbers on the diagonal, but the operator is not
+invertible.
+
+**Proof**:
+
+Consider the vector space is $\mathbb{R}^2$, and the operator $T$ is
+defined as
+
+$$ 
+T(e_1) = (1, 1) \\
+T(e_2) = (1, 1) \\
+$$
+
+Since it's not injective, it's not invertible.
+
+Also the 
+
+$$ 
+\mathcal{M}(T) =
+\begin{bmatrix}
+1 & 1 \\
+1 & 1 \\
+\end{bmatrix}
+$$
+
+$\square$
+
+### 5C.6
+
+Suppose $𝐅 = 𝐂$, $𝑉$ is finite-dimensional, and $𝑇 ∈ ℒ(𝑉)$. Prove that if
+$𝑘 ∈ \{1, …, \dim 𝑉\}$, then $𝑉$ has a $𝑘$-dimensional subspace invariant under 
+$𝑇$.
+
+**Proof**:
+
+Use "5.47 if 𝐅 = 𝐂, then every operator on 𝑉 has an upper-triangular matrix",
+then for the operator $T$, we can find a basis $v_1, \cdots, v_n$, such that
+$\mathcal{M}(T)$ is upper-triangular.
+
+Then use "5.39 conditions for upper-triangular matrix", we know
+$\text{span}(𝑣_1, \cdots, 𝑣_k)$ is invariant under $T$ and its dimension is $k$.
+
+$\square$
+
+### 5C.7
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and $𝑣 ∈ 𝑉$.
+
+(a) Prove that there exists a unique monic polynomial $𝑝_𝑣$ of smallest degree
+such that $𝑝_𝑣(𝑇)𝑣 = 0$.
+
+**Proof**:
+
+Let $n = \dim V$ and then the following $1+n$ vectors must be linear dependent
+
+$$ 
+v, Tv, \cdots, T^{n}v
+$$
+
+Then we can find the smallest $k$, such that $T^{k} v$ is the linear combination of
+$v, \cdots, T^{k-1}v$ and then we find the $𝑝_𝑣$.
+
+(b) Prove that the minimal polynomial of $𝑇$ is a polynomial multiple of $𝑝_𝑣$.
+
+**Proof**:
+
+Let $p$ be the minimal polynomial of $𝑇$.
+
+Let $U = \text{span}(v, Tv, \cdots, T^{k-1}v)$. Then $U$ is invariant under $T$.
+Then we can consider $T|_U$. Note that $p_v$ is the minimal polynomial of $T|_U$
+from part (a).
+
+Then from "5.21 minimal polynomial of a restriction operator", we know
+$p$ is multiple of $𝑝_𝑣$.
+
+$\square$
+
+### 5C.8
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$, and there exists a nonzero
+vector $𝑣 ∈ 𝑉$ such that $𝑇^2𝑣 + 2𝑇𝑣 = −2𝑣$.
+
+(a) Prove that if $𝐅 = 𝐑$, then there does not exist a basis of $𝑉$ with respect
+to which $𝑇$ has an upper-triangular matrix.
+
+**Proof**:
+
+Let $p$ the minimal polynomial of $T$ and $p_v(z) = z^2 + 2z + 2$.
+Note that $p_v(z)$ does not have a real zero, which means $v$ is not an eigenvector.
+
+Otherwise, if $T(v) = \lambda v$, then 
+$0 = 𝑇^2𝑣 + 2𝑇𝑣 + 2𝑣 = \lambda^2𝑣 + 2\lambda𝑣 + 2𝑣 = (\lambda^2 + 2\lambda + 2)𝑣$, so $\lambda^2 + 2\lambda + 2 = 0$. No real $\lambda$ can satisfy this equation.
+
+Then $p_v(z)$ satisfy the 5C.7(a), so $p$ is a multiple of $p_v$.
+Since $p_v$ cannot be written in the form of $(z-a)(z-b), a,b \in \mathbb{R}$.
+
+Then use "5.44 necessary and sufficient condition to have an upper-triangular matrix",
+we know
+there does not exist a basis of $𝑉$ with respect
+to which $𝑇$ has an upper-triangular matrix.
+
+$\square$
+
+(b) Prove that if $𝐅 = 𝐂$ and $𝐴$ is an upper-triangular matrix that equals
+the matrix of $𝑇$ with respect to some basis of $𝑉$ , then $−1 + 𝑖$ or $−1 − 𝑖$
+appears on the diagonal of $𝐴$.
+
+**Proof**:
+
+Let $\lambda_1 = −1 + 𝑖$ and $\lambda_2 = −1 - 𝑖$, then it's possible that
+
+$$
+\begin{align*}
+p_v(z) &= (z - \lambda_1) \\
+p_v(z) &= (z - \lambda_2) \\
+p_v(z) &= (z-\lambda_1)(z - \lambda_2) \\
+\end{align*} 
+$$.
+
+Since $p$ is a multiple of $p_v$, then
+
+either $\lambda_1$ or $\lambda_2$ or both are zeros of the $p$.
+Then $\lambda_1$ or $\lambda_2$ or both are eigenvalues of $T$.
+
+From "5.41 determination of eigenvalues from upper-triangular matrix",
+we know $\lambda_1$ or $\lambda_2$ appears on the diagonal of $𝐴$.
+
+$\square$
+
+### 5C.9
+
+Suppose $𝐵$ is a square matrix with complex entries.
+Prove that there exists
+an invertible square matrix $𝐴$ with complex entries such that
+$𝐴^{−1}𝐵𝐴$ is an upper-triangular matrix.
+
+**Proof**:
+
+Let $B$ be an $n$ by $n$ matrix.
+Consider $V = \mathbb{C}^n$. $T$ is an operator in $L(V)$ such that
+$\mathcal{M}(T)$ under the standard basis is $B$, i.e.
+$B = \mathcal{M}(T, (e_1, \cdots, e_n))$.
+
+Use "5.47 if $𝐅 = 𝐂$, then every operator on 𝑉 has an upper-triangular 
+matrix", then we know we can find a basis
+$v_1, \cdots, v_n$ such that $D = \mathcal{M}(T, (v_1, \cdots, v_n))$
+is a upper-triangular matrix.
+
+Then we can directly apply "3.84 change-of-basis formula" and let
+
+$$ 
+A = \mathcal{M}(I,(v_1, \cdots, v_n),(e_1, \cdots, e_n))
+$$
+
+Then we have $D = A^{-1} B A$.
+
+$\square$
+
+

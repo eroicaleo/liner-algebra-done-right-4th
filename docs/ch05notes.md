@@ -478,3 +478,171 @@ with bigger even degree, and we reach a contradition.
 So $U = V$ and we finished the proof.
 
 $\square$
+
+## Section 5C Upper-Triangular Matrices
+
+### 5.39 conditions for upper-triangular matrix
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝑣_1, …, 𝑣_𝑛$ is a basis of $𝑉$. Then the following are equivalent.
+
+(a) The matrix of $𝑇$ with respect to $𝑣_1, …, 𝑣_𝑛$ is upper triangular.
+
+(b) $\text{span}(𝑣_1, \cdots, 𝑣_k)$ is invariant under $𝑇$
+for each $𝑘 = 1, …, 𝑛$.
+
+(c) $Tv_k \in \text{span}(𝑣_1, \cdots, 𝑣_k)$ for each $𝑘 = 1, …, 𝑛$.
+
+### 5.40 equation satisfied by operator with upper-triangular matrix
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝑉$ has a basis with respect to which $𝑇$ has an 
+upper-triangular matrix with diagonal entries $𝜆_1, …, 𝜆_𝑛$. Then
+
+$$ 
+(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_𝑛𝐼) = 0
+$$
+
+**Proof**:
+
+Assume the matrix of $𝑇$ with respect to $𝑣_1, …, 𝑣_𝑛$ is upper 
+triangular.
+
+Then $(T - 𝜆_1𝐼) v_1 = Tv_1 - 𝜆_1 v_1 = 𝜆_1 v_1 - 𝜆_1 v_1 = 0$.
+
+So using 5.17(b) the commutativity of multiplication we have
+
+$(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_l𝐼)v_1 = 0$ for $l = 1, 2, \cdots, n$.
+
+Now since $T v_2 = a_{12} v_1 + 𝜆_2 v_2$, then
+$(T-𝜆_2 I) v_2 = a_{12} v_1 \in \text{span}(𝑣_1)$, so 
+$(T-𝜆_1 I)(T-𝜆_2 I) v_2 = 0$.
+
+Again, using 5.17(b) the commutativity of multiplication we have
+
+$(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_l𝐼)v_2 = 0$ for $l = 2, \cdots, n$.
+
+We can continue this process,
+$T v_k = a_{1k} v_1 + \cdots + a_{(k-1)k} v_{k-1} + 𝜆_k v_k$,
+so 
+$(T - 𝜆_kI) v_k \in \text{span}(𝑣_1, \cdots, 𝑣_{k-1})$
+
+So $(T-𝜆_1 I)\cdots(T-𝜆_k I) v_k = 0$. Then
+
+$(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_l𝐼)v_k = 0$ for $l = k, \cdots, n$.
+
+So for any $v_i, i = 1, \cdots , n$, $(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_𝑛𝐼)v_i = 0$.
+
+So $(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_𝑛𝐼) = 0$.
+
+$\square$
+
+### 5.41 determination of eigenvalues from upper-triangular matrix
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ has an upper-triangular matrix with respect to some 
+basis of $𝑉$. Then the eigenvalues of $𝑇$ are precisely the entries on the 
+diagonal of that upper-triangular matrix.
+
+**Proof**:
+
+Assume under basis $v_1, \cdots, v_n$, the matrix of $T$
+
+$$ 
+\mathcal{M}(T) =
+\begin{pmatrix}
+    \lambda_1 &        & * \\
+              & \ddots &   \\
+    0         &        &  \lambda_n \\
+\end{pmatrix}
+$$
+
+Since $T v_1 = \lambda_1 v_1$, then $\lambda_1$ is an eigenvalue.
+
+For $k > 1$, let $V_k$ denote $\text{span}(𝑣_1, \cdots, 𝑣_k)$.
+
+We know $(T-\lambda_k I) v_k \in V_{k-1}$.
+Furthermore, for since $V_{k-1}$ is invariant under $T$, then
+$(T-\lambda_k I) v_i \in V_{k-1}$ for $i = 1, \cdots, k-1$.
+
+If we restrict $(T-\lambda_k I)$ on $V_k$, then
+$\text{range } T-\lambda_k I \subseteq V_{k-1}$.
+Since $\dim V_k = k, \dim V_{k-1} = k-1$, from the
+fundamental theorem of linear mapping, we have
+$\text{null } T-\lambda_k I \neq \{0\}$. So we can find
+$u_k \neq 0$, such that $(T-\lambda_k I) u_k = 0$, so $\lambda_k$ is
+an eigenvalue.
+
+On the other hand, if $\lambda$ is an eigenvalue of $T$,
+and $p(z)$ is the minimal polynomial of $T$, then
+$p(\lambda) = 0$.
+
+Since from 5.40, $(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_𝑛𝐼) = 0$, then
+$q(z) = (z − 𝜆_1)⋯(z − 𝜆_𝑛)$ is a multiple of $p$ from 5.29.
+
+Then $q(\lambda) = 0$, so $\lambda \in \{\lambda_1, \cdots, \lambda_n\}$.
+
+$\square$
+
+### 5.44 necessary and sufficient condition to have an upper-triangular matrix
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$. Then $𝑇$ has an 
+upper-triangular matrix with respect to some basis of $𝑉$ if and only if 
+the minimal
+polynomial of $𝑇$ equals $(𝑧 − 𝜆_1)⋯(𝑧 − 𝜆_𝑚)$ for some 
+$𝜆_1, …, 𝜆_𝑚 ∈ 𝐅$.
+
+**Proof**:
+
+$\Rightarrow$
+
+Assume $T$ has has an 
+upper-triangular matrix with respect to some basis
+$v_1, \cdots, v_n$.
+
+And the elements on the diagonal are $\alpha_1, \cdots, \alpha_n$.
+
+Also assume $p(z)$ is the minimal polynomial of $T$.
+
+From 5.40, $(T − \alpha_1 I)⋯(T − \alpha_n I) = 0$, then
+$q(z) = (z − \alpha_1 )⋯(z − \alpha_n )$ is a multiple of $p(z)$.
+
+So $p(z)$ has to take the form of $(𝑧 − 𝜆_1)⋯(𝑧 − 𝜆_𝑚)$, where
+$\lambda_1, \cdots, \lambda_m \in \{\alpha_1, \cdots, \alpha_n\}$.
+
+$\Leftarrow$
+
+We use induction for $m$.
+
+If $m = 1$, then $p(z) = z - \lambda_1$ is the minimal polynomial.
+
+Then every $v_k$ is a eigenvector, so $\text{span}(𝑣_1, \cdots, 𝑣_k)$ is
+invariant for $k = 1, \cdots, n$.
+
+From "5.39 conditions for upper-triangular matrix", given any basis
+$v_1, \cdots, v_n$, the matrix of $T$ is upper-triangular.
+
+Now consider when $m = 1, \cdots, l-1$, it all holds, then let $m = l$.
+
+Consider $U = \text{range } T-\lambda_l I$. Then from 5.18 $U$ is invariant
+under $T$ so we can consider $T|_U$.
+
+Since $(T|_U − 𝜆_1 I)⋯(T|_U − 𝜆_{l-1} I) = 0$, 
+So $(z − 𝜆_1)⋯(z − 𝜆_{l-1})$ is a multiple of the minimal polynomial
+of $T|_U$. Then with our induction,
+we can find a basis $u_1, \cdots, u_M$ under which the matrix of $T|_U$
+is an upper-triangular matrix.
+
+Then from "5.39 conditions for upper-triangular matrix" again,
+we have $T u_k = T|_U (u_k) \in \text{span}(u_1, \cdots, u_k)$.
+
+Extend $u_1, \cdots, u_M$ to a basis of $V$ by adding
+$v_1, \cdots, v_N$.
+
+Note $T v_k = (T - \lambda_kI) v_k + \lambda_k v_k \in
+\text{span}(u_1, \cdots, u_M, 𝑣_1, \cdots, 𝑣_k)$ because
+$(T - \lambda_kI) v_k \in U = \text{span}(u_1, \cdots, u_M)$.
+
+Then again use 5.39, we have
+𝑇 has an upper-triangular
+matrix with respect to the basis
+$u_1, \cdots, u_M, v_1, \cdots, v_N$
+
+$\square$
