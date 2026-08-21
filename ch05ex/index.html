@@ -234,6 +234,28 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-5c-upper-triangular-matrices">Section 5C Upper-Triangular Matrices</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#5c1">5C.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c2">5C.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c3">5C.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c4">5C.4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c5">5C.5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c6">5C.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c7">5C.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c8">5C.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c9">5C.9</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -3008,6 +3030,282 @@ and we can find
 <script type="math/tex">T(u_1) = \lambda_1 u_1, T(u_2) = \lambda_2 u_2</script>.</p>
 <p>From 5.11 linearly independent eigenvectors, we know <script type="math/tex">u_1, u_2</script> are linear independent, then
 <script type="math/tex">\text{span}(u_1, u_2)</script> is invariant with dimension <script type="math/tex">2</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-5c-upper-triangular-matrices">Section 5C Upper-Triangular Matrices</h2>
+<h3 id="5c1">5C.1</h3>
+<p>Prove or give a counterexample: If <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑇^2</script> has an 
+upper-triangular matrix with respect to some basis of <script type="math/tex">𝑉</script>,
+then <script type="math/tex">𝑇</script> has an upper-triangular matrix
+with respect to some basis of <script type="math/tex">𝑉</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">V = \mathbb{R}^2</script>. And <script type="math/tex">T</script> be the linear operator that rotates
+<script type="math/tex">V</script> by <script type="math/tex">90</script> degree counterclockwise.</p>
+<p>Since <script type="math/tex">T</script> does not have an eigenvalue, then <script type="math/tex">T</script> does not have a 
+1-dimensional subspace
+that is invariant under <script type="math/tex">T</script> w.r.t any basis of <script type="math/tex">V</script>.
+Therefore, it's not possible that
+<script type="math/tex">𝑇</script> has an upper-triangular matrix w.r.t any basis of <script type="math/tex">V</script>.</p>
+<p>On the other hand, the matrix of <script type="math/tex">T^2</script> w.r.t the standard basis
+is </p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+-1 & 0 \\
+0 & -1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>which is an upper-triangular matrix.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c2">5C.2</h3>
+<p>Suppose <script type="math/tex">𝐴</script> and <script type="math/tex">𝐵</script> are upper-triangular matrices of the same size, with
+<script type="math/tex">𝛼_1, …, 𝛼_𝑛</script> on the diagonal of <script type="math/tex">𝐴</script> and <script type="math/tex">𝛽_1, …, 𝛽_𝑛</script> on the 
+diagonal of <script type="math/tex">𝐵</script>.</p>
+<p>(a) Show that <script type="math/tex">𝐴 + 𝐵</script> is an upper-triangular matrix with 
+<script type="math/tex">𝛼_1 + 𝛽_1, …, 𝛼_𝑛 + 𝛽_𝑛</script>
+on the diagonal.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">C = A + B</script>, then the diagonal of <script type="math/tex">C</script> on the <script type="math/tex">i</script>th row and <script type="math/tex">i</script>th
+column is</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+C_{i,i} &= A_{i,i} + B_{i,i} \\
+&= 𝛼_i + 𝛽_i \
+\end{align*}  
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that <script type="math/tex">𝐴𝐵</script> is an upper-triangular matrix with
+<script type="math/tex">𝛼_1 𝛽_1, …, 𝛼_𝑛 𝛽_𝑛</script> on the diagonal.</p>
+<p><strong>Proof</strong></p>
+<p>Let <script type="math/tex">C = AB</script>, then the diagonal of <script type="math/tex">C</script> on the <script type="math/tex">i</script>th row and <script type="math/tex">i</script>th
+column is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+C_{i,i} &= \sum_{k = 1}^{n} a_{i, k} b_{k, i} \\
+\end{align*} 
+</script>
+</p>
+<p>Note that if <script type="math/tex">i > k, a_{i, k} = 0</script>, and if <script type="math/tex">i < k, b_{k, i} = 0</script>,
+so <script type="math/tex">C_{i,i} = a_{i,i} b_{i,i} = 𝛼_i 𝛽_i</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c3">5C.3</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> is invertible and <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is a basis of <script type="math/tex">𝑉</script> 
+with respect
+to which the matrix of <script type="math/tex">𝑇</script> is upper triangular, with <script type="math/tex">𝜆_1, …, 𝜆_𝑛</script> on 
+the diagonal.
+Show that the matrix of <script type="math/tex">𝑇^{−1}</script> is also upper triangular with respect to 
+the basis <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script>, with</p>
+<p>
+<script type="math/tex; mode=display"> 
+\frac{1}{𝜆_1} , …, \frac{1}{𝜆_𝑛} 
+</script>
+</p>
+<p>on the diagonal.</p>
+<p><strong>Proof</strong>:</p>
+<p>First, from "5.41 determination of eigenvalues from upper-triangular matrix",
+<script type="math/tex">𝜆_1, …, 𝜆_𝑛</script> are the eigenvalues of <script type="math/tex">T</script>. Since <script type="math/tex">T</script> is invertible,
+then <script type="math/tex">0</script> is not an eigenvalue of <script type="math/tex">T</script>. So <script type="math/tex">𝜆_1, …, 𝜆_𝑛 \neq 0</script>.</p>
+<p>Then <script type="math/tex">\frac{1}{𝜆_1} , …, \frac{1}{𝜆_𝑛}</script> is well defined.</p>
+<p>Next, we show if <script type="math/tex">U</script> is invariant under <script type="math/tex">T</script> and <script type="math/tex">T</script> is invertible, then
+<script type="math/tex">U</script> is invariant under <script type="math/tex">T^{-1}</script>.</p>
+<p>Let <script type="math/tex">u \in U</script>, and consider <script type="math/tex">T|_U</script>. Since <script type="math/tex">T</script> is invertible,
+then <script type="math/tex">T</script> is injective, then <script type="math/tex">T|_U</script> is also injective.
+So <script type="math/tex">T|_U</script> is invertible. Then we can find <script type="math/tex">w \in U</script> such that
+<script type="math/tex">T|_U(w) = u</script>. then we have <script type="math/tex">T(w) = u</script>.</p>
+<p>So <script type="math/tex">T^{-1}(u) = T^{-1}(T(w)) = w \in U</script>.
+Then <script type="math/tex">U</script> is invariant under <script type="math/tex">T^{-1}</script>.</p>
+<p>Now let <script type="math/tex">U_i = \text{span}(𝑣_1, \cdots, 𝑣_i)</script>.
+From "5.39 conditions for upper-triangular matrix", <script type="math/tex">U_i</script> is invariant under <script type="math/tex">T</script>,
+then <script type="math/tex">U_i</script> is also invariant under <script type="math/tex">T^{-1}</script>, then again use 5.39,
+The matrix of <script type="math/tex">𝑇^{-1}</script> with respect to <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is upper triangular.</p>
+<p>Let <script type="math/tex">\eta_i</script> on the diagonal. Note
+<script type="math/tex">v_1 = T^{-1} (T v_1) = T^{-1} (\lambda_1 v_1) = \eta_1 \lambda_1 v_1</script>,
+so <script type="math/tex">\eta_1 \lambda_1 = 1</script>, thne <script type="math/tex">\eta_1 = \frac{1}{\lambda_1}</script>.</p>
+<p>For <script type="math/tex">i \geq 2</script>,</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(v_i) = \lambda_i v_i + u_{i-1}
+</script>
+</p>
+<p>Where <script type="math/tex">u_{i-1} \in U_{i-1}</script>, then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+v_i &= T^{-1} (T v_i) \\
+&= T^{-1} (\lambda_i v_i) + T^{-1} (u_{i-1}) \\
+&= \eta_i \lambda_i v_i + T^{-1} (u_{i-1}) \\
+& \Rightarrow \\
+0 = (1 - \eta_i \lambda_i) v_i + T^{-1} (u_{i-1}) \\
+\end{align*} 
+</script>
+</p>
+<p>Since <script type="math/tex">U_i</script> is invariant under <script type="math/tex">T^{-1}</script>, then
+<script type="math/tex">T^{-1} (u_{i-1}) \in U_{i-1} = \text{span}(𝑣_1, \cdots, 𝑣_{i-1})</script>.
+Then we must have <script type="math/tex">1 - \eta_i \lambda_i = 0</script>, i.e.
+<script type="math/tex">\eta_i = \frac{1}{\lambda_i}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c4">5C.4</h3>
+<p>Give an example of an operator whose matrix with respect to some basis
+contains only <script type="math/tex">0</script>'s on the diagonal, but the operator is invertible.
+This exercise and the exercise below show that 5.41 fails without the
+hypothesis that an upper-triangular matrix is under consideration.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the vector space is <script type="math/tex">\mathbb{R}^2</script>, and the operator <script type="math/tex">T</script> is
+rotation counterclockwise by 90 degree.
+And the basis is the standard basis, <script type="math/tex">e_1, e_2</script>.</p>
+<p>
+<script type="math/tex">T(e_1) = e_2, T(e_2) = -e_1</script>. So</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{M}(T) =
+\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}
+</script>
+</p>
+<p>It's invertible because its inverse is rotation clockwise by 90 degree.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c5">5C.5</h3>
+<p>Give an example of an operator whose matrix with respect to some basis
+contains only nonzero numbers on the diagonal, but the operator is not
+invertible.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the vector space is <script type="math/tex">\mathbb{R}^2</script>, and the operator <script type="math/tex">T</script> is
+defined as</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(e_1) = (1, 1) \\
+T(e_2) = (1, 1) \\
+</script>
+</p>
+<p>Since it's not injective, it's not invertible.</p>
+<p>Also the </p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{M}(T) =
+\begin{bmatrix}
+1 & 1 \\
+1 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c6">5C.6</h3>
+<p>Suppose <script type="math/tex">𝐅 = 𝐂</script>, <script type="math/tex">𝑉</script> is finite-dimensional, and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Prove that if
+<script type="math/tex">𝑘 ∈ \{1, …, \dim 𝑉\}</script>, then <script type="math/tex">𝑉</script> has a <script type="math/tex">𝑘</script>-dimensional subspace invariant under 
+<script type="math/tex">𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Use "5.47 if 𝐅 = 𝐂, then every operator on 𝑉 has an upper-triangular matrix",
+then for the operator <script type="math/tex">T</script>, we can find a basis <script type="math/tex">v_1, \cdots, v_n</script>, such that
+<script type="math/tex">\mathcal{M}(T)</script> is upper-triangular.</p>
+<p>Then use "5.39 conditions for upper-triangular matrix", we know
+<script type="math/tex">\text{span}(𝑣_1, \cdots, 𝑣_k)</script> is invariant under <script type="math/tex">T</script> and its dimension is <script type="math/tex">k</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c7">5C.7</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and <script type="math/tex">𝑣 ∈ 𝑉</script>.</p>
+<p>(a) Prove that there exists a unique monic polynomial <script type="math/tex">𝑝_𝑣</script> of smallest degree
+such that <script type="math/tex">𝑝_𝑣(𝑇)𝑣 = 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">n = \dim V</script> and then the following <script type="math/tex">1+n</script> vectors must be linear dependent</p>
+<p>
+<script type="math/tex; mode=display"> 
+v, Tv, \cdots, T^{n}v
+</script>
+</p>
+<p>Then we can find the smallest <script type="math/tex">k</script>, such that <script type="math/tex">T^{k} v</script> is the linear combination of
+<script type="math/tex">v, \cdots, T^{k-1}v</script> and then we find the <script type="math/tex">𝑝_𝑣</script>.</p>
+<p>(b) Prove that the minimal polynomial of <script type="math/tex">𝑇</script> is a polynomial multiple of <script type="math/tex">𝑝_𝑣</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p</script> be the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p>Let <script type="math/tex">U = \text{span}(v, Tv, \cdots, T^{k-1}v)</script>. Then <script type="math/tex">U</script> is invariant under <script type="math/tex">T</script>.
+Then we can consider <script type="math/tex">T|_U</script>. Note that <script type="math/tex">p_v</script> is the minimal polynomial of <script type="math/tex">T|_U</script>
+from part (a).</p>
+<p>Then from "5.21 minimal polynomial of a restriction operator", we know
+<script type="math/tex">p</script> is multiple of <script type="math/tex">𝑝_𝑣</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c8">5C.8</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, and there exists a nonzero
+vector <script type="math/tex">𝑣 ∈ 𝑉</script> such that <script type="math/tex">𝑇^2𝑣 + 2𝑇𝑣 = −2𝑣</script>.</p>
+<p>(a) Prove that if <script type="math/tex">𝐅 = 𝐑</script>, then there does not exist a basis of <script type="math/tex">𝑉</script> with respect
+to which <script type="math/tex">𝑇</script> has an upper-triangular matrix.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p</script> the minimal polynomial of <script type="math/tex">T</script> and <script type="math/tex">p_v(z) = z^2 + 2z + 2</script>.
+Note that <script type="math/tex">p_v(z)</script> does not have a real zero, which means <script type="math/tex">v</script> is not an eigenvector.</p>
+<p>Otherwise, if <script type="math/tex">T(v) = \lambda v</script>, then 
+<script type="math/tex">0 = 𝑇^2𝑣 + 2𝑇𝑣 + 2𝑣 = \lambda^2𝑣 + 2\lambda𝑣 + 2𝑣 = (\lambda^2 + 2\lambda + 2)𝑣</script>, so <script type="math/tex">\lambda^2 + 2\lambda + 2 = 0</script>. No real <script type="math/tex">\lambda</script> can satisfy this equation.</p>
+<p>Then <script type="math/tex">p_v(z)</script> satisfy the 5C.7(a), so <script type="math/tex">p</script> is a multiple of <script type="math/tex">p_v</script>.
+Since <script type="math/tex">p_v</script> cannot be written in the form of <script type="math/tex">(z-a)(z-b), a,b \in \mathbb{R}</script>.</p>
+<p>Then use "5.44 necessary and sufficient condition to have an upper-triangular matrix",
+we know
+there does not exist a basis of <script type="math/tex">𝑉</script> with respect
+to which <script type="math/tex">𝑇</script> has an upper-triangular matrix.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that if <script type="math/tex">𝐅 = 𝐂</script> and <script type="math/tex">𝐴</script> is an upper-triangular matrix that equals
+the matrix of <script type="math/tex">𝑇</script> with respect to some basis of <script type="math/tex">𝑉</script> , then <script type="math/tex">−1 + 𝑖</script> or <script type="math/tex">−1 − 𝑖</script>
+appears on the diagonal of <script type="math/tex">𝐴</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">\lambda_1 = −1 + 𝑖</script> and <script type="math/tex">\lambda_2 = −1 - 𝑖</script>, then it's possible that</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+p_v(z) &= (z - \lambda_1) \\
+p_v(z) &= (z - \lambda_2) \\
+p_v(z) &= (z-\lambda_1)(z - \lambda_2) \\
+\end{align*} 
+</script>.</p>
+<p>Since <script type="math/tex">p</script> is a multiple of <script type="math/tex">p_v</script>, then</p>
+<p>either <script type="math/tex">\lambda_1</script> or <script type="math/tex">\lambda_2</script> or both are zeros of the <script type="math/tex">p</script>.
+Then <script type="math/tex">\lambda_1</script> or <script type="math/tex">\lambda_2</script> or both are eigenvalues of <script type="math/tex">T</script>.</p>
+<p>From "5.41 determination of eigenvalues from upper-triangular matrix",
+we know <script type="math/tex">\lambda_1</script> or <script type="math/tex">\lambda_2</script> appears on the diagonal of <script type="math/tex">𝐴</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c9">5C.9</h3>
+<p>Suppose <script type="math/tex">𝐵</script> is a square matrix with complex entries.
+Prove that there exists
+an invertible square matrix <script type="math/tex">𝐴</script> with complex entries such that
+<script type="math/tex">𝐴^{−1}𝐵𝐴</script> is an upper-triangular matrix.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">B</script> be an <script type="math/tex">n</script> by <script type="math/tex">n</script> matrix.
+Consider <script type="math/tex">V = \mathbb{C}^n</script>. <script type="math/tex">T</script> is an operator in <script type="math/tex">L(V)</script> such that
+<script type="math/tex">\mathcal{M}(T)</script> under the standard basis is <script type="math/tex">B</script>, i.e.
+<script type="math/tex">B = \mathcal{M}(T, (e_1, \cdots, e_n))</script>.</p>
+<p>Use "5.47 if <script type="math/tex">𝐅 = 𝐂</script>, then every operator on 𝑉 has an upper-triangular 
+matrix", then we know we can find a basis
+<script type="math/tex">v_1, \cdots, v_n</script> such that <script type="math/tex">D = \mathcal{M}(T, (v_1, \cdots, v_n))</script>
+is a upper-triangular matrix.</p>
+<p>Then we can directly apply "3.84 change-of-basis formula" and let</p>
+<p>
+<script type="math/tex; mode=display"> 
+A = \mathcal{M}(I,(v_1, \cdots, v_n),(e_1, \cdots, e_n))
+</script>
+</p>
+<p>Then we have <script type="math/tex">D = A^{-1} B A</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>

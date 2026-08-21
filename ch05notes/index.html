@@ -126,6 +126,18 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-5c-upper-triangular-matrices">Section 5C Upper-Triangular Matrices</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#539-conditions-for-upper-triangular-matrix">5.39 conditions for upper-triangular matrix</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#540-equation-satisfied-by-operator-with-upper-triangular-matrix">5.40 equation satisfied by operator with upper-triangular matrix</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#541-determination-of-eigenvalues-from-upper-triangular-matrix">5.41 determination of eigenvalues from upper-triangular matrix</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#544-necessary-and-sufficient-condition-to-have-an-upper-triangular-matrix">5.44 necessary and sufficient condition to have an upper-triangular matrix</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -565,6 +577,136 @@ contradictory to the face that <script type="math/tex">T</script> does not have 
 <p>So we produce an subspace that is invariant under <script type="math/tex">T</script>
 with bigger even degree, and we reach a contradition.</p>
 <p>So <script type="math/tex">U = V</script> and we finished the proof.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-5c-upper-triangular-matrices">Section 5C Upper-Triangular Matrices</h2>
+<h3 id="539-conditions-for-upper-triangular-matrix">5.39 conditions for upper-triangular matrix</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is a basis of <script type="math/tex">𝑉</script>. Then the following are equivalent.</p>
+<p>(a) The matrix of <script type="math/tex">𝑇</script> with respect to <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is upper triangular.</p>
+<p>(b) <script type="math/tex">\text{span}(𝑣_1, \cdots, 𝑣_k)</script> is invariant under <script type="math/tex">𝑇</script>
+for each <script type="math/tex">𝑘 = 1, …, 𝑛</script>.</p>
+<p>(c) <script type="math/tex">Tv_k \in \text{span}(𝑣_1, \cdots, 𝑣_k)</script> for each <script type="math/tex">𝑘 = 1, …, 𝑛</script>.</p>
+<h3 id="540-equation-satisfied-by-operator-with-upper-triangular-matrix">5.40 equation satisfied by operator with upper-triangular matrix</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑉</script> has a basis with respect to which <script type="math/tex">𝑇</script> has an 
+upper-triangular matrix with diagonal entries <script type="math/tex">𝜆_1, …, 𝜆_𝑛</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_𝑛𝐼) = 0
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume the matrix of <script type="math/tex">𝑇</script> with respect to <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is upper 
+triangular.</p>
+<p>Then <script type="math/tex">(T - 𝜆_1𝐼) v_1 = Tv_1 - 𝜆_1 v_1 = 𝜆_1 v_1 - 𝜆_1 v_1 = 0</script>.</p>
+<p>So using 5.17(b) the commutativity of multiplication we have</p>
+<p>
+<script type="math/tex">(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_l𝐼)v_1 = 0</script> for <script type="math/tex">l = 1, 2, \cdots, n</script>.</p>
+<p>Now since <script type="math/tex">T v_2 = a_{12} v_1 + 𝜆_2 v_2</script>, then
+<script type="math/tex">(T-𝜆_2 I) v_2 = a_{12} v_1 \in \text{span}(𝑣_1)</script>, so 
+<script type="math/tex">(T-𝜆_1 I)(T-𝜆_2 I) v_2 = 0</script>.</p>
+<p>Again, using 5.17(b) the commutativity of multiplication we have</p>
+<p>
+<script type="math/tex">(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_l𝐼)v_2 = 0</script> for <script type="math/tex">l = 2, \cdots, n</script>.</p>
+<p>We can continue this process,
+<script type="math/tex">T v_k = a_{1k} v_1 + \cdots + a_{(k-1)k} v_{k-1} + 𝜆_k v_k</script>,
+so 
+<script type="math/tex">(T - 𝜆_kI) v_k \in \text{span}(𝑣_1, \cdots, 𝑣_{k-1})</script>
+</p>
+<p>So <script type="math/tex">(T-𝜆_1 I)\cdots(T-𝜆_k I) v_k = 0</script>. Then</p>
+<p>
+<script type="math/tex">(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_l𝐼)v_k = 0</script> for <script type="math/tex">l = k, \cdots, n</script>.</p>
+<p>So for any <script type="math/tex">v_i, i = 1, \cdots , n</script>, <script type="math/tex">(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_𝑛𝐼)v_i = 0</script>.</p>
+<p>So <script type="math/tex">(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_𝑛𝐼) = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="541-determination-of-eigenvalues-from-upper-triangular-matrix">5.41 determination of eigenvalues from upper-triangular matrix</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> has an upper-triangular matrix with respect to some 
+basis of <script type="math/tex">𝑉</script>. Then the eigenvalues of <script type="math/tex">𝑇</script> are precisely the entries on the 
+diagonal of that upper-triangular matrix.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume under basis <script type="math/tex">v_1, \cdots, v_n</script>, the matrix of <script type="math/tex">T</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{M}(T) =
+\begin{pmatrix}
+    \lambda_1 &        & * \\
+              & \ddots &   \\
+    0         &        &  \lambda_n \\
+\end{pmatrix}
+</script>
+</p>
+<p>Since <script type="math/tex">T v_1 = \lambda_1 v_1</script>, then <script type="math/tex">\lambda_1</script> is an eigenvalue.</p>
+<p>For <script type="math/tex">k > 1</script>, let <script type="math/tex">V_k</script> denote <script type="math/tex">\text{span}(𝑣_1, \cdots, 𝑣_k)</script>.</p>
+<p>We know <script type="math/tex">(T-\lambda_k I) v_k \in V_{k-1}</script>.
+Furthermore, for since <script type="math/tex">V_{k-1}</script> is invariant under <script type="math/tex">T</script>, then
+<script type="math/tex">(T-\lambda_k I) v_i \in V_{k-1}</script> for <script type="math/tex">i = 1, \cdots, k-1</script>.</p>
+<p>If we restrict <script type="math/tex">(T-\lambda_k I)</script> on <script type="math/tex">V_k</script>, then
+<script type="math/tex">\text{range } T-\lambda_k I \subseteq V_{k-1}</script>.
+Since <script type="math/tex">\dim V_k = k, \dim V_{k-1} = k-1</script>, from the
+fundamental theorem of linear mapping, we have
+<script type="math/tex">\text{null } T-\lambda_k I \neq \{0\}</script>. So we can find
+<script type="math/tex">u_k \neq 0</script>, such that <script type="math/tex">(T-\lambda_k I) u_k = 0</script>, so <script type="math/tex">\lambda_k</script> is
+an eigenvalue.</p>
+<p>On the other hand, if <script type="math/tex">\lambda</script> is an eigenvalue of <script type="math/tex">T</script>,
+and <script type="math/tex">p(z)</script> is the minimal polynomial of <script type="math/tex">T</script>, then
+<script type="math/tex">p(\lambda) = 0</script>.</p>
+<p>Since from 5.40, <script type="math/tex">(𝑇 − 𝜆_1𝐼)⋯(𝑇 − 𝜆_𝑛𝐼) = 0</script>, then
+<script type="math/tex">q(z) = (z − 𝜆_1)⋯(z − 𝜆_𝑛)</script> is a multiple of <script type="math/tex">p</script> from 5.29.</p>
+<p>Then <script type="math/tex">q(\lambda) = 0</script>, so <script type="math/tex">\lambda \in \{\lambda_1, \cdots, \lambda_n\}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="544-necessary-and-sufficient-condition-to-have-an-upper-triangular-matrix">5.44 necessary and sufficient condition to have an upper-triangular matrix</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Then <script type="math/tex">𝑇</script> has an 
+upper-triangular matrix with respect to some basis of <script type="math/tex">𝑉</script> if and only if 
+the minimal
+polynomial of <script type="math/tex">𝑇</script> equals <script type="math/tex">(𝑧 − 𝜆_1)⋯(𝑧 − 𝜆_𝑚)</script> for some 
+<script type="math/tex">𝜆_1, …, 𝜆_𝑚 ∈ 𝐅</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>Assume <script type="math/tex">T</script> has has an 
+upper-triangular matrix with respect to some basis
+<script type="math/tex">v_1, \cdots, v_n</script>.</p>
+<p>And the elements on the diagonal are <script type="math/tex">\alpha_1, \cdots, \alpha_n</script>.</p>
+<p>Also assume <script type="math/tex">p(z)</script> is the minimal polynomial of <script type="math/tex">T</script>.</p>
+<p>From 5.40, <script type="math/tex">(T − \alpha_1 I)⋯(T − \alpha_n I) = 0</script>, then
+<script type="math/tex">q(z) = (z − \alpha_1 )⋯(z − \alpha_n )</script> is a multiple of <script type="math/tex">p(z)</script>.</p>
+<p>So <script type="math/tex">p(z)</script> has to take the form of <script type="math/tex">(𝑧 − 𝜆_1)⋯(𝑧 − 𝜆_𝑚)</script>, where
+<script type="math/tex">\lambda_1, \cdots, \lambda_m \in \{\alpha_1, \cdots, \alpha_n\}</script>.</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>We use induction for <script type="math/tex">m</script>.</p>
+<p>If <script type="math/tex">m = 1</script>, then <script type="math/tex">p(z) = z - \lambda_1</script> is the minimal polynomial.</p>
+<p>Then every <script type="math/tex">v_k</script> is a eigenvector, so <script type="math/tex">\text{span}(𝑣_1, \cdots, 𝑣_k)</script> is
+invariant for <script type="math/tex">k = 1, \cdots, n</script>.</p>
+<p>From "5.39 conditions for upper-triangular matrix", given any basis
+<script type="math/tex">v_1, \cdots, v_n</script>, the matrix of <script type="math/tex">T</script> is upper-triangular.</p>
+<p>Now consider when <script type="math/tex">m = 1, \cdots, l-1</script>, it all holds, then let <script type="math/tex">m = l</script>.</p>
+<p>Consider <script type="math/tex">U = \text{range } T-\lambda_l I</script>. Then from 5.18 <script type="math/tex">U</script> is invariant
+under <script type="math/tex">T</script> so we can consider <script type="math/tex">T|_U</script>.</p>
+<p>Since <script type="math/tex">(T|_U − 𝜆_1 I)⋯(T|_U − 𝜆_{l-1} I) = 0</script>, 
+So <script type="math/tex">(z − 𝜆_1)⋯(z − 𝜆_{l-1})</script> is a multiple of the minimal polynomial
+of <script type="math/tex">T|_U</script>. Then with our induction,
+we can find a basis <script type="math/tex">u_1, \cdots, u_M</script> under which the matrix of <script type="math/tex">T|_U</script>
+is an upper-triangular matrix.</p>
+<p>Then from "5.39 conditions for upper-triangular matrix" again,
+we have <script type="math/tex">T u_k = T|_U (u_k) \in \text{span}(u_1, \cdots, u_k)</script>.</p>
+<p>Extend <script type="math/tex">u_1, \cdots, u_M</script> to a basis of <script type="math/tex">V</script> by adding
+<script type="math/tex">v_1, \cdots, v_N</script>.</p>
+<p>Note <script type="math/tex">T v_k = (T - \lambda_kI) v_k + \lambda_k v_k \in
+\text{span}(u_1, \cdots, u_M, 𝑣_1, \cdots, 𝑣_k)</script> because
+<script type="math/tex">(T - \lambda_kI) v_k \in U = \text{span}(u_1, \cdots, u_M)</script>.</p>
+<p>Then again use 5.39, we have
+𝑇 has an upper-triangular
+matrix with respect to the basis
+<script type="math/tex">u_1, \cdots, u_M, v_1, \cdots, v_N</script>
+</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
