@@ -254,6 +254,16 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5c9">5C.9</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c10">5C.10</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c11">5C.11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c12">5C.12</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c13">5C.13</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5c14">5C.14</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -3309,6 +3319,159 @@ A = \mathcal{M}(I,(v_1, \cdots, v_n),(e_1, \cdots, e_n))
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h3 id="5c10">5C.10</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is a basis of <script type="math/tex">𝑉</script>.
+Show that the following are equivalent.</p>
+<p>(a) The matrix of <script type="math/tex">𝑇</script> with respect to <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is lower triangular.</p>
+<p>(b) <script type="math/tex">\text{span}(𝑣_k, \cdots, 𝑣_n)</script> is invariant under <script type="math/tex">𝑇</script> for each
+<script type="math/tex">𝑘 = 1, …, 𝑛</script>.</p>
+<p>(c) <script type="math/tex">𝑇{𝑣_𝑘} ∈ \text{span}(𝑣_k, \cdots, 𝑣_n)</script> for each <script type="math/tex">𝑘 = 1, …, 𝑛</script>.</p>
+<p>A square matrix is called lower triangular if all entries above
+the diagonal are <script type="math/tex">0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">(a) \Rightarrow (b)</script>
+</p>
+<p>Fix any <script type="math/tex">𝑘 = 1, …, 𝑛</script> and <script type="math/tex">k \leq j \leq n</script>.</p>
+<p>Since The matrix of <script type="math/tex">𝑇</script> with respect to <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is lower triangular, then <script type="math/tex">𝑇{𝑣_j}</script> is the linear combination of
+<script type="math/tex">𝑣_j, \cdots, 𝑣_n</script>, so
+<script type="math/tex">T v_j \in \text{span}(𝑣_j, \cdots, 𝑣_n) \subseteq \text{span}(𝑣_k, \cdots, 𝑣_n)</script>.</p>
+<p>So <script type="math/tex">\text{span}(𝑣_k, \cdots, 𝑣_n)</script> is invariant under <script type="math/tex">𝑇</script>.</p>
+<p>
+<script type="math/tex">(b) \Rightarrow (c)</script>
+</p>
+<p>
+<script type="math/tex">\text{span}(𝑣_k, \cdots, 𝑣_n)</script> is invariant under <script type="math/tex">𝑇</script>, then
+<script type="math/tex">𝑇{𝑣_𝑘} ∈ \text{span}(𝑣_k, \cdots, 𝑣_n)</script>.</p>
+<p>
+<script type="math/tex">(c) \Rightarrow (a)</script>
+</p>
+<p>
+<script type="math/tex">𝑇{𝑣_𝑘} ∈ \text{span}(𝑣_k, \cdots, 𝑣_n)</script>, then
+<script type="math/tex">𝑇{𝑣_𝑘}</script> is a linear combination of <script type="math/tex">𝑣_k, \cdots, 𝑣_n</script>.
+Then the coefficients of <script type="math/tex">v_1, \cdots, v_{k-1}</script> are all <script type="math/tex">0</script>.
+This means the matrix of <script type="math/tex">𝑇</script> with respect to <script type="math/tex">𝑣_1, …, 𝑣_𝑛</script> is lower 
+triangular.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c11">5C.11</h3>
+<p>Suppose <script type="math/tex">𝐅 = 𝐂</script> and <script type="math/tex">𝑉</script> is finite-dimensional.
+Prove that if <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>, then
+there exists a basis of <script type="math/tex">𝑉</script> with respect to which <script type="math/tex">𝑇</script> has a 
+lower-triangular matrix.</p>
+<p><strong>Proof</strong>:</p>
+<p>Use "5.47 if <script type="math/tex">𝐅 = 𝐂</script>, then every operator on 𝑉 has an upper-triangular 
+matrix", then we can find a basis <script type="math/tex">v_1, \cdots, v_n</script> such that
+<script type="math/tex">\mathcal{M}(T)</script> is a upper-triangular matrix.</p>
+<p>Now use "5.39 conditions for upper-triangular matrix", we know
+<script type="math/tex">\text{span}(𝑣_1, \cdots, 𝑣_k)</script> is invariant under <script type="math/tex">T</script>
+for <script type="math/tex">k = 1, \cdots, n</script>.</p>
+<p>Now let <script type="math/tex">w_n = v_1, \cdots, w_1 = v_n</script>. We can see</p>
+<p>
+<script type="math/tex">\text{span}(w_k, \cdots, w_n) = \text{span}(v_1, \cdots, v_{n-k+1})</script> is invariant under <script type="math/tex">𝑇</script>.</p>
+<p>Then apply exercise 5C.10 above, we get
+<script type="math/tex">\mathcal{M}(T)</script> is a lower-triangular matrix under the basis
+<script type="math/tex">w_1, \cdots, w_n</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c12">5C.12</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional, <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> has an upper-triangular 
+matrix with respect to some basis of <script type="math/tex">𝑉</script>, and <script type="math/tex">𝑈</script> is a subspace of
+<script type="math/tex">𝑉</script> that is invariant under <script type="math/tex">𝑇</script>.</p>
+<p>(a) Prove that <script type="math/tex">T|_U</script> has an upper-triangular matrix with respect to some basis of <script type="math/tex">𝑈</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p(z)</script> be the minimal polynomial of <script type="math/tex">T</script>, and <script type="math/tex">q(z)</script> be
+the minimal polynomial of <script type="math/tex">T|_U</script>. </p>
+<p>From
+"5.44 necessary and sufficient condition to have an
+upper-triangular matrix", we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = (z-\lambda_1) \cdots (z-\lambda_m)
+</script>
+</p>
+<p>Then from "5.31 minimal polynomial of a restriction operator",
+<script type="math/tex">p(z)</script> is a multiple of <script type="math/tex">q(z)</script>.</p>
+<p>Then <script type="math/tex">q(z)</script> has to be in the form of</p>
+<p>
+<script type="math/tex; mode=display"> 
+q(z) = (z-\alpha_1) \cdots (z-\alpha_l)
+</script>
+</p>
+<p>Then again apply 5.44, we know
+<script type="math/tex">T|_U</script> has an upper-triangular matrix with respect to some basis of <script type="math/tex">𝑈</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that the quotient operator <script type="math/tex">𝑇/𝑈</script> has an upper-triangular matrix 
+with respect to some basis of <script type="math/tex">𝑉/𝑈</script>.</p>
+<p><strong>Proof</strong>: The logic is very similar to part (a).</p>
+<p>Let <script type="math/tex">p(z)</script> be the minimal polynomial of <script type="math/tex">T</script>, and <script type="math/tex">q(z)</script> be
+the minimal polynomial of <script type="math/tex">T/U</script>. </p>
+<p>From exercise 5B.25 part (a),
+the minimal polynomial of <script type="math/tex">𝑇</script> is a polynomial multiple of the
+minimal polynomial of the quotient operator <script type="math/tex">𝑇/𝑈</script>.</p>
+<p>Then the other part is exactly the same as part (a).</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c13">5C.13</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Suppose there exists
+a subspace <script type="math/tex">𝑈</script> of <script type="math/tex">𝑉</script> that is invariant under <script type="math/tex">𝑇</script> such that
+<script type="math/tex">𝑇|_𝑈</script> has an upper-triangular matrix with respect to some basis of <script type="math/tex">𝑈</script> 
+and also <script type="math/tex">𝑇/𝑈</script> has an
+upper-triangular matrix with respect to some basis of <script type="math/tex">𝑉/𝑈</script>.
+Prove that <script type="math/tex">𝑇</script> has
+an upper-triangular matrix with respect to some basis of <script type="math/tex">𝑉</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">p(z)</script> be the minimal polynomial of <script type="math/tex">T</script>, <script type="math/tex">q(z)</script> be that of
+<script type="math/tex">T|_U</script> and <script type="math/tex">s(z)</script> be that of <script type="math/tex">T/U</script>.</p>
+<p>From
+"5.44 necessary and sufficient condition to have an
+upper-triangular matrix",</p>
+<p>we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+q(z) = (z-\alpha_1) \cdots (z-\alpha_l) \\
+s(z) = (z-\beta_1) \cdots (z-\beta_m)
+</script>
+</p>
+<p>From the exercise 5B.25 (b) we know that
+(minimal polynomial of <script type="math/tex">𝑇|_𝑈</script>) <script type="math/tex">×</script> (minimal polynomial of <script type="math/tex">𝑇/𝑈</script>)
+is a polynomial multiple of the minimal polynomial of 𝑇.</p>
+<p>Then due to unique factorization in <script type="math/tex">F[z]</script> we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = (z-\gamma_1) \cdots (z-\gamma_k)
+</script>
+</p>
+<p>Then again use 5.44, we know
+<script type="math/tex">𝑇</script> has
+an upper-triangular matrix with respect to some basis of <script type="math/tex">𝑉</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5c14">5C.14</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and
+<script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Prove that <script type="math/tex">𝑇</script> has an upper-
+triangular matrix with respect to some basis of <script type="math/tex">𝑉</script>
+if and only if the dual
+operator <script type="math/tex">𝑇'</script> has an upper-triangular matrix with respect to
+some basis of the dual space <script type="math/tex">𝑉'</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>We use exercise 5B.28, which states
+that the minimal
+polynomial of <script type="math/tex">𝑇' ∈ ℒ(𝑉')</script> equals the minimal polynomial of <script type="math/tex">𝑇</script>.</p>
+<p>And then we can use
+"5.44 necessary and sufficient condition to have an
+upper-triangular matrix" again.</p>
+<p>
+<script type="math/tex">\square</script>
+.</p>
               
             </div>
           </div><footer>
