@@ -3525,4 +3525,187 @@ Then we have $D = A^{-1} B A$.
 
 $\square$
 
+### 5C.10
 
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝑣_1, …, 𝑣_𝑛$ is a basis of $𝑉$.
+Show that the following are equivalent.
+
+(a) The matrix of $𝑇$ with respect to $𝑣_1, …, 𝑣_𝑛$ is lower triangular.
+
+(b) $\text{span}(𝑣_k, \cdots, 𝑣_n)$ is invariant under $𝑇$ for each
+$𝑘 = 1, …, 𝑛$.
+
+(c) $𝑇{𝑣_𝑘} ∈ \text{span}(𝑣_k, \cdots, 𝑣_n)$ for each $𝑘 = 1, …, 𝑛$.
+
+A square matrix is called lower triangular if all entries above
+the diagonal are $0$.
+
+**Proof**:
+
+$(a) \Rightarrow (b)$
+
+Fix any $𝑘 = 1, …, 𝑛$ and $k \leq j \leq n$.
+
+Since The matrix of $𝑇$ with respect to $𝑣_1, …, 𝑣_𝑛$ is lower triangular, then $𝑇{𝑣_j}$ is the linear combination of
+$𝑣_j, \cdots, 𝑣_n$, so
+$T v_j \in \text{span}(𝑣_j, \cdots, 𝑣_n) \subseteq \text{span}(𝑣_k, \cdots, 𝑣_n)$.
+
+So $\text{span}(𝑣_k, \cdots, 𝑣_n)$ is invariant under $𝑇$.
+
+$(b) \Rightarrow (c)$
+
+$\text{span}(𝑣_k, \cdots, 𝑣_n)$ is invariant under $𝑇$, then
+$𝑇{𝑣_𝑘} ∈ \text{span}(𝑣_k, \cdots, 𝑣_n)$.
+
+$(c) \Rightarrow (a)$
+
+$𝑇{𝑣_𝑘} ∈ \text{span}(𝑣_k, \cdots, 𝑣_n)$, then
+$𝑇{𝑣_𝑘}$ is a linear combination of $𝑣_k, \cdots, 𝑣_n$.
+Then the coefficients of $v_1, \cdots, v_{k-1}$ are all $0$.
+This means the matrix of $𝑇$ with respect to $𝑣_1, …, 𝑣_𝑛$ is lower 
+triangular.
+
+$\square$
+
+### 5C.11
+
+Suppose $𝐅 = 𝐂$ and $𝑉$ is finite-dimensional.
+Prove that if $𝑇 ∈ ℒ(𝑉)$, then
+there exists a basis of $𝑉$ with respect to which $𝑇$ has a 
+lower-triangular matrix.
+
+**Proof**:
+
+Use "5.47 if $𝐅 = 𝐂$, then every operator on 𝑉 has an upper-triangular 
+matrix", then we can find a basis $v_1, \cdots, v_n$ such that
+$\mathcal{M}(T)$ is a upper-triangular matrix.
+
+Now use "5.39 conditions for upper-triangular matrix", we know
+$\text{span}(𝑣_1, \cdots, 𝑣_k)$ is invariant under $T$
+for $k = 1, \cdots, n$.
+
+Now let $w_n = v_1, \cdots, w_1 = v_n$. We can see
+
+$\text{span}(w_k, \cdots, w_n) = \text{span}(v_1, \cdots, v_{n-k+1})$ is invariant under $𝑇$.
+
+Then apply exercise 5C.10 above, we get
+$\mathcal{M}(T)$ is a lower-triangular matrix under the basis
+$w_1, \cdots, w_n$.
+
+$\square$
+
+### 5C.12
+
+Suppose $𝑉$ is finite-dimensional, $𝑇 ∈ ℒ(𝑉)$ has an upper-triangular 
+matrix with respect to some basis of $𝑉$, and $𝑈$ is a subspace of
+$𝑉$ that is invariant under $𝑇$.
+
+(a) Prove that $T|_U$ has an upper-triangular matrix with respect to some basis of $𝑈$.
+
+**Proof**:
+
+Let $p(z)$ be the minimal polynomial of $T$, and $q(z)$ be
+the minimal polynomial of $T|_U$. 
+
+From
+"5.44 necessary and sufficient condition to have an
+upper-triangular matrix", we know
+
+$$ 
+p(z) = (z-\lambda_1) \cdots (z-\lambda_m)
+$$
+
+Then from "5.31 minimal polynomial of a restriction operator",
+$p(z)$ is a multiple of $q(z)$.
+
+Then $q(z)$ has to be in the form of
+
+$$ 
+q(z) = (z-\alpha_1) \cdots (z-\alpha_l)
+$$
+
+Then again apply 5.44, we know
+$T|_U$ has an upper-triangular matrix with respect to some basis of $𝑈$.
+
+$\square$
+
+(b) Prove that the quotient operator $𝑇/𝑈$ has an upper-triangular matrix 
+with respect to some basis of $𝑉/𝑈$.
+
+**Proof**: The logic is very similar to part (a).
+
+Let $p(z)$ be the minimal polynomial of $T$, and $q(z)$ be
+the minimal polynomial of $T/U$. 
+
+From exercise 5B.25 part (a),
+the minimal polynomial of $𝑇$ is a polynomial multiple of the
+minimal polynomial of the quotient operator $𝑇/𝑈$.
+
+Then the other part is exactly the same as part (a).
+
+$\square$
+
+### 5C.13
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
+Suppose there exists
+a subspace $𝑈$ of $𝑉$ that is invariant under $𝑇$ such that
+$𝑇|_𝑈$ has an upper-triangular matrix with respect to some basis of $𝑈$ 
+and also $𝑇/𝑈$ has an
+upper-triangular matrix with respect to some basis of $𝑉/𝑈$.
+Prove that $𝑇$ has
+an upper-triangular matrix with respect to some basis of $𝑉$.
+
+**Proof**:
+
+Let $p(z)$ be the minimal polynomial of $T$, $q(z)$ be that of
+$T|_U$ and $s(z)$ be that of $T/U$.
+
+From
+"5.44 necessary and sufficient condition to have an
+upper-triangular matrix",
+
+we have
+
+$$ 
+q(z) = (z-\alpha_1) \cdots (z-\alpha_l) \\
+s(z) = (z-\beta_1) \cdots (z-\beta_m)
+$$
+
+From the exercise 5B.25 (b) we know that
+(minimal polynomial of $𝑇|_𝑈$) $×$ (minimal polynomial of $𝑇/𝑈$)
+is a polynomial multiple of the minimal polynomial of 𝑇.
+
+Then due to unique factorization in $F[z]$ we have
+
+$$ 
+p(z) = (z-\gamma_1) \cdots (z-\gamma_k)
+$$
+
+Then again use 5.44, we know
+$𝑇$ has
+an upper-triangular matrix with respect to some basis of $𝑉$.
+
+$\square$
+
+### 5C.14
+
+Suppose $𝑉$ is finite-dimensional and
+$𝑇 ∈ ℒ(𝑉)$. Prove that $𝑇$ has an upper-
+triangular matrix with respect to some basis of $𝑉$
+if and only if the dual
+operator $𝑇'$ has an upper-triangular matrix with respect to
+some basis of the dual space $𝑉'$
+
+**Proof**:
+
+We use exercise 5B.28, which states
+that the minimal
+polynomial of $𝑇' ∈ ℒ(𝑉')$ equals the minimal polynomial of $𝑇$.
+
+And then we can use
+"5.44 necessary and sufficient condition to have an
+upper-triangular matrix" again.
+
+$\square$
+.
