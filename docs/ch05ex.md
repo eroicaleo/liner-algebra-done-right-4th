@@ -3708,4 +3708,253 @@ And then we can use
 upper-triangular matrix" again.
 
 $\square$
-.
+
+## Section 5D Diagonalizable Operators
+
+### 5D.1
+
+Suppose $𝑉$ is a finite-dimensional complex vector space and $𝑇 ∈ ℒ(𝑉)$.
+
+(a) Prove that if $𝑇^4 = 𝐼$, then $𝑇$ is diagonalizable.
+
+**Proof**: Since $T^4 - I = 0$ then $z^4 - 1$ is a multiple of $p$,
+which is the minimal polynomial of $T$.
+Also note
+
+$$
+z^4 - 1 = (z-1)(z+1)(z-i)(z+i)
+$$
+
+From "4.13 fundamental theorem of algebra, second version",
+we know both $z^4-1$ and $p$ has a unique factorization.
+So the zeros of $p$ can only be distinct numbers.
+Then apply
+"5.62 necessary and sufficient condition for diagonalizability",
+we know $T$ is diagonalizable.
+
+$\square$
+
+(b) Prove that if $𝑇^4 = 𝑇$, then $𝑇$ is diagonalizable.
+
+**Proof**: Since $T^4 - T = 0$ then $z^4 - z$ is a multiple of $p$,
+which is the minimal polynomial of $T$.
+Also note
+
+$$
+z^4 - z = z(z-1)(z-\frac{-1+\sqrt[]{3}i}{2})(z-\frac{-1-\sqrt[]{3}i}{2})
+$$
+
+From "4.13 fundamental theorem of algebra, second version",
+we know both $z^4-z$ and $p$ has a unique factorization.
+So the zeros of $p$ can only be distinct numbers.
+Then apply
+"5.62 necessary and sufficient condition for diagonalizability",
+we know $T$ is diagonalizable.
+
+$\square$
+
+(c) Give an example of an operator $𝑇 ∈ ℒ(𝐂2)$
+such that $𝑇^4 = 𝑇^2$ and $𝑇$ is not diagonalizable.
+
+**Solution**:
+
+Consider $T(x,y) = (y,0)$, then $T^2 = 0$.
+Since $T(0,1) = (1,0) \neq \lambda (0,1)$, then the degree of
+the minimal polynomial of $T$, i.e. $\deg p \geq 2$.
+So $p = z^2$.
+
+Then apply
+"5.62 necessary and sufficient condition for diagonalizability",
+we know $T$ is not diagonalizable.
+
+Furthermore $T^4 = (T^2)^2 = 0$.
+
+$\square$
+
+### 5D.2
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ has a diagonal matrix $𝐴$ with respect to some basis
+of $𝑉$. Prove that if $𝜆 ∈ 𝐅$, then $𝜆$ appears on the diagonal of $𝐴$ precisely
+$\dim 𝐸(𝜆, 𝑇)$ times.
+
+**Proof**:
+
+Assume $T$ has a diagonal matrix $𝐴$ w.r.t. the basis
+$v_1, \cdots, v_m$. And the elements on the diagonal matrix are
+$\lambda_1, \cdots, \lambda_m$.
+
+Since $T(v_i) = \lambda_i v_i$, then they are eigenvectors.
+
+If $\lambda$ is not an eigenvalue of $T$, then $\lambda \neq \lambda_i$,
+so it does not appear on the diagonal.
+Also $\dim E(\lambda, T) = 0$. So the conclusion holds.
+
+Now if $\lambda$ is an eigenvalue, and if it appears on the diagonal more
+than $k = \dim E(\lambda, T)$ times. It means we can find
+at least $k+1$ linearly independent vectors and they are all
+eigenvectors w.r.t. to eigenvalue $\lambda$. So they all belong
+to $E(\lambda, T)$. It means $\dim E(\lambda, T) > k$, which is
+impossible.
+
+So $\lambda$ appears on the diagonal at most $\dim E(\lambda, T)$ times.
+This is true of all eigenvalues.
+
+On the other hand, from "5.55 conditions equivalent to diagonalizability"
+we have
+
+$$ 
+\dim V = \dim E(\lambda_1, T) + \cdots + \dim E(\lambda_m, T)
+$$
+
+It means, $\lambda$ cannot appear on the diagonal less than
+$\dim E(\lambda, T)$ times. Otherwise the righ side of the above
+equation is less than the left side.
+
+So the conclusion holds.
+
+$\square$
+
+### 5D.3
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$. Prove that if the 
+operator $𝑇$
+is diagonalizable, then $𝑉 = \text{null } 𝑇 ⊕ \text{range } 𝑇$.
+
+**Proof**:
+
+If $\text{null } T = \{0\}$, then $T$ is invertible.
+So $V = \text{range } T$, So $𝑉 = \text{null } 𝑇 ⊕ \text{range } 𝑇$.
+
+Now assume $\text{null } T \neq \{0\}$, then note
+$\text{null } T = E(0,T)$.
+
+Since $T$ is diagonalizable, then from
+"5.55 conditions equivalent to diagonalizability",
+we know $𝑉$
+
+$V = E(\lambda_0, T) \oplus E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)$,
+where $\lambda_0 = 0, \lambda_i \neq 0$ for $i > 0$ .
+
+Note $E(\lambda_0, T) = \text{null } T$, so we just need to
+prove
+$\text{range } T = E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)$.
+
+Let $v \in V$, then since
+$V = E(\lambda_0, T) \oplus E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)$,
+we can pick $v_i \in E(\lambda_i, T)$ sucht that
+
+$v = v_0 + v_1 + \cdots + v_m$
+Then
+
+$$
+\begin{align*}
+T v &= Tv_0 + Tv_1 + \cdots + Tv_m \\
+&= \lambda_0 v_0 + \lambda_1 v_1 + \cdots + \lambda_m v_m \\
+&= \lambda_1 v_1 + \cdots + \lambda_m v_m \\
+& \in E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)
+\end{align*}
+$$
+
+Which means $\text{range } T \subseteq E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)$ 
+
+On the other hand, if
+$v = v_1 + \cdots + v_m \in E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)$, then let $w = 1/ \lambda_1 \cdot v_1 + \cdots + 1/ \lambda_m \cdot v_m$, we have $T(w) = v$.
+
+So $\text{range } T \supseteq E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)$.
+
+In summary, $\text{range } T = E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)$
+
+Then we have $𝑉 = \text{null } 𝑇 ⊕ \text{range } 𝑇$.
+
+$\square$
+
+### 5D.5
+
+Suppose $𝑉$ is a finite-dimensional complex vector space and $𝑇 ∈ ℒ(𝑉)$.
+Prove that $𝑇$ is diagonalizable if and only if
+
+$$ 
+V = \text{null } (T- \lambda I) \oplus \text{range } (T - \lambda I)
+$$
+
+for every $\lambda \in \mathbb{C}$.
+
+**Proof**:
+
+$\Rightarrow$
+
+We use the exercise 5D.3.
+If $T$ is diagonalizable, then using
+"5.55 conditions equivalent to diagonalizability"
+
+we can find a basis $v_1, \cdots, v_m$ which are all eigenvectors
+of $T$.
+
+In fact, for any $\lambda$, they are also eigenvectors of $T - \lambda I$.
+To see this, note
+
+$$
+\begin{align*}
+(T - \lambda I)(v_j) = T v_j - \lambda I v_j = (\lambda_j - \lambda) v_j
+\end{align*} 
+$$
+
+So again use "5.55 conditions equivalent to diagonalizability",
+we know $T - \lambda I$ is also diagonalizable.
+Then use 5D.3, we have
+
+$$ 
+V = \text{null } (T- \lambda I) \oplus \text{range } (T - \lambda I)
+$$
+
+$\Leftarrow$
+
+Strategy:
+
+Assume $Tu \neq 0$ but $T^2 u = 0$, can we prove
+it's not possible to write
+
+$$ 
+V = \text{null } T \oplus \text{range } T
+$$
+
+Of course we can do it,
+because $Tu \in \text{null } T \cap \text{range } T$.
+
+Put it formally, let $p(z)$ be the minimal polynomial of $T$.
+Since $V$ is a complex vector space,
+$p(z) = (z - \lambda_1) \cdots (z - \lambda_m)$
+
+If $\lambda_i$ are not all different, then we can write $p(z)$ as
+
+$$ 
+p(z) = (z-\lambda)^2 q(z)
+$$
+
+We can find $u$ such that $w = (T - \lambda I)q(T)u \neq 0 \neq 0$, 
+otherwise
+$(T - \lambda I)q(T) = 0$ and its degree is less than $p(z)$ which
+is contradictary to the assumption that $p(z)$ is the minimal
+polynomial.
+
+Then $w \in \text{null } T - \lambda I$ since
+
+$$ 
+(T - \lambda I)w = (T - \lambda I)^2q(T)u = p(T) u = 0
+$$
+
+On other other hand $w = (T - \lambda I)q(T)u$, so
+$w \in \text{range } T - \lambda I$.
+
+So $w \in \text{null } T - \lambda I \cap \text{range } T - \lambda I$.
+
+Then
+$V \neq \text{null } (T- \lambda I) \oplus \text{range } (T - \lambda I)$
+
+Which is contradictary to our assumption.
+
+Then $\lambda_i$ are all distinct. Then we can use
+"5.62 necessary and sufficient condition for diagonalizability"
+To conclude $𝑇$ is diagonalizable.
+
+$\square$

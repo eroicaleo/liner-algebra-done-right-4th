@@ -646,3 +646,75 @@ matrix with respect to the basis
 $u_1, \cdots, u_M, v_1, \cdots, v_N$
 
 $\square$
+
+## Section 5D
+
+### 5.48 definition: diagonal matrix
+
+A *diagonal matrix* is a square matrix that is 0 everywhere except possibly on
+the diagonal.
+
+### 5.50 definition: diagonalizable
+
+An operator on $𝑉$ is called diagonalizable if the operator has a diagonal 
+matrix with respect to some basis of $𝑉$.
+
+### 5.52 definition: eigenspace, $𝐸(𝜆, 𝑇)$
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝜆 ∈ 𝐅$.
+The eigenspace of $𝑇$ corresponding to $𝜆$ is
+the subspace $𝐸(𝜆, 𝑇)$ of $𝑉$ defined by
+
+$$ 
+𝐸(𝜆, 𝑇) = \text{null } (𝑇 − 𝜆𝐼) = \{𝑣 ∈ 𝑉 ∶ 𝑇𝑣 = 𝜆𝑣\}.
+$$
+
+Hence $𝐸(𝜆, 𝑇)$ is the set of all eigenvectors of $𝑇$ corresponding to 
+$𝜆$, along with the $0$ vector.
+
+> For $𝑇 ∈ ℒ(𝑉)$ and $𝜆 ∈ 𝐅$, the set $𝐸(𝜆, 𝑇)$ is a subspace of
+> $𝑉$ because 
+> the null space of each linear map on $𝑉$ is a subspace of $𝑉$. The 
+> definitions imply that $𝜆$ is
+> an eigenvalue of $𝑇$ if and only if $𝐸(𝜆, 𝑇) ≠ \{0\}$.
+
+### 5.54 sum of eigenspaces is a direct sum
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ and $𝜆_1, …, 𝜆_𝑚$ are distinct eigenvalues of $𝑇$. 
+Then 
+
+$$ 
+𝐸(𝜆_1, 𝑇) + ⋯ + 𝐸(𝜆_𝑚, 𝑇)
+$$
+
+is a direct sum. Furthermore, if $𝑉$ is finite-dimensional, then
+
+$$ 
+\dim 𝐸(𝜆_1, 𝑇) +⋯ + \dim 𝐸(𝜆_𝑚, 𝑇) ≤ \dim 𝑉.
+$$
+
+**Proof**:
+
+Assume
+
+$$ 
+v_1 + \cdots + v_m = 0
+$$
+
+Since eigenvectors corresponding to distinct
+eigenvalues are linearly independent (by 5.11),
+this implies that each $𝑣_𝑘$ equals $0$.
+Thus $𝐸(𝜆_1, 𝑇) +⋯ + 𝐸(𝜆_𝑚, 𝑇)$ is a direct sum (by 1.45), as desired.
+
+$$
+\begin{align*}
+\dim 𝐸(𝜆_1, 𝑇) +⋯ + \dim 𝐸(𝜆_𝑚, 𝑇)
+&= \dim(𝐸(𝜆_1, 𝑇) ⊕ ⋯ ⊕ 𝐸(𝜆_𝑚, 𝑇)) \\
+&≤ \dim 𝑉
+\end{align*} 
+$$
+
+where the first line follows from 3.94 and
+the second line follows from 2.37.
+
+$\square$
