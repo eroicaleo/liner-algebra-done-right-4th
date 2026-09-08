@@ -266,6 +266,18 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-5d-diagonalizable-operators">Section 5D Diagonalizable Operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#5d1">5D.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5d2">5D.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5d3">5D.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5d5">5D.5</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -3471,7 +3483,222 @@ polynomial of <script type="math/tex">𝑇' ∈ ℒ(𝑉')</script> equals the m
 upper-triangular matrix" again.</p>
 <p>
 <script type="math/tex">\square</script>
-.</p>
+</p>
+<h2 id="section-5d-diagonalizable-operators">Section 5D Diagonalizable Operators</h2>
+<h3 id="5d1">5D.1</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is a finite-dimensional complex vector space and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.</p>
+<p>(a) Prove that if <script type="math/tex">𝑇^4 = 𝐼</script>, then <script type="math/tex">𝑇</script> is diagonalizable.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">T^4 - I = 0</script> then <script type="math/tex">z^4 - 1</script> is a multiple of <script type="math/tex">p</script>,
+which is the minimal polynomial of <script type="math/tex">T</script>.
+Also note</p>
+<p>
+<script type="math/tex; mode=display">
+z^4 - 1 = (z-1)(z+1)(z-i)(z+i)
+</script>
+</p>
+<p>From "4.13 fundamental theorem of algebra, second version",
+we know both <script type="math/tex">z^4-1</script> and <script type="math/tex">p</script> has a unique factorization.
+So the zeros of <script type="math/tex">p</script> can only be distinct numbers.
+Then apply
+"5.62 necessary and sufficient condition for diagonalizability",
+we know <script type="math/tex">T</script> is diagonalizable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Prove that if <script type="math/tex">𝑇^4 = 𝑇</script>, then <script type="math/tex">𝑇</script> is diagonalizable.</p>
+<p><strong>Proof</strong>: Since <script type="math/tex">T^4 - T = 0</script> then <script type="math/tex">z^4 - z</script> is a multiple of <script type="math/tex">p</script>,
+which is the minimal polynomial of <script type="math/tex">T</script>.
+Also note</p>
+<p>
+<script type="math/tex; mode=display">
+z^4 - z = z(z-1)(z-\frac{-1+\sqrt[]{3}i}{2})(z-\frac{-1-\sqrt[]{3}i}{2})
+</script>
+</p>
+<p>From "4.13 fundamental theorem of algebra, second version",
+we know both <script type="math/tex">z^4-z</script> and <script type="math/tex">p</script> has a unique factorization.
+So the zeros of <script type="math/tex">p</script> can only be distinct numbers.
+Then apply
+"5.62 necessary and sufficient condition for diagonalizability",
+we know <script type="math/tex">T</script> is diagonalizable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Give an example of an operator <script type="math/tex">𝑇 ∈ ℒ(𝐂2)</script>
+such that <script type="math/tex">𝑇^4 = 𝑇^2</script> and <script type="math/tex">𝑇</script> is not diagonalizable.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider <script type="math/tex">T(x,y) = (y,0)</script>, then <script type="math/tex">T^2 = 0</script>.
+Since <script type="math/tex">T(0,1) = (1,0) \neq \lambda (0,1)</script>, then the degree of
+the minimal polynomial of <script type="math/tex">T</script>, i.e. <script type="math/tex">\deg p \geq 2</script>.
+So <script type="math/tex">p = z^2</script>.</p>
+<p>Then apply
+"5.62 necessary and sufficient condition for diagonalizability",
+we know <script type="math/tex">T</script> is not diagonalizable.</p>
+<p>Furthermore <script type="math/tex">T^4 = (T^2)^2 = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5d2">5D.2</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> has a diagonal matrix <script type="math/tex">𝐴</script> with respect to some basis
+of <script type="math/tex">𝑉</script>. Prove that if <script type="math/tex">𝜆 ∈ 𝐅</script>, then <script type="math/tex">𝜆</script> appears on the diagonal of <script type="math/tex">𝐴</script> precisely
+<script type="math/tex">\dim 𝐸(𝜆, 𝑇)</script> times.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">T</script> has a diagonal matrix <script type="math/tex">𝐴</script> w.r.t. the basis
+<script type="math/tex">v_1, \cdots, v_m</script>. And the elements on the diagonal matrix are
+<script type="math/tex">\lambda_1, \cdots, \lambda_m</script>.</p>
+<p>Since <script type="math/tex">T(v_i) = \lambda_i v_i</script>, then they are eigenvectors.</p>
+<p>If <script type="math/tex">\lambda</script> is not an eigenvalue of <script type="math/tex">T</script>, then <script type="math/tex">\lambda \neq \lambda_i</script>,
+so it does not appear on the diagonal.
+Also <script type="math/tex">\dim E(\lambda, T) = 0</script>. So the conclusion holds.</p>
+<p>Now if <script type="math/tex">\lambda</script> is an eigenvalue, and if it appears on the diagonal more
+than <script type="math/tex">k = \dim E(\lambda, T)</script> times. It means we can find
+at least <script type="math/tex">k+1</script> linearly independent vectors and they are all
+eigenvectors w.r.t. to eigenvalue <script type="math/tex">\lambda</script>. So they all belong
+to <script type="math/tex">E(\lambda, T)</script>. It means <script type="math/tex">\dim E(\lambda, T) > k</script>, which is
+impossible.</p>
+<p>So <script type="math/tex">\lambda</script> appears on the diagonal at most <script type="math/tex">\dim E(\lambda, T)</script> times.
+This is true of all eigenvalues.</p>
+<p>On the other hand, from "5.55 conditions equivalent to diagonalizability"
+we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim V = \dim E(\lambda_1, T) + \cdots + \dim E(\lambda_m, T)
+</script>
+</p>
+<p>It means, <script type="math/tex">\lambda</script> cannot appear on the diagonal less than
+<script type="math/tex">\dim E(\lambda, T)</script> times. Otherwise the righ side of the above
+equation is less than the left side.</p>
+<p>So the conclusion holds.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5d3">5D.3</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Prove that if the 
+operator <script type="math/tex">𝑇</script>
+is diagonalizable, then <script type="math/tex">𝑉 = \text{null } 𝑇 ⊕ \text{range } 𝑇</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>If <script type="math/tex">\text{null } T = \{0\}</script>, then <script type="math/tex">T</script> is invertible.
+So <script type="math/tex">V = \text{range } T</script>, So <script type="math/tex">𝑉 = \text{null } 𝑇 ⊕ \text{range } 𝑇</script>.</p>
+<p>Now assume <script type="math/tex">\text{null } T \neq \{0\}</script>, then note
+<script type="math/tex">\text{null } T = E(0,T)</script>.</p>
+<p>Since <script type="math/tex">T</script> is diagonalizable, then from
+"5.55 conditions equivalent to diagonalizability",
+we know <script type="math/tex">𝑉</script>
+</p>
+<p>
+<script type="math/tex">V = E(\lambda_0, T) \oplus E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)</script>,
+where <script type="math/tex">\lambda_0 = 0, \lambda_i \neq 0</script> for <script type="math/tex">i > 0</script> .</p>
+<p>Note <script type="math/tex">E(\lambda_0, T) = \text{null } T</script>, so we just need to
+prove
+<script type="math/tex">\text{range } T = E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)</script>.</p>
+<p>Let <script type="math/tex">v \in V</script>, then since
+<script type="math/tex">V = E(\lambda_0, T) \oplus E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)</script>,
+we can pick <script type="math/tex">v_i \in E(\lambda_i, T)</script> sucht that</p>
+<p>
+<script type="math/tex">v = v_0 + v_1 + \cdots + v_m</script>
+Then</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T v &= Tv_0 + Tv_1 + \cdots + Tv_m \\
+&= \lambda_0 v_0 + \lambda_1 v_1 + \cdots + \lambda_m v_m \\
+&= \lambda_1 v_1 + \cdots + \lambda_m v_m \\
+& \in E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)
+\end{align*}
+</script>
+</p>
+<p>Which means <script type="math/tex">\text{range } T \subseteq E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)</script>
+</p>
+<p>On the other hand, if
+<script type="math/tex">v = v_1 + \cdots + v_m \in E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)</script>, then let <script type="math/tex">w = 1/ \lambda_1 \cdot v_1 + \cdots + 1/ \lambda_m \cdot v_m</script>, we have <script type="math/tex">T(w) = v</script>.</p>
+<p>So <script type="math/tex">\text{range } T \supseteq E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)</script>.</p>
+<p>In summary, <script type="math/tex">\text{range } T = E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)</script>
+</p>
+<p>Then we have <script type="math/tex">𝑉 = \text{null } 𝑇 ⊕ \text{range } 𝑇</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5d5">5D.5</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is a finite-dimensional complex vector space and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Prove that <script type="math/tex">𝑇</script> is diagonalizable if and only if</p>
+<p>
+<script type="math/tex; mode=display"> 
+V = \text{null } (T- \lambda I) \oplus \text{range } (T - \lambda I)
+</script>
+</p>
+<p>for every <script type="math/tex">\lambda \in \mathbb{C}</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">\Rightarrow</script>
+</p>
+<p>We use the exercise 5D.3.
+If <script type="math/tex">T</script> is diagonalizable, then using
+"5.55 conditions equivalent to diagonalizability"</p>
+<p>we can find a basis <script type="math/tex">v_1, \cdots, v_m</script> which are all eigenvectors
+of <script type="math/tex">T</script>.</p>
+<p>In fact, for any <script type="math/tex">\lambda</script>, they are also eigenvectors of <script type="math/tex">T - \lambda I</script>.
+To see this, note</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(T - \lambda I)(v_j) = T v_j - \lambda I v_j = (\lambda_j - \lambda) v_j
+\end{align*} 
+</script>
+</p>
+<p>So again use "5.55 conditions equivalent to diagonalizability",
+we know <script type="math/tex">T - \lambda I</script> is also diagonalizable.
+Then use 5D.3, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+V = \text{null } (T- \lambda I) \oplus \text{range } (T - \lambda I)
+</script>
+</p>
+<p>
+<script type="math/tex">\Leftarrow</script>
+</p>
+<p>Strategy:</p>
+<p>Assume <script type="math/tex">Tu \neq 0</script> but <script type="math/tex">T^2 u = 0</script>, can we prove
+it's not possible to write</p>
+<p>
+<script type="math/tex; mode=display"> 
+V = \text{null } T \oplus \text{range } T
+</script>
+</p>
+<p>Of course we can do it,
+because <script type="math/tex">Tu \in \text{null } T \cap \text{range } T</script>.</p>
+<p>Put it formally, let <script type="math/tex">p(z)</script> be the minimal polynomial of <script type="math/tex">T</script>.
+Since <script type="math/tex">V</script> is a complex vector space,
+<script type="math/tex">p(z) = (z - \lambda_1) \cdots (z - \lambda_m)</script>
+</p>
+<p>If <script type="math/tex">\lambda_i</script> are not all different, then we can write <script type="math/tex">p(z)</script> as</p>
+<p>
+<script type="math/tex; mode=display"> 
+p(z) = (z-\lambda)^2 q(z)
+</script>
+</p>
+<p>We can find <script type="math/tex">u</script> such that <script type="math/tex">w = (T - \lambda I)q(T)u \neq 0 \neq 0</script>, 
+otherwise
+<script type="math/tex">(T - \lambda I)q(T) = 0</script> and its degree is less than <script type="math/tex">p(z)</script> which
+is contradictary to the assumption that <script type="math/tex">p(z)</script> is the minimal
+polynomial.</p>
+<p>Then <script type="math/tex">w \in \text{null } T - \lambda I</script> since</p>
+<p>
+<script type="math/tex; mode=display"> 
+(T - \lambda I)w = (T - \lambda I)^2q(T)u = p(T) u = 0
+</script>
+</p>
+<p>On other other hand <script type="math/tex">w = (T - \lambda I)q(T)u</script>, so
+<script type="math/tex">w \in \text{range } T - \lambda I</script>.</p>
+<p>So <script type="math/tex">w \in \text{null } T - \lambda I \cap \text{range } T - \lambda I</script>.</p>
+<p>Then
+<script type="math/tex">V \neq \text{null } (T- \lambda I) \oplus \text{range } (T - \lambda I)</script>
+</p>
+<p>Which is contradictary to our assumption.</p>
+<p>Then <script type="math/tex">\lambda_i</script> are all distinct. Then we can use
+"5.62 necessary and sufficient condition for diagonalizability"
+To conclude <script type="math/tex">𝑇</script> is diagonalizable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>

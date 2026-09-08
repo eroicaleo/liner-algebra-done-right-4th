@@ -138,6 +138,18 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section-5d">Section 5D</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#548-definition-diagonal-matrix">5.48 definition: diagonal matrix</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#550-definition-diagonalizable">5.50 definition: diagonalizable</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#552-definition-eigenspace-e-t">5.52 definition: eigenspace, 𝐸(𝜆, 𝑇)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#554-sum-of-eigenspaces-is-a-direct-sum">5.54 sum of eigenspaces is a direct sum</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -707,6 +719,71 @@ we have <script type="math/tex">T u_k = T|_U (u_k) \in \text{span}(u_1, \cdots, 
 matrix with respect to the basis
 <script type="math/tex">u_1, \cdots, u_M, v_1, \cdots, v_N</script>
 </p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="section-5d">Section 5D</h2>
+<h3 id="548-definition-diagonal-matrix">5.48 definition: diagonal matrix</h3>
+<p>A <em>diagonal matrix</em> is a square matrix that is 0 everywhere except possibly on
+the diagonal.</p>
+<h3 id="550-definition-diagonalizable">5.50 definition: diagonalizable</h3>
+<p>An operator on <script type="math/tex">𝑉</script> is called diagonalizable if the operator has a diagonal 
+matrix with respect to some basis of <script type="math/tex">𝑉</script>.</p>
+<h3 id="552-definition-eigenspace-e-t">5.52 definition: eigenspace, <script type="math/tex">𝐸(𝜆, 𝑇)</script>
+</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝜆 ∈ 𝐅</script>.
+The eigenspace of <script type="math/tex">𝑇</script> corresponding to <script type="math/tex">𝜆</script> is
+the subspace <script type="math/tex">𝐸(𝜆, 𝑇)</script> of <script type="math/tex">𝑉</script> defined by</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝐸(𝜆, 𝑇) = \text{null } (𝑇 − 𝜆𝐼) = \{𝑣 ∈ 𝑉 ∶ 𝑇𝑣 = 𝜆𝑣\}.
+</script>
+</p>
+<p>Hence <script type="math/tex">𝐸(𝜆, 𝑇)</script> is the set of all eigenvectors of <script type="math/tex">𝑇</script> corresponding to 
+<script type="math/tex">𝜆</script>, along with the <script type="math/tex">0</script> vector.</p>
+<blockquote>
+<p>For <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝜆 ∈ 𝐅</script>, the set <script type="math/tex">𝐸(𝜆, 𝑇)</script> is a subspace of
+<script type="math/tex">𝑉</script> because 
+the null space of each linear map on <script type="math/tex">𝑉</script> is a subspace of <script type="math/tex">𝑉</script>. The 
+definitions imply that <script type="math/tex">𝜆</script> is
+an eigenvalue of <script type="math/tex">𝑇</script> if and only if <script type="math/tex">𝐸(𝜆, 𝑇) ≠ \{0\}</script>.</p>
+</blockquote>
+<h3 id="554-sum-of-eigenspaces-is-a-direct-sum">5.54 sum of eigenspaces is a direct sum</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝜆_1, …, 𝜆_𝑚</script> are distinct eigenvalues of <script type="math/tex">𝑇</script>. 
+Then </p>
+<p>
+<script type="math/tex; mode=display"> 
+𝐸(𝜆_1, 𝑇) + ⋯ + 𝐸(𝜆_𝑚, 𝑇)
+</script>
+</p>
+<p>is a direct sum. Furthermore, if <script type="math/tex">𝑉</script> is finite-dimensional, then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim 𝐸(𝜆_1, 𝑇) +⋯ + \dim 𝐸(𝜆_𝑚, 𝑇) ≤ \dim 𝑉.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+v_1 + \cdots + v_m = 0
+</script>
+</p>
+<p>Since eigenvectors corresponding to distinct
+eigenvalues are linearly independent (by 5.11),
+this implies that each <script type="math/tex">𝑣_𝑘</script> equals <script type="math/tex">0</script>.
+Thus <script type="math/tex">𝐸(𝜆_1, 𝑇) +⋯ + 𝐸(𝜆_𝑚, 𝑇)</script> is a direct sum (by 1.45), as desired.</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dim 𝐸(𝜆_1, 𝑇) +⋯ + \dim 𝐸(𝜆_𝑚, 𝑇)
+&= \dim(𝐸(𝜆_1, 𝑇) ⊕ ⋯ ⊕ 𝐸(𝜆_𝑚, 𝑇)) \\
+&≤ \dim 𝑉
+\end{align*} 
+</script>
+</p>
+<p>where the first line follows from 3.94 and
+the second line follows from 2.37.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
