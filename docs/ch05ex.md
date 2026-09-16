@@ -3868,6 +3868,62 @@ Then we have $𝑉 = \text{null } 𝑇 ⊕ \text{range } 𝑇$.
 
 $\square$
 
+### 5D.4
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$.
+Prove that the following are equivalent.
+
+(a) $V = \text{null } T \oplus \text{range } T$
+
+(b) $V = \text{null } T + \text{range } T$
+
+(c) $\text{null } T \cap \text{range } T = \{0\}$
+
+**Proof**:
+
+$(a) \Rightarrow (b)$
+
+Since $\text{null } T \oplus \text{range } T = \text{null } T + \text{range } T$, so $V = \text{null } T + \text{range } T$.
+
+$(b) \Rightarrow (c)$
+
+From fundamental theorem of linear mapping, we know
+
+$$ 
+\dim V = \dim \text{null } T + \dim \text{range } T
+$$
+
+From "2.43 dimension of a sum", we know
+
+$$ 
+\dim \text{null } T + \text{range } T =
+\dim \text{null } T + \dim \text{range } T -
+\dim \text{null } T \cap \text{range } T
+$$
+
+Then we have $\text{null } T \cap \text{range } T = \{0\}$
+
+$(c) \Rightarrow (a)$
+
+From (c), we know $\text{null } T + \text{range } T$ is a direct sum.
+
+Then from "2.43 dimension of a sum", fundamental theorem of
+linear mapping and (c), we know
+
+$$
+\begin{align*}
+\dim \text{null } T \oplus \text{range } T 
+&= \dim \text{null } T + \text{range } T \\
+&= \dim \text{null } T + \dim \text{range } T -
+\dim \text{null } T \cap \text{range } T \\
+&= \dim V
+\end{align*} 
+$$
+
+So $V = \text{null } T \oplus \text{range } T$
+
+$\square$
+
 ### 5D.5
 
 Suppose $𝑉$ is a finite-dimensional complex vector space and $𝑇 ∈ ℒ(𝑉)$.
