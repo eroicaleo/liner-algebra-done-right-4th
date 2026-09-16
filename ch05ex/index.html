@@ -274,6 +274,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5d3">5D.3</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5d4">5D.4</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#5d5">5D.5</a>
     </li>
         </ul>
@@ -3614,6 +3616,61 @@ T v &= Tv_0 + Tv_1 + \cdots + Tv_m \\
 <p>In summary, <script type="math/tex">\text{range } T = E(\lambda_1, T) \oplus \cdots \oplus E(\lambda_m, T)</script>
 </p>
 <p>Then we have <script type="math/tex">𝑉 = \text{null } 𝑇 ⊕ \text{range } 𝑇</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5d4">5D.4</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>.
+Prove that the following are equivalent.</p>
+<p>(a) <script type="math/tex">V = \text{null } T \oplus \text{range } T</script>
+</p>
+<p>(b) <script type="math/tex">V = \text{null } T + \text{range } T</script>
+</p>
+<p>(c) <script type="math/tex">\text{null } T \cap \text{range } T = \{0\}</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">(a) \Rightarrow (b)</script>
+</p>
+<p>Since <script type="math/tex">\text{null } T \oplus \text{range } T = \text{null } T + \text{range } T</script>, so <script type="math/tex">V = \text{null } T + \text{range } T</script>.</p>
+<p>
+<script type="math/tex">(b) \Rightarrow (c)</script>
+</p>
+<p>From fundamental theorem of linear mapping, we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim V = \dim \text{null } T + \dim \text{range } T
+</script>
+</p>
+<p>From "2.43 dimension of a sum", we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim \text{null } T + \text{range } T =
+\dim \text{null } T + \dim \text{range } T -
+\dim \text{null } T \cap \text{range } T
+</script>
+</p>
+<p>Then we have <script type="math/tex">\text{null } T \cap \text{range } T = \{0\}</script>
+</p>
+<p>
+<script type="math/tex">(c) \Rightarrow (a)</script>
+</p>
+<p>From (c), we know <script type="math/tex">\text{null } T + \text{range } T</script> is a direct sum.</p>
+<p>Then from "2.43 dimension of a sum", fundamental theorem of
+linear mapping and (c), we know</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dim \text{null } T \oplus \text{range } T 
+&= \dim \text{null } T + \text{range } T \\
+&= \dim \text{null } T + \dim \text{range } T -
+\dim \text{null } T \cap \text{range } T \\
+&= \dim V
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">V = \text{null } T \oplus \text{range } T</script>
+</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
