@@ -278,6 +278,16 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#5d5">5D.5</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5d6">5D.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5d7">5D.7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5d8">5D.8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5d9">5D.9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5d10">5D.10</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -3753,6 +3763,212 @@ polynomial.</p>
 <p>Then <script type="math/tex">\lambda_i</script> are all distinct. Then we can use
 "5.62 necessary and sufficient condition for diagonalizability"
 To conclude <script type="math/tex">𝑇</script> is diagonalizable.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5d6">5D.6</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝐅^5)</script> and <script type="math/tex">\dim 𝐸(8, 𝑇) = 4</script>. Prove that <script type="math/tex">𝑇 − 2𝐼</script> or 
+<script type="math/tex">𝑇 − 6𝐼</script> is invertible.</p>
+<p><strong>Proof</strong>: We prove by contradition.</p>
+<p>Assume <script type="math/tex">𝑇 − 2𝐼</script> and <script type="math/tex">𝑇 − 6𝐼</script> are all non-invertible. Then
+<script type="math/tex">\text{null } T-2I \neq \{0\}</script> and <script type="math/tex">\text{null } T-6I \neq \{0\}</script>.</p>
+<p>Then <script type="math/tex">\dim E(2,T) \geq 1</script> and <script type="math/tex">\dim E(6,T) \geq 1</script>.</p>
+<p>So <script type="math/tex">\dim E(2,T) + \dim E(6,T) + \dim E(8,T) \geq 6 > 5 = \dim F^5</script>.</p>
+<p>This is contradictary to "5.54 sum of eigenspaces is a direct sum".</p>
+<p>So Either <script type="math/tex">\text{null } T-2I = \{0\}</script> or <script type="math/tex">\text{null } T-6I = \{0\}</script>.</p>
+<p>So either <script type="math/tex">𝑇 − 2𝐼</script> or 
+<script type="math/tex">𝑇 − 6𝐼</script> is invertible.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5d7">5D.7</h3>
+<p>Suppose <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script> is invertible. Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+E(\lambda,T) = E(\frac{1}{\lambda},T^{-1})
+</script>
+</p>
+<p>for every <script type="math/tex">𝜆 ∈ 𝐅</script> with <script type="math/tex">𝜆 ≠ 0</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">u \in E(\lambda,T)</script>. Since <script type="math/tex">T</script> is invertible, then <script type="math/tex">T</script> is injective.
+Furthermore, <script type="math/tex">E(\lambda,T)</script> is invariant under <script type="math/tex">T</script>, so <script type="math/tex">T|_{E(\lambda,T)}</script>
+is well defined and is also injective, so <script type="math/tex">T|_{E(\lambda,T)}</script> is invertible.</p>
+<p>So we can find <script type="math/tex">v \in E(\lambda,T)</script> such that <script type="math/tex">T(v) = u</script>.
+So <script type="math/tex">\lambda v = u</script>, i.e. <script type="math/tex">v = \frac{1}{\lambda}u</script> . </p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T^{-1}(u)
+&= T^{-1} (T(v)) \\
+&= v \\
+&= \frac{1}{\lambda} u
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">u \in E(\frac{1}{\lambda},T^{-1})</script>, then
+<script type="math/tex">E(\lambda,T) \subseteq E(\frac{1}{\lambda},T^{-1})</script>.</p>
+<p>Then if we replace <script type="math/tex">T</script> with <script type="math/tex">T^{-1}</script>, and replace
+<script type="math/tex">T^{-1}</script> with <script type="math/tex">T</script>, and replace <script type="math/tex">\lambda</script> with <script type="math/tex">\lambda^{-1}</script>,
+we can show
+<script type="math/tex; mode=display"> 
+E(\frac{1}{\lambda},T^{-1}) \subseteq E(\lambda,T)
+</script>
+</p>
+<p>So <script type="math/tex">E(\frac{1}{\lambda},T^{-1}) = E(\lambda,T)</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5d8">5D.8</h3>
+<p>Suppose <script type="math/tex">𝑉</script> is finite-dimensional and <script type="math/tex">𝑇 ∈ ℒ(𝑉)</script>. Let
+<script type="math/tex">𝜆_1, …, 𝜆_𝑚</script> denote the
+distinct nonzero eigenvalues of <script type="math/tex">𝑇</script>. Prove that</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim E(\lambda_1,T) + \cdots + \dim E(\lambda_m,T)
+\leq \text{dim range } T
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>if <script type="math/tex">\lambda \neq 0</script> and <script type="math/tex">u \in E(\lambda,T)</script>, then <script type="math/tex">T(u) = \lambda u</script>, so
+<script type="math/tex">u = \frac{1}{\lambda} T(u) = T (\frac{1}{\lambda}u) \in \text{range } T</script>.</p>
+<p>Then it means <script type="math/tex">E(\lambda,T) \subseteq \text{range } T</script>. So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+E(\lambda_1,T) + \cdots + E(\lambda_m,T) \subseteq \text{range } T
+</script>
+</p>
+<p>Then from "5.54 sum of eigenspaces is a direct sum", we can know</p>
+<p>
+<script type="math/tex; mode=display"> 
+E(\lambda_1,T) \oplus \cdots \oplus E(\lambda_m,T) \subseteq \text{range } T
+</script>
+</p>
+<p>Then from "3.94 a sum is a direct sum if and only if dimensions add up",
+we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim E(\lambda_1,T) + \cdots + \dim E(\lambda_m,T) =
+\dim E(\lambda_1,T) \oplus \cdots \oplus E(\lambda_m,T)
+</script>
+</p>
+<p>So, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim E(\lambda_1,T) + \cdots + \dim E(\lambda_m,T)
+\leq \text{dim range } T
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5d9">5D.9</h3>
+<p>Suppose <script type="math/tex">𝑅, 𝑇 ∈ ℒ(𝐅^3)</script> each have <script type="math/tex">2, 6, 7</script> as eigenvalues. Prove that 
+there
+exists an invertible operator <script type="math/tex">𝑆 ∈ ℒ(𝐅^3)</script> such that <script type="math/tex">𝑅 = S^{-1} 𝑇𝑆</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">V = F^{3}</script>, since <script type="math/tex">\dim V = 3</script> and <script type="math/tex">R, T</script> have 3 different
+eigenvalues. Then by
+"5.58 enough eigenvalues implies diagonalizability", we know
+both <script type="math/tex">R, T</script> have diagonal matrices under some basis.</p>
+<p>Assume <script type="math/tex">R</script> has a basis <script type="math/tex">u_1, u_2, u_3</script> and
+<script type="math/tex; mode=display"> 
+R(u_1) = 2 u_1,
+R(u_2) = 6 u_2,
+R(u_3) = 7 u_3
+</script>
+</p>
+<p>Similarly, assume <script type="math/tex">T</script> has a basis <script type="math/tex">v_1, v_2, v_3</script> and</p>
+<p>
+<script type="math/tex; mode=display"> 
+T(v_1) = 2 v_1,
+T(v_2) = 6 v_2,
+T(v_3) = 7 v_3
+</script>
+</p>
+<p>Then define <script type="math/tex">S</script> as to be</p>
+<p>
+<script type="math/tex; mode=display"> 
+S(u_1) = v_1,
+S(u_2) = v_2,
+S(u_3) = v_3
+</script>
+</p>
+<p>
+<script type="math/tex">S</script> is invertible since <script type="math/tex">S</script> is injective.
+We can also see <script type="math/tex">S^{-1}</script> satisfy:</p>
+<p>
+<script type="math/tex; mode=display"> 
+S^{-1}(v_1) = u_1,
+S^{-1}(v_2) = u_2,
+S^{-1}(v_3) = u_3
+</script>
+</p>
+<p>Then note</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+S^{-1} TS (u_1)
+&= S^{-1} T(v_1) \\
+&= S^{-1} (2 v_1) \\
+&= 2 S^{-1} (v_1) \\
+&= 2 u_1 \\
+&= R(u_1) \\
+\end{align*} 
+</script>
+</p>
+<p>The same calculation can be applied to <script type="math/tex">u_2, u_3</script>.
+Since <script type="math/tex">u_1, u_2, u_3</script> is a basis of of <script type="math/tex">R</script>, and
+when <script type="math/tex">R</script> and <script type="math/tex">S^{-1}TS</script> are applied to them the results are the same.
+So <script type="math/tex">R = S^{-1}TS</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="5d10">5D.10</h3>
+<p>Find <script type="math/tex">𝑅, 𝑇 ∈ ℒ(𝐅^4)</script> such that <script type="math/tex">𝑅</script> and <script type="math/tex">𝑇</script> each have <script type="math/tex">2, 6, 7</script> as 
+eigenvalues, <script type="math/tex">𝑅</script> and <script type="math/tex">𝑇</script> have no other eigenvalues, and there does not 
+exist an invertible operator <script type="math/tex">𝑆 ∈ ℒ(𝐅^4)</script> such that <script type="math/tex">𝑅 = S^{-1}TS</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>If <script type="math/tex">R = S^{-1}TS</script>, then we use exercise 5A.40 which states:</p>
+<p>Suppose <script type="math/tex">𝑆, 𝑇 ∈ ℒ(𝑉)</script> and <script type="math/tex">𝑆</script> is invertible. Suppose <script type="math/tex">𝑝 ∈ 𝒫(𝐅)</script> is a 
+polynomial. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑝(𝑆𝑇𝑆^{−1}) = 𝑆𝑝(𝑇)𝑆^{−1}
+</script>
+</p>
+<p>This means the polynomial of <script type="math/tex">R</script> and <script type="math/tex">T</script> are actually the same.</p>
+<p>So our goal is to find 2 operators sucht that they have <script type="math/tex">2, 6, 7</script> as 
+eigenvalues, but their minimal polynomials are not the same.</p>
+<p>Let <script type="math/tex">R</script> be an operator such that under standard basis, its matrix is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{M}(R) =
+\begin{bmatrix}
+2 & 0 & 0 & 0 \\
+0 & 6 & 0 & 0 \\
+0 & 0 & 7 & 0 \\
+0 & 0 & 0 & 7 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then it's minimal polynomial is <script type="math/tex">p(z) = (z-2)(z-6)(z-7)</script>.</p>
+<p>Let <script type="math/tex">T</script> be an operator such that under standard basis, its matrix is</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{M}(T) =
+\begin{bmatrix}
+2 & 0 & 0 & 0 \\
+0 & 6 & 0 & 0 \\
+0 & 0 & 7 & 1 \\
+0 & 0 & 0 & 7 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then it's minimal polynomial is <script type="math/tex">q(z) = (z-2)(z-6)(z-7)^2</script>.</p>
+<p>So <script type="math/tex">p \neq q</script>. Then it's impossible to find
+an invertible operator <script type="math/tex">𝑆 ∈ ℒ(𝐅^4)</script> such that <script type="math/tex">𝑅 = S^{-1}TS</script>.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
