@@ -4014,3 +4014,235 @@ Then $\lambda_i$ are all distinct. Then we can use
 To conclude $𝑇$ is diagonalizable.
 
 $\square$
+
+### 5D.6
+
+Suppose $𝑇 ∈ ℒ(𝐅^5)$ and $\dim 𝐸(8, 𝑇) = 4$. Prove that $𝑇 − 2𝐼$ or 
+$𝑇 − 6𝐼$ is invertible.
+
+**Proof**: We prove by contradition.
+
+Assume $𝑇 − 2𝐼$ and $𝑇 − 6𝐼$ are all non-invertible. Then
+$\text{null } T-2I \neq \{0\}$ and $\text{null } T-6I \neq \{0\}$.
+
+Then $\dim E(2,T) \geq 1$ and $\dim E(6,T) \geq 1$.
+
+So $\dim E(2,T) + \dim E(6,T) + \dim E(8,T) \geq 6 > 5 = \dim F^5$.
+
+This is contradictary to "5.54 sum of eigenspaces is a direct sum".
+
+So Either $\text{null } T-2I = \{0\}$ or $\text{null } T-6I = \{0\}$.
+
+So either $𝑇 − 2𝐼$ or 
+$𝑇 − 6𝐼$ is invertible.
+
+$\square$
+
+### 5D.7
+
+Suppose $𝑇 ∈ ℒ(𝑉)$ is invertible. Prove that
+
+$$ 
+E(\lambda,T) = E(\frac{1}{\lambda},T^{-1})
+$$
+
+for every $𝜆 ∈ 𝐅$ with $𝜆 ≠ 0$.
+
+**Proof**:
+
+Let $u \in E(\lambda,T)$. Since $T$ is invertible, then $T$ is injective.
+Furthermore, $E(\lambda,T)$ is invariant under $T$, so $T|_{E(\lambda,T)}$
+is well defined and is also injective, so $T|_{E(\lambda,T)}$ is invertible.
+
+So we can find $v \in E(\lambda,T)$ such that $T(v) = u$.
+So $\lambda v = u$, i.e. $v = \frac{1}{\lambda}u$ . 
+
+So
+
+$$
+\begin{align*}
+T^{-1}(u)
+&= T^{-1} (T(v)) \\
+&= v \\
+&= \frac{1}{\lambda} u
+\end{align*} 
+$$
+
+So $u \in E(\frac{1}{\lambda},T^{-1})$, then
+$E(\lambda,T) \subseteq E(\frac{1}{\lambda},T^{-1})$.
+
+Then if we replace $T$ with $T^{-1}$, and replace
+$T^{-1}$ with $T$, and replace $\lambda$ with $\lambda^{-1}$,
+we can show
+$$ 
+E(\frac{1}{\lambda},T^{-1}) \subseteq E(\lambda,T)
+$$
+
+So $E(\frac{1}{\lambda},T^{-1}) = E(\lambda,T)$
+
+$\square$
+
+### 5D.8
+
+Suppose $𝑉$ is finite-dimensional and $𝑇 ∈ ℒ(𝑉)$. Let
+$𝜆_1, …, 𝜆_𝑚$ denote the
+distinct nonzero eigenvalues of $𝑇$. Prove that
+
+$$ 
+\dim E(\lambda_1,T) + \cdots + \dim E(\lambda_m,T)
+\leq \text{dim range } T
+$$
+
+**Proof**:
+
+if $\lambda \neq 0$ and $u \in E(\lambda,T)$, then $T(u) = \lambda u$, so
+$u = \frac{1}{\lambda} T(u) = T (\frac{1}{\lambda}u) \in \text{range } T$.
+
+Then it means $E(\lambda,T) \subseteq \text{range } T$. So we have
+
+$$ 
+E(\lambda_1,T) + \cdots + E(\lambda_m,T) \subseteq \text{range } T
+$$
+
+Then from "5.54 sum of eigenspaces is a direct sum", we can know
+
+$$ 
+E(\lambda_1,T) \oplus \cdots \oplus E(\lambda_m,T) \subseteq \text{range } T
+$$
+
+Then from "3.94 a sum is a direct sum if and only if dimensions add up",
+we know
+
+$$ 
+\dim E(\lambda_1,T) + \cdots + \dim E(\lambda_m,T) =
+\dim E(\lambda_1,T) \oplus \cdots \oplus E(\lambda_m,T)
+$$
+
+So, we have
+
+$$ 
+\dim E(\lambda_1,T) + \cdots + \dim E(\lambda_m,T)
+\leq \text{dim range } T
+$$
+
+$\square$
+
+### 5D.9
+
+Suppose $𝑅, 𝑇 ∈ ℒ(𝐅^3)$ each have $2, 6, 7$ as eigenvalues. Prove that 
+there
+exists an invertible operator $𝑆 ∈ ℒ(𝐅^3)$ such that $𝑅 = S^{-1} 𝑇𝑆$.
+
+**Proof**:
+
+Let $V = F^{3}$, since $\dim V = 3$ and $R, T$ have 3 different
+eigenvalues. Then by
+"5.58 enough eigenvalues implies diagonalizability", we know
+both $R, T$ have diagonal matrices under some basis.
+
+Assume $R$ has a basis $u_1, u_2, u_3$ and
+$$ 
+R(u_1) = 2 u_1,
+R(u_2) = 6 u_2,
+R(u_3) = 7 u_3
+$$
+
+Similarly, assume $T$ has a basis $v_1, v_2, v_3$ and
+
+$$ 
+T(v_1) = 2 v_1,
+T(v_2) = 6 v_2,
+T(v_3) = 7 v_3
+$$
+
+Then define $S$ as to be
+
+$$ 
+S(u_1) = v_1,
+S(u_2) = v_2,
+S(u_3) = v_3
+$$
+
+$S$ is invertible since $S$ is injective.
+We can also see $S^{-1}$ satisfy:
+
+$$ 
+S^{-1}(v_1) = u_1,
+S^{-1}(v_2) = u_2,
+S^{-1}(v_3) = u_3
+$$
+
+Then note
+
+$$
+\begin{align*}
+S^{-1} TS (u_1)
+&= S^{-1} T(v_1) \\
+&= S^{-1} (2 v_1) \\
+&= 2 S^{-1} (v_1) \\
+&= 2 u_1 \\
+&= R(u_1) \\
+\end{align*} 
+$$
+
+The same calculation can be applied to $u_2, u_3$.
+Since $u_1, u_2, u_3$ is a basis of of $R$, and
+when $R$ and $S^{-1}TS$ are applied to them the results are the same.
+So $R = S^{-1}TS$.
+
+$\square$
+
+### 5D.10
+
+Find $𝑅, 𝑇 ∈ ℒ(𝐅^4)$ such that $𝑅$ and $𝑇$ each have $2, 6, 7$ as 
+eigenvalues, $𝑅$ and $𝑇$ have no other eigenvalues, and there does not 
+exist an invertible operator $𝑆 ∈ ℒ(𝐅^4)$ such that $𝑅 = S^{-1}TS$.
+
+**Solution**:
+
+If $R = S^{-1}TS$, then we use exercise 5A.40 which states:
+
+Suppose $𝑆, 𝑇 ∈ ℒ(𝑉)$ and $𝑆$ is invertible. Suppose $𝑝 ∈ 𝒫(𝐅)$ is a 
+polynomial. Then
+
+$$ 
+𝑝(𝑆𝑇𝑆^{−1}) = 𝑆𝑝(𝑇)𝑆^{−1}
+$$
+
+This means the polynomial of $R$ and $T$ are actually the same.
+
+So our goal is to find 2 operators sucht that they have $2, 6, 7$ as 
+eigenvalues, but their minimal polynomials are not the same.
+
+Let $R$ be an operator such that under standard basis, its matrix is
+
+$$ 
+\mathcal{M}(R) =
+\begin{bmatrix}
+2 & 0 & 0 & 0 \\
+0 & 6 & 0 & 0 \\
+0 & 0 & 7 & 0 \\
+0 & 0 & 0 & 7 \\
+\end{bmatrix}
+$$
+
+Then it's minimal polynomial is $p(z) = (z-2)(z-6)(z-7)$.
+
+Let $T$ be an operator such that under standard basis, its matrix is
+
+$$ 
+\mathcal{M}(T) =
+\begin{bmatrix}
+2 & 0 & 0 & 0 \\
+0 & 6 & 0 & 0 \\
+0 & 0 & 7 & 1 \\
+0 & 0 & 0 & 7 \\
+\end{bmatrix}
+$$
+
+Then it's minimal polynomial is $q(z) = (z-2)(z-6)(z-7)^2$.
+
+So $p \neq q$. Then it's impossible to find
+an invertible operator $𝑆 ∈ ℒ(𝐅^4)$ such that $𝑅 = S^{-1}TS$.
+
+$\square$
